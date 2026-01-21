@@ -1,0 +1,190 @@
+{
+  "redirects": [
+    {
+      "source": "/welcome",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/water-restoration",
+      "destination": "/services/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/mold-removal",
+      "destination": "/services/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/fire-and-smoke-restoration",
+      "destination": "/services/fire-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/sewage-clean-up",
+      "destination": "/services/sewage-cleanup/",
+      "permanent": true
+    },
+    {
+      "source": "/sewage-clean-up-1",
+      "destination": "/services/sewage-cleanup/",
+      "permanent": true
+    },
+    {
+      "source": "/water-restoration-services",
+      "destination": "/services/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/flood-cleanup",
+      "destination": "/services/flood-cleanup/",
+      "permanent": true
+    },
+    {
+      "source": "/services/water-restoration",
+      "destination": "/services/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/services/fire-and-smoke-restoration",
+      "destination": "/services/fire-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/services/mold-inspection-and-testing",
+      "destination": "/services/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/testamonials",
+      "destination": "/about/testimonials/",
+      "permanent": true
+    },
+    {
+      "source": "/about/trusted-partners-certifications",
+      "destination": "/about/certifications/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance-information",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/new-folder",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas",
+      "destination": "/service-area/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/carlsbad/mold-remediation",
+      "destination": "/service-area/carlsbad/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/carlsbad/emergency-water-damage-restoration",
+      "destination": "/service-area/carlsbad/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/carlsbad/affordable-water-restoration",
+      "destination": "/service-area/carlsbad/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/carlsbad/slab-leak-repair",
+      "destination": "/service-area/carlsbad/water-leak-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/vista/water-restoration",
+      "destination": "/service-area/vista/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/vista/mold-remediation",
+      "destination": "/service-area/vista/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/:city/mold-remediation",
+      "destination": "/service-area/:city/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/:city/water-restoration",
+      "destination": "/service-area/:city/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/:slug",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/:category",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/top-10-mold-removal-companies-carlsba-ca",
+      "destination": "/blog/top-10-mold-removal-companies-carlsbad-ca/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ]
+}

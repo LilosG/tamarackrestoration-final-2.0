@@ -1,0 +1,355 @@
+---
+/**
+ * Header Component
+ * ================
+ * Main site header with navigation, contact info, and mobile menu
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import { business, mainNavigation } from '@/data/site';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+// Check if link is active
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header class:list={['header', className]} data-header>
+  <!-- Top bar with contact info -->
+  <div class="bg-brand-black text-white py-2 hidden md:block">
+    <div class="container">
+      <div class="flex items-center justify-between text-body-sm">
+        <div class="flex items-center gap-6">
+          <a 
+            href={`tel:${business.phone}`} 
+            class="flex items-center gap-2 hover:text-brand-orange transition-colors"
+          >
+            <Icon name="phone" size="sm" />
+            <span>{business.phoneFormatted}</span>
+          </a>
+          <span class="flex items-center gap-2 text-brand-cream-400">
+            <Icon name="clock" size="sm" />
+            <span>24/7 Emergency Service</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-2 text-brand-orange font-semibold">
+          <Icon name="lightning" size="sm" />
+          <span>60-Minute Response</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main navigation -->
+  <nav 
+    class="bg-white border-b border-brand-cream-300 sticky top-0 z-sticky"
+    aria-label="Main navigation"
+  >
+    <div class="container">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="/" class="flex-shrink-0" aria-label="Tamarack Restoration - Home">
+          <img 
+            src="/images/logo/tamarack-logo.webp" 
+            alt="Tamarack Restoration" 
+            class="h-10 lg:h-12 w-auto"
+            width="180"
+            height="48"
+          />
+        </a>
+        
+        <!-- Desktop navigation -->
+        <div class="hidden lg:flex items-center gap-1">
+          {mainNavigation.map((item) => (
+            <div class="relative group">
+              {item.children ? (
+                <>
+                  <button
+                    class:list={[
+                      'nav-link flex items-center gap-1 px-4 py-2 text-body-md font-medium rounded-lg transition-colors',
+                      isActive(item.href) 
+                        ? 'text-brand-orange' 
+                        : 'text-brand-black hover:text-brand-orange hover:bg-brand-cream-200'
+                    ]}
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    {item.label}
+                    <Icon name="chevron-down" size="sm" class="transition-transform group-hover:rotate-180" />
+                  </button>
+                  
+                  <!-- Dropdown -->
+                  <div class="nav-dropdown absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div class="bg-white rounded-xl shadow-soft-lg border border-brand-cream-300 py-2 min-w-[220px]">
+                      {item.children.map((child) => (
+                        <a
+                          href={child.href}
+                          class:list={[
+                            'block px-4 py-2 text-body-md transition-colors',
+                            isActive(child.href)
+                              ? 'text-brand-orange bg-brand-orange-50'
+                              : 'text-brand-black hover:text-brand-orange hover:bg-brand-cream-200'
+                          ]}
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <a
+                  href={item.href}
+                  class:list={[
+                    'nav-link px-4 py-2 text-body-md font-medium rounded-lg transition-colors',
+                    item.highlight
+                      ? 'text-brand-orange'
+                      : isActive(item.href)
+                        ? 'text-brand-orange'
+                        : 'text-brand-black hover:text-brand-orange hover:bg-brand-cream-200'
+                  ]}
+                >
+                  {item.label}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        <!-- CTA Button (Desktop) -->
+        <div class="hidden lg:flex items-center gap-4">
+          <a 
+            href={`tel:${business.phone}`}
+            class="flex items-center gap-2 text-brand-black font-semibold hover:text-brand-orange transition-colors"
+          >
+            <Icon name="phone" size="md" />
+            <span class="hidden xl:inline">{business.phoneFormatted}</span>
+          </a>
+          <Button href="/contact/" variant="primary" size="sm">
+            Get Help Now
+          </Button>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <button
+          type="button"
+          class="lg:hidden p-2 text-brand-black hover:text-brand-orange transition-colors"
+          aria-label="Open menu"
+          aria-expanded="false"
+          data-mobile-menu-toggle
+        >
+          <Icon name="menu" size="lg" class="menu-icon-open" />
+          <Icon name="x" size="lg" class="menu-icon-close hidden" />
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile menu -->
+  <div 
+    class="mobile-menu fixed inset-0 z-overlay bg-brand-black/50 lg:hidden hidden"
+    data-mobile-menu
+    aria-hidden="true"
+  >
+    <div class="mobile-menu-panel absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+      <div class="flex flex-col h-full">
+        <!-- Mobile menu header -->
+        <div class="flex items-center justify-between p-4 border-b border-brand-cream-300">
+          <span class="font-heading font-bold text-brand-black">Menu</span>
+          <button
+            type="button"
+            class="p-2 text-brand-black hover:text-brand-orange transition-colors"
+            aria-label="Close menu"
+            data-mobile-menu-close
+          >
+            <Icon name="x" size="lg" />
+          </button>
+        </div>
+        
+        <!-- Mobile menu content -->
+        <div class="flex-1 overflow-y-auto py-4">
+          {mainNavigation.map((item) => (
+            <div class="mobile-nav-item">
+              {item.children ? (
+                <div class="mobile-nav-group" data-mobile-nav-group>
+                  <button
+                    type="button"
+                    class="flex items-center justify-between w-full px-6 py-3 text-body-lg font-medium text-brand-black"
+                    data-mobile-nav-trigger
+                  >
+                    {item.label}
+                    <Icon name="chevron-down" size="md" class="mobile-nav-icon transition-transform" />
+                  </button>
+                  <div class="mobile-nav-children hidden bg-brand-cream-200 py-2" data-mobile-nav-children>
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        class:list={[
+                          'block px-8 py-2 text-body-md',
+                          isActive(child.href)
+                            ? 'text-brand-orange font-medium'
+                            : 'text-brand-gray hover:text-brand-orange'
+                        ]}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  href={item.href}
+                  class:list={[
+                    'block px-6 py-3 text-body-lg font-medium',
+                    isActive(item.href)
+                      ? 'text-brand-orange'
+                      : 'text-brand-black hover:text-brand-orange'
+                  ]}
+                >
+                  {item.label}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        <!-- Mobile menu footer -->
+        <div class="p-4 border-t border-brand-cream-300 space-y-4">
+          <a 
+            href={`tel:${business.phone}`}
+            class="flex items-center justify-center gap-2 w-full py-3 bg-brand-cream-200 rounded-lg text-brand-black font-semibold"
+          >
+            <Icon name="phone" size="md" />
+            {business.phoneFormatted}
+          </a>
+          <Button href="/contact/" variant="primary" fullWidth>
+            Get Help Now
+          </Button>
+          <p class="text-center text-body-sm text-brand-gray">
+            24/7 Emergency Service • 60-Min Response
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    const header = document.querySelector('[data-header]');
+    const menuToggle = document.querySelector('[data-mobile-menu-toggle]');
+    const menuClose = document.querySelector('[data-mobile-menu-close]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    const menuPanel = mobileMenu?.querySelector('.mobile-menu-panel');
+    
+    // Toggle mobile menu
+    function openMenu() {
+      mobileMenu?.classList.remove('hidden');
+      menuPanel?.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+      menuToggle?.setAttribute('aria-expanded', 'true');
+      mobileMenu?.setAttribute('aria-hidden', 'false');
+      
+      // Toggle icons
+      menuToggle?.querySelector('.menu-icon-open')?.classList.add('hidden');
+      menuToggle?.querySelector('.menu-icon-close')?.classList.remove('hidden');
+    }
+    
+    function closeMenu() {
+      menuPanel?.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenu?.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      mobileMenu?.setAttribute('aria-hidden', 'true');
+      
+      // Toggle icons
+      menuToggle?.querySelector('.menu-icon-open')?.classList.remove('hidden');
+      menuToggle?.querySelector('.menu-icon-close')?.classList.add('hidden');
+    }
+    
+    menuToggle?.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+    
+    menuClose?.addEventListener('click', closeMenu);
+    
+    // Close on backdrop click
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        closeMenu();
+      }
+    });
+    
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+        closeMenu();
+      }
+    });
+    
+    // Mobile nav group toggles
+    const navGroups = document.querySelectorAll('[data-mobile-nav-group]');
+    navGroups.forEach((group) => {
+      const trigger = group.querySelector('[data-mobile-nav-trigger]');
+      const children = group.querySelector('[data-mobile-nav-children]');
+      const icon = group.querySelector('.mobile-nav-icon');
+      
+      trigger?.addEventListener('click', () => {
+        children?.classList.toggle('hidden');
+        icon?.classList.toggle('rotate-180');
+      });
+    });
+    
+    // Header scroll behavior (optional sticky shadow)
+    let lastScroll = 0;
+    const nav = header?.querySelector('nav');
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      
+      if (currentScroll > 50) {
+        nav?.classList.add('shadow-soft');
+      } else {
+        nav?.classList.remove('shadow-soft');
+      }
+      
+      lastScroll = currentScroll;
+    });
+  }
+  
+  initHeader();
+  document.addEventListener('astro:page-load', initHeader);
+</script>
+
+<style>
+  /* Ensure dropdown stays visible on hover */
+  .group:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Mobile menu transition */
+  .mobile-menu-panel {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .mobile-menu:not(.hidden) .mobile-menu-panel {
+    transform: translateX(0);
+  }
+</style>

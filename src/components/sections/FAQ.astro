@@ -1,0 +1,80 @@
+---
+/**
+ * FAQ Section Component
+ * =====================
+ * FAQ accordion with optional schema markup
+ */
+
+import Accordion from '@/components/ui/Accordion.astro';
+import Button from '@/components/ui/Button.astro';
+import { globalFaqs } from '@/data/site';
+import { getFAQSchema } from '@/utils/seo';
+import type { FAQ } from '@/types';
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  faqs?: FAQ[];
+  limit?: number;
+  showSchema?: boolean;
+  showViewAll?: boolean;
+}
+
+const { 
+  class: className, 
+  title = 'Frequently Asked Questions',
+  subtitle = 'Get answers to common questions about our restoration services',
+  faqs = globalFaqs,
+  limit,
+  showSchema = true,
+  showViewAll = true
+} = Astro.props;
+
+const displayFaqs = limit ? faqs.slice(0, limit) : faqs;
+
+// Convert to accordion format
+const accordionItems = displayFaqs.map((faq, index) => ({
+  title: faq.question,
+  content: faq.answer,
+  open: index === 0, // First item open by default
+}));
+
+// Generate schema
+const faqSchema = showSchema ? getFAQSchema(displayFaqs) : null;
+---
+
+<section class:list={['faq-section section', className]}>
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      {(title || subtitle) && (
+        <div class="text-center mb-10">
+          {title && (
+            <h2 class="font-display text-display-lg text-brand-black mb-4">
+              {title}
+            </h2>
+          )}
+          {subtitle && (
+            <p class="text-body-lg text-brand-gray">
+              {subtitle}
+            </p>
+          )}
+        </div>
+      )}
+      
+      <Accordion items={accordionItems} />
+      
+      {showViewAll && limit && faqs.length > limit && (
+        <div class="text-center mt-8">
+          <Button href="/about/faq/" variant="outline">
+            View All FAQs
+          </Button>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}

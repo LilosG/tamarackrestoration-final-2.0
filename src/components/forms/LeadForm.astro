@@ -1,0 +1,244 @@
+---
+/**
+ * LeadForm Component
+ * ==================
+ * Short lead capture form for hero sections and sidebars
+ */
+
+import Button from '@/components/ui/Button.astro';
+import { formConfig } from '@/data/site';
+
+interface Props {
+  class?: string;
+  variant?: 'default' | 'dark' | 'card';
+  title?: string;
+  subtitle?: string;
+  source?: string;
+}
+
+const { 
+  class: className, 
+  variant = 'default',
+  title = 'Request Fast Service',
+  subtitle = 'We respond within 60 minutes',
+  source = 'lead-form'
+} = Astro.props;
+
+const formId = `lead-form-${Math.random().toString(36).substr(2, 9)}`;
+
+const variantStyles: Record<string, string> = {
+  default: 'bg-white',
+  dark: 'bg-brand-black text-white',
+  card: 'bg-white shadow-card-hover',
+};
+---
+
+<div class:list={['lead-form rounded-xl p-6', variantStyles[variant], className]}>
+  {(title || subtitle) && (
+    <div class="mb-4">
+      {title && (
+        <h3 class:list={[
+          'font-heading font-bold text-display-sm mb-1',
+          variant === 'dark' ? 'text-white' : 'text-brand-black'
+        ]}>
+          {title}
+        </h3>
+      )}
+      {subtitle && (
+        <p class:list={[
+          'text-body-sm',
+          variant === 'dark' ? 'text-brand-cream-300' : 'text-brand-gray'
+        ]}>
+          {subtitle}
+        </p>
+      )}
+    </div>
+  )}
+  
+  <form 
+    id={formId}
+    action={formConfig.formspreeEndpoint}
+    method="POST"
+    class="space-y-4"
+    data-lead-form
+  >
+    <!-- Honeypot for spam protection -->
+    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+    
+    <!-- Hidden fields -->
+    <input type="hidden" name="source" value={source} />
+    <input type="hidden" name="page_url" value="" data-page-url />
+    <input type="hidden" name="timestamp" value="" data-timestamp />
+    
+    <!-- Name -->
+    <div>
+      <label for={`${formId}-name`} class="sr-only">Your Name</label>
+      <input
+        type="text"
+        id={`${formId}-name`}
+        name="name"
+        placeholder="Your Name"
+        required
+        class="input"
+        autocomplete="name"
+      />
+    </div>
+    
+    <!-- Phone -->
+    <div>
+      <label for={`${formId}-phone`} class="sr-only">Phone Number</label>
+      <input
+        type="tel"
+        id={`${formId}-phone`}
+        name="phone"
+        placeholder="Phone Number"
+        required
+        class="input"
+        autocomplete="tel"
+        pattern="[\d\s\-\(\)\+]+"
+      />
+    </div>
+    
+    <!-- Service -->
+    <div>
+      <label for={`${formId}-service`} class="sr-only">Service Needed</label>
+      <select
+        id={`${formId}-service`}
+        name="service"
+        required
+        class="input"
+      >
+        <option value="" disabled selected>Service Needed</option>
+        {formConfig.services.map((service) => (
+          <option value={service.value}>{service.label}</option>
+        ))}
+      </select>
+    </div>
+    
+    <!-- Message (optional) -->
+    <div>
+      <label for={`${formId}-message`} class="sr-only">Brief Description (Optional)</label>
+      <textarea
+        id={`${formId}-message`}
+        name="message"
+        placeholder="Brief description (optional)"
+        rows="2"
+        class="input resize-none"
+      ></textarea>
+    </div>
+    
+    <!-- Submit -->
+    <Button 
+      type="submit" 
+      variant="primary" 
+      fullWidth
+      class="form-submit-btn"
+    >
+      Get Help Now
+    </Button>
+    
+    <!-- Status message -->
+    <div class="form-status hidden" aria-live="polite">
+      <p class="form-status-success hidden text-success text-body-sm text-center">
+        ✓ Request received! We'll call you within 60 minutes.
+      </p>
+      <p class="form-status-error hidden text-error text-body-sm text-center">
+        Something went wrong. Please call us directly at (760) 500-2211.
+      </p>
+    </div>
+  </form>
+  
+  <!-- Trust indicator -->
+  <p class:list={[
+    'mt-4 text-body-xs text-center',
+    variant === 'dark' ? 'text-brand-cream-400' : 'text-brand-gray-light'
+  ]}>
+    <span class="inline-flex items-center gap-1">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Your information is secure and never shared
+    </span>
+  </p>
+</div>
+
+<script>
+  function initLeadForms() {
+    const forms = document.querySelectorAll('[data-lead-form]');
+    
+    forms.forEach((form) => {
+      // Set hidden field values
+      const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
+      const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+      
+      if (pageUrlInput) pageUrlInput.value = window.location.href;
+      if (timestampInput) timestampInput.value = new Date().toISOString();
+      
+      // Handle form submission
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('.form-submit-btn') as HTMLButtonElement;
+        const statusDiv = form.querySelector('.form-status') as HTMLElement;
+        const successMsg = form.querySelector('.form-status-success') as HTMLElement;
+        const errorMsg = form.querySelector('.form-status-error') as HTMLElement;
+        
+        // Update button state
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `
+            <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Sending...
+          `;
+        }
+        
+        try {
+          const formData = new FormData(form as HTMLFormElement);
+          const response = await fetch((form as HTMLFormElement).action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            // Success
+            statusDiv?.classList.remove('hidden');
+            successMsg?.classList.remove('hidden');
+            errorMsg?.classList.add('hidden');
+            (form as HTMLFormElement).reset();
+            
+            // Track conversion if analytics available
+            if (typeof window !== 'undefined' && (window as any).gtag) {
+              (window as any).gtag('event', 'lead_form_submit', {
+                'event_category': 'Lead',
+                'event_label': window.location.pathname
+              });
+            }
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          // Error
+          statusDiv?.classList.remove('hidden');
+          successMsg?.classList.add('hidden');
+          errorMsg?.classList.remove('hidden');
+        } finally {
+          // Reset button
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Get Help Now';
+          }
+        }
+      });
+    });
+  }
+  
+  // Initialize
+  initLeadForms();
+  document.addEventListener('astro:page-load', initLeadForms);
+</script>

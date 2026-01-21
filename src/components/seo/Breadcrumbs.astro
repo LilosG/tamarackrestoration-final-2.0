@@ -1,0 +1,73 @@
+---
+/**
+ * Breadcrumbs Component
+ * =====================
+ * Accessible breadcrumb navigation with schema markup
+ */
+
+import type { BreadcrumbItem } from '@/types';
+import { getBreadcrumbSchema } from '@/utils/seo';
+
+interface Props {
+  items: BreadcrumbItem[];
+  variant?: 'light' | 'dark';
+  class?: string;
+}
+
+const { items, variant = 'light', class: className } = Astro.props;
+
+const schema = getBreadcrumbSchema(items);
+
+// Color classes based on variant
+const isDark = variant === 'dark';
+const separatorColor = isDark ? 'text-brand-cream-400' : 'text-brand-gray-light';
+const currentColor = isDark ? 'text-brand-cream-300' : 'text-brand-gray';
+const linkColor = isDark 
+  ? 'text-brand-cream-400 hover:text-brand-orange' 
+  : 'text-brand-gray hover:text-brand-orange';
+---
+
+<nav 
+  aria-label="Breadcrumb" 
+  class:list={['breadcrumbs', className]}
+>
+  <ol class="flex flex-wrap items-center gap-2 text-body-sm">
+    {items.map((item, index) => (
+      <li class="flex items-center gap-2">
+        {index > 0 && (
+          <span class:list={[separatorColor]} aria-hidden="true">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        )}
+        {index === items.length - 1 ? (
+          <span class:list={[currentColor, 'font-medium']} aria-current="page">
+            {item.label}
+          </span>
+        ) : (
+          <a 
+            href={item.href} 
+            class:list={[linkColor, 'transition-colors duration-fast']}
+          >
+            {item.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,151 @@
+---
+/**
+ * CTABanner Component
+ * ===================
+ * Prominent call-to-action banner section
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import { business } from '@/data/site';
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  variant?: 'default' | 'emergency' | 'minimal';
+  showPhone?: boolean;
+  showForm?: boolean;
+}
+
+const { 
+  class: className, 
+  title = "Disaster Won't Wait. Neither Do We.",
+  subtitle = "24/7 emergency service with 60-minute response time. Call now for immediate help.",
+  variant = 'default',
+  showPhone = true,
+  showForm = true
+} = Astro.props;
+---
+
+{variant === 'default' && (
+  <section class:list={['cta-banner bg-brand-orange py-section-sm', className]}>
+    <div class="container">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+        <div class="max-w-2xl">
+          <h2 class="font-display text-display-md text-white mb-3">
+            {title}
+          </h2>
+          <p class="text-white/90 text-body-lg">
+            {subtitle}
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          {showPhone && (
+            <Button 
+              href={`tel:${business.phone}`}
+              variant="secondary"
+              size="lg"
+              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+            >
+              <Icon name="phone" size="md" />
+              {business.phoneFormatted}
+            </Button>
+          )}
+          {showForm && (
+            <Button 
+              href="/contact/"
+              variant="outline"
+              size="lg"
+              class="border-white text-white hover:bg-white hover:text-brand-orange"
+            >
+              Request Service
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{variant === 'emergency' && (
+  <section class:list={['cta-banner bg-brand-black py-section-md relative overflow-hidden', className]}>
+    {/* Background pattern */}
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(220,104,48,0.5) 10px, rgba(220,104,48,0.5) 20px);"></div>
+    </div>
+    
+    <div class="container relative">
+      <div class="max-w-4xl mx-auto text-center">
+        {/* Emergency badge */}
+        <div class="inline-flex items-center gap-2 bg-brand-orange text-white px-4 py-2 rounded-full text-body-sm font-semibold mb-6 animate-pulse-soft">
+          <Icon name="lightning" size="sm" />
+          24/7 Emergency Service
+        </div>
+        
+        <h2 class="font-display text-display-xl text-white mb-4">
+          {title}
+        </h2>
+        <p class="text-brand-cream-300 text-body-xl mb-8 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button 
+            href={`tel:${business.phone}`}
+            variant="primary"
+            size="lg"
+          >
+            <Icon name="phone" size="md" />
+            Call {business.phoneFormatted}
+          </Button>
+          <Button 
+            href="/contact/"
+            variant="outline"
+            size="lg"
+            class="border-brand-cream-400 text-brand-cream-300 hover:bg-brand-cream-400 hover:text-brand-black"
+          >
+            Schedule Service
+          </Button>
+        </div>
+        
+        {/* Trust indicators */}
+        <div class="flex flex-wrap items-center justify-center gap-6 mt-8 text-brand-cream-400 text-body-sm">
+          <span class="flex items-center gap-2">
+            <Icon name="clock" size="sm" class="text-brand-orange" />
+            60-Minute Response
+          </span>
+          <span class="flex items-center gap-2">
+            <Icon name="star" size="sm" class="text-brand-orange" />
+            5.0 Rating (116 Reviews)
+          </span>
+          <span class="flex items-center gap-2">
+            <Icon name="shield" size="sm" class="text-brand-orange" />
+            IICRC Certified
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{variant === 'minimal' && (
+  <section class:list={['cta-banner bg-brand-cream-200 py-8', className]}>
+    <div class="container">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+        <p class="text-brand-black font-semibold text-body-lg">
+          Need emergency restoration? 
+          <span class="text-brand-gray font-normal">We're available 24/7.</span>
+        </p>
+        <Button 
+          href={`tel:${business.phone}`}
+          variant="primary"
+        >
+          <Icon name="phone" size="sm" />
+          {business.phoneFormatted}
+        </Button>
+      </div>
+    </div>
+  </section>
+)}

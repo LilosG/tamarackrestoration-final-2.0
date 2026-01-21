@@ -1,0 +1,68 @@
+---
+/**
+ * Card Component
+ * ==============
+ * Flexible card container with variants
+ */
+
+import type { HTMLAttributes } from 'astro/types';
+import type { CardVariant } from '@/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: CardVariant;
+  href?: string;
+  padding?: 'none' | 'sm' | 'md' | 'lg';
+  hover?: boolean;
+}
+
+const {
+  variant = 'default',
+  href,
+  padding = 'md',
+  hover = true,
+  class: className,
+  ...attrs
+} = Astro.props;
+
+const Element = href ? 'a' : 'div';
+
+const baseStyles = 'rounded-xl transition-all duration-normal';
+
+const variantStyles: Record<CardVariant, string> = {
+  default: 'bg-white shadow-card',
+  outlined: 'bg-white border border-brand-gray-light',
+  elevated: 'bg-white shadow-soft-lg',
+};
+
+const paddingStyles: Record<string, string> = {
+  none: '',
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
+};
+
+const hoverStyles = hover 
+  ? 'hover:shadow-card-hover hover:-translate-y-0.5' 
+  : '';
+
+const linkStyles = href 
+  ? 'block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2' 
+  : '';
+
+const classes = [
+  baseStyles,
+  variantStyles[variant],
+  paddingStyles[padding],
+  hover && hoverStyles,
+  href && linkStyles,
+  className,
+].filter(Boolean).join(' ');
+---
+
+<Element
+  href={href}
+  class={classes}
+  {...attrs}
+>
+  <slot />
+</Element>

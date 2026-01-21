@@ -1,0 +1,82 @@
+---
+/**
+ * SEOHead Component
+ * =================
+ * Handles all meta tags, Open Graph, Twitter cards, and JSON-LD schema
+ */
+
+import type { SEOProps } from '@/types';
+import { business } from '@/data/site';
+
+interface Props extends SEOProps {}
+
+const {
+  title,
+  description,
+  canonical,
+  noindex = false,
+  nofollow = false,
+  ogType = 'website',
+  ogImage = '/images/og-default.jpg',
+  twitterCard = 'summary_large_image',
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = 'https://www.tamarackrestoration.com';
+const currentPath = Astro.url.pathname;
+const canonicalUrl = canonical || `${siteUrl}${currentPath}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// Robots meta content
+const robotsContent = [
+  noindex ? 'noindex' : 'index',
+  nofollow ? 'nofollow' : 'follow',
+].join(', ');
+
+// Format JSON-LD for output
+const jsonLdArray = jsonLd 
+  ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd])
+  : [];
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="robots" content={robotsContent} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Geo Tags for Local SEO -->
+<meta name="geo.region" content="US-CA" />
+<meta name="geo.placename" content="Carlsbad" />
+<meta name="geo.position" content={`${business.coordinates.latitude};${business.coordinates.longitude}`} />
+<meta name="ICBM" content={`${business.coordinates.latitude}, ${business.coordinates.longitude}`} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content={business.name} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content={twitterCard} />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- Additional Meta -->
+<meta name="author" content={business.name} />
+<meta name="publisher" content={business.name} />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="theme-color" content="#dc6830" />
+
+<!-- JSON-LD Structured Data -->
+{jsonLdArray.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

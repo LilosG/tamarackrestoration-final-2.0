@@ -1,0 +1,99 @@
+---
+/**
+ * Button Component
+ * ================
+ * Reusable button with variants, sizes, and states
+ */
+
+import type { HTMLAttributes } from 'astro/types';
+import type { ButtonVariant, ButtonSize } from '@/types';
+
+interface Props extends HTMLAttributes<'button'> {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  href?: string;
+  fullWidth?: boolean;
+  loading?: boolean;
+  icon?: string;
+  iconPosition?: 'left' | 'right';
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  fullWidth = false,
+  loading = false,
+  icon,
+  iconPosition = 'left',
+  class: className,
+  disabled,
+  ...attrs
+} = Astro.props;
+
+const Element = href ? 'a' : 'button';
+
+const baseStyles = 'inline-flex items-center justify-center gap-2 font-heading font-semibold rounded-lg transition-all duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+
+const variantStyles: Record<ButtonVariant, string> = {
+  primary: 'bg-brand-orange text-white shadow-button hover:bg-brand-orange-600 hover:shadow-button-hover active:bg-brand-orange-700',
+  secondary: 'bg-white text-brand-black border-2 border-brand-black hover:bg-brand-black hover:text-white',
+  outline: 'bg-transparent text-brand-orange border-2 border-brand-orange hover:bg-brand-orange hover:text-white',
+  ghost: 'bg-transparent text-brand-black hover:bg-brand-cream-300',
+};
+
+const sizeStyles: Record<ButtonSize, string> = {
+  sm: 'px-4 py-2 text-body-sm',
+  md: 'px-6 py-3 text-body-md',
+  lg: 'px-8 py-4 text-body-lg',
+};
+
+const classes = [
+  baseStyles,
+  variantStyles[variant],
+  sizeStyles[size],
+  fullWidth && 'w-full',
+  loading && 'cursor-wait',
+  className,
+].filter(Boolean).join(' ');
+---
+
+<Element
+  href={href}
+  class={classes}
+  disabled={disabled || loading}
+  {...attrs}
+>
+  {loading && (
+    <svg 
+      class="animate-spin h-5 w-5" 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      viewBox="0 0 24 24"
+    >
+      <circle 
+        class="opacity-25" 
+        cx="12" 
+        cy="12" 
+        r="10" 
+        stroke="currentColor" 
+        stroke-width="4"
+      />
+      <path 
+        class="opacity-75" 
+        fill="currentColor" 
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+      />
+    </svg>
+  )}
+  
+  {icon && iconPosition === 'left' && !loading && (
+    <span class="btn-icon" set:html={icon} />
+  )}
+  
+  <slot />
+  
+  {icon && iconPosition === 'right' && !loading && (
+    <span class="btn-icon" set:html={icon} />
+  )}
+</Element>

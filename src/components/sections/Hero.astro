@@ -1,0 +1,170 @@
+---
+/**
+ * Hero Section Component
+ * ======================
+ * Conversion-optimized hero with lead form
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { business } from '@/data/site';
+
+interface Props {
+  title?: string;
+  titleAccent?: string;
+  subtitle?: string;
+  showForm?: boolean;
+  backgroundImage?: string;
+  variant?: 'default' | 'city' | 'service';
+  cityName?: string;
+  serviceName?: string;
+}
+
+const {
+  title = 'Emergency Water, Fire & Mold Restoration in',
+  titleAccent = 'Carlsbad',
+  subtitle = 'Fast, professional restoration services when disaster strikes. We respond within 60 minutes, 24/7, to protect your home and family.',
+  showForm = true,
+  backgroundImage = '/images/hero/truck-side-profile.jpg',
+  variant = 'default',
+  cityName,
+  serviceName,
+} = Astro.props;
+
+// Dynamic title based on variant
+let displayTitle = title;
+let displayAccent = titleAccent;
+
+if (variant === 'city' && cityName) {
+  displayTitle = 'Emergency Restoration Services in';
+  displayAccent = cityName;
+} else if (variant === 'service' && serviceName) {
+  displayTitle = `Professional ${serviceName} in`;
+  displayAccent = 'North San Diego County';
+}
+---
+
+<section class="hero relative bg-brand-black overflow-hidden min-h-[600px] lg:min-h-[700px] flex items-center">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0">
+    <img 
+      src={backgroundImage}
+      alt={`Tamarack Restoration - ${displayAccent} emergency restoration services`}
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <!-- Gradient overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/60"></div>
+    <!-- Additional bottom gradient for depth -->
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/50 via-transparent to-transparent"></div>
+  </div>
+  
+  <div class="container relative py-16 lg:py-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Hero Content - Takes 7 columns on large screens -->
+      <div class="lg:col-span-7 text-white">
+        <!-- Emergency Badge -->
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/50 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-6 backdrop-blur-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+          </span>
+          24/7 Emergency Response
+        </div>
+        
+        <!-- Main Headline -->
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-display-2xl text-white mb-6 leading-[1.1]">
+          {displayTitle}{' '}
+          <span class="text-brand-orange">{displayAccent}</span>
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+          {subtitle}
+        </p>
+        
+        <!-- Trust Indicators Row -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-0.5">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                </svg>
+              ))}
+            </div>
+            <span class="text-white font-semibold">{business.rating}</span>
+            <span class="text-brand-cream-400">({business.reviewCount} reviews)</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="award" size="md" class="text-brand-orange" />
+            <span>IICRC Certified</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="clock" size="md" class="text-brand-orange" />
+            <span>60-Min Response</span>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons - Mobile only (form shows on desktop) -->
+        <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+          <Button 
+            href={`tel:${business.phone}`}
+            variant="primary"
+            size="lg"
+            class="justify-center"
+          >
+            <Icon name="phone" size="md" />
+            Call {business.phoneFormatted}
+          </Button>
+          <Button 
+            href="#services"
+            variant="outline"
+            size="lg"
+            class="justify-center border-white/30 text-white hover:bg-white hover:text-brand-black"
+          >
+            View Our Services
+          </Button>
+        </div>
+        
+        <!-- Desktop-only phone CTA below form -->
+        <div class="hidden lg:flex items-center gap-6 mt-2">
+          <a 
+            href={`tel:${business.phone}`}
+            class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+          >
+            <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+              <Icon name="phone" size="md" class="text-white" />
+            </span>
+            <span>
+              <span class="block text-sm text-brand-cream-400">Call 24/7</span>
+              <span class="block font-bold text-xl">{business.phoneFormatted}</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lead Form - Takes 5 columns on large screens -->
+      {showForm && (
+        <div class="hidden lg:block lg:col-span-5">
+          <div class="relative">
+            <!-- Form glow effect -->
+            <div class="absolute -inset-1 bg-brand-orange/20 rounded-2xl blur-xl"></div>
+            <LeadForm 
+              variant="card"
+              title="Get Fast Help Now"
+              subtitle="We respond within 60 minutes"
+              source={`hero-${variant}`}
+              class="relative"
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+  
+  <!-- Bottom accent line -->
+  <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-orange to-transparent"></div>
+</section>

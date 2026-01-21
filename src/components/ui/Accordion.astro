@@ -1,0 +1,129 @@
+---
+/**
+ * Accordion Component
+ * ===================
+ * Expandable content sections for FAQs and collapsible content
+ */
+
+import Icon from './Icon.astro';
+
+interface AccordionItem {
+  title: string;
+  content: string;
+  open?: boolean;
+}
+
+interface Props {
+  items: AccordionItem[];
+  class?: string;
+  allowMultiple?: boolean;
+}
+
+const { items, class: className, allowMultiple = false } = Astro.props;
+const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div 
+  class:list={['accordion divide-y divide-brand-gray-light rounded-xl border border-brand-gray-light overflow-hidden', className]}
+  data-accordion
+  data-allow-multiple={allowMultiple}
+>
+  {items.map((item, index) => (
+    <div class="accordion-item bg-white" data-accordion-item>
+      <h3>
+        <button
+          type="button"
+          class="accordion-trigger flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-heading font-semibold text-brand-black hover:bg-brand-cream-200 transition-colors duration-fast"
+          aria-expanded={item.open ? 'true' : 'false'}
+          aria-controls={`${accordionId}-panel-${index}`}
+          id={`${accordionId}-trigger-${index}`}
+          data-accordion-trigger
+        >
+          <span>{item.title}</span>
+          <Icon 
+            name="chevron-down" 
+            size="md" 
+            class="accordion-icon flex-shrink-0 text-brand-gray transition-transform duration-normal" 
+          />
+        </button>
+      </h3>
+      <div
+        id={`${accordionId}-panel-${index}`}
+        role="region"
+        aria-labelledby={`${accordionId}-trigger-${index}`}
+        class="accordion-panel"
+        data-accordion-panel
+        hidden={!item.open}
+      >
+        <div class="px-6 pb-4 pt-0 text-brand-gray">
+          <Fragment set:html={item.content} />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  function initAccordions() {
+    const accordions = document.querySelectorAll('[data-accordion]');
+    
+    accordions.forEach((accordion) => {
+      const allowMultiple = accordion.getAttribute('data-allow-multiple') === 'true';
+      const triggers = accordion.querySelectorAll('[data-accordion-trigger]');
+      
+      triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('[data-accordion-item]');
+          const panel = item?.querySelector('[data-accordion-panel]');
+          const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+          
+          // Close others if not allowing multiple
+          if (!allowMultiple && !isExpanded) {
+            const otherTriggers = accordion.querySelectorAll('[data-accordion-trigger]');
+            otherTriggers.forEach((otherTrigger) => {
+              if (otherTrigger !== trigger) {
+                otherTrigger.setAttribute('aria-expanded', 'false');
+                const otherItem = otherTrigger.closest('[data-accordion-item]');
+                const otherPanel = otherItem?.querySelector('[data-accordion-panel]');
+                if (otherPanel) {
+                  (otherPanel as HTMLElement).hidden = true;
+                }
+                otherTrigger.querySelector('.accordion-icon')?.classList.remove('rotate-180');
+              }
+            });
+          }
+          
+          // Toggle current
+          trigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+          if (panel) {
+            (panel as HTMLElement).hidden = isExpanded;
+          }
+          
+          // Rotate icon
+          const icon = trigger.querySelector('.accordion-icon');
+          if (isExpanded) {
+            icon?.classList.remove('rotate-180');
+          } else {
+            icon?.classList.add('rotate-180');
+          }
+        });
+      });
+    });
+  }
+  
+  // Initialize on load
+  initAccordions();
+  
+  // Re-initialize on Astro page transitions
+  document.addEventListener('astro:page-load', initAccordions);
+</script>
+
+<style>
+  .accordion-icon {
+    transition: transform 0.2s ease;
+  }
+  
+  [aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+  }
+</style>

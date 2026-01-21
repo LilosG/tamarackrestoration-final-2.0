@@ -1,0 +1,108 @@
+---
+/**
+ * WhyChooseUs Section Component
+ * =============================
+ * Grid of differentiators with icons
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import Card from '@/components/ui/Card.astro';
+import { whyChooseUs } from '@/data/site';
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  variant?: 'default' | 'compact' | 'horizontal';
+  showImage?: boolean;
+}
+
+const {
+  class: className,
+  title = 'Why Carlsbad Chooses Tamarack Restoration',
+  subtitle = "When disaster strikes, you need a team you can trust. Here's why families and businesses throughout North San Diego County choose us.",
+  variant = 'default',
+  showImage = false,
+} = Astro.props;
+---
+
+<section class:list={['why-choose-us section', className]}>
+  <div class="container">
+    {variant === 'horizontal' ? (
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content Side -->
+        <div>
+          <h2 class="font-display text-display-lg text-brand-black mb-4">
+            {title}
+          </h2>
+          <p class="text-body-lg text-brand-gray mb-8">
+            {subtitle}
+          </p>
+          
+          <div class="grid sm:grid-cols-2 gap-6">
+            {whyChooseUs.map((item) => (
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-brand-orange-100 text-brand-orange">
+                  <Icon name={item.icon} size="lg" />
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-brand-black mb-1">
+                    {item.title}
+                  </h3>
+                  <p class="text-body-sm text-brand-gray">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Image Side -->
+        {showImage && (
+          <div class="relative">
+            <img 
+              src="/images/team/team-thumbs-up.jpg" 
+              alt="Tamarack Restoration team giving thumbs up on job site"
+              class="rounded-2xl shadow-soft-xl w-full object-cover aspect-[4/3]"
+              loading="lazy"
+            />
+            <!-- Accent decoration -->
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-orange rounded-2xl -z-10"></div>
+          </div>
+        )}
+      </div>
+    ) : (
+      <>
+        {/* Default / Compact Variant */}
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-display text-display-lg text-brand-black mb-4">
+            {title}
+          </h2>
+          <p class="text-body-lg text-brand-gray">
+            {subtitle}
+          </p>
+        </div>
+        
+        <div class:list={[
+          'grid gap-6',
+          variant === 'compact' ? 'sm:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'
+        ]}>
+          {whyChooseUs.map((item) => (
+            <Card padding={variant === 'compact' ? 'md' : 'lg'} class="text-center group hover:border-brand-orange transition-colors">
+              <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-brand-orange-100 text-brand-orange mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                <Icon name={item.icon} size="lg" />
+              </div>
+              <h3 class="font-heading font-bold text-brand-black text-display-sm mb-2">
+                {item.title}
+              </h3>
+              <p class="text-brand-gray">
+                {item.description}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</section>

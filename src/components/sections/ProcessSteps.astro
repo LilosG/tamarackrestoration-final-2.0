@@ -1,0 +1,126 @@
+---
+/**
+ * ProcessSteps Component
+ * ======================
+ * Visual representation of the service process
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import { processSteps } from '@/data/site';
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  variant?: 'default' | 'numbered' | 'timeline';
+}
+
+const { 
+  class: className, 
+  title = 'Our Proven Restoration Process',
+  subtitle = 'A systematic approach to restore your property quickly and completely',
+  variant = 'numbered'
+} = Astro.props;
+---
+
+<section class:list={['process-steps section bg-brand-cream-200', className]}>
+  <div class="container">
+    {(title || subtitle) && (
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        {title && (
+          <h2 class="font-display text-display-lg text-brand-black mb-4">
+            {title}
+          </h2>
+        )}
+        {subtitle && (
+          <p class="text-body-lg text-brand-gray">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+    
+    {variant === 'numbered' && (
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {processSteps.map((step, index) => (
+          <div class="relative text-center">
+            {/* Connector line (hidden on mobile, last item) */}
+            {index < processSteps.length - 1 && (
+              <div class="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-brand-orange-200" aria-hidden="true" />
+            )}
+            
+            {/* Step number circle */}
+            <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-orange text-white font-display text-2xl mb-4 shadow-button">
+              {step.number}
+            </div>
+            
+            <h3 class="font-heading font-bold text-brand-black text-display-sm mb-2">
+              {step.title}
+            </h3>
+            <p class="text-brand-gray text-body-md">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    )}
+    
+    {variant === 'timeline' && (
+      <div class="relative">
+        {/* Vertical line */}
+        <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-brand-orange-200 -translate-x-1/2" aria-hidden="true" />
+        
+        <div class="space-y-12">
+          {processSteps.map((step, index) => (
+            <div class:list={[
+              'relative flex items-start gap-6',
+              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            ]}>
+              {/* Circle marker */}
+              <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-cream -translate-x-1/2 mt-1" />
+              
+              {/* Content card */}
+              <div class:list={[
+                'ml-16 md:ml-0 md:w-1/2 bg-white rounded-xl p-6 shadow-card',
+                index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+              ]}>
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-brand-orange text-white font-bold">
+                    {step.number}
+                  </span>
+                  <h3 class="font-heading font-bold text-brand-black text-display-sm">
+                    {step.title}
+                  </h3>
+                </div>
+                <p class="text-brand-gray">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+    
+    {variant === 'default' && (
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {processSteps.map((step) => (
+          <div class="bg-white rounded-xl p-6 shadow-card text-center">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-brand-orange-100 text-brand-orange mb-4">
+              <Icon name={step.icon} size="lg" />
+            </div>
+            <div class="font-display text-4xl text-brand-orange mb-2">
+              {step.number}
+            </div>
+            <h3 class="font-heading font-bold text-brand-black mb-2">
+              {step.title}
+            </h3>
+            <p class="text-brand-gray text-body-sm">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

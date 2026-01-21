@@ -1,0 +1,147 @@
+---
+/**
+ * Certifications Section Component
+ * ================================
+ * Display IICRC and other certifications with team photo
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import { business } from '@/data/site';
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  showTeamPhoto?: boolean;
+  variant?: 'default' | 'compact' | 'banner';
+}
+
+const {
+  class: className,
+  title = 'IICRC Certified Professionals',
+  subtitle = 'Our technicians are certified by the Institute of Inspection, Cleaning and Restoration Certification (IICRC), the industry standard for professional restoration services.',
+  showTeamPhoto = true,
+  variant = 'default',
+} = Astro.props;
+
+const certifications = [
+  {
+    name: 'IICRC Certified',
+    description: 'Water Restoration Technician (WRT)',
+    image: '/images/certifications/iicrc.webp',
+  },
+  {
+    name: 'IICRC Certified',
+    description: 'Applied Structural Drying (ASD)',
+    image: '/images/certifications/iicrc-certified.webp',
+  },
+  {
+    name: 'HomeAdvisor',
+    description: 'Screened & Approved',
+    image: '/images/certifications/homeadvisor.webp',
+  },
+];
+---
+
+{variant === 'banner' ? (
+  <section class:list={['certifications-banner bg-brand-cream-200 py-8', className]}>
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+        <p class="text-brand-gray font-medium">Certified & Trusted:</p>
+        {certifications.map((cert) => (
+          <img 
+            src={cert.image}
+            alt={cert.name}
+            class="h-12 w-auto object-contain"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+) : (
+  <section class:list={['certifications section', variant === 'compact' ? 'py-12' : '', className]}>
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class={showTeamPhoto ? '' : 'lg:col-span-2 max-w-3xl mx-auto text-center'}>
+          <div class="inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-4">
+            <Icon name="award" size="sm" />
+            Industry Certified
+          </div>
+          
+          <h2 class="font-display text-display-lg text-brand-black mb-4">
+            {title}
+          </h2>
+          
+          <p class="text-body-lg text-brand-gray mb-8">
+            {subtitle}
+          </p>
+          
+          <!-- Certification Cards -->
+          <div class="grid sm:grid-cols-3 gap-4 mb-8">
+            {certifications.map((cert) => (
+              <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-card text-center">
+                <img 
+                  src={cert.image}
+                  alt={cert.name}
+                  class="h-16 w-auto object-contain mb-3"
+                  loading="lazy"
+                />
+                <p class="font-semibold text-brand-black text-sm">{cert.name}</p>
+                <p class="text-brand-gray text-xs">{cert.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <!-- Trust Points -->
+          <div class="flex flex-wrap gap-6 text-brand-gray">
+            <div class="flex items-center gap-2">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+              <span>Licensed & Insured</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+              <span>Background Checked</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+              <span>Ongoing Training</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Photo -->
+        {showTeamPhoto && (
+          <div class="relative">
+            <img 
+              src="/images/team/team-at-work.jpg"
+              alt="Tamarack Restoration certified technicians on a job site"
+              class="rounded-2xl shadow-soft-xl w-full object-cover aspect-[4/3]"
+              loading="lazy"
+            />
+            
+            <!-- Stats overlay -->
+            <div class="absolute -bottom-6 left-6 right-6 bg-white rounded-xl shadow-card-hover p-4">
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p class="font-display text-2xl text-brand-orange">{business.yearsInBusiness}+</p>
+                  <p class="text-body-xs text-brand-gray">Years Experience</p>
+                </div>
+                <div class="border-x border-brand-cream-300">
+                  <p class="font-display text-2xl text-brand-orange">{business.reviewCount}</p>
+                  <p class="text-body-xs text-brand-gray">5-Star Reviews</p>
+                </div>
+                <div>
+                  <p class="font-display text-2xl text-brand-orange">24/7</p>
+                  <p class="text-body-xs text-brand-gray">Availability</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}
