@@ -13,9 +13,15 @@ interface Props {
   variant?: 'default' | 'dark' | 'light';
 }
 
+interface VariantStyle {
+  bg: string;
+  text: string;
+  accent: string;
+}
+
 const { class: className, variant = 'default' } = Astro.props;
 
-const variantStyles: Record<string, { bg: string; text: string; accent: string }> = {
+const variantStyles: Record<'default' | 'dark' | 'light', VariantStyle> = {
   default: {
     bg: 'bg-white',
     text: 'text-brand-black',
@@ -33,7 +39,8 @@ const variantStyles: Record<string, { bg: string; text: string; accent: string }
   },
 };
 
-const styles = variantStyles[variant] ?? variantStyles.default;
+// TypeScript now knows styles is definitely defined because variant is constrained
+const styles: VariantStyle = variantStyles[variant];
 ---
 
 <section class:list={['trust-bar py-6 md:py-8', styles.bg, className]}>
