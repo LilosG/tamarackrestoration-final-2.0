@@ -13,49 +13,28 @@ interface Props {
   variant?: 'default' | 'dark' | 'light';
 }
 
-interface VariantStyle {
-  bg: string;
-  text: string;
-  accent: string;
-}
-
 const { class: className, variant = 'default' } = Astro.props;
 
-const variantStyles: Record<'default' | 'dark' | 'light', VariantStyle> = {
-  default: {
-    bg: 'bg-white',
-    text: 'text-brand-black',
-    accent: 'text-brand-orange',
-  },
-  dark: {
-    bg: 'bg-brand-black',
-    text: 'text-white',
-    accent: 'text-brand-orange',
-  },
-  light: {
-    bg: 'bg-brand-cream-200',
-    text: 'text-brand-black',
-    accent: 'text-brand-orange',
-  },
-};
-
-// TypeScript now knows styles is definitely defined because variant is constrained
-const styles: VariantStyle = variantStyles[variant];
+// Determine classes based on variant - inline to avoid TypeScript lookup issues
+const bgClass = variant === 'dark' ? 'bg-brand-black' : variant === 'light' ? 'bg-brand-cream-200' : 'bg-white';
+const textClass = variant === 'dark' ? 'text-white' : 'text-brand-black';
+const accentClass = 'text-brand-orange';
+const labelClass = variant === 'dark' ? 'text-brand-cream-400' : 'text-brand-gray';
 ---
 
-<section class:list={['trust-bar py-6 md:py-8', styles.bg, className]}>
+<section class:list={['trust-bar py-6 md:py-8', bgClass, className]}>
   <div class="container">
     <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12">
       {trustMetrics.map((metric) => (
         <div class="flex items-center gap-3">
-          <div class:list={['flex-shrink-0', styles.accent]}>
+          <div class:list={['flex-shrink-0', accentClass]}>
             <Icon name={metric.icon} size="lg" />
           </div>
           <div>
-            <div class:list={['font-display text-2xl md:text-3xl leading-none', styles.text]}>
+            <div class:list={['font-display text-2xl md:text-3xl leading-none', textClass]}>
               {metric.value}
             </div>
-            <div class:list={['text-body-sm', variant === 'dark' ? 'text-brand-cream-400' : 'text-brand-gray']}>
+            <div class:list={['text-body-sm', labelClass]}>
               {metric.label}
             </div>
           </div>
