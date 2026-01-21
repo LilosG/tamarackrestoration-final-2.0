@@ -252,9 +252,9 @@ export function getBreadcrumbSchema(items: BreadcrumbItem[]): BreadcrumbListSche
  * Combine multiple schema objects into array
  */
 export function combineSchemas(
-  ...schemas: (Record<string, unknown> | undefined | null)[]
-): Record<string, unknown>[] {
-  return schemas.filter((schema): schema is Record<string, unknown> => !!schema);
+  ...schemas: (object | undefined | null)[]
+): object[] {
+  return schemas.filter((schema): schema is object => !!schema);
 }
 
 // ===================

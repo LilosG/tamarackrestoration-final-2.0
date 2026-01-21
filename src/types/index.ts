@@ -234,7 +234,7 @@ export interface SEOProps {
   ogType?: 'website' | 'article' | 'local.business';
   ogImage?: string;
   twitterCard?: 'summary' | 'summary_large_image';
-  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  jsonLd?: object | object[];
 }
 
 export interface BreadcrumbItem {

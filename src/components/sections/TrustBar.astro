@@ -33,7 +33,7 @@ const variantStyles: Record<string, { bg: string; text: string; accent: string }
   },
 };
 
-const styles = variantStyles[variant];
+const styles = variantStyles[variant] ?? variantStyles.default;
 ---
 
 <section class:list={['trust-bar py-6 md:py-8', styles.bg, className]}>
