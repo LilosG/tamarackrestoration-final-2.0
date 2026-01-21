@@ -1,0 +1,680 @@
+---
+/**
+ * Mold Removal - Service Pillar Page
+ * ===================================
+ * Comprehensive page covering mold removal/remediation services
+ * SEO-optimized for "mold removal" and "mold remediation" keywords
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import CTABanner from '@/components/sections/CTABanner.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { services, cities, business } from '@/data/site';
+import { 
+  getServiceTitle, 
+  getServiceDescription, 
+  getCanonicalUrl, 
+  getServiceSchema,
+  getServiceBreadcrumbs,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  combineSchemas
+} from '@/utils/seo';
+import type { FAQ as FAQType } from '@/types';
+
+// Get the service data
+const service = services.find(s => s.slug === 'mold-removal')!;
+
+// SEO data
+const title = getServiceTitle(service.name);
+const description = 'Professional mold removal and remediation in North San Diego County. IICRC certified technicians, safe containment procedures, and complete restoration. Free inspections. Call (760) 500-2211.';
+const canonical = getCanonicalUrl(`/services/${service.slug}/`);
+const breadcrumbs = getServiceBreadcrumbs(service);
+
+// Service-specific FAQs
+const moldFaqs: FAQType[] = [
+  {
+    question: 'How do I know if I have a mold problem?',
+    answer: 'Common signs include visible mold growth (black, green, or white patches), a persistent musty odor, water stains or discoloration on walls/ceilings, recent water damage, and health symptoms like allergies, respiratory issues, or headaches that improve when you leave the building. If you suspect mold, we offer professional inspections to identify the type and extent of contamination.',
+  },
+  {
+    question: 'Is mold dangerous to my health?',
+    answer: 'Yes, mold exposure can cause health problems, especially for those with allergies, asthma, or compromised immune systems. Symptoms include nasal congestion, throat irritation, coughing, eye irritation, and skin rashes. Some molds produce mycotoxins that can cause more serious health effects. Professional removal is important to protect your family\'s health.',
+  },
+  {
+    question: 'Can I remove mold myself?',
+    answer: 'Small areas of mold (less than 10 square feet) on non-porous surfaces can sometimes be cleaned with proper precautions. However, professional remediation is recommended for larger areas, mold in HVAC systems, mold caused by sewage or contaminated water, and any situation where mold has penetrated porous materials like drywall or insulation. DIY removal often spreads spores and makes the problem worse.',
+  },
+  {
+    question: 'How long does mold remediation take?',
+    answer: 'The timeline depends on the extent of contamination. Small, contained areas may be remediated in 1-3 days. Larger projects involving multiple rooms or significant structural involvement can take 1-2 weeks. We provide a detailed timeline after our initial assessment and keep you informed throughout the process.',
+  },
+  {
+    question: 'Will my insurance cover mold removal?',
+    answer: 'Coverage varies by policy. Mold resulting from a "covered peril" like a burst pipe is often covered, while mold from long-term neglect or humidity typically isn\'t. We work with all major insurance carriers and can help document the cause and extent of damage to support your claim. We recommend reviewing your policy or contacting your agent for specifics.',
+  },
+  {
+    question: 'How do you prevent mold from coming back?',
+    answer: 'Effective mold prevention requires addressing the moisture source. We identify and help correct the underlying cause—whether it\'s a leak, poor ventilation, or humidity issues. We also apply antimicrobial treatments, recommend proper ventilation improvements, and provide guidance on maintaining humidity levels below 60% to prevent future growth.',
+  },
+  {
+    question: 'What\'s the difference between mold removal and mold remediation?',
+    answer: 'Mold removal refers to physically removing mold from surfaces, while mold remediation is a comprehensive process that includes containment, air filtration, removing contaminated materials, cleaning, and preventing future growth. True remediation addresses the root cause and restores your property to a safe, healthy condition—not just removing visible mold.',
+  },
+  {
+    question: 'Do you offer mold testing and inspections?',
+    answer: 'Yes, we provide comprehensive mold inspections including visual assessment, moisture mapping, and air quality testing when needed. We can identify the type of mold present, the extent of contamination, and the moisture source causing the problem. Testing helps determine the appropriate remediation approach and verifies successful completion.',
+  },
+];
+
+// Cities served - for internal linking
+const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
+
+// Related services
+const relatedServices = services.filter(s => 
+  ['water-damage-restoration', 'water-leak-repair', 'flood-cleanup'].includes(s.slug)
+);
+
+// Schema markup
+const serviceSchema = getServiceSchema(service, citiesServed);
+const faqSchema = getFAQSchema(moldFaqs);
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-brand-black overflow-hidden min-h-[550px] lg:min-h-[600px] flex items-center">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img 
+        src={service.image}
+        alt="Professional mold removal and remediation services"
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70"></div>
+    </div>
+    
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+      
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Content -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-6 backdrop-blur-sm">
+            <Icon name="shield" size="sm" />
+            IICRC Certified Mold Remediation
+          </div>
+          
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 leading-[1.1]">
+            Professional Mold Removal in{' '}
+            <span class="text-brand-orange">North San Diego County</span>
+          </h1>
+          
+          <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+            Safe, thorough mold remediation to protect your health and property. We eliminate mold at its source and restore healthy indoor air quality.
+          </p>
+          
+          <!-- Trust Indicators -->
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+            <div class="flex items-center gap-2">
+              <div class="flex items-center gap-0.5">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                ))}
+              </div>
+              <span class="text-white font-semibold">{business.rating}</span>
+              <span class="text-brand-cream-400">({business.reviewCount} reviews)</span>
+            </div>
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="award" size="md" class="text-brand-orange" />
+              <span>IICRC Certified</span>
+            </div>
+          </div>
+          
+          <!-- CTA Buttons (Mobile) -->
+          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+              <Icon name="phone" size="md" />
+              Call {business.phoneFormatted}
+            </Button>
+            <Button href="#contact-form" variant="outline" size="lg" class="justify-center border-white/30 text-white hover:bg-white hover:text-brand-black">
+              Free Inspection
+            </Button>
+          </div>
+          
+          <!-- Phone CTA (Desktop) -->
+          <div class="hidden lg:flex items-center gap-6 mt-2">
+            <a 
+              href={`tel:${business.phone}`}
+              class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+            >
+              <span class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+                <Icon name="phone" size="lg" class="text-white" />
+              </span>
+              <span>
+                <span class="block text-sm text-brand-cream-400">Schedule Free Inspection</span>
+                <span class="block font-bold text-2xl">{business.phoneFormatted}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Lead Form (Desktop) -->
+        <div class="hidden lg:block lg:col-span-5" id="contact-form">
+          <div class="relative">
+            <div class="absolute -inset-1 bg-brand-orange/20 rounded-2xl blur-xl"></div>
+            <LeadForm 
+              variant="card"
+              title="Free Mold Inspection"
+              subtitle="We'll assess your property and provide a detailed plan"
+              source="service-mold-removal"
+              class="relative"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-orange to-transparent"></div>
+  </section>
+  
+  <!-- Trust Bar -->
+  <TrustBar variant="light" />
+  
+  <!-- Health Risks Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-display text-display-lg text-brand-black mb-6 text-center">
+          Why Mold Requires Professional Remediation
+        </h2>
+        
+        <div class="prose prose-lg mx-auto mb-12">
+          <p class="text-body-lg text-brand-gray leading-relaxed">
+            Mold is more than an eyesore—it's a health hazard that can affect your family's wellbeing and damage your property's structure. In North San Diego County's coastal climate, humidity and occasional water intrusion create ideal conditions for mold growth, often in hidden areas like wall cavities, under flooring, and inside HVAC systems.
+          </p>
+          
+          <p class="text-body-lg text-brand-gray leading-relaxed">
+            Professional mold remediation isn't just about removing visible mold. It requires proper containment to prevent spore spread, HEPA air filtration, safe removal of contaminated materials, and addressing the moisture source that allowed mold to grow in the first place.
+          </p>
+        </div>
+        
+        <!-- Health Effects Grid -->
+        <div class="bg-error-50 border border-error/20 rounded-xl p-6 lg:p-8 mb-8">
+          <h3 class="font-heading font-bold text-display-sm text-brand-black mb-6 flex items-center gap-3">
+            <Icon name="alert-triangle" size="lg" class="text-error" />
+            Health Effects of Mold Exposure
+          </h3>
+          
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+              <div class="w-2 h-2 rounded-full bg-error flex-shrink-0"></div>
+              <span class="text-brand-gray">Respiratory issues & coughing</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+              <div class="w-2 h-2 rounded-full bg-error flex-shrink-0"></div>
+              <span class="text-brand-gray">Nasal & sinus congestion</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+              <div class="w-2 h-2 rounded-full bg-error flex-shrink-0"></div>
+              <span class="text-brand-gray">Eye & throat irritation</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+              <div class="w-2 h-2 rounded-full bg-error flex-shrink-0"></div>
+              <span class="text-brand-gray">Skin rashes & irritation</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+              <div class="w-2 h-2 rounded-full bg-error flex-shrink-0"></div>
+              <span class="text-brand-gray">Headaches & fatigue</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+              <div class="w-2 h-2 rounded-full bg-error flex-shrink-0"></div>
+              <span class="text-brand-gray">Worsened asthma symptoms</span>
+            </div>
+          </div>
+          
+          <p class="text-body-sm text-brand-gray mt-4">
+            <strong>At-risk groups:</strong> Children, elderly, those with respiratory conditions or compromised immune systems are especially vulnerable to mold-related health effects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Mold Remediation Process -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          Our Mold Remediation Process
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          A comprehensive, IICRC-certified approach that eliminates mold safely and prevents it from returning.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Step 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              1
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Inspection & Assessment</h3>
+              <p class="text-brand-gray mb-4">
+                We thoroughly inspect your property to identify all mold growth—visible and hidden. Using moisture meters and thermal imaging, we locate water intrusion sources and map the full extent of contamination.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Visual inspection of all areas
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Moisture mapping with meters
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Air quality testing if needed
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              2
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Containment & Protection</h3>
+              <p class="text-brand-gray mb-4">
+                Before any removal begins, we establish containment barriers using plastic sheeting and negative air pressure to prevent mold spores from spreading to unaffected areas of your home.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Plastic containment barriers
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Negative air pressure systems
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  HVAC isolation
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              3
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Air Filtration</h3>
+              <p class="text-brand-gray mb-4">
+                Throughout the remediation process, we run industrial HEPA air scrubbers to capture airborne mold spores, protecting both our team and your family while we work.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  HEPA air scrubbers
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Negative air machines
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Continuous air quality monitoring
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              4
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Mold Removal</h3>
+              <p class="text-brand-gray mb-4">
+                Our technicians safely remove all mold-contaminated materials. Porous materials like drywall and insulation are removed and disposed of properly, while non-porous surfaces are treated and cleaned.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Safe removal of contaminated materials
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Proper disposal protocols
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Surface treatment & cleaning
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              5
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Cleaning & Treatment</h3>
+              <p class="text-brand-gray mb-4">
+                All affected areas are thoroughly cleaned with antimicrobial solutions. We treat structural materials to kill remaining spores and prevent future mold growth.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Antimicrobial application
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  HEPA vacuuming all surfaces
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Encapsulation where appropriate
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              6
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Restoration & Prevention</h3>
+              <p class="text-brand-gray mb-4">
+                We repair and restore affected areas—drywall, flooring, painting—and address the moisture source to prevent mold from returning. You get a complete solution, not just a temporary fix.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Structural repairs
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Moisture source correction
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Post-remediation verification
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Signs of Mold Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-brand-orange/5 rounded-2xl"></div>
+            <img 
+              src="/images/services/mold/moisture-meter.jpg" 
+              alt="Professional mold inspection with moisture meter"
+              class="relative rounded-xl shadow-soft-xl w-full"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <h2 class="font-display text-display-lg text-brand-black mb-6">
+            Signs You May Have a Mold Problem
+          </h2>
+          
+          <p class="text-body-lg text-brand-gray mb-6">
+            Mold often grows in hidden areas before becoming visible. Watch for these warning signs and call for a professional inspection if you notice any:
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="search" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Visible Mold Growth</h3>
+                <p class="text-body-sm text-brand-gray">Black, green, white, or fuzzy patches on walls, ceilings, floors, or other surfaces—even small spots can indicate larger hidden problems.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="alert-triangle" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Musty, Earthy Odors</h3>
+                <p class="text-body-sm text-brand-gray">A persistent musty smell, especially in basements, bathrooms, or areas with water exposure, often indicates hidden mold growth.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="droplet" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Water Damage History</h3>
+                <p class="text-body-sm text-brand-gray">Past leaks, flooding, or water damage—even if dried—create conditions for mold growth within walls and under flooring.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="info" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Health Symptoms</h3>
+                <p class="text-body-sm text-brand-gray">Unexplained allergies, respiratory issues, or symptoms that improve when away from home may indicate mold exposure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- What's Included -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          What's Included in Our Mold Remediation Service
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          Complete mold elimination from inspection to restoration—handled by certified professionals.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {service.features.map((feature) => (
+          <div class="bg-white rounded-xl p-6 shadow-soft">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+                <Icon name="check-circle" size="md" class="text-brand-orange" />
+              </div>
+              <h3 class="font-heading font-bold text-brand-black">{feature}</h3>
+            </div>
+          </div>
+        ))}
+        
+        <!-- Additional features -->
+        <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-brand-black">Thermal Imaging</h3>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-brand-black">Air Quality Testing</h3>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-brand-black">Insurance Documentation</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cities We Serve Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          Mold Removal Throughout North San Diego County
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          We provide professional mold remediation services to homes and businesses across the region. Select your city for location-specific information.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {citiesServed.map((city) => (
+          <a 
+            href={`/service-area/${city.slug}/mold-removal/`}
+            class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
+          >
+            <Icon name="map-pin" size="md" class="text-brand-orange group-hover:text-white flex-shrink-0" />
+            <div>
+              <span class="font-heading font-bold text-brand-black group-hover:text-white">
+                Mold Removal in {city.name}
+              </span>
+            </div>
+            <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <Testimonials 
+    limit={3}
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- Related Services -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          Related Services
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          Mold often results from water damage or moisture issues. We offer complete solutions for all related problems.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        {relatedServices.map((relatedService) => (
+          <a 
+            href={`/services/${relatedService.slug}/`}
+            class="group bg-white border border-brand-cream-300 rounded-xl p-6 hover:border-brand-orange hover:shadow-card transition-all"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                <Icon name={relatedService.icon} size="lg" />
+              </div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black group-hover:text-brand-orange transition-colors">
+                {relatedService.name}
+              </h3>
+            </div>
+            <p class="text-brand-gray text-body-md mb-4">
+              {relatedService.shortDescription}
+            </p>
+            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-body-sm group-hover:gap-2 transition-all">
+              Learn More
+              <Icon name="arrow-right" size="sm" />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <FAQ 
+    title="Mold Removal FAQs"
+    subtitle="Get answers to common questions about mold and our remediation process"
+    faqs={moldFaqs}
+    showViewAll={false}
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- Final CTA Banner -->
+  <CTABanner 
+    variant="emergency"
+    title="Concerned About Mold? Get a Free Inspection."
+    subtitle="Our certified technicians will assess your property and provide a detailed remediation plan"
+  />
+  
+  <!-- Mobile Lead Form -->
+  <section class="section lg:hidden bg-brand-cream-200" id="mobile-contact-form">
+    <div class="container">
+      <LeadForm 
+        variant="card"
+        title="Free Mold Inspection"
+        subtitle="We'll assess your property and provide a detailed plan"
+        source="service-mold-removal-mobile"
+      />
+    </div>
+  </section>
+</BaseLayout>
