@@ -1,0 +1,699 @@
+---
+/**
+ * Fire Damage Restoration - Service Pillar Page
+ * ==============================================
+ * Comprehensive page covering fire and smoke damage restoration
+ * SEO-optimized for "fire damage restoration" keywords
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import CTABanner from '@/components/sections/CTABanner.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { services, cities, business } from '@/data/site';
+import { 
+  getServiceTitle, 
+  getServiceDescription, 
+  getCanonicalUrl, 
+  getServiceSchema,
+  getServiceBreadcrumbs,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  combineSchemas
+} from '@/utils/seo';
+import type { FAQ as FAQType } from '@/types';
+
+// Get the service data
+const service = services.find(s => s.slug === 'fire-damage-restoration')!;
+
+// SEO data
+const title = getServiceTitle(service.name);
+const description = 'Professional fire and smoke damage restoration in North San Diego County. 24/7 emergency response, board-up services, smoke/soot removal, and complete reconstruction. Call (760) 500-2211.';
+const canonical = getCanonicalUrl(`/services/${service.slug}/`);
+const breadcrumbs = getServiceBreadcrumbs(service);
+
+// Service-specific FAQs
+const fireFaqs: FAQType[] = [
+  {
+    question: 'What should I do immediately after a fire?',
+    answer: 'First, ensure everyone is safe and don\'t re-enter the building until cleared by the fire department. Once safe: contact your insurance company to start a claim, call a restoration company for emergency board-up and assessment, don\'t attempt to clean anything yourself (improper cleaning can set stains permanently), and document damage with photos if you can safely do so. We offer 24/7 emergency response to secure and assess your property.',
+  },
+  {
+    question: 'How long does fire damage restoration take?',
+    answer: 'The timeline varies significantly based on damage extent. Minor smoke damage in one room might take 1-2 weeks. Moderate fire damage affecting multiple rooms typically takes 2-4 weeks. Extensive structural damage requiring reconstruction can take 2-6 months. We provide a detailed timeline after our initial assessment and keep you informed throughout the process.',
+  },
+  {
+    question: 'Will my insurance cover fire damage restoration?',
+    answer: 'Most homeowner\'s insurance policies cover fire damage, including structural repairs, smoke damage, content cleaning/replacement, and additional living expenses if you can\'t stay in your home. We work directly with all major insurance carriers and can help document damage, provide detailed estimates, and communicate with your adjuster to streamline the claims process.',
+  },
+  {
+    question: 'Can smoke damage be removed from my belongings?',
+    answer: 'Many items can be professionally cleaned and restored, including clothing, furniture, electronics, documents, and photographs. We use specialized techniques like ultrasonic cleaning, ozone treatment, and thermal fogging depending on the item and type of smoke damage. Some items may be beyond restoration, and we\'ll help you document those for your insurance claim.',
+  },
+  {
+    question: 'What causes the smell after a fire?',
+    answer: 'The persistent smoke odor comes from microscopic soot particles that penetrate porous materials like drywall, carpet, fabric, and wood. These particles continue releasing odor until properly removed. We use professional techniques including HEPA air filtration, thermal fogging, ozone treatment, and sealing to completely eliminate smoke odors—not just mask them.',
+  },
+  {
+    question: 'Is it safe to stay in my home after a fire?',
+    answer: 'Generally, no—at least not until a professional assessment is complete. Even small fires produce toxic byproducts in smoke and soot that can affect air quality. There may also be structural concerns, electrical hazards, or water damage from firefighting efforts. We\'ll assess safety and let you know when it\'s safe to return or if temporary relocation is needed.',
+  },
+  {
+    question: 'Do you handle the entire restoration process?',
+    answer: 'Yes, we provide complete fire damage restoration from emergency response to final reconstruction. This includes board-up and securing the property, water extraction (from firefighting), smoke and soot removal, odor elimination, content cleaning and pack-out, structural repairs, and full reconstruction. You have one point of contact throughout the entire process.',
+  },
+  {
+    question: 'What\'s the difference between smoke damage and fire damage?',
+    answer: 'Fire damage refers to destruction caused directly by flames—charred materials, melted items, and structural damage. Smoke damage is caused by soot and smoke particles that spread throughout the property, often affecting areas untouched by flames. Smoke damage can discolor surfaces, corrode metals, and leave persistent odors. Both require professional restoration but use different techniques.',
+  },
+];
+
+// Cities served - for internal linking
+const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
+
+// Related services
+const relatedServices = services.filter(s => 
+  ['water-damage-restoration', 'mold-removal'].includes(s.slug)
+);
+
+// Schema markup
+const serviceSchema = getServiceSchema(service, citiesServed);
+const faqSchema = getFAQSchema(fireFaqs);
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-brand-black overflow-hidden min-h-[550px] lg:min-h-[600px] flex items-center">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img 
+        src={service.image}
+        alt="Professional fire damage restoration services"
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70"></div>
+    </div>
+    
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+      
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Content -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-6 backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+            </span>
+            24/7 Emergency Fire Response
+          </div>
+          
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 leading-[1.1]">
+            Fire & Smoke Damage Restoration in{' '}
+            <span class="text-brand-orange">North San Diego County</span>
+          </h1>
+          
+          <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+            Complete fire damage restoration from emergency board-up to full reconstruction. We help you recover and rebuild after the devastation of a fire.
+          </p>
+          
+          <!-- Trust Indicators -->
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+            <div class="flex items-center gap-2">
+              <div class="flex items-center gap-0.5">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                ))}
+              </div>
+              <span class="text-white font-semibold">{business.rating}</span>
+              <span class="text-brand-cream-400">({business.reviewCount} reviews)</span>
+            </div>
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="award" size="md" class="text-brand-orange" />
+              <span>IICRC Certified</span>
+            </div>
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="clock" size="md" class="text-brand-orange" />
+              <span>60-Min Response</span>
+            </div>
+          </div>
+          
+          <!-- CTA Buttons (Mobile) -->
+          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+              <Icon name="phone" size="md" />
+              Call {business.phoneFormatted}
+            </Button>
+            <Button href="#contact-form" variant="outline" size="lg" class="justify-center border-white/30 text-white hover:bg-white hover:text-brand-black">
+              Get Emergency Help
+            </Button>
+          </div>
+          
+          <!-- Phone CTA (Desktop) -->
+          <div class="hidden lg:flex items-center gap-6 mt-2">
+            <a 
+              href={`tel:${business.phone}`}
+              class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+            >
+              <span class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+                <Icon name="phone" size="lg" class="text-white" />
+              </span>
+              <span>
+                <span class="block text-sm text-brand-cream-400">24/7 Emergency Line</span>
+                <span class="block font-bold text-2xl">{business.phoneFormatted}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Lead Form (Desktop) -->
+        <div class="hidden lg:block lg:col-span-5" id="contact-form">
+          <div class="relative">
+            <div class="absolute -inset-1 bg-brand-orange/20 rounded-2xl blur-xl"></div>
+            <LeadForm 
+              variant="card"
+              title="Get Emergency Help"
+              subtitle="We respond within 60 minutes, 24/7"
+              source="service-fire-damage-restoration"
+              class="relative"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-orange to-transparent"></div>
+  </section>
+  
+  <!-- Trust Bar -->
+  <TrustBar variant="light" />
+  
+  <!-- Understanding Fire Damage Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-display text-display-lg text-brand-black mb-6 text-center">
+          After a Fire: What You Need to Know
+        </h2>
+        
+        <div class="prose prose-lg mx-auto mb-12">
+          <p class="text-body-lg text-brand-gray leading-relaxed">
+            A fire is one of the most devastating events a property owner can experience. Beyond the obvious destruction from flames, fires leave behind complex damage: toxic smoke residue that penetrates every surface, water damage from firefighting efforts, and structural concerns that may not be immediately visible.
+          </p>
+          
+          <p class="text-body-lg text-brand-gray leading-relaxed">
+            Professional fire damage restoration is essential—not just to rebuild, but to ensure your property is safe and free from hidden hazards. Soot is acidic and corrosive, continuing to cause damage long after the flames are out. Smoke particles penetrate deep into materials, releasing toxins and odors for months if not properly addressed.
+          </p>
+        </div>
+        
+        <!-- Types of Fire Damage -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-brand-cream-200 rounded-xl p-6 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="flame" size="xl" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Fire Damage</h3>
+            <p class="text-body-sm text-brand-gray">Charring, melting, and structural damage from direct flame contact. Requires careful assessment and reconstruction.</p>
+          </div>
+          
+          <div class="bg-brand-cream-200 rounded-xl p-6 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="waves" size="xl" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Smoke Damage</h3>
+            <p class="text-body-sm text-brand-gray">Soot residue, discoloration, and persistent odors that spread throughout the property, even to unburned areas.</p>
+          </div>
+          
+          <div class="bg-brand-cream-200 rounded-xl p-6 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="droplet" size="xl" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Water Damage</h3>
+            <p class="text-body-sm text-brand-gray">Firefighting efforts often leave significant water damage that must be addressed to prevent mold growth.</p>
+          </div>
+        </div>
+        
+        <!-- Urgency Box -->
+        <div class="bg-warning-50 border border-warning/30 rounded-xl p-6 lg:p-8">
+          <h3 class="font-heading font-bold text-display-sm text-brand-black mb-4 flex items-center gap-3">
+            <Icon name="clock" size="lg" class="text-warning-700" />
+            Why Immediate Action Matters
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-warning-700 text-white flex items-center justify-center text-body-xs font-bold flex-shrink-0 mt-0.5">!</div>
+              <p class="text-brand-gray text-body-md"><strong>Soot is corrosive</strong>—it etches into glass, metal, and surfaces within hours, causing permanent damage.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-warning-700 text-white flex items-center justify-center text-body-xs font-bold flex-shrink-0 mt-0.5">!</div>
+              <p class="text-brand-gray text-body-md"><strong>Smoke penetrates</strong>—waiting allows smoke particles to absorb deeper into materials.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-warning-700 text-white flex items-center justify-center text-body-xs font-bold flex-shrink-0 mt-0.5">!</div>
+              <p class="text-brand-gray text-body-md"><strong>Water damage spreads</strong>—standing water from firefighting leads to mold within 24-48 hours.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-warning-700 text-white flex items-center justify-center text-body-xs font-bold flex-shrink-0 mt-0.5">!</div>
+              <p class="text-brand-gray text-body-md"><strong>Security risks</strong>—unsecured property is vulnerable to weather, animals, and theft.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Fire Restoration Process -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          Our Fire Damage Restoration Process
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          A comprehensive approach to restore your property completely—from emergency response to move-in ready.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Step 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              1
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Emergency Response & Board-Up</h3>
+              <p class="text-brand-gray mb-4">
+                We arrive within 60 minutes to secure your property. This includes boarding up windows and doors, tarping damaged roofs, and fencing if needed to prevent further damage and unauthorized entry.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  24/7 emergency response
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Board-up and roof tarping
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Property security
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              2
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Assessment & Documentation</h3>
+              <p class="text-brand-gray mb-4">
+                Our team conducts a thorough assessment of all damage—structural, smoke, water, and contents. We document everything with photos and detailed reports for your insurance claim.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Complete damage assessment
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Photo documentation
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Detailed scope of work
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              3
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Water Extraction & Drying</h3>
+              <p class="text-brand-gray mb-4">
+                Firefighting efforts often leave significant water damage. We extract standing water and use industrial dehumidifiers to dry the structure before restoration begins.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Water extraction
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Structural drying
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Mold prevention
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              4
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Smoke & Soot Removal</h3>
+              <p class="text-brand-gray mb-4">
+                Using specialized equipment and techniques, we remove smoke residue and soot from all surfaces. This includes walls, ceilings, HVAC systems, and any salvageable contents.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Soot removal from all surfaces
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  HVAC cleaning
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Specialized cleaning techniques
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              5
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Odor Elimination</h3>
+              <p class="text-brand-gray mb-4">
+                Smoke odor can persist for months if not properly treated. We use professional techniques including thermal fogging, ozone treatment, and hydroxyl generators to completely eliminate odors.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Thermal fogging
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Ozone treatment
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Sealing & encapsulation
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="bg-white rounded-xl p-6 shadow-card">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
+              6
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Reconstruction & Restoration</h3>
+              <p class="text-brand-gray mb-4">
+                The final phase involves rebuilding damaged structures and restoring your property to its pre-fire condition—or better. From drywall to flooring to complete room rebuilds.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Structural repairs
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Drywall, flooring, painting
+                </li>
+                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
+                  Final walkthrough
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Content Restoration Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-display text-display-lg text-brand-black mb-6">
+            Content Cleaning & Restoration
+          </h2>
+          
+          <p class="text-body-lg text-brand-gray mb-6">
+            Fire doesn't just damage your building—it affects everything inside. Many items that appear ruined can actually be professionally cleaned and restored. We handle your belongings with care, saving what we can and documenting what we can't for your insurance claim.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="check-circle" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Pack-Out Services</h3>
+                <p class="text-body-sm text-brand-gray">We carefully inventory and pack your contents for off-site cleaning in our specialized facility.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="check-circle" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Specialized Cleaning</h3>
+                <p class="text-body-sm text-brand-gray">Ultrasonic cleaning for electronics and delicate items, dry cleaning for textiles, and document restoration.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="check-circle" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Furniture Restoration</h3>
+                <p class="text-body-sm text-brand-gray">Professional cleaning and refinishing of wood furniture, upholstery cleaning, and deodorization.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
+                <Icon name="check-circle" size="md" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Storage Solutions</h3>
+                <p class="text-body-sm text-brand-gray">Secure storage for your belongings during the restoration process until your property is ready.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="absolute -inset-4 bg-brand-orange/5 rounded-2xl"></div>
+          <img 
+            src="/images/services/fire/containment-setup.jpg" 
+            alt="Fire damage restoration team at work"
+            class="relative rounded-xl shadow-soft-xl w-full"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- What's Included -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          What's Included in Our Fire Damage Restoration
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          Complete restoration services from emergency response to final reconstruction—one team, one point of contact.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {service.features.map((feature) => (
+          <div class="bg-white rounded-xl p-6 shadow-soft">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+                <Icon name="check-circle" size="md" class="text-brand-orange" />
+              </div>
+              <h3 class="font-heading font-bold text-brand-black">{feature}</h3>
+            </div>
+          </div>
+        ))}
+        
+        <!-- Additional features -->
+        <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-brand-black">Pack-Out & Storage</h3>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-brand-black">HVAC Cleaning</h3>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+              <Icon name="check-circle" size="md" class="text-brand-orange" />
+            </div>
+            <h3 class="font-heading font-bold text-brand-black">Insurance Coordination</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cities We Serve Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          Fire Damage Restoration Throughout North San Diego County
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          We provide 24/7 emergency fire damage restoration to homes and businesses across the region. Select your city for location-specific information.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {citiesServed.map((city) => (
+          <a 
+            href={`/service-area/${city.slug}/fire-damage-restoration/`}
+            class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
+          >
+            <Icon name="map-pin" size="md" class="text-brand-orange group-hover:text-white flex-shrink-0" />
+            <div>
+              <span class="font-heading font-bold text-brand-black group-hover:text-white">
+                Fire Restoration in {city.name}
+              </span>
+            </div>
+            <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <Testimonials 
+    limit={3}
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- Related Services -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          Related Services
+        </h2>
+        <p class="text-body-lg text-brand-gray">
+          Fire damage often involves water damage and can lead to mold if not properly addressed. We provide complete solutions.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        {relatedServices.map((relatedService) => (
+          <a 
+            href={`/services/${relatedService.slug}/`}
+            class="group bg-white border border-brand-cream-300 rounded-xl p-6 hover:border-brand-orange hover:shadow-card transition-all"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                <Icon name={relatedService.icon} size="lg" />
+              </div>
+              <h3 class="font-heading font-bold text-display-sm text-brand-black group-hover:text-brand-orange transition-colors">
+                {relatedService.name}
+              </h3>
+            </div>
+            <p class="text-brand-gray text-body-md mb-4">
+              {relatedService.shortDescription}
+            </p>
+            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-body-sm group-hover:gap-2 transition-all">
+              Learn More
+              <Icon name="arrow-right" size="sm" />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <FAQ 
+    title="Fire Damage Restoration FAQs"
+    subtitle="Get answers to common questions about fire damage and our restoration process"
+    faqs={fireFaqs}
+    showViewAll={false}
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- Final CTA Banner -->
+  <CTABanner 
+    variant="emergency"
+    title="Fire Emergency? We're Here 24/7."
+    subtitle="Call now for immediate emergency board-up and restoration services"
+  />
+  
+  <!-- Mobile Lead Form -->
+  <section class="section lg:hidden bg-brand-cream-200" id="mobile-contact-form">
+    <div class="container">
+      <LeadForm 
+        variant="card"
+        title="Get Emergency Help"
+        subtitle="We respond within 60 minutes, 24/7"
+        source="service-fire-damage-restoration-mobile"
+      />
+    </div>
+  </section>
+</BaseLayout>
