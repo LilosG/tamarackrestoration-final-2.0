@@ -1,0 +1,515 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import CTABanner from '@/components/sections/CTABanner.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Button from '@/components/ui/Button.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { siteData } from '@/data/site';
+import { 
+  generateTitle, 
+  getCanonicalUrl, 
+  getServiceSchema,
+  combineSchemas,
+  getFAQSchema
+} from '@/utils/seo';
+
+const service = siteData.services.find(s => s.slug === 'flood-cleanup');
+const pageTitle = generateTitle('Flood Cleanup Services');
+const pageDescription = `Professional flood cleanup and water extraction in Carlsbad & North San Diego County. Call ${siteData.business.phone} for 24/7 emergency flood restoration. 60-minute response time.`;
+const canonicalUrl = getCanonicalUrl('/services/flood-cleanup/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Flood Cleanup', href: '/services/flood-cleanup/' }
+];
+
+const floodFAQs = [
+  {
+    question: "What's the difference between flood damage and water damage?",
+    answer: "Flood damage specifically refers to water intrusion from external sources like storms, flash floods, rising water tables, or overflowing bodies of water. Unlike typical water damage from plumbing failures, flood water is classified as Category 3 (black water) due to potential contamination from sewage, chemicals, and debris. This requires specialized cleanup protocols and often involves insurance claims through separate flood policies rather than standard homeowner's insurance."
+  },
+  {
+    question: "How quickly should I start flood cleanup after water recedes?",
+    answer: "Begin cleanup immediately—ideally within the first 24-48 hours. Mold can start growing within 24 hours of flooding, and every hour of delay increases damage to structural materials, flooring, and personal belongings. Our emergency teams respond within 60 minutes to begin water extraction and prevent secondary damage from setting in."
+  },
+  {
+    question: "Is flooded drywall always a total loss?",
+    answer: "Not always, but usually. Drywall that's been submerged in flood water (Category 3) must be removed to at least 12-24 inches above the water line due to wicking action. This contaminated drywall cannot be saved because it harbors bacteria and mold spores even after drying. Standard water damage from clean sources may allow drywall to be dried in place if caught quickly."
+  },
+  {
+    question: "Does homeowner's insurance cover flood damage?",
+    answer: "Standard homeowner's insurance typically does NOT cover flood damage—you need a separate flood insurance policy, usually through FEMA's National Flood Insurance Program (NFIP) or private insurers. We work with all major flood insurance providers and help document damage for your claim. If you're unsure about your coverage, we recommend contacting your insurance agent immediately."
+  },
+  {
+    question: "What items can be saved after a flood?",
+    answer: "Hard, non-porous items (glass, metal, hard plastic) can usually be cleaned and disinfected. Unfortunately, most porous items contaminated by flood water must be discarded, including mattresses, upholstered furniture, carpet padding, stuffed toys, particle board furniture, and paper documents. We help you document everything for insurance purposes before disposal."
+  },
+  {
+    question: "How do you handle mud and debris from flooding?",
+    answer: "Mud removal is critical and must happen before it dries and hardens. Our process includes: removing standing water, shoveling out wet mud while still soft, pressure washing hard surfaces, removing and disposing of contaminated materials, applying antimicrobial treatments, and setting up industrial drying equipment. The sooner we start, the easier the cleanup."
+  },
+  {
+    question: "What health risks come with flood damage?",
+    answer: "Flood water poses serious health risks including bacterial infections (E. coli, Salmonella), parasites, chemical contamination from household products and fuel, electrical hazards, and mold exposure. Our technicians wear full PPE and follow strict safety protocols. We recommend staying out of flooded areas until professionals assess the situation."
+  },
+  {
+    question: "How long does flood restoration take?",
+    answer: "Timeline depends on flood severity and property size. Water extraction typically takes 1-2 days, structural drying takes 3-5 days, and complete restoration (including repairs) can take 1-4 weeks. We provide detailed timelines during our initial assessment and keep you updated throughout the process."
+  }
+];
+
+const faqSchema = getFAQSchema(floodFAQs);
+const serviceSchema = getServiceSchema({
+  name: 'Flood Cleanup Services',
+  description: pageDescription,
+  url: canonicalUrl,
+  areaServed: siteData.serviceArea.cities.map(c => c.name),
+  provider: siteData.business.name
+});
+const jsonLd = combineSchemas([serviceSchema, faqSchema]);
+
+const processSteps = [
+  {
+    number: '1',
+    title: 'Emergency Response',
+    description: 'We respond within 60 minutes with industrial pumps and extraction equipment to remove standing flood water as quickly as possible.',
+    icon: 'phone'
+  },
+  {
+    number: '2',
+    title: 'Safety Assessment',
+    description: 'Our team assesses structural integrity, electrical hazards, and contamination levels before beginning cleanup. Your safety comes first.',
+    icon: 'shield'
+  },
+  {
+    number: '3',
+    title: 'Water Extraction & Debris Removal',
+    description: 'Using submersible pumps and truck-mounted extraction units, we remove all standing water, mud, and flood debris from your property.',
+    icon: 'droplet'
+  },
+  {
+    number: '4',
+    title: 'Contamination Control',
+    description: 'All flood-affected areas are treated with EPA-registered antimicrobials to eliminate bacteria, prevent mold, and neutralize odors.',
+    icon: 'check'
+  },
+  {
+    number: '5',
+    title: 'Structural Drying',
+    description: 'Industrial dehumidifiers and air movers create optimal drying conditions, with daily moisture monitoring until safe levels are achieved.',
+    icon: 'clock'
+  },
+  {
+    number: '6',
+    title: 'Restoration & Repair',
+    description: 'From drywall replacement to flooring installation, we restore your property to pre-flood condition with quality craftsmanship.',
+    icon: 'star'
+  }
+];
+
+const floodTypes = [
+  {
+    title: 'Flash Flood Damage',
+    description: 'Sudden, intense flooding from heavy rainfall overwhelming drainage systems. Requires immediate extraction to prevent structural damage.',
+    icon: 'alert'
+  },
+  {
+    title: 'Storm Surge Flooding',
+    description: 'Coastal flooding during major storms. Often contains salt water which causes additional corrosion and damage to electrical systems.',
+    icon: 'droplet'
+  },
+  {
+    title: 'River/Creek Overflow',
+    description: 'Rising water from nearby waterways. May bring sediment, debris, and contamination requiring specialized cleanup.',
+    icon: 'droplet'
+  },
+  {
+    title: 'Groundwater Intrusion',
+    description: 'Rising water table pushing through foundations and basement floors. Often affects lower levels and crawl spaces.',
+    icon: 'home'
+  }
+];
+
+const includedServices = [
+  { title: '24/7 Emergency Response', description: '60-minute arrival for flood emergencies' },
+  { title: 'Complete Water Extraction', description: 'Industrial pumps remove all standing water' },
+  { title: 'Mud & Debris Removal', description: 'Full cleanup of flood deposits' },
+  { title: 'Antimicrobial Treatment', description: 'EPA-registered products eliminate contaminants' },
+  { title: 'Structural Drying', description: 'Industrial equipment ensures complete drying' },
+  { title: 'Content Pack-Out', description: 'Salvageable items removed for cleaning' },
+  { title: 'Mold Prevention', description: 'Proactive treatment prevents growth' },
+  { title: 'Insurance Documentation', description: 'Detailed reports for your claim' },
+  { title: 'Odor Elimination', description: 'Remove musty flood smells completely' },
+  { title: 'Reconstruction Services', description: 'Full restoration to pre-flood condition' }
+];
+
+const relatedServices = siteData.services.filter(s => 
+  ['water-damage-restoration', 'mold-removal', 'sewage-cleanup'].includes(s.slug)
+);
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  canonical={canonicalUrl}
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-brand-black text-white overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70 z-10"></div>
+      <img 
+        src="/images/services/flood-cleanup-hero.jpg" 
+        alt="Flood cleanup and water extraction services"
+        class="w-full h-full object-cover opacity-40"
+        loading="eager"
+      />
+    </div>
+    
+    <div class="relative z-20 container mx-auto px-4 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div>
+          <Breadcrumbs items={breadcrumbs} variant="dark" />
+          
+          <div class="inline-flex items-center gap-2 bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Icon name="alert" class="w-4 h-4" />
+            24/7 Emergency Flood Response
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+            Professional Flood Cleanup in North San Diego County
+          </h1>
+          
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            When flood waters devastate your property, every minute counts. Our IICRC-certified team responds within 60 minutes with industrial extraction equipment to remove standing water, eliminate contamination, and restore your home or business.
+          </p>
+          
+          <!-- Trust Indicators -->
+          <div class="flex flex-wrap gap-6 mb-8">
+            <div class="flex items-center gap-2">
+              <Icon name="clock" class="w-5 h-5 text-brand-orange" />
+              <span class="text-gray-300">60-Min Response</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="shield" class="w-5 h-5 text-brand-orange" />
+              <span class="text-gray-300">IICRC Certified</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="star" class="w-5 h-5 text-brand-orange" />
+              <span class="text-gray-300">{siteData.business.reviews.count} 5-Star Reviews</span>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-4">
+            <Button href={`tel:${siteData.business.phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
+              <Icon name="phone" class="w-5 h-5" />
+              {siteData.business.phone}
+            </Button>
+            <Button href="#flood-process" variant="outline" size="lg">
+              Our Process
+            </Button>
+          </div>
+        </div>
+        
+        <!-- Right: Lead Form -->
+        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-brand-black mb-2">Get Emergency Help Now</h2>
+            <p class="text-gray-600">Fast response for flood damage emergencies</p>
+          </div>
+          <LeadForm 
+            service="Flood Cleanup"
+            source={canonicalUrl}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Trust Bar -->
+  <TrustBar variant="dark" />
+  
+  <!-- Flood Damage Urgency Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+          The Hidden Dangers of Flood Water
+        </h2>
+        <p class="text-xl text-gray-600">
+          Flood water isn't just regular water—it's classified as Category 3 "black water" containing sewage, bacteria, chemicals, and debris. Professional cleanup isn't optional—it's essential for your health and property.
+        </p>
+      </div>
+      
+      <!-- Contamination Warning -->
+      <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-6 mb-12 max-w-4xl mx-auto">
+        <div class="flex items-start gap-4">
+          <Icon name="alert" class="w-8 h-8 text-red-500 flex-shrink-0" />
+          <div>
+            <h3 class="text-xl font-bold text-red-700 mb-2">Health Hazard Warning</h3>
+            <p class="text-red-600">
+              Flood water may contain raw sewage, pesticides, petroleum products, and dangerous bacteria. Never wade through flood water without protection, and always hire certified professionals for cleanup to protect your family's health.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Flood Damage Timeline -->
+      <div class="bg-brand-cream rounded-2xl p-8 lg:p-12">
+        <h3 class="text-2xl font-bold text-brand-black mb-8 text-center">Flood Damage Timeline</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-yellow-600">0-24h</span>
+            </div>
+            <h4 class="font-bold text-brand-black mb-2">Immediate</h4>
+            <p class="text-gray-600 text-sm">Bacteria multiply rapidly. Mold spores begin colonization. Electrical systems remain hazardous.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-orange-600">24-48h</span>
+            </div>
+            <h4 class="font-bold text-brand-black mb-2">Critical</h4>
+            <p class="text-gray-600 text-sm">Visible mold growth begins. Drywall swells and deteriorates. Metal fixtures start corroding.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-red-600">48-72h</span>
+            </div>
+            <h4 class="font-bold text-brand-black mb-2">Severe</h4>
+            <p class="text-gray-600 text-sm">Extensive mold colonies form. Wood warps and buckles. Carpet and padding become unsalvageable.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-purple-600">72h+</span>
+            </div>
+            <h4 class="font-bold text-brand-black mb-2">Major Loss</h4>
+            <p class="text-gray-600 text-sm">Structural damage likely. Mold throughout building materials. Restoration costs multiply significantly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Types of Flood Damage -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+          Types of Flood Damage We Handle
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our team is equipped to handle all types of flooding situations, from flash floods to groundwater intrusion.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {floodTypes.map((type) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <div class="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
+              <Icon name={type.icon} class="w-6 h-6 text-brand-orange" />
+            </div>
+            <h3 class="text-lg font-bold text-brand-black mb-3">{type.title}</h3>
+            <p class="text-gray-600 text-sm">{type.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Process Section -->
+  <section id="flood-process" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+          Our Professional Flood Cleanup Process
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our systematic approach ensures thorough cleanup, contamination control, and complete restoration of your property.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {processSteps.map((step) => (
+          <div class="relative">
+            <div class="bg-brand-cream rounded-2xl p-8 h-full">
+              <div class="w-14 h-14 bg-brand-orange text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                {step.number}
+              </div>
+              <h3 class="text-xl font-bold text-brand-black mb-4">{step.title}</h3>
+              <p class="text-gray-600">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Emergency CTA -->
+  <CTABanner variant="emergency" />
+  
+  <!-- What's Included -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+          Complete Flood Restoration Services
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From emergency water extraction to full reconstruction, we handle every aspect of flood restoration.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+        {includedServices.map((item) => (
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+            <div class="flex items-start gap-3">
+              <Icon name="check" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 class="font-semibold text-brand-black text-sm mb-1">{item.title}</h4>
+                <p class="text-gray-500 text-xs">{item.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cities Served -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+          Flood Cleanup Across North San Diego County
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our emergency flood response teams serve communities throughout the region with 60-minute response times.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+        {siteData.serviceArea.cities.slice(0, 5).map((city) => (
+          <a 
+            href={`/service-area/${city.slug}/flood-cleanup/`}
+            class="group bg-brand-cream hover:bg-brand-orange rounded-lg p-4 text-center transition-all duration-300"
+          >
+            <span class="font-semibold text-brand-black group-hover:text-white transition-colors">
+              {city.name}
+            </span>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-8">
+        <Button href="/service-area/" variant="secondary">
+          View All Service Areas
+        </Button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <Testimonials />
+  
+  <!-- Related Services -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+          Related Restoration Services
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Flood damage often leads to additional issues. We offer comprehensive restoration services to address all your needs.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {relatedServices.map((service) => (
+          <a 
+            href={`/services/${service.slug}/`}
+            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
+          >
+            <div class="aspect-video bg-gray-200 overflow-hidden">
+              <img 
+                src={`/images/services/${service.slug}-thumb.jpg`} 
+                alt={service.name}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
+                {service.name}
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">{service.shortDescription}</p>
+              <span class="inline-flex items-center text-brand-orange font-semibold text-sm">
+                Learn More
+                <Icon name="arrow" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
+            Flood Cleanup Questions Answered
+          </h2>
+          <p class="text-xl text-gray-600">
+            Get answers to common questions about professional flood restoration services.
+          </p>
+        </div>
+        
+        <FAQ faqs={floodFAQs} />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final CTA -->
+  <section class="py-16 lg:py-24 bg-brand-black text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <Icon name="clock" class="w-4 h-4" />
+          60-Minute Emergency Response
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          Flood Damage? We're Here to Help.
+        </h2>
+        
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Don't wait for flood damage to get worse. Our certified technicians are standing by 24/7 to respond to your emergency and restore your property.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href={`tel:${siteData.business.phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
+            <Icon name="phone" class="w-5 h-5" />
+            Call {siteData.business.phone}
+          </Button>
+          <Button href="/contact/" variant="outline" size="lg">
+            Request Service Online
+          </Button>
+        </div>
+        
+        <p class="text-gray-400 mt-6">
+          Available 24 hours a day, 7 days a week throughout North San Diego County
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
