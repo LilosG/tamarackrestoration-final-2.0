@@ -1,0 +1,65 @@
+---
+import ServicePillarLayout from '@/layouts/ServicePillarLayout.astro';
+import type { FAQ } from '@/types';
+
+const serviceSlug = 'water-leak-repair';
+const metaDescription = 'Expert water leak detection and repair in North San Diego County. Slab leaks, pipe leaks, roof leaks. Non-invasive detection technology. Call (760) 500-2211.';
+
+const faqs: FAQ[] = [
+  { question: 'How do I know if I have a hidden water leak?', answer: 'Signs include unexplained high water bills, sounds of running water when nothing is on, wet spots on floors/walls/ceilings, musty odors, and low water pressure. Our detection technology can find leaks without tearing apart your home.' },
+  { question: 'What is a slab leak?', answer: 'A slab leak is a leak in the water pipes running beneath your home\'s concrete foundation. They\'re serious because they can cause foundation damage, mold growth, and significant water damage if not addressed quickly.' },
+  { question: 'How do you find hidden leaks?', answer: 'We use advanced technology including thermal imaging cameras, acoustic listening devices, and moisture meters to pinpoint leaks without invasive exploration. This saves time and minimizes damage to your property.' },
+  { question: 'How much does leak detection cost?', answer: 'We offer competitive pricing for leak detection services. The cost depends on the complexity, but finding a leak early saves thousands in water damage repairs. We provide free estimates.' },
+  { question: 'Can you repair the leak once you find it?', answer: 'Yes, we provide complete leak repair services. Depending on the location and severity, options include spot repairs, pipe rerouting, or repiping. We\'ll recommend the most cost-effective solution.' },
+  { question: 'Will insurance cover leak repairs?', answer: 'Policies vary. Sudden pipe bursts are usually covered. Gradual leaks from wear may not be. The resulting water damage is often covered even when the repair isn\'t. We help document everything for your claim.' },
+];
+---
+
+<ServicePillarLayout serviceSlug={serviceSlug} metaDescription={metaDescription} faqs={faqs}>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
+          Find and Fix Leaks Before They Cause Major Damage
+        </h2>
+        <div class="prose prose-lg mx-auto">
+          <p class="text-lg text-brand-gray leading-relaxed">
+            Hidden water leaks are silent destroyers. A small leak can waste thousands of gallons of water, cause mold growth, and lead to structural damage—all before you notice a problem.
+          </p>
+          <p class="text-lg text-brand-gray leading-relaxed">
+            Our advanced leak detection technology finds hidden leaks quickly and accurately, without tearing apart your walls or floors. Early detection saves you money on water bills and prevents costly damage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">Our Leak Detection & Repair Process</h2>
+        <p class="text-lg text-brand-gray">Advanced technology for accurate, non-invasive leak detection.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {[
+          { num: 1, title: 'Initial Assessment', desc: 'We review your concerns, check water meter readings, and inspect visible signs of leaks.' },
+          { num: 2, title: 'Thermal Imaging', desc: 'Infrared cameras detect temperature differences that indicate hidden moisture.' },
+          { num: 3, title: 'Acoustic Detection', desc: 'Sensitive equipment listens for the sound of water escaping pipes underground or in walls.' },
+          { num: 4, title: 'Moisture Mapping', desc: 'We map exactly where moisture is present to pinpoint the leak location.' },
+          { num: 5, title: 'Repair Options', desc: 'We explain your repair options with transparent pricing—spot repair, reroute, or repipe.' },
+          { num: 6, title: 'Professional Repair', desc: 'Our plumbers complete the repair and verify the leak is fully resolved.' },
+        ].map((step) => (
+          <div class="bg-white rounded-xl p-6 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center font-heading font-bold text-xl">{step.num}</div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-black mb-2">{step.title}</h3>
+                <p class="text-brand-gray">{step.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</ServicePillarLayout>
