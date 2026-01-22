@@ -1,140 +1,152 @@
 ---
+/**
+ * Flood Cleanup - Service Pillar Page
+ * ====================================
+ * Comprehensive page covering flood cleanup and water extraction services
+ * SEO-optimized for "flood cleanup" keywords
+ */
+
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import LeadForm from '@/components/forms/LeadForm.astro';
-import TrustBar from '@/components/sections/TrustBar.astro';
-import FAQ from '@/components/sections/FAQ.astro';
-import CTABanner from '@/components/sections/CTABanner.astro';
-import Testimonials from '@/components/sections/Testimonials.astro';
 import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
-import Button from '@/components/ui/Button.astro';
 import Icon from '@/components/ui/Icon.astro';
-import { siteData } from '@/data/site';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import CTABanner from '@/components/sections/CTABanner.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { services, cities, business } from '@/data/site';
 import { 
-  generateTitle, 
+  getServiceTitle, 
+  getServiceDescription, 
   getCanonicalUrl, 
   getServiceSchema,
-  combineSchemas,
-  getFAQSchema
+  getServiceBreadcrumbs,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  combineSchemas
 } from '@/utils/seo';
+import type { FAQ as FAQType } from '@/types';
 
-const service = siteData.services.find(s => s.slug === 'flood-cleanup');
-const pageTitle = generateTitle('Flood Cleanup Services');
-const pageDescription = `Professional flood cleanup and water extraction in Carlsbad & North San Diego County. Call ${siteData.business.phone} for 24/7 emergency flood restoration. 60-minute response time.`;
-const canonicalUrl = getCanonicalUrl('/services/flood-cleanup/');
+// Get the service data
+const service = services.find((s: { slug: string }) => s.slug === 'flood-cleanup')!;
 
-const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Flood Cleanup', href: '/services/flood-cleanup/' }
-];
+// SEO data
+const title = getServiceTitle(service.name);
+const description = getServiceDescription(service.name);
+const canonical = getCanonicalUrl(`/services/${service.slug}/`);
+const breadcrumbs = getServiceBreadcrumbs(service);
 
-const floodFAQs = [
+// Service-specific FAQs
+const floodCleanupFaqs: FAQType[] = [
   {
     question: "What's the difference between flood damage and water damage?",
-    answer: "Flood damage specifically refers to water intrusion from external sources like storms, flash floods, rising water tables, or overflowing bodies of water. Unlike typical water damage from plumbing failures, flood water is classified as Category 3 (black water) due to potential contamination from sewage, chemicals, and debris. This requires specialized cleanup protocols and often involves insurance claims through separate flood policies rather than standard homeowner's insurance."
+    answer: "Flood damage specifically refers to water intrusion from external sources like storms, flash floods, rising water tables, or overflowing bodies of water. Unlike typical water damage from plumbing failures, flood water is classified as Category 3 (black water) due to potential contamination from sewage, chemicals, and debris. This requires specialized cleanup protocols and often involves insurance claims through separate flood policies rather than standard homeowner's insurance.",
   },
   {
-    question: "How quickly should I start flood cleanup after water recedes?",
-    answer: "Begin cleanup immediately—ideally within the first 24-48 hours. Mold can start growing within 24 hours of flooding, and every hour of delay increases damage to structural materials, flooring, and personal belongings. Our emergency teams respond within 60 minutes to begin water extraction and prevent secondary damage from setting in."
+    question: 'How quickly should I start flood cleanup after water recedes?',
+    answer: "Begin cleanup immediately—ideally within the first 24-48 hours. Mold can start growing within 24 hours of flooding, and every hour of delay increases damage to structural materials, flooring, and personal belongings. Our emergency teams respond within 60 minutes to begin water extraction and prevent secondary damage from setting in.",
   },
   {
-    question: "Is flooded drywall always a total loss?",
-    answer: "Not always, but usually. Drywall that's been submerged in flood water (Category 3) must be removed to at least 12-24 inches above the water line due to wicking action. This contaminated drywall cannot be saved because it harbors bacteria and mold spores even after drying. Standard water damage from clean sources may allow drywall to be dried in place if caught quickly."
+    question: 'Is flooded drywall always a total loss?',
+    answer: "Not always, but usually. Drywall that's been submerged in flood water (Category 3) must be removed to at least 12-24 inches above the water line due to wicking action. This contaminated drywall cannot be saved because it harbors bacteria and mold spores even after drying. Standard water damage from clean sources may allow drywall to be dried in place if caught quickly.",
   },
   {
     question: "Does homeowner's insurance cover flood damage?",
-    answer: "Standard homeowner's insurance typically does NOT cover flood damage—you need a separate flood insurance policy, usually through FEMA's National Flood Insurance Program (NFIP) or private insurers. We work with all major flood insurance providers and help document damage for your claim. If you're unsure about your coverage, we recommend contacting your insurance agent immediately."
+    answer: "Standard homeowner's insurance typically does NOT cover flood damage—you need a separate flood insurance policy, usually through FEMA's National Flood Insurance Program (NFIP) or private insurers. We work with all major flood insurance providers and help document damage for your claim. If you're unsure about your coverage, we recommend contacting your insurance agent immediately.",
   },
   {
-    question: "What items can be saved after a flood?",
-    answer: "Hard, non-porous items (glass, metal, hard plastic) can usually be cleaned and disinfected. Unfortunately, most porous items contaminated by flood water must be discarded, including mattresses, upholstered furniture, carpet padding, stuffed toys, particle board furniture, and paper documents. We help you document everything for insurance purposes before disposal."
+    question: 'What items can be saved after a flood?',
+    answer: "Hard, non-porous items (glass, metal, hard plastic) can usually be cleaned and disinfected. Unfortunately, most porous items contaminated by flood water must be discarded, including mattresses, upholstered furniture, carpet padding, stuffed toys, particle board furniture, and paper documents. We help you document everything for insurance purposes before disposal.",
   },
   {
-    question: "How do you handle mud and debris from flooding?",
-    answer: "Mud removal is critical and must happen before it dries and hardens. Our process includes: removing standing water, shoveling out wet mud while still soft, pressure washing hard surfaces, removing and disposing of contaminated materials, applying antimicrobial treatments, and setting up industrial drying equipment. The sooner we start, the easier the cleanup."
+    question: 'How do you handle mud and debris from flooding?',
+    answer: "Mud removal is critical and must happen before it dries and hardens. Our process includes: removing standing water, shoveling out wet mud while still soft, pressure washing hard surfaces, removing and disposing of contaminated materials, applying antimicrobial treatments, and setting up industrial drying equipment. The sooner we start, the easier the cleanup.",
   },
   {
-    question: "What health risks come with flood damage?",
-    answer: "Flood water poses serious health risks including bacterial infections (E. coli, Salmonella), parasites, chemical contamination from household products and fuel, electrical hazards, and mold exposure. Our technicians wear full PPE and follow strict safety protocols. We recommend staying out of flooded areas until professionals assess the situation."
+    question: 'What health risks come with flood damage?',
+    answer: "Flood water poses serious health risks including bacterial infections (E. coli, Salmonella), parasites, chemical contamination from household products and fuel, electrical hazards, and mold exposure. Our technicians wear full PPE and follow strict safety protocols. We recommend staying out of flooded areas until professionals assess the situation.",
   },
   {
-    question: "How long does flood restoration take?",
-    answer: "Timeline depends on flood severity and property size. Water extraction typically takes 1-2 days, structural drying takes 3-5 days, and complete restoration (including repairs) can take 1-4 weeks. We provide detailed timelines during our initial assessment and keep you updated throughout the process."
-  }
+    question: 'How long does flood restoration take?',
+    answer: "Timeline depends on flood severity and property size. Water extraction typically takes 1-2 days, structural drying takes 3-5 days, and complete restoration (including repairs) can take 1-4 weeks. We provide detailed timelines during our initial assessment and keep you updated throughout the process.",
+  },
 ];
 
-const faqSchema = getFAQSchema(floodFAQs);
-const serviceSchema = getServiceSchema({
-  name: 'Flood Cleanup Services',
-  description: pageDescription,
-  url: canonicalUrl,
-  areaServed: siteData.serviceArea.cities.map(c => c.name),
-  provider: siteData.business.name
-});
-const jsonLd = combineSchemas([serviceSchema, faqSchema]);
+// Cities served - for internal linking
+const citiesServed = cities.filter((c: { tier: number }) => c.tier === 1 || c.tier === 2);
 
+// Schema markup
+const serviceSchema = getServiceSchema(service, citiesServed);
+const faqSchema = getFAQSchema(floodCleanupFaqs);
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const schemas = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
+
+// Process steps data
 const processSteps = [
   {
     number: '1',
     title: 'Emergency Response',
     description: 'We respond within 60 minutes with industrial pumps and extraction equipment to remove standing flood water as quickly as possible.',
-    icon: 'phone'
+    icon: 'phone',
   },
   {
     number: '2',
     title: 'Safety Assessment',
     description: 'Our team assesses structural integrity, electrical hazards, and contamination levels before beginning cleanup. Your safety comes first.',
-    icon: 'shield'
+    icon: 'shield',
   },
   {
     number: '3',
     title: 'Water Extraction & Debris Removal',
     description: 'Using submersible pumps and truck-mounted extraction units, we remove all standing water, mud, and flood debris from your property.',
-    icon: 'droplet'
+    icon: 'droplet',
   },
   {
     number: '4',
     title: 'Contamination Control',
     description: 'All flood-affected areas are treated with EPA-registered antimicrobials to eliminate bacteria, prevent mold, and neutralize odors.',
-    icon: 'check'
+    icon: 'check',
   },
   {
     number: '5',
     title: 'Structural Drying',
     description: 'Industrial dehumidifiers and air movers create optimal drying conditions, with daily moisture monitoring until safe levels are achieved.',
-    icon: 'clock'
+    icon: 'clock',
   },
   {
     number: '6',
     title: 'Restoration & Repair',
     description: 'From drywall replacement to flooring installation, we restore your property to pre-flood condition with quality craftsmanship.',
-    icon: 'star'
-  }
+    icon: 'star',
+  },
 ];
 
+// Flood types
 const floodTypes = [
   {
     title: 'Flash Flood Damage',
     description: 'Sudden, intense flooding from heavy rainfall overwhelming drainage systems. Requires immediate extraction to prevent structural damage.',
-    icon: 'alert'
+    icon: 'alert',
   },
   {
     title: 'Storm Surge Flooding',
     description: 'Coastal flooding during major storms. Often contains salt water which causes additional corrosion and damage to electrical systems.',
-    icon: 'droplet'
+    icon: 'droplet',
   },
   {
     title: 'River/Creek Overflow',
     description: 'Rising water from nearby waterways. May bring sediment, debris, and contamination requiring specialized cleanup.',
-    icon: 'droplet'
+    icon: 'droplet',
   },
   {
     title: 'Groundwater Intrusion',
     description: 'Rising water table pushing through foundations and basement floors. Often affects lower levels and crawl spaces.',
-    icon: 'home'
-  }
+    icon: 'home',
+  },
 ];
 
+// What's included
 const includedServices = [
   { title: '24/7 Emergency Response', description: '60-minute arrival for flood emergencies' },
   { title: 'Complete Water Extraction', description: 'Industrial pumps remove all standing water' },
@@ -145,23 +157,23 @@ const includedServices = [
   { title: 'Mold Prevention', description: 'Proactive treatment prevents growth' },
   { title: 'Insurance Documentation', description: 'Detailed reports for your claim' },
   { title: 'Odor Elimination', description: 'Remove musty flood smells completely' },
-  { title: 'Reconstruction Services', description: 'Full restoration to pre-flood condition' }
+  { title: 'Reconstruction Services', description: 'Full restoration to pre-flood condition' },
 ];
 
-const relatedServices = siteData.services.filter(s => 
+// Related services
+const relatedServices = services.filter((s: { slug: string }) => 
   ['water-damage-restoration', 'mold-removal', 'sewage-cleanup'].includes(s.slug)
 );
 ---
 
 <BaseLayout 
-  title={pageTitle} 
-  description={pageDescription}
-  canonical={canonicalUrl}
-  jsonLd={jsonLd}
+  title={title} 
+  description={description}
+  canonical={canonical}
+  jsonLd={schemas}
 >
   <!-- Hero Section -->
   <section class="relative bg-brand-black text-white overflow-hidden">
-    <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
       <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70 z-10"></div>
       <img 
@@ -174,7 +186,6 @@ const relatedServices = siteData.services.filter(s =>
     
     <div class="relative z-20 container mx-auto px-4 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
         <div>
           <Breadcrumbs items={breadcrumbs} variant="dark" />
           
@@ -191,7 +202,6 @@ const relatedServices = siteData.services.filter(s =>
             When flood waters devastate your property, every minute counts. Our IICRC-certified team responds within 60 minutes with industrial extraction equipment to remove standing water, eliminate contamination, and restore your home or business.
           </p>
           
-          <!-- Trust Indicators -->
           <div class="flex flex-wrap gap-6 mb-8">
             <div class="flex items-center gap-2">
               <Icon name="clock" class="w-5 h-5 text-brand-orange" />
@@ -203,14 +213,14 @@ const relatedServices = siteData.services.filter(s =>
             </div>
             <div class="flex items-center gap-2">
               <Icon name="star" class="w-5 h-5 text-brand-orange" />
-              <span class="text-gray-300">{siteData.business.reviews.count} 5-Star Reviews</span>
+              <span class="text-gray-300">{business.reviewCount} 5-Star Reviews</span>
             </div>
           </div>
           
           <div class="flex flex-wrap gap-4">
-            <Button href={`tel:${siteData.business.phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
+            <Button href={`tel:${business.phone}`} variant="primary" size="lg">
               <Icon name="phone" class="w-5 h-5" />
-              {siteData.business.phone}
+              {business.phoneFormatted}
             </Button>
             <Button href="#flood-process" variant="outline" size="lg">
               Our Process
@@ -218,22 +228,17 @@ const relatedServices = siteData.services.filter(s =>
           </div>
         </div>
         
-        <!-- Right: Lead Form -->
         <div class="bg-white rounded-2xl p-8 shadow-2xl">
           <div class="text-center mb-6">
             <h2 class="text-2xl font-bold text-brand-black mb-2">Get Emergency Help Now</h2>
             <p class="text-gray-600">Fast response for flood damage emergencies</p>
           </div>
-          <LeadForm 
-            service="Flood Cleanup"
-            source={canonicalUrl}
-          />
+          <LeadForm source={canonical} />
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Trust Bar -->
   <TrustBar variant="dark" />
   
   <!-- Flood Damage Urgency Section -->
@@ -248,7 +253,6 @@ const relatedServices = siteData.services.filter(s =>
         </p>
       </div>
       
-      <!-- Contamination Warning -->
       <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-6 mb-12 max-w-4xl mx-auto">
         <div class="flex items-start gap-4">
           <Icon name="alert" class="w-8 h-8 text-red-500 flex-shrink-0" />
@@ -261,7 +265,6 @@ const relatedServices = siteData.services.filter(s =>
         </div>
       </div>
       
-      <!-- Flood Damage Timeline -->
       <div class="bg-brand-cream rounded-2xl p-8 lg:p-12">
         <h3 class="text-2xl font-bold text-brand-black mb-8 text-center">Flood Damage Timeline</h3>
         <div class="grid md:grid-cols-4 gap-6">
@@ -352,7 +355,6 @@ const relatedServices = siteData.services.filter(s =>
     </div>
   </section>
   
-  <!-- Emergency CTA -->
   <CTABanner variant="emergency" />
   
   <!-- What's Included -->
@@ -396,7 +398,7 @@ const relatedServices = siteData.services.filter(s =>
       </div>
       
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-        {siteData.serviceArea.cities.slice(0, 5).map((city) => (
+        {citiesServed.slice(0, 5).map((city: { slug: string; name: string }) => (
           <a 
             href={`/service-area/${city.slug}/flood-cleanup/`}
             class="group bg-brand-cream hover:bg-brand-orange rounded-lg p-4 text-center transition-all duration-300"
@@ -416,7 +418,6 @@ const relatedServices = siteData.services.filter(s =>
     </div>
   </section>
   
-  <!-- Testimonials -->
   <Testimonials />
   
   <!-- Related Services -->
@@ -432,24 +433,24 @@ const relatedServices = siteData.services.filter(s =>
       </div>
       
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {relatedServices.map((service) => (
+        {relatedServices.map((relatedService: { slug: string; name: string; shortDescription: string }) => (
           <a 
-            href={`/services/${service.slug}/`}
+            href={`/services/${relatedService.slug}/`}
             class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
           >
             <div class="aspect-video bg-gray-200 overflow-hidden">
               <img 
-                src={`/images/services/${service.slug}-thumb.jpg`} 
-                alt={service.name}
+                src={`/images/services/${relatedService.slug}-thumb.jpg`} 
+                alt={relatedService.name}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
-                {service.name}
+                {relatedService.name}
               </h3>
-              <p class="text-gray-600 text-sm mb-4">{service.shortDescription}</p>
+              <p class="text-gray-600 text-sm mb-4">{relatedService.shortDescription}</p>
               <span class="inline-flex items-center text-brand-orange font-semibold text-sm">
                 Learn More
                 <Icon name="arrow" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -474,7 +475,7 @@ const relatedServices = siteData.services.filter(s =>
           </p>
         </div>
         
-        <FAQ faqs={floodFAQs} />
+        <FAQ faqs={floodCleanupFaqs} />
       </div>
     </div>
   </section>
@@ -497,9 +498,9 @@ const relatedServices = siteData.services.filter(s =>
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href={`tel:${siteData.business.phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
+          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
             <Icon name="phone" class="w-5 h-5" />
-            Call {siteData.business.phone}
+            Call {business.phoneFormatted}
           </Button>
           <Button href="/contact/" variant="outline" size="lg">
             Request Service Online

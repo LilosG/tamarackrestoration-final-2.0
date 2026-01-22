@@ -1,149 +1,162 @@
 ---
+/**
+ * Sewage Cleanup - Service Pillar Page
+ * =====================================
+ * Comprehensive page covering sewage cleanup and biohazard remediation services
+ * SEO-optimized for "sewage cleanup" keywords
+ */
+
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import LeadForm from '@/components/forms/LeadForm.astro';
-import TrustBar from '@/components/sections/TrustBar.astro';
-import FAQ from '@/components/sections/FAQ.astro';
-import CTABanner from '@/components/sections/CTABanner.astro';
-import Testimonials from '@/components/sections/Testimonials.astro';
 import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
-import Button from '@/components/ui/Button.astro';
 import Icon from '@/components/ui/Icon.astro';
-import { siteData } from '@/data/site';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import CTABanner from '@/components/sections/CTABanner.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { services, cities, business } from '@/data/site';
 import { 
-  generateTitle, 
+  getServiceTitle, 
+  getServiceDescription, 
   getCanonicalUrl, 
   getServiceSchema,
-  combineSchemas,
-  getFAQSchema
+  getServiceBreadcrumbs,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  combineSchemas
 } from '@/utils/seo';
+import type { FAQ as FAQType } from '@/types';
 
-const service = siteData.services.find(s => s.slug === 'sewage-cleanup');
-const pageTitle = generateTitle('Sewage Cleanup & Biohazard Remediation');
-const pageDescription = `Professional sewage cleanup and biohazard remediation in Carlsbad & North San Diego County. Call ${siteData.business.phone} for 24/7 emergency sewage backup response. IICRC certified technicians.`;
-const canonicalUrl = getCanonicalUrl('/services/sewage-cleanup/');
+// Get the service data
+const service = services.find((s: { slug: string }) => s.slug === 'sewage-cleanup')!;
 
-const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Sewage Cleanup', href: '/services/sewage-cleanup/' }
-];
+// SEO data
+const title = getServiceTitle(service.name);
+const description = getServiceDescription(service.name);
+const canonical = getCanonicalUrl(`/services/${service.slug}/`);
+const breadcrumbs = getServiceBreadcrumbs(service);
 
-const sewageFAQs = [
+// Service-specific FAQs
+const sewageCleanupFaqs: FAQType[] = [
   {
-    question: "Is sewage backup dangerous to my health?",
-    answer: "Yes, extremely. Sewage contains harmful bacteria (E. coli, Salmonella), viruses (Hepatitis A, Norovirus), parasites, and other pathogens that can cause serious illness. Exposure can occur through skin contact, inhalation of contaminated air, or accidentally ingesting contaminated water. Never attempt to clean up sewage yourself—always call certified professionals with proper PPE and equipment."
+    question: 'Is sewage backup dangerous to my health?',
+    answer: "Yes, extremely. Sewage contains harmful bacteria (E. coli, Salmonella), viruses (Hepatitis A, Norovirus), parasites, and other pathogens that can cause serious illness. Exposure can occur through skin contact, inhalation of contaminated air, or accidentally ingesting contaminated water. Never attempt to clean up sewage yourself—always call certified professionals with proper PPE and equipment.",
   },
   {
-    question: "What causes sewage backups in homes?",
-    answer: "Common causes include: clogged main sewer lines (from tree roots, grease buildup, or debris), damaged or collapsed sewer pipes, municipal sewer system overflows during heavy rain, septic tank failures, and plumbing fixture malfunctions. We identify the cause during our assessment to prevent future backups."
+    question: 'What causes sewage backups in homes?',
+    answer: "Common causes include: clogged main sewer lines (from tree roots, grease buildup, or debris), damaged or collapsed sewer pipes, municipal sewer system overflows during heavy rain, septic tank failures, and plumbing fixture malfunctions. We identify the cause during our assessment to prevent future backups.",
   },
   {
-    question: "How quickly should sewage be cleaned up?",
-    answer: "Immediately—sewage cleanup is a true emergency. Bacteria multiply exponentially in sewage, and the longer it sits, the more dangerous and costly the cleanup becomes. Our teams respond within 60 minutes, 24/7, because we understand the health risks involved. Every hour of delay increases contamination spread and damage."
+    question: 'How quickly should sewage be cleaned up?',
+    answer: "Immediately—sewage cleanup is a true emergency. Bacteria multiply exponentially in sewage, and the longer it sits, the more dangerous and costly the cleanup becomes. Our teams respond within 60 minutes, 24/7, because we understand the health risks involved. Every hour of delay increases contamination spread and damage.",
   },
   {
-    question: "Can I stay in my home during sewage cleanup?",
-    answer: "We recommend vacating the affected area, especially for children, elderly individuals, and those with compromised immune systems. Sewage releases harmful bacteria and gases that can cause illness. We'll assess the situation and advise whether full evacuation is necessary based on the extent of contamination."
+    question: 'Can I stay in my home during sewage cleanup?',
+    answer: "We recommend vacating the affected area, especially for children, elderly individuals, and those with compromised immune systems. Sewage releases harmful bacteria and gases that can cause illness. We'll assess the situation and advise whether full evacuation is necessary based on the extent of contamination.",
   },
   {
-    question: "What items can be saved after sewage contamination?",
-    answer: "Most porous materials must be discarded: carpet, padding, upholstered furniture, mattresses, drywall below the contamination line, and paper products. Non-porous hard surfaces (tile, metal, sealed concrete, glass) can usually be professionally disinfected. We document everything for insurance purposes before disposal."
+    question: 'What items can be saved after sewage contamination?',
+    answer: "Most porous materials must be discarded: carpet, padding, upholstered furniture, mattresses, drywall below the contamination line, and paper products. Non-porous hard surfaces (tile, metal, sealed concrete, glass) can usually be professionally disinfected. We document everything for insurance purposes before disposal.",
   },
   {
     question: "Does homeowner's insurance cover sewage backup?",
-    answer: "Standard policies often exclude sewer backup unless you have specific 'sewer and drain backup' coverage endorsement. However, if the backup resulted from another covered peril (like a broken pipe), it may be covered. We work with all major insurance companies and help document the damage for your claim."
+    answer: "Standard policies often exclude sewer backup unless you have specific 'sewer and drain backup' coverage endorsement. However, if the backup resulted from another covered peril (like a broken pipe), it may be covered. We work with all major insurance companies and help document the damage for your claim.",
   },
   {
-    question: "How do you decontaminate after sewage backup?",
-    answer: "Our process includes: complete sewage extraction, removal of all contaminated materials, application of hospital-grade antimicrobial treatments, structural drying with industrial equipment, air scrubbing with HEPA filtration, and final testing to ensure safe conditions. We follow strict IICRC protocols for Category 3 water damage."
+    question: 'How do you decontaminate after sewage backup?',
+    answer: "Our process includes: complete sewage extraction, removal of all contaminated materials, application of hospital-grade antimicrobial treatments, structural drying with industrial equipment, air scrubbing with HEPA filtration, and final testing to ensure safe conditions. We follow strict IICRC protocols for Category 3 water damage.",
   },
   {
-    question: "How long does sewage cleanup take?",
-    answer: "Timeline depends on the extent of contamination. Initial extraction and decontamination typically takes 1-2 days. Structural drying requires 3-5 days. Complete restoration including repairs may take 1-3 weeks. We provide detailed timelines during assessment and keep you updated throughout the process."
-  }
+    question: 'How long does sewage cleanup take?',
+    answer: "Timeline depends on the extent of contamination. Initial extraction and decontamination typically takes 1-2 days. Structural drying requires 3-5 days. Complete restoration including repairs may take 1-3 weeks. We provide detailed timelines during assessment and keep you updated throughout the process.",
+  },
 ];
 
-const faqSchema = getFAQSchema(sewageFAQs);
-const serviceSchema = getServiceSchema({
-  name: 'Sewage Cleanup Services',
-  description: pageDescription,
-  url: canonicalUrl,
-  areaServed: siteData.serviceArea.cities.map(c => c.name),
-  provider: siteData.business.name
-});
-const jsonLd = combineSchemas([serviceSchema, faqSchema]);
+// Cities served - for internal linking
+const citiesServed = cities.filter((c: { tier: number }) => c.tier === 1 || c.tier === 2);
 
+// Schema markup
+const serviceSchema = getServiceSchema(service, citiesServed);
+const faqSchema = getFAQSchema(sewageCleanupFaqs);
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const schemas = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
+
+// Process steps data
 const processSteps = [
   {
     number: '1',
     title: 'Emergency Response',
     description: 'Our hazmat-equipped teams respond within 60 minutes with full PPE, containment supplies, and extraction equipment.',
-    icon: 'phone'
+    icon: 'phone',
   },
   {
     number: '2',
     title: 'Safety Containment',
     description: 'We establish contamination zones, set up negative air pressure, and protect unaffected areas from cross-contamination.',
-    icon: 'shield'
+    icon: 'shield',
   },
   {
     number: '3',
     title: 'Sewage Extraction',
     description: 'Using specialized pumps and extraction units, we remove all sewage, standing water, and contaminated solids from your property.',
-    icon: 'droplet'
+    icon: 'droplet',
   },
   {
     number: '4',
     title: 'Contaminated Material Removal',
     description: 'All porous materials that absorbed sewage are safely removed and disposed of according to biohazard protocols.',
-    icon: 'trash'
+    icon: 'check',
   },
   {
     number: '5',
     title: 'Disinfection & Treatment',
     description: 'Hospital-grade antimicrobials are applied to all affected surfaces. We treat for bacteria, viruses, and parasites.',
-    icon: 'check'
+    icon: 'check',
   },
   {
     number: '6',
     title: 'Structural Drying & Restoration',
     description: 'Industrial drying equipment removes all moisture, followed by complete reconstruction to restore your property.',
-    icon: 'star'
-  }
+    icon: 'star',
+  },
 ];
 
+// Sewage types
 const sewageTypes = [
   {
     title: 'Sewer Line Backup',
     description: 'Main sewer line blockages causing raw sewage to back up through floor drains, toilets, and tubs.',
-    icon: 'alert'
+    icon: 'alert',
   },
   {
     title: 'Septic System Failure',
     description: 'Overflowing or failed septic tanks contaminating property with untreated waste.',
-    icon: 'home'
+    icon: 'home',
   },
   {
     title: 'Toilet Overflow',
     description: 'Toilet backups containing fecal matter requiring immediate biohazard cleanup.',
-    icon: 'droplet'
+    icon: 'droplet',
   },
   {
     title: 'Municipal Sewer Overflow',
     description: 'City sewer system backups during heavy rain events pushing sewage into homes.',
-    icon: 'alert'
-  }
+    icon: 'alert',
+  },
 ];
 
+// Health risks
 const healthRisks = [
   { pathogen: 'E. coli', risk: 'Severe gastrointestinal illness, kidney failure' },
   { pathogen: 'Salmonella', risk: 'Food poisoning symptoms, hospitalization' },
   { pathogen: 'Hepatitis A', risk: 'Liver infection, long-term health issues' },
   { pathogen: 'Giardia', risk: 'Parasitic infection, chronic digestive problems' },
   { pathogen: 'Cryptosporidium', risk: 'Severe diarrhea, immune system damage' },
-  { pathogen: 'Norovirus', risk: 'Highly contagious stomach illness' }
+  { pathogen: 'Norovirus', risk: 'Highly contagious stomach illness' },
 ];
 
+// What's included
 const includedServices = [
   { title: '24/7 Emergency Response', description: 'Immediate response to sewage emergencies' },
   { title: 'Complete Sewage Extraction', description: 'Industrial removal of all waste' },
@@ -154,23 +167,23 @@ const includedServices = [
   { title: 'Odor Elimination', description: 'Complete removal of sewage odors' },
   { title: 'Content Cleaning', description: 'Salvageable item restoration' },
   { title: 'Insurance Documentation', description: 'Detailed reports for claims' },
-  { title: 'Full Reconstruction', description: 'Restore to pre-loss condition' }
+  { title: 'Full Reconstruction', description: 'Restore to pre-loss condition' },
 ];
 
-const relatedServices = siteData.services.filter(s => 
+// Related services
+const relatedServices = services.filter((s: { slug: string }) => 
   ['water-damage-restoration', 'mold-removal', 'flood-cleanup'].includes(s.slug)
 );
 ---
 
 <BaseLayout 
-  title={pageTitle} 
-  description={pageDescription}
-  canonical={canonicalUrl}
-  jsonLd={jsonLd}
+  title={title} 
+  description={description}
+  canonical={canonical}
+  jsonLd={schemas}
 >
   <!-- Hero Section -->
   <section class="relative bg-brand-black text-white overflow-hidden">
-    <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
       <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70 z-10"></div>
       <img 
@@ -183,7 +196,6 @@ const relatedServices = siteData.services.filter(s =>
     
     <div class="relative z-20 container mx-auto px-4 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
         <div>
           <Breadcrumbs items={breadcrumbs} variant="dark" />
           
@@ -200,7 +212,6 @@ const relatedServices = siteData.services.filter(s =>
             Sewage backups are dangerous biohazard situations requiring immediate professional intervention. Our IICRC-certified teams respond within 60 minutes with specialized equipment to safely extract, decontaminate, and restore your property.
           </p>
           
-          <!-- Trust Indicators -->
           <div class="flex flex-wrap gap-6 mb-8">
             <div class="flex items-center gap-2">
               <Icon name="clock" class="w-5 h-5 text-brand-orange" />
@@ -212,14 +223,14 @@ const relatedServices = siteData.services.filter(s =>
             </div>
             <div class="flex items-center gap-2">
               <Icon name="star" class="w-5 h-5 text-brand-orange" />
-              <span class="text-gray-300">{siteData.business.reviews.count} 5-Star Reviews</span>
+              <span class="text-gray-300">{business.reviewCount} 5-Star Reviews</span>
             </div>
           </div>
           
           <div class="flex flex-wrap gap-4">
-            <Button href={`tel:${siteData.business.phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
+            <Button href={`tel:${business.phone}`} variant="primary" size="lg">
               <Icon name="phone" class="w-5 h-5" />
-              {siteData.business.phone}
+              {business.phoneFormatted}
             </Button>
             <Button href="#sewage-process" variant="outline" size="lg">
               Our Process
@@ -227,22 +238,17 @@ const relatedServices = siteData.services.filter(s =>
           </div>
         </div>
         
-        <!-- Right: Lead Form -->
         <div class="bg-white rounded-2xl p-8 shadow-2xl">
           <div class="text-center mb-6">
             <h2 class="text-2xl font-bold text-brand-black mb-2">Get Emergency Help Now</h2>
             <p class="text-gray-600">Fast response for sewage emergencies</p>
           </div>
-          <LeadForm 
-            service="Sewage Cleanup"
-            source={canonicalUrl}
-          />
+          <LeadForm source={canonical} />
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Trust Bar -->
   <TrustBar variant="dark" />
   
   <!-- Health Hazard Warning Section -->
@@ -257,14 +263,13 @@ const relatedServices = siteData.services.filter(s =>
         </p>
       </div>
       
-      <!-- Critical Warning -->
       <div class="bg-red-50 border-2 border-red-500 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
             <Icon name="alert" class="w-8 h-8 text-white" />
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-red-700 mb-3">⚠️ Critical Health Warning</h3>
+            <h3 class="text-2xl font-bold text-red-700 mb-3">Critical Health Warning</h3>
             <p class="text-red-600 text-lg mb-4">
               Do NOT attempt to clean up sewage yourself. Sewage is classified as Category 3 "black water"—the most dangerous type of water damage. Exposure without proper protection can cause serious illness.
             </p>
@@ -286,7 +291,6 @@ const relatedServices = siteData.services.filter(s =>
         </div>
       </div>
       
-      <!-- Health Risks Table -->
       <div class="bg-brand-cream rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
         <h3 class="text-2xl font-bold text-brand-black mb-8 text-center">Pathogens Found in Sewage</h3>
         <div class="grid md:grid-cols-2 gap-4">
@@ -360,7 +364,6 @@ const relatedServices = siteData.services.filter(s =>
     </div>
   </section>
   
-  <!-- Emergency CTA -->
   <CTABanner variant="emergency" />
   
   <!-- What's Included -->
@@ -404,7 +407,7 @@ const relatedServices = siteData.services.filter(s =>
       </div>
       
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-        {siteData.serviceArea.cities.slice(0, 5).map((city) => (
+        {citiesServed.slice(0, 5).map((city: { slug: string; name: string }) => (
           <a 
             href={`/service-area/${city.slug}/sewage-cleanup/`}
             class="group bg-brand-cream hover:bg-brand-orange rounded-lg p-4 text-center transition-all duration-300"
@@ -424,7 +427,6 @@ const relatedServices = siteData.services.filter(s =>
     </div>
   </section>
   
-  <!-- Testimonials -->
   <Testimonials />
   
   <!-- Related Services -->
@@ -440,24 +442,24 @@ const relatedServices = siteData.services.filter(s =>
       </div>
       
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {relatedServices.map((service) => (
+        {relatedServices.map((relatedService: { slug: string; name: string; shortDescription: string }) => (
           <a 
-            href={`/services/${service.slug}/`}
+            href={`/services/${relatedService.slug}/`}
             class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
           >
             <div class="aspect-video bg-gray-200 overflow-hidden">
               <img 
-                src={`/images/services/${service.slug}-thumb.jpg`} 
-                alt={service.name}
+                src={`/images/services/${relatedService.slug}-thumb.jpg`} 
+                alt={relatedService.name}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
-                {service.name}
+                {relatedService.name}
               </h3>
-              <p class="text-gray-600 text-sm mb-4">{service.shortDescription}</p>
+              <p class="text-gray-600 text-sm mb-4">{relatedService.shortDescription}</p>
               <span class="inline-flex items-center text-brand-orange font-semibold text-sm">
                 Learn More
                 <Icon name="arrow" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -482,7 +484,7 @@ const relatedServices = siteData.services.filter(s =>
           </p>
         </div>
         
-        <FAQ faqs={sewageFAQs} />
+        <FAQ faqs={sewageCleanupFaqs} />
       </div>
     </div>
   </section>
@@ -505,9 +507,9 @@ const relatedServices = siteData.services.filter(s =>
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href={`tel:${siteData.business.phone.replace(/[^0-9]/g, '')}`} variant="primary" size="lg">
+          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
             <Icon name="phone" class="w-5 h-5" />
-            Call {siteData.business.phone}
+            Call {business.phoneFormatted}
           </Button>
           <Button href="/contact/" variant="outline" size="lg">
             Request Service Online
