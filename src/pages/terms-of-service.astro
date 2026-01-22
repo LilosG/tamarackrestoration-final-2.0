@@ -1,0 +1,128 @@
+---
+/**
+ * Terms of Service Page
+ * =====================
+ * Legal terms of service for Tamarack Restoration
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { business } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+const title = 'Terms of Service | Tamarack Restoration';
+const description = 'Terms of service for Tamarack Restoration. Read our terms and conditions for using our restoration services.';
+const canonical = getCanonicalUrl('/terms-of-service/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Terms of Service', href: '/terms-of-service/', current: true },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const lastUpdated = 'January 22, 2025';
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-brand-black mb-4">
+          Terms of Service
+        </h1>
+        <p class="text-brand-gray mb-8">Last updated: {lastUpdated}</p>
+        
+        <div class="prose prose-lg max-w-none">
+          <p>
+            Welcome to {business.name}. These Terms of Service ("Terms") govern your use of our website and restoration services. By using our services, you agree to these Terms.
+          </p>
+          
+          <h2>Services</h2>
+          <p>
+            {business.name} provides property restoration services including water damage restoration, fire and smoke damage restoration, mold remediation, flood cleanup, and sewage cleanup for residential and commercial properties in North San Diego County.
+          </p>
+          
+          <h2>Service Agreements</h2>
+          <p>
+            Before beginning restoration work, we will provide you with a written estimate or work authorization. This document will outline the scope of work, estimated costs, and other relevant details. By signing this authorization, you agree to the terms specified therein.
+          </p>
+          
+          <h2>Emergency Services</h2>
+          <p>
+            For emergency situations, we may begin mitigation work before a full estimate is prepared to prevent further damage to your property. In such cases, we will document all work performed and provide detailed information for insurance purposes.
+          </p>
+          
+          <h2>Insurance Claims</h2>
+          <p>
+            When we work with your insurance company on your behalf, you authorize us to communicate with your insurance carrier, submit documentation, and coordinate the claims process. You remain responsible for any costs not covered by your insurance policy, including deductibles.
+          </p>
+          
+          <h2>Payment Terms</h2>
+          <p>Payment terms vary based on the nature of the work:</p>
+          <ul>
+            <li><strong>Insurance Claims:</strong> We can often bill your insurance company directly. You are responsible for your deductible and any non-covered costs.</li>
+            <li><strong>Non-Insurance Work:</strong> Payment is due upon completion of services unless other arrangements are made in writing.</li>
+            <li><strong>Large Projects:</strong> May require progress payments as outlined in your service agreement.</li>
+          </ul>
+          
+          <h2>Property Access</h2>
+          <p>
+            By engaging our services, you grant us access to the affected areas of your property as needed to perform restoration work. You agree to remove or secure personal belongings and valuables from work areas, or authorize us to move items as necessary.
+          </p>
+          
+          <h2>Customer Responsibilities</h2>
+          <p>As our customer, you agree to:</p>
+          <ul>
+            <li>Provide accurate information about the damage and its cause</li>
+            <li>Notify us of any known hazards on your property</li>
+            <li>Maintain reasonable access to the work area</li>
+            <li>Notify your insurance company of the damage in a timely manner</li>
+            <li>Review and sign required documentation promptly</li>
+          </ul>
+          
+          <h2>Warranty</h2>
+          <p>
+            We stand behind our work and offer a satisfaction guarantee. If you are not satisfied with our restoration work, please contact us within 30 days of project completion, and we will work to resolve the issue.
+          </p>
+          
+          <h2>Limitations of Liability</h2>
+          <p>
+            Our liability is limited to the cost of the services provided. We are not liable for pre-existing conditions, damage caused by others, or damage that occurs after our work is complete due to factors outside our control.
+          </p>
+          
+          <h2>Website Use</h2>
+          <p>
+            The content on our website is for informational purposes only. While we strive to provide accurate information, we make no warranties about the completeness or accuracy of website content.
+          </p>
+          
+          <h2>Intellectual Property</h2>
+          <p>
+            All content on our website, including text, images, logos, and design elements, is the property of {business.name} and is protected by copyright and trademark laws.
+          </p>
+          
+          <h2>Dispute Resolution</h2>
+          <p>
+            Any disputes arising from these Terms or our services will be governed by the laws of the State of California. We encourage you to contact us directly to resolve any concerns before pursuing legal action.
+          </p>
+          
+          <h2>Changes to Terms</h2>
+          <p>
+            We may update these Terms from time to time. Continued use of our services after changes are posted constitutes acceptance of the revised Terms.
+          </p>
+          
+          <h2>Contact Us</h2>
+          <p>If you have questions about these Terms of Service, please contact us:</p>
+          <ul>
+            <li><strong>Phone:</strong> {business.phoneFormatted}</li>
+            <li><strong>Email:</strong> {business.email}</li>
+            <li><strong>Address:</strong> {business.address.full}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
