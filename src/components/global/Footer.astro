@@ -2,228 +2,151 @@
 /**
  * Footer Component
  * ================
- * Site footer with navigation, contact info, and legal links
+ * Global site footer with optional CTA section
  */
 
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
-import { business, services, cities } from '@/data/site';
+import { business, mainNavigation } from '@/data/site';
 
 interface Props {
   class?: string;
+  showCTA?: boolean;
 }
 
-const { class: className } = Astro.props;
+const { class: className, showCTA = true } = Astro.props;
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class:list={['bg-brand-black text-white', className]}>
-  <!-- CTA Section -->
-  <div class="bg-brand-orange py-section-sm">
-    <div class="container">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-        <div>
-          <h2 class="font-display text-display-md text-white mb-2">
-            Ready to Restore Your Property?
-          </h2>
-          <p class="text-white/90 text-body-lg">
-            24/7 emergency service with 60-minute response time
-          </p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <Button 
-            href={`tel:${business.phone}`}
-            variant="secondary"
-            size="lg"
-            class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
-          >
-            <Icon name="phone" size="md" />
-            {business.phoneFormatted}
-          </Button>
-          <Button 
-            href="/contact/"
-            variant="outline"
-            size="lg"
-            class="border-white text-white hover:bg-white hover:text-brand-orange"
-          >
-            Request Service
-          </Button>
+  <!-- CTA Section (Optional) -->
+  {showCTA && (
+    <div class="bg-brand-orange py-12 lg:py-16">
+      <div class="container">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div>
+            <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-2">
+              Ready to Restore Your Property?
+            </h2>
+            <p class="text-white/90 text-lg">
+              24/7 emergency service with 60-minute response time
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button 
+              href={`tel:${business.phone}`}
+              variant="secondary"
+              size="lg"
+              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+            >
+              <Icon name="phone" size="md" />
+              {business.phoneFormatted}
+            </Button>
+            <Button 
+              href="/contact/"
+              variant="outline"
+              size="lg"
+              class="border-white text-white hover:bg-white hover:text-brand-orange"
+            >
+              Request Service
+            </Button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  )}
   
   <!-- Main Footer -->
-  <div class="py-section-md">
+  <div class="py-12 lg:py-16">
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         <!-- Company Info -->
         <div class="lg:col-span-1">
           <a href="/" class="inline-block mb-6">
             <img 
-              src="/images/logo/tamarack-logo.webp" 
+              src="/images/logo/tamarack-logo-white.png" 
               alt="Tamarack Restoration" 
-              class="h-12 w-auto brightness-0 invert"
-              width="180"
-              height="48"
+              class="h-10 w-auto"
+              loading="lazy"
             />
           </a>
-          <p class="text-brand-cream-400 text-body-md mb-6">
-            Professional emergency restoration services for water damage, fire damage, mold, and more. Serving North San Diego County since {currentYear - business.yearsInBusiness}.
+          <p class="text-brand-cream-400 text-sm mb-6 leading-relaxed">
+            Professional emergency restoration services for water damage, fire damage, mold, and more. Serving North San Diego County 24/7.
           </p>
-          
-          <!-- Contact Info -->
-          <div class="space-y-3">
-            <a 
-              href={`tel:${business.phone}`}
-              class="flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
-            >
-              <Icon name="phone" size="md" class="text-brand-orange" />
-              <span class="font-semibold">{business.phoneFormatted}</span>
-            </a>
-            <a 
-              href={`mailto:${business.email}`}
-              class="flex items-center gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors"
-            >
-              <Icon name="mail" size="md" class="text-brand-orange" />
-              <span>{business.email}</span>
-            </a>
-            <div class="flex items-start gap-3 text-brand-cream-400">
-              <Icon name="map-pin" size="md" class="text-brand-orange flex-shrink-0 mt-0.5" />
-              <span>{business.address.full}</span>
-            </div>
+          <div class="flex items-center gap-2 text-brand-orange">
+            <Icon name="award" size="sm" />
+            <span class="text-sm font-medium">IICRC Certified</span>
           </div>
         </div>
         
         <!-- Services -->
         <div>
-          <h3 class="font-heading font-bold text-white text-body-lg mb-4">Services</h3>
-          <ul class="space-y-2">
-            {services.slice(0, 6).map((service) => (
-              <li>
-                <a 
-                  href={`/services/${service.slug}/`}
-                  class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md"
-                >
-                  {service.name}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a 
-                href="/services/"
-                class="text-brand-orange hover:text-brand-orange-300 transition-colors text-body-md font-medium inline-flex items-center gap-1"
-              >
-                All Services
-                <Icon name="arrow-right" size="sm" />
-              </a>
-            </li>
+          <h3 class="font-heading font-bold text-white mb-4">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="/services/water-damage-restoration/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Water Damage Restoration</a></li>
+            <li><a href="/services/mold-removal/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Mold Removal</a></li>
+            <li><a href="/services/fire-damage-restoration/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Fire Damage Restoration</a></li>
+            <li><a href="/services/flood-cleanup/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Flood Cleanup</a></li>
+            <li><a href="/services/sewage-cleanup/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Sewage Cleanup</a></li>
           </ul>
         </div>
         
         <!-- Service Areas -->
         <div>
-          <h3 class="font-heading font-bold text-white text-body-lg mb-4">Service Areas</h3>
-          <ul class="space-y-2">
-            {cities.slice(0, 6).map((city) => (
-              <li>
-                <a 
-                  href={`/service-area/${city.slug}/`}
-                  class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md"
-                >
-                  {city.name}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a 
-                href="/service-area/"
-                class="text-brand-orange hover:text-brand-orange-300 transition-colors text-body-md font-medium inline-flex items-center gap-1"
-              >
-                All Areas
-                <Icon name="arrow-right" size="sm" />
-              </a>
-            </li>
+          <h3 class="font-heading font-bold text-white mb-4">Service Areas</h3>
+          <ul class="space-y-3">
+            <li><a href="/service-area/carlsbad/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Carlsbad</a></li>
+            <li><a href="/service-area/oceanside/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Oceanside</a></li>
+            <li><a href="/service-area/vista/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Vista</a></li>
+            <li><a href="/service-area/san-marcos/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">San Marcos</a></li>
+            <li><a href="/service-area/encinitas/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Encinitas</a></li>
           </ul>
         </div>
         
-        <!-- Quick Links -->
+        <!-- Contact Info -->
         <div>
-          <h3 class="font-heading font-bold text-white text-body-lg mb-4">Quick Links</h3>
-          <ul class="space-y-2">
+          <h3 class="font-heading font-bold text-white mb-4">Quick Info</h3>
+          <ul class="space-y-4">
             <li>
-              <a href="/about/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                About Us
+              <a href={`tel:${business.phone}`} class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors">
+                <Icon name="phone" size="sm" class="mt-0.5 flex-shrink-0" />
+                <span>
+                  <span class="block text-sm font-medium text-white">{business.phoneFormatted}</span>
+                  <span class="block text-xs">24/7 Emergency Line</span>
+                </span>
               </a>
             </li>
             <li>
-              <a href="/about/testimonials/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                Testimonials
-              </a>
+              <div class="flex items-start gap-3 text-brand-cream-400">
+                <Icon name="map-pin" size="sm" class="mt-0.5 flex-shrink-0" />
+                <span class="text-sm">
+                  {business.address.street}<br />
+                  {business.address.suite}<br />
+                  {business.address.city}, {business.address.state} {business.address.zip}
+                </span>
+              </div>
             </li>
             <li>
-              <a href="/about/certifications/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                Certifications
-              </a>
-            </li>
-            <li>
-              <a href="/insurance/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                Insurance Claims
-              </a>
-            </li>
-            <li>
-              <a href="/blog/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="/about/faq/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                FAQ
-              </a>
-            </li>
-            <li>
-              <a href="/contact/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-body-md">
-                Contact Us
-              </a>
+              <div class="flex items-start gap-3 text-brand-cream-400">
+                <Icon name="clock" size="sm" class="mt-0.5 flex-shrink-0" />
+                <span class="text-sm">{business.hours}</span>
+              </div>
             </li>
           </ul>
-          
-          <!-- Trust Badges -->
-          <div class="mt-6 pt-6 border-t border-brand-black-800">
-            <p class="text-body-sm text-brand-cream-500 mb-3">Certifications</p>
-            <div class="flex items-center gap-4">
-              <img 
-                src="/images/certifications/iicrc.webp" 
-                alt="IICRC Certified" 
-                class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
-                width="60"
-                height="48"
-              />
-              <!-- Add more certification logos as needed -->
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
   
   <!-- Bottom Bar -->
-  <div class="border-t border-brand-black-800 py-6">
+  <div class="border-t border-white/10 py-6">
     <div class="container">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-body-sm text-brand-cream-500">
-        <p>
-          © {currentYear} {business.name}. All rights reserved.
-        </p>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-cream-400">
+        <p>&copy; {currentYear} {business.name}. All rights reserved.</p>
         <div class="flex items-center gap-6">
-          <a href="/privacy-policy/" class="hover:text-brand-orange transition-colors">
-            Privacy Policy
-          </a>
-          <a href="/terms-of-service/" class="hover:text-brand-orange transition-colors">
-            Terms of Service
-          </a>
-          <a href="/sitemap-index.xml" class="hover:text-brand-orange transition-colors">
-            Sitemap
-          </a>
+          <a href="/privacy-policy/" class="hover:text-brand-orange transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service/" class="hover:text-brand-orange transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>
