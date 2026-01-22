@@ -1,525 +1,65 @@
 ---
-/**
- * Sewage Cleanup - Service Pillar Page
- * =====================================
- * Comprehensive page covering sewage cleanup and biohazard remediation services
- * SEO-optimized for "sewage cleanup" keywords
- */
+import ServicePillarLayout from '@/layouts/ServicePillarLayout.astro';
+import type { FAQ } from '@/types';
 
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
-import Icon from '@/components/ui/Icon.astro';
-import Button from '@/components/ui/Button.astro';
-import TrustBar from '@/components/sections/TrustBar.astro';
-import Testimonials from '@/components/sections/Testimonials.astro';
-import CTABanner from '@/components/sections/CTABanner.astro';
-import FAQ from '@/components/sections/FAQ.astro';
-import LeadForm from '@/components/forms/LeadForm.astro';
-import { services, cities, business } from '@/data/site';
-import { 
-  getServiceTitle, 
-  getServiceDescription, 
-  getCanonicalUrl, 
-  getServiceSchema,
-  getServiceBreadcrumbs,
-  getBreadcrumbSchema,
-  getFAQSchema,
-  combineSchemas
-} from '@/utils/seo';
-import type { FAQ as FAQType } from '@/types';
+const serviceSlug = 'sewage-cleanup';
+const metaDescription = 'Emergency sewage cleanup in North San Diego County. 24/7 biohazard remediation, safe sanitization, odor removal. IICRC certified. Call (760) 500-2211.';
 
-// Get the service data
-const service = services.find((s: { slug: string }) => s.slug === 'sewage-cleanup')!;
-
-// SEO data
-const title = getServiceTitle(service.name);
-const description = getServiceDescription(service.name);
-const canonical = getCanonicalUrl(`/services/${service.slug}/`);
-const breadcrumbs = getServiceBreadcrumbs(service);
-
-// Service-specific FAQs
-const sewageCleanupFaqs: FAQType[] = [
-  {
-    question: 'Is sewage backup dangerous to my health?',
-    answer: "Yes, extremely. Sewage contains harmful bacteria (E. coli, Salmonella), viruses (Hepatitis A, Norovirus), parasites, and other pathogens that can cause serious illness. Exposure can occur through skin contact, inhalation of contaminated air, or accidentally ingesting contaminated water. Never attempt to clean up sewage yourself—always call certified professionals with proper PPE and equipment.",
-  },
-  {
-    question: 'What causes sewage backups in homes?',
-    answer: "Common causes include: clogged main sewer lines (from tree roots, grease buildup, or debris), damaged or collapsed sewer pipes, municipal sewer system overflows during heavy rain, septic tank failures, and plumbing fixture malfunctions. We identify the cause during our assessment to prevent future backups.",
-  },
-  {
-    question: 'How quickly should sewage be cleaned up?',
-    answer: "Immediately—sewage cleanup is a true emergency. Bacteria multiply exponentially in sewage, and the longer it sits, the more dangerous and costly the cleanup becomes. Our teams respond within 60 minutes, 24/7, because we understand the health risks involved. Every hour of delay increases contamination spread and damage.",
-  },
-  {
-    question: 'Can I stay in my home during sewage cleanup?',
-    answer: "We recommend vacating the affected area, especially for children, elderly individuals, and those with compromised immune systems. Sewage releases harmful bacteria and gases that can cause illness. We'll assess the situation and advise whether full evacuation is necessary based on the extent of contamination.",
-  },
-  {
-    question: 'What items can be saved after sewage contamination?',
-    answer: "Most porous materials must be discarded: carpet, padding, upholstered furniture, mattresses, drywall below the contamination line, and paper products. Non-porous hard surfaces (tile, metal, sealed concrete, glass) can usually be professionally disinfected. We document everything for insurance purposes before disposal.",
-  },
-  {
-    question: "Does homeowner's insurance cover sewage backup?",
-    answer: "Standard policies often exclude sewer backup unless you have specific 'sewer and drain backup' coverage endorsement. However, if the backup resulted from another covered peril (like a broken pipe), it may be covered. We work with all major insurance companies and help document the damage for your claim.",
-  },
-  {
-    question: 'How do you decontaminate after sewage backup?',
-    answer: "Our process includes: complete sewage extraction, removal of all contaminated materials, application of hospital-grade antimicrobial treatments, structural drying with industrial equipment, air scrubbing with HEPA filtration, and final testing to ensure safe conditions. We follow strict IICRC protocols for Category 3 water damage.",
-  },
-  {
-    question: 'How long does sewage cleanup take?',
-    answer: "Timeline depends on the extent of contamination. Initial extraction and decontamination typically takes 1-2 days. Structural drying requires 3-5 days. Complete restoration including repairs may take 1-3 weeks. We provide detailed timelines during assessment and keep you updated throughout the process.",
-  },
+const faqs: FAQ[] = [
+  { question: 'Is sewage backup dangerous?', answer: 'Yes, extremely. Sewage contains bacteria, viruses, parasites, and other pathogens that cause serious illness. Never attempt DIY cleanup—professional biohazard remediation is essential for safety.' },
+  { question: 'What causes sewage backups?', answer: 'Common causes include clogged sewer lines, tree root intrusion, broken pipes, municipal sewer problems, and septic system failures. Heavy rain can also overwhelm systems.' },
+  { question: 'How quickly do you respond to sewage emergencies?', answer: 'We respond 24/7 with a 60-minute arrival time. Sewage backup is a health emergency that requires immediate professional attention.' },
+  { question: 'Will insurance cover sewage cleanup?', answer: 'Often yes, if caused by sudden events like pipe bursts. Backups from neglected maintenance may not be covered. We document everything for your claim.' },
+  { question: 'How do you eliminate sewage odors?', answer: 'We use industrial sanitizers, enzyme treatments, and professional deodorization equipment. Complete removal of contaminated materials is often necessary to fully eliminate odors.' },
+  { question: 'Can I stay in my home during sewage cleanup?', answer: 'No, we strongly recommend leaving until cleanup is complete. Airborne pathogens from sewage pose serious health risks. We\'ll let you know when it\'s safe to return.' },
 ];
-
-// Cities served - for internal linking
-const citiesServed = cities.filter((c: { tier: number }) => c.tier === 1 || c.tier === 2);
-
-// Schema markup
-const serviceSchema = getServiceSchema(service, citiesServed);
-const faqSchema = getFAQSchema(sewageCleanupFaqs);
-const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
-const schemas = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
-
-// Process steps data
-const processSteps = [
-  {
-    number: '1',
-    title: 'Emergency Response',
-    description: 'Our hazmat-equipped teams respond within 60 minutes with full PPE, containment supplies, and extraction equipment.',
-    icon: 'phone',
-  },
-  {
-    number: '2',
-    title: 'Safety Containment',
-    description: 'We establish contamination zones, set up negative air pressure, and protect unaffected areas from cross-contamination.',
-    icon: 'shield',
-  },
-  {
-    number: '3',
-    title: 'Sewage Extraction',
-    description: 'Using specialized pumps and extraction units, we remove all sewage, standing water, and contaminated solids from your property.',
-    icon: 'droplet',
-  },
-  {
-    number: '4',
-    title: 'Contaminated Material Removal',
-    description: 'All porous materials that absorbed sewage are safely removed and disposed of according to biohazard protocols.',
-    icon: 'check',
-  },
-  {
-    number: '5',
-    title: 'Disinfection & Treatment',
-    description: 'Hospital-grade antimicrobials are applied to all affected surfaces. We treat for bacteria, viruses, and parasites.',
-    icon: 'check',
-  },
-  {
-    number: '6',
-    title: 'Structural Drying & Restoration',
-    description: 'Industrial drying equipment removes all moisture, followed by complete reconstruction to restore your property.',
-    icon: 'star',
-  },
-];
-
-// Sewage types
-const sewageTypes = [
-  {
-    title: 'Sewer Line Backup',
-    description: 'Main sewer line blockages causing raw sewage to back up through floor drains, toilets, and tubs.',
-    icon: 'alert',
-  },
-  {
-    title: 'Septic System Failure',
-    description: 'Overflowing or failed septic tanks contaminating property with untreated waste.',
-    icon: 'home',
-  },
-  {
-    title: 'Toilet Overflow',
-    description: 'Toilet backups containing fecal matter requiring immediate biohazard cleanup.',
-    icon: 'droplet',
-  },
-  {
-    title: 'Municipal Sewer Overflow',
-    description: 'City sewer system backups during heavy rain events pushing sewage into homes.',
-    icon: 'alert',
-  },
-];
-
-// Health risks
-const healthRisks = [
-  { pathogen: 'E. coli', risk: 'Severe gastrointestinal illness, kidney failure' },
-  { pathogen: 'Salmonella', risk: 'Food poisoning symptoms, hospitalization' },
-  { pathogen: 'Hepatitis A', risk: 'Liver infection, long-term health issues' },
-  { pathogen: 'Giardia', risk: 'Parasitic infection, chronic digestive problems' },
-  { pathogen: 'Cryptosporidium', risk: 'Severe diarrhea, immune system damage' },
-  { pathogen: 'Norovirus', risk: 'Highly contagious stomach illness' },
-];
-
-// What's included
-const includedServices = [
-  { title: '24/7 Emergency Response', description: 'Immediate response to sewage emergencies' },
-  { title: 'Complete Sewage Extraction', description: 'Industrial removal of all waste' },
-  { title: 'Biohazard Disposal', description: 'Safe disposal per regulations' },
-  { title: 'Antimicrobial Treatment', description: 'Hospital-grade disinfection' },
-  { title: 'Air Quality Restoration', description: 'HEPA air scrubbing & purification' },
-  { title: 'Structural Drying', description: 'Industrial dehumidification' },
-  { title: 'Odor Elimination', description: 'Complete removal of sewage odors' },
-  { title: 'Content Cleaning', description: 'Salvageable item restoration' },
-  { title: 'Insurance Documentation', description: 'Detailed reports for claims' },
-  { title: 'Full Reconstruction', description: 'Restore to pre-loss condition' },
-];
-
-// Related services
-const relatedServices = services.filter((s: { slug: string }) => 
-  ['water-damage-restoration', 'mold-removal', 'flood-cleanup'].includes(s.slug)
-);
 ---
 
-<BaseLayout 
-  title={title} 
-  description={description}
-  canonical={canonical}
-  jsonLd={schemas}
->
-  <!-- Hero Section -->
-  <section class="relative bg-brand-black text-white overflow-hidden">
-    <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70 z-10"></div>
-      <img 
-        src="/images/services/sewage-cleanup-hero.jpg" 
-        alt="Professional sewage cleanup and biohazard remediation"
-        class="w-full h-full object-cover opacity-40"
-        loading="eager"
-      />
-    </div>
-    
-    <div class="relative z-20 container mx-auto px-4 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <Breadcrumbs items={breadcrumbs} variant="dark" />
-          
-          <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            <Icon name="alert" class="w-4 h-4" />
-            Biohazard Emergency - Call Immediately
-          </div>
-          
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
-            Sewage Cleanup & Biohazard Remediation
-          </h1>
-          
-          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Sewage backups are dangerous biohazard situations requiring immediate professional intervention. Our IICRC-certified teams respond within 60 minutes with specialized equipment to safely extract, decontaminate, and restore your property.
+<ServicePillarLayout serviceSlug={serviceSlug} metaDescription={metaDescription} faqs={faqs}>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
+          Professional Sewage Cleanup & Biohazard Remediation
+        </h2>
+        <div class="prose prose-lg mx-auto">
+          <p class="text-lg text-brand-gray leading-relaxed">
+            Sewage backup is one of the most hazardous situations homeowners can face. Raw sewage contains dangerous pathogens that require professional biohazard remediation—not DIY cleanup.
           </p>
-          
-          <div class="flex flex-wrap gap-6 mb-8">
-            <div class="flex items-center gap-2">
-              <Icon name="clock" class="w-5 h-5 text-brand-orange" />
-              <span class="text-gray-300">60-Min Response</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <Icon name="shield" class="w-5 h-5 text-brand-orange" />
-              <span class="text-gray-300">IICRC Certified</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <Icon name="star" class="w-5 h-5 text-brand-orange" />
-              <span class="text-gray-300">{business.reviewCount} 5-Star Reviews</span>
-            </div>
-          </div>
-          
-          <div class="flex flex-wrap gap-4">
-            <Button href={`tel:${business.phone}`} variant="primary" size="lg">
-              <Icon name="phone" class="w-5 h-5" />
-              {business.phoneFormatted}
-            </Button>
-            <Button href="#sewage-process" variant="outline" size="lg">
-              Our Process
-            </Button>
-          </div>
-        </div>
-        
-        <div class="bg-white rounded-2xl p-8 shadow-2xl">
-          <div class="text-center mb-6">
-            <h2 class="text-2xl font-bold text-brand-black mb-2">Get Emergency Help Now</h2>
-            <p class="text-gray-600">Fast response for sewage emergencies</p>
-          </div>
-          <LeadForm source={canonical} />
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <TrustBar variant="dark" />
-  
-  <!-- Health Hazard Warning Section -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-          Why Sewage Cleanup Requires Professionals
-        </h2>
-        <p class="text-xl text-gray-600">
-          Sewage contains dangerous pathogens that pose serious health risks. DIY cleanup is not just inadequate—it's dangerous. Professional remediation protects your family and ensures complete decontamination.
-        </p>
-      </div>
-      
-      <div class="bg-red-50 border-2 border-red-500 rounded-2xl p-8 mb-12 max-w-4xl mx-auto">
-        <div class="flex items-start gap-4">
-          <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-            <Icon name="alert" class="w-8 h-8 text-white" />
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-red-700 mb-3">Critical Health Warning</h3>
-            <p class="text-red-600 text-lg mb-4">
-              Do NOT attempt to clean up sewage yourself. Sewage is classified as Category 3 "black water"—the most dangerous type of water damage. Exposure without proper protection can cause serious illness.
-            </p>
-            <ul class="text-red-600 space-y-2">
-              <li class="flex items-center gap-2">
-                <Icon name="check" class="w-4 h-4" />
-                Keep family and pets away from affected areas
-              </li>
-              <li class="flex items-center gap-2">
-                <Icon name="check" class="w-4 h-4" />
-                Turn off HVAC to prevent airborne contamination
-              </li>
-              <li class="flex items-center gap-2">
-                <Icon name="check" class="w-4 h-4" />
-                Call professionals immediately
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-brand-cream rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
-        <h3 class="text-2xl font-bold text-brand-black mb-8 text-center">Pathogens Found in Sewage</h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          {healthRisks.map((item) => (
-            <div class="bg-white rounded-xl p-4 shadow-sm flex items-start gap-4">
-              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <Icon name="alert" class="w-5 h-5 text-red-500" />
-              </div>
-              <div>
-                <h4 class="font-bold text-brand-black">{item.pathogen}</h4>
-                <p class="text-gray-600 text-sm">{item.risk}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Types of Sewage Damage -->
-  <section class="py-16 lg:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-          Types of Sewage Emergencies We Handle
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Our teams are trained and equipped for all types of sewage and biohazard situations.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {sewageTypes.map((type) => (
-          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-            <div class="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
-              <Icon name={type.icon} class="w-6 h-6 text-brand-orange" />
-            </div>
-            <h3 class="text-lg font-bold text-brand-black mb-3">{type.title}</h3>
-            <p class="text-gray-600 text-sm">{type.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- Process Section -->
-  <section id="sewage-process" class="py-16 lg:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-          Our Professional Sewage Cleanup Process
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Following strict IICRC protocols, we ensure complete decontamination and safe restoration of your property.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {processSteps.map((step) => (
-          <div class="relative">
-            <div class="bg-brand-cream rounded-2xl p-8 h-full">
-              <div class="w-14 h-14 bg-brand-orange text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
-                {step.number}
-              </div>
-              <h3 class="text-xl font-bold text-brand-black mb-4">{step.title}</h3>
-              <p class="text-gray-600">{step.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <CTABanner variant="emergency" />
-  
-  <!-- What's Included -->
-  <section class="py-16 lg:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-          Complete Sewage Remediation Services
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          From emergency extraction to full reconstruction, we handle every aspect of sewage damage restoration.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-        {includedServices.map((item) => (
-          <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-            <div class="flex items-start gap-3">
-              <Icon name="check" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 class="font-semibold text-brand-black text-sm mb-1">{item.title}</h4>
-                <p class="text-gray-500 text-xs">{item.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- Cities Served -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-          Sewage Cleanup Across North San Diego County
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Our emergency response teams serve communities throughout the region with rapid 60-minute response times.
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-        {citiesServed.slice(0, 5).map((city: { slug: string; name: string }) => (
-          <a 
-            href={`/service-area/${city.slug}/sewage-cleanup/`}
-            class="group bg-brand-cream hover:bg-brand-orange rounded-lg p-4 text-center transition-all duration-300"
-          >
-            <span class="font-semibold text-brand-black group-hover:text-white transition-colors">
-              {city.name}
-            </span>
-          </a>
-        ))}
-      </div>
-      
-      <div class="text-center mt-8">
-        <Button href="/service-area/" variant="secondary">
-          View All Service Areas
-        </Button>
-      </div>
-    </div>
-  </section>
-  
-  <Testimonials />
-  
-  <!-- Related Services -->
-  <section class="py-16 lg:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-          Related Restoration Services
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Sewage damage often requires additional restoration services. We offer comprehensive solutions for all your needs.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {relatedServices.map((relatedService: { slug: string; name: string; shortDescription: string }) => (
-          <a 
-            href={`/services/${relatedService.slug}/`}
-            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
-          >
-            <div class="aspect-video bg-gray-200 overflow-hidden">
-              <img 
-                src={`/images/services/${relatedService.slug}-thumb.jpg`} 
-                alt={relatedService.name}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
-                {relatedService.name}
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">{relatedService.shortDescription}</p>
-              <span class="inline-flex items-center text-brand-orange font-semibold text-sm">
-                Learn More
-                <Icon name="arrow" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- FAQ Section -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-6">
-            Sewage Cleanup Questions Answered
-          </h2>
-          <p class="text-xl text-gray-600">
-            Get answers to common questions about professional sewage remediation services.
+          <p class="text-lg text-brand-gray leading-relaxed">
+            Our certified technicians have the training, equipment, and protective gear to safely remove sewage, sanitize affected areas, and restore your home to a healthy condition.
           </p>
         </div>
-        
-        <FAQ faqs={sewageCleanupFaqs} />
       </div>
     </div>
   </section>
   
-  <!-- Final CTA -->
-  <section class="py-16 lg:py-24 bg-brand-black text-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-          <Icon name="alert" class="w-4 h-4" />
-          Biohazard Emergency Response
-        </div>
-        
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-          Sewage Emergency? Don't Wait.
-        </h2>
-        
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Sewage is a serious health hazard. Our certified technicians are standing by 24/7 with specialized equipment to safely remediate your property and protect your family.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
-            <Icon name="phone" class="w-5 h-5" />
-            Call {business.phoneFormatted}
-          </Button>
-          <Button href="/contact/" variant="outline" size="lg">
-            Request Service Online
-          </Button>
-        </div>
-        
-        <p class="text-gray-400 mt-6">
-          Available 24 hours a day, 7 days a week throughout North San Diego County
-        </p>
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">Our Sewage Cleanup Process</h2>
+        <p class="text-lg text-brand-gray">Safe, thorough biohazard remediation.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {[
+          { num: 1, title: 'Emergency Response', desc: 'We arrive in protective gear with specialized equipment within 60 minutes.' },
+          { num: 2, title: 'Sewage Extraction', desc: 'Industrial pumps remove all sewage and contaminated water.' },
+          { num: 3, title: 'Contaminated Material Removal', desc: 'We remove and properly dispose of all materials that can\'t be sanitized.' },
+          { num: 4, title: 'Deep Sanitization', desc: 'Hospital-grade disinfectants eliminate all pathogens and bacteria.' },
+          { num: 5, title: 'Odor Elimination', desc: 'Enzyme treatments and deodorization remove all sewage odors.' },
+          { num: 6, title: 'Restoration', desc: 'We repair and restore affected areas to pre-damage condition.' },
+        ].map((step) => (
+          <div class="bg-white rounded-xl p-6 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center font-heading font-bold text-xl">{step.num}</div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-black mb-2">{step.title}</h3>
+                <p class="text-brand-gray">{step.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
-</BaseLayout>
+</ServicePillarLayout>
