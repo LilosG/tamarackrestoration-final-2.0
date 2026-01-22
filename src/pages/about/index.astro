@@ -1,0 +1,259 @@
+---
+/**
+ * About Page
+ * ==========
+ * Company story, team, values, certifications
+ * Links to: /about/testimonials/, /about/certifications/, /about/faq/
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import { business, services } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+const title = 'About Tamarack Restoration | Carlsbad, CA';
+const description = `Family-owned restoration company serving North San Diego County for 10+ years. IICRC certified, ${business.reviewCount} five-star reviews. Meet the team behind Tamarack Restoration.`;
+const canonical = getCanonicalUrl('/about/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/', current: true },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+const values = [
+  {
+    icon: 'clock',
+    title: 'Rapid Response',
+    description: 'When disaster strikes, every minute counts. We guarantee 60-minute response times, 24/7, because we know you can\'t wait.',
+  },
+  {
+    icon: 'award',
+    title: 'IICRC Certified',
+    description: 'Our technicians hold certifications from the Institute of Inspection, Cleaning and Restoration Certification—the gold standard in our industry.',
+  },
+  {
+    icon: 'shield',
+    title: 'Insurance Expertise',
+    description: 'We work directly with all major insurance carriers, handling the paperwork and documentation so you can focus on your family.',
+  },
+  {
+    icon: 'users',
+    title: 'Local & Family-Owned',
+    description: 'Based in Carlsbad, we\'re your neighbors. We treat every home like our own and every customer like family.',
+  },
+  {
+    icon: 'check-circle',
+    title: '100% Satisfaction',
+    description: 'Our 116 five-star reviews speak for themselves. We don\'t consider the job done until you\'re completely satisfied.',
+  },
+  {
+    icon: 'home',
+    title: 'Full-Service Restoration',
+    description: 'From emergency response to final reconstruction, we handle everything so you have one point of contact throughout the process.',
+  },
+];
+
+const certifications = [
+  { name: 'IICRC Certified Firm', description: 'Institute of Inspection, Cleaning and Restoration Certification' },
+  { name: 'Water Damage Restoration', description: 'IICRC WRT Certified Technicians' },
+  { name: 'Applied Structural Drying', description: 'IICRC ASD Certified' },
+  { name: 'Mold Remediation', description: 'IICRC AMRT Certified' },
+  { name: 'Fire & Smoke Restoration', description: 'IICRC FSRT Certified' },
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    
+    <div class="container relative py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <Icon name="users" size="sm" />
+          Family-Owned Since 2014
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+          Your Neighbors in{' '}
+          <span class="text-brand-orange">Restoration</span>
+        </h1>
+        
+        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+          When disaster strikes your home, you need more than a contractor—you need a partner who understands what you're going through. That's who we are.
+        </p>
+        
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="map-pin" size="sm" class="text-brand-orange" />
+            <span>Based in Carlsbad, CA</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="star" size="sm" class="text-brand-orange" />
+            <span>{business.reviewCount} Five-Star Reviews</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="award" size="sm" class="text-brand-orange" />
+            <span>IICRC Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <TrustBar variant="light" />
+  
+  <!-- Our Story -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            Our Story
+          </h2>
+          <div class="space-y-4 text-brand-gray">
+            <p class="text-lg leading-relaxed">
+              Tamarack Restoration was founded with a simple mission: to be the restoration company we'd want to call if disaster struck our own homes.
+            </p>
+            <p class="leading-relaxed">
+              After years of working in the restoration industry, we saw too many companies that treated customers like claim numbers instead of families in crisis. We knew there had to be a better way.
+            </p>
+            <p class="leading-relaxed">
+              Today, from our headquarters in Carlsbad, we serve homeowners and businesses throughout North San Diego County. Our team of IICRC-certified technicians responds within 60 minutes, 24 hours a day, 7 days a week—because we know that when your home is flooding at 2 AM, you need help now, not tomorrow.
+            </p>
+            <p class="leading-relaxed">
+              We've helped hundreds of families recover from water damage, fire, mold, and other disasters. Each project reminds us why we do this work: the relief on a homeowner's face when they see their restored kitchen, the gratitude of a business owner who can reopen their doors.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl bg-brand-cream-200 overflow-hidden">
+            <img 
+              src="/images/team/team-photo.jpg" 
+              alt="The Tamarack Restoration team"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-brand-orange text-white rounded-xl p-4 shadow-card">
+            <div class="font-heading font-bold text-3xl">10+</div>
+            <div class="text-sm text-white/80">Years Serving<br/>North San Diego</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Choose Us / Values -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Why Families Choose Tamarack
+        </h2>
+        <p class="text-lg text-brand-gray">
+          We're not the biggest restoration company—and that's by design. We believe in quality over quantity, relationships over transactions.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {values.map((value) => (
+          <div class="bg-white rounded-xl p-6 shadow-soft">
+            <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mb-4">
+              <Icon name={value.icon} size="lg" />
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+              {value.title}
+            </h3>
+            <p class="text-brand-gray text-sm leading-relaxed">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Certifications -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 text-brand-orange font-semibold text-sm mb-4">
+            <Icon name="award" size="sm" />
+            IICRC CERTIFIED
+          </div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            Certified Professionals You Can Trust
+          </h2>
+          <p class="text-brand-gray mb-6 leading-relaxed">
+            The Institute of Inspection, Cleaning and Restoration Certification (IICRC) sets the standards for our industry. Every Tamarack technician is trained and certified to these rigorous standards.
+          </p>
+          <p class="text-brand-gray mb-8 leading-relaxed">
+            This means you get technicians who know the science behind water damage, understand mold behavior, and use industry-best practices for every restoration project.
+          </p>
+          <Button href="/about/certifications/" variant="outline">
+            View All Certifications
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        
+        <div class="space-y-4">
+          {certifications.map((cert) => (
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="w-10 h-10 rounded-full bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0">
+                <Icon name="check" size="md" />
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-brand-black">{cert.name}</h4>
+                <p class="text-brand-gray text-sm">{cert.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <Testimonials 
+    title="What Our Customers Say"
+    subtitle="Don't just take our word for it—hear from the families we've helped."
+    limit={3}
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- CTA -->
+  <section class="section bg-brand-black">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Work with a Team That Cares?
+        </h2>
+        <p class="text-brand-cream-300 text-lg mb-8">
+          Whether you're dealing with an emergency right now or want to be prepared for the future, we're here to help.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+            <Icon name="phone" size="sm" />
+            Call {business.phoneFormatted}
+          </Button>
+          <Button href="/contact/" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand-black">
+            Contact Us
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

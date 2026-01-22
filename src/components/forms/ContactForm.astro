@@ -1,0 +1,184 @@
+---
+/**
+ * ContactForm Component
+ * =====================
+ * Full contact form for the Contact page
+ * Includes: name, phone, email, address, service, urgency, message
+ * Per master prompt specifications
+ */
+
+import Button from '@/components/ui/Button.astro';
+import { formConfig, services, business } from '@/data/site';
+
+interface Props {
+  class?: string;
+  source?: string;
+}
+
+const { 
+  class: className,
+  source = 'contact-page'
+} = Astro.props;
+
+const formId = `contact-form-${Math.random().toString(36).substr(2, 9)}`;
+
+const serviceOptions = [
+  { value: '', label: 'Select a Service' },
+  ...services.map(s => ({ value: s.slug, label: s.name })),
+  { value: 'other', label: 'Other / Not Sure' },
+];
+
+const urgencyOptions = [
+  { value: '', label: 'How Urgent Is This?' },
+  { value: 'emergency', label: 'Emergency - Need Help Now' },
+  { value: 'urgent', label: 'Urgent - Within 24 Hours' },
+  { value: 'standard', label: 'Standard - This Week' },
+];
+---
+
+<form 
+  id={formId}
+  action={formConfig.formspreeEndpoint}
+  method="POST"
+  class:list={['contact-form space-y-6', className]}
+  data-contact-form
+>
+  <!-- Honeypot for spam protection -->
+  <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+  
+  <!-- Hidden fields -->
+  <input type="hidden" name="source" value={source} />
+  <input type="hidden" name="page_url" value="" data-page-url />
+  <input type="hidden" name="timestamp" value="" data-timestamp />
+  
+  <!-- Name & Phone Row -->
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label for={`${formId}-name`} class="block text-sm font-medium text-brand-black mb-2">
+        Your Name <span class="text-brand-orange">*</span>
+      </label>
+      <input
+        type="text"
+        id={`${formId}-name`}
+        name="name"
+        required
+        class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black placeholder:text-brand-gray-light focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all"
+      />
+    </div>
+    
+    <div>
+      <label for={`${formId}-phone`} class="block text-sm font-medium text-brand-black mb-2">
+        Phone Number <span class="text-brand-orange">*</span>
+      </label>
+      <input
+        type="tel"
+        id={`${formId}-phone`}
+        name="phone"
+        required
+        class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black placeholder:text-brand-gray-light focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all"
+      />
+    </div>
+  </div>
+  
+  <!-- Email & Address Row -->
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label for={`${formId}-email`} class="block text-sm font-medium text-brand-black mb-2">
+        Email Address <span class="text-brand-orange">*</span>
+      </label>
+      <input
+        type="email"
+        id={`${formId}-email`}
+        name="email"
+        required
+        class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black placeholder:text-brand-gray-light focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all"
+      />
+    </div>
+    
+    <div>
+      <label for={`${formId}-address`} class="block text-sm font-medium text-brand-black mb-2">
+        Property Address <span class="text-brand-gray-light">(optional)</span>
+      </label>
+      <input
+        type="text"
+        id={`${formId}-address`}
+        name="address"
+        class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black placeholder:text-brand-gray-light focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all"
+      />
+    </div>
+  </div>
+  
+  <!-- Service & Urgency Row -->
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label for={`${formId}-service`} class="block text-sm font-medium text-brand-black mb-2">
+        Service Needed <span class="text-brand-orange">*</span>
+      </label>
+      <select
+        id={`${formId}-service`}
+        name="service"
+        required
+        class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all appearance-none bg-no-repeat bg-right pr-10"
+        style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2360605f%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-position: right 0.75rem center; background-size: 1.25rem;"
+      >
+        {serviceOptions.map((option) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </div>
+    
+    <div>
+      <label for={`${formId}-urgency`} class="block text-sm font-medium text-brand-black mb-2">
+        Urgency Level <span class="text-brand-orange">*</span>
+      </label>
+      <select
+        id={`${formId}-urgency`}
+        name="urgency"
+        required
+        class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all appearance-none bg-no-repeat bg-right pr-10"
+        style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2360605f%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-position: right 0.75rem center; background-size: 1.25rem;"
+      >
+        {urgencyOptions.map((option) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+  
+  <!-- Message -->
+  <div>
+    <label for={`${formId}-message`} class="block text-sm font-medium text-brand-black mb-2">
+      Tell Us About Your Situation <span class="text-brand-orange">*</span>
+    </label>
+    <textarea
+      id={`${formId}-message`}
+      name="message"
+      required
+      rows="5"
+      class="w-full px-4 py-3 rounded-lg border border-brand-cream-300 bg-white text-brand-black placeholder:text-brand-gray-light focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all resize-y min-h-[120px]"
+    ></textarea>
+  </div>
+  
+  <!-- Submit -->
+  <div>
+    <Button type="submit" variant="primary" size="lg" class="w-full justify-center">
+      Send Message
+    </Button>
+    <p class="text-xs text-brand-gray text-center mt-3">
+      For emergencies, call us directly at <a href={`tel:${business.phone}`} class="text-brand-orange font-semibold hover:underline">{business.phoneFormatted}</a>
+    </p>
+  </div>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('[data-contact-form]');
+    forms.forEach(form => {
+      const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
+      const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+      
+      if (pageUrlInput) pageUrlInput.value = window.location.href;
+      if (timestampInput) timestampInput.value = new Date().toISOString();
+    });
+  });
+</script>

@@ -1,0 +1,251 @@
+---
+/**
+ * Contact Page
+ * ============
+ * Full contact page with contact form, phone, address, hours
+ * All data pulled from site.ts - NO placeholders
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import ContactForm from '@/components/forms/ContactForm.astro';
+import { business } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+const title = 'Contact Tamarack Restoration | 24/7 Emergency Service';
+const description = `Contact Tamarack Restoration for emergency water, fire, and mold restoration in North San Diego County. Available 24/7 with 60-minute response. Call ${business.phoneFormatted} or submit a request online.`;
+const canonical = getCanonicalUrl('/contact/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact/', current: true },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+const contactMethods = [
+  {
+    icon: 'phone',
+    title: 'Call Us 24/7',
+    description: 'For emergencies, call us directly for immediate assistance.',
+    action: {
+      text: business.phoneFormatted,
+      href: `tel:${business.phone}`,
+    },
+    highlight: true,
+  },
+  {
+    icon: 'mail',
+    title: 'Email Us',
+    description: 'For non-urgent inquiries, send us an email.',
+    action: {
+      text: business.email,
+      href: `mailto:${business.email}`,
+    },
+    highlight: false,
+  },
+  {
+    icon: 'map-pin',
+    title: 'Visit Our Office',
+    description: 'Our headquarters in Carlsbad.',
+    action: {
+      text: business.address.full,
+      href: `https://maps.google.com/?q=${encodeURIComponent(business.address.full)}`,
+    },
+    highlight: false,
+  },
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    
+    <div class="container relative py-16 lg:py-20">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+          </span>
+          Available 24/7
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+          Get Help{' '}
+          <span class="text-brand-orange">Now</span>
+        </h1>
+        
+        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+          Whether you're facing an emergency or have questions about our services, we're here to help. Reach out anytime—we respond within 60 minutes.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Methods -->
+  <section class="py-8 bg-white border-b border-brand-cream-300">
+    <div class="container">
+      <div class="grid md:grid-cols-3 gap-6">
+        {contactMethods.map((method) => (
+          <a 
+            href={method.action.href}
+            class:list={[
+              'group flex items-start gap-4 p-6 rounded-xl transition-all',
+              method.highlight 
+                ? 'bg-brand-orange text-white hover:bg-brand-orange-600' 
+                : 'bg-brand-cream-200 hover:bg-brand-cream-300'
+            ]}
+          >
+            <div class:list={[
+              'w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0',
+              method.highlight 
+                ? 'bg-white/20' 
+                : 'bg-brand-orange-100 text-brand-orange'
+            ]}>
+              <Icon name={method.icon} size="lg" class={method.highlight ? 'text-white' : ''} />
+            </div>
+            <div>
+              <h3 class:list={[
+                'font-heading font-bold text-lg mb-1',
+                method.highlight ? 'text-white' : 'text-brand-black'
+              ]}>
+                {method.title}
+              </h3>
+              <p class:list={[
+                'text-sm mb-2',
+                method.highlight ? 'text-white/80' : 'text-brand-gray'
+              ]}>
+                {method.description}
+              </p>
+              <span class:list={[
+                'font-semibold text-sm',
+                method.highlight ? 'text-white' : 'text-brand-orange'
+              ]}>
+                {method.action.text}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content: Form + Info -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Form Column -->
+        <div class="lg:col-span-3">
+          <div class="bg-white rounded-2xl shadow-card p-8">
+            <h2 class="font-heading text-2xl font-bold text-brand-black mb-2">
+              Send Us a Message
+            </h2>
+            <p class="text-brand-gray mb-6">
+              Fill out the form below and we'll get back to you as soon as possible.
+            </p>
+            
+            <ContactForm source="contact-page" />
+          </div>
+        </div>
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-2">
+          <!-- Emergency CTA -->
+          <div class="bg-brand-black rounded-2xl p-6 mb-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center">
+                <Icon name="alert-triangle" size="md" class="text-white" />
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white">
+                Emergency?
+              </h3>
+            </div>
+            <p class="text-brand-cream-300 mb-4">
+              Don't wait—call us now for immediate 24/7 emergency response. We'll have a team to your property within 60 minutes.
+            </p>
+            <a 
+              href={`tel:${business.phone}`}
+              class="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-orange-600 transition-colors w-full justify-center"
+            >
+              <Icon name="phone" size="md" />
+              {business.phoneFormatted}
+            </a>
+          </div>
+          
+          <!-- Business Hours -->
+          <div class="bg-white rounded-2xl p-6 mb-6">
+            <h3 class="font-heading font-bold text-lg text-brand-black mb-4 flex items-center gap-2">
+              <Icon name="clock" size="md" class="text-brand-orange" />
+              Hours of Operation
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center pb-3 border-b border-brand-cream-300">
+                <span class="text-brand-gray">Emergency Services</span>
+                <span class="font-semibold text-brand-black">24/7</span>
+              </div>
+              <div class="flex justify-between items-center pb-3 border-b border-brand-cream-300">
+                <span class="text-brand-gray">Office Hours</span>
+                <span class="font-semibold text-brand-black">Mon-Fri 8am-6pm</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-brand-gray">Response Time</span>
+                <span class="font-semibold text-brand-orange">60 Minutes</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Location -->
+          <div class="bg-white rounded-2xl p-6">
+            <h3 class="font-heading font-bold text-lg text-brand-black mb-4 flex items-center gap-2">
+              <Icon name="map-pin" size="md" class="text-brand-orange" />
+              Our Location
+            </h3>
+            <address class="not-italic text-brand-gray mb-4">
+              <strong class="text-brand-black">{business.name}</strong><br />
+              {business.address.street}<br />
+              {business.address.suite}<br />
+              {business.address.city}, {business.address.state} {business.address.zip}
+            </address>
+            <a 
+              href={`https://maps.google.com/?q=${encodeURIComponent(business.address.full)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+            >
+              Get Directions
+              <Icon name="external-link" size="sm" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Service Area Note -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-2xl font-bold text-brand-black mb-4">
+          Serving All of North San Diego County
+        </h2>
+        <p class="text-brand-gray mb-6">
+          From our Carlsbad headquarters, we provide emergency restoration services to Carlsbad, Oceanside, Vista, San Marcos, Encinitas, Solana Beach, Rancho Santa Fe, and surrounding communities.
+        </p>
+        <a 
+          href="/service-area/"
+          class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+        >
+          View All Service Areas
+          <Icon name="arrow-right" size="sm" />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
