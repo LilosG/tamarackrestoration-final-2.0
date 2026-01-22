@@ -2,677 +2,144 @@
 /**
  * Water Damage Restoration - Service Pillar Page
  * ===============================================
- * Comprehensive page covering water damage restoration services
- * SEO-optimized for "water damage restoration" keywords
+ * Uses ServicePillarLayout template with service-specific content
  */
 
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import ServicePillarLayout from '@/layouts/ServicePillarLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
-import Button from '@/components/ui/Button.astro';
-import Card from '@/components/ui/Card.astro';
-import TrustBar from '@/components/sections/TrustBar.astro';
-import ProcessSteps from '@/components/sections/ProcessSteps.astro';
-import Testimonials from '@/components/sections/Testimonials.astro';
-import CTABanner from '@/components/sections/CTABanner.astro';
-import FAQ from '@/components/sections/FAQ.astro';
-import LeadForm from '@/components/forms/LeadForm.astro';
-import { services, cities, business } from '@/data/site';
-import { 
-  getServiceTitle, 
-  getServiceDescription, 
-  getCanonicalUrl, 
-  getServiceSchema,
-  getServiceBreadcrumbs,
-  getBreadcrumbSchema,
-  getFAQSchema,
-  combineSchemas
-} from '@/utils/seo';
-import type { FAQ as FAQType } from '@/types';
+import type { FAQ } from '@/types';
 
-// Get the service data
-const service = services.find(s => s.slug === 'water-damage-restoration')!;
+const serviceSlug = 'water-damage-restoration';
 
-// SEO data
-const title = getServiceTitle(service.name);
-const description = getServiceDescription(service.name);
-const canonical = getCanonicalUrl(`/services/${service.slug}/`);
-const breadcrumbs = getServiceBreadcrumbs(service);
+const metaDescription = 'Professional water damage restoration in North San Diego County. 24/7 emergency response, 60-minute arrival. Water extraction, structural drying, mold prevention. Call (760) 500-2211.';
 
-// Service-specific FAQs
-const waterDamageFaqs: FAQType[] = [
+const faqs: FAQ[] = [
   {
     question: 'How quickly should I call for water damage restoration?',
-    answer: 'You should call immediately. Water damage worsens rapidly—within 24-48 hours, mold can begin to grow, and structural damage can become severe. The faster you act, the more you can save and the lower your restoration costs will be. Tamarack Restoration offers 24/7 emergency service with 60-minute response times.',
+    answer: 'Call immediately. Water damage worsens rapidly—within 24-48 hours, mold can begin to grow. The faster you act, the more you can save. We offer 24/7 emergency service with 60-minute response times.',
   },
   {
     question: 'What causes water damage in homes?',
-    answer: 'Common causes include burst or leaking pipes, water heater failures, appliance malfunctions (washing machines, dishwashers), roof leaks, sewage backups, flooding from storms, and HVAC condensation issues. In coastal areas like North San Diego County, humidity can also contribute to hidden moisture problems.',
+    answer: 'Common causes include burst pipes, water heater failures, appliance malfunctions, roof leaks, sewage backups, flooding from storms, and HVAC condensation issues.',
   },
   {
     question: 'Will my insurance cover water damage restoration?',
-    answer: 'Most homeowner\'s insurance policies cover sudden and accidental water damage, such as burst pipes or appliance failures. However, gradual damage from neglected maintenance or flood damage typically requires separate coverage. We work with all major insurance carriers and can help document your claim for the best possible outcome.',
+    answer: 'Most homeowner\'s insurance covers sudden and accidental water damage like burst pipes. Gradual damage or flood damage may require separate coverage. We work with all major carriers and help document your claim.',
   },
   {
     question: 'How long does water damage restoration take?',
-    answer: 'The timeline depends on the extent of damage. Minor water damage may be restored in 3-5 days, while extensive damage affecting multiple rooms or requiring structural repairs can take 1-2 weeks or more. We provide a detailed timeline during our initial assessment and keep you updated throughout the process.',
+    answer: 'Minor damage: 3-5 days. Extensive damage affecting multiple rooms: 1-2 weeks or more. We provide a detailed timeline during our initial assessment.',
   },
   {
-    question: 'Can I stay in my home during water damage restoration?',
-    answer: 'In many cases, yes. For localized damage, you can often remain in your home while we work. However, if there\'s extensive damage, electrical hazards, or potential health risks from contaminated water, we may recommend temporary relocation for your safety. We\'ll advise you based on your specific situation.',
-  },
-  {
-    question: 'What\'s the difference between Category 1, 2, and 3 water damage?',
-    answer: 'Category 1 (Clean Water) comes from sanitary sources like broken supply lines. Category 2 (Gray Water) contains contaminants from sources like dishwashers or washing machines. Category 3 (Black Water) is highly contaminated from sewage, flooding, or toilet overflows. Each category requires different safety protocols and cleaning procedures.',
+    question: 'Can I stay in my home during restoration?',
+    answer: 'Often yes for localized damage. For extensive damage, electrical hazards, or contaminated water, we may recommend temporary relocation for safety.',
   },
   {
     question: 'How do you prevent mold after water damage?',
-    answer: 'Rapid response is key—we begin water extraction immediately and use industrial dehumidifiers and air movers to dry affected areas within 24-48 hours. We also apply antimicrobial treatments to prevent mold growth. Our moisture monitoring ensures complete drying before restoration work begins.',
-  },
-  {
-    question: 'Do you offer free estimates for water damage restoration?',
-    answer: 'Yes, we provide free on-site assessments for water damage restoration. We\'ll evaluate the damage, explain our restoration plan, and provide a detailed estimate. For emergencies, we can begin mitigation immediately to prevent further damage while finalizing the scope of work.',
+    answer: 'Rapid response is key. We begin extraction immediately and use industrial dehumidifiers to dry areas within 24-48 hours. We also apply antimicrobial treatments.',
   },
 ];
-
-// Cities served - for internal linking
-const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
-
-// Related services
-const relatedServices = services.filter(s => 
-  ['mold-removal', 'flood-cleanup', 'sewage-cleanup'].includes(s.slug)
-);
-
-// Schema markup
-const serviceSchema = getServiceSchema(service, citiesServed);
-const faqSchema = getFAQSchema(waterDamageFaqs);
-const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
-const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
 ---
 
-<BaseLayout 
-  title={title}
-  description={description}
-  canonical={canonical}
-  jsonLd={jsonLd}
+<ServicePillarLayout 
+  serviceSlug={serviceSlug}
+  metaDescription={metaDescription}
+  faqs={faqs}
 >
-  <!-- Hero Section with Background Image -->
-  <section class="relative bg-brand-black overflow-hidden min-h-[550px] lg:min-h-[600px] flex items-center">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <img 
-        src={service.image}
-        alt="Professional water damage restoration in progress"
-        class="w-full h-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-      />
-      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70"></div>
-    </div>
-    
-    <div class="container relative py-16 lg:py-20">
-      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
-      
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        <!-- Content -->
-        <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-6 backdrop-blur-sm">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
-            </span>
-            24/7 Emergency Water Damage Response
-          </div>
-          
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 leading-[1.1]">
-            Professional Water Damage Restoration in{' '}
-            <span class="text-brand-orange">North San Diego County</span>
-          </h1>
-          
-          <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-            Fast, thorough water damage restoration to protect your property and get your life back to normal. We respond in 60 minutes, 24/7.
-          </p>
-          
-          <!-- Trust Indicators -->
-          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
-            <div class="flex items-center gap-2">
-              <div class="flex items-center gap-0.5">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                  </svg>
-                ))}
-              </div>
-              <span class="text-white font-semibold">{business.rating}</span>
-              <span class="text-brand-cream-400">({business.reviewCount} reviews)</span>
-            </div>
-            <div class="flex items-center gap-2 text-brand-cream-300">
-              <Icon name="award" size="md" class="text-brand-orange" />
-              <span>IICRC Certified</span>
-            </div>
-          </div>
-          
-          <!-- CTA Buttons (Mobile) -->
-          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
-            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
-              <Icon name="phone" size="md" />
-              Call {business.phoneFormatted}
-            </Button>
-            <Button href="#contact-form" variant="outline" size="lg" class="justify-center border-white/30 text-white hover:bg-white hover:text-brand-black">
-              Get Free Estimate
-            </Button>
-          </div>
-          
-          <!-- Phone CTA (Desktop) -->
-          <div class="hidden lg:flex items-center gap-6 mt-2">
-            <a 
-              href={`tel:${business.phone}`}
-              class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
-            >
-              <span class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
-                <Icon name="phone" size="lg" class="text-white" />
-              </span>
-              <span>
-                <span class="block text-sm text-brand-cream-400">24/7 Emergency Line</span>
-                <span class="block font-bold text-2xl">{business.phoneFormatted}</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Lead Form (Desktop) -->
-        <div class="hidden lg:block lg:col-span-5" id="contact-form">
-          <div class="relative">
-            <div class="absolute -inset-1 bg-brand-orange/20 rounded-2xl blur-xl"></div>
-            <LeadForm 
-              variant="card"
-              title="Get Help Now"
-              subtitle="60-minute emergency response"
-              source="service-water-damage-restoration"
-              class="relative"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Bottom accent -->
-    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-orange to-transparent"></div>
-  </section>
-  
-  <!-- Trust Bar -->
-  <TrustBar variant="light" />
-  
-  <!-- What is Water Damage Section -->
+  <!-- Why Water Damage Requires Attention -->
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-display text-display-lg text-brand-black mb-6 text-center">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
           Why Water Damage Requires Immediate Professional Attention
         </h2>
         
-        <div class="prose prose-lg mx-auto">
-          <p class="text-body-lg text-brand-gray leading-relaxed">
-            Water damage is one of the most common—and most destructive—emergencies homeowners face. Whether it's a burst pipe at 2 AM, an overflowing water heater, or flooding from a storm, water can cause devastating damage to your property in a matter of hours.
+        <div class="prose prose-lg mx-auto mb-12">
+          <p class="text-lg text-brand-gray leading-relaxed">
+            Water damage is one of the most common—and most destructive—emergencies homeowners face. Whether it's a burst pipe, overflowing water heater, or storm flooding, water causes devastating damage in hours.
           </p>
-          
-          <p class="text-body-lg text-brand-gray leading-relaxed">
-            The problem compounds quickly: within 24 hours, mold can begin to grow. Within days, structural damage can become irreversible. That's why rapid, professional water damage restoration isn't just recommended—it's essential to protecting your home and your health.
+          <p class="text-lg text-brand-gray leading-relaxed">
+            Within 24 hours, mold can begin growing. Within days, structural damage can become irreversible. Rapid, professional restoration isn't just recommended—it's essential.
           </p>
         </div>
         
         <!-- Damage Timeline -->
-        <div class="mt-12 bg-brand-cream-200 rounded-xl p-6 lg:p-8">
-          <h3 class="font-heading font-bold text-display-sm text-brand-black mb-6 text-center">
+        <div class="bg-brand-cream-200 rounded-xl p-6 lg:p-8">
+          <h3 class="font-heading font-bold text-xl text-brand-black mb-6 text-center">
             The Water Damage Timeline: Why Every Hour Counts
           </h3>
           
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-white rounded-lg p-4 text-center shadow-soft">
               <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-brand-orange-100 flex items-center justify-center">
-                <span class="font-bold text-brand-orange text-xl">0-1h</span>
+                <span class="font-bold text-brand-orange">0-1h</span>
               </div>
-              <h4 class="font-heading font-bold text-brand-black text-body-md mb-2">First Hour</h4>
-              <p class="text-body-sm text-brand-gray">Water spreads rapidly, soaking carpets, drywall, and furniture</p>
+              <h4 class="font-heading font-bold text-brand-black mb-2">First Hour</h4>
+              <p class="text-sm text-brand-gray">Water spreads, soaking carpets, drywall, furniture</p>
             </div>
             
             <div class="bg-white rounded-lg p-4 text-center shadow-soft">
               <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-warning-50 flex items-center justify-center">
-                <span class="font-bold text-warning-700 text-xl">24h</span>
+                <span class="font-bold text-warning-700">24h</span>
               </div>
-              <h4 class="font-heading font-bold text-brand-black text-body-md mb-2">24 Hours</h4>
-              <p class="text-body-sm text-brand-gray">Mold spores activate; drywall begins to swell and break down</p>
+              <h4 class="font-heading font-bold text-brand-black mb-2">24 Hours</h4>
+              <p class="text-sm text-brand-gray">Mold spores activate; drywall swells</p>
             </div>
             
             <div class="bg-white rounded-lg p-4 text-center shadow-soft">
               <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-error-50 flex items-center justify-center">
-                <span class="font-bold text-error-700 text-xl">48h</span>
+                <span class="font-bold text-error-700">48h</span>
               </div>
-              <h4 class="font-heading font-bold text-brand-black text-body-md mb-2">48 Hours</h4>
-              <p class="text-body-sm text-brand-gray">Mold growth begins; structural damage accelerates</p>
+              <h4 class="font-heading font-bold text-brand-black mb-2">48 Hours</h4>
+              <p class="text-sm text-brand-gray">Mold growth begins; structural damage accelerates</p>
             </div>
             
             <div class="bg-white rounded-lg p-4 text-center shadow-soft">
               <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-brand-black-100 flex items-center justify-center">
-                <span class="font-bold text-brand-black text-xl">1wk+</span>
+                <span class="font-bold text-brand-black">1wk+</span>
               </div>
-              <h4 class="font-heading font-bold text-brand-black text-body-md mb-2">One Week</h4>
-              <p class="text-body-sm text-brand-gray">Extensive mold colonies; potential structural compromise</p>
+              <h4 class="font-heading font-bold text-brand-black mb-2">One Week</h4>
+              <p class="text-sm text-brand-gray">Extensive mold; potential structural failure</p>
             </div>
           </div>
-          
-          <p class="text-center text-brand-gray mt-6">
-            <strong class="text-brand-orange">Don't wait.</strong> Tamarack Restoration responds in 60 minutes or less to minimize damage and save you money.
-          </p>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Our Water Damage Restoration Process -->
+  <!-- Our Process -->
   <section class="section bg-brand-cream-200">
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="font-display text-display-lg text-brand-black mb-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
           Our Water Damage Restoration Process
         </h2>
-        <p class="text-body-lg text-brand-gray">
-          A systematic, IICRC-certified approach to completely restore your property—efficiently and thoroughly.
+        <p class="text-lg text-brand-gray">
+          IICRC-certified approach to completely restore your property.
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <!-- Step 1 -->
-        <div class="bg-white rounded-xl p-6 shadow-card">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
-              1
-            </div>
-            <div>
-              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Emergency Response & Assessment</h3>
-              <p class="text-brand-gray mb-4">
-                We arrive within 60 minutes to assess the damage, identify the water source, and determine the category of water contamination. Our technicians document everything for your insurance claim.
-              </p>
-              <ul class="space-y-2">
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  24/7 availability, 365 days a year
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Comprehensive damage assessment
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Photo documentation for insurance
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 2 -->
-        <div class="bg-white rounded-xl p-6 shadow-card">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
-              2
-            </div>
-            <div>
-              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Water Extraction & Removal</h3>
-              <p class="text-brand-gray mb-4">
-                Using truck-mounted extractors and industrial pumps, we remove standing water quickly—before it can cause additional damage to your floors, walls, and belongings.
-              </p>
-              <ul class="space-y-2">
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Truck-mounted extraction units
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Remove water from carpets and padding
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Contents moved to prevent damage
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="bg-white rounded-xl p-6 shadow-card">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
-              3
-            </div>
-            <div>
-              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Drying & Dehumidification</h3>
-              <p class="text-brand-gray mb-4">
-                Our industrial air movers and dehumidifiers create optimal drying conditions, removing moisture from walls, floors, and structural materials to prevent mold growth.
-              </p>
-              <ul class="space-y-2">
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Industrial dehumidifiers & air movers
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Daily moisture monitoring
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Thermal imaging to find hidden moisture
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 4 -->
-        <div class="bg-white rounded-xl p-6 shadow-card">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
-              4
-            </div>
-            <div>
-              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Cleaning & Sanitization</h3>
-              <p class="text-brand-gray mb-4">
-                We thoroughly clean and sanitize affected areas, treating surfaces with antimicrobial solutions to eliminate bacteria, odors, and prevent future mold growth.
-              </p>
-              <ul class="space-y-2">
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Antimicrobial treatments
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Odor removal & air purification
-                </li>
-                <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                  <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                  Content cleaning & restoration
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 5 -->
-        <div class="bg-white rounded-xl p-6 shadow-card lg:col-span-2">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-brand-orange text-white flex items-center justify-center font-display text-2xl">
-              5
-            </div>
-            <div class="flex-1">
-              <h3 class="font-heading font-bold text-display-sm text-brand-black mb-2">Restoration & Reconstruction</h3>
-              <p class="text-brand-gray mb-4">
-                The final step involves restoring your property to its pre-damage condition. From drywall replacement to flooring installation, we handle it all—so you have one point of contact throughout your restoration.
-              </p>
-              <div class="grid sm:grid-cols-3 gap-4">
-                <ul class="space-y-2">
-                  <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                    <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                    Drywall repair/replacement
-                  </li>
-                  <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                    <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                    Flooring restoration
-                  </li>
-                </ul>
-                <ul class="space-y-2">
-                  <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                    <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                    Painting & finishing
-                  </li>
-                  <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                    <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                    Carpet replacement
-                  </li>
-                </ul>
-                <ul class="space-y-2">
-                  <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                    <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                    Final walkthrough
-                  </li>
-                  <li class="flex items-center gap-2 text-body-sm text-brand-gray">
-                    <Icon name="check-circle" size="sm" class="text-brand-orange flex-shrink-0" />
-                    Satisfaction guarantee
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Signs You Need Water Damage Restoration -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="font-display text-display-lg text-brand-black mb-6">
-            Signs You Need Professional Water Damage Restoration
-          </h2>
-          
-          <p class="text-body-lg text-brand-gray mb-6">
-            Some water damage is obvious—standing water, flooding, or a visible leak. But many signs are subtle. If you notice any of these warning signs, call us immediately for a professional assessment:
-          </p>
-          
-          <div class="space-y-4">
-            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
-                <Icon name="droplet" size="md" />
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {[
+          { num: 1, title: 'Emergency Response & Assessment', desc: 'We arrive within 60 minutes to assess damage, identify the source, and document for insurance.' },
+          { num: 2, title: 'Water Extraction & Removal', desc: 'Industrial pumps and extractors remove standing water before it causes more damage.' },
+          { num: 3, title: 'Drying & Dehumidification', desc: 'Commercial air movers and dehumidifiers thoroughly dry all affected materials.' },
+          { num: 4, title: 'Cleaning & Sanitization', desc: 'We clean, sanitize, and apply antimicrobial treatments to prevent mold.' },
+          { num: 5, title: 'Restoration & Reconstruction', desc: 'Final repairs restore your property to pre-damage condition.' },
+        ].map((step) => (
+          <div class="bg-white rounded-xl p-6 shadow-card">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center font-heading font-bold text-xl">
+                {step.num}
               </div>
               <div>
-                <h3 class="font-heading font-bold text-brand-black mb-1">Visible Water or Flooding</h3>
-                <p class="text-body-sm text-brand-gray">Standing water from any source—burst pipes, appliances, storms, or unknown origin.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
-                <Icon name="alert-triangle" size="md" />
-              </div>
-              <div>
-                <h3 class="font-heading font-bold text-brand-black mb-1">Water Stains or Discoloration</h3>
-                <p class="text-body-sm text-brand-gray">Brown or yellow stains on ceilings, walls, or floors often indicate hidden water damage.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
-                <Icon name="waves" size="md" />
-              </div>
-              <div>
-                <h3 class="font-heading font-bold text-brand-black mb-1">Warped or Buckled Materials</h3>
-                <p class="text-body-sm text-brand-gray">Warped flooring, bubbling paint, or swollen drywall signals moisture absorption.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center">
-                <Icon name="shield" size="md" />
-              </div>
-              <div>
-                <h3 class="font-heading font-bold text-brand-black mb-1">Musty Odors or Mold</h3>
-                <p class="text-body-sm text-brand-gray">A persistent musty smell or visible mold growth means moisture is present.</p>
+                <h3 class="font-heading font-bold text-lg text-brand-black mb-2">{step.title}</h3>
+                <p class="text-brand-gray">{step.desc}</p>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="relative">
-          <div class="absolute -inset-4 bg-brand-orange/5 rounded-2xl"></div>
-          <img 
-            src="/images/services/water-damage/living-room-dryout.jpg" 
-            alt="Water damage restoration equipment drying a flooded living room"
-            class="relative rounded-xl shadow-soft-xl w-full"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- What's Included -->
-  <section class="section bg-brand-cream-200">
-    <div class="container">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="font-display text-display-lg text-brand-black mb-4">
-          What's Included in Our Water Damage Restoration Service
-        </h2>
-        <p class="text-body-lg text-brand-gray">
-          Complete, end-to-end restoration from emergency response to final repairs—all handled by one trusted team.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {service.features.map((feature, index) => (
-          <div class="bg-white rounded-xl p-6 shadow-soft">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
-                <Icon name="check-circle" size="md" class="text-brand-orange" />
-              </div>
-              <h3 class="font-heading font-bold text-brand-black">{feature}</h3>
-            </div>
-          </div>
-        ))}
-        
-        <!-- Additional features -->
-        <div class="bg-white rounded-xl p-6 shadow-soft">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
-              <Icon name="check-circle" size="md" class="text-brand-orange" />
-            </div>
-            <h3 class="font-heading font-bold text-brand-black">Thermal Imaging Inspection</h3>
-          </div>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 shadow-soft">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
-              <Icon name="check-circle" size="md" class="text-brand-orange" />
-            </div>
-            <h3 class="font-heading font-bold text-brand-black">Antimicrobial Treatment</h3>
-          </div>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 shadow-soft">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
-              <Icon name="check-circle" size="md" class="text-brand-orange" />
-            </div>
-            <h3 class="font-heading font-bold text-brand-black">Odor Elimination</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Cities We Serve Section -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <h2 class="font-display text-display-lg text-brand-black mb-4">
-          Water Damage Restoration Throughout North San Diego County
-        </h2>
-        <p class="text-body-lg text-brand-gray">
-          We provide rapid water damage restoration services to homes and businesses across the region. Select your city for location-specific information.
-        </p>
-      </div>
-      
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-        {citiesServed.map((city) => (
-          <a 
-            href={`/service-area/${city.slug}/water-damage-restoration/`}
-            class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
-          >
-            <Icon name="map-pin" size="md" class="text-brand-orange group-hover:text-white flex-shrink-0" />
-            <div>
-              <span class="font-heading font-bold text-brand-black group-hover:text-white">
-                Water Damage Restoration in {city.name}
-              </span>
-            </div>
-            <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
-          </a>
         ))}
       </div>
     </div>
   </section>
-  
-  <!-- Testimonials -->
-  <Testimonials 
-    limit={3}
-    class="bg-brand-cream-200"
-  />
-  
-  <!-- Related Services -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <h2 class="font-display text-display-lg text-brand-black mb-4">
-          Related Services
-        </h2>
-        <p class="text-body-lg text-brand-gray">
-          Water damage often leads to related issues. We provide comprehensive restoration for all your needs.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-6">
-        {relatedServices.map((relatedService) => (
-          <a 
-            href={`/services/${relatedService.slug}/`}
-            class="group bg-white border border-brand-cream-300 rounded-xl p-6 hover:border-brand-orange hover:shadow-card transition-all"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                <Icon name={relatedService.icon} size="lg" />
-              </div>
-              <h3 class="font-heading font-bold text-display-sm text-brand-black group-hover:text-brand-orange transition-colors">
-                {relatedService.name}
-              </h3>
-            </div>
-            <p class="text-brand-gray text-body-md mb-4">
-              {relatedService.shortDescription}
-            </p>
-            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-body-sm group-hover:gap-2 transition-all">
-              Learn More
-              <Icon name="arrow-right" size="sm" />
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- FAQ Section -->
-  <FAQ 
-    title="Water Damage Restoration FAQs"
-    subtitle="Get answers to common questions about water damage and our restoration process"
-    faqs={waterDamageFaqs}
-    showViewAll={false}
-    class="bg-brand-cream-200"
-  />
-  
-  <!-- Final CTA Banner -->
-  <CTABanner 
-    variant="emergency"
-    title="Water Damage? We're Here 24/7."
-    subtitle="Call now for immediate emergency response—we'll be there in 60 minutes or less"
-  />
-  
-  <!-- Mobile Lead Form -->
-  <section class="section lg:hidden bg-brand-cream-200" id="mobile-contact-form">
-    <div class="container">
-      <LeadForm 
-        variant="card"
-        title="Get Help Now"
-        subtitle="60-minute emergency response"
-        source="service-water-damage-restoration-mobile"
-      />
-    </div>
-  </section>
-</BaseLayout>
+</ServicePillarLayout>

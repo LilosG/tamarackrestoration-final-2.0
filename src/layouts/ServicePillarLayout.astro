@@ -1,0 +1,291 @@
+---
+/**
+ * Service Pillar Page Layout
+ * ==========================
+ * Reusable template for all service pillar pages
+ * Pass service-specific data as props, layout handles structure
+ */
+
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { services, cities, business } from '@/data/site';
+import { 
+  getServiceTitle, 
+  getCanonicalUrl, 
+  getServiceSchema,
+  getServiceBreadcrumbs,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  combineSchemas
+} from '@/utils/seo';
+import type { FAQ as FAQType, Service } from '@/types';
+
+interface Props {
+  serviceSlug: string;
+  metaDescription: string;
+  faqs: FAQType[];
+  heroImage?: string;
+  /** Content sections passed as slots */
+}
+
+const { serviceSlug, metaDescription, faqs, heroImage } = Astro.props;
+
+// Get service data
+const service = services.find(s => s.slug === serviceSlug)!;
+const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
+const relatedServices = services.filter(s => 
+  service.relatedServices?.includes(s.slug) && s.slug !== serviceSlug
+).slice(0, 3);
+
+// SEO
+const title = getServiceTitle(service.name);
+const canonical = getCanonicalUrl(`/services/${service.slug}/`);
+const breadcrumbs = getServiceBreadcrumbs(service);
+const serviceSchema = getServiceSchema(service, citiesServed);
+const faqSchema = getFAQSchema(faqs);
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
+
+const bgImage = heroImage || service.image || '/images/services/default-hero.jpg';
+---
+
+<BaseLayout 
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-brand-black overflow-hidden min-h-[500px] lg:min-h-[550px] flex items-center">
+    <div class="absolute inset-0">
+      <img 
+        src={bgImage}
+        alt={`Professional ${service.name.toLowerCase()} services`}
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70"></div>
+    </div>
+    
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+      
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+            </span>
+            {service.emergencyService ? '24/7 Emergency Service' : 'Professional Service'}
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+            Professional {service.name} in{' '}
+            <span class="text-brand-orange">North San Diego County</span>
+          </h1>
+          
+          <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+            {service.description}
+          </p>
+          
+          <!-- Trust Indicators -->
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-sm">
+            <div class="flex items-center gap-2">
+              <div class="flex items-center gap-0.5">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                ))}
+              </div>
+              <span class="text-white font-semibold">{business.rating}</span>
+              <span class="text-brand-cream-400">({business.reviewCount} reviews)</span>
+            </div>
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="award" size="sm" class="text-brand-orange" />
+              <span>IICRC Certified</span>
+            </div>
+            {service.emergencyService && (
+              <div class="flex items-center gap-2 text-brand-cream-300">
+                <Icon name="clock" size="sm" class="text-brand-orange" />
+                <span>60-Min Response</span>
+              </div>
+            )}
+          </div>
+          
+          <!-- Mobile CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+              <Icon name="phone" size="sm" />
+              Call {business.phoneFormatted}
+            </Button>
+          </div>
+          
+          <!-- Desktop Phone -->
+          <div class="hidden lg:flex items-center gap-6 mt-2">
+            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+                <Icon name="phone" size="md" class="text-white" />
+              </span>
+              <span>
+                <span class="block text-sm text-brand-cream-400">Call 24/7</span>
+                <span class="block font-bold text-xl tracking-tight">{business.phoneFormatted}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Lead Form -->
+        <div class="hidden lg:block lg:col-span-5">
+          <div class="relative">
+            <div class="absolute -inset-1 bg-brand-orange/20 rounded-2xl blur-xl"></div>
+            <LeadForm 
+              variant="card"
+              title="Get Help Now"
+              subtitle="60-minute emergency response"
+              source={`service-${serviceSlug}`}
+              class="relative"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-orange to-transparent"></div>
+  </section>
+  
+  <!-- Trust Bar -->
+  <TrustBar variant="light" />
+  
+  <!-- Main Content Slot -->
+  <slot />
+  
+  <!-- What's Included -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          What's Included in Our {service.name} Service
+        </h2>
+        <p class="text-lg text-brand-gray">
+          Complete, professional service from start to finish.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {service.features.map((feature) => (
+          <div class="bg-white rounded-xl p-6 shadow-soft">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+                <Icon name="check-circle" size="sm" class="text-brand-orange" />
+              </div>
+              <span class="font-heading font-semibold text-brand-black">{feature}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cities Served -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          {service.name} Throughout North San Diego County
+        </h2>
+        <p class="text-lg text-brand-gray">
+          We provide {service.name.toLowerCase()} services to homes and businesses across the region.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {citiesServed.map((city) => (
+          <a 
+            href={`/service-area/${city.slug}/${serviceSlug}/`}
+            class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
+          >
+            <Icon name="map-pin" size="md" class="text-brand-orange group-hover:text-white flex-shrink-0" />
+            <span class="font-heading font-semibold text-brand-black group-hover:text-white">
+              {service.name} in {city.name}
+            </span>
+            <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <Testimonials limit={3} class="bg-brand-cream-200" />
+  
+  <!-- Related Services -->
+  {relatedServices.length > 0 && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Related Services
+          </h2>
+          <p class="text-lg text-brand-gray">
+            We provide comprehensive restoration for all your needs.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {relatedServices.map((relatedService) => (
+            <a 
+              href={`/services/${relatedService.slug}/`}
+              class="group bg-white border border-brand-cream-300 rounded-xl p-6 hover:border-brand-orange hover:shadow-card transition-all"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                  <Icon name={relatedService.icon} size="lg" />
+                </div>
+                <h3 class="font-heading font-bold text-lg text-brand-black group-hover:text-brand-orange transition-colors">
+                  {relatedService.name}
+                </h3>
+              </div>
+              <p class="text-brand-gray text-sm mb-4">
+                {relatedService.shortDescription}
+              </p>
+              <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">
+                Learn More
+                <Icon name="arrow-right" size="sm" />
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- FAQ -->
+  <FAQ 
+    title={`${service.name} FAQs`}
+    subtitle={`Common questions about ${service.name.toLowerCase()}`}
+    faqs={faqs}
+    showViewAll={false}
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- Mobile Lead Form -->
+  <section class="section lg:hidden bg-white">
+    <div class="container">
+      <LeadForm 
+        variant="card"
+        title="Get Help Now"
+        subtitle="60-minute emergency response"
+        source={`service-${serviceSlug}-mobile`}
+      />
+    </div>
+  </section>
+</BaseLayout>
