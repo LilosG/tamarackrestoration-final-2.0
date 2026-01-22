@@ -3,6 +3,11 @@
  * Hero Section Component
  * ======================
  * Conversion-optimized hero with lead form
+ * 
+ * Typography Strategy:
+ * - Uses font-heading (Archivo) for headlines - professional, readable
+ * - font-display (Archivo Black) reserved for single-word accents only
+ * - Proper letter-spacing for polish
  */
 
 import Icon from '@/components/ui/Icon.astro';
@@ -55,18 +60,16 @@ if (variant === 'city' && cityName) {
       loading="eager"
       fetchpriority="high"
     />
-    <!-- Gradient overlay for text readability -->
-    <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/60"></div>
-    <!-- Additional bottom gradient for depth -->
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/50 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent"></div>
   </div>
   
   <div class="container relative py-16 lg:py-20">
     <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      <!-- Hero Content - Takes 7 columns on large screens -->
+      <!-- Hero Content -->
       <div class="lg:col-span-7 text-white">
         <!-- Emergency Badge -->
-        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/50 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-6 backdrop-blur-sm">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
@@ -75,18 +78,18 @@ if (variant === 'city' && cityName) {
         </div>
         
         <!-- Main Headline -->
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-display-2xl text-white mb-6 leading-[1.1]">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
           {displayTitle}{' '}
           <span class="text-brand-orange">{displayAccent}</span>
         </h1>
         
         <!-- Subheadline -->
-        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed font-body">
           {subtitle}
         </p>
         
-        <!-- Trust Indicators Row -->
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+        <!-- Trust Indicators -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-sm">
           <div class="flex items-center gap-2">
             <div class="flex items-center gap-0.5">
               {[1,2,3,4,5].map(() => (
@@ -99,16 +102,16 @@ if (variant === 'city' && cityName) {
             <span class="text-brand-cream-400">({business.reviewCount} reviews)</span>
           </div>
           <div class="flex items-center gap-2 text-brand-cream-300">
-            <Icon name="award" size="md" class="text-brand-orange" />
+            <Icon name="award" size="sm" class="text-brand-orange" />
             <span>IICRC Certified</span>
           </div>
           <div class="flex items-center gap-2 text-brand-cream-300">
-            <Icon name="clock" size="md" class="text-brand-orange" />
+            <Icon name="clock" size="sm" class="text-brand-orange" />
             <span>60-Min Response</span>
           </div>
         </div>
         
-        <!-- CTA Buttons - Mobile only (form shows on desktop) -->
+        <!-- Mobile CTAs -->
         <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
           <Button 
             href={`tel:${business.phone}`}
@@ -116,7 +119,7 @@ if (variant === 'city' && cityName) {
             size="lg"
             class="justify-center"
           >
-            <Icon name="phone" size="md" />
+            <Icon name="phone" size="sm" />
             Call {business.phoneFormatted}
           </Button>
           <Button 
@@ -129,7 +132,7 @@ if (variant === 'city' && cityName) {
           </Button>
         </div>
         
-        <!-- Desktop-only phone CTA below form -->
+        <!-- Desktop Phone CTA -->
         <div class="hidden lg:flex items-center gap-6 mt-2">
           <a 
             href={`tel:${business.phone}`}
@@ -140,17 +143,16 @@ if (variant === 'city' && cityName) {
             </span>
             <span>
               <span class="block text-sm text-brand-cream-400">Call 24/7</span>
-              <span class="block font-bold text-xl">{business.phoneFormatted}</span>
+              <span class="block font-bold text-xl tracking-tight">{business.phoneFormatted}</span>
             </span>
           </a>
         </div>
       </div>
       
-      <!-- Lead Form - Takes 5 columns on large screens -->
+      <!-- Lead Form -->
       {showForm && (
         <div class="hidden lg:block lg:col-span-5">
           <div class="relative">
-            <!-- Form glow effect -->
             <div class="absolute -inset-1 bg-brand-orange/20 rounded-2xl blur-xl"></div>
             <LeadForm 
               variant="card"
@@ -165,6 +167,5 @@ if (variant === 'city' && cityName) {
     </div>
   </div>
   
-  <!-- Bottom accent line -->
   <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-orange to-transparent"></div>
 </section>

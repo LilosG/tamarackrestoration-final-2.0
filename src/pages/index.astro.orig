@@ -67,6 +67,8 @@ const seoDescription = `24/7 emergency restoration in Carlsbad & North San Diego
     showImage={true}
   />
   
+  <!-- Emergency CTA Banner -->
+  <CTABanner variant="emergency" />
   
   <!-- Testimonials Section -->
   <Testimonials 

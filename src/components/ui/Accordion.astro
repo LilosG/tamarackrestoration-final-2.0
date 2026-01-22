@@ -20,31 +20,42 @@ interface Props {
 }
 
 const { items, class: className, allowMultiple = false } = Astro.props;
-const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
+const accordionId = `accordion-${Math.random().toString(36).substring(2, 11)}`;
 ---
 
 <div 
-  class:list={['accordion divide-y divide-brand-gray-light rounded-xl border border-brand-gray-light overflow-hidden', className]}
+  class:list={[
+    'accordion rounded-xl border border-brand-cream-300 overflow-hidden bg-white shadow-soft',
+    className
+  ]}
   data-accordion
   data-allow-multiple={allowMultiple}
 >
   {items.map((item, index) => (
-    <div class="accordion-item bg-white" data-accordion-item>
-      <h3>
+    <div 
+      class:list={[
+        'accordion-item',
+        index !== items.length - 1 && 'border-b border-brand-cream-300'
+      ]} 
+      data-accordion-item
+    >
+      <h3 class="m-0">
         <button
           type="button"
-          class="accordion-trigger flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-heading font-semibold text-brand-black hover:bg-brand-cream-200 transition-colors duration-fast"
+          class="accordion-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-150 font-heading font-semibold text-brand-black text-lg hover:bg-brand-cream-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-orange"
           aria-expanded={item.open ? 'true' : 'false'}
           aria-controls={`${accordionId}-panel-${index}`}
           id={`${accordionId}-trigger-${index}`}
           data-accordion-trigger
         >
-          <span>{item.title}</span>
-          <Icon 
-            name="chevron-down" 
-            size="md" 
-            class="accordion-icon flex-shrink-0 text-brand-gray transition-transform duration-normal" 
-          />
+          <span class="flex-1 pr-2">{item.title}</span>
+          <span class="accordion-icon-wrapper flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-brand-cream-200">
+            <Icon 
+              name="chevron-down" 
+              size="sm" 
+              class="accordion-icon text-brand-gray transition-transform duration-200" 
+            />
+          </span>
         </button>
       </h3>
       <div
@@ -55,7 +66,7 @@ const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
         data-accordion-panel
         hidden={!item.open}
       >
-        <div class="px-6 pb-4 pt-0 text-brand-gray">
+        <div class="px-6 pb-5 text-brand-gray text-base leading-relaxed">
           <Fragment set:html={item.content} />
         </div>
       </div>
@@ -74,32 +85,29 @@ const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
       triggers.forEach((trigger) => {
         trigger.addEventListener('click', () => {
           const item = trigger.closest('[data-accordion-item]');
-          const panel = item?.querySelector('[data-accordion-panel]');
+          const panel = item?.querySelector('[data-accordion-panel]') as HTMLElement | null;
           const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
           
-          // Close others if not allowing multiple
           if (!allowMultiple && !isExpanded) {
             const otherTriggers = accordion.querySelectorAll('[data-accordion-trigger]');
             otherTriggers.forEach((otherTrigger) => {
               if (otherTrigger !== trigger) {
                 otherTrigger.setAttribute('aria-expanded', 'false');
                 const otherItem = otherTrigger.closest('[data-accordion-item]');
-                const otherPanel = otherItem?.querySelector('[data-accordion-panel]');
+                const otherPanel = otherItem?.querySelector('[data-accordion-panel]') as HTMLElement | null;
                 if (otherPanel) {
-                  (otherPanel as HTMLElement).hidden = true;
+                  otherPanel.hidden = true;
                 }
                 otherTrigger.querySelector('.accordion-icon')?.classList.remove('rotate-180');
               }
             });
           }
           
-          // Toggle current
           trigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
           if (panel) {
-            (panel as HTMLElement).hidden = isExpanded;
+            panel.hidden = isExpanded;
           }
           
-          // Rotate icon
           const icon = trigger.querySelector('.accordion-icon');
           if (isExpanded) {
             icon?.classList.remove('rotate-180');
@@ -111,10 +119,7 @@ const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
     });
   }
   
-  // Initialize on load
   initAccordions();
-  
-  // Re-initialize on Astro page transitions
   document.addEventListener('astro:page-load', initAccordions);
 </script>
 
@@ -125,5 +130,9 @@ const accordionId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
   
   [aria-expanded="true"] .accordion-icon {
     transform: rotate(180deg);
+  }
+  
+  [aria-expanded="true"] .accordion-icon-wrapper {
+    background-color: rgb(238 237 233);
   }
 </style>

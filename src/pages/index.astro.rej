@@ -1,0 +1,10 @@
+@@ -64,9 +64,6 @@
+   variant="horizontal"
+   showImage={true}
+ />
+-  
+-  <!-- Emergency CTA Banner -->
+-  <CTABanner variant="emergency" />
+   
+   <!-- Testimonials Section -->
+   <Testimonials 
