@@ -3,14 +3,13 @@
  * FAQ Page
  * ========
  * Comprehensive FAQ page with proper FAQPage schema for SEO/AEO
- * Organized by category for user experience
- * Schema covers ALL questions for AI/search optimization
+ * Uses existing FAQ component for consistent styling
  */
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
-import Accordion from '@/components/ui/Accordion.astro';
 import Button from '@/components/ui/Button.astro';
+import FAQ from '@/components/sections/FAQ.astro';
 import { business } from '@/data/site';
 import { allFaqs, faqCategories } from '@/data/faqs';
 import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema } from '@/utils/seo';
@@ -26,11 +25,7 @@ const breadcrumbs = [
 ];
 
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
-
-// Generate FAQPage schema with ALL questions for maximum AEO coverage
 const faqSchema = getFAQSchema(allFaqs);
-
-// Combine schemas
 const jsonLd = [breadcrumbSchema, faqSchema];
 ---
 
@@ -69,71 +64,26 @@ const jsonLd = [breadcrumbSchema, faqSchema];
     </div>
   </section>
   
-  <!-- Quick Jump Navigation -->
-  <section class="py-6 bg-white border-b border-brand-cream-300 sticky top-0 z-40">
-    <div class="container">
-      <div class="flex flex-wrap items-center justify-center gap-2">
-        {faqCategories.map((category) => (
-          <a 
-            href={`#${category.id}`}
-            class="px-4 py-2 text-sm font-medium text-brand-gray hover:text-brand-orange hover:bg-brand-cream-200 rounded-full transition-colors"
-          >
-            {category.name}
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- FAQ Categories -->
-  <section class="section bg-brand-cream-200">
-    <div class="container">
-      <div class="max-w-4xl mx-auto space-y-12">
-        {faqCategories.map((category) => (
-          <div id={category.id} class="scroll-mt-24">
-            <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-6 flex items-center gap-3">
-              <span class="w-10 h-10 rounded-xl bg-brand-orange text-white flex items-center justify-center">
-                <Icon name="help-circle" size="md" />
-              </span>
-              {category.name}
-            </h2>
-            
-            <div class="bg-white rounded-xl shadow-soft overflow-hidden">
-              {category.faqs.map((faq, index) => (
-                <details 
-                  class="group border-b border-brand-cream-300 last:border-b-0"
-                  open={index === 0}
-                >
-                  <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none hover:bg-brand-cream-100 transition-colors">
-                    <h3 class="font-heading font-semibold text-brand-black text-left pr-4">
-                      {faq.question}
-                    </h3>
-                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-cream-200 flex items-center justify-center group-open:bg-brand-orange group-open:text-white transition-colors">
-                      <Icon name="chevron-down" size="sm" class="transform group-open:rotate-180 transition-transform" />
-                    </span>
-                  </summary>
-                  <div class="px-6 pb-5">
-                    <p class="text-brand-gray leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- FAQ Sections using existing component -->
+  {faqCategories.map((category, index) => (
+    <FAQ 
+      title={category.name}
+      subtitle=""
+      faqs={category.faqs}
+      showSchema={false}
+      showViewAll={false}
+      class={index % 2 === 0 ? 'bg-white' : 'bg-brand-cream-200'}
+    />
+  ))}
   
   <!-- Still Have Questions CTA -->
-  <section class="section bg-white">
+  <section class="section bg-brand-black">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
           Still Have Questions?
         </h2>
-        <p class="text-lg text-brand-gray mb-8">
+        <p class="text-lg text-brand-cream-300 mb-8">
           Can't find the answer you're looking for? Our team is here to help 24/7.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -141,7 +91,7 @@ const jsonLd = [breadcrumbSchema, faqSchema];
             <Icon name="phone" size="sm" />
             Call {business.phoneFormatted}
           </Button>
-          <Button href="/contact/" variant="outline" size="lg">
+          <Button href="/contact/" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand-black">
             Send Us a Message
             <Icon name="arrow-right" size="sm" />
           </Button>
@@ -160,19 +110,19 @@ const jsonLd = [breadcrumbSchema, faqSchema];
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <a href="/services/water-damage-restoration/" class="group flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-brand-orange transition-colors">
             <Icon name="droplet" size="md" class="text-brand-orange group-hover:text-white" />
-            <span class="font-semibold text-brand-black group-hover:text-white">Water Damage</span>
+            <span class="font-heading font-semibold text-brand-black group-hover:text-white">Water Damage</span>
           </a>
           <a href="/services/mold-removal/" class="group flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-brand-orange transition-colors">
             <Icon name="wind" size="md" class="text-brand-orange group-hover:text-white" />
-            <span class="font-semibold text-brand-black group-hover:text-white">Mold Removal</span>
+            <span class="font-heading font-semibold text-brand-black group-hover:text-white">Mold Removal</span>
           </a>
           <a href="/services/fire-damage-restoration/" class="group flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-brand-orange transition-colors">
             <Icon name="flame" size="md" class="text-brand-orange group-hover:text-white" />
-            <span class="font-semibold text-brand-black group-hover:text-white">Fire Damage</span>
+            <span class="font-heading font-semibold text-brand-black group-hover:text-white">Fire Damage</span>
           </a>
           <a href="/insurance/" class="group flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-brand-orange transition-colors">
             <Icon name="shield" size="md" class="text-brand-orange group-hover:text-white" />
-            <span class="font-semibold text-brand-black group-hover:text-white">Insurance Help</span>
+            <span class="font-heading font-semibold text-brand-black group-hover:text-white">Insurance Help</span>
           </a>
         </div>
       </div>
