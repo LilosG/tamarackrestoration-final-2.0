@@ -1,0 +1,37 @@
+---
+/**
+ * Dynamic Insurance Service Page
+ * ==============================
+ * Generates /insurance/[carrier]/[service]/ pages
+ * High-intent pages for carrier + service combinations
+ */
+
+import InsuranceServiceLayout from '@/layouts/InsuranceServiceLayout.astro';
+import { insuranceCarriers, services } from '@/data/site';
+
+export function getStaticPaths() {
+  const paths = [];
+  
+  for (const carrier of insuranceCarriers) {
+    const coveredServices = carrier.coveredServices || [];
+    
+    for (const serviceSlug of coveredServices) {
+      const service = services.find(s => s.slug === serviceSlug);
+      if (service) {
+        paths.push({
+          params: { 
+            carrier: carrier.slug, 
+            service: service.slug 
+          },
+        });
+      }
+    }
+  }
+  
+  return paths;
+}
+
+const { carrier, service } = Astro.params;
+---
+
+<InsuranceServiceLayout carrierSlug={carrier} serviceSlug={service} />

@@ -1,0 +1,279 @@
+---
+/**
+ * Insurance Carrier Layout
+ * ========================
+ * Template for /insurance/[carrier]/ pages
+ * Shows how we work with a specific insurance carrier
+ */
+
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { insuranceCarriers, services, business, globalFaqs } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import type { FAQ as FAQType } from '@/types';
+
+interface Props {
+  carrierSlug: string;
+}
+
+const { carrierSlug } = Astro.props;
+
+const carrier = insuranceCarriers.find(c => c.slug === carrierSlug)!;
+const coveredServices = services.filter(s => carrier.coveredServices?.includes(s.slug as any));
+
+// SEO
+const title = `${carrier.name} Insurance Claims | Tamarack Restoration`;
+const description = `We work directly with ${carrier.name} for water damage, fire, and mold restoration claims in North San Diego County. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
+const canonical = getCanonicalUrl(`/insurance/${carrier.slug}/`);
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Insurance', href: '/insurance/' },
+  { label: carrier.name, href: `/insurance/${carrier.slug}/`, current: true },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+// Default claim process if carrier doesn't have one defined
+const claimProcess = carrier.claimProcess?.length > 0 ? carrier.claimProcess : [
+  'Document all damage with photos and videos',
+  `Contact ${carrier.name} to file your claim`,
+  'Call Tamarack Restoration for emergency service',
+  'We coordinate directly with your adjuster',
+  'Receive professional restoration covered by your policy',
+];
+
+// Insurance-specific FAQs
+const faqs: FAQType[] = [
+  {
+    question: `Does ${carrier.name} cover water damage restoration?`,
+    answer: `Yes, ${carrier.name} typically covers sudden and accidental water damage like burst pipes and appliance failures. Gradual damage or flooding may require additional coverage. We work directly with ${carrier.name} adjusters to document damage and maximize your claim.`,
+  },
+  {
+    question: `How do I file a ${carrier.name} claim for property damage?`,
+    answer: `First, document all damage with photos. Then contact ${carrier.name} to open a claim. Call us at ${business.phoneFormatted} for emergency service—we can begin work immediately and coordinate directly with your adjuster.`,
+  },
+  {
+    question: `Will I have to pay out of pocket with ${carrier.name}?`,
+    answer: `You'll typically be responsible for your deductible. We work with ${carrier.name} to ensure all covered damage is properly documented so you receive the full benefits of your policy.`,
+  },
+  {
+    question: `How long does the ${carrier.name} claims process take?`,
+    answer: `Claim timelines vary, but we work to expedite the process. We provide detailed documentation, meet with adjusters on-site, and communicate directly with ${carrier.name} to keep your claim moving.`,
+  },
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden min-h-[400px] lg:min-h-[450px] flex items-center">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+      
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Icon name="shield" size="sm" />
+            Insurance Partner
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+            We Work With{' '}
+            <span class="text-brand-orange">{carrier.name}</span>
+          </h1>
+          
+          <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+            {carrier.description}
+          </p>
+          
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="check-circle" size="sm" class="text-brand-orange" />
+              <span>Direct Adjuster Communication</span>
+            </div>
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="file-text" size="sm" class="text-brand-orange" />
+              <span>Full Documentation Provided</span>
+            </div>
+            <div class="flex items-center gap-2 text-brand-cream-300">
+              <Icon name="clock" size="sm" class="text-brand-orange" />
+              <span>60-Minute Response</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hidden lg:block lg:col-span-5">
+          <LeadForm 
+            variant="card"
+            title={`${carrier.name} Claim Help`}
+            subtitle="We handle the insurance process"
+            source={`insurance-${carrierSlug}`}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <TrustBar variant="light" />
+  
+  <!-- How We Help -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            How We Help {carrier.name} Policyholders
+          </h2>
+          <div class="space-y-4 text-brand-gray">
+            <p class="text-lg leading-relaxed">
+              Filing an insurance claim after property damage is stressful. We make it easier by working directly with {carrier.name} on your behalf.
+            </p>
+            <p class="leading-relaxed">
+              Our team understands what {carrier.name} adjusters need to approve claims quickly. We provide detailed documentation, professional assessments, and clear communication throughout the restoration process.
+            </p>
+            <p class="leading-relaxed">
+              You focus on your family—we'll handle the insurance paperwork and restore your property to pre-damage condition.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-brand-cream-200 rounded-2xl p-8">
+          <h3 class="font-heading font-bold text-xl text-brand-black mb-6">
+            The {carrier.name} Claims Process
+          </h3>
+          <div class="space-y-4">
+            {claimProcess.map((step, index) => (
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                  {index + 1}
+                </div>
+                <p class="text-brand-gray pt-1">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Covered -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Services Covered by {carrier.name}
+        </h2>
+        <p class="text-lg text-brand-gray">
+          We provide these restoration services and work with {carrier.name} to process your claim.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {coveredServices.map((service) => (
+          <a 
+            href={`/insurance/${carrier.slug}/${service.slug}/`}
+            class="group bg-white rounded-xl p-6 shadow-soft hover:shadow-card hover:border-brand-orange transition-all border border-transparent"
+          >
+            <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+              <Icon name={service.icon} size="lg" />
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
+              {service.name}
+            </h3>
+            <p class="text-brand-gray text-sm mb-3">
+              {service.shortDescription}
+            </p>
+            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">
+              {carrier.name} Coverage
+              <Icon name="arrow-right" size="sm" />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Work With Us -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Why {carrier.name} Customers Choose Us
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mx-auto mb-4">
+            <Icon name="file-text" size="xl" />
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+            Complete Documentation
+          </h3>
+          <p class="text-brand-gray text-sm">
+            We provide detailed reports, photos, and assessments that {carrier.name} adjusters need to process your claim quickly.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mx-auto mb-4">
+            <Icon name="users" size="xl" />
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+            Direct Communication
+          </h3>
+          <p class="text-brand-gray text-sm">
+            We communicate directly with your {carrier.name} adjuster, handling questions and coordinating inspections.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mx-auto mb-4">
+            <Icon name="shield" size="xl" />
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+            Maximize Your Claim
+          </h3>
+          <p class="text-brand-gray text-sm">
+            Our thorough assessments ensure all damage is documented so you receive the full benefits of your {carrier.name} policy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Testimonials limit={3} class="bg-brand-cream-200" />
+  
+  <FAQ 
+    title={`${carrier.name} Insurance FAQs`}
+    subtitle="Common questions about insurance claims"
+    faqs={faqs}
+    showViewAll={false}
+    class="bg-white"
+  />
+  
+  <!-- Mobile Form -->
+  <section class="section lg:hidden bg-brand-cream-200">
+    <div class="container">
+      <LeadForm 
+        variant="card"
+        title={`${carrier.name} Claim Help`}
+        subtitle="We handle the insurance process"
+        source={`insurance-${carrierSlug}-mobile`}
+      />
+    </div>
+  </section>
+</BaseLayout>

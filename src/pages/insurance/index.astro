@@ -1,0 +1,248 @@
+---
+/**
+ * Insurance Hub Page
+ * ==================
+ * Lists all insurance carriers we work with
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { insuranceCarriers, business } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+const title = 'Insurance Claims | We Work With All Major Carriers | Tamarack Restoration';
+const description = `We work directly with State Farm, Allstate, Farmers, USAA, Liberty Mutual and all major insurance carriers for water, fire, and mold damage claims. Call ${business.phoneFormatted}.`;
+const canonical = getCanonicalUrl('/insurance/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Insurance', href: '/insurance/', current: true },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+const benefits = [
+  {
+    icon: 'file-text',
+    title: 'Complete Documentation',
+    description: 'We provide detailed damage assessments, photos, moisture readings, and repair estimates that insurance adjusters need.',
+  },
+  {
+    icon: 'users',
+    title: 'Direct Adjuster Communication',
+    description: 'We work directly with your insurance adjuster, handling meetings, questions, and supplemental claims.',
+  },
+  {
+    icon: 'dollar-sign',
+    title: 'Maximize Your Claim',
+    description: 'Our thorough documentation ensures all damage is captured so you receive the full benefits of your policy.',
+  },
+  {
+    icon: 'clock',
+    title: 'Fast Claim Processing',
+    description: 'Our experience with major carriers means we know exactly what they need, speeding up approval times.',
+  },
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    
+    <div class="container relative py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <Icon name="shield" size="sm" />
+          Insurance Specialists
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+          We Work With{' '}
+          <span class="text-brand-orange">Your Insurance</span>
+        </h1>
+        
+        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+          Filing an insurance claim is stressful. We make it easier by working directly with your carrier—handling documentation, adjuster communication, and billing so you can focus on your family.
+        </p>
+        
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="check-circle" size="sm" class="text-brand-orange" />
+            <span>All Major Carriers</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="file-text" size="sm" class="text-brand-orange" />
+            <span>Direct Billing Available</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="clock" size="sm" class="text-brand-orange" />
+            <span>60-Minute Response</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <TrustBar variant="light" />
+  
+  <!-- Insurance Carriers Grid -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Insurance Companies We Work With
+        </h2>
+        <p class="text-lg text-brand-gray">
+          We have experience with all major insurance carriers and know exactly what each one needs to process your claim quickly.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {insuranceCarriers.map((carrier) => (
+          <a 
+            href={`/insurance/${carrier.slug}/`}
+            class="group bg-white border border-brand-cream-300 rounded-xl p-6 hover:border-brand-orange hover:shadow-card transition-all"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-cream-200 flex items-center justify-center overflow-hidden">
+                {carrier.logo ? (
+                  <img src={carrier.logo} alt={carrier.name} class="w-10 h-10 object-contain" />
+                ) : (
+                  <Icon name="shield" size="lg" class="text-brand-orange" />
+                )}
+              </div>
+              <h3 class="font-heading font-bold text-xl text-brand-black group-hover:text-brand-orange transition-colors">
+                {carrier.name}
+              </h3>
+            </div>
+            <p class="text-brand-gray text-sm mb-4">
+              {carrier.description}
+            </p>
+            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">
+              Learn More
+              <Icon name="arrow-right" size="sm" class="group-hover:translate-x-1 transition-transform" />
+            </span>
+          </a>
+        ))}
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-brand-gray mb-4">
+          Don't see your insurance company? We work with all carriers.
+        </p>
+        <Button href="/contact/" variant="outline">
+          Contact Us About Your Coverage
+        </Button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Work With Us -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Why Choose Tamarack for Insurance Claims
+        </h2>
+        <p class="text-lg text-brand-gray">
+          We take the stress out of the insurance process.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {benefits.map((benefit) => (
+          <div class="bg-white rounded-xl p-6 shadow-soft">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0">
+                <Icon name={benefit.icon} size="lg" />
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+                  {benefit.title}
+                </h3>
+                <p class="text-brand-gray text-sm">
+                  {benefit.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- The Process -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          How the Insurance Process Works
+        </h2>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-5 gap-4">
+          {[
+            { num: 1, title: 'Call Us', desc: 'Contact us 24/7 for emergency response' },
+            { num: 2, title: 'Document', desc: 'We thoroughly document all damage' },
+            { num: 3, title: 'File Claim', desc: 'Contact your insurance to open a claim' },
+            { num: 4, title: 'Coordinate', desc: 'We work directly with your adjuster' },
+            { num: 5, title: 'Restore', desc: 'We complete the restoration work' },
+          ].map((step) => (
+            <div class="text-center">
+              <div class="w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center mx-auto mb-3 font-heading font-bold text-lg">
+                {step.num}
+              </div>
+              <h4 class="font-heading font-bold text-brand-black mb-1">{step.title}</h4>
+              <p class="text-brand-gray text-sm">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-card p-8 lg:p-12">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-4">
+                Need Help With an Insurance Claim?
+              </h2>
+              <p class="text-brand-gray mb-6">
+                Whether you're dealing with water damage, fire, or mold, we'll help you navigate the insurance process and get your property restored.
+              </p>
+              <a 
+                href={`tel:${business.phone}`}
+                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+              >
+                <Icon name="phone" size="md" />
+                <span class="text-xl">{business.phoneFormatted}</span>
+              </a>
+            </div>
+            <div>
+              <LeadForm 
+                variant="card"
+                title="Start Your Claim"
+                subtitle="We'll handle the insurance process"
+                source="insurance-hub"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

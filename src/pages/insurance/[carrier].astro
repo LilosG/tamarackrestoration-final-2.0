@@ -1,0 +1,20 @@
+---
+/**
+ * Dynamic Insurance Carrier Page
+ * ==============================
+ * Generates /insurance/[carrier]/ pages for all carriers
+ */
+
+import InsuranceCarrierLayout from '@/layouts/InsuranceCarrierLayout.astro';
+import { insuranceCarriers } from '@/data/site';
+
+export function getStaticPaths() {
+  return insuranceCarriers.map((carrier) => ({
+    params: { carrier: carrier.slug },
+  }));
+}
+
+const { carrier } = Astro.params;
+---
+
+<InsuranceCarrierLayout carrierSlug={carrier} />
