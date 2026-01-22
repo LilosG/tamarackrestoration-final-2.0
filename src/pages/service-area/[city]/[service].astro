@@ -1,0 +1,88 @@
+---
+/**
+ * Dynamic Money Page
+ * ==================
+ * Generates /service-area/[city]/[service]/ pages
+ * High-intent local SEO pages for city+service combinations
+ * Uses MoneyPageLayout template
+ */
+
+import MoneyPageLayout from '@/layouts/MoneyPageLayout.astro';
+import { cities, services } from '@/data/site';
+import type { FAQ } from '@/types';
+
+export function getStaticPaths() {
+  const paths = [];
+  
+  for (const city of cities) {
+    const cityServices = city.services || services.map(s => s.slug);
+    
+    for (const serviceSlug of cityServices) {
+      const service = services.find(s => s.slug === serviceSlug);
+      if (service) {
+        paths.push({
+          params: { 
+            city: city.slug, 
+            service: service.slug 
+          },
+        });
+      }
+    }
+  }
+  
+  return paths;
+}
+
+const { city, service } = Astro.params;
+
+const cityData = cities.find(c => c.slug === city)!;
+const serviceData = services.find(s => s.slug === service)!;
+
+const faqs: FAQ[] = [
+  {
+    question: `How quickly can you respond to ${serviceData.name.toLowerCase()} in ${cityData.name}?`,
+    answer: `We guarantee 60-minute response times to ${cityData.name}. Our team is available 24/7 for emergency ${serviceData.name.toLowerCase()} services.`,
+  },
+  {
+    question: `What areas of ${cityData.name} do you serve?`,
+    answer: `We serve all of ${cityData.name}${cityData.neighborhoods?.length ? `, including ${cityData.neighborhoods.slice(0, 3).join(', ')}` : ''}. Our central location allows us to reach any part of ${cityData.name} quickly.`,
+  },
+  {
+    question: `Do you work with insurance for ${serviceData.name.toLowerCase()} in ${cityData.name}?`,
+    answer: `Yes, we work with all major insurance carriers. We help ${cityData.name} homeowners document damage and file claims for ${serviceData.name.toLowerCase()} services.`,
+  },
+  {
+    question: `What does ${serviceData.name.toLowerCase()} cost in ${cityData.name}?`,
+    answer: `Costs vary based on the extent of damage. We provide free assessments for ${cityData.name} properties and work directly with your insurance to minimize out-of-pocket expenses.`,
+  },
+];
+---
+
+<MoneyPageLayout 
+  citySlug={city} 
+  serviceSlug={service}
+  faqs={faqs}
+>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
+          Professional {serviceData.name} in {cityData.name}
+        </h2>
+        
+        <div class="prose prose-lg mx-auto">
+          <p class="text-lg text-brand-gray leading-relaxed">
+            When {cityData.name} homes and businesses face {serviceData.name.toLowerCase()} emergencies, 
+            Tamarack Restoration responds fast. Our IICRC-certified technicians are equipped to handle 
+            any size {serviceData.name.toLowerCase()} project, from minor incidents to major disasters.
+          </p>
+          <p class="text-lg text-brand-gray leading-relaxed">
+            As a locally owned company based in Carlsbad, we understand the unique challenges 
+            {cityData.name} properties face. Our 60-minute response guarantee means you'll never 
+            wait long for professional help when you need it most.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MoneyPageLayout>

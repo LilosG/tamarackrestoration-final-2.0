@@ -439,6 +439,28 @@ export const cities: City[] = [
       'sewage-cleanup',
     ],
   },
+  {
+    id: 'bressi-ranch',
+    name: 'Bressi Ranch',
+    slug: 'bressi-ranch',
+    county: 'San Diego',
+    state: 'CA',
+    tier: 3,
+    description: 'Serving Bressi Ranch with fast emergency restoration. Located minutes away in Carlsbad for rapid response.',
+    neighborhoods: [
+      'Bressi Ranch',
+    ],
+    zipCodes: ['92009'],
+    coordinates: { latitude: 33.1295, longitude: -117.2653 },
+    services: [
+      'water-damage-restoration',
+      'water-leak-repair',
+      'mold-removal',
+      'fire-damage-restoration',
+      'flood-cleanup',
+      'sewage-cleanup',
+    ],
+  },
 ];
 
 // Helper to get city by slug

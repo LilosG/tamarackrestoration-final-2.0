@@ -1,0 +1,207 @@
+---
+/**
+ * Service Area Hub
+ * ================
+ * Lists all cities served with links to city landing pages
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { cities, business } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+const title = 'Service Areas | North San Diego County | Tamarack Restoration';
+const description = `Emergency restoration services throughout North San Diego County. Serving Carlsbad, Oceanside, Vista, San Marcos, Encinitas & more. 60-minute response. Call ${business.phoneFormatted}.`;
+const canonical = getCanonicalUrl('/service-area/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-area/', current: true },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+// Sort cities by tier, then alphabetically
+const sortedCities = [...cities].sort((a, b) => {
+  if (a.tier !== b.tier) return a.tier - b.tier;
+  return a.name.localeCompare(b.name);
+});
+
+const tier1Cities = sortedCities.filter(c => c.tier === 1);
+const tier2Cities = sortedCities.filter(c => c.tier === 2);
+const tier3Cities = sortedCities.filter(c => c.tier === 3);
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    
+    <div class="container relative py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <Icon name="map-pin" size="sm" />
+          North San Diego County
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+          Proudly Serving{' '}
+          <span class="text-brand-orange">North San Diego County</span>
+        </h1>
+        
+        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
+          From our Carlsbad headquarters, we provide 24/7 emergency restoration services to homes and businesses throughout the region. 60-minute response guaranteed.
+        </p>
+        
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="clock" size="sm" class="text-brand-orange" />
+            <span>60-Minute Response</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="star" size="sm" class="text-brand-orange" />
+            <span>{business.rating} Stars ({business.reviewCount} Reviews)</span>
+          </div>
+          <div class="flex items-center gap-2 text-brand-cream-300">
+            <Icon name="award" size="sm" class="text-brand-orange" />
+            <span>IICRC Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <TrustBar variant="light" />
+  
+  <!-- Cities Grid -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Cities We Serve
+        </h2>
+        <p class="text-lg text-brand-gray">
+          Click on your city to see available services and get local emergency response.
+        </p>
+      </div>
+      
+      <!-- Headquarters / Tier 1 -->
+      {tier1Cities.length > 0 && (
+        <div class="mb-12">
+          <h3 class="font-heading font-bold text-xl text-brand-black mb-6 flex items-center gap-2">
+            <Icon name="building" size="md" class="text-brand-orange" />
+            Our Headquarters
+          </h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tier1Cities.map((city) => (
+              <a 
+                href={`/service-area/${city.slug}/`}
+                class="group relative bg-brand-orange text-white rounded-xl p-6 hover:bg-brand-orange-600 transition-colors overflow-hidden"
+              >
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-3">
+                    <h4 class="font-heading font-bold text-2xl">{city.name}</h4>
+                    <Icon name="arrow-right" size="md" class="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <p class="text-white/80 text-sm mb-4">{city.description}</p>
+                  <div class="flex flex-wrap gap-2">
+                    {city.zipCodes?.slice(0, 3).map((zip) => (
+                      <span class="px-2 py-1 bg-white/20 rounded text-xs font-medium">{zip}</span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <!-- Primary Service Areas / Tier 2 -->
+      {tier2Cities.length > 0 && (
+        <div class="mb-12">
+          <h3 class="font-heading font-bold text-xl text-brand-black mb-6 flex items-center gap-2">
+            <Icon name="map-pin" size="md" class="text-brand-orange" />
+            Primary Service Areas
+          </h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {tier2Cities.map((city) => (
+              <a 
+                href={`/service-area/${city.slug}/`}
+                class="group bg-white border border-brand-cream-300 rounded-xl p-5 hover:border-brand-orange hover:shadow-card transition-all"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <h4 class="font-heading font-bold text-lg text-brand-black group-hover:text-brand-orange transition-colors">{city.name}</h4>
+                  <Icon name="arrow-right" size="sm" class="text-brand-gray group-hover:text-brand-orange transition-colors" />
+                </div>
+                <p class="text-brand-gray text-sm line-clamp-2">{city.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <!-- Additional Areas / Tier 3 -->
+      {tier3Cities.length > 0 && (
+        <div>
+          <h3 class="font-heading font-bold text-xl text-brand-black mb-6 flex items-center gap-2">
+            <Icon name="map" size="md" class="text-brand-orange" />
+            Additional Service Areas
+          </h3>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {tier3Cities.map((city) => (
+              <a 
+                href={`/service-area/${city.slug}/`}
+                class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange transition-colors"
+              >
+                <Icon name="map-pin" size="sm" class="text-brand-orange group-hover:text-white flex-shrink-0" />
+                <span class="font-heading font-semibold text-brand-black group-hover:text-white">{city.name}</span>
+                <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-card p-8 lg:p-12">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-4">
+                Don't See Your City?
+              </h2>
+              <p class="text-brand-gray mb-6">
+                We serve all of North San Diego County. If your city isn't listed, give us a call—we likely cover your area and can have a team to you within 60 minutes.
+              </p>
+              <a 
+                href={`tel:${business.phone}`}
+                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+              >
+                <Icon name="phone" size="md" />
+                <span class="text-xl">{business.phoneFormatted}</span>
+              </a>
+            </div>
+            <div>
+              <LeadForm 
+                variant="card"
+                title="Get Emergency Help"
+                source="service-area-hub"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

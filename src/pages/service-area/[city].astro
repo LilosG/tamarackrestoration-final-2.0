@@ -1,0 +1,21 @@
+---
+/**
+ * Dynamic City Landing Page
+ * =========================
+ * Generates /service-area/[city]/ pages for all cities
+ * Uses CityLandingLayout template
+ */
+
+import CityLandingLayout from '@/layouts/CityLandingLayout.astro';
+import { cities } from '@/data/site';
+
+export function getStaticPaths() {
+  return cities.map((city) => ({
+    params: { city: city.slug },
+  }));
+}
+
+const { city } = Astro.params;
+---
+
+<CityLandingLayout citySlug={city} />
