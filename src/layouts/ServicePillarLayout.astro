@@ -2,8 +2,8 @@
 /**
  * Service Pillar Page Layout
  * ==========================
- * Reusable template for all service pillar pages
- * Pass service-specific data as props, layout handles structure
+ * Template for /services/[service]/ pages
+ * Pulls from serviceContent data for rich, consistent content
  */
 
 import BaseLayout from './BaseLayout.astro';
@@ -15,6 +15,7 @@ import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { services, cities, business } from '@/data/site';
+import { serviceContent } from '@/data/content';
 import { 
   getServiceTitle, 
   getCanonicalUrl, 
@@ -24,26 +25,52 @@ import {
   getFAQSchema,
   combineSchemas
 } from '@/utils/seo';
-import type { FAQ as FAQType, Service } from '@/types';
+import type { FAQ as FAQType } from '@/types';
 
 interface Props {
   serviceSlug: string;
-  metaDescription: string;
-  faqs: FAQType[];
-  heroImage?: string;
-  /** Content sections passed as slots */
 }
 
-const { serviceSlug, metaDescription, faqs, heroImage } = Astro.props;
+const { serviceSlug } = Astro.props;
 
 // Get service data
 const service = services.find(s => s.slug === serviceSlug)!;
+const content = serviceContent[serviceSlug] || null;
 const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
 const relatedServices = services.filter(s => 
   service.relatedServices?.includes(s.slug) && s.slug !== serviceSlug
 ).slice(0, 3);
 
+// Generate FAQs from content data or use defaults
+const faqs: FAQType[] = [
+  {
+    question: `How quickly can you respond to ${service.name.toLowerCase()} emergencies?`,
+    answer: `We offer 24/7 emergency service with guaranteed 60-minute response times throughout North San Diego County. Our team is always ready to help when disaster strikes.`,
+  },
+  {
+    question: `What areas do you serve for ${service.name.toLowerCase()}?`,
+    answer: `We provide ${service.name.toLowerCase()} services throughout North San Diego County, including Carlsbad, Oceanside, Vista, San Marcos, Encinitas, and surrounding communities.`,
+  },
+  {
+    question: `Do you work with insurance for ${service.name.toLowerCase()}?`,
+    answer: `Yes, we work with all major insurance carriers. We document all damage thoroughly, communicate directly with your adjuster, and help maximize your claim approval.`,
+  },
+  {
+    question: `How much does ${service.name.toLowerCase()} cost?`,
+    answer: `Costs vary based on the extent of damage and work required. We provide free on-site assessments and detailed estimates. Most homeowners use insurance to cover costs.`,
+  },
+  {
+    question: `Are your ${service.name.toLowerCase()} technicians certified?`,
+    answer: `Yes, all our technicians are IICRC certified (Institute of Inspection, Cleaning and Restoration Certification), the industry gold standard for restoration professionals.`,
+  },
+  {
+    question: `How long does ${service.name.toLowerCase()} take?`,
+    answer: `Timeline depends on the extent of damage. Minor issues may take 2-3 days, while extensive damage can take 1-2 weeks. We provide detailed timelines during our initial assessment.`,
+  },
+];
+
 // SEO
+const metaDescription = `Professional ${service.name.toLowerCase()} in North San Diego County. 24/7 emergency response, 60-minute arrival. IICRC certified. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
 const title = getServiceTitle(service.name);
 const canonical = getCanonicalUrl(`/services/${service.slug}/`);
 const breadcrumbs = getServiceBreadcrumbs(service);
@@ -52,7 +79,7 @@ const faqSchema = getFAQSchema(faqs);
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
 
-const bgImage = heroImage || service.image || '/images/services/default-hero.jpg';
+const bgImage = service.image || '/images/services/default-hero.jpg';
 ---
 
 <BaseLayout 
@@ -93,7 +120,7 @@ const bgImage = heroImage || service.image || '/images/services/default-hero.jpg
           </h1>
           
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-            {service.description}
+            {content?.heroSubtitle || service.description}
           </p>
           
           <!-- Trust Indicators -->
@@ -165,11 +192,154 @@ const bgImage = heroImage || service.image || '/images/services/default-hero.jpg
   <!-- Trust Bar -->
   <TrustBar variant="light" />
   
-  <!-- Main Content Slot -->
-  <slot />
+  <!-- Problem & Solution Section -->
+  {content && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
+            Why {service.name} Requires Professional Attention
+          </h2>
+          
+          <div class="prose prose-lg max-w-none mb-12">
+            <p class="text-lg text-brand-gray leading-relaxed mb-6">
+              {content.problemStatement}
+            </p>
+            <p class="text-lg text-brand-gray leading-relaxed">
+              {content.solutionOverview}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- Process Steps -->
+  {content?.processSteps && content.processSteps.length > 0 && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Our {service.name} Process
+          </h2>
+          <p class="text-lg text-brand-gray">
+            IICRC-certified approach to completely restore your property.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-6">
+            {content.processSteps.map((step, index) => (
+              <div class="flex gap-6 items-start bg-white rounded-xl p-6 shadow-soft">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center font-heading font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-brand-black text-xl mb-2">
+                    {step.title}
+                  </h3>
+                  <p class="text-brand-gray">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- Warning Signs & Common Causes -->
+  {content && (content.warningSigns || content.commonCauses) && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Warning Signs */}
+          {content.warningSigns && content.warningSigns.length > 0 && (
+            <div class="bg-brand-cream-200 rounded-2xl p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-warning-50 flex items-center justify-center">
+                  <Icon name="alert-triangle" size="lg" class="text-warning-500" />
+                </div>
+                <h3 class="font-heading font-bold text-brand-black text-xl">
+                  Warning Signs
+                </h3>
+              </div>
+              <p class="text-brand-gray mb-4">
+                Watch for these signs that you may need {service.name.toLowerCase()}:
+              </p>
+              <ul class="space-y-3">
+                {content.warningSigns.map((sign) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="alert-circle" size="sm" class="text-warning-500 mt-1 flex-shrink-0" />
+                    <span class="text-brand-gray">{sign}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+          {/* Common Causes */}
+          {content.commonCauses && content.commonCauses.length > 0 && (
+            <div class="bg-brand-cream-200 rounded-2xl p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-brand-orange-100 flex items-center justify-center">
+                  <Icon name="info" size="lg" class="text-brand-orange" />
+                </div>
+                <h3 class="font-heading font-bold text-brand-black text-xl">
+                  Common Causes
+                </h3>
+              </div>
+              <p class="text-brand-gray mb-4">
+                {service.name} is often caused by:
+              </p>
+              <ul class="space-y-3">
+                {content.commonCauses.map((cause) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="chevron-right" size="sm" class="text-brand-orange mt-1 flex-shrink-0" />
+                    <span class="text-brand-gray">{cause}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- Why Choose Us -->
+  {content?.whyChooseUs && content.whyChooseUs.length > 0 && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Why Choose Tamarack for {service.name}?
+          </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {content.whyChooseUs.map((reason) => (
+            <div class="bg-white rounded-2xl p-6 shadow-soft text-center">
+              <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+                <Icon name="check-circle" size="lg" class="text-brand-orange" />
+              </div>
+              <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+                {reason.title}
+              </h3>
+              <p class="text-brand-gray">
+                {reason.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
   
   <!-- What's Included -->
-  <section class="section bg-brand-cream-200">
+  <section class="section bg-white">
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
@@ -182,7 +352,7 @@ const bgImage = heroImage || service.image || '/images/services/default-hero.jpg
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {service.features.map((feature) => (
-          <div class="bg-white rounded-xl p-6 shadow-soft">
+          <div class="bg-brand-cream-200 rounded-xl p-6">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
                 <Icon name="check-circle" size="sm" class="text-brand-orange" />
@@ -194,6 +364,29 @@ const bgImage = heroImage || service.image || '/images/services/default-hero.jpg
       </div>
     </div>
   </section>
+  
+  <!-- Service Highlights -->
+  {content?.serviceHighlights && content.serviceHighlights.length > 0 && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl p-8 shadow-soft">
+            <h3 class="font-heading font-bold text-brand-black text-xl mb-6 text-center">
+              Why Our {service.name} Stands Out
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {content.serviceHighlights.map((highlight) => (
+                <div class="flex items-center gap-3 p-3 bg-brand-cream-200 rounded-lg">
+                  <Icon name="star" size="sm" class="text-brand-orange flex-shrink-0" />
+                  <span class="text-brand-gray font-medium">{highlight}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
   
   <!-- Cities Served -->
   <section class="section bg-white">
@@ -207,15 +400,15 @@ const bgImage = heroImage || service.image || '/images/services/default-hero.jpg
         </p>
       </div>
       
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
         {citiesServed.map((city) => (
           <a 
             href={`/service-area/${city.slug}/${serviceSlug}/`}
             class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
           >
-            <Icon name="map-pin" size="md" class="text-brand-orange group-hover:text-white flex-shrink-0" />
+            <Icon name="map-pin" size="sm" class="text-brand-orange group-hover:text-white flex-shrink-0" />
             <span class="font-heading font-semibold text-brand-black group-hover:text-white">
-              {service.name} in {city.name}
+              {city.name}
             </span>
             <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
           </a>
