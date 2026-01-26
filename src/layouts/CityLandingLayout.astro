@@ -4,6 +4,7 @@
  * ========================
  * Template for /service-area/[city]/ pages
  * Shows all services available in a specific city
+ * Enhanced with city-specific content for local SEO
  */
 
 import BaseLayout from './BaseLayout.astro';
@@ -14,9 +15,9 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
-import { services, cities, business, globalFaqs } from '@/data/site';
+import { services, cities, business } from '@/data/site';
+import { cityContext } from '@/data/content';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
-import type { City } from '@/types';
 
 interface Props {
   citySlug: string;
@@ -25,11 +26,12 @@ interface Props {
 const { citySlug } = Astro.props;
 
 const city = cities.find(c => c.slug === citySlug)!;
+const context = cityContext[citySlug] || null;
 const availableServices = services.filter(s => city.services?.includes(s.slug as any) ?? true);
 
 // SEO
 const title = `Emergency Restoration Services in ${city.name}, CA | Tamarack Restoration`;
-const description = `24/7 emergency water damage, fire, mold & flood restoration in ${city.name}. ${business.reviewCount} five-star reviews. 60-minute response. Call ${business.phoneFormatted}.`;
+const description = `24/7 emergency water damage, fire, mold & flood restoration in ${city.name}. ${business.reviewCount} five-star reviews. 60-minute response. IICRC certified. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl(`/service-area/${city.slug}/`);
 
 const breadcrumbs = [
@@ -63,6 +65,30 @@ const schema = {
     "reviewCount": business.reviewCount
   }
 };
+
+// Dynamic FAQs for this city
+const cityFaqs = [
+  {
+    question: `How quickly can you respond to emergencies in ${city.name}?`,
+    answer: `We guarantee 60-minute response times to ${city.name} for all emergency calls. Our team is available 24/7, including holidays. ${context?.proximityStatement || `Our Carlsbad location allows us to reach ${city.name} quickly.`}`,
+  },
+  {
+    question: `What restoration services do you offer in ${city.name}?`,
+    answer: `We provide complete restoration services in ${city.name} including water damage restoration, mold removal, fire damage restoration, flood cleanup, sewage cleanup, and water leak repair. All services are available 24/7 for emergencies.`,
+  },
+  {
+    question: `Do you work with insurance companies for ${city.name} claims?`,
+    answer: `Yes, we work with all major insurance carriers and have extensive experience with claims in ${city.name}. We document all damage thoroughly, communicate directly with your adjuster, and help maximize your claim approval.`,
+  },
+  {
+    question: `Are your technicians certified for work in ${city.name}?`,
+    answer: `Absolutely. All our technicians are IICRC certified (Institute of Inspection, Cleaning and Restoration Certification), the industry gold standard. We also maintain all required California licenses and insurance.`,
+  },
+  {
+    question: `What areas of ${city.name} do you serve?`,
+    answer: `We serve all of ${city.name}${city.neighborhoods && city.neighborhoods.length > 0 ? `, including ${city.neighborhoods.slice(0, 4).join(', ')}, and all surrounding neighborhoods` : ''}. ${city.zipCodes ? `ZIP codes: ${city.zipCodes.join(', ')}.` : ''}`,
+  },
+];
 ---
 
 <BaseLayout 
@@ -164,6 +190,174 @@ const schema = {
     </div>
   </section>
   
+  <!-- Local Expertise Section -->
+  {context && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-4">
+              <Icon name="map-pin" size="sm" />
+              Local Expertise
+            </div>
+            
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+              Why {city.name} Chooses Tamarack Restoration
+            </h2>
+            
+            <p class="text-lg text-brand-gray mb-6">
+              {context.localExpertise}
+            </p>
+            
+            <p class="text-lg text-brand-gray mb-8">
+              {context.proximityStatement}
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+              <Button href={`tel:${business.phone}`} variant="primary">
+                <Icon name="phone" size="sm" />
+                Call {business.phoneFormatted}
+              </Button>
+              <Button href="/contact/" variant="outline">
+                Request Free Estimate
+              </Button>
+            </div>
+          </div>
+          
+          <div class="space-y-6">
+            {/* Environmental Factors */}
+            {context.environmentalFactors && context.environmentalFactors.length > 0 && (
+              <div class="bg-white rounded-2xl p-6 shadow-soft">
+                <h3 class="font-heading font-bold text-brand-black text-lg mb-4 flex items-center gap-2">
+                  <Icon name="info" size="md" class="text-brand-orange" />
+                  Local Factors We Understand
+                </h3>
+                <ul class="space-y-3">
+                  {context.environmentalFactors.map((factor) => (
+                    <li class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange-100 flex items-center justify-center mt-0.5">
+                        <Icon name="check" size="sm" class="text-brand-orange" />
+                      </div>
+                      <span class="text-brand-gray">{factor}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Property Types */}
+            {context.propertyTypes && context.propertyTypes.length > 0 && (
+              <div class="bg-white rounded-2xl p-6 shadow-soft">
+                <h3 class="font-heading font-bold text-brand-black text-lg mb-4 flex items-center gap-2">
+                  <Icon name="home" size="md" class="text-brand-orange" />
+                  {city.name} Properties We Serve
+                </h3>
+                <ul class="space-y-3">
+                  {context.propertyTypes.map((type) => (
+                    <li class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange-100 flex items-center justify-center mt-0.5">
+                        <Icon name="check" size="sm" class="text-brand-orange" />
+                      </div>
+                      <span class="text-brand-gray">{type}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- Why Choose Us -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Why {city.name} Trusts Tamarack Restoration
+        </h2>
+        <p class="text-lg text-brand-gray">
+          The local choice for professional restoration services.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+            <Icon name="clock" size="lg" class="text-brand-orange" />
+          </div>
+          <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+            60-Minute Response
+          </h3>
+          <p class="text-brand-gray">
+            We guarantee arrival within 60 minutes to any {city.name} address, 24 hours a day, 7 days a week.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+            <Icon name="award" size="lg" class="text-brand-orange" />
+          </div>
+          <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+            IICRC Certified
+          </h3>
+          <p class="text-brand-gray">
+            Our technicians hold the industry's highest certifications, ensuring quality work on every {city.name} project.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+            <Icon name="shield" size="lg" class="text-brand-orange" />
+          </div>
+          <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+            Insurance Experts
+          </h3>
+          <p class="text-brand-gray">
+            We work with all major carriers and help {city.name} homeowners navigate claims for maximum coverage.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+            <Icon name="map-pin" size="lg" class="text-brand-orange" />
+          </div>
+          <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+            Locally Owned
+          </h3>
+          <p class="text-brand-gray">
+            Based in Carlsbad, we're your neighbors. We know {city.name} and are invested in our community.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+            <Icon name="star" size="lg" class="text-brand-orange" />
+          </div>
+          <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+            {business.reviewCount}+ 5-Star Reviews
+          </h3>
+          <p class="text-brand-gray">
+            {city.name} families trust us with their homes. Our reviews speak to our commitment to quality.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+            <Icon name="tool" size="lg" class="text-brand-orange" />
+          </div>
+          <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+            Complete Service
+          </h3>
+          <p class="text-brand-gray">
+            From emergency response to final repairs, we handle everything. One company, one point of contact.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Neighborhoods -->
   {city.neighborhoods && city.neighborhoods.length > 0 && (
     <section class="section bg-brand-cream-200">
@@ -199,7 +393,7 @@ const schema = {
   <FAQ 
     title={`${city.name} Restoration FAQs`}
     subtitle="Common questions from our customers"
-    faqs={globalFaqs.slice(0, 5)}
+    faqs={cityFaqs}
     showViewAll={false}
     class="bg-brand-cream-200"
   />
