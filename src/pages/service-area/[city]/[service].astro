@@ -4,29 +4,30 @@
  * ==================
  * Generates /service-area/[city]/[service]/ pages
  * High-intent local SEO pages for city+service combinations
- * Uses MoneyPageLayout template
+ * 
+ * Uses layered content system for unique, valuable pages:
+ * - Service-specific content (problem, solution, process)
+ * - City-specific context (local factors, neighborhoods)
+ * - Combined FAQs
  */
 
 import MoneyPageLayout from '@/layouts/MoneyPageLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
 import { cities, services } from '@/data/site';
+import { serviceContent, cityContext, generateServiceCityFAQs } from '@/data/content';
 import type { FAQ } from '@/types';
 
 export function getStaticPaths() {
   const paths = [];
   
   for (const city of cities) {
-    const cityServices = city.services || services.map(s => s.slug);
-    
-    for (const serviceSlug of cityServices) {
-      const service = services.find(s => s.slug === serviceSlug);
-      if (service) {
-        paths.push({
-          params: { 
-            city: city.slug, 
-            service: service.slug 
-          },
-        });
-      }
+    for (const service of services) {
+      paths.push({
+        params: { 
+          city: city.slug, 
+          service: service.slug 
+        },
+      });
     }
   }
   
@@ -38,24 +39,18 @@ const { city, service } = Astro.params;
 const cityData = cities.find(c => c.slug === city)!;
 const serviceData = services.find(s => s.slug === service)!;
 
-const faqs: FAQ[] = [
-  {
-    question: `How quickly can you respond to ${serviceData.name.toLowerCase()} in ${cityData.name}?`,
-    answer: `We guarantee 60-minute response times to ${cityData.name}. Our team is available 24/7 for emergency ${serviceData.name.toLowerCase()} services.`,
-  },
-  {
-    question: `What areas of ${cityData.name} do you serve?`,
-    answer: `We serve all of ${cityData.name}${cityData.neighborhoods?.length ? `, including ${cityData.neighborhoods.slice(0, 3).join(', ')}` : ''}. Our central location allows us to reach any part of ${cityData.name} quickly.`,
-  },
-  {
-    question: `Do you work with insurance for ${serviceData.name.toLowerCase()} in ${cityData.name}?`,
-    answer: `Yes, we work with all major insurance carriers. We help ${cityData.name} homeowners document damage and file claims for ${serviceData.name.toLowerCase()} services.`,
-  },
-  {
-    question: `What does ${serviceData.name.toLowerCase()} cost in ${cityData.name}?`,
-    answer: `Costs vary based on the extent of damage. We provide free assessments for ${cityData.name} properties and work directly with your insurance to minimize out-of-pocket expenses.`,
-  },
-];
+// Get layered content
+const content = serviceContent[service] || null;
+const context = cityContext[city] || null;
+
+// Generate dynamic FAQs
+const faqs: FAQ[] = generateServiceCityFAQs(
+  serviceData.name,
+  serviceData.slug,
+  cityData.name,
+  cityData.slug,
+  cityData.neighborhoods || []
+);
 ---
 
 <MoneyPageLayout 
@@ -63,26 +58,241 @@ const faqs: FAQ[] = [
   serviceSlug={service}
   faqs={faqs}
 >
+  {/* Main Content Section - The Problem */}
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
           Professional {serviceData.name} in {cityData.name}
         </h2>
         
-        <div class="prose prose-lg mx-auto">
-          <p class="text-lg text-brand-gray leading-relaxed">
-            When {cityData.name} homes and businesses face {serviceData.name.toLowerCase()} emergencies, 
-            Tamarack Restoration responds fast. Our IICRC-certified technicians are equipped to handle 
-            any size {serviceData.name.toLowerCase()} project, from minor incidents to major disasters.
-          </p>
-          <p class="text-lg text-brand-gray leading-relaxed">
-            As a locally owned company based in Carlsbad, we understand the unique challenges 
-            {cityData.name} properties face. Our 60-minute response guarantee means you'll never 
-            wait long for professional help when you need it most.
-          </p>
-        </div>
+        {content ? (
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg text-brand-gray leading-relaxed mb-6">
+              {content.problemStatement}
+            </p>
+            <p class="text-lg text-brand-gray leading-relaxed">
+              {content.solutionOverview}
+            </p>
+          </div>
+        ) : (
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg text-brand-gray leading-relaxed">
+              When {cityData.name} homes and businesses face {serviceData.name.toLowerCase()} emergencies, 
+              Tamarack Restoration responds fast. Our IICRC-certified technicians are equipped to handle 
+              any size {serviceData.name.toLowerCase()} project, from minor incidents to major disasters.
+            </p>
+            <p class="text-lg text-brand-gray leading-relaxed">
+              As a locally owned company based in Carlsbad, we understand the unique challenges 
+              {cityData.name} properties face. Our 60-minute response guarantee means you'll never 
+              wait long for professional help when you need it most.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   </section>
+
+  {/* Our Process Section */}
+  {content?.processSteps && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Our {serviceData.name} Process
+          </h2>
+          <p class="text-lg text-brand-gray">
+            A systematic approach to restore your {cityData.name} property quickly and completely.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-6">
+            {content.processSteps.map((step, index) => (
+              <div class="flex gap-6 items-start bg-white rounded-xl p-6 shadow-soft">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center font-heading font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-brand-black text-xl mb-2">
+                    {step.title}
+                  </h3>
+                  <p class="text-brand-gray">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Local Expertise Section */}
+  {context && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-4">
+              <Icon name="map-pin" size="sm" />
+              Local Expertise
+            </div>
+            
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+              {serviceData.name} Experts in {cityData.name}
+            </h2>
+            
+            <p class="text-lg text-brand-gray mb-6">
+              {context.localExpertise}
+            </p>
+            
+            <p class="text-lg text-brand-gray mb-8">
+              {context.proximityStatement}
+            </p>
+            
+            {/* Environmental Factors */}
+            {context.environmentalFactors && context.environmentalFactors.length > 0 && (
+              <div>
+                <h3 class="font-heading font-bold text-brand-black mb-4">
+                  Local Factors We Understand:
+                </h3>
+                <ul class="space-y-3">
+                  {context.environmentalFactors.map((factor) => (
+                    <li class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center mt-0.5">
+                        <Icon name="check" size="sm" class="text-brand-orange" />
+                      </div>
+                      <span class="text-brand-gray">{factor}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          
+          {/* Property Types */}
+          <div class="bg-brand-cream-200 rounded-2xl p-8">
+            <h3 class="font-heading font-bold text-brand-black text-xl mb-6">
+              {cityData.name} Properties We Serve
+            </h3>
+            
+            <div class="space-y-4">
+              {context.propertyTypes?.map((type) => (
+                <div class="flex items-center gap-3 bg-white rounded-lg p-4">
+                  <Icon name="home" size="md" class="text-brand-orange" />
+                  <span class="font-medium text-brand-black">{type}</span>
+                </div>
+              ))}
+            </div>
+            
+            {/* Neighborhoods served */}
+            {cityData.neighborhoods && cityData.neighborhoods.length > 0 && (
+              <div class="mt-8 pt-6 border-t border-brand-cream-300">
+                <h4 class="font-heading font-semibold text-brand-black mb-4">
+                  Neighborhoods We Serve:
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  {cityData.neighborhoods.map((neighborhood) => (
+                    <span class="bg-white px-3 py-1 rounded-full text-sm text-brand-gray">
+                      {neighborhood}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Warning Signs & Common Causes */}
+  {content && (content.warningSigns || content.commonCauses) && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Warning Signs */}
+          {content.warningSigns && content.warningSigns.length > 0 && (
+            <div class="bg-white rounded-2xl p-8 shadow-soft">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-warning-50 flex items-center justify-center">
+                  <Icon name="alert-triangle" size="lg" class="text-warning-500" />
+                </div>
+                <h3 class="font-heading font-bold text-brand-black text-xl">
+                  Warning Signs
+                </h3>
+              </div>
+              <p class="text-brand-gray mb-4">
+                Watch for these signs that you may need {serviceData.name.toLowerCase()}:
+              </p>
+              <ul class="space-y-3">
+                {content.warningSigns.map((sign) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="alert-circle" size="sm" class="text-warning-500 mt-1 flex-shrink-0" />
+                    <span class="text-brand-gray">{sign}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+          {/* Common Causes */}
+          {content.commonCauses && content.commonCauses.length > 0 && (
+            <div class="bg-white rounded-2xl p-8 shadow-soft">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-brand-orange-100 flex items-center justify-center">
+                  <Icon name="info" size="lg" class="text-brand-orange" />
+                </div>
+                <h3 class="font-heading font-bold text-brand-black text-xl">
+                  Common Causes
+                </h3>
+              </div>
+              <p class="text-brand-gray mb-4">
+                {serviceData.name} in {cityData.name} is often caused by:
+              </p>
+              <ul class="space-y-3">
+                {content.commonCauses.map((cause) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="chevron-right" size="sm" class="text-brand-orange mt-1 flex-shrink-0" />
+                    <span class="text-brand-gray">{cause}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Why Choose Us for This Service */}
+  {content?.whyChooseUs && content.whyChooseUs.length > 0 && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Why Choose Tamarack for {serviceData.name} in {cityData.name}?
+          </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {content.whyChooseUs.map((reason) => (
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-4">
+                <Icon name="check-circle" size="lg" class="text-brand-orange" />
+              </div>
+              <h3 class="font-heading font-bold text-brand-black text-xl mb-3">
+                {reason.title}
+              </h3>
+              <p class="text-brand-gray">
+                {reason.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </MoneyPageLayout>
