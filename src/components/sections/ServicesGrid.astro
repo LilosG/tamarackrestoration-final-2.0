@@ -3,6 +3,8 @@
  * ServicesGrid Component
  * ======================
  * Grid display of services with cards
+ * 
+ * Uses Card with equalHeight for consistent card heights in grid
  */
 
 import Card from '@/components/ui/Card.astro';
@@ -57,7 +59,7 @@ const gridCols = columns === 2
   : 'md:grid-cols-2 lg:grid-cols-3';
 ---
 
-<section class:list={['services-grid section bg-white', className]}>
+<section class:list={['services-grid section', className]}>
   <div class="container">
     {(title || subtitle) && (
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -79,10 +81,11 @@ const gridCols = columns === 2
         <Card 
           href={getServiceHref(service)} 
           padding="none" 
+          equalHeight={true}
           class="group overflow-hidden"
         >
-          <!-- Service Image -->
-          <div class="aspect-card relative overflow-hidden bg-brand-cream-200">
+          {/* Service Image */}
+          <div class="aspect-card relative overflow-hidden bg-brand-cream-200 flex-shrink-0">
             <img
               src={service.image}
               alt={service.name}
@@ -101,8 +104,8 @@ const gridCols = columns === 2
             )}
           </div>
           
-          <!-- Service Content -->
-          <div class="p-6">
+          {/* Service Content - flex-grow ensures equal height distribution */}
+          <div class="p-6 flex flex-col flex-grow">
             <div class="flex items-start gap-3 mb-3">
               <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange">
                 <Icon name={service.icon} size="md" />
@@ -111,10 +114,10 @@ const gridCols = columns === 2
                 {service.name}
               </h3>
             </div>
-            <p class="text-brand-gray text-body-md mb-4">
+            <p class="text-brand-gray text-body-md mb-4 flex-grow">
               {service.shortDescription}
             </p>
-            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-body-md group-hover:gap-2 transition-all">
+            <span class="inline-flex items-center gap-1 text-brand-orange font-semibold text-body-md group-hover:gap-2 transition-all mt-auto">
               Learn More
               <Icon name="arrow-right" size="sm" />
             </span>

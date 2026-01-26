@@ -3,6 +3,10 @@
  * Card Component
  * ==============
  * Flexible card container with variants
+ * 
+ * USAGE FOR EQUAL HEIGHTS:
+ * When using cards in a grid, add equalHeight={true} to ensure
+ * all cards in the row have the same height via flexbox.
  */
 
 import type { HTMLAttributes } from 'astro/types';
@@ -13,6 +17,7 @@ interface Props extends HTMLAttributes<'div'> {
   href?: string;
   padding?: 'none' | 'sm' | 'md' | 'lg';
   hover?: boolean;
+  equalHeight?: boolean;
 }
 
 const {
@@ -20,6 +25,7 @@ const {
   href,
   padding = 'md',
   hover = true,
+  equalHeight = false,
   class: className,
   ...attrs
 } = Astro.props;
@@ -49,12 +55,18 @@ const linkStyles = href
   ? 'block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2' 
   : '';
 
+// Equal height mode: card fills container height and uses flexbox for content
+const equalHeightStyles = equalHeight
+  ? 'h-full flex flex-col'
+  : '';
+
 const classes = [
   baseStyles,
   variantStyles[variant],
   paddingStyles[padding],
   hover && hoverStyles,
   href && linkStyles,
+  equalHeightStyles,
   className,
 ].filter(Boolean).join(' ');
 ---

@@ -4,6 +4,12 @@
  * ========
  * Main landing page for Tamarack Restoration
  * Conversion-optimized layout with trust signals
+ * 
+ * BACKGROUND PATTERN (strict alternation):
+ * Hero (black) → TrustBar (cream) → Services (white) → Process (cream)
+ * → Certifications (white) → RealResults (cream) → WhyChoose (white)
+ * → Testimonials (cream) → ServiceAreas (white) → Insurance (cream)
+ * → FAQ (white) → CTA (black)
  */
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -13,8 +19,10 @@ import ServicesGrid from '@/components/sections/ServicesGrid.astro';
 import ProcessSteps from '@/components/sections/ProcessSteps.astro';
 import WhyChooseUs from '@/components/sections/WhyChooseUs.astro';
 import Certifications from '@/components/sections/Certifications.astro';
+import RealResults from '@/components/sections/RealResults.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import ServiceAreas from '@/components/sections/ServiceAreas.astro';
+import InsurancePartners from '@/components/sections/InsurancePartners.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
 import { business } from '@/data/site';
@@ -28,7 +36,7 @@ const seoDescription = `24/7 emergency restoration in Carlsbad & North San Diego
   title={seoTitle}
   description={seoDescription}
 >
-  <!-- Hero Section with Lead Form -->
+  <!-- Hero Section with Lead Form (BLACK) -->
   <Hero 
     backgroundImage="/images/hero/truck-side-profile.jpg"
     title="Emergency Water, Fire & Mold Restoration in"
@@ -36,86 +44,70 @@ const seoDescription = `24/7 emergency restoration in Carlsbad & North San Diego
     subtitle="Fast, professional restoration services when disaster strikes. We respond within 60 minutes, 24/7, to protect your home and family."
   />
   
-  <!-- Trust Bar - Social Proof Strip -->
+  <!-- Trust Bar - Social Proof Strip (CREAM) -->
   <TrustBar variant="light" />
   
-  <!-- Services Grid -->
-  <section id="services">
-    <ServicesGrid 
-      title="Emergency Restoration Services"
-      subtitle="Professional restoration for water damage, fire damage, mold, and more. Available 24/7 throughout North San Diego County."
-      limit={6}
-    />
-  </section>
+  <!-- Services Grid (WHITE) -->
+  <ServicesGrid 
+    title="Emergency Restoration Services"
+    subtitle="Professional restoration for water damage, fire damage, mold, and more. Available 24/7 throughout North San Diego County."
+    limit={6}
+    class="bg-white"
+  />
   
-  <!-- Process Steps - How We Work -->
+  <!-- Process Steps - How We Work (CREAM) -->
   <ProcessSteps 
     title="Our Proven Restoration Process"
     subtitle="A systematic approach to restore your property quickly and completely"
     variant="numbered"
-  />
-  
-  <!-- Certifications with Team Photo -->
-  <Certifications 
-    showTeamPhoto={true}
     class="bg-brand-cream-200"
   />
   
-  <!-- Why Choose Us -->
+  <!-- Certifications with Team Photo (WHITE) -->
+  <Certifications 
+    showTeamPhoto={true}
+    class="bg-white"
+  />
+  
+  <!-- Real Results - Project Showcase (CREAM) -->
+  <RealResults 
+    title="Real Results for Carlsbad Homes & Businesses"
+    subtitle="See how we've helped your neighbors recover from water damage, fire, mold, and more."
+    class="bg-brand-cream-200"
+  />
+  
+  <!-- Why Choose Us (WHITE) -->
   <WhyChooseUs 
     variant="horizontal"
     showImage={true}
+    class="bg-white"
   />
   
-  
-  <!-- Testimonials Section -->
+  <!-- Testimonials Section (CREAM) -->
   <Testimonials 
     limit={3}
     class="bg-brand-cream-200"
   />
   
-  <!-- Service Areas with Map -->
+  <!-- Service Areas with Map (WHITE) -->
   <ServiceAreas 
     showMap={true}
+    class="bg-white"
   />
   
-  <!-- Insurance Partners Banner -->
-  <section class="insurance-partners section bg-brand-cream-200">
-    <div class="container">
-      <div class="text-center max-w-3xl mx-auto mb-8">
-        <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-3">
-          We Work With All Major Insurance Carriers
-        </h2>
-        <p class="text-body-lg text-brand-gray">
-          We handle the paperwork and work directly with your insurance company to make the claims process as smooth as possible.
-        </p>
-      </div>
-      
-      <!-- Insurance logos would go here -->
-      <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12 opacity-60">
-        <span class="text-brand-gray font-medium">State Farm</span>
-        <span class="text-brand-gray font-medium">USAA</span>
-        <span class="text-brand-gray font-medium">Allstate</span>
-        <span class="text-brand-gray font-medium">Farmers</span>
-        <span class="text-brand-gray font-medium">Liberty Mutual</span>
-        <span class="text-brand-gray font-medium">AAA</span>
-      </div>
-      
-      <div class="text-center mt-6">
-        <a href="/insurance/" class="text-brand-orange font-semibold hover:text-brand-orange-700 transition-colors inline-flex items-center gap-1">
-          Learn About Insurance Claims
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Insurance Partners (CREAM) -->
+  <InsurancePartners 
+    class="bg-brand-cream-200"
+  />
   
-  <!-- FAQ Section -->
+  <!-- FAQ Section (WHITE) -->
   <FAQ 
     title="Frequently Asked Questions"
     subtitle="Get answers to common questions about our restoration services"
     limit={5}
+    class="bg-white"
   />
   
+  <!-- Final CTA (BLACK) -->
+  <CTABanner variant="emergency" />
+</BaseLayout>

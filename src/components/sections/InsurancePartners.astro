@@ -1,0 +1,117 @@
+---
+/**
+ * InsurancePartners Section Component
+ * ====================================
+ * Display insurance carriers we work with
+ * Matches the visual weight of other homepage sections
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import { insuranceCarriers } from '@/data/site';
+
+interface Props {
+  class?: string;
+  title?: string;
+  subtitle?: string;
+  showCTA?: boolean;
+}
+
+const {
+  class: className,
+  title = 'We Work With All Major Insurance Carriers',
+  subtitle = 'We handle the paperwork and work directly with your insurance company to make the claims process as smooth as possible.',
+  showCTA = true,
+} = Astro.props;
+
+// Get featured carriers (first 6)
+const featuredCarriers = insuranceCarriers.slice(0, 6);
+---
+
+<section class:list={['insurance-partners section', className]}>
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Content Side */}
+      <div>
+        <div class="inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-4">
+          <Icon name="shield" size="sm" />
+          Insurance Specialists
+        </div>
+        
+        <h2 class="font-display text-display-lg text-brand-black mb-4">
+          {title}
+        </h2>
+        
+        <p class="text-body-lg text-brand-gray mb-8">
+          {subtitle}
+        </p>
+        
+        {/* Benefits List */}
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center mt-0.5">
+              <Icon name="check" size="sm" class="text-brand-orange" />
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black">Direct Insurance Billing</p>
+              <p class="text-brand-gray text-body-sm">We bill your insurance directly so you don't have to deal with paperwork.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center mt-0.5">
+              <Icon name="check" size="sm" class="text-brand-orange" />
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black">Claims Documentation</p>
+              <p class="text-brand-gray text-body-sm">We provide detailed documentation to support your insurance claim.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center mt-0.5">
+              <Icon name="check" size="sm" class="text-brand-orange" />
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black">Approved by Major Carriers</p>
+              <p class="text-brand-gray text-body-sm">We're a preferred vendor for many insurance companies.</p>
+            </div>
+          </div>
+        </div>
+        
+        {showCTA && (
+          <div class="flex flex-wrap gap-4">
+            <Button href="/insurance/" variant="primary">
+              Learn About Insurance Claims
+              <Icon name="arrow-right" size="sm" />
+            </Button>
+            <Button href="/contact/" variant="outline">
+              File a Claim
+            </Button>
+          </div>
+        )}
+      </div>
+      
+      {/* Carriers Grid Side */}
+      <div class="bg-white rounded-2xl shadow-card p-8">
+        <p class="text-body-sm text-brand-gray font-semibold mb-6 text-center">CARRIERS WE WORK WITH</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          {featuredCarriers.map((carrier) => (
+            <a 
+              href={`/insurance/${carrier.slug}/`}
+              class="group flex flex-col items-center justify-center p-4 rounded-xl hover:bg-brand-cream-200 transition-colors text-center"
+            >
+              <div class="w-12 h-12 rounded-full bg-brand-cream-200 flex items-center justify-center mb-3 group-hover:bg-brand-orange-100 transition-colors">
+                <Icon name="shield" size="md" class="text-brand-gray group-hover:text-brand-orange transition-colors" />
+              </div>
+              <span class="font-semibold text-brand-black text-sm group-hover:text-brand-orange transition-colors">
+                {carrier.name}
+              </span>
+            </a>
+          ))}
+        </div>
+        <p class="text-center text-body-sm text-brand-gray mt-6">
+          Don't see your carrier? <a href="/contact/" class="text-brand-orange font-semibold hover:underline">Contact us</a> — we work with all insurance companies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

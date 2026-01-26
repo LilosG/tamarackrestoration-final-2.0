@@ -3,9 +3,12 @@
  * ProcessSteps Component
  * ======================
  * Visual representation of the service process
+ * 
+ * Uses Card with equalHeight for consistent card heights in grid
  */
 
 import Icon from '@/components/ui/Icon.astro';
+import Card from '@/components/ui/Card.astro';
 import { processSteps } from '@/data/site';
 
 interface Props {
@@ -23,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={['process-steps section bg-brand-cream-200', className]}>
+<section class:list={['process-steps section', className]}>
   <div class="container">
     {(title || subtitle) && (
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -43,21 +46,21 @@ const {
     {variant === 'numbered' && (
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {processSteps.map((step, index) => (
-          <div class="relative text-center">
+          <div class="relative flex flex-col h-full text-center">
             {/* Connector line (hidden on mobile, last item) */}
             {index < processSteps.length - 1 && (
               <div class="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-brand-orange-200" aria-hidden="true" />
             )}
             
             {/* Step number circle */}
-            <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-orange text-white font-display text-2xl mb-4 shadow-button">
+            <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-orange text-white font-display text-2xl mb-4 shadow-button mx-auto flex-shrink-0">
               {step.number}
             </div>
             
             <h3 class="font-heading font-bold text-brand-black text-display-sm mb-2">
               {step.title}
             </h3>
-            <p class="text-brand-gray text-body-md">
+            <p class="text-brand-gray text-body-md flex-grow">
               {step.description}
             </p>
           </div>
@@ -105,7 +108,7 @@ const {
     {variant === 'default' && (
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {processSteps.map((step) => (
-          <div class="bg-white rounded-xl p-6 shadow-card text-center">
+          <Card equalHeight={true} padding="lg" class="text-center">
             <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-brand-orange-100 text-brand-orange mb-4">
               <Icon name={step.icon} size="lg" />
             </div>
@@ -115,10 +118,10 @@ const {
             <h3 class="font-heading font-bold text-brand-black mb-2">
               {step.title}
             </h3>
-            <p class="text-brand-gray text-body-sm">
+            <p class="text-brand-gray text-body-sm flex-grow">
               {step.description}
             </p>
-          </div>
+          </Card>
         ))}
       </div>
     )}

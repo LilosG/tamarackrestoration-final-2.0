@@ -1,0 +1,26 @@
+---
+/**
+ * SectionBadge Component
+ * ======================
+ * Consistent badge styling for section headers
+ * Used above section titles for visual consistency
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+
+interface Props {
+  icon: string;
+  text: string;
+  class?: string;
+}
+
+const { icon, text, class: className } = Astro.props;
+---
+
+<div class:list={[
+  'inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-4',
+  className
+]}>
+  <Icon name={icon} size="sm" />
+  {text}
+</div>
