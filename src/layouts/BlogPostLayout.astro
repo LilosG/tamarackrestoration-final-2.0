@@ -1,0 +1,285 @@
+---
+/**
+ * Blog Post Layout
+ * ================
+ * Template for individual blog posts
+ * Includes related services/cities for internal linking
+ */
+
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import LeadForm from '@/components/forms/LeadForm.astro';
+import { services, cities, business } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, publishDate, updatedDate, author, image, imageAlt, category, tags, relatedServices, relatedCities } = post.data;
+
+// Get related service and city data
+const linkedServices = services.filter(s => relatedServices.includes(s.slug));
+const linkedCities = cities.filter(c => relatedCities.includes(c.slug));
+
+// Format dates
+const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const formattedUpdateDate = updatedDate ? new Date(updatedDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}) : null;
+
+// SEO
+const canonical = getCanonicalUrl(`/blog/${post.slug}/`);
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: title, href: `/blog/${post.slug}/`, current: true },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+// Category display names
+const categoryNames: Record<string, string> = {
+  'water-damage': 'Water Damage',
+  'fire-damage': 'Fire Damage',
+  'mold': 'Mold',
+  'flood': 'Flood',
+  'insurance': 'Insurance',
+  'prevention': 'Prevention',
+  'tips': 'Tips & Guides',
+  'news': 'Company News',
+};
+
+// Article schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": image || '/images/og-default.jpg',
+  "datePublished": publishDate.toISOString(),
+  "dateModified": (updatedDate || publishDate).toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": author,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": business.name,
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.tamarackrestoration.com/images/logo.png",
+    },
+  },
+};
+---
+
+<BaseLayout 
+  title={`${title} | Tamarack Restoration Blog`}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema, articleSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    {image ? (
+      <div class="absolute inset-0">
+        <img 
+          src={image}
+          alt={imageAlt || title}
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-brand-black/60"></div>
+      </div>
+    ) : (
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    )}
+    
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+      
+      <div class="max-w-3xl">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="inline-flex items-center gap-1 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-3 py-1 rounded-full text-sm font-medium">
+            {categoryNames[category] || category}
+          </span>
+          <span class="text-brand-cream-400 text-sm">
+            {formattedPublishDate}
+          </span>
+          {formattedUpdateDate && formattedUpdateDate !== formattedPublishDate && (
+            <span class="text-brand-cream-400 text-sm">
+              (Updated {formattedUpdateDate})
+            </span>
+          )}
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+          {title}
+        </h1>
+        
+        <p class="text-brand-cream-300 text-lg lg:text-xl leading-relaxed">
+          {description}
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Article Content -->
+        <article class="lg:col-span-8">
+          <div class="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-brand-black prose-a:text-brand-orange prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
+            <slot />
+          </div>
+          
+          <!-- Tags -->
+          {tags.length > 0 && (
+            <div class="mt-12 pt-8 border-t border-brand-cream-300">
+              <h3 class="font-heading font-semibold text-brand-black mb-4">Tags</h3>
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span class="px-3 py-1 bg-brand-cream-200 text-brand-gray text-sm rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+        
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4">
+          <div class="sticky top-8 space-y-8">
+            <!-- CTA Card -->
+            <div class="bg-brand-cream-200 rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-brand-black text-lg mb-3">
+                Need Restoration Help?
+              </h3>
+              <p class="text-brand-gray text-sm mb-4">
+                Available 24/7 for emergencies throughout North San Diego County.
+              </p>
+              <Button href={`tel:${business.phone}`} variant="primary" size="md" class="w-full justify-center mb-3">
+                <Icon name="phone" size="sm" />
+                Call {business.phoneFormatted}
+              </Button>
+              <Button href="/contact/" variant="outline" size="md" class="w-full justify-center">
+                Request Free Estimate
+              </Button>
+            </div>
+            
+            <!-- Related Services -->
+            {linkedServices.length > 0 && (
+              <div class="bg-white border border-brand-cream-300 rounded-2xl p-6">
+                <h3 class="font-heading font-bold text-brand-black text-lg mb-4">
+                  Related Services
+                </h3>
+                <div class="space-y-3">
+                  {linkedServices.map((service) => (
+                    <a 
+                      href={`/services/${service.slug}/`}
+                      class="flex items-center gap-3 p-3 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors group"
+                    >
+                      <Icon name={service.icon} size="md" class="text-brand-orange group-hover:text-white" />
+                      <span class="font-medium text-brand-black group-hover:text-white text-sm">
+                        {service.name}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            <!-- Related Cities -->
+            {linkedCities.length > 0 && (
+              <div class="bg-white border border-brand-cream-300 rounded-2xl p-6">
+                <h3 class="font-heading font-bold text-brand-black text-lg mb-4">
+                  We Serve These Areas
+                </h3>
+                <div class="space-y-2">
+                  {linkedCities.map((city) => (
+                    <a 
+                      href={`/service-area/${city.slug}/`}
+                      class="flex items-center gap-2 text-brand-gray hover:text-brand-orange transition-colors text-sm"
+                    >
+                      <Icon name="map-pin" size="sm" class="text-brand-orange" />
+                      {city.name}, CA
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services Section (Full Width) -->
+  {linkedServices.length > 0 && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-4">
+            Professional Restoration Services
+          </h2>
+          <p class="text-brand-gray">
+            Need help with {linkedServices.map(s => s.name.toLowerCase()).join(', ')}? We're here 24/7.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {linkedServices.slice(0, 3).map((service) => (
+            <a 
+              href={`/services/${service.slug}/`}
+              class="group bg-white rounded-xl p-6 shadow-soft hover:shadow-card transition-all"
+            >
+              <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                <Icon name={service.icon} size="lg" />
+              </div>
+              <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
+                {service.name}
+              </h3>
+              <p class="text-brand-gray text-sm">
+                {service.shortDescription}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- CTA Banner -->
+  <section class="bg-brand-black py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
+          Ready to Restore Your Property?
+        </h2>
+        <p class="text-brand-cream-300 mb-8">
+          24/7 emergency service with 60-minute response time.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+            <Icon name="phone" size="sm" />
+            {business.phoneFormatted}
+          </Button>
+          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+            Request Service
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

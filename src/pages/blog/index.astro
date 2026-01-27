@@ -1,0 +1,254 @@
+---
+/**
+ * Blog Index Page
+ * ===============
+ * Lists all blog posts with filtering by category
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import { getCollection } from 'astro:content';
+import { business } from '@/data/site';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+// Get all non-draft blog posts, sorted by date
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => 
+  new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+// Get featured posts
+const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 3);
+const regularPosts = sortedPosts.filter(post => !post.data.featured);
+
+// Categories
+const categories = [
+  { slug: 'water-damage', name: 'Water Damage', icon: 'droplet' },
+  { slug: 'fire-damage', name: 'Fire Damage', icon: 'flame' },
+  { slug: 'mold', name: 'Mold', icon: 'alert-triangle' },
+  { slug: 'flood', name: 'Flood', icon: 'cloud-rain' },
+  { slug: 'insurance', name: 'Insurance', icon: 'shield' },
+  { slug: 'prevention', name: 'Prevention', icon: 'check-circle' },
+  { slug: 'tips', name: 'Tips & Guides', icon: 'lightbulb' },
+  { slug: 'news', name: 'Company News', icon: 'megaphone' },
+];
+
+// SEO
+const title = 'Restoration Tips & Guides | Tamarack Restoration Blog';
+const description = `Expert advice on water damage, fire restoration, mold prevention, and insurance claims. Learn from North San Diego County's trusted restoration professionals.`;
+const canonical = getCanonicalUrl('/blog/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/', current: true },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+// Format date helper
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Category display names
+const categoryNames: Record<string, string> = {
+  'water-damage': 'Water Damage',
+  'fire-damage': 'Fire Damage',
+  'mold': 'Mold',
+  'flood': 'Flood',
+  'insurance': 'Insurance',
+  'prevention': 'Prevention',
+  'tips': 'Tips & Guides',
+  'news': 'Company News',
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+      
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <Icon name="book-open" size="sm" />
+          Expert Advice
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+          Restoration Tips & Guides
+        </h1>
+        
+        <p class="text-brand-cream-300 text-lg lg:text-xl leading-relaxed">
+          Expert advice on protecting your home, handling emergencies, and navigating insurance claims from North San Diego County's trusted restoration professionals.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <TrustBar variant="light" />
+  
+  <!-- Categories -->
+  <section class="py-8 bg-white border-b border-brand-cream-300">
+    <div class="container">
+      <div class="flex flex-wrap justify-center gap-3">
+        <a 
+          href="/blog/"
+          class="px-4 py-2 bg-brand-orange text-white rounded-full text-sm font-medium"
+        >
+          All Posts
+        </a>
+        {categories.map((cat) => (
+          <a 
+            href={`/blog/category/${cat.slug}/`}
+            class="px-4 py-2 bg-brand-cream-200 text-brand-gray rounded-full text-sm font-medium hover:bg-brand-orange hover:text-white transition-colors"
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Posts -->
+  {featuredPosts.length > 0 && (
+    <section class="section bg-white">
+      <div class="container">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-8">
+          Featured Articles
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          {featuredPosts.map((post) => (
+            <a 
+              href={`/blog/${post.slug}/`}
+              class="group bg-white border border-brand-cream-300 rounded-xl overflow-hidden hover:shadow-card transition-all"
+            >
+              {post.data.image && (
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src={post.data.image}
+                    alt={post.data.imageAlt || post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
+                    {categoryNames[post.data.category] || post.data.category}
+                  </span>
+                  <span class="text-xs text-brand-gray">
+                    {formatDate(post.data.publishDate)}
+                  </span>
+                </div>
+                <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors line-clamp-2">
+                  {post.data.title}
+                </h3>
+                <p class="text-brand-gray text-sm line-clamp-2">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- All Posts -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-8">
+        {featuredPosts.length > 0 ? 'More Articles' : 'All Articles'}
+      </h2>
+      
+      {sortedPosts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {(featuredPosts.length > 0 ? regularPosts : sortedPosts).map((post) => (
+            <a 
+              href={`/blog/${post.slug}/`}
+              class="group bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-all"
+            >
+              {post.data.image ? (
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src={post.data.image}
+                    alt={post.data.imageAlt || post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ) : (
+                <div class="aspect-video bg-brand-cream-300 flex items-center justify-center">
+                  <Icon name="file-text" size="xl" class="text-brand-gray" />
+                </div>
+              )}
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
+                    {categoryNames[post.data.category] || post.data.category}
+                  </span>
+                  <span class="text-xs text-brand-gray">
+                    {formatDate(post.data.publishDate)}
+                  </span>
+                </div>
+                <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors line-clamp-2">
+                  {post.data.title}
+                </h3>
+                <p class="text-brand-gray text-sm line-clamp-2">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12 bg-white rounded-xl">
+          <Icon name="file-text" size="xl" class="text-brand-gray mx-auto mb-4" />
+          <h3 class="font-heading font-bold text-xl text-brand-black mb-2">
+            Coming Soon
+          </h3>
+          <p class="text-brand-gray">
+            We're working on helpful content. Check back soon!
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="bg-brand-black py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
+          Need Emergency Restoration?
+        </h2>
+        <p class="text-brand-cream-300 mb-8">
+          Don't wait—call us 24/7 for 60-minute response throughout North San Diego County.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+            <Icon name="phone" size="sm" />
+            {business.phoneFormatted}
+          </Button>
+          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+            Request Service
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
