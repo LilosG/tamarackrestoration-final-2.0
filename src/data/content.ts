@@ -715,3 +715,289 @@ export function generateServiceCityFAQs(
   
   return baseFAQs;
 }
+
+// ===================
+// INSURANCE CONTENT
+// ===================
+// Content for insurance carrier and insurance+service pages
+
+export interface InsuranceCarrierContent {
+  slug: string;
+  // How we help section
+  howWeHelp: string;
+  // Claim process (detailed)
+  claimSteps: {
+    title: string;
+    description: string;
+  }[];
+  // Why choose us for this carrier
+  whyChooseUs: {
+    title: string;
+    description: string;
+  }[];
+  // Tips for policyholders
+  claimTips: string[];
+  // What's typically covered
+  typicallyCovered: string[];
+  // What may not be covered
+  mayNotBeCovered: string[];
+}
+
+
+// ===================
+// INSURANCE CONTENT
+// ===================
+
+export interface InsuranceCarrierContent {
+  slug: string;
+  howWeHelp: string;
+  claimSteps: { title: string; description: string; }[];
+  whyChooseUs: { title: string; description: string; }[];
+  claimTips: string[];
+  typicallyCovered: string[];
+  mayNotBeCovered: string[];
+}
+
+export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = {
+  'state-farm': {
+    slug: 'state-farm',
+    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We simplify the process by working directly with State Farm adjusters on your behalf. Our team knows exactly what documentation State Farm requires and how to communicate effectively with their adjusters.`,
+    claimSteps: [
+      { title: 'Document Everything', description: 'Take photos and videos of all damage before cleanup begins.' },
+      { title: 'File Your State Farm Claim', description: 'Call State Farm at 1-800-732-5246 or file online.' },
+      { title: 'Call Tamarack Restoration', description: 'We begin emergency mitigation immediately—no need to wait for approval.' },
+      { title: 'We Meet Your Adjuster', description: 'We coordinate directly with your State Farm adjuster on-site.' },
+      { title: 'Restoration Begins', description: 'State Farm pays us directly—you only pay your deductible.' },
+    ],
+    whyChooseUs: [
+      { title: 'State Farm Experience', description: 'Hundreds of successful State Farm claims processed.' },
+      { title: 'Direct Billing', description: 'We bill State Farm directly for covered work.' },
+      { title: 'Thorough Documentation', description: 'Reports that adjusters need to approve your claim.' },
+    ],
+    claimTips: [
+      'File your claim as soon as possible',
+      'Don\'t throw away damaged items until adjuster sees them',
+      'Keep all receipts for emergency expenses',
+      'Take photos before any cleanup begins',
+    ],
+    typicallyCovered: [
+      'Sudden pipe bursts and water damage',
+      'Fire and smoke damage',
+      'Wind and hail damage',
+      'Appliance overflow damage',
+      'Mold from covered water damage',
+    ],
+    mayNotBeCovered: [
+      'Flood damage (requires separate policy)',
+      'Gradual water damage from slow leaks',
+      'Neglected maintenance issues',
+      'Sewer backup (may require endorsement)',
+    ],
+  },
+  'allstate': {
+    slug: 'allstate',
+    howWeHelp: `Allstate policyholders deserve a restoration company that understands their coverage. We work directly with Allstate's claims team to document damage and ensure your restoration meets their standards.`,
+    claimSteps: [
+      { title: 'Document the Damage', description: 'Capture photos and videos of all affected areas.' },
+      { title: 'File Your Allstate Claim', description: 'Report online at allstate.com or call 1-800-255-7828.' },
+      { title: 'Contact Tamarack', description: 'We begin mitigation immediately to prevent further damage.' },
+      { title: 'Adjuster Coordination', description: 'We provide documentation and answer all questions.' },
+      { title: 'Complete Restoration', description: 'We restore your property and bill Allstate directly.' },
+    ],
+    whyChooseUs: [
+      { title: 'Allstate-Approved Methods', description: 'Industry-standard methods Allstate recognizes.' },
+      { title: 'Seamless Process', description: 'We handle paperwork so you can focus on family.' },
+      { title: 'Quality Guarantee', description: 'Work that meets Allstate standards.' },
+    ],
+    claimTips: [
+      'Report your claim promptly',
+      'Document damage with photos and descriptions',
+      'Keep damaged items for inspection',
+      'Track all related expenses',
+    ],
+    typicallyCovered: [
+      'Water damage from sudden events',
+      'Fire and smoke damage',
+      'Storm and wind damage',
+      'Mold from covered water events',
+    ],
+    mayNotBeCovered: [
+      'Flooding (requires separate policy)',
+      'Gradual wear and tear',
+      'Maintenance issues',
+    ],
+  },
+  'farmers': {
+    slug: 'farmers',
+    howWeHelp: `Farmers Insurance policyholders trust us because we understand how Farmers handles claims. Our team provides the detailed documentation that ensures your claim is processed efficiently.`,
+    claimSteps: [
+      { title: 'Document All Damage', description: 'Take comprehensive photos before cleanup.' },
+      { title: 'File Your Farmers Claim', description: 'Call 1-800-435-7764 or file online.' },
+      { title: 'Call Us Immediately', description: 'Emergency mitigation protects your property.' },
+      { title: 'Work With Your Adjuster', description: 'We provide detailed scope and documentation.' },
+      { title: 'Restoration Complete', description: 'We bill Farmers directly for covered work.' },
+    ],
+    whyChooseUs: [
+      { title: 'Farmers Familiarity', description: 'We know what Farmers adjusters require.' },
+      { title: 'Local Service', description: 'Fast, personalized service in North San Diego County.' },
+      { title: 'Complete Care', description: 'From emergency response to final repairs.' },
+    ],
+    claimTips: [
+      'File claims within 60 days of discovering damage',
+      'Mitigate further damage immediately',
+      'Keep receipts for emergency expenses',
+      'Request a copy of your policy',
+    ],
+    typicallyCovered: [
+      'Accidental water damage',
+      'Fire and smoke damage',
+      'Wind and storm damage',
+      'Mold from covered events',
+    ],
+    mayNotBeCovered: [
+      'Flood damage',
+      'Long-term water seepage',
+      'Wear and tear',
+    ],
+  },
+  'usaa': {
+    slug: 'usaa',
+    howWeHelp: `We're honored to serve military families with USAA coverage. We understand the unique needs of military families, including those who may be deployed or relocating.`,
+    claimSteps: [
+      { title: 'Document the Damage', description: 'Photos and videos are critical for your claim.' },
+      { title: 'File Your USAA Claim', description: 'Use the app, usaa.com, or call 1-800-531-8722.' },
+      { title: 'Contact Tamarack', description: 'We provide 24/7 emergency response for USAA members.' },
+      { title: 'Adjuster Coordination', description: 'We work with USAA\'s claims team.' },
+      { title: 'Complete Restoration', description: 'We coordinate directly with USAA for payment.' },
+    ],
+    whyChooseUs: [
+      { title: 'Military Family Focus', description: 'We understand deployments and relocations.' },
+      { title: 'USAA Experience', description: 'We know USAA\'s high standards.' },
+      { title: 'Clear Communication', description: 'We keep you informed even if stationed elsewhere.' },
+    ],
+    claimTips: [
+      'USAA offers 24/7 claims service',
+      'Use the USAA app for easy documentation',
+      'Ask about military-specific benefits',
+      'Authorize someone if deployed',
+    ],
+    typicallyCovered: [
+      'Water damage from covered perils',
+      'Fire and smoke damage',
+      'Storm damage',
+      'Additional living expenses',
+    ],
+    mayNotBeCovered: [
+      'Flood damage (separate policy needed)',
+      'Gradual damage',
+      'Earthquake damage',
+    ],
+  },
+  'liberty-mutual': {
+    slug: 'liberty-mutual',
+    howWeHelp: `Liberty Mutual policyholders can count on us for professional, efficient restoration. We work directly with Liberty Mutual's claims process for smooth handling from start to finish.`,
+    claimSteps: [
+      { title: 'Document Everything', description: 'Photograph all damage before cleanup.' },
+      { title: 'File Your Claim', description: 'Report at libertymutual.com or call 1-800-225-2467.' },
+      { title: 'Call Tamarack', description: 'We respond 24/7 for emergencies.' },
+      { title: 'Coordinate With Adjuster', description: 'We provide comprehensive documentation.' },
+      { title: 'Restoration Completed', description: 'We handle direct billing with Liberty Mutual.' },
+    ],
+    whyChooseUs: [
+      { title: 'Quality Workmanship', description: 'IICRC-certified work meets their standards.' },
+      { title: 'Clear Communication', description: 'We keep everyone informed throughout.' },
+      { title: 'Hassle-Free Billing', description: 'We work directly with Liberty Mutual on payment.' },
+    ],
+    claimTips: [
+      'Report claims promptly',
+      'Take inventory of damaged property',
+      'Keep receipts for emergency expenses',
+      'Ask about replacement cost vs. actual cash value',
+    ],
+    typicallyCovered: [
+      'Sudden water damage',
+      'Fire and smoke damage',
+      'Windstorm and hail damage',
+      'Theft and vandalism',
+    ],
+    mayNotBeCovered: [
+      'Flood damage',
+      'Sewer backup (may need endorsement)',
+      'Gradual deterioration',
+    ],
+  },
+};
+
+export interface InsuranceServiceContent {
+  serviceSlug: string;
+  coverageOverview: string;
+  serviceTips: string[];
+  documentationNeeded: string[];
+}
+
+export const insuranceServiceContent: Record<string, InsuranceServiceContent> = {
+  'water-damage-restoration': {
+    serviceSlug: 'water-damage-restoration',
+    coverageOverview: `Most homeowner's insurance covers water damage from sudden events like burst pipes and appliance failures. Coverage varies based on water source and whether damage was sudden or gradual.`,
+    serviceTips: [
+      'Stop the water source if safe to do so',
+      'Don\'t wait for adjuster approval for emergency mitigation',
+      'Document the water source and affected areas',
+      'Keep a log of all water-damaged items',
+    ],
+    documentationNeeded: [
+      'Photos/video of the water source',
+      'Photos of all affected areas',
+      'Date and time damage was discovered',
+      'List of damaged personal property',
+    ],
+  },
+  'fire-damage-restoration': {
+    serviceSlug: 'fire-damage-restoration',
+    coverageOverview: `Fire damage is typically well-covered, including damage from flames, smoke, soot, and water used to extinguish the fire. Coverage usually extends to structural damage and personal property.`,
+    serviceTips: [
+      'Don\'t enter until fire department clears it',
+      'Board up openings to prevent further damage',
+      'Document smoke and soot damage, not just fire',
+      'Keep receipts for temporary housing',
+    ],
+    documentationNeeded: [
+      'Fire department report',
+      'Photos of all fire, smoke, and soot damage',
+      'Inventory of damaged personal property',
+      'Receipts for emergency expenses',
+    ],
+  },
+  'mold-removal': {
+    serviceSlug: 'mold-removal',
+    coverageOverview: `Mold coverage is often limited. It's typically covered only when resulting from a covered water event and addressed promptly. Some policies have mold coverage caps.`,
+    serviceTips: [
+      'Link mold to a covered water event',
+      'Act quickly—delays can result in denied claims',
+      'Don\'t disturb mold before documentation',
+      'Get professional testing',
+    ],
+    documentationNeeded: [
+      'Evidence of the water event that caused mold',
+      'Professional mold testing results',
+      'Photos of visible mold growth',
+      'Timeline showing prompt response',
+    ],
+  },
+  'flood-cleanup': {
+    serviceSlug: 'flood-cleanup',
+    coverageOverview: `Standard homeowner's insurance does NOT cover flood damage. Flood coverage requires separate NFIP or private flood insurance.`,
+    serviceTips: [
+      'Verify you have flood insurance',
+      'NFIP has specific documentation requirements',
+      'Separate flood damage from covered water damage',
+      'File flood claims within 60 days',
+    ],
+    documentationNeeded: [
+      'Proof of flood insurance policy',
+      'High water marks documented with photos',
+      'Complete inventory of damaged items',
+      'Receipts for emergency mitigation',
+    ],
+  },
+};

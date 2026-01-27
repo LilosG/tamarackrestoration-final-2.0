@@ -3,7 +3,7 @@
  * Insurance Service Layout
  * ========================
  * Template for /insurance/[carrier]/[service]/ pages
- * High-intent pages for carrier + service combinations
+ * Enhanced with rich content from insuranceCarrierContent and insuranceServiceContent
  */
 
 import BaseLayout from './BaseLayout.astro';
@@ -15,6 +15,7 @@ import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { insuranceCarriers, services, business } from '@/data/site';
+import { insuranceCarrierContent, insuranceServiceContent, serviceContent } from '@/data/content';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 
@@ -27,10 +28,13 @@ const { carrierSlug, serviceSlug } = Astro.props;
 
 const carrier = insuranceCarriers.find(c => c.slug === carrierSlug)!;
 const service = services.find(s => s.slug === serviceSlug)!;
+const carrierContent = insuranceCarrierContent[carrierSlug] || null;
+const insuranceService = insuranceServiceContent[serviceSlug] || null;
+const svcContent = serviceContent[serviceSlug] || null;
 
 // SEO
 const title = `${carrier.name} ${service.name} Claims | Tamarack Restoration`;
-const description = `${service.name} covered by ${carrier.name}? We work directly with ${carrier.name} adjusters in North San Diego County. 60-minute response. Call ${business.phoneFormatted}.`;
+const description = `${service.name} covered by ${carrier.name}? We work directly with ${carrier.name} adjusters in North San Diego County. 60-minute response, direct billing. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl(`/insurance/${carrier.slug}/${service.slug}/`);
 
 const breadcrumbs = [
@@ -51,7 +55,7 @@ const otherServices = services.filter(s =>
 const faqs: FAQType[] = [
   {
     question: `Does ${carrier.name} cover ${service.name.toLowerCase()}?`,
-    answer: `${carrier.name} typically covers ${service.name.toLowerCase()} when the damage is sudden and accidental. We work directly with ${carrier.name} to document all damage and ensure your claim is processed smoothly.`,
+    answer: insuranceService?.coverageOverview || `${carrier.name} typically covers ${service.name.toLowerCase()} when the damage is sudden and accidental. We work directly with ${carrier.name} to document all damage and ensure your claim is processed smoothly.`,
   },
   {
     question: `What's my out-of-pocket cost for ${service.name.toLowerCase()} with ${carrier.name}?`,
@@ -62,8 +66,12 @@ const faqs: FAQType[] = [
     answer: `We can begin emergency ${service.name.toLowerCase()} within 60 minutes of your call. You don't need to wait for ${carrier.name} approval for emergency mitigation—we'll coordinate with your adjuster while protecting your property.`,
   },
   {
+    question: `What documentation does ${carrier.name} need for ${service.name.toLowerCase()}?`,
+    answer: insuranceService?.documentationNeeded ? `${carrier.name} typically requires: ${insuranceService.documentationNeeded.join(', ')}. We handle all documentation for you.` : `We provide complete documentation including photos, moisture readings, damage assessments, and detailed reports that ${carrier.name} adjusters require.`,
+  },
+  {
     question: `Will ${carrier.name} pay you directly for ${service.name.toLowerCase()}?`,
-    answer: `Yes, we can work directly with ${carrier.name} for payment. We handle all the documentation, adjuster meetings, and paperwork so you don't have to manage the process yourself.`,
+    answer: `Yes, we work directly with ${carrier.name} for payment. We handle all the documentation, adjuster meetings, and paperwork so you don't have to manage the process yourself.`,
   },
 ];
 ---
@@ -75,8 +83,16 @@ const faqs: FAQType[] = [
   jsonLd={[breadcrumbSchema]}
 >
   <!-- Hero -->
-  <section class="relative bg-brand-black overflow-hidden min-h-[400px] lg:min-h-[450px] flex items-center">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+  <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center">
+    <div class="absolute inset-0">
+      <img 
+        src={service.image || '/images/services/default-hero.jpg'}
+        alt={`${service.name} with ${carrier.name} insurance`}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70"></div>
+    </div>
     
     <div class="container relative py-16 lg:py-20">
       <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
@@ -85,7 +101,7 @@ const faqs: FAQType[] = [
         <div class="lg:col-span-7">
           <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="shield" size="sm" />
-            {carrier.name} Approved
+            {carrier.name} Covered
           </div>
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
@@ -94,22 +110,34 @@ const faqs: FAQType[] = [
           </h1>
           
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-            Need {service.name.toLowerCase()} and have {carrier.name}? We work directly with your insurance to restore your property fast.
+            Need {service.name.toLowerCase()} and have {carrier.name}? We work directly with your insurance to restore your property fast—and handle all the paperwork.
           </p>
           
-          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm mb-8">
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="clock" size="sm" class="text-brand-orange" />
               <span>60-Minute Response</span>
             </div>
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="file-text" size="sm" class="text-brand-orange" />
-              <span>Direct Billing to {carrier.name}</span>
+              <span>Direct {carrier.name} Billing</span>
             </div>
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="award" size="sm" class="text-brand-orange" />
               <span>IICRC Certified</span>
             </div>
+          </div>
+          
+          <div class="hidden lg:flex items-center gap-6">
+            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+                <Icon name="phone" size="md" class="text-white" />
+              </span>
+              <span>
+                <span class="block text-sm text-brand-cream-400">Call 24/7</span>
+                <span class="block font-bold text-xl tracking-tight">{business.phoneFormatted}</span>
+              </span>
+            </a>
           </div>
         </div>
         
@@ -127,17 +155,17 @@ const faqs: FAQType[] = [
   
   <TrustBar variant="light" />
   
-  <!-- Main Content -->
+  <!-- Coverage Overview -->
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6 text-center">
-          {service.name} Covered by {carrier.name}
+          {service.name} Coverage with {carrier.name}
         </h2>
         
         <div class="prose prose-lg mx-auto mb-12">
           <p class="text-lg text-brand-gray leading-relaxed">
-            When you need {service.name.toLowerCase()} and have {carrier.name} insurance, you want a restoration company that knows how to work with your carrier. Tamarack Restoration has extensive experience with {carrier.name} claims throughout North San Diego County.
+            {insuranceService?.coverageOverview || `When you need ${service.name.toLowerCase()} and have ${carrier.name} insurance, you want a restoration company that knows how to work with your carrier. Tamarack Restoration has extensive experience with ${carrier.name} claims throughout North San Diego County.`}
           </p>
           <p class="text-lg text-brand-gray leading-relaxed">
             We handle everything from initial documentation to final adjuster sign-off. Our team communicates directly with {carrier.name}, providing the detailed reports and professional assessments they need to process your claim quickly.
@@ -146,6 +174,98 @@ const faqs: FAQType[] = [
       </div>
     </div>
   </section>
+  
+  <!-- Process Steps (from service content) -->
+  {svcContent?.processSteps && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Our {service.name} Process
+          </h2>
+          <p class="text-lg text-brand-gray">
+            Professional restoration coordinated with your {carrier.name} claim.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-6">
+            {svcContent.processSteps.slice(0, 5).map((step, index) => (
+              <div class="flex gap-6 items-start bg-white rounded-xl p-6 shadow-soft">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center font-heading font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-brand-black text-xl mb-2">
+                    {step.title}
+                  </h3>
+                  <p class="text-brand-gray">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+  
+  <!-- Documentation & Tips -->
+  {insuranceService && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Documentation Needed */}
+          {insuranceService.documentationNeeded && (
+            <div class="bg-brand-cream-200 rounded-2xl p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-brand-orange-100 flex items-center justify-center">
+                  <Icon name="file-text" size="lg" class="text-brand-orange" />
+                </div>
+                <h3 class="font-heading font-bold text-brand-black text-xl">
+                  Documentation We Provide
+                </h3>
+              </div>
+              <p class="text-brand-gray mb-4 text-sm">
+                We prepare everything {carrier.name} needs:
+              </p>
+              <ul class="space-y-3">
+                {insuranceService.documentationNeeded.map((doc) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="check" size="sm" class="text-brand-orange mt-1 flex-shrink-0" />
+                    <span class="text-brand-gray text-sm">{doc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+          {/* Claim Tips */}
+          {insuranceService.serviceTips && (
+            <div class="bg-brand-cream-200 rounded-2xl p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-brand-orange-100 flex items-center justify-center">
+                  <Icon name="lightbulb" size="lg" class="text-brand-orange" />
+                </div>
+                <h3 class="font-heading font-bold text-brand-black text-xl">
+                  Tips for Your Claim
+                </h3>
+              </div>
+              <ul class="space-y-3">
+                {insuranceService.serviceTips.map((tip) => (
+                  <li class="flex items-start gap-2">
+                    <Icon name="arrow-right" size="sm" class="text-brand-orange mt-1 flex-shrink-0" />
+                    <span class="text-brand-gray text-sm">{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
   
   <!-- What's Included -->
   <section class="section bg-brand-cream-200">
