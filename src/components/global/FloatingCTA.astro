@@ -1,0 +1,63 @@
+---
+/**
+ * Floating CTA Component
+ * ======================
+ * Mobile-only floating call-to-action bar that appears on scroll
+ */
+
+import Icon from '@/components/ui/Icon.astro';
+import { business } from '@/data/site';
+---
+
+<div 
+  class="floating-cta fixed bottom-0 left-0 right-0 z-40 lg:hidden transform translate-y-full transition-transform duration-300"
+  data-floating-cta
+>
+  <div class="bg-white border-t border-brand-cream-300 shadow-lg px-4 py-3" style="padding-bottom: max(12px, env(safe-area-inset-bottom));">
+    <div class="flex items-center gap-3">
+      <a 
+        href={`tel:${business.phone}`}
+        class="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-600 transition-colors"
+      >
+        <Icon name="phone" size="sm" />
+        <span>Call Now</span>
+      </a>
+      <a 
+        href="/contact/"
+        class="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-black text-white font-semibold rounded-lg hover:bg-brand-black/90 transition-colors"
+      >
+        <span>Get Estimate</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initFloatingCTA() {
+    const floatingCta = document.querySelector('[data-floating-cta]');
+    let ticking = false;
+    
+    function updateCTA() {
+      const currentScroll = window.scrollY;
+      
+      // Show floating CTA when scrolled past 300px
+      if (currentScroll > 300) {
+        floatingCta?.classList.remove('translate-y-full');
+      } else {
+        floatingCta?.classList.add('translate-y-full');
+      }
+      
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateCTA);
+        ticking = true;
+      }
+    });
+  }
+  
+  initFloatingCTA();
+  document.addEventListener('astro:page-load', initFloatingCTA);
+</script>

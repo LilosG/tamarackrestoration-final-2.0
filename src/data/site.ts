@@ -563,6 +563,14 @@ export const mainNavigation: NavItem[] = [
   {
     label: 'Insurance',
     href: '/insurance/',
+    children: [
+      { label: 'State Farm', href: '/insurance/state-farm/' },
+      { label: 'Allstate', href: '/insurance/allstate/' },
+      { label: 'Farmers Insurance', href: '/insurance/farmers/' },
+      { label: 'USAA', href: '/insurance/usaa/' },
+      { label: 'Liberty Mutual', href: '/insurance/liberty-mutual/' },
+      { label: 'All Insurance Partners', href: '/insurance/' },
+    ],
   },
   {
     label: 'About',

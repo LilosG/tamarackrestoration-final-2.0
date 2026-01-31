@@ -681,9 +681,9 @@ export const cityContext: Record<string, CityContext> = {
 
 export function generateServiceCityFAQs(
   serviceName: string,
-  serviceSlug: string,
+  _serviceSlug: string,
   cityName: string,
-  citySlug: string,
+  _citySlug: string,
   neighborhoods: string[] = []
 ): { question: string; answer: string }[] {
   const neighborhoodList = neighborhoods.length > 0 

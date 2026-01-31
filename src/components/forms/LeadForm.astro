@@ -24,7 +24,7 @@ const {
   source = 'lead-form'
 } = Astro.props;
 
-const formId = `lead-form-${Math.random().toString(36).substr(2, 9)}`;
+const formId = `lead-form-${Math.random().toString(36).slice(2, 11)}`;
 
 const variantStyles: Record<string, string> = {
   default: 'bg-white',

@@ -23,9 +23,9 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class:list={['header', className]} data-header>
+<header class:list={['header fixed top-0 left-0 right-0 z-sticky', className]} data-header>
   <!-- Top bar with contact info -->
-  <div class="bg-brand-black text-white py-2 hidden md:block">
+  <div class="header-topbar bg-brand-black text-white py-2 hidden md:block transition-all duration-300">
     <div class="container">
       <div class="flex items-center justify-between text-body-sm">
         <div class="flex items-center gap-6">
@@ -51,7 +51,7 @@ function isActive(href: string): boolean {
   
   <!-- Main navigation -->
   <nav 
-    class="bg-white border-b border-brand-cream-300 sticky top-0 z-sticky"
+    class="header-nav bg-white border-b border-brand-cream-300 transition-shadow duration-300"
     aria-label="Main navigation"
   >
     <div class="container">
@@ -246,6 +246,7 @@ function isActive(href: string): boolean {
 <script>
   function initHeader() {
     const header = document.querySelector('[data-header]');
+    const topbar = header?.querySelector('.header-topbar');
     const menuToggle = document.querySelector('[data-mobile-menu-toggle]');
     const menuClose = document.querySelector('[data-mobile-menu-close]');
     const mobileMenu = document.querySelector('[data-mobile-menu]');
@@ -317,20 +318,39 @@ function isActive(href: string): boolean {
     });
     
     // Header scroll behavior (optional sticky shadow)
-    let lastScroll = 0;
     const nav = header?.querySelector('nav');
     
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+    
+    function updateHeader() {
       const currentScroll = window.scrollY;
       
-      if (currentScroll > 50) {
+      // Add shadow when scrolled
+      if (currentScroll > 10) {
         nav?.classList.add('shadow-soft');
       } else {
         nav?.classList.remove('shadow-soft');
       }
       
-      lastScroll = currentScroll;
+      // Hide topbar when scrolled (desktop)
+      if (currentScroll > 100) {
+        topbar?.classList.add('-translate-y-full', 'opacity-0');
+      } else {
+        topbar?.classList.remove('-translate-y-full', 'opacity-0');
+      }
+      
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
     });
+    
+    // Initial call
+    updateHeader();
   }
   
   initHeader();

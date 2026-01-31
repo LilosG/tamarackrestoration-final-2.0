@@ -9,13 +9,12 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
 import Icon from '@/components/ui/Icon.astro';
-import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { insuranceCarriers, services, business } from '@/data/site';
-import { insuranceCarrierContent, insuranceServiceContent, serviceContent } from '@/data/content';
+import { insuranceServiceContent, serviceContent } from '@/data/content';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 
@@ -28,7 +27,6 @@ const { carrierSlug, serviceSlug } = Astro.props;
 
 const carrier = insuranceCarriers.find(c => c.slug === carrierSlug)!;
 const service = services.find(s => s.slug === serviceSlug)!;
-const carrierContent = insuranceCarrierContent[carrierSlug] || null;
 const insuranceService = insuranceServiceContent[serviceSlug] || null;
 const svcContent = serviceContent[serviceSlug] || null;
 
