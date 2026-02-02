@@ -91,6 +91,16 @@ const faqs: FAQType[] = [
       
       <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div class="lg:col-span-7">
+          <!-- Carrier Logo -->
+          <div class="mb-6">
+            <img 
+              src={carrier.logo}
+              alt={`${carrier.name} Insurance Logo`}
+              class="h-12 w-auto object-contain"
+              loading="eager"
+            />
+          </div>
+          
           <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="shield" size="sm" />
             Insurance Partner

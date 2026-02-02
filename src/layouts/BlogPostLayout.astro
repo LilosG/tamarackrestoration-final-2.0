@@ -64,7 +64,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": title,
   "description": description,
-  "image": image || '/images/og-default.jpg',
+  "image": image || '/images/logo/og-default.webp',
   "datePublished": publishDate.toISOString(),
   "dateModified": (updatedDate || publishDate).toISOString(),
   "author": {
@@ -76,7 +76,7 @@ const articleSchema = {
     "name": business.name,
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.tamarackrestoration.com/images/logo.png",
+      "url": "https://www.tamarackrestoration.com/images/logo/tamarack-logo.webp",
     },
   },
 };

@@ -19,7 +19,7 @@ import type {
 import { business } from '@/data/site';
 
 const SITE_URL = 'https://www.tamarackrestoration.com';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og-default.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/logo/og-default.webp`;
 
 // ===================
 // SEO TITLE/META GENERATORS
@@ -108,7 +108,7 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
     '@type': 'LocalBusiness',
     '@id': `${SITE_URL}/#business`,
     name: business.name,
-    image: `${SITE_URL}/images/logo/tamarack-logo.png`,
+    image: `${SITE_URL}/images/logo/tamarack-logo.webp`,
     telephone: business.phoneFormatted,
     email: business.email,
     address: {
@@ -226,7 +226,7 @@ export function getArticleSchema(
       name: business.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/images/logo/tamarack-logo.png`,
+        url: `${SITE_URL}/images/logo/tamarack-logo.webp`,
       },
     },
   };
