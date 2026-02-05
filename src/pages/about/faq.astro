@@ -3,70 +3,22 @@
  * FAQ Page
  * ========
  * Comprehensive FAQ page with proper FAQPage schema for SEO/AEO
- * Uses existing FAQ component for consistent styling
+ * Uses AboutLayout + FAQ component
  */
 
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import AboutLayout from '@/layouts/AboutLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
-import Button from '@/components/ui/Button.astro';
-import FAQ from '@/components/sections/FAQ.astro';
-import { business } from '@/data/site';
-import { allFaqs, faqCategories } from '@/data/faqs';
-import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema } from '@/utils/seo';
+import FAQSection from '@/components/sections/FAQ.astro';
+import { faqCategories, allFaqs } from '@/data/faqs';
+import { getFAQSchema } from '@/utils/seo';
 
-const title = 'Frequently Asked Questions | Tamarack Restoration';
-const description = `Get answers to common questions about water damage restoration, mold removal, fire damage repair, insurance claims, and our 24/7 emergency services in North San Diego County.`;
-const canonical = getCanonicalUrl('/about/faq/');
-
-const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/' },
-  { label: 'FAQ', href: '/about/faq/', current: true },
-];
-
-const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 const faqSchema = getFAQSchema(allFaqs);
-const jsonLd = [breadcrumbSchema, faqSchema];
 ---
 
-<BaseLayout 
-  title={title}
-  description={description}
-  canonical={canonical}
-  jsonLd={jsonLd}
->
-  <!-- Hero -->
-  <section class="relative bg-brand-black overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
-    
-    <div class="container relative py-16 lg:py-20">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
-          Frequently Asked{' '}
-          <span class="text-brand-orange">Questions</span>
-        </h1>
-        
-        <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-          Find answers to common questions about our restoration services, insurance process, and what to expect when disaster strikes.
-        </p>
-        
-        <div class="flex flex-wrap items-center gap-4">
-          <a 
-            href={`tel:${business.phone}`}
-            class="inline-flex items-center gap-2 bg-brand-orange text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-orange-600 transition-colors"
-          >
-            <Icon name="phone" size="sm" />
-            {business.phoneFormatted}
-          </a>
-          <span class="text-brand-cream-400">Available 24/7 for emergencies</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- FAQ Sections using existing component -->
+<AboutLayout page="faq">
+  <!-- FAQ Sections by category -->
   {faqCategories.map((category, index) => (
-    <FAQ 
+    <FAQSection 
       title={category.name}
       subtitle=""
       faqs={category.faqs}
@@ -75,30 +27,6 @@ const jsonLd = [breadcrumbSchema, faqSchema];
       class={index % 2 === 0 ? 'bg-white' : 'bg-brand-cream-200'}
     />
   ))}
-  
-  <!-- Still Have Questions CTA -->
-  <section class="section bg-brand-black">
-    <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-          Still Have Questions?
-        </h2>
-        <p class="text-lg text-brand-cream-300 mb-8">
-          Can't find the answer you're looking for? Our team is here to help 24/7.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
-            <Icon name="phone" size="sm" />
-            Call {business.phoneFormatted}
-          </Button>
-          <Button href="/contact/" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand-black">
-            Send Us a Message
-            <Icon name="arrow-right" size="sm" />
-          </Button>
-        </div>
-      </div>
-    </div>
-  </section>
   
   <!-- Related Links -->
   <section class="py-12 bg-brand-cream-200">
@@ -128,4 +56,6 @@ const jsonLd = [breadcrumbSchema, faqSchema];
       </div>
     </div>
   </section>
-</BaseLayout>
+</AboutLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

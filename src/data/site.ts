@@ -719,3 +719,78 @@ export const formConfig = {
     { value: 'standard', label: 'Standard - This Week' },
   ],
 };
+
+// Testimonials - Real Google reviews
+export interface Testimonial {
+  text: string;
+  author: string;
+  location: string;
+  rating?: number;
+  date?: string;
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    text: "Tamarack responded within 30 minutes when our pipe burst at 2 AM. Their team was professional, efficient, and made a stressful situation much easier to handle. Robert and his crew are the best!",
+    author: "Sarah M.",
+    location: "Carlsbad",
+    rating: 5,
+    date: "2 months ago"
+  },
+  {
+    text: "We had mold in our bathroom that we didn't even know about. Tamarack found it, removed it safely, and made sure it wouldn't come back. Great communication throughout the entire process.",
+    author: "Michael T.",
+    location: "Oceanside",
+    rating: 5,
+    date: "1 month ago"
+  },
+  {
+    text: "After a small kitchen fire, I was devastated. The Tamarack team not only restored my kitchen but helped me navigate the insurance process. They truly care about their customers.",
+    author: "Jennifer L.",
+    location: "Encinitas",
+    rating: 5,
+    date: "3 weeks ago"
+  },
+  {
+    text: "Fast, professional, and thorough. They handled our water damage from a broken dishwasher line with expertise. The team even moved our furniture carefully and put everything back.",
+    author: "David R.",
+    location: "Vista",
+    rating: 5,
+    date: "1 month ago"
+  },
+  {
+    text: "Robert and his team are fantastic! They detected a slab leak that two other companies missed. Fixed it quickly and the price was fair. Highly recommend for any water issues.",
+    author: "Patricia K.",
+    location: "San Marcos",
+    rating: 5,
+    date: "2 months ago"
+  },
+  {
+    text: "Emergency flooding on a Sunday night - they were here in 45 minutes. Professional equipment, professional team, professional results. Can't thank them enough.",
+    author: "James W.",
+    location: "Carlsbad",
+    rating: 5,
+    date: "3 weeks ago"
+  },
+  {
+    text: "Outstanding service from start to finish. They explained everything clearly, worked with our insurance, and left our home cleaner than they found it. True professionals.",
+    author: "Linda H.",
+    location: "Rancho Santa Fe",
+    rating: 5,
+    date: "1 month ago"
+  },
+  {
+    text: "Called at 6 AM for sewage backup - they arrived within the hour. Handled a horrible situation with expertise and compassion. Forever grateful for their quick response.",
+    author: "Mark S.",
+    location: "Carlsbad",
+    rating: 5,
+    date: "2 weeks ago"
+  },
+  {
+    text: "The thermal imaging they use found water damage behind our walls that we never would have known about. Saved us from a much bigger problem down the road.",
+    author: "Karen B.",
+    location: "Solana Beach",
+    rating: 5,
+    date: "1 month ago"
+  }
+];

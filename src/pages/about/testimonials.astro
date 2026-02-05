@@ -1,0 +1,21 @@
+---
+/**
+ * Testimonials Page
+ * =================
+ * Full page showcasing all customer reviews
+ * Uses AboutLayout + Testimonials component
+ */
+
+import AboutLayout from '@/layouts/AboutLayout.astro';
+import TestimonialsSection from '@/components/sections/Testimonials.astro';
+---
+
+<AboutLayout page="testimonials">
+  <TestimonialsSection 
+    title=""
+    subtitle=""
+    showGoogleBadge={false}
+    limit={100}
+    class="bg-white"
+  />
+</AboutLayout>

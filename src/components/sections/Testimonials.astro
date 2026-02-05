@@ -3,20 +3,13 @@
  * Testimonials Section Component
  * ==============================
  * Display Google reviews with trust indicators
+ * Data sourced from centralized site.ts
  */
 
 import Icon from '@/components/ui/Icon.astro';
 import Card from '@/components/ui/Card.astro';
 import Button from '@/components/ui/Button.astro';
-import { business } from '@/data/site';
-
-interface Testimonial {
-  text: string;
-  author: string;
-  location: string;
-  rating?: number;
-  date?: string;
-}
+import { business, testimonials as allTestimonials, type Testimonial } from '@/data/site';
 
 interface Props {
   class?: string;
@@ -35,54 +28,9 @@ const {
   limit = 3,
 } = Astro.props;
 
-// Default testimonials from real reviews
-const defaultTestimonials: Testimonial[] = [
-  {
-    text: "Tamarack responded within 30 minutes when our pipe burst at 2 AM. Their team was professional, efficient, and made a stressful situation much easier to handle. Robert and his crew are the best!",
-    author: "Sarah M.",
-    location: "Carlsbad",
-    rating: 5,
-    date: "2 months ago"
-  },
-  {
-    text: "We had mold in our bathroom that we didn't even know about. Tamarack found it, removed it safely, and made sure it wouldn't come back. Great communication throughout the entire process.",
-    author: "Michael T.",
-    location: "Oceanside",
-    rating: 5,
-    date: "1 month ago"
-  },
-  {
-    text: "After a small kitchen fire, I was devastated. The Tamarack team not only restored my kitchen but helped me navigate the insurance process. They truly care about their customers.",
-    author: "Jennifer L.",
-    location: "Encinitas",
-    rating: 5,
-    date: "3 weeks ago"
-  },
-  {
-    text: "Fast, professional, and thorough. They handled our water damage from a broken dishwasher line with expertise. The team even moved our furniture carefully and put everything back.",
-    author: "David R.",
-    location: "Vista",
-    rating: 5,
-    date: "1 month ago"
-  },
-  {
-    text: "Robert and his team are fantastic! They detected a slab leak that two other companies missed. Fixed it quickly and the price was fair. Highly recommend for any water issues.",
-    author: "Patricia K.",
-    location: "San Marcos",
-    rating: 5,
-    date: "2 months ago"
-  },
-  {
-    text: "Emergency flooding on a Sunday night - they were here in 45 minutes. Professional equipment, professional team, professional results. Can't thank them enough.",
-    author: "James W.",
-    location: "Carlsbad",
-    rating: 5,
-    date: "3 weeks ago"
-  }
-];
-
-const testimonials = Astro.props.testimonials || defaultTestimonials;
-const displayTestimonials = testimonials.slice(0, limit);
+// Use provided testimonials or fall back to centralized data
+const testimonialData = Astro.props.testimonials || allTestimonials;
+const displayTestimonials = testimonialData.slice(0, limit);
 ---
 
 <section class:list={['testimonials section', className]}>

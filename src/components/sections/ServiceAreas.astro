@@ -2,7 +2,7 @@
 /**
  * ServiceAreas Section Component
  * ==============================
- * Display service area cities with map placeholder
+ * Display service area cities with Google Maps
  */
 
 import Icon from '@/components/ui/Icon.astro';
@@ -33,6 +33,22 @@ const displayCities = limit ? cities.slice(0, limit) : cities;
 const tier1Cities = displayCities.filter(c => c.tier === 1);
 const tier2Cities = displayCities.filter(c => c.tier === 2);
 const tier3Cities = displayCities.filter(c => c.tier === 3);
+
+// Prepare city data for map
+const mapCities = displayCities.map(city => ({
+  name: city.name,
+  lat: city.coordinates.latitude,
+  lng: city.coordinates.longitude,
+  tier: city.tier,
+  slug: city.slug,
+}));
+
+const hqCoords = {
+  lat: business.coordinates.latitude,
+  lng: business.coordinates.longitude,
+};
+
+const GOOGLE_MAPS_API_KEY = 'AIzaSyC4_tV4_ZyxWxAktce0tyx7l5F1KSGpWxg';
 ---
 
 <section class:list={['service-areas section', className]}>
@@ -98,16 +114,16 @@ const tier3Cities = displayCities.filter(c => c.tier === 3);
             
             {tier2Cities.length > 0 && (
               <div>
-                <h3 class="text-body-sm font-semibold text-brand-gray uppercase tracking-wider mb-3">
+                <h3 class="text-body-sm font-semibold text-brand-gray-600 uppercase tracking-wider mb-3">
                   Extended Service Area
                 </h3>
                 <div class="grid grid-cols-2 gap-3">
                   {tier2Cities.map((city) => (
                     <a 
                       href={`/service-area/${city.slug}/`}
-                      class="flex items-center gap-2 text-brand-black hover:text-brand-orange transition-colors"
+                      class="flex items-center gap-2 text-brand-black hover:text-brand-orange transition-colors font-medium"
                     >
-                      <Icon name="map-pin" size="sm" class="text-brand-gray" />
+                      <Icon name="map-pin" size="sm" class="text-brand-orange" />
                       {city.name}
                     </a>
                   ))}
@@ -120,9 +136,9 @@ const tier3Cities = displayCities.filter(c => c.tier === 3);
                 {tier3Cities.map((city) => (
                   <a 
                     href={`/service-area/${city.slug}/`}
-                    class="flex items-center gap-2 text-brand-gray hover:text-brand-orange transition-colors"
+                    class="flex items-center gap-2 text-brand-black hover:text-brand-orange transition-colors font-medium"
                   >
-                    <Icon name="map-pin" size="sm" class="text-brand-gray-light" />
+                    <Icon name="map-pin" size="sm" class="text-brand-gray" />
                     {city.name}
                   </a>
                 ))}
@@ -144,72 +160,12 @@ const tier3Cities = displayCities.filter(c => c.tier === 3);
         <!-- Map Side -->
         {showMap && (
           <div class="relative">
-            <!-- Map placeholder - would be replaced with actual map component -->
-            <div class="aspect-square bg-brand-cream-200 rounded-2xl overflow-hidden shadow-card relative">
-              <!-- Placeholder map background -->
-              <div class="absolute inset-0 bg-gradient-to-br from-brand-cream-300 to-brand-cream-200">
-                <!-- Grid lines for map effect -->
-                <div class="absolute inset-0" style="background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px); background-size: 20px 20px;"></div>
-              </div>
+            <div class="aspect-square rounded-2xl overflow-hidden shadow-card relative">
+              <!-- Google Map Container -->
+              <div id="service-area-map" class="w-full h-full"></div>
               
-              <!-- City markers -->
-              <div class="absolute inset-0 p-8">
-                <!-- Carlsbad - Center -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                  <div class="relative">
-                    <div class="absolute -inset-4 bg-brand-orange/20 rounded-full animate-ping"></div>
-                    <div class="relative bg-brand-orange text-white px-3 py-1.5 rounded-lg shadow-lg flex items-center gap-2 whitespace-nowrap">
-                      <Icon name="home" size="sm" />
-                      <span class="font-semibold text-sm">Carlsbad HQ</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Oceanside - Top -->
-                <div class="absolute top-[20%] left-[30%]">
-                  <div class="bg-white px-2 py-1 rounded shadow text-xs font-medium text-brand-black">
-                    Oceanside
-                  </div>
-                </div>
-                
-                <!-- Vista - Top Right -->
-                <div class="absolute top-[25%] right-[25%]">
-                  <div class="bg-white px-2 py-1 rounded shadow text-xs font-medium text-brand-black">
-                    Vista
-                  </div>
-                </div>
-                
-                <!-- San Marcos - Right -->
-                <div class="absolute top-[45%] right-[15%]">
-                  <div class="bg-white px-2 py-1 rounded shadow text-xs font-medium text-brand-black">
-                    San Marcos
-                  </div>
-                </div>
-                
-                <!-- Encinitas - Bottom -->
-                <div class="absolute bottom-[25%] left-[35%]">
-                  <div class="bg-white px-2 py-1 rounded shadow text-xs font-medium text-brand-black">
-                    Encinitas
-                  </div>
-                </div>
-                
-                <!-- Solana Beach - Bottom Left -->
-                <div class="absolute bottom-[15%] left-[20%]">
-                  <div class="bg-white px-2 py-1 rounded shadow text-xs font-medium text-brand-gray">
-                    Solana Beach
-                  </div>
-                </div>
-                
-                <!-- Rancho Santa Fe - Bottom Right -->
-                <div class="absolute bottom-[20%] right-[20%]">
-                  <div class="bg-white px-2 py-1 rounded shadow text-xs font-medium text-brand-gray">
-                    Rancho Santa Fe
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Response time badge -->
-              <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-card">
+              <!-- Response time badge overlay -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-card z-10">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-full bg-brand-orange-100 flex items-center justify-center">
@@ -233,3 +189,144 @@ const tier3Cities = displayCities.filter(c => c.tier === 3);
     )}
   </div>
 </section>
+
+{showMap && (
+  <script define:vars={{ mapCities, hqCoords, GOOGLE_MAPS_API_KEY }}>
+    function initServiceAreaMap() {
+      const mapElement = document.getElementById('service-area-map');
+      if (!mapElement) return;
+      
+      // Custom map styles matching brand colors
+      const mapStyles = [
+        {
+          featureType: 'all',
+          elementType: 'geometry',
+          stylers: [{ color: '#f5f3ef' }]
+        },
+        {
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [{ color: '#c9d6df' }]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [{ color: '#ffffff' }]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry.stroke',
+          stylers: [{ color: '#e0ddd5' }]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [{ color: '#f5d6c6' }]
+        },
+        {
+          featureType: 'poi',
+          stylers: [{ visibility: 'off' }]
+        },
+        {
+          featureType: 'transit',
+          stylers: [{ visibility: 'off' }]
+        },
+        {
+          featureType: 'administrative',
+          elementType: 'geometry.stroke',
+          stylers: [{ color: '#c9c4bc' }]
+        },
+        {
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#1a1a1a' }]
+        }
+      ];
+      
+      const map = new google.maps.Map(mapElement, {
+        center: hqCoords,
+        zoom: 11,
+        styles: mapStyles,
+        disableDefaultUI: true,
+        zoomControl: true,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_CENTER
+        },
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+      });
+      
+      // HQ Marker (orange, prominent)
+      new google.maps.Marker({
+        position: hqCoords,
+        map: map,
+        title: 'Tamarack Restoration HQ - Carlsbad',
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 12,
+          fillColor: '#E85D25',
+          fillOpacity: 1,
+          strokeColor: '#ffffff',
+          strokeWeight: 3,
+        },
+        zIndex: 100,
+      });
+      
+      // Add HQ label
+      new google.maps.Marker({
+        position: hqCoords,
+        map: map,
+        icon: {
+          url: 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30"><rect rx="6" width="100" height="30" fill="#E85D25"/><text x="50" y="20" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="11">Carlsbad HQ</text></svg>'),
+          anchor: new google.maps.Point(50, 45),
+        },
+        zIndex: 101,
+      });
+      
+      // City markers
+      mapCities.forEach(city => {
+        if (city.slug === 'carlsbad') return; // Skip HQ, already added
+        
+        const markerColor = city.tier === 1 ? '#E85D25' : city.tier === 2 ? '#666666' : '#999999';
+        const scale = city.tier === 1 ? 8 : 6;
+        
+        new google.maps.Marker({
+          position: { lat: city.lat, lng: city.lng },
+          map: map,
+          title: city.name,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: scale,
+            fillColor: markerColor,
+            fillOpacity: 0.9,
+            strokeColor: '#ffffff',
+            strokeWeight: 2,
+          },
+        });
+        
+        // City label
+        new google.maps.Marker({
+          position: { lat: city.lat, lng: city.lng },
+          map: map,
+          icon: {
+            url: 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="80" height="24"><rect rx="4" width="80" height="24" fill="white" fill-opacity="0.95"/><text x="40" y="16" text-anchor="middle" fill="#1a1a1a" font-family="Arial" font-size="11">${city.name}</text></svg>`),
+            anchor: new google.maps.Point(40, -5),
+          },
+        });
+      });
+    }
+    
+    // Load Google Maps API
+    if (typeof google === 'undefined') {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initServiceAreaMap`;
+      script.async = true;
+      script.defer = true;
+      window.initServiceAreaMap = initServiceAreaMap;
+      document.head.appendChild(script);
+    } else {
+      initServiceAreaMap();
+    }
+  </script>
+)}
