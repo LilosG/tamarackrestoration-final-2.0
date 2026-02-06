@@ -17,14 +17,16 @@ import LeadForm from '@/components/forms/LeadForm.astro';
 import { services, cities, business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
+import type { CityServiceContent } from '@/data/cityServiceContent';
 
 interface Props {
   citySlug: string;
   serviceSlug: string;
   faqs?: FAQType[];
+  uniqueContent?: CityServiceContent | null;
 }
 
-const { citySlug, serviceSlug, faqs = [] } = Astro.props;
+const { citySlug, serviceSlug, faqs = [], uniqueContent = null } = Astro.props;
 
 const city = cities.find(c => c.slug === citySlug)!;
 const service = services.find(s => s.slug === serviceSlug)!;
@@ -100,12 +102,18 @@ const relatedCities = cities.filter(c => c.slug !== citySlug && (c.tier === 1 ||
           </div>
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
-            {service.name} in{' '}
-            <span class="text-brand-orange">{city.name}</span>
+            {uniqueContent ? (
+              <Fragment set:html={uniqueContent.uniqueH1.replace(city.name, `<span class="text-brand-orange">${city.name}</span>`)} />
+            ) : (
+              <Fragment>{service.name} in{' '}<span class="text-brand-orange">{city.name}</span></Fragment>
+            )}
           </h1>
-          
+
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-            Professional {service.name.toLowerCase()} for {city.name} homes and businesses. We respond within 60 minutes, 24/7.
+            {uniqueContent
+              ? `${uniqueContent.projectCount} projects completed. Average ${uniqueContent.avgResponseTime} response to ${city.name}. Call 24/7.`
+              : `Professional ${service.name.toLowerCase()} for ${city.name} homes and businesses. We respond within 60 minutes, 24/7.`
+            }
           </p>
           
           <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm mb-8">

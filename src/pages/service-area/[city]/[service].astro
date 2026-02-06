@@ -15,22 +15,23 @@ import MoneyPageLayout from '@/layouts/MoneyPageLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
 import { cities, services } from '@/data/site';
 import { serviceContent, cityContext, generateServiceCityFAQs } from '@/data/content';
+import { getCityServiceContent } from '@/data/cityServiceContent';
 import type { FAQ } from '@/types';
 
 export function getStaticPaths() {
   const paths = [];
-  
+
   for (const city of cities) {
     for (const service of services) {
       paths.push({
-        params: { 
-          city: city.slug, 
-          service: service.slug 
+        params: {
+          city: city.slug,
+          service: service.slug
         },
       });
     }
   }
-  
+
   return paths;
 }
 
@@ -43,69 +44,122 @@ const serviceData = services.find(s => s.slug === service)!;
 const content = serviceContent[service] || null;
 const context = cityContext[city] || null;
 
-// Generate dynamic FAQs
-const faqs: FAQ[] = generateServiceCityFAQs(
-  serviceData.name,
-  serviceData.slug,
-  cityData.name,
-  cityData.slug,
-  cityData.neighborhoods || []
-);
+// Get unique city+service content (overrides template FAQs when available)
+const uniqueContent = getCityServiceContent(city, service);
+
+// Use unique FAQs if available, otherwise fall back to generated template
+const faqs: FAQ[] = uniqueContent
+  ? uniqueContent.faqs.map(f => ({ question: f.question, answer: f.answer }))
+  : generateServiceCityFAQs(
+      serviceData.name,
+      serviceData.slug,
+      cityData.name,
+      cityData.slug,
+      cityData.neighborhoods || []
+    );
 ---
 
-<MoneyPageLayout 
-  citySlug={city} 
+<MoneyPageLayout
+  citySlug={city}
   serviceSlug={service}
   faqs={faqs}
+  uniqueContent={uniqueContent}
 >
-  {/* Main Content Section - The Problem */}
-  <section class="section bg-white">
-    <div class="container">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
-          Professional {serviceData.name} in {cityData.name}
-        </h2>
-        
-        {content ? (
+  {/* === UNIQUE INTRO SECTION (replaces generic problem statement when available) === */}
+  {uniqueContent ? (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            {uniqueContent.uniqueH1}
+          </h2>
+
           <div class="prose prose-lg max-w-none">
             <p class="text-lg text-brand-gray leading-relaxed mb-6">
-              {content.problemStatement}
-            </p>
-            <p class="text-lg text-brand-gray leading-relaxed">
-              {content.solutionOverview}
+              {uniqueContent.uniqueIntro}
             </p>
           </div>
-        ) : (
-          <div class="prose prose-lg max-w-none">
-            <p class="text-lg text-brand-gray leading-relaxed">
-              When {cityData.name} homes and businesses face {serviceData.name.toLowerCase()} emergencies, 
-              Tamarack Restoration responds fast. Our IICRC-certified technicians are equipped to handle 
-              any size {serviceData.name.toLowerCase()} project, from minor incidents to major disasters.
-            </p>
-            <p class="text-lg text-brand-gray leading-relaxed">
-              As a locally owned company based in Carlsbad, we understand the unique challenges 
-              {cityData.name} properties face. Our 60-minute response guarantee means you'll never 
-              wait long for professional help when you need it most.
-            </p>
+
+          {/* Local proof point */}
+          <div class="mt-6 flex items-center gap-3 bg-brand-cream-200 rounded-xl p-4">
+            <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center flex-shrink-0">
+              <Icon name="check-circle" size="sm" class="text-white" />
+            </div>
+            <span class="font-heading font-semibold text-brand-black">{uniqueContent.localProof}</span>
           </div>
-        )}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  ) : (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            Professional {serviceData.name} in {cityData.name}
+          </h2>
+
+          {content ? (
+            <div class="prose prose-lg max-w-none">
+              <p class="text-lg text-brand-gray leading-relaxed mb-6">
+                {content.problemStatement}
+              </p>
+              <p class="text-lg text-brand-gray leading-relaxed">
+                {content.solutionOverview}
+              </p>
+            </div>
+          ) : (
+            <div class="prose prose-lg max-w-none">
+              <p class="text-lg text-brand-gray leading-relaxed">
+                When {cityData.name} homes and businesses face {serviceData.name.toLowerCase()} emergencies,
+                Tamarack Restoration responds fast. Our IICRC-certified technicians are equipped to handle
+                any size {serviceData.name.toLowerCase()} project, from minor incidents to major disasters.
+              </p>
+              <p class="text-lg text-brand-gray leading-relaxed">
+                As a locally owned company based in Carlsbad, we understand the unique challenges
+                {cityData.name} properties face. Our 60-minute response guarantee means you'll never
+                wait long for professional help when you need it most.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* === UNDERSTANDING [SERVICE] IN [CITY] — Local Challenges Deep Dive === */}
+  {uniqueContent?.localChallenges && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            Understanding {serviceData.name} in {cityData.name}
+          </h2>
+          <div class="prose prose-lg max-w-none">
+            {uniqueContent.localChallenges.split('\n\n').map((paragraph) => (
+              <p class="text-lg text-brand-gray leading-relaxed mb-6">{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 
   {/* Our Process Section */}
   {content?.processSteps && (
-    <section class="section bg-brand-cream-200">
+    <section class={uniqueContent?.localChallenges ? "section bg-white" : "section bg-brand-cream-200"}>
       <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-12">
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-            Our {serviceData.name} Process
+            Our {serviceData.name} Process{uniqueContent ? ` in ${cityData.name}` : ''}
           </h2>
           <p class="text-lg text-brand-gray">
-            A systematic approach to restore your {cityData.name} property quickly and completely.
+            {uniqueContent
+              ? `How we handle ${serviceData.name.toLowerCase()} for ${cityData.name} properties, from first call to final walkthrough.`
+              : `A systematic approach to restore your ${cityData.name} property quickly and completely.`
+            }
           </p>
         </div>
-        
+
         <div class="max-w-4xl mx-auto">
           <div class="space-y-6">
             {content.processSteps.map((step, index) => (
@@ -129,8 +183,67 @@ const faqs: FAQ[] = generateServiceCityFAQs(
     </section>
   )}
 
-  {/* Local Expertise Section */}
-  {context && (
+  {/* === NEIGHBORHOOD CONTEXT (unique content) — replaces generic local expertise === */}
+  {uniqueContent?.neighborhoodContext && uniqueContent.neighborhoodContext.length > 0 ? (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-body-sm font-semibold mb-4">
+              <Icon name="map-pin" size="sm" />
+              {cityData.name} Neighborhoods
+            </div>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+              {serviceData.name} Across {cityData.name} Neighborhoods
+            </h2>
+            <p class="text-lg text-brand-gray max-w-2xl mx-auto">
+              Every neighborhood in {cityData.name} has different risk factors. Here is what we see in the areas we serve most.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            {uniqueContent.neighborhoodContext.map((hood) => (
+              <div class="bg-white rounded-xl p-6 shadow-soft">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+                    <Icon name="map-pin" size="sm" class="text-brand-orange" />
+                  </div>
+                  <h3 class="font-heading font-bold text-brand-black text-lg">{hood.name}</h3>
+                </div>
+                <p class="text-brand-gray">{hood.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* ZIP codes + landmarks */}
+          <div class="mt-10 grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-soft">
+              <h3 class="font-heading font-bold text-brand-black mb-3">ZIP Codes We Serve</h3>
+              <div class="flex flex-wrap gap-2">
+                {cityData.zipCodes.map((zip) => (
+                  <span class="bg-brand-cream-200 px-3 py-1 rounded-full text-sm font-medium text-brand-black">{zip}</span>
+                ))}
+              </div>
+              <p class="text-sm text-brand-gray mt-3">
+                Average response time: {uniqueContent.avgResponseTime} to all {cityData.name} ZIP codes.
+              </p>
+            </div>
+
+            {uniqueContent.landmarks && uniqueContent.landmarks.length > 0 && (
+              <div class="bg-white rounded-xl p-6 shadow-soft">
+                <h3 class="font-heading font-bold text-brand-black mb-3">Landmarks Near Our Service Area</h3>
+                <div class="flex flex-wrap gap-2">
+                  {uniqueContent.landmarks.map((lm) => (
+                    <span class="bg-brand-cream-200 px-3 py-1 rounded-full text-sm text-brand-gray">{lm}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  ) : context && (
     <section class="section bg-white">
       <div class="container">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -139,19 +252,19 @@ const faqs: FAQ[] = generateServiceCityFAQs(
               <Icon name="map-pin" size="sm" />
               Local Expertise
             </div>
-            
+
             <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
               {serviceData.name} Experts in {cityData.name}
             </h2>
-            
+
             <p class="text-lg text-brand-gray mb-6">
               {context.localExpertise}
             </p>
-            
+
             <p class="text-lg text-brand-gray mb-8">
               {context.proximityStatement}
             </p>
-            
+
             {/* Environmental Factors */}
             {context.environmentalFactors && context.environmentalFactors.length > 0 && (
               <div>
@@ -171,13 +284,13 @@ const faqs: FAQ[] = generateServiceCityFAQs(
               </div>
             )}
           </div>
-          
+
           {/* Property Types */}
           <div class="bg-brand-cream-200 rounded-2xl p-8">
             <h3 class="font-heading font-bold text-brand-black text-xl mb-6">
               {cityData.name} Properties We Serve
             </h3>
-            
+
             <div class="space-y-4">
               {context.propertyTypes?.map((type) => (
                 <div class="flex items-center gap-3 bg-white rounded-lg p-4">
@@ -186,7 +299,7 @@ const faqs: FAQ[] = generateServiceCityFAQs(
                 </div>
               ))}
             </div>
-            
+
             {/* Neighborhoods served */}
             {cityData.neighborhoods && cityData.neighborhoods.length > 0 && (
               <div class="mt-8 pt-6 border-t border-brand-cream-300">
@@ -210,7 +323,7 @@ const faqs: FAQ[] = generateServiceCityFAQs(
 
   {/* Warning Signs & Common Causes */}
   {content && (content.warningSigns || content.commonCauses) && (
-    <section class="section bg-brand-cream-200">
+    <section class={uniqueContent ? "section bg-white" : "section bg-brand-cream-200"}>
       <div class="container">
         <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Warning Signs */}
@@ -225,7 +338,7 @@ const faqs: FAQ[] = generateServiceCityFAQs(
                 </h3>
               </div>
               <p class="text-brand-gray mb-4">
-                Watch for these signs that you may need {serviceData.name.toLowerCase()}:
+                Watch for these signs that you may need {serviceData.name.toLowerCase()} in {cityData.name}:
               </p>
               <ul class="space-y-3">
                 {content.warningSigns.map((sign) => (
@@ -237,7 +350,7 @@ const faqs: FAQ[] = generateServiceCityFAQs(
               </ul>
             </div>
           )}
-          
+
           {/* Common Causes */}
           {content.commonCauses && content.commonCauses.length > 0 && (
             <div class="bg-white rounded-2xl p-8 shadow-soft">
@@ -269,14 +382,14 @@ const faqs: FAQ[] = generateServiceCityFAQs(
 
   {/* Why Choose Us for This Service */}
   {content?.whyChooseUs && content.whyChooseUs.length > 0 && (
-    <section class="section bg-white">
+    <section class={uniqueContent ? "section bg-brand-cream-200" : "section bg-white"}>
       <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-12">
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
             Why Choose Tamarack for {serviceData.name} in {cityData.name}?
           </h2>
         </div>
-        
+
         <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {content.whyChooseUs.map((reason) => (
             <div class="text-center">
