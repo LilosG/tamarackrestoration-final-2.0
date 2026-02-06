@@ -1,0 +1,246 @@
+---
+/**
+ * Certifications Page
+ * ===================
+ * Showcases IICRC certifications, credentials, and training
+ * Uses AboutLayout for consistent structure
+ */
+
+import AboutLayout from '@/layouts/AboutLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import { certifications } from '@/data/about';
+import { business } from '@/data/site';
+
+const detailedCertifications = [
+  {
+    name: 'IICRC Certified Firm',
+    acronym: 'IICRC',
+    description: 'Tamarack Restoration is an IICRC Certified Firm, meaning our company meets the highest standards for business ethics, technical proficiency, and customer service in the restoration industry.',
+    details: 'The Institute of Inspection, Cleaning and Restoration Certification is the globally recognized standard-setting body for the restoration, cleaning, and inspection industries. Certified firms must employ trained and certified technicians, maintain proper insurance, and commit to ongoing education.',
+    icon: 'award',
+  },
+  {
+    name: 'Water Damage Restoration Technician',
+    acronym: 'WRT',
+    description: 'Our technicians are certified in water damage restoration, covering everything from initial assessment to complete structural drying.',
+    details: 'WRT certification covers the principles of water damage restoration including water categories and classes, psychrometry, drying equipment selection and placement, monitoring techniques, and documentation for insurance purposes.',
+    icon: 'droplet',
+  },
+  {
+    name: 'Applied Structural Drying',
+    acronym: 'ASD',
+    description: 'Advanced certification in structural drying techniques that goes beyond standard water damage restoration training.',
+    details: 'ASD certification teaches advanced drying methods for complex scenarios including hardwood floor drying, structural cavity drying, and drying in extreme conditions. This ensures we can handle even the most challenging water damage situations.',
+    icon: 'wind',
+  },
+  {
+    name: 'Applied Microbial Remediation Technician',
+    acronym: 'AMRT',
+    description: 'Certified in safe and effective mold remediation, including containment, removal, and post-remediation verification.',
+    details: 'AMRT certification covers microbial contamination assessment, containment design and construction, removal techniques, HEPA filtration, antimicrobial application, and clearance procedures. This ensures mold is removed safely and completely.',
+    icon: 'shield',
+  },
+  {
+    name: 'Fire & Smoke Restoration Technician',
+    acronym: 'FSRT',
+    description: 'Certified in fire damage restoration including smoke and soot removal, deodorization, and structural cleaning.',
+    details: 'FSRT certification covers the science of fire damage, different types of smoke residues, cleaning methods for various materials, odor elimination techniques including thermal fogging and ozone treatment, and content restoration procedures.',
+    icon: 'flame',
+  },
+];
+
+const whyCertificationsMatter = [
+  {
+    title: 'Science-Based Methods',
+    description: 'Certified technicians use proven, science-based techniques rather than guesswork. This means faster, more effective restoration with less disruption to your life.',
+    icon: 'book-open',
+  },
+  {
+    title: 'Proper Equipment Use',
+    description: 'IICRC training ensures our team uses the right equipment for each situation, from industrial extractors to thermal imaging cameras.',
+    icon: 'tool',
+  },
+  {
+    title: 'Insurance Compliance',
+    description: 'Insurance companies recognize and prefer IICRC-certified firms. Our documentation and methods meet the standards adjusters require.',
+    icon: 'file-text',
+  },
+  {
+    title: 'Ongoing Education',
+    description: 'Certification isn\'t one-and-done. Our technicians complete continuing education to stay current with industry advances and best practices.',
+    icon: 'refresh-cw',
+  },
+  {
+    title: 'Health & Safety',
+    description: 'Proper training in containment, PPE, and hazardous materials handling protects both your family and our technicians during restoration.',
+    icon: 'heart',
+  },
+  {
+    title: 'Quality Assurance',
+    description: 'IICRC standards provide a framework for quality that ensures consistent, professional results on every project.',
+    icon: 'check-circle',
+  },
+];
+---
+
+<AboutLayout page="certifications">
+  <!-- Certifications Overview -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <div class="inline-flex items-center gap-2 text-brand-orange font-semibold text-sm mb-4">
+          <Icon name="award" size="sm" />
+          INDUSTRY-LEADING CREDENTIALS
+        </div>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+          Our Certifications & Training
+        </h2>
+        <p class="text-brand-gray text-lg leading-relaxed">
+          Every Tamarack technician holds certifications from the IICRC, the restoration industry's leading certification body. These credentials ensure you receive expert service backed by proven methods.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {detailedCertifications.map((cert) => (
+          <div class="bg-brand-cream-200 rounded-2xl p-6 md:p-8">
+            <div class="flex items-start gap-6">
+              <div class="w-14 h-14 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0">
+                <Icon name={cert.icon} size="lg" />
+              </div>
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 class="font-heading font-bold text-xl text-brand-black">
+                    {cert.name}
+                  </h3>
+                  <span class="text-xs font-bold text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
+                    {cert.acronym}
+                  </span>
+                </div>
+                <p class="text-brand-gray mb-3 leading-relaxed">
+                  {cert.description}
+                </p>
+                <p class="text-brand-gray text-sm leading-relaxed">
+                  {cert.details}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Certifications Matter -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Why Certifications Matter
+        </h2>
+        <p class="text-lg text-brand-gray">
+          In an industry where anyone can claim expertise, IICRC certification provides verified proof of competency and ongoing education.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {whyCertificationsMatter.map((item) => (
+          <div class="bg-white rounded-xl p-6 shadow-soft">
+            <div class="w-12 h-12 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center mb-4">
+              <Icon name={item.icon} size="lg" />
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+              {item.title}
+            </h3>
+            <p class="text-brand-gray text-sm leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Licensing & Insurance -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+            Fully Licensed, Bonded & Insured
+          </h2>
+          <p class="text-brand-gray mb-4 leading-relaxed">
+            Beyond our technical certifications, Tamarack Restoration is fully licensed and insured in the state of California. We carry comprehensive general liability insurance and workers' compensation coverage, protecting both our clients and our team.
+          </p>
+          <p class="text-brand-gray mb-8 leading-relaxed">
+            This means you can trust that our work meets all local building codes, our technicians are protected on the job, and your property is covered throughout the restoration process.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="w-10 h-10 rounded-full bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0">
+                <Icon name="check" size="md" />
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-brand-black">California Contractor's License</h4>
+                <p class="text-brand-gray text-sm">Licensed for restoration and reconstruction work</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="w-10 h-10 rounded-full bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0">
+                <Icon name="check" size="md" />
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-brand-black">General Liability Insurance</h4>
+                <p class="text-brand-gray text-sm">Comprehensive coverage for your protection</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-brand-cream-200 rounded-lg">
+              <div class="w-10 h-10 rounded-full bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0">
+                <Icon name="check" size="md" />
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-brand-black">Workers' Compensation</h4>
+                <p class="text-brand-gray text-sm">Full coverage for all team members on every job</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-cream-200 rounded-2xl p-8">
+          <h3 class="font-heading font-bold text-2xl text-brand-black mb-6">
+            Our Commitment to Excellence
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <Icon name="award" size="sm" class="text-brand-orange" />
+                <span class="font-heading font-semibold text-brand-black">Continuous Training</span>
+              </div>
+              <p class="text-brand-gray text-sm pl-8">
+                Our technicians complete ongoing education to maintain certifications and stay current with industry advances.
+              </p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <Icon name="users" size="sm" class="text-brand-orange" />
+                <span class="font-heading font-semibold text-brand-black">Background Checked</span>
+              </div>
+              <p class="text-brand-gray text-sm pl-8">
+                Every team member passes a background check before entering your home or business.
+              </p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <Icon name="star" size="sm" class="text-brand-orange" />
+                <span class="font-heading font-semibold text-brand-black">Quality Standards</span>
+              </div>
+              <p class="text-brand-gray text-sm pl-8">
+                We follow IICRC S500, S520, and S540 standards for every project, ensuring consistent results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</AboutLayout>
