@@ -7,9 +7,9 @@
  * 
  * BACKGROUND PATTERN (strict alternation):
  * Hero (black) → TrustBar (cream) → Services (white) → Process (cream)
- * → Certifications (white) → RealResults (cream) → WhyChoose (white)
- * → Testimonials (cream) → ServiceAreas (white) → Insurance (cream)
- * → FAQ (white) → CTA (black)
+ * → Certifications (white) → RealResults (cream) → Projects (white)
+ * → WhyChoose (cream) → Testimonials (white) → ServiceAreas (cream)
+ * → Insurance (white) → FAQ (cream) → CTA (black)
  */
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -20,6 +20,7 @@ import ProcessSteps from '@/components/sections/ProcessSteps.astro';
 import WhyChooseUs from '@/components/sections/WhyChooseUs.astro';
 import Certifications from '@/components/sections/Certifications.astro';
 import RealResults from '@/components/sections/RealResults.astro';
+import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import ServiceAreas from '@/components/sections/ServiceAreas.astro';
 import InsurancePartners from '@/components/sections/InsurancePartners.astro';
@@ -76,36 +77,45 @@ const seoDescription = `24/7 emergency restoration in Carlsbad & North San Diego
     class="bg-brand-cream-200"
   />
   
-  <!-- Why Choose Us (WHITE) -->
-  <WhyChooseUs 
+  <!-- Featured Projects Gallery (WHITE) -->
+  <ProjectsSection
+    title="Recent Restoration Projects"
+    subtitle="Real before-and-after results from homes across North San Diego County. Hover to see the before photos."
+    featured={true}
+    limit={3}
+    class="bg-white"
+  />
+
+  <!-- Why Choose Us (CREAM) -->
+  <WhyChooseUs
     variant="horizontal"
     showImage={true}
-    class="bg-white"
+    class="bg-brand-cream-200"
   />
   
-  <!-- Testimonials Section (CREAM) -->
-  <Testimonials 
+  <!-- Testimonials Section (WHITE) -->
+  <Testimonials
     limit={3}
-    class="bg-brand-cream-200"
-  />
-  
-  <!-- Service Areas with Map (WHITE) -->
-  <ServiceAreas 
-    showMap={true}
     class="bg-white"
   />
-  
-  <!-- Insurance Partners (CREAM) -->
-  <InsurancePartners 
+
+  <!-- Service Areas with Map (CREAM) -->
+  <ServiceAreas
+    showMap={true}
     class="bg-brand-cream-200"
   />
-  
-  <!-- FAQ Section (WHITE) -->
-  <FAQ 
+
+  <!-- Insurance Partners (WHITE) -->
+  <InsurancePartners
+    class="bg-white"
+  />
+
+  <!-- FAQ Section (CREAM) -->
+  <FAQ
     title="Frequently Asked Questions"
     subtitle="Get answers to common questions about our restoration services"
     limit={5}
-    class="bg-white"
+    class="bg-brand-cream-200"
   />
   
   <!-- Final CTA (BLACK) -->

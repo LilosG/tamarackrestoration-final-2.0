@@ -1,0 +1,91 @@
+---
+/**
+ * ProjectsSection Component
+ * =========================
+ * Reusable section displaying project cards with optional filtering.
+ * Used on homepage (featured), service pages (by service), and money pages (by city+service).
+ */
+
+import ProjectCard from '@/components/ui/ProjectCard.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import { getProjects, getMoneyPageProjects } from '@/data/projects';
+import type { Project } from '@/types';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  /** Filter by service slug */
+  service?: string;
+  /** Filter by city slug */
+  city?: string;
+  /** Show only featured projects */
+  featured?: boolean;
+  /** Maximum projects to display */
+  limit?: number;
+  /** Card variant */
+  variant?: 'default' | 'compact';
+  /** Use money page fallback logic (city+service → service-only) */
+  moneyPageMode?: boolean;
+  /** Show "View All Projects" CTA */
+  showCTA?: boolean;
+  class?: string;
+}
+
+const {
+  title = 'Recent Restoration Projects',
+  subtitle = 'Real results from homes across North San Diego County. Hover to see the before photos.',
+  service,
+  city,
+  featured,
+  limit = 3,
+  variant = 'default',
+  moneyPageMode = false,
+  showCTA = false,
+  class: className,
+} = Astro.props;
+
+let displayProjects: Project[];
+
+if (moneyPageMode && city && service) {
+  displayProjects = getMoneyPageProjects(city, service, limit);
+} else {
+  displayProjects = getProjects({ service, city, featured, limit });
+}
+
+const gridCols = displayProjects.length <= 2
+  ? 'md:grid-cols-2'
+  : variant === 'compact'
+    ? 'md:grid-cols-3'
+    : 'md:grid-cols-3';
+---
+
+{displayProjects.length > 0 && (
+  <section class:list={['section', className]}>
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          {title}
+        </h2>
+        <p class="text-lg text-brand-gray">
+          {subtitle}
+        </p>
+      </div>
+
+      <div class:list={['grid gap-6 max-w-5xl mx-auto', gridCols]}>
+        {displayProjects.map((project) => (
+          <ProjectCard project={project} variant={variant} />
+        ))}
+      </div>
+
+      {showCTA && (
+        <div class="text-center mt-10">
+          <Button href="/projects/" variant="outline">
+            View All Projects
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      )}
+    </div>
+  </section>
+)}

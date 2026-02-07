@@ -14,6 +14,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
+import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import { services, cities, business } from '@/data/site';
 import { serviceContent } from '@/data/content';
 import { getServicePillarContent } from '@/data/servicePillarContent';
@@ -458,48 +459,14 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     </section>
   )}
   
-  <!-- Recent Projects -->
-  {pillarContent?.recentProjects && pillarContent.recentProjects.length > 0 && (
-    <section class="section bg-white">
-      <div class="container">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-            Recent {service.name} Projects
-          </h2>
-          <p class="text-lg text-brand-gray">
-            Real restoration work from homes across North San Diego County.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {pillarContent.recentProjects.map((project) => (
-            <div class="bg-brand-cream-200 rounded-2xl overflow-hidden">
-              <div class="aspect-video bg-brand-cream-300 flex items-center justify-center">
-                <div class="text-center p-4">
-                  <Icon name="image" size="lg" class="text-brand-gray-400 mx-auto mb-2" />
-                  <span class="text-xs text-brand-gray-400">Project photo coming soon</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-heading font-bold text-brand-black text-lg mb-1">
-                  {project.title}
-                </h3>
-                <p class="text-brand-orange text-sm font-medium mb-3">
-                  {project.location}
-                </p>
-                <p class="text-brand-gray text-sm leading-relaxed mb-3">
-                  {project.summary}
-                </p>
-                <p class="text-xs text-brand-gray-400 font-medium">
-                  Scope: {project.scope}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+  <!-- Recent Projects (Live Gallery) -->
+  <ProjectsSection
+    title={`Recent ${service.name} Projects`}
+    subtitle="Real before-and-after results from local homes. Hover to see the before photos."
+    service={serviceSlug}
+    limit={3}
+    class="bg-white"
+  />
 
   <!-- Expert Deep Dive -->
   {pillarContent?.deepDiveContent && (

@@ -13,6 +13,7 @@
 
 import MoneyPageLayout from '@/layouts/MoneyPageLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
+import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import { cities, services } from '@/data/site';
 import { serviceContent, cityContext, generateServiceCityFAQs } from '@/data/content';
 import { getCityServiceContent } from '@/data/cityServiceContent';
@@ -408,4 +409,16 @@ const faqs: FAQ[] = uniqueContent
       </div>
     </section>
   )}
+
+  {/* Local Project Gallery */}
+  <ProjectsSection
+    title={`${serviceData.name} Projects Near ${cityData.name}`}
+    subtitle="See real before-and-after results from homes in your area. Hover to see the before photos."
+    service={service}
+    city={city}
+    moneyPageMode={true}
+    limit={2}
+    variant="compact"
+    class={uniqueContent ? "bg-white" : "bg-brand-cream-200"}
+  />
 </MoneyPageLayout>
