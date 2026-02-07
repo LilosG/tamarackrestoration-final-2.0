@@ -29,6 +29,33 @@ const city = cities.find(c => c.slug === citySlug)!;
 const context = cityContext[citySlug] || null;
 const availableServices = services.filter(s => city.services?.includes(s.slug as any) ?? true);
 
+// Adjacent cities for cross-linking
+const adjacentMap: Record<string, string[]> = {
+  'carlsbad': ['oceanside','encinitas','san-marcos','vista'],
+  'oceanside': ['carlsbad','vista','san-marcos','camp-pendleton'],
+  'vista': ['oceanside','san-marcos','carlsbad'],
+  'san-marcos': ['vista','carlsbad','encinitas','escondido'],
+  'encinitas': ['carlsbad','solana-beach','san-marcos','rancho-santa-fe'],
+  'rancho-santa-fe': ['encinitas','solana-beach','san-marcos'],
+  'solana-beach': ['encinitas','rancho-santa-fe','carlsbad','del-mar'],
+  'bressi-ranch': ['carlsbad','san-marcos','encinitas'],
+};
+const adjacentSlugs = adjacentMap[citySlug] || [];
+const adjacentCities = cities.filter(c => adjacentSlugs.includes(c.slug));
+
+// Landmarks for local entity signals
+const landmarkMap: Record<string, string[]> = {
+  'carlsbad': ['LEGOLAND California', 'The Flower Fields', 'Batiquitos Lagoon', 'Carlsbad Premium Outlets', 'Carlsbad Village'],
+  'oceanside': ['Oceanside Pier', 'Camp Pendleton', 'Mission San Luis Rey', 'Oceanside Harbor', 'The Strand'],
+  'vista': ['Moonlight Amphitheatre', 'Brengle Terrace Park', 'Guajome Regional Park', 'Rancho Buena Vista Adobe', 'Vista Village'],
+  'san-marcos': ['Double Peak Park', 'Cal State San Marcos', 'Lake San Marcos', 'San Marcos Creek', 'Discovery Hills'],
+  'encinitas': ['Swami\'s Beach', 'Moonlight State Beach', 'San Elijo Lagoon', 'Self-Realization Fellowship', 'Cardiff-by-the-Sea'],
+  'rancho-santa-fe': ['Rancho Santa Fe Golf Club', 'The Inn at Rancho Santa Fe', 'Fairbanks Ranch Country Club', 'Del Dios Highway', 'Lake Hodges'],
+  'solana-beach': ['Fletcher Cove Beach Park', 'Cedros Avenue Design District', 'Tide Beach Park', 'San Elijo Lagoon', 'Lomas Santa Fe Plaza'],
+  'bressi-ranch': ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Palomar Airport Road', 'El Camino Real Corridor'],
+};
+const landmarks = landmarkMap[citySlug] || [];
+
 // SEO
 const title = `Emergency Restoration Services in ${city.name}, CA | Tamarack Restoration`;
 const description = `24/7 emergency water damage, fire, mold & flood restoration in ${city.name}. ${business.reviewCount} five-star reviews. 60-minute response. IICRC certified. Call ${business.phoneFormatted}.`;
@@ -358,7 +385,7 @@ const cityFaqs = [
     </div>
   </section>
   
-  <!-- Neighborhoods -->
+  <!-- Neighborhoods, ZIP Codes & Landmarks -->
   {city.neighborhoods && city.neighborhoods.length > 0 && (
     <section class="section bg-brand-cream-200">
       <div class="container">
@@ -367,10 +394,10 @@ const cityFaqs = [
             Serving All {city.name} Neighborhoods
           </h2>
           <p class="text-lg text-brand-gray">
-            Fast response to every part of {city.name}.
+            Fast response to every part of {city.name} — we know the roads, the neighborhoods, and the unique restoration challenges.
           </p>
         </div>
-        
+
         <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
           {city.neighborhoods.map((neighborhood) => (
             <span class="px-4 py-2 bg-white rounded-full text-brand-gray text-sm font-medium shadow-soft">
@@ -378,17 +405,76 @@ const cityFaqs = [
             </span>
           ))}
         </div>
-        
-        {city.zipCodes && (
-          <p class="text-center text-brand-gray mt-6">
-            <strong>ZIP Codes:</strong> {city.zipCodes.join(', ')}
-          </p>
-        )}
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-10">
+          {city.zipCodes && city.zipCodes.length > 0 && (
+            <div class="bg-white rounded-xl p-6 shadow-soft">
+              <h3 class="font-heading font-bold text-brand-black mb-3 flex items-center gap-2">
+                <Icon name="map-pin" size="sm" class="text-brand-orange" />
+                ZIP Codes We Serve
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {city.zipCodes.map((zip) => (
+                  <span class="bg-brand-cream-200 px-3 py-1 rounded-full text-sm font-medium text-brand-black">
+                    {zip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {landmarks.length > 0 && (
+            <div class="bg-white rounded-xl p-6 shadow-soft">
+              <h3 class="font-heading font-bold text-brand-black mb-3 flex items-center gap-2">
+                <Icon name="star" size="sm" class="text-brand-orange" />
+                Landmarks Near Our Service Area
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {landmarks.map((lm) => (
+                  <span class="bg-brand-cream-200 px-3 py-1 rounded-full text-sm text-brand-gray">
+                    {lm}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   )}
-  
-  <Testimonials limit={3} class="bg-white" />
+
+  <!-- Nearby Service Areas -->
+  {adjacentCities.length > 0 && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            We Also Serve Cities Near {city.name}
+          </h2>
+          <p class="text-lg text-brand-gray">
+            Our 60-minute response extends to all communities surrounding {city.name}.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {adjacentCities.map((adj) => (
+            <a
+              href={`/service-area/${adj.slug}/`}
+              class="group flex items-center gap-3 p-4 bg-brand-cream-200 rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
+            >
+              <Icon name="map-pin" size="sm" class="text-brand-orange group-hover:text-white flex-shrink-0" />
+              <span class="font-heading font-semibold text-brand-black group-hover:text-white">
+                {adj.name}
+              </span>
+              <Icon name="arrow-right" size="sm" class="ml-auto text-brand-gray group-hover:text-white" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Testimonials limit={3} class="bg-brand-cream-200" />
   
   <FAQ 
     title={`${city.name} Restoration FAQs`}
