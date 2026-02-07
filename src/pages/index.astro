@@ -1,26 +1,92 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+import ServiceGrid from '../components/sections/ServiceGrid.astro';
+import CityGrid from '../components/sections/CityGrid.astro';
+import HOAOfferBlock from '../components/sections/HOAOfferBlock.astro';
+import TestimonialBlock from '../components/sections/TestimonialBlock.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import GBPEmbed from '../components/sections/GBPEmbed.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+import { homePageMeta } from '../lib/seo';
+import { localBusinessSchema } from '../lib/schema/localBusiness';
+import { getPublishedPillars } from '../data/services';
+import { getPublishedCities } from '../data/cities';
+
+const meta = homePageMeta();
+const services = getPublishedPillars();
+const cities = getPublishedCities();
 ---
-<BaseLayout title="Wheyland Electric | Carlsbad Electrician">
-  <div class="bg-brand-indigo text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">An Innovative Electrician You Can Trust</h1>
-      <p class="text-xl text-brand-columbia mb-8">Bright Ideas For Your Electrical Needs</p>
-      <div class="flex gap-4 justify-center">
-        <a href="/free-estimates/" class="bg-brand-cta hover:bg-brand-cta-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors">Free Estimate</a>
-        <a href="tel:8586635564" class="border-2 border-white text-white hover:bg-white hover:text-brand-indigo px-6 py-3 rounded-lg transition-colors font-semibold">Call (858) 663-5564</a>
-      </div>
+<PageLayout meta={meta} schemas={[localBusinessSchema()]}>
+  <!-- Hero -->
+  <Hero
+    eyebrow="Satisfaction Guaranteed!"
+    title="An Innovative Electrician You Can Trust"
+    subtitle="We offer electrical installation, repair, and maintenance to residential, commercial, and industrial customers across San Diego County."
+  />
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- Services Overview -->
+  <Section bg="white">
+    <ServiceGrid services={services} heading="Electrical Services You Can Count On" />
+    <div class="text-center mt-8">
+      <Button href="/services/" variant="secondary">View All Services</Button>
     </div>
-  </div>
-  <div class="bg-surface-subtle py-4">
-    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-6 text-sm text-text-muted font-medium">
-      <span>Established 2008</span>
-      <span class="hidden sm:inline text-brand-mint">|</span>
-      <span>CA License #940291</span>
-      <span class="hidden sm:inline text-brand-mint">|</span>
-      <span>Licensed, Bonded &amp; Insured</span>
-      <span class="hidden sm:inline text-brand-mint">|</span>
-      <span>1-Year Labor Warranty</span>
+  </Section>
+
+  <!-- Service Areas -->
+  <Section bg="subtle">
+    <CityGrid cities={cities} heading="Serving North County San Diego" />
+    <div class="text-center mt-8">
+      <Button href="/service-areas/" variant="secondary">All Service Areas</Button>
     </div>
-  </div>
-</BaseLayout>
+  </Section>
+
+  <!-- Who We Work With -->
+  <Section bg="white">
+    <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-indigo mb-4 text-center">Who We Work With</h2>
+    <p class="text-center text-text-muted max-w-2xl mx-auto mb-10">
+      From homeowners to HOA communities, Wheyland Electric serves a wide range of customers with the same dedication to quality and integrity.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        { title: 'Homeowners', desc: 'Residential electrical services from panel upgrades to recessed lighting.', href: '/who-we-work-with/' },
+        { title: 'Property Managers', desc: 'Reliable electrical maintenance and prompt service calls for managed properties.', href: '/who-we-work-with/' },
+        { title: 'HOA Communities', desc: 'Monthly maintenance programs with flat-rate pricing and scheduled inspections.', href: '/who-we-work-with/' },
+        { title: 'EV Owners', desc: 'Level 2 charger installation for Tesla, Rivian, Ford, and all EV makes.', href: '/services/ev-charger-installation/' },
+      ].map((item) => (
+        <a href={item.href} class="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 text-center">
+          <div class="w-14 h-14 bg-surface-subtle rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-moonstone" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-brand-indigo mb-2">{item.title}</h3>
+          <p class="text-sm text-text-muted">{item.desc}</p>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <!-- HOA Maintenance -->
+  <Section bg="subtle">
+    <HOAOfferBlock />
+  </Section>
+
+  <!-- Testimonials -->
+  <Section bg="white">
+    <TestimonialBlock />
+  </Section>
+
+  <!-- CTA -->
+  <CTASection />
+
+  <!-- GBP Map -->
+  <Section bg="subtle">
+    <GBPEmbed heading="Our Location" />
+  </Section>
+</PageLayout>

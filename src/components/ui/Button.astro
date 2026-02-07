@@ -25,8 +25,6 @@ const sizeClasses: Record<string, string> = {
 };
 
 const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
-
-const Tag = href ? 'a' : 'button';
 ---
 {href ? (
   <a href={href} class={classes}>
