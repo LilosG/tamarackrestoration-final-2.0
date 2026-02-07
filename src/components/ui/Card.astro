@@ -1,80 +1,17 @@
 ---
-/**
- * Card Component
- * ==============
- * Flexible card container with variants
- * 
- * USAGE FOR EQUAL HEIGHTS:
- * When using cards in a grid, add equalHeight={true} to ensure
- * all cards in the row have the same height via flexbox.
- */
-
-import type { HTMLAttributes } from 'astro/types';
-import type { CardVariant } from '@/types';
-
-interface Props extends HTMLAttributes<'div'> {
-  variant?: CardVariant;
+interface Props {
   href?: string;
-  padding?: 'none' | 'sm' | 'md' | 'lg';
-  hover?: boolean;
-  equalHeight?: boolean;
+  class?: string;
 }
 
-const {
-  variant = 'default',
-  href,
-  padding = 'md',
-  hover = true,
-  equalHeight = false,
-  class: className,
-  ...attrs
-} = Astro.props;
-
-const Element = href ? 'a' : 'div';
-
-const baseStyles = 'rounded-xl transition-all duration-normal';
-
-const variantStyles: Record<CardVariant, string> = {
-  default: 'bg-white shadow-card',
-  outlined: 'bg-white border border-brand-gray-light',
-  elevated: 'bg-white shadow-soft-lg',
-};
-
-const paddingStyles: Record<string, string> = {
-  none: '',
-  sm: 'p-4',
-  md: 'p-6',
-  lg: 'p-8',
-};
-
-const hoverStyles = hover 
-  ? 'hover:shadow-card-hover hover:-translate-y-0.5' 
-  : '';
-
-const linkStyles = href 
-  ? 'block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2' 
-  : '';
-
-// Equal height mode: card fills container height and uses flexbox for content
-const equalHeightStyles = equalHeight
-  ? 'h-full flex flex-col'
-  : '';
-
-const classes = [
-  baseStyles,
-  variantStyles[variant],
-  paddingStyles[padding],
-  hover && hoverStyles,
-  href && linkStyles,
-  equalHeightStyles,
-  className,
-].filter(Boolean).join(' ');
+const { href, class: className = '' } = Astro.props;
 ---
-
-<Element
-  href={href}
-  class={classes}
-  {...attrs}
->
-  <slot />
-</Element>
+{href ? (
+  <a href={href} class:list={['block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 md:p-8', className]}>
+    <slot />
+  </a>
+) : (
+  <div class:list={['bg-white rounded-xl shadow-md p-6 md:p-8', className]}>
+    <slot />
+  </div>
+)}

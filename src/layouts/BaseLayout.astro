@@ -1,100 +1,25 @@
 ---
-/**
- * BaseLayout Component
- * ====================
- * Main layout wrapper for all pages
- */
+import '../styles/global.css';
 
-import '@/styles/global.css';
-import SEOHead from '@/components/seo/SEOHead.astro';
-import Header from '@/components/global/Header.astro';
-import Footer from '@/components/global/Footer.astro';
-import FloatingCTA from '@/components/global/FloatingCTA.astro';
-import type { SEOProps } from '@/types';
-import { getLocalBusinessSchema } from '@/utils/seo';
-
-interface Props extends SEOProps {
-  class?: string;
+interface Props {
+  title: string;
+  description?: string;
 }
 
-const { 
-  title, 
-  description, 
-  canonical,
-  noindex = false,
-  nofollow = false,
-  ogType = 'website',
-  ogImage,
-  twitterCard = 'summary_large_image',
-  jsonLd,
-  class: className 
-} = Astro.props;
-
-// Always include LocalBusiness schema
-const baseSchema = getLocalBusinessSchema();
-const allSchemas = jsonLd 
-  ? [baseSchema, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])]
-  : [baseSchema];
+const { title, description = 'Wheyland Electric — Bright Ideas For Your Electrical Needs' } = Astro.props;
 ---
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Preconnect to external resources -->
+    <meta name="description" content={description} />
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Fonts -->
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" 
-      rel="stylesheet"
-    />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    
-    <!-- SEO -->
-    <SEOHead
-      title={title}
-      description={description}
-      canonical={canonical}
-      noindex={noindex}
-      nofollow={nofollow}
-      ogType={ogType}
-      ogImage={ogImage}
-      twitterCard={twitterCard}
-      jsonLd={allSchemas}
-    />
-    
-    <!-- Generator -->
-    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   </head>
-  
-  <body class:list={['min-h-screen flex flex-col', className]}>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">
-      Skip to main content
-    </a>
-    
-    <!-- Header -->
-    <Header />
-    
-    <!-- Main Content -->
-    <main id="main-content" class="flex-1">
-      <slot />
-    </main>
-    
-    <!-- Footer -->
-    <Footer />
-    
-    <!-- Mobile Floating CTA (appears on scroll) -->
-    <FloatingCTA />
+  <body>
+    <slot />
   </body>
 </html>

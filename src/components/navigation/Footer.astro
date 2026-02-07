@@ -1,0 +1,71 @@
+---
+import { site } from '../../data/site';
+---
+<footer class="bg-brand-indigo text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <!-- Business info -->
+      <div>
+        <h3 class="text-xl font-heading font-bold text-white mb-3">{site.nap.name}</h3>
+        <p class="text-brand-columbia text-sm mb-4 italic">{site.tagline}</p>
+        <address class="not-italic text-sm text-blue-100 space-y-1">
+          <p>{site.nap.address.street}</p>
+          <p>{site.nap.address.city}, {site.nap.address.state} {site.nap.address.zip}</p>
+        </address>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-heading font-bold text-white mb-3">Contact</h3>
+        <div class="text-sm text-blue-100 space-y-2">
+          <p>
+            <span class="font-semibold text-white">Phone:</span>{' '}
+            <a href={`tel:${site.nap.phoneTel}`} class="hover:text-brand-columbia transition-colors">{site.nap.phone}</a>
+          </p>
+          <p>
+            <span class="font-semibold text-white">Email:</span>{' '}
+            <a href={`mailto:${site.nap.email}`} class="hover:text-brand-columbia transition-colors">{site.nap.email}</a>
+          </p>
+          <p>
+            <span class="font-semibold text-white">Hours:</span>{' '}
+            {site.hours.weekday}
+          </p>
+          <p class="text-blue-200">{site.hours.weekend}</p>
+        </div>
+      </div>
+
+      <!-- Trust -->
+      <div>
+        <h3 class="text-lg font-heading font-bold text-white mb-3">Trust & Credentials</h3>
+        <ul class="text-sm text-blue-100 space-y-2">
+          <li>{site.license}</li>
+          <li>Established {site.established}</li>
+          <li>Licensed, Bonded &amp; Insured</li>
+          <li>1-Year Labor Warranty</li>
+        </ul>
+        <div class="mt-4">
+          <a
+            href={site.gbp.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-sm text-brand-columbia hover:text-white transition-colors underline"
+          >
+            Find us on Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-blue-200">
+      <p>&copy; {new Date().getFullYear()} {site.nap.name}. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="/about/" class="hover:text-white transition-colors">About</a>
+        <a href="/contact-us/" class="hover:text-white transition-colors">Contact</a>
+        <a href="/about/licenses/" class="hover:text-white transition-colors">Licenses</a>
+      </div>
+    </div>
+  </div>
+</footer>

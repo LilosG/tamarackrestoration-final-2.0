@@ -1,0 +1,41 @@
+---
+import { getPublishedOfferings } from '../../data/offerings';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  cityName?: string;
+}
+
+const { cityName } = Astro.props;
+const hoaOffering = getPublishedOfferings().find((o) => o.slug === 'hoa-monthly-electrical-maintenance');
+---
+{hoaOffering && (
+  <div class="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-brand-moonstone">
+    <div class="flex flex-col md:flex-row md:items-start gap-6">
+      <div class="flex-1">
+        <h3 class="text-xl font-heading font-bold text-brand-indigo mb-2">{hoaOffering.title}</h3>
+        <p class="text-lg font-semibold text-brand-moonstone mb-3">{hoaOffering.headline}</p>
+        <p class="text-text-muted mb-4">
+          {cityName
+            ? `Flat-rate monthly lighting and electrical maintenance services for HOA communities in ${cityName}. Scheduled inspections, documentation, and transparent pricing help reduce emergencies and support consistent maintenance planning.`
+            : hoaOffering.description}
+        </p>
+        <ul class="space-y-2 mb-6">
+          {hoaOffering.bullets.map((bullet) => (
+            <li class="flex items-center gap-2 text-sm text-text-muted">
+              <svg class="w-4 h-4 text-brand-moonstone shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="shrink-0">
+        <Button href="/free-estimates/" variant="primary">
+          Request HOA Quote
+        </Button>
+      </div>
+    </div>
+  </div>
+)}

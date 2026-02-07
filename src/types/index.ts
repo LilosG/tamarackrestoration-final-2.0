@@ -1,240 +1,195 @@
-/**
- * Tamarack Restoration - Type Definitions
- * ========================================
- * Centralized types for type safety across the site
- */
+// ============================================================
+// Wheyland Electric — Core Type Definitions
+// ============================================================
 
-// ===================
-// BUSINESS DATA
-// ===================
-
-export interface BusinessInfo {
+// --- NAP & Business ---
+export interface NAP {
   name: string;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    full: string;
+  };
   phone: string;
-  phoneFormatted: string;
+  phoneTel: string;
   email: string;
-  address: Address;
-  hours: string;
-  responseTime: string;
-  yearsInBusiness: number;
-  reviewCount: number;
-  rating: number;
-  coordinates: Coordinates;
 }
 
-export interface Address {
-  street: string;
-  suite?: string;
-  city: string;
-  state: string;
-  zip: string;
-  full: string;
+export interface BusinessHours {
+  weekday: string;
+  weekend: string;
+  formatted: string;
 }
 
-export interface Coordinates {
-  latitude: number;
-  longitude: number;
-}
-
-// ===================
-// SERVICES
-// ===================
-
-export interface Service {
-  id: string;
+export interface Owner {
   name: string;
-  slug: string;
-  shortDescription: string;
-  description: string;
-  icon: string;
-  image: string;
-  features: string[];
-  faqs: FAQ[];
-  relatedServices: string[];
-  emergencyService: boolean;
+  bio: string[];
+  generation: string;
 }
 
-export type ServiceSlug =
-  | 'water-damage-restoration'
-  | 'water-leak-repair'
-  | 'slab-leak-repair'
-  | 'roof-leak-repair'
-  | 'pipe-leak-repair'
-  | 'leak-detection'
-  | 'mold-removal'
-  | 'fire-damage-restoration'
-  | 'flood-cleanup'
-  | 'sewage-cleanup';
+export interface TeamMember {
+  name: string;
+  role: string;
+}
 
-// ===================
-// LOCATIONS
-// ===================
+export interface SiteFlags {
+  reviews_verified: boolean;
+  show_review_excerpts: boolean;
+  publish_wave2: boolean;
+}
+
+export interface SiteData {
+  nap: NAP;
+  hours: BusinessHours;
+  license: string;
+  established: number;
+  claims: {
+    licensedBondedInsured: boolean;
+    satisfactionGuaranteed: boolean;
+  };
+  warranty: string;
+  tagline: string;
+  businessModelLine: string;
+  pledge: string[];
+  owner: Owner;
+  team: TeamMember[];
+  serviceRadiusCounties: string[];
+  gbp: {
+    url: string;
+    embedSrc: string;
+  };
+  social: {
+    twitter: string;
+    facebook: string;
+    linkedin: string;
+  };
+  flags: SiteFlags;
+}
+
+// --- Brand ---
+export interface BrandTokens {
+  colors: Record<string, string>;
+  logoPaths: {
+    primary: string;
+    dark: string;
+    favicon: string;
+  };
+  tagline: string;
+  fonts: {
+    heading: string;
+    body: string;
+  };
+}
+
+// --- Cities ---
+export type CityTier = 'wave1' | 'wave2';
 
 export interface City {
-  id: string;
-  name: string;
   slug: string;
-  county: string;
-  state: string;
-  tier: 1 | 2 | 3;
-  description: string;
+  name: string;
+  state: 'CA';
+  tier: CityTier;
+  publish: boolean;
+  has_zip_pdf: boolean;
+  zips: string[];
   neighborhoods: string[];
-  zipCodes: string[];
-  coordinates: Coordinates;
-  services: ServiceSlug[];
+  localIntroSeed: string;
+  localCues: string[];
+  nearbyCities: string[];
+  serviceCategories: string[];
 }
 
-export type CitySlug =
-  | 'carlsbad'
-  | 'oceanside'
-  | 'vista'
-  | 'san-marcos'
-  | 'encinitas'
-  | 'rancho-santa-fe'
-  | 'bressi-ranch'
-  | 'solana-beach';
+// --- Services ---
+export type ServiceTier = 'wave1' | 'wave2';
 
-// ===================
-// INSURANCE
-// ===================
-
-export interface InsuranceCarrier {
-  id: string;
-  name: string;
-  slug: string;
-  logo: string;
-  description: string;
-  claimProcess: string[];
-  coveredServices: ServiceSlug[];
-}
-
-export type InsuranceSlug =
-  | 'state-farm'
-  | 'allstate'
-  | 'farmers'
-  | 'usaa'
-  | 'liberty-mutual'
-  | 'aaa'
-  | 'travelers'
-  | 'nationwide'
-  | 'progressive'
-  | 'mercury';
-
-// ===================
-// TESTIMONIALS
-// ===================
-
-export interface Testimonial {
-  id: string;
-  author: string;
-  location?: string;
-  rating: number;
-  text: string;
-  service?: ServiceSlug;
-  city?: CitySlug;
-  date: string;
-  source: 'google' | 'yelp' | 'facebook' | 'direct';
-  featured: boolean;
-}
-
-// ===================
-// PROJECTS
-// ===================
-
-export interface Project {
-  id: string;
+export interface ProcessStep {
+  step: number;
   title: string;
-  slug: string;
-  service: ServiceSlug;
-  city: CitySlug;
   description: string;
-  beforeImage: string;
-  afterImage: string;
-  completionDate: string;
-  featured: boolean;
 }
-
-// ===================
-// BLOG
-// ===================
-
-export interface BlogPost {
-  title: string;
-  slug: string;
-  description: string;
-  pubDate: Date;
-  updatedDate?: Date;
-  author: string;
-  category: BlogCategory;
-  tags: string[];
-  image?: ImageMeta;
-  relatedServices: ServiceSlug[];
-  relatedCities: CitySlug[];
-  featured: boolean;
-}
-
-export type BlogCategory =
-  | 'water-damage'
-  | 'mold'
-  | 'fire-damage'
-  | 'leaks'
-  | 'insurance'
-  | 'diy-tips'
-  | 'local-guides';
-
-export interface ImageMeta {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-}
-
-// ===================
-// FAQ
-// ===================
 
 export interface FAQ {
   question: string;
   answer: string;
-  category?: string;
 }
 
-export interface FAQSection {
-  title: string;
+export interface ServicePillar {
+  slug: string;
+  name: string;
+  publish: boolean;
+  tier: ServiceTier;
+  primaryKeyword: string;
+  secondaryKeywords: string[];
+  shortDesc: string;
+  includedBullets: string[];
+  processSteps: ProcessStep[];
+  pricingFactors: string[];
   faqs: FAQ[];
+  relatedServices: string[];
+  subtopics: string[];
+  localizedIntroSeedByCity: Record<string, string>;
 }
 
-// ===================
-// NAVIGATION
-// ===================
+export type ExtendedServiceCategory = 'residential' | 'commercial' | 'industrial' | 'hoa' | 'ev' | 'compliance';
 
+export interface ExtendedService {
+  name: string;
+  category: ExtendedServiceCategory;
+  relatedPillarSlug: string;
+}
+
+// --- Offerings ---
+export interface Offering {
+  slug: string;
+  title: string;
+  headline: string;
+  description: string;
+  bullets: string[];
+  publish: boolean;
+}
+
+// --- Testimonials ---
+export interface Testimonial {
+  author: string;
+  text: string;
+  source: string;
+  serviceTag?: string;
+  cityTag?: string;
+}
+
+// --- Projects ---
+export interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  citySlug?: string;
+  serviceSlug?: string;
+  images: string[];
+  publish: boolean;
+}
+
+// --- Navigation ---
 export interface NavItem {
   label: string;
   href: string;
   children?: NavItem[];
-  highlight?: boolean;
-  icon?: string;
 }
 
-export interface NavGroup {
-  label: string;
-  items: NavItem[];
+// --- Redirects ---
+export interface Redirect {
+  source: string;
+  destination: string;
+  permanent: boolean;
 }
 
-// ===================
-// SEO
-// ===================
-
-export interface SEOProps {
+// --- SEO ---
+export interface PageMeta {
   title: string;
   description: string;
-  canonical?: string;
-  noindex?: boolean;
-  nofollow?: boolean;
-  ogType?: 'website' | 'article' | 'local.business';
+  canonical: string;
   ogImage?: string;
-  twitterCard?: 'summary' | 'summary_large_image';
-  jsonLd?: object | object[];
 }
 
 export interface BreadcrumbItem {
@@ -242,142 +197,24 @@ export interface BreadcrumbItem {
   href: string;
 }
 
-// ===================
-// FORMS
-// ===================
-
-export interface LeadFormData {
-  name: string;
-  phone: string;
-  service: ServiceSlug | 'other';
-  message?: string;
-  source: string;
-  timestamp: string;
-}
-
-export interface ContactFormData extends LeadFormData {
-  email: string;
-  address?: string;
-  urgency: 'emergency' | 'urgent' | 'standard';
-}
-
-export type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
-
-// ===================
-// COMPONENTS
-// ===================
-
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
-
-export type BadgeVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'error';
-
-export type CardVariant = 'default' | 'outlined' | 'elevated';
-
-// ===================
-// SCHEMA.ORG
-// ===================
-
+// --- Schema ---
 export interface LocalBusinessSchema {
-  '@context': 'https://schema.org';
-  '@type': 'LocalBusiness';
-  '@id': string;
+  '@context': string;
+  '@type': string;
   name: string;
-  image: string;
   telephone: string;
-  email?: string;
   address: {
-    '@type': 'PostalAddress';
+    '@type': string;
     streetAddress: string;
     addressLocality: string;
     addressRegion: string;
     postalCode: string;
     addressCountry: string;
   };
-  geo: {
-    '@type': 'GeoCoordinates';
-    latitude: number;
-    longitude: number;
-  };
+  openingHours: string;
+  license: string;
+  foundingDate: string;
   url: string;
-  priceRange: string;
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification';
-    dayOfWeek: string[];
-    opens: string;
-    closes: string;
-  };
-  aggregateRating?: {
-    '@type': 'AggregateRating';
-    ratingValue: string;
-    reviewCount: string;
-    bestRating: string;
-    worstRating: string;
-  };
-  areaServed: Array<{
-    '@type': 'City';
-    name: string;
-  }>;
-  sameAs?: string[];
-}
-
-export interface ServiceSchema {
-  '@context': 'https://schema.org';
-  '@type': 'Service';
-  name: string;
-  description: string;
-  provider: {
-    '@id': string;
-  };
-  areaServed: Array<{
-    '@type': 'City';
-    name: string;
-  }>;
-  serviceType: string;
-}
-
-export interface FAQPageSchema {
-  '@context': 'https://schema.org';
-  '@type': 'FAQPage';
-  mainEntity: Array<{
-    '@type': 'Question';
-    name: string;
-    acceptedAnswer: {
-      '@type': 'Answer';
-      text: string;
-    };
-  }>;
-}
-
-export interface ArticleSchema {
-  '@context': 'https://schema.org';
-  '@type': 'Article';
-  headline: string;
-  description: string;
-  image?: string;
-  datePublished: string;
-  dateModified?: string;
-  author: {
-    '@type': 'Organization';
-    name: string;
-  };
-  publisher: {
-    '@type': 'Organization';
-    name: string;
-    logo: {
-      '@type': 'ImageObject';
-      url: string;
-    };
-  };
-}
-
-export interface BreadcrumbListSchema {
-  '@context': 'https://schema.org';
-  '@type': 'BreadcrumbList';
-  itemListElement: Array<{
-    '@type': 'ListItem';
-    position: number;
-    name: string;
-    item: string;
-  }>;
+  areaServed?: unknown[];
+  aggregateRating?: unknown;
 }

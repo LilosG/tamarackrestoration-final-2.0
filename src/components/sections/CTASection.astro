@@ -1,0 +1,40 @@
+---
+import { site } from '../../data/site';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  cityName?: string;
+}
+
+const {
+  title = 'Ready to Get Started?',
+  subtitle = 'Contact Wheyland Electric today for a free estimate on your electrical project.',
+  cityName,
+} = Astro.props;
+
+const areaText = cityName ? `Serving ${cityName} and surrounding areas` : `Serving San Diego County and surrounding areas`;
+---
+<section class="bg-brand-indigo relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-moonstone rounded-full"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+    <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+      {title}
+    </h2>
+    <p class="text-lg text-brand-columbia mb-8 max-w-2xl mx-auto">
+      {subtitle}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+      <Button href="/free-estimates/" variant="primary" size="lg">
+        Get a Free Estimate
+      </Button>
+      <Button href={`tel:${site.nap.phoneTel}`} variant="outline-white" size="lg">
+        Call {site.nap.phone}
+      </Button>
+    </div>
+    <p class="text-sm text-blue-200">{areaText}</p>
+  </div>
+</section>
