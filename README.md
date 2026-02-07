@@ -1,108 +1,103 @@
-# Tamarack Restoration Website
+# Wheyland Electric — Local SEO Website
 
-Professional emergency restoration services website built with Astro + Tailwind CSS.
+Production-ready Astro + Tailwind CSS + TypeScript local SEO website for Wheyland Electric, a licensed electrician serving San Diego County from Carlsbad, CA.
 
-## 🚀 Project Structure
+## Quick Start
 
-```
-tamarack-restoration/
-├── public/
-│   ├── fonts/
-│   ├── images/
-│   └── robots.txt
-├── src/
-│   ├── components/
-│   │   ├── global/      # Header, Footer, Navigation
-│   │   ├── sections/    # Page sections (Hero, TrustBar, etc.)
-│   │   ├── forms/       # Lead forms, contact forms
-│   │   ├── ui/          # Reusable UI components
-│   │   └── seo/         # SEO components (meta, schema)
-│   ├── layouts/         # Page layouts
-│   ├── pages/           # Route pages
-│   ├── content/         # Content collections (blog, etc.)
-│   ├── data/            # Static data (services, cities, etc.)
-│   ├── styles/          # Global CSS
-│   ├── types/           # TypeScript types
-│   └── utils/           # Utility functions
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── tsconfig.json
-└── vercel.json
+```bash
+npm install
+npm run dev      # Start dev server at localhost:4321
+npm run build    # Production build (88 pages)
+npm run preview  # Preview production build
 ```
 
-## 🛠️ Tech Stack
+## Environment Variables
 
-- **Framework:** [Astro](https://astro.build/) v4
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) v3
-- **Deployment:** [Vercel](https://vercel.com/)
-- **Forms:** Formspree
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `PUBLIC_SITE_URL` | Production site URL | `https://www.wheylandelectric.com` |
+| `PUBLIC_FORMSPREE_ENDPOINT` | Formspree form endpoint | `https://formspree.io/f/xxxxxxxx` |
+
+## Architecture
+
+### Data-Driven Pages
+
+All content is sourced from centralized TypeScript data files in `/src/data/`. No content is hardcoded in page templates.
+
+| Data File | Purpose |
+|-----------|---------|
+| `site.ts` | NAP, hours, license, warranty, owner bio, flags |
+| `brand.ts` | Color tokens, logo paths, fonts |
+| `cities.ts` | All city data (Wave 1 + Wave 2) |
+| `services.ts` | Service pillars + extended catalog |
+| `offerings.ts` | HOA maintenance offering |
+| `testimonials.ts` | Review excerpts (gated by flag) |
+| `projects.ts` | Project gallery (empty-safe) |
+| `navigation.ts` | Auto-generated from cities/services |
+| `redirects.ts` | Legacy URL mappings |
+
+### Page Types
+
+| Type | Route | Count | Source |
+|------|-------|-------|--------|
+| Homepage | `/` | 1 | Static |
+| City Landing | `/{city}/` | 7 | `cities.ts` |
+| Service Pillar | `/services/{service}/` | 8 | `services.ts` |
+| Service-in-City | `/{city}/{service}/` | 56 | cities x services |
+| About Section | `/about/*` | 4 | Static |
+| Blog | `/blog/*` | 4 | Content collection |
+| Other | Various | 8 | Static |
+
+**Total: 88 pages**
+
+## How to Add a New City
+
+1. Open `src/data/cities.ts`
+2. Add a new `City` object to the array with `publish: true`
+3. Include unique `localIntroSeed` content (not template-swapped)
+4. Add `localizedIntroSeedByCity` entries in `src/data/services.ts` for the new city
+5. Run `npm run build` — the city page and all 8 service-in-city pages generate automatically
+
+## How to Add a New Service
+
+1. Open `src/data/services.ts`
+2. Add a new `ServicePillar` object with `publish: true`
+3. Include FAQs (min 6), process steps, pricing factors
+4. Add `localizedIntroSeedByCity` for all published cities
+5. Run `npm run build` — the service pillar page and all city-specific money pages generate automatically
+
+## How to Publish Wave 2
+
+1. Open `src/data/site.ts`
+2. Change `publish_wave2: false` to `publish_wave2: true`
+3. Run `npm run build`
+4. All Wave 2 cities and services generate automatically
+
+## How to Enable Review Excerpts
+
+1. Open `src/data/site.ts`
+2. Change `show_review_excerpts: false` to `show_review_excerpts: true`
+3. Review excerpts will render on all pages with the `TestimonialBlock` component
+
+**Important:** Do NOT set `reviews_verified: true` until review data is connected to a verified source (e.g., Google API). This flag controls the `AggregateRating` schema output.
+
+## Tech Stack
+
+- **Framework:** Astro 4.x (static output)
+- **Styling:** Tailwind CSS v3 via `@astrojs/tailwind`
 - **TypeScript:** Strict mode
+- **Hosting:** Vercel-ready (includes `vercel.json`)
+- **SEO:** Auto-generated sitemap, JSON-LD schema, unique meta per page
 
-## 🧞 Commands
+## Build
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Install dependencies                             |
-| `npm run dev`          | Start local dev server at `localhost:4321`       |
-| `npm run build`        | Build production site to `./dist/`               |
-| `npm run preview`      | Preview build locally                            |
-| `npm run astro ...`    | Run Astro CLI commands                           |
-
-## 📋 Configuration
-
-### Environment Variables
-
-Create a `.env` file:
-
-```env
-PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID
-PUBLIC_SITE_URL=https://www.tamarackrestoration.com
+```bash
+npm run build
 ```
 
-### Brand Colors
-
-- **Orange (Primary):** `#dc6830`
-- **Black:** `#000103`
-- **Cream:** `#eeede9`
-
-### Business Info
-
-Located in `src/data/site.ts`:
-- Phone: (760) 500-2211
-- Address: 5674 El Camino Real Suite M, Carlsbad, CA 92008
-
-## 📦 Deployment
-
-The site is configured for Vercel deployment:
-
-1. Connect repo to Vercel
-2. Configure environment variables
-3. Deploy
-
-Redirects are configured in `vercel.json`.
-
-## 📝 Content Updates
-
-### Services
-Edit `src/data/site.ts` → `services` array
-
-### Cities
-Edit `src/data/site.ts` → `cities` array
-
-### FAQs
-Edit `src/data/site.ts` → `globalFaqs` array
-
-### Blog Posts
-Add markdown files to `src/content/blog/`
-
-## 🔍 SEO
-
-- Automatic sitemap generation
-- JSON-LD schema on all pages
-- Meta tags via SEOHead component
-- 301 redirects for old URLs
-
-## 📄 License
-
-Private - All rights reserved
-# Force deploy
+Generates 88 static HTML pages with:
+- Zero TypeScript errors
+- Unique title/description per page
+- JSON-LD schema (LocalBusiness, Service, FAQ, Breadcrumb, Article)
+- Sitemap with all published pages
+- Robots.txt
