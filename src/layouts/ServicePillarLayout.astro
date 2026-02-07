@@ -16,9 +16,10 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { services, cities, business } from '@/data/site';
 import { serviceContent } from '@/data/content';
-import { 
-  getServiceTitle, 
-  getCanonicalUrl, 
+import { getServicePillarContent } from '@/data/servicePillarContent';
+import {
+  getServiceTitle,
+  getCanonicalUrl,
   getServiceSchema,
   getServiceBreadcrumbs,
   getBreadcrumbSchema,
@@ -36,6 +37,7 @@ const { serviceSlug } = Astro.props;
 // Get service data
 const service = services.find(s => s.slug === serviceSlug)!;
 const content = serviceContent[serviceSlug] || null;
+const pillarContent = getServicePillarContent(serviceSlug);
 const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
 const relatedServices = services.filter(s => 
   service.relatedServices?.includes(s.slug) && s.slug !== serviceSlug
@@ -338,32 +340,100 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     </section>
   )}
   
-  <!-- What's Included -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          What's Included in Our {service.name} Service
-        </h2>
-        <p class="text-lg text-brand-gray">
-          Complete, professional service from start to finish.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {service.features.map((feature) => (
-          <div class="bg-brand-cream-200 rounded-xl p-6">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
-                <Icon name="check-circle" size="sm" class="text-brand-orange" />
-              </div>
-              <span class="font-heading font-semibold text-brand-black">{feature}</span>
+  <!-- When to Call Section -->
+  {pillarContent?.whenToCall && pillarContent.whenToCall.length > 0 && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            When to Call for {service.name}
+          </h2>
+          <p class="text-lg text-brand-gray">
+            Recognize these situations? Call Tamarack at {business.phoneFormatted} for immediate help.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          {pillarContent.whenToCall.map((scenario) => (
+            <div class="bg-brand-cream-200 rounded-xl p-6 border-l-4 border-brand-orange">
+              <h3 class="font-heading font-bold text-brand-black text-lg mb-2">
+                {scenario.title}
+              </h3>
+              <p class="text-brand-gray text-sm leading-relaxed">
+                {scenario.description}
+              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
+
+  <!-- What's Included — Detailed -->
+  {pillarContent?.whatsIncluded && pillarContent.whatsIncluded.length > 0 ? (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            What's Included in Our {service.name} Service
+          </h2>
+          <p class="text-lg text-brand-gray">
+            Detailed breakdown of our professional process, equipment, and timeline.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {pillarContent.whatsIncluded.map((item) => (
+            <div class="bg-white rounded-xl p-6 shadow-soft">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-orange-100 flex items-center justify-center flex-shrink-0 mt-1">
+                  <Icon name="check-circle" size="md" class="text-brand-orange" />
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-brand-black text-lg mb-2">
+                    {item.title}
+                  </h3>
+                  <p class="text-brand-gray text-sm leading-relaxed mb-2">
+                    {item.description}
+                  </p>
+                  {item.equipment && (
+                    <p class="text-xs text-brand-gray-400 italic">
+                      Equipment: {item.equipment}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            What's Included in Our {service.name} Service
+          </h2>
+          <p class="text-lg text-brand-gray">
+            Complete, professional service from start to finish.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {service.features.map((feature) => (
+            <div class="bg-brand-cream-200 rounded-xl p-6">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
+                  <Icon name="check-circle" size="sm" class="text-brand-orange" />
+                </div>
+                <span class="font-heading font-semibold text-brand-black">{feature}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
   
   <!-- Service Highlights -->
   {content?.serviceHighlights && content.serviceHighlights.length > 0 && (
@@ -388,6 +458,69 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     </section>
   )}
   
+  <!-- Recent Projects -->
+  {pillarContent?.recentProjects && pillarContent.recentProjects.length > 0 && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+            Recent {service.name} Projects
+          </h2>
+          <p class="text-lg text-brand-gray">
+            Real restoration work from homes across North San Diego County.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {pillarContent.recentProjects.map((project) => (
+            <div class="bg-brand-cream-200 rounded-2xl overflow-hidden">
+              <div class="aspect-video bg-brand-cream-300 flex items-center justify-center">
+                <div class="text-center p-4">
+                  <Icon name="image" size="lg" class="text-brand-gray-400 mx-auto mb-2" />
+                  <span class="text-xs text-brand-gray-400">Project photo coming soon</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading font-bold text-brand-black text-lg mb-1">
+                  {project.title}
+                </h3>
+                <p class="text-brand-orange text-sm font-medium mb-3">
+                  {project.location}
+                </p>
+                <p class="text-brand-gray text-sm leading-relaxed mb-3">
+                  {project.summary}
+                </p>
+                <p class="text-xs text-brand-gray-400 font-medium">
+                  Scope: {project.scope}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Expert Deep Dive -->
+  {pillarContent?.deepDiveContent && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-8 text-center">
+            {pillarContent.deepDiveTitle}
+          </h2>
+          <div class="prose prose-lg max-w-none">
+            {pillarContent.deepDiveContent.split('\n\n').map((paragraph) => (
+              <p class="text-brand-gray leading-relaxed mb-6">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Cities Served -->
   <section class="section bg-white">
     <div class="container">
