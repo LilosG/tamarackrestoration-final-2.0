@@ -1,0 +1,173 @@
+---
+/**
+ * Projects Hub Page
+ * =================
+ * Portfolio overview showing all project categories and featured projects
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import { business } from '@/data/site';
+import { projectCategories, projects } from '@/data/projects';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+
+const title = 'Our Restoration Projects | Tamarack Restoration';
+const description = 'View completed water damage, mold remediation, fire damage, and flood restoration projects in Carlsbad and North San Diego County. See the quality of our work.';
+const canonical = getCanonicalUrl('/projects/');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects/', current: true },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+// Get a sample of recent projects for the featured section
+const featuredProjects = projects.slice(0, 4);
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={[breadcrumbSchema]}>
+  <!-- Hero -->
+  <section class="relative bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" />
+
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <Icon name="camera" size="sm" />
+          Our Work
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+          Restoration <span class="text-brand-orange">Projects</span>
+        </h1>
+
+        <p class="text-brand-cream-300 text-lg lg:text-xl leading-relaxed">
+          See the quality of our restoration work throughout North San Diego County. Every project represents a family or business we helped recover from property damage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <TrustBar variant="light" />
+
+  <!-- Project Categories -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Browse by Category
+        </h2>
+        <p class="text-lg text-brand-gray">
+          Explore our completed projects organized by restoration type. Each project showcases our process, expertise, and results.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {projectCategories.map((category) => {
+          const categoryProjects = projects.filter(p => p.category === category.slug);
+          return (
+            <a
+              href={`/projects/${category.slug}/`}
+              class="group bg-white border border-brand-cream-300 rounded-2xl p-6 md:p-8 hover:shadow-card transition-all"
+            >
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-xl bg-brand-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                  <Icon name={category.icon} size="lg" />
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-heading font-bold text-xl text-brand-black mb-2 group-hover:text-brand-orange transition-colors">
+                    {category.name}
+                  </h3>
+                  <p class="text-brand-gray text-sm leading-relaxed mb-3">
+                    {category.description}
+                  </p>
+                  <div class="flex items-center gap-2 text-brand-orange text-sm font-medium">
+                    <span>View {categoryProjects.length} projects</span>
+                    <Icon name="arrow-right" size="sm" class="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section bg-brand-cream-200">
+    <div class="container">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
+          Recent Projects
+        </h2>
+        <p class="text-lg text-brand-gray">
+          A selection of recently completed restoration projects from across North San Diego County.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {featuredProjects.map((project) => (
+          <div class="bg-white rounded-2xl overflow-hidden shadow-soft">
+            <div class="aspect-video bg-brand-cream-300 flex items-center justify-center">
+              <Icon name="camera" size="xl" class="text-brand-gray-light" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
+                  {projectCategories.find(c => c.slug === project.category)?.name || project.category}
+                </span>
+                <span class="text-xs text-brand-gray">{project.location}</span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-brand-black mb-2">
+                {project.title}
+              </h3>
+              <p class="text-brand-gray text-sm mb-4 line-clamp-2">
+                {project.description}
+              </p>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-brand-gray">
+                  Timeline: <span class="font-medium text-brand-black">{project.timeline}</span>
+                </span>
+                <a
+                  href={`/projects/${project.category}/`}
+                  class="text-brand-orange font-medium hover:underline"
+                >
+                  View Category
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-black py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
+          Need Restoration for Your Property?
+        </h2>
+        <p class="text-brand-cream-300 mb-8">
+          Every project you see here started with a phone call. We're ready to help 24/7 with 60-minute response times.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+            <Icon name="phone" size="sm" />
+            {business.phoneFormatted}
+          </Button>
+          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+            Request Free Estimate
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
