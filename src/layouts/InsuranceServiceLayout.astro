@@ -83,11 +83,14 @@ const faqs: FAQType[] = [
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center">
     <div class="absolute inset-0">
-      <img 
+      <img
         src={service.image || '/images/hero/truck-hero.webp'}
         alt={`${service.name} with ${carrier.name} insurance`}
         class="w-full h-full object-cover"
         loading="eager"
+        fetchpriority="high"
+        width="1500"
+        height="1000"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-black/85 via-brand-black/60 to-brand-black/40"></div>
     </div>

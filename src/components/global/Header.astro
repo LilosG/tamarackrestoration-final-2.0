@@ -58,10 +58,12 @@ function isActive(href: string): boolean {
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo -->
         <a href="/" class="flex-shrink-0" aria-label="Tamarack Restoration - Home">
-          <img 
-            src="/images/logo/tamarack-logo.webp" 
-            alt="Tamarack Restoration" 
+          <img
+            src="/images/logo/tamarack-logo.webp"
+            alt="Tamarack Restoration"
             class="h-14 lg:h-16 w-auto"
+            width="960"
+            height="960"
           />
         </a>
         
@@ -153,10 +155,9 @@ function isActive(href: string): boolean {
   </nav>
   
   <!-- Mobile menu -->
-  <div 
+  <div
     class="mobile-menu fixed inset-0 z-overlay bg-brand-black/50 lg:hidden hidden"
     data-mobile-menu
-    aria-hidden="true"
   >
     <div class="mobile-menu-panel absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
       <div class="flex flex-col h-full">

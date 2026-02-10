@@ -103,6 +103,8 @@ export interface InsuranceCarrier {
   name: string;
   slug: string;
   logo: string;
+  logoWidth: number;
+  logoHeight: number;
   description: string;
   claimProcess: string[];
   coveredServices: ServiceSlug[];
@@ -141,6 +143,16 @@ export interface Testimonial {
 // PROJECTS
 // ===================
 
+export interface ProjectCategoryInfo {
+  slug: ServiceSlug;
+  name: string;
+  icon: string;
+  description: string;
+  seoTitle: string;
+  seoDescription: string;
+  relatedService: ServiceSlug;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -152,6 +164,11 @@ export interface Project {
   afterImage: string;
   completionDate: string;
   featured: boolean;
+  location?: string;
+  timeline?: string;
+  challenge?: string;
+  solution?: string;
+  result?: string;
 }
 
 // ===================

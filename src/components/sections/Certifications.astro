@@ -29,16 +29,22 @@ const certifications = [
     name: 'IICRC Certified',
     description: 'Water Restoration Technician (WRT)',
     image: '/images/certifications/iicrc-certified.webp',
+    width: 1080,
+    height: 1080,
   },
   {
     name: 'IICRC Certified',
     description: 'Applied Structural Drying (ASD)',
     image: '/images/certifications/iicrc-certified.webp',
+    width: 1080,
+    height: 1080,
   },
   {
     name: 'HomeAdvisor',
     description: 'Screened & Approved',
     image: '/images/certifications/homeadvisor-approved.webp',
+    width: 300,
+    height: 300,
   },
 ];
 ---
@@ -49,11 +55,13 @@ const certifications = [
       <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
         <p class="text-brand-gray font-medium">Certified & Trusted:</p>
         {certifications.map((cert) => (
-          <img 
+          <img
             src={cert.image}
             alt={cert.name}
             class="h-12 w-auto object-contain"
             loading="lazy"
+            width={cert.width}
+            height={cert.height}
           />
         ))}
       </div>
@@ -82,11 +90,13 @@ const certifications = [
           <div class="grid sm:grid-cols-3 gap-4 mb-8">
             {certifications.map((cert) => (
               <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-card text-center">
-                <img 
+                <img
                   src={cert.image}
                   alt={cert.name}
                   class="h-16 w-auto object-contain mb-3"
                   loading="lazy"
+                  width={cert.width}
+                  height={cert.height}
                 />
                 <p class="font-semibold text-brand-black text-sm">{cert.name}</p>
                 <p class="text-brand-gray text-xs">{cert.description}</p>
@@ -114,11 +124,13 @@ const certifications = [
         <!-- Team Photo -->
         {showTeamPhoto && (
           <div class="relative">
-            <img 
+            <img
               src="/images/team/team-floor-install.webp"
               alt="Tamarack Restoration certified technicians at work"
               class="rounded-2xl shadow-soft-xl w-full object-cover aspect-[4/3]"
               loading="lazy"
+              width="1300"
+              height="1734"
             />
             
             <!-- Stats overlay -->

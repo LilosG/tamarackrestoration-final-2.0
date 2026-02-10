@@ -6,7 +6,8 @@
  * Used by ProjectsSection and ProjectCard components.
  */
 
-import type { Project } from '@/types';
+import type { Project, ProjectCategoryInfo } from '@/types';
+export type { ProjectCategoryInfo };
 
 export const projects: Project[] = [
   // ============================================================
@@ -245,4 +246,79 @@ export function getMoneyPageProjects(city: string, service: string, limit = 3): 
   );
   const combined = [...exact, ...sameService];
   return combined.slice(0, limit);
+}
+
+// ===================
+// PROJECT CATEGORIES
+// ===================
+
+export const projectCategories: ProjectCategoryInfo[] = [
+  {
+    slug: 'water-damage-restoration',
+    name: 'Water Damage Restoration',
+    icon: 'droplet',
+    description: 'Burst pipes, appliance failures, slab leaks — see how we restore water-damaged homes throughout North San Diego County.',
+    seoTitle: 'Water Damage Restoration Projects | Tamarack Restoration',
+    seoDescription: 'View completed water damage restoration projects in Carlsbad, Oceanside, and North San Diego County. See our process and results.',
+    relatedService: 'water-damage-restoration',
+  },
+  {
+    slug: 'mold-removal',
+    name: 'Mold Removal',
+    icon: 'shield',
+    description: 'IICRC-certified mold remediation projects — safely contained, thoroughly removed, and cleared for reoccupancy.',
+    seoTitle: 'Mold Removal Projects | Tamarack Restoration',
+    seoDescription: 'Browse completed mold remediation projects in North San Diego County. IICRC-certified containment and removal.',
+    relatedService: 'mold-removal',
+  },
+  {
+    slug: 'fire-damage-restoration',
+    name: 'Fire Damage Restoration',
+    icon: 'flame',
+    description: 'From kitchen fires to whole-home smoke damage — complete fire and smoke restoration projects across our service area.',
+    seoTitle: 'Fire Damage Restoration Projects | Tamarack Restoration',
+    seoDescription: 'See completed fire and smoke damage restoration projects in Carlsbad and North San Diego County.',
+    relatedService: 'fire-damage-restoration',
+  },
+  {
+    slug: 'flood-cleanup',
+    name: 'Flood Cleanup',
+    icon: 'cloud-rain',
+    description: 'Storm flooding, atmospheric river damage, and flash flood cleanup — see our Category 3 water remediation projects.',
+    seoTitle: 'Flood Cleanup Projects | Tamarack Restoration',
+    seoDescription: 'Completed flood cleanup projects in North San Diego County. Category 1-3 water extraction and restoration.',
+    relatedService: 'flood-cleanup',
+  },
+  {
+    slug: 'sewage-cleanup',
+    name: 'Sewage Cleanup',
+    icon: 'alert-triangle',
+    description: 'Biohazard-certified sewage backup and septic overflow cleanup — safe, thorough, and code-compliant restoration.',
+    seoTitle: 'Sewage Cleanup Projects | Tamarack Restoration',
+    seoDescription: 'Sewage backup and biohazard remediation projects in North San Diego County. Certified technicians, safe outcomes.',
+    relatedService: 'sewage-cleanup',
+  },
+  {
+    slug: 'water-leak-repair',
+    name: 'Water Leak Repair',
+    icon: 'tool',
+    description: 'Thermal imaging leak detection and repair projects — catching hidden leaks before they cause major damage.',
+    seoTitle: 'Water Leak Repair Projects | Tamarack Restoration',
+    seoDescription: 'Water leak detection and repair projects in Carlsbad and North San Diego County. Thermal imaging, minimal demolition.',
+    relatedService: 'water-leak-repair',
+  },
+];
+
+/**
+ * Get all projects within a specific category (service slug).
+ */
+export function getProjectsByCategory(categorySlug: string): Project[] {
+  return projects.filter(p => p.service === categorySlug);
+}
+
+/**
+ * Get a single category by its slug.
+ */
+export function getCategoryBySlug(slug: string): ProjectCategoryInfo | undefined {
+  return projectCategories.find(c => c.slug === slug);
 }

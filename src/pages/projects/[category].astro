@@ -11,7 +11,7 @@ import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import { business, services } from '@/data/site';
-import { projectCategories, getProjectsByCategory, getCategoryBySlug } from '@/data/projects';
+import { projectCategories, getProjectsByCategory } from '@/data/projects';
 import type { ProjectCategoryInfo } from '@/data/projects';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 
@@ -89,10 +89,10 @@ const otherCategories = projectCategories.filter(c => c.slug !== category.slug);
             <div class={index % 2 === 1 ? 'lg:order-1' : ''}>
               <div class="flex items-center gap-3 mb-4">
                 <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
-                  {project.location}
+                  {project.location ?? project.city}
                 </span>
                 <span class="text-xs text-brand-gray">
-                  Timeline: {project.timeline}
+                  {project.timeline ? `Timeline: ${project.timeline}` : `Completed: ${project.completionDate}`}
                 </span>
               </div>
 

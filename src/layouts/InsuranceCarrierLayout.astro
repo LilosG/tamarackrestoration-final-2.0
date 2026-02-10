@@ -93,11 +93,13 @@ const faqs: FAQType[] = [
         <div class="lg:col-span-7">
           <!-- Carrier Logo -->
           <div class="mb-6">
-            <img 
+            <img
               src={carrier.logo}
               alt={`${carrier.name} Insurance Logo`}
               class="h-12 w-auto object-contain"
               loading="eager"
+              width={carrier.logoWidth}
+              height={carrier.logoHeight}
             />
           </div>
           

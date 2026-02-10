@@ -139,10 +139,13 @@ const categoryNames: Record<string, string> = {
             >
               {post.data.image && (
                 <div class="aspect-video overflow-hidden">
-                  <img 
+                  <img
                     src={post.data.image}
                     alt={post.data.imageAlt || post.data.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    width="1500"
+                    height="844"
                   />
                 </div>
               )}
@@ -185,10 +188,13 @@ const categoryNames: Record<string, string> = {
             >
               {post.data.image ? (
                 <div class="aspect-video overflow-hidden">
-                  <img 
+                  <img
                     src={post.data.image}
                     alt={post.data.imageAlt || post.data.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    width="1500"
+                    height="844"
                   />
                 </div>
               ) : (

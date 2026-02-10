@@ -99,11 +99,13 @@ const featuredCarriers = insuranceCarriers.slice(0, 6);
               href={`/insurance/${carrier.slug}/`}
               class="group flex flex-col items-center justify-center p-4 rounded-xl hover:bg-brand-cream-200 transition-colors text-center"
             >
-              <img 
+              <img
                 src={carrier.logo}
                 alt={carrier.name}
                 class="h-12 w-auto object-contain mb-3"
                 loading="lazy"
+                width={carrier.logoWidth}
+                height={carrier.logoHeight}
               />
               <span class="font-semibold text-brand-black text-sm group-hover:text-brand-orange transition-colors">
                 {carrier.name}

@@ -115,7 +115,7 @@ const benefits = [
             <div class="flex items-center gap-4 mb-4">
               <div class="w-14 h-14 rounded-xl bg-brand-cream-200 flex items-center justify-center overflow-hidden">
                 {carrier.logo ? (
-                  <img src={carrier.logo} alt={carrier.name} class="w-10 h-10 object-contain" />
+                  <img src={carrier.logo} alt={carrier.name} class="w-10 h-10 object-contain" width={carrier.logoWidth} height={carrier.logoHeight} />
                 ) : (
                   <Icon name="shield" size="lg" class="text-brand-orange" />
                 )}

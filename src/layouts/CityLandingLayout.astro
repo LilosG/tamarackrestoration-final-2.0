@@ -74,6 +74,7 @@ const schema = {
   "@type": "LocalBusiness",
   "name": business.name,
   "telephone": business.phoneFormatted,
+  "url": canonical,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": `${business.address.street} ${business.address.suite}`,

@@ -15,11 +15,12 @@ import { getLocalBusinessSchema } from '@/utils/seo';
 
 interface Props extends SEOProps {
   class?: string;
+  preloadImage?: string;
 }
 
-const { 
-  title, 
-  description, 
+const {
+  title,
+  description,
   canonical,
   noindex = false,
   nofollow = false,
@@ -27,7 +28,8 @@ const {
   ogImage,
   twitterCard = 'summary_large_image',
   jsonLd,
-  class: className 
+  class: className,
+  preloadImage = '/images/hero/truck-hero.webp',
 } = Astro.props;
 
 // Always include LocalBusiness schema
@@ -43,6 +45,11 @@ const allSchemas = jsonLd
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- LCP image preload -->
+    <link rel="preload" as="image" href={preloadImage} type="image/webp" />
+    <!-- Logo preload (above fold on every page) -->
+    <link rel="preload" as="image" href="/images/logo/tamarack-logo.webp" type="image/webp" />
+
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

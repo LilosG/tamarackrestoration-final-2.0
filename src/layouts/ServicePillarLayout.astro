@@ -94,12 +94,14 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
   <!-- Hero Section -->
   <section class="relative bg-brand-black overflow-hidden min-h-[500px] lg:min-h-[550px] flex items-center">
     <div class="absolute inset-0">
-      <img 
+      <img
         src={bgImage}
         alt={`Professional ${service.name.toLowerCase()} services`}
         class="w-full h-full object-cover"
         loading="eager"
         fetchpriority="high"
+        width="1500"
+        height="1000"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-black/85 via-brand-black/60 to-brand-black/40"></div>
     </div>
