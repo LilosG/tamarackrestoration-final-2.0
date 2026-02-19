@@ -122,6 +122,31 @@ What it does:
 - If sitemap endpoints return HTML/non-XML, it automatically falls back to an internal-link crawl.
 - Outputs a deduplicated canonical URL list in `legacy-urls.txt`.
 
+
+### Redirect QA report
+
+After generating `legacy-urls.txt`, run:
+
+```bash
+npm run check:legacy-redirects
+```
+
+Optional flags:
+
+```bash
+npm run check:legacy-redirects -- --in=legacy-urls.txt --out=migration-redirect-report.csv --expected-host=www.tamarackrestoration.com
+```
+
+Troubleshooting:
+- If `npm run check:legacy-redirects` says `Missing script`, run `git pull --ff-only origin main` and `npm install`, then retry.
+- If input file errors appear, run `npm run extract:legacy-urls` first (or pass `--in=<path>`).
+
+Pass criteria used by the report:
+- First response should be `301`
+- Final response should be `200`
+- Chain should stay short (2 hops max)
+- Final host should match the canonical host
+
 ## 📄 License
 
 Private - All rights reserved
