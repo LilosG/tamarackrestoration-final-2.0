@@ -37,6 +37,8 @@ const baseSchema = getLocalBusinessSchema();
 const allSchemas = jsonLd 
   ? [baseSchema, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])]
   : [baseSchema];
+
+const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G-XZ2JSQZ99Y';
 ---
 
 <!DOCTYPE html>
@@ -67,6 +69,36 @@ const allSchemas = jsonLd
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     
+
+    {ga4MeasurementId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`}></script>
+        <script is:inline>
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', '${ga4MeasurementId}', { send_page_view: true });`}
+        </script>
+      </>
+    )}
+
+    {ga4MeasurementId && (
+      <script is:inline>
+        {`document.addEventListener('click', function (event) {
+  const link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
+  if (!link || typeof window.gtag !== 'function') return;
+  const href = link.getAttribute('href') || '';
+  const phoneNumber = href.replace('tel:', '');
+  window.gtag('event', 'click_to_call', {
+    phone_number: phoneNumber,
+    link_url: href,
+    page_path: window.location.pathname,
+  });
+});`}
+      </script>
+    )}
+
     <!-- SEO -->
     <SEOHead
       title={title}
