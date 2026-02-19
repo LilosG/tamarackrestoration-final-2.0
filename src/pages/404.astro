@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/ui/Button.astro';
+import { business } from '@/data/site';
+import { getCanonicalUrl } from '@/utils/seo';
+
+const canonical = getCanonicalUrl('/404/');
+---
+
+<BaseLayout
+  title="Page Not Found | Tamarack Restoration"
+  description="The page you requested could not be found. Get back to emergency restoration services in North San Diego County."
+  canonical={canonical}
+  noindex={true}
+>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center py-16">
+        <p class="text-brand-orange font-semibold mb-3">404 Error</p>
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-brand-black mb-4">Page Not Found</h1>
+        <p class="text-brand-gray text-lg mb-8">
+          The page may have moved during our website update. Use the links below or call us now for emergency restoration help.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <Button href="/" variant="outline">Home</Button>
+          <Button href="/services/" variant="outline">Services</Button>
+          <Button href="/service-area/" variant="outline">Service Areas</Button>
+          <Button href="/contact/" variant="outline">Contact</Button>
+        </div>
+
+        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+          Call {business.phoneFormatted}
+        </Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

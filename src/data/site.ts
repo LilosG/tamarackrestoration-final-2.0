@@ -712,8 +712,14 @@ export const whyChooseUs = [
 // FORM CONFIG
 // ===================
 
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim() || 'https://formspree.io/f/mnjbbqea';
+
+if (import.meta.env.PROD && (!formspreeEndpoint || formspreeEndpoint.includes('PLACEHOLDER'))) {
+  throw new Error('Missing PUBLIC_FORMSPREE_ENDPOINT for production build');
+}
+
 export const formConfig = {
-  formspreeEndpoint: 'https://formspree.io/f/PLACEHOLDER', // Replace with actual endpoint
+  formspreeEndpoint,
   services: [
     { value: 'water-damage-restoration', label: 'Water Damage Restoration' },
     { value: 'water-leak-repair', label: 'Water Leak Repair' },

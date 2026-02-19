@@ -27,9 +27,12 @@ const currentPath = Astro.url.pathname;
 const canonicalUrl = canonical || `${siteUrl}${currentPath}`;
 const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
+const isProductionHost = Astro.url.hostname === 'www.tamarackrestoration.com';
+const effectiveNoindex = noindex || !isProductionHost;
+
 // Robots meta content
 const robotsContent = [
-  noindex ? 'noindex' : 'index',
+  effectiveNoindex ? 'noindex' : 'index',
   nofollow ? 'nofollow' : 'follow',
 ].join(', ');
 
