@@ -52,11 +52,12 @@ tamarack-restoration/
 
 ### Environment Variables
 
-Create a `.env` file:
+Create a `.env` file (production builds require a real Formspree endpoint):
 
 ```env
-PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID
+PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/mnjbbqea
 PUBLIC_SITE_URL=https://www.tamarackrestoration.com
+PUBLIC_GA4_MEASUREMENT_ID=G-XZ2JSQZ99Y
 ```
 
 ### Brand Colors
