@@ -103,6 +103,25 @@ Add markdown files to `src/content/blog/`
 - Meta tags via SEOHead component
 - 301 redirects for old URLs
 
+## 🔁 Legacy URL Inventory (Redirect Migration)
+
+If the live site blocks `sitemap.xml` requests and returns HTML instead, run the fallback extractor:
+
+```bash
+npm run extract:legacy-urls
+```
+
+Optional flags:
+
+```bash
+npm run extract:legacy-urls -- --base=https://www.tamarackrestoration.com --out=legacy-urls.txt --max-pages=600
+```
+
+What it does:
+- Tries sitemap endpoints first (`/sitemap.xml`, `/sitemap_index.xml`, `/wp-sitemap.xml`).
+- If sitemap endpoints return HTML/non-XML, it automatically falls back to an internal-link crawl.
+- Outputs a deduplicated canonical URL list in `legacy-urls.txt`.
+
 ## 📄 License
 
 Private - All rights reserved
