@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install lint toolchain
-        run: npm install --no-save eslint@^9 @eslint/js typescript-eslint eslint-plugin-astro astro-eslint-parser
-
       - name: Lint (same as local)
         run: npm run lint
 
