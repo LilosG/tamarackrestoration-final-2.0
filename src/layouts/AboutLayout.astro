@@ -33,10 +33,6 @@ const ctaTitle = config.ctaTitle || 'Ready to Experience the Tamarack Difference
 const ctaSubtitle = config.ctaSubtitle || '24/7 emergency service with 60-minute response time throughout North San Diego County.';
 const phoneHref = `tel:${business.phone}`;
 
-// Build hero title with accent
-const heroTitle = config.heroAccent 
-  ? `${config.heroTitle} ` 
-  : config.heroTitle;
 ---
 
 <BaseLayout title={config.title} description={config.description} canonical={canonical} jsonLd={[breadcrumbSchema]}>
