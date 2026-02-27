@@ -9,10 +9,11 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint src --ext .ts,.astro",
+    "lint": "eslint src astro.config.mjs tailwind.config.mjs eslint.config.mjs --max-warnings=0",
     "format": "prettier --write .",
     "extract:legacy-urls": "node scripts/extract-legacy-urls.mjs",
-    "check:legacy-redirects": "node scripts/check-legacy-redirects.mjs"
+    "check:legacy-redirects": "node scripts/check-legacy-redirects.mjs",
+    "lint:fix": "npm run lint -- --fix --fix-type problem,suggestion,layout"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
