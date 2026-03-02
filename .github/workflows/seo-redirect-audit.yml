@@ -1,0 +1,43 @@
+name: SEO Redirect Audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Base URL to audit (e.g., Vercel preview URL)'
+        required: false
+        default: 'https://www.tamarackrestoration.com'
+
+jobs:
+  redirect-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure validator executable
+        run: chmod +x scripts/verify-redirects.sh
+
+      - name: Run redirect audit
+        env:
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://www.tamarackrestoration.com' }}
+          USER_AGENT: Mozilla/5.0 (compatible; TamarackRedirectAudit-CI/1.0)
+        run: |
+          set -euxo pipefail
+          scripts/verify-redirects.sh audits/old_urls.txt
+
+      - name: Upload redirect audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-redirect-audit
+          path: |
+            audits/redirect-audit.csv
+            audits/redirect-audit-query-tests.csv
+
+      - name: Bot protection note
+        if: failure()
+        run: |
+          echo "Redirect audit failed."
+          echo "If site is behind bot protection/WAF, review logs and rerun with workflow_dispatch against a reachable preview URL."

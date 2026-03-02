@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tamarackrestoration.com"
+        }
+      ],
+      "destination": "https://www.tamarackrestoration.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/welcome(/)?",
       "destination": "/",
       "permanent": true
@@ -260,6 +271,22 @@
           "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*-git-.*-.*\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
-  ]
+  ],
+  "trailingSlash": true
 }
