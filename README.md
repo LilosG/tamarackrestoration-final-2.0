@@ -122,6 +122,39 @@ What it does:
 - If sitemap endpoints return HTML/non-XML, it automatically falls back to an internal-link crawl.
 - Outputs a deduplicated canonical URL list in `legacy-urls.txt`.
 
+## ✅ Redirect Validation
+
+Use a single validator flow with two modes:
+
+- **Default migration mode** (`--mode=migration`): validates migrated legacy URLs against expected redirects.
+- **Baseline mode** (`--mode=baseline`): validates the same ruleset using baseline inputs to catch regressions.
+
+### Quick runs
+
+```bash
+node scripts/validate-redirects.mjs --mode=migration
+node scripts/validate-redirects.mjs --mode=baseline
+```
+
+### Full runs with explicit flags
+
+```bash
+node scripts/validate-redirects.mjs --mode=migration --in=docs/migration-input-cleaned.txt --out=docs/redirect-validation-migration.txt --expected-host=www.tamarackrestoration.com
+node scripts/validate-redirects.mjs --mode=baseline --in=docs/migration-input-cleaned.txt --out=docs/redirect-validation-baseline.txt --expected-host=www.tamarackrestoration.com
+```
+
+### Pass criteria
+
+- The run completes without parser or host-validation errors.
+- All checked URLs are accounted for by redirect rules or an approved allowlist.
+- No unexpected host drift appears in output when `--expected-host` is set.
+
+### Troubleshooting
+
+- If you see host mismatch errors, confirm the source list only contains canonical production URLs and set `--expected-host` explicitly.
+- If coverage drops unexpectedly in baseline mode, compare the latest redirect map against `vercel.json` and re-run migration mode for confirmation.
+- If input parsing fails, re-generate/clean the input list and re-run with an explicit `--in` path.
+
 ## 📄 License
 
 Private - All rights reserved
