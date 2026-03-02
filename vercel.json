@@ -121,13 +121,83 @@
       "permanent": true
     },
     {
+      "source": "/service-area/oceanside/mold-remediation",
+      "destination": "/service-area/oceanside/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/san-marcos/mold-remediation",
+      "destination": "/service-area/san-marcos/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/encinitas/mold-remediation",
+      "destination": "/service-area/encinitas/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/rancho-santa-fe/mold-remediation",
+      "destination": "/service-area/rancho-santa-fe/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/solana-beach/mold-remediation",
+      "destination": "/service-area/solana-beach/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/bressi-ranch/mold-remediation",
+      "destination": "/service-area/bressi-ranch/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/oceanside/water-restoration",
+      "destination": "/service-area/oceanside/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/san-marcos/water-restoration",
+      "destination": "/service-area/san-marcos/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/encinitas/water-restoration",
+      "destination": "/service-area/encinitas/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/rancho-santa-fe/water-restoration",
+      "destination": "/service-area/rancho-santa-fe/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/solana-beach/water-restoration",
+      "destination": "/service-area/solana-beach/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/bressi-ranch/water-restoration",
+      "destination": "/service-area/bressi-ranch/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/north-county-san-diego/mold-remediation",
+      "destination": "/service-area/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/north-county-san-diego/water-restoration",
+      "destination": "/service-area/",
+      "permanent": true
+    },
+    {
       "source": "/service-area/:city/mold-remediation",
-      "destination": "/service-area/:city/mold-removal/",
+      "destination": "/service-area/",
       "permanent": true
     },
     {
       "source": "/service-area/:city/water-restoration",
-      "destination": "/service-area/:city/water-damage-restoration/",
+      "destination": "/service-area/",
       "permanent": true
     },
     {
