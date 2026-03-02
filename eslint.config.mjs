@@ -15,4 +15,11 @@ export default [
       'no-undef': 'off',
     },
   },
+  {
+    files: ['**/*.d.ts'],
+    rules: {
+      '@typescript-eslint/triple-slash-reference': 'off',
+    },
+  },
 ];
+

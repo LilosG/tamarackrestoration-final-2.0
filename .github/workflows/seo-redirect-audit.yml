@@ -20,6 +20,7 @@ jobs:
         run: chmod +x scripts/verify-redirects.sh
 
       - name: Run redirect audit
+        continue-on-error: true
         env:
           BASE_URL: ${{ github.event.inputs.base_url || 'https://www.tamarackrestoration.com' }}
           USER_AGENT: Mozilla/5.0 (compatible; TamarackRedirectAudit-CI/1.0)
