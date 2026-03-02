@@ -66,6 +66,11 @@
       "permanent": true
     },
     {
+      "source": "/testimonials",
+      "destination": "/about/testimonials/",
+      "permanent": true
+    },
+    {
       "source": "/about/trusted-partners-certifications",
       "destination": "/about/certifications/",
       "permanent": true
