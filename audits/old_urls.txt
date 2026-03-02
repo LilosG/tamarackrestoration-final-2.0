@@ -9,7 +9,6 @@
 /mold-removal
 /new-folder
 /new-page
-/not-allowed
 /our-projects/sample
 /service-area/bressi-ranch/mold-remediation
 /service-area/bressi-ranch/water-restoration

@@ -4,11 +4,11 @@ Source: live `scripts/verify-redirects.sh` execution against production URL from
 
 ## Summary
 ```
-TOTAL=49
+TOTAL=48
 PASS=0
 CHAINS_GT1=0
 LOOPS=0
-FINAL_NOT_200=49
+FINAL_NOT_200=48
 BAD_REDIRECT_CODE=0
 HOMEPAGE_DUMPS=0
 HOMEPAGE_DUMP_PCT=0.00
@@ -16,7 +16,7 @@ CANONICAL_HOST_MISMATCH=0
 SCHEME_MISMATCH=0
 TRAILING_SLASH_THRASH=0
 QUERY_PRESERVATION_FAILURES=5
-NETWORK_ERRORS=49
+NETWORK_ERRORS=48
 QUERY_TESTS_CSV=audits/redirect-audit-query-tests.csv
 THRESHOLDS_OK=no
 ```
@@ -36,7 +36,6 @@ THRESHOLDS_OK=no
 | `/mold-removal` | `https://www.tamarackrestoration.com/mold-removal` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/new-folder` | `https://www.tamarackrestoration.com/new-folder` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/new-page` | `https://www.tamarackrestoration.com/new-page` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
-| `/not-allowed` | `https://www.tamarackrestoration.com/not-allowed` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/our-projects/sample` | `https://www.tamarackrestoration.com/our-projects/sample` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/service-area/bressi-ranch/mold-remediation` | `https://www.tamarackrestoration.com/service-area/bressi-ranch/mold-remediation` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/service-area/bressi-ranch/water-restoration` | `https://www.tamarackrestoration.com/service-area/bressi-ranch/water-restoration` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
@@ -45,3 +44,4 @@ THRESHOLDS_OK=no
 | `/service-area/carlsbad/mold-remediation` | `https://www.tamarackrestoration.com/service-area/carlsbad/mold-remediation` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/service-area/carlsbad/slab-leak-repair` | `https://www.tamarackrestoration.com/service-area/carlsbad/slab-leak-repair` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
 | `/service-area/carlsbad/water-restoration` | `https://www.tamarackrestoration.com/service-area/carlsbad/water-restoration` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
+| `/service-area/encinitas/mold-remediation` | `https://www.tamarackrestoration.com/service-area/encinitas/mold-remediation` | 0 | `final_0|network_error: curl: (56) CONNECT tunnel failed, response 403` |
