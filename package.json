@@ -9,7 +9,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint src astro.config.mjs tailwind.config.mjs eslint.config.mjs --max-warnings=0",
+    "lint": "eslint 'src/**/*.{ts,js,mjs,cjs}' astro.config.mjs tailwind.config.mjs eslint.config.mjs --max-warnings=0",
     "lint:fix": "npm run lint -- --fix --fix-type problem,suggestion,layout",
     "format": "prettier --write .",
     "extract:legacy-urls": "node scripts/extract-legacy-urls.mjs",
@@ -23,12 +23,15 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
+    "@eslint/js": "^9.39.2",
     "@types/node": "^22.0.0",
     "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.3.1",
     "prettier": "^3.3.0",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.6.0",
     "typescript": "^5.5.0",
-    "eslint": "^9.39.2"
+    "typescript-eslint": "^8.46.1"
   }
 }

@@ -1,0 +1,337 @@
+old_path,start_url,first_status,hop_count,final_url,final_status,hops,issues
+/about/trusted-partners-certifications,https://www.tamarackrestoration.com/about/trusted-partners-certifications,0,0,https://www.tamarackrestoration.com/about/trusted-partners-certifications,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:50 GMT
+server: envoy
+connection: close"
+/blog/category/water-damage,https://www.tamarackrestoration.com/blog/category/water-damage,0,0,https://www.tamarackrestoration.com/blog/category/water-damage,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:50 GMT
+server: envoy
+connection: close"
+/blog/top-10-mold-removal-companies-carlsba-ca,https://www.tamarackrestoration.com/blog/top-10-mold-removal-companies-carlsba-ca,0,0,https://www.tamarackrestoration.com/blog/top-10-mold-removal-companies-carlsba-ca,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:50 GMT
+server: envoy
+connection: close"
+/blog/top-10-mold-removal-companies-carlsba-ca/,https://www.tamarackrestoration.com/blog/top-10-mold-removal-companies-carlsba-ca/,0,0,https://www.tamarackrestoration.com/blog/top-10-mold-removal-companies-carlsba-ca/,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:50 GMT
+server: envoy
+connection: close"
+/contact-us,https://www.tamarackrestoration.com/contact-us,0,0,https://www.tamarackrestoration.com/contact-us,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/fire-and-smoke-restoration,https://www.tamarackrestoration.com/fire-and-smoke-restoration,0,0,https://www.tamarackrestoration.com/fire-and-smoke-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/flood-cleanup,https://www.tamarackrestoration.com/flood-cleanup,0,0,https://www.tamarackrestoration.com/flood-cleanup,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/insurance-information,https://www.tamarackrestoration.com/insurance-information,0,0,https://www.tamarackrestoration.com/insurance-information,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/mold-removal,https://www.tamarackrestoration.com/mold-removal,0,0,https://www.tamarackrestoration.com/mold-removal,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/new-folder,https://www.tamarackrestoration.com/new-folder,0,0,https://www.tamarackrestoration.com/new-folder,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/new-page,https://www.tamarackrestoration.com/new-page,0,0,https://www.tamarackrestoration.com/new-page,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/our-projects/sample,https://www.tamarackrestoration.com/our-projects/sample,0,0,https://www.tamarackrestoration.com/our-projects/sample,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/bressi-ranch/mold-remediation,https://www.tamarackrestoration.com/service-area/bressi-ranch/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/bressi-ranch/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/bressi-ranch/water-restoration,https://www.tamarackrestoration.com/service-area/bressi-ranch/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/bressi-ranch/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/carlsbad/affordable-water-restoration,https://www.tamarackrestoration.com/service-area/carlsbad/affordable-water-restoration,0,0,https://www.tamarackrestoration.com/service-area/carlsbad/affordable-water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/carlsbad/emergency-water-damage-restoration,https://www.tamarackrestoration.com/service-area/carlsbad/emergency-water-damage-restoration,0,0,https://www.tamarackrestoration.com/service-area/carlsbad/emergency-water-damage-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/carlsbad/mold-remediation,https://www.tamarackrestoration.com/service-area/carlsbad/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/carlsbad/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/carlsbad/slab-leak-repair,https://www.tamarackrestoration.com/service-area/carlsbad/slab-leak-repair,0,0,https://www.tamarackrestoration.com/service-area/carlsbad/slab-leak-repair,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/carlsbad/water-restoration,https://www.tamarackrestoration.com/service-area/carlsbad/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/carlsbad/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/encinitas/mold-remediation,https://www.tamarackrestoration.com/service-area/encinitas/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/encinitas/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/encinitas/water-restoration,https://www.tamarackrestoration.com/service-area/encinitas/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/encinitas/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/north-county-san-diego/mold-remediation,https://www.tamarackrestoration.com/service-area/north-county-san-diego/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/north-county-san-diego/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/north-county-san-diego/water-restoration,https://www.tamarackrestoration.com/service-area/north-county-san-diego/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/north-county-san-diego/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/oceanside/mold-remediation,https://www.tamarackrestoration.com/service-area/oceanside/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/oceanside/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/oceanside/water-restoration,https://www.tamarackrestoration.com/service-area/oceanside/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/oceanside/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/rancho-santa-fe/mold-remediation,https://www.tamarackrestoration.com/service-area/rancho-santa-fe/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/rancho-santa-fe/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/rancho-santa-fe/water-restoration,https://www.tamarackrestoration.com/service-area/rancho-santa-fe/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/rancho-santa-fe/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/san-marcos/mold-remediation,https://www.tamarackrestoration.com/service-area/san-marcos/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/san-marcos/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/san-marcos/water-restoration,https://www.tamarackrestoration.com/service-area/san-marcos/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/san-marcos/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/solana-beach/mold-remediation,https://www.tamarackrestoration.com/service-area/solana-beach/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/solana-beach/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/solana-beach/water-restoration,https://www.tamarackrestoration.com/service-area/solana-beach/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/solana-beach/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/vista/mold-remediation,https://www.tamarackrestoration.com/service-area/vista/mold-remediation,0,0,https://www.tamarackrestoration.com/service-area/vista/mold-remediation,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-area/vista/water-restoration,https://www.tamarackrestoration.com/service-area/vista/water-restoration,0,0,https://www.tamarackrestoration.com/service-area/vista/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/service-areas,https://www.tamarackrestoration.com/service-areas,0,0,https://www.tamarackrestoration.com/service-areas,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/services/fire-and-smoke-restoration,https://www.tamarackrestoration.com/services/fire-and-smoke-restoration,0,0,https://www.tamarackrestoration.com/services/fire-and-smoke-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/services/mold-inspection-and-testing,https://www.tamarackrestoration.com/services/mold-inspection-and-testing,0,0,https://www.tamarackrestoration.com/services/mold-inspection-and-testing,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/services/water-restoration,https://www.tamarackrestoration.com/services/water-restoration,0,0,https://www.tamarackrestoration.com/services/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/sewage-clean-up,https://www.tamarackrestoration.com/sewage-clean-up,0,0,https://www.tamarackrestoration.com/sewage-clean-up,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/sewage-clean-up-1,https://www.tamarackrestoration.com/sewage-clean-up-1,0,0,https://www.tamarackrestoration.com/sewage-clean-up-1,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/testamonials,https://www.tamarackrestoration.com/testamonials,0,0,https://www.tamarackrestoration.com/testamonials,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/testamonials/,https://www.tamarackrestoration.com/testamonials/,0,0,https://www.tamarackrestoration.com/testamonials/,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/testimonials,https://www.tamarackrestoration.com/testimonials,0,0,https://www.tamarackrestoration.com/testimonials,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/testimonials/,https://www.tamarackrestoration.com/testimonials/,0,0,https://www.tamarackrestoration.com/testimonials/,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/water-restoration,https://www.tamarackrestoration.com/water-restoration,0,0,https://www.tamarackrestoration.com/water-restoration,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/water-restoration-services,https://www.tamarackrestoration.com/water-restoration-services,0,0,https://www.tamarackrestoration.com/water-restoration-services,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/water-restoration/,https://www.tamarackrestoration.com/water-restoration/,0,0,https://www.tamarackrestoration.com/water-restoration/,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/welcome,https://www.tamarackrestoration.com/welcome,0,0,https://www.tamarackrestoration.com/welcome,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+/welcome/,https://www.tamarackrestoration.com/welcome/,0,0,https://www.tamarackrestoration.com/welcome/,0,,"final_0|network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"

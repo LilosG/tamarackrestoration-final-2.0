@@ -1,0 +1,36 @@
+test_url,final_url,final_status,query_preserved,issues
+https://www.tamarackrestoration.com/water-restoration?utm_source=qa&gclid=test,https://www.tamarackrestoration.com/water-restoration?utm_source=qa&gclid=test,0,True,"network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+https://www.tamarackrestoration.com/mold-removal?utm_source=qa&gclid=test,https://www.tamarackrestoration.com/mold-removal?utm_source=qa&gclid=test,0,True,"network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+https://www.tamarackrestoration.com/fire-and-smoke-restoration?utm_source=qa&gclid=test,https://www.tamarackrestoration.com/fire-and-smoke-restoration?utm_source=qa&gclid=test,0,True,"network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+https://www.tamarackrestoration.com/contact-us?utm_source=qa&gclid=test,https://www.tamarackrestoration.com/contact-us?utm_source=qa&gclid=test,0,True,"network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
+https://www.tamarackrestoration.com/service-areas?utm_source=qa&gclid=test,https://www.tamarackrestoration.com/service-areas?utm_source=qa&gclid=test,0,True,"network_error: curl: (56) CONNECT tunnel failed, response 403
+HTTP/1.1 403 Forbidden
+content-length: 9
+content-type: text/plain
+date: Mon, 02 Mar 2026 22:04:51 GMT
+server: envoy
+connection: close"
