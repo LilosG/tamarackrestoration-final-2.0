@@ -134,7 +134,17 @@ npm run check:legacy-redirects
 Optional flags:
 
 ```bash
-npm run check:legacy-redirects -- --in=legacy-urls.txt --out=migration-redirect-report.csv --expected-host=www.tamarackrestoration.com
+npm run check:legacy-redirects -- --in=legacy-urls.txt --out=migration-redirect-report.csv --expected-host=www.tamarackrestoration.com --mode=migration
+```
+
+
+Modes:
+- `--mode=migration` (default): for post-cutover validation (`301 -> 200`).
+- `--mode=baseline`: for pre-cutover legacy baseline (`200 -> 200` expected on old live site).
+
+Example baseline run:
+```bash
+npm run check:legacy-redirects -- --mode=baseline
 ```
 
 Troubleshooting:

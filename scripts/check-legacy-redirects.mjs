@@ -5,10 +5,17 @@ import { readFile, writeFile } from 'node:fs/promises';
 const HELP_TEXT = `Legacy redirect checker
 
 Usage:
-  node scripts/check-legacy-redirects.mjs [--in=legacy-urls.txt] [--out=migration-redirect-report.csv] [--timeout-ms=12000] [--expected-host=www.tamarackrestoration.com]
+  node scripts/check-legacy-redirects.mjs [--in=legacy-urls.txt] [--out=migration-redirect-report.csv] [--timeout-ms=12000] [--expected-host=www.tamarackrestoration.com] [--mode=migration]
+
+Modes:
+  migration (default)
+    Pass requires: first hop 301, final status 200, <=2 hops, canonical host.
+  baseline
+    Pass requires: first status 200, final status 200, 1 hop, canonical host.
 
 Examples:
   npm run check:legacy-redirects
+  npm run check:legacy-redirects -- --mode=baseline
   npm run check:legacy-redirects -- --in=legacy-urls.txt --out=migration-redirect-report.csv
 `;
 
@@ -28,6 +35,15 @@ const inputPath = args.get('--in') || 'legacy-urls.txt';
 const outputPath = args.get('--out') || 'migration-redirect-report.csv';
 const timeoutMs = Number.parseInt(args.get('--timeout-ms') || '12000', 10);
 const expectedHost = args.get('--expected-host') || 'www.tamarackrestoration.com';
+const mode = (args.get('--mode') || 'migration').toLowerCase();
+
+const allowedModes = new Set(['migration', 'baseline']);
+
+if (!allowedModes.has(mode)) {
+  console.error(`Invalid --mode value: ${mode}`);
+  console.error('Allowed values: migration, baseline');
+  process.exit(1);
+}
 
 if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
   console.error(`Invalid --timeout-ms value: ${args.get('--timeout-ms')}`);
@@ -152,12 +168,16 @@ if (urls.length === 0) {
 
 const reportRows = [];
 let passCount = 0;
+let first200Count = 0;
+let first301Count = 0;
 
 for (const url of urls) {
   const result = await followChain(url);
   const first = result.chain[0] || { status: '', location: '' };
 
-  const firstHopIs301 = first.status === 301;
+  if (first.status === 200) first200Count += 1;
+  if (first.status === 301) first301Count += 1;
+
   const finalIs200 = result.finalStatus === 200;
   const chainLength = result.chain.length;
 
@@ -168,10 +188,14 @@ for (const url of urls) {
     hostOk = false;
   }
 
-  const passed = firstHopIs301 && finalIs200 && chainLength <= 2 && hostOk;
+  const migrationPass = first.status === 301 && finalIs200 && chainLength <= 2 && hostOk;
+  const baselinePass = first.status === 200 && finalIs200 && chainLength === 1 && hostOk;
+
+  const passed = mode === 'migration' ? migrationPass : baselinePass;
   if (passed) passCount += 1;
 
   reportRows.push({
+    mode,
     old_url: url,
     first_status: first.status,
     first_location: first.location,
@@ -180,11 +204,13 @@ for (const url of urls) {
     chain_hops: chainLength,
     final_host_ok: hostOk,
     pass: passed,
+    pass_reason: mode === 'migration' ? 'first=301,final=200,hops<=2,host_ok' : 'first=200,final=200,hops=1,host_ok',
     error: result.error
   });
 }
 
 const header = [
+  'mode',
   'old_url',
   'first_status',
   'first_location',
@@ -193,6 +219,7 @@ const header = [
   'chain_hops',
   'final_host_ok',
   'pass',
+  'pass_reason',
   'error'
 ];
 
@@ -203,12 +230,20 @@ const csv = [
 
 await writeFile(outputPath, `${csv}\n`, 'utf-8');
 
+console.log(`MODE=${mode}`);
 console.log(`INPUT_URLS=${urls.length}`);
+console.log(`FIRST_200_COUNT=${first200Count}`);
+console.log(`FIRST_301_COUNT=${first301Count}`);
 console.log(`PASS_COUNT=${passCount}`);
 console.log(`FAIL_COUNT=${urls.length - passCount}`);
 console.log(`OUTPUT=${outputPath}`);
-console.log('Sample failures:');
 
+if (mode === 'migration' && passCount === 0 && first200Count > Math.floor(urls.length * 0.7)) {
+  console.log('NOTE: Most first responses are 200. This often means you are checking the current live legacy site before migration.');
+  console.log('Run baseline mode for a pre-launch baseline report: npm run check:legacy-redirects -- --mode=baseline');
+}
+
+console.log('Sample failures:');
 for (const row of reportRows.filter((entry) => !entry.pass).slice(0, 10)) {
   console.log(`- ${row.old_url} | first=${row.first_status} | final=${row.final_status} | hops=${row.chain_hops} | error=${row.error || 'n/a'}`);
 }
