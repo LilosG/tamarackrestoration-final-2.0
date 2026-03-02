@@ -81,16 +81,6 @@
       "permanent": true
     },
     {
-      "source": "/new-folder",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/new-page",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/service-areas",
       "destination": "/service-area/",
       "permanent": true
