@@ -3,6 +3,8 @@ title: "How Much Does Water Damage Restoration Cost in San Diego County?"
 description: "A practical cost breakdown for water damage restoration in San Diego County, including typical price ranges, what drives cost, and why professional restoration matters."
 publishDate: 2026-03-02
 author: "Tamarack Restoration"
+image: "/images/services/water-damage/drying-equipment-room.webp"
+imageAlt: "Industrial drying equipment for water damage restoration"
 category: "water-damage"
 tags: ["water-damage", "restoration-cost", "san-diego-county", "insurance"]
 relatedServices: ["water-damage-restoration", "water-leak-repair", "mold-removal"]

@@ -3,6 +3,8 @@ title: "7 Warning Signs of Water Damage in Your Home"
 description: "Learn to spot the early warning signs of water damage before they become major problems. Our restoration experts share what to look for and when to call for help."
 publishDate: 2025-01-15
 author: "Tamarack Restoration"
+image: "/images/services/water-damage/kitchen-restored.webp"
+imageAlt: "Restored kitchen after water damage repairs"
 category: "water-damage"
 tags: ["water damage", "prevention", "home maintenance", "warning signs"]
 relatedServices: ["water-damage-restoration", "mold-removal"]
