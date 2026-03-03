@@ -10,16 +10,27 @@ import BlogPostLayout from '@/layouts/BlogPostLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+
+  const postsByDate = [...posts].sort(
+    (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime(),
+  );
+
+  return postsByDate.map((post) => {
+    const moreArticles = postsByDate
+      .filter((candidate) => candidate.slug !== post.slug)
+      .slice(0, 3);
+
+    return {
+      params: { slug: post.slug },
+      props: { post, moreArticles },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { post, moreArticles } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPostLayout post={post}>
+<BlogPostLayout post={post} moreArticles={moreArticles}>
   <Content />
 </BlogPostLayout>
