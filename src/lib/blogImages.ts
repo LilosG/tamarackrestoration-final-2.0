@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 type BlogEntry = CollectionEntry<'blog'>;
 
 const DEFAULT_BLOG_IMAGE = '/images/logo/og-default.webp';
+const IMAGE_PATH_RE = /\.(avif|webp|png|jpe?g|gif|svg)(\?.*)?$/i;
 
 const CATEGORY_FALLBACK_IMAGES: Record<BlogEntry['data']['category'], string> = {
   'water-damage': '/images/services/water-damage/living-room-dryout.webp',
@@ -26,12 +27,22 @@ function normalizeImagePath(image: string): string {
   return `/${value.replace(/^\/+/, '')}`;
 }
 
-export function resolveBlogCardImage(post: BlogEntry): { src: string; alt: string; fallback: boolean } {
-  const explicitImage = post.data.image ? normalizeImagePath(post.data.image) : '';
+function isUsableImageSource(src: string): boolean {
+  if (!src) return false;
 
-  if (explicitImage) {
+  if (src.startsWith('http://') || src.startsWith('https://')) {
+    return true;
+  }
+
+  return IMAGE_PATH_RE.test(src);
+}
+
+export function resolveBlogCardImage(post: BlogEntry): { src: string; alt: string; fallback: boolean } {
+  const candidate = post.data.image ? normalizeImagePath(post.data.image) : '';
+
+  if (isUsableImageSource(candidate)) {
     return {
-      src: explicitImage,
+      src: candidate,
       alt: post.data.imageAlt ?? post.data.title,
       fallback: false,
     };
