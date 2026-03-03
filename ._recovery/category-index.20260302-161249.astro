@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import { slugify } from "../../../lib/slug";
+
+const SITE = new URL(import.meta.env.SITE ?? "https://www.tamarackrestoration.com");
+
+type Cat = { name: string; slug: string; count: number };
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+const map = new Map<string, { name: string; count: number }>();
+for (const p of posts) {
+  const cats: string[] = p.data.categories ?? [];
+  for (const name of cats) {
+    const s = slugify(name);
+    if (!s) continue;
+    const prev = map.get(s);
+    if (!prev) map.set(s, { name, count: 1 });
+    else map.set(s, { name: prev.name, count: prev.count + 1 });
+  }
+}
+
+const categories: Cat[] = [...map.entries()]
+  .map(([slug, v]) => ({ slug, name: v.name, count: v.count }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const title = "Blog Categories | Tamarack Restoration";
+const canonical = new URL("/blog/category/", SITE).toString();
+---
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Browse restoration tips and guides by category." />
+  </head>
+  <body>
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      <nav class="text-sm mb-6">
+        <a class="underline" href="/blog/">Blog</a>
+        <span class="mx-2">/</span>
+        <span>Categories</span>
+      </nav>
+
+      <h1 class="text-3xl font-semibold">Categories</h1>
+
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map((c) => (
+          <li class="rounded-xl border p-4">
+            <a class="text-lg font-medium underline" href={`/blog/category/${c.slug}/`}>
+              {c.name}
+            </a>
+            <div class="mt-1 text-sm opacity-70">
+              {c.count} post{c.count === 1 ? "" : "s"}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+
+const SITE = new URL(import.meta.env.SITE ?? "https://www.tamarackrestoration.com");
+
+type Cat = { slug: string; count: number };
+
+function titleCaseFromSlug(slug: string) {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+// category is a single slug enum in your schema
+const map = new Map<string, number>(); // slug -> count
+for (const p of posts) {
+  const c = p.data.category;
+  if (!c) continue;
+  map.set(c, (map.get(c) ?? 0) + 1);
+}
+
+const categories: Cat[] = [...map.entries()]
+  .map(([slug, count]) => ({ slug, count }))
+  .sort((a, b) => titleCaseFromSlug(a.slug).localeCompare(titleCaseFromSlug(b.slug)));
+
+const title = "Blog Categories | Tamarack Restoration";
+const canonical = new URL("/blog/category/", SITE).toString();
+---
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Browse restoration tips and guides by category." />
+  </head>
+  <body>
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      <nav class="text-sm mb-6">
+        <a class="underline" href="/blog/">Blog</a>
+        <span class="mx-2">/</span>
+        <span>Categories</span>
+      </nav>
+
+      <h1 class="text-3xl font-semibold">Categories</h1>
+
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map((c) => (
+          <li class="rounded-xl border p-4">
+            <a class="text-lg font-medium underline" href={`/blog/category/${c.slug}/`}>
+              {titleCaseFromSlug(c.slug)}
+            </a>
+            <div class="mt-1 text-sm opacity-70">
+              {c.count} post{c.count === 1 ? "" : "s"}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </body>
+</html>
