@@ -2,9 +2,6 @@ import type { CollectionEntry } from 'astro:content';
 
 type BlogEntry = CollectionEntry<'blog'>;
 
-const DEFAULT_BLOG_IMAGE = '/images/logo/og-default.webp';
-const IMAGE_PATH_RE = /\.(avif|webp|png|jpe?g|gif|svg)(\?.*)?$/i;
-
 const CATEGORY_FALLBACK_IMAGES: Record<BlogEntry['data']['category'], string> = {
   'water-damage': '/images/services/water-damage/living-room-dryout.webp',
   'fire-damage': '/images/services/fire-damage/containment-setup.webp',
@@ -15,6 +12,9 @@ const CATEGORY_FALLBACK_IMAGES: Record<BlogEntry['data']['category'], string> = 
   tips: '/images/services/general/kitchen-after-restoration.webp',
   news: '/images/hero/truck-hero.webp',
 };
+
+const DEFAULT_BLOG_IMAGE = '/images/logo/og-default.webp';
+const IMAGE_PATH_RE = /\.(avif|webp|png|jpe?g|gif|svg)(\?.*)?$/i;
 
 function normalizeImagePath(image: string): string {
   const value = image.trim();
@@ -43,14 +43,14 @@ export function resolveBlogCardImage(post: BlogEntry): { src: string; alt: strin
   if (isUsableImageSource(candidate)) {
     return {
       src: candidate,
-      alt: post.data.imageAlt ?? post.data.title,
+      alt: post.data.imageAlt || post.data.title,
       fallback: false,
     };
   }
 
   return {
     src: CATEGORY_FALLBACK_IMAGES[post.data.category] || DEFAULT_BLOG_IMAGE,
-    alt: post.data.imageAlt ?? post.data.title,
+    alt: post.data.title,
     fallback: true,
   };
 }
