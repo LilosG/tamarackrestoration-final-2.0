@@ -13,12 +13,14 @@ import Button from '@/components/ui/Button.astro';
 import { services, cities, business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 import type { CollectionEntry } from 'astro:content';
+import BlogCard from '@/components/blog/BlogCard.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  moreArticles: CollectionEntry<'blog'>[];
 }
 
-const { post } = Astro.props;
+const { post, moreArticles } = Astro.props;
 const { title, description, publishDate, updatedDate, author, image, imageAlt, category, tags, relatedServices, relatedCities } = post.data;
 
 // Get related service and city data
@@ -228,6 +230,21 @@ const articleSchema = {
     </div>
   </section>
   
+  {moreArticles.length > 0 && (
+    <section class="section bg-brand-cream-200">
+      <div class="container">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-black mb-8">
+          More Articles
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {moreArticles.map((relatedPost) => (
+            <BlogCard post={relatedPost} categoryNames={categoryNames} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Related Services Section (Full Width) -->
   {linkedServices.length > 0 && (
     <section class="section bg-brand-cream-200">
