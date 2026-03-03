@@ -3,6 +3,8 @@ title: "Mold vs Mildew: What's the Difference and When to Worry"
 description: "Learn how to tell the difference between mold and mildew, when each becomes a health concern, and when you need professional remediation."
 publishDate: 2025-03-05
 author: "Tamarack Restoration"
+image: "/images/services/mold-removal/technician-respirator.webp"
+imageAlt: "Technician with respirator performing mold remediation"
 category: "mold"
 tags: ["mold", "mildew", "health", "prevention", "indoor air quality"]
 relatedServices: ["mold-removal", "water-damage-restoration"]

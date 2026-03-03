@@ -3,6 +3,8 @@ title: "Does Homeowners Insurance Cover Water Damage?"
 description: "Understand what types of water damage your homeowners insurance covers, what it doesn't, and how to maximize your claim. A guide for North San Diego County homeowners."
 publishDate: 2025-05-01
 author: "Tamarack Restoration"
+image: "/images/insurance/insurance-banner.webp"
+imageAlt: "Insurance policy and water damage coverage guidance"
 category: "insurance"
 tags: ["insurance", "water damage", "homeowners insurance", "claims", "coverage"]
 relatedServices: ["water-damage-restoration", "flood-cleanup", "mold-removal"]
