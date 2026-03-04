@@ -13,6 +13,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import { getCollection } from 'astro:content';
 import { business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import BlogCard from '@/components/blog/BlogCard.astro';
 
 // Get all non-draft blog posts, sorted by date
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -23,6 +24,7 @@ const sortedPosts = allPosts.sort((a, b) =>
 // Get featured posts
 const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 3);
 const regularPosts = sortedPosts.filter(post => !post.data.featured);
+const moreArticlePosts = featuredPosts.length > 0 ? regularPosts : sortedPosts;
 
 // Categories
 const categories = [
@@ -46,15 +48,6 @@ const breadcrumbs = [
   { label: 'Blog', href: '/blog/', current: true },
 ];
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
-
-// Format date helper
-function formatDate(date: Date): string {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
 
 // Category display names
 const categoryNames: Record<string, string> = {
@@ -133,39 +126,11 @@ const categoryNames: Record<string, string> = {
         
         <div class="grid md:grid-cols-3 gap-6">
           {featuredPosts.map((post) => (
-            <a 
-              href={`/blog/${post.slug}/`}
-              class="group bg-white border border-brand-cream-300 rounded-xl overflow-hidden hover:shadow-card transition-all"
-            >
-              {post.data.image && (
-                <div class="aspect-video overflow-hidden">
-                  <img
-                    src={post.data.image}
-                    alt={post.data.imageAlt || post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    width="1500"
-                    height="844"
-                  />
-                </div>
-              )}
-              <div class="p-6">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
-                    {categoryNames[post.data.category] || post.data.category}
-                  </span>
-                  <span class="text-xs text-brand-gray">
-                    {formatDate(post.data.publishDate)}
-                  </span>
-                </div>
-                <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors line-clamp-2">
-                  {post.data.title}
-                </h3>
-                <p class="text-brand-gray text-sm line-clamp-2">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
+            <BlogCard
+              post={post}
+              categoryNames={categoryNames}
+              className="group bg-white border border-brand-cream-300 rounded-xl overflow-hidden hover:shadow-card transition-all"
+            />
           ))}
         </div>
       </div>
@@ -181,44 +146,8 @@ const categoryNames: Record<string, string> = {
       
       {sortedPosts.length > 0 ? (
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(featuredPosts.length > 0 ? regularPosts : sortedPosts).map((post) => (
-            <a 
-              href={`/blog/${post.slug}/`}
-              class="group bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-all"
-            >
-              {post.data.image ? (
-                <div class="aspect-video overflow-hidden">
-                  <img
-                    src={post.data.image}
-                    alt={post.data.imageAlt || post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    width="1500"
-                    height="844"
-                  />
-                </div>
-              ) : (
-                <div class="aspect-video bg-brand-cream-300 flex items-center justify-center">
-                  <Icon name="file-text" size="xl" class="text-brand-gray" />
-                </div>
-              )}
-              <div class="p-6">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
-                    {categoryNames[post.data.category] || post.data.category}
-                  </span>
-                  <span class="text-xs text-brand-gray">
-                    {formatDate(post.data.publishDate)}
-                  </span>
-                </div>
-                <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors line-clamp-2">
-                  {post.data.title}
-                </h3>
-                <p class="text-brand-gray text-sm line-clamp-2">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
+          {moreArticlePosts.map((post) => (
+            <BlogCard post={post} categoryNames={categoryNames} />
           ))}
         </div>
       ) : (

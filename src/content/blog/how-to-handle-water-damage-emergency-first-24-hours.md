@@ -3,6 +3,8 @@ title: "How to Handle a Water Damage Emergency: The First 24 Hours"
 description: "A step-by-step guide on what to do in the critical first 24 hours after water damage strikes your home. Actions that protect your property and your insurance claim."
 publishDate: 2025-02-10
 author: "Tamarack Restoration"
+image: "/images/services/water-damage/structural-drying.webp"
+imageAlt: "Structural drying underway after emergency water damage"
 category: "water-damage"
 tags: ["water damage", "emergency", "home maintenance", "first response", "insurance"]
 relatedServices: ["water-damage-restoration", "water-leak-repair"]

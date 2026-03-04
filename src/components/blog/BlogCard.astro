@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { resolveBlogCardImage } from '@/lib/blogImages';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  categoryNames: Record<string, string>;
+  className?: string;
+}
+
+const { post, categoryNames, className = 'group bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-all' } = Astro.props;
+const image = resolveBlogCardImage(post);
+
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<a href={`/blog/${post.slug}/`} class={className}>
+  <div class="aspect-video overflow-hidden">
+    <img
+      src={image.src}
+      alt={image.alt}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+      width="1500"
+      height="844"
+    />
+  </div>
+  <div class="p-6">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="text-xs font-medium text-brand-orange bg-brand-orange-100 px-2 py-1 rounded">
+        {categoryNames[post.data.category] || post.data.category}
+      </span>
+      <span class="text-xs text-brand-gray">
+        {formatDate(post.data.publishDate)}
+      </span>
+    </div>
+    <h3 class="font-heading font-bold text-lg text-brand-black mb-2 group-hover:text-brand-orange transition-colors line-clamp-2">
+      {post.data.title}
+    </h3>
+    <p class="text-brand-gray text-sm line-clamp-2">
+      {post.data.description}
+    </p>
+  </div>
+</a>

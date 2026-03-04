@@ -3,6 +3,8 @@ title: "Fire Damage Restoration Process: What to Expect Step by Step"
 description: "A complete guide to the fire damage restoration process. Learn what happens from emergency board-up to final reconstruction, and how to work with your insurance."
 publishDate: 2025-04-12
 author: "Tamarack Restoration"
+image: "/images/services/fire-damage/containment-setup.webp"
+imageAlt: "Fire damage containment setup during restoration"
 category: "fire-damage"
 tags: ["fire damage", "smoke damage", "restoration process", "insurance", "reconstruction"]
 relatedServices: ["fire-damage-restoration", "water-damage-restoration"]
