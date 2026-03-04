@@ -96,6 +96,7 @@ export function resolveBlogCardImage(post: BlogEntry): { src: string; alt: strin
 
   return {
     src: getCategoryFallbackImage(post),
+    src: CATEGORY_FALLBACK_IMAGES[post.data.category] || DEFAULT_BLOG_IMAGE,
     alt: post.data.title,
     fallback: true,
   };
