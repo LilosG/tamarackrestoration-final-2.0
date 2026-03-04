@@ -77,7 +77,7 @@ function getDeterministicIndex(key: string, length: number): number {
 }
 
 function getCategoryFallbackImage(post: BlogEntry): string {
-  const options = CATEGORY_FALLBACK_IMAGES[post.data.category];
+  const options = CATEGORY_FALLBACK_IMAGES[post.data.category] ?? [DEFAULT_BLOG_IMAGE];
   const key = post.slug;
   const index = getDeterministicIndex(key, options.length);
   return options[index] || DEFAULT_BLOG_IMAGE;
