@@ -20,6 +20,10 @@ import { business } from '@/data/site';
 
 const SITE_URL = 'https://www.tamarackrestoration.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/logo/og-default.webp`;
+const BUSINESS_SCHEMA_ID = `${SITE_URL}/#business`;
+const SOCIAL_PROFILES: string[] = [];
+const PAYMENT_METHODS: string[] = [];
+const ACCEPTED_CURRENCIES: string[] = [];
 
 // ===================
 // SEO TITLE/META GENERATORS
@@ -102,13 +106,15 @@ export function getCanonicalUrl(path: string): string {
  */
 export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema {
   const cities = areaServed || [];
-  
-  return {
+  const foundingYear = new Date().getFullYear() - business.yearsInBusiness;
+
+  const localBusinessSchema: LocalBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}/#business`,
+    '@id': BUSINESS_SCHEMA_ID,
     name: business.name,
     image: `${SITE_URL}/images/logo/tamarack-logo.webp`,
+    logo: `${SITE_URL}/images/logo/tamarack-logo.webp`,
     telephone: business.phoneFormatted,
     email: business.email,
     address: {
@@ -125,6 +131,7 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
       longitude: business.coordinates.longitude,
     },
     url: SITE_URL,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${business.coordinates.latitude},${business.coordinates.longitude}`,
     priceRange: '$$',
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
@@ -156,10 +163,32 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
           { '@type': 'City', name: 'San Marcos' },
           { '@type': 'City', name: 'Encinitas' },
         ],
-    sameAs: [
-      // Add social links when available
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        telephone: business.phoneFormatted,
+        email: business.email,
+        availableLanguage: ['English'],
+        areaServed: 'US-CA',
+      },
     ],
+    foundingDate: `${foundingYear}`,
   };
+
+  if (SOCIAL_PROFILES.length > 0) {
+    localBusinessSchema.sameAs = SOCIAL_PROFILES;
+  }
+
+  if (PAYMENT_METHODS.length > 0) {
+    localBusinessSchema.paymentAccepted = PAYMENT_METHODS;
+  }
+
+  if (ACCEPTED_CURRENCIES.length > 0) {
+    localBusinessSchema.currenciesAccepted = ACCEPTED_CURRENCIES;
+  }
+
+  return localBusinessSchema;
 }
 
 /**
@@ -172,7 +201,7 @@ export function getServiceSchema(service: Service, cities?: City[]): ServiceSche
     name: service.name,
     description: service.description,
     provider: {
-      '@id': `${SITE_URL}/#business`,
+      '@id': BUSINESS_SCHEMA_ID,
     },
     areaServed: cities
       ? cities.map((city) => ({ '@type': 'City', name: city.name }))
@@ -223,6 +252,7 @@ export function getArticleSchema(
     },
     publisher: {
       '@type': 'Organization',
+      '@id': BUSINESS_SCHEMA_ID,
       name: business.name,
       logo: {
         '@type': 'ImageObject',
