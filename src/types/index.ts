@@ -341,10 +341,28 @@ export interface LocalBusinessSchema {
 export interface ServiceSchema {
   '@context': 'https://schema.org';
   '@type': 'Service';
+  '@id'?: string;
   name: string;
   description: string;
+  url?: string;
+  mainEntityOfPage?: {
+    '@type': 'WebPage';
+    '@id': string;
+  };
   provider: {
     '@id': string;
+  };
+  hasOfferCatalog?: {
+    '@type': 'OfferCatalog';
+    name: string;
+    itemListElement: Array<{
+      '@type': 'Offer';
+      name: string;
+      description: string;
+      priceCurrency: string;
+      availability: string;
+      url: string;
+    }>;
   };
   areaServed: Array<{
     '@type': 'City';

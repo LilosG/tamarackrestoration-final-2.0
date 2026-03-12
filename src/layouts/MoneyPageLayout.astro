@@ -15,7 +15,7 @@ import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { services, cities, business } from '@/data/site';
-import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema, getServiceSchema, combineSchemas } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 import type { CityServiceContent } from '@/data/cityServiceContent';
 
@@ -46,25 +46,14 @@ const breadcrumbs = [
 // Schema
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": `${service.name} in ${city.name}`,
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": business.name,
-    "telephone": business.phoneFormatted,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": business.address.city,
-      "addressRegion": business.address.state
-    }
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": city.name,
-    "containedInPlace": { "@type": "State", "name": "California" }
-  },
-  "description": description
+  ...getServiceSchema(service, {
+    cities: [city],
+    pagePath: `/service-area/${city.slug}/${service.slug}/`,
+    includeOfferCatalog: true,
+    offerDescription: `Free ${service.name.toLowerCase()} inspections and transparent estimates for homes and businesses in ${city.name}.`,
+  }),
+  name: `${service.name} in ${city.name}`,
+  description,
 };
 const faqSchema = faqs.length > 0 ? getFAQSchema(faqs) : null;
 const jsonLd = faqSchema ? combineSchemas(serviceSchema, breadcrumbSchema, faqSchema) : combineSchemas(serviceSchema, breadcrumbSchema);

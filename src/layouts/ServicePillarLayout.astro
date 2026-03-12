@@ -77,7 +77,12 @@ const metaDescription = `Professional ${service.name.toLowerCase()} in North San
 const title = getServiceTitle(service.name);
 const canonical = getCanonicalUrl(`/services/${service.slug}/`);
 const breadcrumbs = getServiceBreadcrumbs(service);
-const serviceSchema = getServiceSchema(service, citiesServed);
+const serviceSchema = getServiceSchema(service, {
+  cities: citiesServed,
+  pagePath: `/services/${service.slug}/`,
+  includeOfferCatalog: true,
+  offerDescription: 'We provide free on-site assessments and detailed estimates based on damage scope and restoration needs.',
+});
 const faqSchema = getFAQSchema(faqs);
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
