@@ -12,9 +12,10 @@ interface Props {
   items: BreadcrumbItem[];
   variant?: 'light' | 'dark';
   class?: string;
+  showSchema?: boolean;
 }
 
-const { items, variant = 'light', class: className } = Astro.props;
+const { items, variant = 'light', class: className, showSchema = true } = Astro.props;
 
 const schema = getBreadcrumbSchema(items);
 
@@ -68,4 +69,4 @@ const linkColor = isDark
   </ol>
 </nav>
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+{showSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />}
