@@ -14,6 +14,7 @@ import { services, cities, business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 import type { CollectionEntry } from 'astro:content';
 import BlogCard from '@/components/blog/BlogCard.astro';
+import FAQSection from '@/components/sections/FAQ.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -21,11 +22,28 @@ interface Props {
 }
 
 const { post, moreArticles } = Astro.props;
-const { title, description, publishDate, updatedDate, author, image, imageAlt, category, tags, relatedServices, relatedCities } = post.data;
+const { title, description, publishDate, updatedDate, author, image, imageAlt, category, tags, faqs = [], relatedServices, relatedCities } = post.data;
 
 // Get related service and city data
 const linkedServices = services.filter(s => relatedServices.includes(s.slug));
 const linkedCities = cities.filter(c => relatedCities.includes(c.slug));
+
+// Build direct city+service "money page" links for stronger high-intent internal linking
+const prioritizedService = relatedServices.includes('water-damage-restoration')
+  ? services.find((s) => s.slug === 'water-damage-restoration')
+  : linkedServices[0];
+
+const localMoneyPages = prioritizedService
+  ? linkedCities
+      .filter((city) => city.services?.includes(prioritizedService.slug as any) ?? false)
+      .slice(0, 5)
+      .map((city) => ({
+        cityName: city.name,
+        serviceName: prioritizedService.name,
+        href: `/service-area/${city.slug}/${prioritizedService.slug}/`,
+      }))
+  : [];
+const firstLocalMoneyPage = localMoneyPages[0];
 
 // Format dates
 const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
@@ -224,12 +242,43 @@ const articleSchema = {
                 </div>
               </div>
             )}
+
+            {localMoneyPages.length > 0 && firstLocalMoneyPage && (
+              <div class="bg-white border border-brand-cream-300 rounded-2xl p-6">
+                <h3 class="font-heading font-bold text-brand-black text-lg mb-4">
+                  Local {firstLocalMoneyPage.serviceName}
+                </h3>
+                <div class="space-y-2">
+                  {localMoneyPages.map((page) => (
+                    <a
+                      href={page.href}
+                      class="flex items-center gap-2 text-brand-gray hover:text-brand-orange transition-colors text-sm"
+                    >
+                      <Icon name="arrow-right" size="sm" class="text-brand-orange" />
+                      {page.serviceName} in {page.cityName}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </aside>
       </div>
     </div>
   </section>
   
+
+
+  {faqs.length > 0 && (
+    <FAQSection
+      title="Frequently Asked Questions"
+      subtitle="Quick answers related to this topic"
+      faqs={faqs}
+      showViewAll={false}
+      class="bg-brand-cream-200"
+    />
+  )}
+
   {moreArticles.length > 0 && (
     <section class="section bg-brand-cream-200">
       <div class="container">
