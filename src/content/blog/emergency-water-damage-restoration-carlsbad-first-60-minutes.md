@@ -116,7 +116,7 @@ For pricing context, see [How Much Does Water Damage Restoration Cost in San Die
 - Running HVAC aggressively through wet/contaminated zones.
 - Assuming one fan in one room is enough for structural drying.
 
-## Long-Tail Situations We See in Carlsbad Homes
+## Common Emergency Scenarios We See in Carlsbad Homes
 
 - Emergency water damage restoration after upstairs toilet overflow.
 - Burst pipe water damage cleanup in slab-on-grade homes.
@@ -144,13 +144,3 @@ Use this decision checklist during any emergency water damage restoration in Car
 In North County homes, fast-moving interior leaks often spread into: kitchen toe-kicks, wall-bottom plates, and laminate transitions that look dry on top but remain wet underneath. This is why "surface dry" and "structurally dry" are not the same outcome.
 
 When response is delayed, projects can shift from targeted extraction to mixed demolition, odor control, and microbial mitigation. Acting early limits this cascade.
-
-## Expert Implementation Notes
-
-The difference between average and expert restoration outcomes is usually process discipline. High-performing projects follow a repeatable cycle: source control, measured mitigation, documented progress, and verification before reconstruction.
-
-For homeowners, the most important practical rule is to make decisions based on data (source confirmation, moisture readings, contamination classification), not visual assumptions. Most expensive callbacks and recurring issues happen when repairs are closed too early.
-
-## Final Action Step
-
-If you are dealing with active water, contamination, or unresolved moisture, start immediate mitigation and align the project to a documented plan. That is the most reliable way to protect health, property value, and total restoration cost.

@@ -111,13 +111,3 @@ A quality drying program does more than "leave fans running." It includes:
 - Contaminated losses: additional controls that can extend total project timeline
 
 The key is measured progress, not calendar guesses.
-
-## Expert Implementation Notes
-
-The difference between average and expert restoration outcomes is usually process discipline. High-performing projects follow a repeatable cycle: source control, measured mitigation, documented progress, and verification before reconstruction.
-
-For homeowners, the most important practical rule is to make decisions based on data (source confirmation, moisture readings, contamination classification), not visual assumptions. Most expensive callbacks and recurring issues happen when repairs are closed too early.
-
-## Final Action Step
-
-If you are dealing with active water, contamination, or unresolved moisture, start immediate mitigation and align the project to a documented plan. That is the most reliable way to protect health, property value, and total restoration cost.
