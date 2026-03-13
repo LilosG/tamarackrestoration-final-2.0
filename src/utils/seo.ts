@@ -194,15 +194,53 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
 /**
  * Generate Service schema
  */
-export function getServiceSchema(service: Service, cities?: City[]): ServiceSchema {
+export function getServiceSchema(
+  service: Service,
+  options?: {
+    cities?: City[];
+    pagePath?: string;
+    includeOfferCatalog?: boolean;
+    offerDescription?: string;
+  }
+): ServiceSchema {
+  const cities = options?.cities;
+  const pageUrl = options?.pagePath ? getCanonicalUrl(options.pagePath) : undefined;
+  const includeOfferCatalog = options?.includeOfferCatalog ?? false;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': pageUrl ? `${pageUrl}#service` : undefined,
     name: service.name,
     description: service.description,
+    url: pageUrl,
+    mainEntityOfPage: pageUrl
+      ? {
+          '@type': 'WebPage',
+          '@id': pageUrl,
+        }
+      : undefined,
     provider: {
       '@id': BUSINESS_SCHEMA_ID,
     },
+    hasOfferCatalog: includeOfferCatalog
+      ? {
+          '@type': 'OfferCatalog',
+          name: `${service.name} Estimates`,
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              name: `Free ${service.name} Assessment`,
+              description:
+                options?.offerDescription ||
+                `Free on-site ${service.name.toLowerCase()} assessment and detailed estimate based on scope.`,
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+              url: pageUrl || getCanonicalUrl(`/services/${service.slug}/`),
+            },
+          ],
+        }
+      : undefined,
     areaServed: cities
       ? cities.map((city) => ({ '@type': 'City', name: city.name }))
       : [{ '@type': 'City', name: 'North San Diego County' }],
