@@ -48,6 +48,7 @@ export interface Service {
   description: string;
   icon: string;
   image: string;
+  logo?: string;
   features: string[];
   faqs: FAQ[];
   relatedServices: string[];
@@ -301,6 +302,7 @@ export interface LocalBusinessSchema {
   '@id': string;
   name: string;
   image: string;
+  logo?: string;
   telephone: string;
   email?: string;
   address: {
@@ -317,6 +319,7 @@ export interface LocalBusinessSchema {
     longitude: number;
   };
   url: string;
+  hasMap?: string;
   priceRange: string;
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification';
@@ -335,16 +338,45 @@ export interface LocalBusinessSchema {
     '@type': 'City';
     name: string;
   }>;
+  contactPoint?: Array<{
+    '@type': 'ContactPoint';
+    contactType: string;
+    telephone?: string;
+    email?: string;
+    availableLanguage?: string[];
+    areaServed?: string;
+  }>;
+  paymentAccepted?: string[];
+  currenciesAccepted?: string[];
+  foundingDate?: string;
   sameAs?: string[];
 }
 
 export interface ServiceSchema {
   '@context': 'https://schema.org';
   '@type': 'Service';
+  '@id'?: string;
   name: string;
   description: string;
+  url?: string;
+  mainEntityOfPage?: {
+    '@type': 'WebPage';
+    '@id': string;
+  };
   provider: {
     '@id': string;
+  };
+  hasOfferCatalog?: {
+    '@type': 'OfferCatalog';
+    name: string;
+    itemListElement: Array<{
+      '@type': 'Offer';
+      name: string;
+      description: string;
+      priceCurrency: string;
+      availability: string;
+      url: string;
+    }>;
   };
   areaServed: Array<{
     '@type': 'City';
@@ -380,6 +412,7 @@ export interface ArticleSchema {
   };
   publisher: {
     '@type': 'Organization';
+    '@id'?: string;
     name: string;
     logo: {
       '@type': 'ImageObject';
