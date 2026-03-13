@@ -132,3 +132,70 @@ Before submitting final claim documentation, verify that you have:
 ## Why This Improves Outcomes
 
 Adjusters process high claim volumes. Organized files reduce back-and-forth, help identify covered scope faster, and lower the chance of missing supplemental opportunities when hidden damage appears during dry-out or reconstruction.
+## Supplemental Claim Scenarios Homeowners Miss
+
+Even well-documented claims can evolve. Supplemental updates are common when:
+
+- Hidden moisture is discovered after initial tear-out
+- Additional rooms show delayed signs of impact
+- Material matching requirements increase repair scope
+
+The key is to document each new finding clearly and quickly.
+
+## How to Organize Your Claim File
+
+Create one folder structure with:
+
+- Timeline notes
+- Photo/video evidence by room and date
+- Mitigation logs and readings
+- Invoices/receipts
+- Email summaries and approvals
+
+A clean file helps both your adjuster and your restoration team work faster.
+
+## Communication Template You Can Reuse
+
+For every major update, send a short written summary:
+
+- What was found
+- Why scope changed (if it changed)
+- What actions were completed
+- What happens next
+- What approval is needed
+
+This reduces miscommunication and protects decision history.
+
+## Closeout Checklist Before Final Claim Signoff
+
+- All affected rooms documented
+- Source repair confirmed
+- Drying verification complete
+- Reconstruction scope agreed
+- Final invoices aligned with approved work
+
+Closing with complete records helps prevent post-close disputes.
+
+## Why Homeowners Lose Time During Claims
+
+Most delays come from missing or inconsistent information, not from one major mistake. If documentation, scope notes, and communication logs are aligned from day one, claims usually move more smoothly.
+
+## Claim Review Meeting Checklist
+
+Before your final adjuster/review call, prepare:
+
+- chronological event timeline,
+- complete photo set by room and date,
+- mitigation/drying records,
+- source repair confirmation,
+- reconstruction scope summary.
+
+This reduces follow-up requests and shortens decision cycles.
+
+## Keep the Project and Claim in Sync
+
+Whenever scope changes onsite, update your claim file the same day. A synchronized file prevents confusion between what was discovered, what was approved, and what was completed.
+
+## Keep Approvals and Work Logs Connected
+
+As work progresses, pair each approval with the matching field update in your project log. This creates a clean audit trail and helps everyone—homeowner, adjuster, and contractor—stay aligned on what was authorized, completed, and billed.

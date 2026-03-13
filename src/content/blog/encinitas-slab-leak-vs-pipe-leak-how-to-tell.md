@@ -107,3 +107,68 @@ Before approving a repair scope, ask:
 - What drying verification is required before closing finishes?
 - Is source repair expected to prevent recurrence?
 - What reconstruction is necessary after dry standard is met?
+## Advanced Diagnostic Clues Homeowners Overlook
+
+Some leak symptoms are subtle and easy to dismiss. Watch for these patterns:
+
+- Persistent moisture near floor transitions even after surface drying
+- Recurring paint bubbling at the same wall section
+- Odor returning after temporary cleaning
+- Intermittent pressure shifts tied to time of day or fixture use
+
+A repeated pattern usually indicates unresolved source conditions, not random moisture.
+
+## Repair Strategy: Why One Size Does Not Fit All
+
+Depending on leak type and location, repair pathways differ:
+
+- Targeted accessible repair for isolated non-slab lines
+- Broader route correction when pipe condition indicates systemic risk
+- Combined plumbing + mitigation sequence when spread has already occurred
+
+The best strategy balances source reliability with minimal disruption, then confirms dryness before closure.
+
+## Reconstruction Planning After Leak Mitigation
+
+Homeowners should expect reconstruction decisions to be based on measurable outcomes:
+
+- Which materials failed and must be replaced
+- Which surfaces are structurally dry and salvageable
+- Whether odor or microbial risk remains
+- What finish matching is realistic for flooring/cabinetry/paint
+
+A clear rebuild plan prevents partial fixes that later require reopening walls or floors.
+
+## Communication Best Practices During the Project
+
+To avoid confusion across trades and insurance:
+
+- Keep one written timeline of source repair, mitigation, and drying milestones
+- Request updated scope notes when new damage is identified
+- Confirm who owns each step (plumber vs mitigation vs reconstruction)
+- Save all change records and approvals in one place
+
+This improves both execution quality and claim consistency.
+
+## Budget Planning: What to Set Aside
+
+Homeowners usually budget too narrowly for leak events. A more realistic planning approach includes:
+
+- source diagnosis and repair,
+- mitigation and drying,
+- possible material removal,
+- reconstruction and finish restoration,
+- contingency for hidden findings.
+
+Building a contingency buffer helps prevent rushed decisions when additional affected areas are discovered mid-project.
+
+## Quality Control Questions at Project Closeout
+
+Before signing off, ask:
+
+- Were all affected zones measured and verified dry?
+- Are there any unresolved odor or moisture indicators?
+- Is documentation complete for both source repair and restoration phases?
+- What maintenance steps reduce recurrence risk?
+
+These final checks are one of the best defenses against repeat issues after leak events.

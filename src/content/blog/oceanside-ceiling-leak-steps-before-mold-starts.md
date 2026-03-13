@@ -113,3 +113,58 @@ A complete scope for ceiling leak water damage should identify:
 - Secondary room impacts (walls/flooring below the leak)
 - Drying plan by material type
 - Rebuild prerequisites after dry verification
+## Ceiling Leak Triage: What to Prioritize First
+
+When multiple problems happen at once, use this order:
+
+1. Safety and hazard isolation
+2. Source control
+3. Documentation
+4. Controlled mitigation and drying
+5. Repair planning
+
+This sequence prevents rushed cosmetic fixes that hide unresolved moisture.
+
+## Signs the Leak Is More Extensive Than It Looks
+
+- Staining appears in multiple ceiling zones
+- Adjacent wall corners show dampness
+- Flooring below the leak becomes soft or cupped
+- Odor increases after initial drying attempts
+
+These signs often indicate lateral spread through concealed pathways.
+
+## Repaint vs Rebuild Decision Criteria
+
+Repaint-only is appropriate only when source is fixed and materials are verified dry and stable. If ceiling drywall or insulation remains compromised, replacement is usually the safer long-term option.
+
+## Contractor Coordination Tips
+
+If separate teams are involved (roofing/plumbing/restoration):
+
+- Keep one shared timeline of actions
+- Confirm source repair completion in writing
+- Require moisture verification before close-up
+- Document any scope changes immediately
+
+Good coordination prevents duplicated work and schedule delays.
+
+## Seasonal Maintenance to Reduce Repeat Ceiling Leaks
+
+After restoration, prevention matters as much as repair. Homeowners can reduce recurrence by:
+
+- checking roof penetrations and flashing condition seasonally,
+- monitoring attic humidity and ventilation performance,
+- inspecting plumbing fixture connections in upstairs wet rooms,
+- responding early to even small stain changes.
+
+## Practical Closeout Standards
+
+Before considering the issue closed, confirm:
+
+- source cause is verified and corrected,
+- affected assemblies are dry,
+- any replaced sections are documented,
+- no active moisture trend remains on follow-up checks.
+
+A disciplined closeout protects against repeat leak cycles and helps avoid future cosmetic-only repairs that fail again.

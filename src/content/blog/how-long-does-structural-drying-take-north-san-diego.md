@@ -111,3 +111,65 @@ A quality drying program does more than "leave fans running." It includes:
 - Contaminated losses: additional controls that can extend total project timeline
 
 The key is measured progress, not calendar guesses.
+## Drying Phases in More Detail
+
+### Phase 1: Extraction and Stabilization
+
+This phase removes the bulk water load and prevents immediate spread. Decisions made here determine how efficient later drying can be.
+
+### Phase 2: Controlled Evaporation
+
+Airflow and dehumidification are balanced so moisture leaves materials without creating new problems in neighboring zones.
+
+### Phase 3: Verification and Transition
+
+Moisture readings are compared against dry targets before closing assemblies. This is the quality gate that protects long-term results.
+
+## Why Some Rooms Dry Faster Than Others
+
+Drying is not uniform across a house. Differences usually come from:
+
+- Material composition (tile over slab vs engineered wood over underlayment)
+- Air movement constraints in enclosed spaces
+- Hidden insulation saturation in walls/ceilings
+- Equipment placement limitations due to occupancy or layout
+
+This is why two adjacent rooms can show very different drying timelines.
+
+## What to Ask During Daily Drying Updates
+
+- What moisture trend are we seeing since yesterday?
+- Which areas are drying as expected and which are lagging?
+- Are there newly identified wet zones?
+- What changes are being made to the equipment plan?
+- What conditions must be met before reconstruction starts?
+
+Clear daily answers keep expectations realistic and reduce surprises at handoff.
+
+## Rebuild Readiness Criteria
+
+A project is ready for reconstruction when:
+
+- Source repair is confirmed complete
+- Target materials meet dry standards
+- No active spread or unresolved wet pockets remain
+- Scope documentation is complete for next-phase trades
+
+Skipping these checks is one of the top reasons for post-repair callbacks.
+
+## How Occupancy Affects Drying Efficiency
+
+Occupied homes can still dry effectively, but equipment strategy must adapt to real-life constraints like access, noise windows, and room usage. The best teams account for this without sacrificing measurement quality.
+
+## What "Done Drying" Should Mean in Writing
+
+Ask for a concise closeout statement that confirms:
+
+- source issue addressed,
+- drying targets achieved in impacted materials,
+- no unresolved active moisture zones,
+- project ready for reconstruction handoff.
+
+Written clarity at closeout protects both homeowner expectations and contractor accountability.
+
+When this handoff is vague, post-repair disputes and callbacks become much more likely.

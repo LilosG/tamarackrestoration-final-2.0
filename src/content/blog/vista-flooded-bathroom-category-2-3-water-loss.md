@@ -103,3 +103,62 @@ For Category 2/3 losses, best practice includes:
 - Following proper PPE and handling procedures
 - Removing porous, non-salvageable materials when required
 - Documenting sanitation and moisture milestones
+## Material Salvage Decisions in Contaminated Losses
+
+Homeowners often ask what can be saved. The answer depends on contamination class and material porosity.
+
+- Non-porous surfaces may be salvageable with proper sanitation.
+- Porous materials exposed to Category 3 water are often removed.
+- Semi-porous materials require case-by-case evaluation.
+
+Making salvage calls without contamination context can create health and recurrence risks.
+
+## Cross-Contamination Prevention at Home
+
+Until professionals arrive:
+
+- Limit foot traffic through affected zone
+- Keep towels/tools used in wet area isolated
+- Avoid moving contaminated items through clean rooms
+- Keep HVAC airflow from spreading particulates across the home
+
+Simple containment behavior can reduce downstream cleanup scope.
+
+## Recovery Timeline Expectations
+
+Contaminated bathroom losses often require:
+
+1. Safety setup and classification
+2. Controlled removal/cleanup
+3. Structural drying and sanitation verification
+4. Rebuild planning and finish replacement
+
+This sequence can be longer than a clean-water event, but it is necessary for safe completion.
+
+## Homeowner Decision Rule
+
+If you’re unsure whether the event is contaminated, treat it as potentially high-risk until a professional classification is done. It is safer and usually more cost-effective than under-responding early.
+
+## What Safe Completion Looks Like
+
+A contaminated bathroom loss should only be considered complete when classification, cleanup, drying, and reconstruction readiness are all documented. "Looks clean" is not enough without process confirmation.
+
+## Owner Checklist Before Signoff
+
+- Was contamination category addressed with appropriate controls?
+- Were unsalvageable materials removed where required?
+- Was structural drying verified before rebuild?
+- Are sanitation and project records complete?
+
+## Avoiding Repeat Incidents
+
+After restoration, review plumbing maintenance priorities and overflow prevention habits in high-risk bathrooms. Small preventive actions now are significantly cheaper than another emergency contamination event later.
+
+A strong closeout standard protects health, property condition, and claim clarity.
+
+## Clear Documentation Helps Safe Recovery
+
+In contamination events, clear records are part of quality control. Keep photos, scope notes, sanitation steps, and dry verification in one file. It protects claim clarity and gives you confidence the bathroom was restored safely—not just made to look clean.
+## Bottom-Line Safety Note
+
+When contamination is uncertain, choose the safer response path first. Early caution usually prevents bigger health and cost problems later.

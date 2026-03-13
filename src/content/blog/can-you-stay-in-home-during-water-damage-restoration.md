@@ -113,3 +113,67 @@ Before deciding to stay onsite, confirm:
 - Work zones are isolated with clear boundaries
 - Air filtration/containment is active where needed
 - Your household health profile is considered in planning
+## Practical Occupancy Scenarios (Real-World)
+
+### Scenario A: Localized Clean-Water Loss
+
+If one room is affected and containment can isolate the zone, many households can remain home with clear access controls. In these cases, the project is usually manageable with daily communication and temporary room restrictions.
+
+### Scenario B: Multi-Room Saturation
+
+When water spreads into hallways, bedrooms, or shared family areas, occupancy quickly becomes difficult. Noise, restricted access, and equipment heat/humidity can make day-to-day living impractical even if technically possible.
+
+### Scenario C: Contaminated Water Event
+
+If contamination is involved, temporary relocation is commonly the safer choice. The goal is to prevent cross-exposure while cleanup and sanitation procedures are completed correctly.
+
+## Household Decision Matrix
+
+Before deciding to stay, rate each item as low, medium, or high impact:
+
+- Safety risk in common pathways
+- Indoor air quality concerns
+- Access to bathroom/kitchen essentials
+- Household vulnerability (children, seniors, respiratory issues)
+- Expected duration of disruptive work
+
+If two or more items are high impact, relocation is usually the better call.
+
+## How to Plan If You Stay Home
+
+If you remain onsite:
+
+- Establish no-entry zones and clearly marked paths.
+- Schedule daily status updates with your restoration lead.
+- Keep sensitive belongings away from active work areas.
+- Confirm when equipment changes or demolition windows are planned.
+- Reassess occupancy each day based on safety and air-quality conditions.
+
+## Questions to Ask Your Insurance Carrier
+
+- Does this claim include additional living expense benefits?
+- What documentation is required if temporary housing is needed?
+- Are hotel, meals, and mileage covered, and under what limits?
+- What event conditions trigger occupancy reimbursement approval?
+
+Having these answers early prevents last-minute housing decisions under stress.
+
+## Family Logistics Plan During Active Restoration
+
+If you decide to remain home, treat it like a temporary operations plan:
+
+- Define quiet/sleep windows and ask the team when high-noise tasks are scheduled.
+- Keep a "clean zone" for medications, documents, and daily essentials.
+- Rotate household routines around restricted-access periods.
+- Re-check safety daily as scope evolves.
+
+## Red Flags That Mean You Should Relocate
+
+Even if you initially stay, relocate if conditions change to include:
+
+- worsening odor or air-quality symptoms,
+- expanding containment boundaries,
+- loss of critical utilities in occupied areas,
+- sanitation concerns that affect bathrooms/kitchen use.
+
+Good restoration planning is dynamic. The right decision today may not be the right decision tomorrow, and that is normal in complex losses.
