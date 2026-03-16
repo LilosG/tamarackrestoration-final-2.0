@@ -16,7 +16,7 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { insuranceCarriers, services, business } from '@/data/site';
 import { insuranceCarrierContent } from '@/data/content';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getServiceSchema, getFAQSchema, combineSchemas } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 
 interface Props {
@@ -41,6 +41,11 @@ const breadcrumbs = [
 ];
 
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+// Service schemas — one per covered service on this carrier page
+const serviceSchemas = coveredServices.map((svc) =>
+  getServiceSchema(svc, { pagePath: `/services/${svc.slug}/`, includeOfferCatalog: false })
+);
 
 // Use content data for claim steps or fallback
 const claimSteps = content?.claimSteps || [
@@ -74,13 +79,16 @@ const faqs: FAQType[] = [
     answer: `${carrier.name} typically covers mold remediation when it results from a covered water damage event and is addressed promptly. We document the connection between water damage and mold to support your claim.`,
   },
 ];
+
+const faqSchema = getFAQSchema(faqs);
+const jsonLd = combineSchemas(breadcrumbSchema, faqSchema, ...serviceSchemas);
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[breadcrumbSchema]}
+  jsonLd={jsonLd}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center">
@@ -368,11 +376,13 @@ const faqs: FAQType[] = [
   
   <Testimonials limit={3} class="bg-brand-cream-200" />
   
-  <FAQ 
+  <!-- FAQ — FAQPage schema already injected in <head> via jsonLd; suppress inline re-injection -->
+  <FAQ
     title={`${carrier.name} Insurance FAQs`}
     subtitle="Common questions about insurance claims"
     faqs={faqs}
     showViewAll={false}
+    showSchema={false}
     class="bg-white"
   />
   

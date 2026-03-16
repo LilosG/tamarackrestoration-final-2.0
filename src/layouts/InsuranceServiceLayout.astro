@@ -15,7 +15,7 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { insuranceCarriers, services, business } from '@/data/site';
 import { insuranceServiceContent, serviceContent } from '@/data/content';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getServiceSchema, getFAQSchema, combineSchemas } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 
 interface Props {
@@ -72,13 +72,20 @@ const faqs: FAQType[] = [
     answer: `Yes, we work directly with ${carrier.name} for payment. We handle all the documentation, adjuster meetings, and paperwork so you don't have to manage the process yourself.`,
   },
 ];
+
+const serviceSchema = getServiceSchema(service, {
+  pagePath: `/insurance/${carrier.slug}/${service.slug}/`,
+  includeOfferCatalog: false,
+});
+const faqSchema = getFAQSchema(faqs);
+const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[breadcrumbSchema]}
+  jsonLd={jsonLd}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center">
@@ -352,11 +359,13 @@ const faqs: FAQType[] = [
   
   <Testimonials limit={3} class="bg-brand-cream-200" />
   
-  <FAQ 
+  <!-- FAQ — FAQPage schema already injected in <head> via jsonLd; suppress inline re-injection -->
+  <FAQ
     title={`${carrier.name} ${service.name} FAQs`}
     subtitle="Common questions about insurance coverage"
     faqs={faqs}
     showViewAll={false}
+    showSchema={false}
     class="bg-white"
   />
   

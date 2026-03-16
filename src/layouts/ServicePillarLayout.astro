@@ -568,12 +568,13 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     </section>
   )}
   
-  <!-- FAQ -->
-  <FAQ 
+  <!-- FAQ — FAQPage schema already injected in <head> via jsonLd prop; suppress inline re-injection -->
+  <FAQ
     title={`${service.name} FAQs`}
     subtitle={`Common questions about ${service.name.toLowerCase()}`}
     faqs={faqs}
     showViewAll={false}
+    showSchema={false}
     class="bg-brand-cream-200"
   />
   
