@@ -15,10 +15,10 @@ import { getFAQSchema } from '@/utils/seo';
 const faqSchema = getFAQSchema(allFaqs);
 ---
 
-<AboutLayout page="faq">
+<AboutLayout page="faq" jsonLd={[faqSchema]}>
   <!-- FAQ Sections by category -->
   {faqCategories.map((category, index) => (
-    <FAQSection 
+    <FAQSection
       title={category.name}
       subtitle=""
       faqs={category.faqs}
@@ -27,7 +27,7 @@ const faqSchema = getFAQSchema(allFaqs);
       class={index % 2 === 0 ? 'bg-white' : 'bg-brand-cream-200'}
     />
   ))}
-  
+
   <!-- Related Links -->
   <section class="py-12 bg-brand-cream-200">
     <div class="container">
@@ -57,5 +57,3 @@ const faqSchema = getFAQSchema(allFaqs);
     </div>
   </section>
 </AboutLayout>
-
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

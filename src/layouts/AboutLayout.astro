@@ -18,9 +18,11 @@ import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 
 interface Props {
   page: AboutPageKey;
+  /** Additional schema objects to inject into <head> alongside the breadcrumb schema. */
+  jsonLd?: object[];
 }
 
-const { page } = Astro.props;
+const { page, jsonLd: pageJsonLd = [] } = Astro.props;
 const config = aboutPages[page];
 
 const canonical = getCanonicalUrl(page === 'index' ? '/about/' : `/about/${config.slug}/`);
@@ -35,7 +37,7 @@ const phoneHref = `tel:${business.phone}`;
 
 ---
 
-<BaseLayout title={config.title} description={config.description} canonical={canonical} jsonLd={[breadcrumbSchema]}>
+<BaseLayout title={config.title} description={config.description} canonical={canonical} jsonLd={[breadcrumbSchema, ...pageJsonLd]}>
   
   <Hero 
     title={config.heroTitle}

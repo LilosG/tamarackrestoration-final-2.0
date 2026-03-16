@@ -212,11 +212,13 @@ const relatedCities = cities.filter(c => c.slug !== citySlug && (c.tier === 1 ||
   <Testimonials limit={3} class="bg-brand-cream-200" />
   
   {faqs.length > 0 && (
-    <FAQ 
+    <!-- FAQ — FAQPage schema already injected in <head> via jsonLd prop; suppress inline re-injection -->
+    <FAQ
       title={`${service.name} in ${city.name} FAQs`}
       subtitle="Common questions from local customers"
       faqs={faqs}
       showViewAll={false}
+      showSchema={false}
       class="bg-white"
     />
   )}

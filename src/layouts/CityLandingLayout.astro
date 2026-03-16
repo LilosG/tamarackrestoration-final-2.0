@@ -17,7 +17,7 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { services, cities, business } from '@/data/site';
 import { cityContext } from '@/data/content';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getLocalBusinessSchema, getFAQSchema } from '@/utils/seo';
 
 interface Props {
   citySlug: string;
@@ -68,33 +68,7 @@ const breadcrumbs = [
 ];
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 
-// LocalBusiness schema with area served
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": business.name,
-  "telephone": business.phoneFormatted,
-  "url": canonical,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": `${business.address.street} ${business.address.suite}`,
-    "addressLocality": business.address.city,
-    "addressRegion": business.address.state,
-    "postalCode": business.address.zip
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": city.name,
-    "containedInPlace": { "@type": "State", "name": "California" }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": business.rating,
-    "reviewCount": business.reviewCount
-  }
-};
-
-// Dynamic FAQs for this city
+// Dynamic FAQs for this city — also used for FAQPage schema (passed to head via jsonLd)
 const cityFaqs = [
   {
     question: `How quickly can you respond to emergencies in ${city.name}?`,
@@ -117,13 +91,16 @@ const cityFaqs = [
     answer: `We serve all of ${city.name}${city.neighborhoods && city.neighborhoods.length > 0 ? `, including ${city.neighborhoods.slice(0, 4).join(', ')}, and all surrounding neighborhoods` : ''}. ${city.zipCodes ? `ZIP codes: ${city.zipCodes.join(', ')}.` : ''}`,
   },
 ];
+
+const localBusinessSchema = getLocalBusinessSchema();
+const faqSchema = getFAQSchema(cityFaqs);
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[schema, breadcrumbSchema]}
+  jsonLd={[localBusinessSchema, breadcrumbSchema, faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center" style="background-image: url(/images/hero/truck-hero.webp); background-size: cover; background-position: center;">
@@ -477,11 +454,12 @@ const cityFaqs = [
 
   <Testimonials limit={3} class="bg-brand-cream-200" />
   
-  <FAQ 
+  <FAQ
     title={`${city.name} Restoration FAQs`}
     subtitle="Common questions from our customers"
     faqs={cityFaqs}
     showViewAll={false}
+    showSchema={false}
     class="bg-brand-cream-200"
   />
   

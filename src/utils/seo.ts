@@ -12,18 +12,26 @@ import type {
   FAQPageSchema,
   ArticleSchema,
   BreadcrumbListSchema,
+  WebSiteSchema,
+  WebPageSchema,
   FAQ,
   Service,
   City,
 } from '@/types';
 import { business } from '@/data/site';
+import {
+  SOCIAL_PROFILES,
+  PAYMENT_METHODS,
+  ACCEPTED_CURRENCIES,
+  AREA_SERVED_CITIES,
+  CITY_SAME_AS,
+  REVIEW_NODES,
+} from '@/data/schema';
 
 const SITE_URL = 'https://www.tamarackrestoration.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/logo/og-default.webp`;
-const BUSINESS_SCHEMA_ID = `${SITE_URL}/#business`;
-const SOCIAL_PROFILES: string[] = [];
-const PAYMENT_METHODS: string[] = [];
-const ACCEPTED_CURRENCIES: string[] = [];
+const BUSINESS_SCHEMA_ID = `${SITE_URL}/#localbusiness`;
+const WEBSITE_SCHEMA_ID = `${SITE_URL}/#website`;
 
 // ===================
 // SEO TITLE/META GENERATORS
@@ -101,21 +109,39 @@ export function getCanonicalUrl(path: string): string {
 // SCHEMA GENERATORS
 // ===================
 
+const AGGREGATE_RATING = {
+  '@type': 'AggregateRating' as const,
+  ratingValue: business.rating.toString(),
+  reviewCount: business.reviewCount.toString(),
+  bestRating: '5',
+  worstRating: '1',
+};
+
 /**
- * Generate LocalBusiness schema (base for all pages)
+ * Map a City object to a schema.org City node, enriching with sameAs when available.
+ */
+function toCityNode(city: City) {
+  const sameAs = CITY_SAME_AS[city.name];
+  return sameAs
+    ? { '@type': 'City' as const, name: city.name, sameAs }
+    : { '@type': 'City' as const, name: city.name };
+}
+
+/**
+ * Generate LocalBusiness schema (base for all pages).
+ * Uses HomeAndConstructionBusiness + EmergencyService @type per schema.org hierarchy.
  */
 export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema {
-  const cities = areaServed || [];
-  const foundingYear = new Date().getFullYear() - business.yearsInBusiness;
-
   const localBusinessSchema: LocalBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['HomeAndConstructionBusiness', 'EmergencyService'],
     '@id': BUSINESS_SCHEMA_ID,
     name: business.name,
+    description:
+      'IICRC-certified emergency water, fire, and mold restoration in Carlsbad, CA. 60-minute response, 24/7.',
     image: `${SITE_URL}/images/logo/tamarack-logo.webp`,
     logo: `${SITE_URL}/images/logo/tamarack-logo.webp`,
-    telephone: business.phoneFormatted,
+    telephone: '+1-760-500-2211',
     email: business.email,
     address: {
       '@type': 'PostalAddress',
@@ -133,6 +159,8 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
     url: SITE_URL,
     hasMap: `https://www.google.com/maps/search/?api=1&query=${business.coordinates.latitude},${business.coordinates.longitude}`,
     priceRange: '$$',
+    currenciesAccepted: ACCEPTED_CURRENCIES.join(', '),
+    paymentAccepted: PAYMENT_METHODS.join(', '),
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: [
@@ -147,46 +175,24 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
       opens: '00:00',
       closes: '23:59',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: business.rating.toString(),
-      reviewCount: business.reviewCount.toString(),
-      bestRating: '5',
-      worstRating: '1',
-    },
-    areaServed: cities.length > 0
-      ? cities.map((city) => ({ '@type': 'City', name: city.name }))
-      : [
-          { '@type': 'City', name: 'Carlsbad' },
-          { '@type': 'City', name: 'Oceanside' },
-          { '@type': 'City', name: 'Vista' },
-          { '@type': 'City', name: 'San Marcos' },
-          { '@type': 'City', name: 'Encinitas' },
-        ],
+    aggregateRating: AGGREGATE_RATING,
+    review: REVIEW_NODES,
+    areaServed: areaServed
+      ? areaServed.map(toCityNode)
+      : AREA_SERVED_CITIES,
     contactPoint: [
       {
         '@type': 'ContactPoint',
         contactType: 'customer service',
-        telephone: business.phoneFormatted,
+        telephone: '+1-760-500-2211',
         email: business.email,
         availableLanguage: ['English'],
-        areaServed: 'US-CA',
+        areaServed: AREA_SERVED_CITIES.map((c) => c.name),
       },
     ],
-    foundingDate: `${foundingYear}`,
+    foundingDate: '2016',
+    sameAs: SOCIAL_PROFILES,
   };
-
-  if (SOCIAL_PROFILES.length > 0) {
-    localBusinessSchema.sameAs = SOCIAL_PROFILES;
-  }
-
-  if (PAYMENT_METHODS.length > 0) {
-    localBusinessSchema.paymentAccepted = PAYMENT_METHODS;
-  }
-
-  if (ACCEPTED_CURRENCIES.length > 0) {
-    localBusinessSchema.currenciesAccepted = ACCEPTED_CURRENCIES;
-  }
 
   return localBusinessSchema;
 }
@@ -242,9 +248,11 @@ export function getServiceSchema(
         }
       : undefined,
     areaServed: cities
-      ? cities.map((city) => ({ '@type': 'City', name: city.name }))
-      : [{ '@type': 'City', name: 'North San Diego County' }],
+      ? cities.map(toCityNode)
+      : AREA_SERVED_CITIES,
     serviceType: service.name,
+    aggregateRating: AGGREGATE_RATING,
+    review: REVIEW_NODES,
   };
 }
 
@@ -317,6 +325,46 @@ export function getBreadcrumbSchema(items: BreadcrumbItem[]): BreadcrumbListSche
 }
 
 /**
+ * Generate WebSite schema for homepage.
+ * Links the website entity to the LocalBusiness and enables Sitelinks eligibility.
+ */
+export function getWebSiteSchema(): WebSiteSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': WEBSITE_SCHEMA_ID,
+    name: business.name,
+    url: SITE_URL,
+    publisher: {
+      '@id': BUSINESS_SCHEMA_ID,
+    },
+  };
+}
+
+/**
+ * Generate WebPage schema for individual pages.
+ * Provides speakable and about linkage to the LocalBusiness entity.
+ */
+export function getWebPageSchema(options: {
+  url: string;
+  name: string;
+  description?: string;
+  breadcrumb?: object;
+}): WebPageSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${options.url}#webpage`,
+    url: options.url,
+    name: options.name,
+    description: options.description,
+    isPartOf: { '@id': WEBSITE_SCHEMA_ID },
+    about: { '@id': BUSINESS_SCHEMA_ID },
+    ...(options.breadcrumb ? { breadcrumb: options.breadcrumb } : {}),
+  };
+}
+
+/**
  * Combine multiple schema objects into array
  */
 export function combineSchemas(
@@ -371,16 +419,16 @@ export function getBlogBreadcrumbs(title: string, slug: string, category?: strin
     { label: 'Home', href: '/' },
     { label: 'Blog', href: '/blog/' },
   ];
-  
+
   if (category) {
-    crumbs.push({ 
-      label: formatCategoryName(category), 
-      href: `/blog/category/${category}/` 
+    crumbs.push({
+      label: formatCategoryName(category),
+      href: `/blog/category/${category}/`
     });
   }
-  
+
   crumbs.push({ label: title, href: `/blog/${slug}/` });
-  
+
   return crumbs;
 }
 

@@ -296,11 +296,38 @@ export type CardVariant = 'default' | 'outlined' | 'elevated';
 // SCHEMA.ORG
 // ===================
 
+export interface ReviewNode {
+  '@type': 'Review';
+  author: { '@type': 'Person'; name: string };
+  datePublished: string;
+  reviewBody: string;
+  reviewRating: {
+    '@type': 'Rating';
+    ratingValue: string;
+    bestRating: string;
+  };
+}
+
+export interface AggregateRatingNode {
+  '@type': 'AggregateRating';
+  ratingValue: string;
+  reviewCount: string;
+  bestRating: string;
+  worstRating: string;
+}
+
+export interface CityNode {
+  '@type': 'City';
+  name: string;
+  sameAs?: string;
+}
+
 export interface LocalBusinessSchema {
   '@context': 'https://schema.org';
-  '@type': 'LocalBusiness';
+  '@type': string | string[];
   '@id': string;
   name: string;
+  description?: string;
   image: string;
   logo?: string;
   telephone: string;
@@ -327,27 +354,19 @@ export interface LocalBusinessSchema {
     opens: string;
     closes: string;
   };
-  aggregateRating?: {
-    '@type': 'AggregateRating';
-    ratingValue: string;
-    reviewCount: string;
-    bestRating: string;
-    worstRating: string;
-  };
-  areaServed: Array<{
-    '@type': 'City';
-    name: string;
-  }>;
+  aggregateRating?: AggregateRatingNode;
+  review?: ReviewNode[];
+  areaServed: CityNode[];
   contactPoint?: Array<{
     '@type': 'ContactPoint';
     contactType: string;
     telephone?: string;
     email?: string;
     availableLanguage?: string[];
-    areaServed?: string;
+    areaServed?: string | string[];
   }>;
-  paymentAccepted?: string[];
-  currenciesAccepted?: string[];
+  paymentAccepted?: string | string[];
+  currenciesAccepted?: string;
   foundingDate?: string;
   sameAs?: string[];
 }
@@ -378,11 +397,31 @@ export interface ServiceSchema {
       url: string;
     }>;
   };
-  areaServed: Array<{
-    '@type': 'City';
-    name: string;
-  }>;
+  areaServed: CityNode[];
   serviceType: string;
+  aggregateRating?: AggregateRatingNode;
+  review?: ReviewNode[];
+}
+
+export interface WebSiteSchema {
+  '@context': 'https://schema.org';
+  '@type': 'WebSite';
+  '@id': string;
+  name: string;
+  url: string;
+  publisher: { '@id': string };
+}
+
+export interface WebPageSchema {
+  '@context': 'https://schema.org';
+  '@type': 'WebPage';
+  '@id': string;
+  url: string;
+  name: string;
+  description?: string;
+  isPartOf: { '@id': string };
+  about: { '@id': string };
+  breadcrumb?: object;
 }
 
 export interface FAQPageSchema {
