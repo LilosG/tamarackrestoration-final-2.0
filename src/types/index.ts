@@ -327,6 +327,7 @@ export interface LocalBusinessSchema {
   '@type': string | string[];
   '@id': string;
   name: string;
+  description?: string;
   image: string;
   logo?: string;
   telephone: string;
