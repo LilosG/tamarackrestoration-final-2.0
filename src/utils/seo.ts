@@ -26,6 +26,7 @@ import {
   AREA_SERVED_CITIES,
   CITY_SAME_AS,
   REVIEW_NODES,
+
 } from '@/data/schema';
 
 const SITE_URL = 'https://www.tamarackrestoration.com';
@@ -93,7 +94,7 @@ export function getServiceDescription(serviceName: string): string {
  * Generate meta description for money pages
  */
 export function getMoneyPageDescription(serviceName: string, cityName: string): string {
-  return `Need ${serviceName.toLowerCase()} in ${cityName}? Tamarack Restoration responds in 60 minutes, 24/7. 116 five-star reviews, IICRC certified. Call (760) 500-2211 now.`;
+  return `Need ${serviceName.toLowerCase()} in ${cityName}? Tamarack Restoration responds in 60 minutes, 24/7. ${business.reviewCount} five-star reviews, IICRC certified. Call (760) 500-2211 now.`;
 }
 
 /**
@@ -251,8 +252,8 @@ export function getServiceSchema(
       ? cities.map(toCityNode)
       : AREA_SERVED_CITIES,
     serviceType: service.name,
-    aggregateRating: AGGREGATE_RATING,
-    review: REVIEW_NODES,
+
+
   };
 }
 

@@ -399,8 +399,6 @@ export interface ServiceSchema {
   };
   areaServed: CityNode[];
   serviceType: string;
-  aggregateRating?: AggregateRatingNode;
-  review?: ReviewNode[];
 }
 
 export interface WebSiteSchema {

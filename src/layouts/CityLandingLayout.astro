@@ -17,7 +17,7 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { services, cities, business } from '@/data/site';
 import { cityContext } from '@/data/content';
-import { getCanonicalUrl, getBreadcrumbSchema, getLocalBusinessSchema, getFAQSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema } from '@/utils/seo';
 
 interface Props {
   citySlug: string;
@@ -92,7 +92,7 @@ const cityFaqs = [
   },
 ];
 
-const localBusinessSchema = getLocalBusinessSchema();
+
 const faqSchema = getFAQSchema(cityFaqs);
 ---
 
@@ -100,7 +100,7 @@ const faqSchema = getFAQSchema(cityFaqs);
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[localBusinessSchema, breadcrumbSchema, faqSchema]}
+  jsonLd={[breadcrumbSchema, faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center" style="background-image: url(/images/hero/truck-hero.webp); background-size: cover; background-position: center;">
