@@ -29,7 +29,7 @@ export const aboutPages: Record<AboutPageKey, AboutPageConfig> = {
   index: {
     slug: '',
     title: 'About Tamarack Restoration | Carlsbad, CA',
-    description: 'Family-owned restoration company serving North San Diego County for 10+ years. IICRC certified, 116 five-star reviews. Meet the team behind Tamarack Restoration.',
+    description: 'Family-owned restoration company serving North San Diego County for 10+ years. IICRC certified, 121 five-star reviews. Meet the team behind Tamarack Restoration.',
     heroTitle: 'Your Neighbors in',
     heroAccent: 'Restoration',
     heroSubtitle: 'When disaster strikes your home, you need more than a contractor—you need a partner who understands what you\'re going through. That\'s who we are.',
@@ -40,11 +40,11 @@ export const aboutPages: Record<AboutPageKey, AboutPageConfig> = {
   testimonials: {
     slug: 'testimonials',
     title: 'Customer Reviews & Testimonials | Tamarack Restoration',
-    description: 'Read 116 five-star reviews from Carlsbad homeowners. See why families trust Tamarack Restoration for water damage, fire, mold, and flood restoration.',
+    description: 'Read 121 five-star reviews from Carlsbad homeowners. See why families trust Tamarack Restoration for water damage, fire, mold, and flood restoration.',
     heroTitle: 'What Our Customers',
     heroAccent: 'Say',
     heroSubtitle: 'Don\'t just take our word for it. Read reviews from Carlsbad homeowners who trusted us with their emergency restoration needs.',
-    heroBadge: '116 Five-Star Reviews',
+    heroBadge: '121 Five-Star Reviews',
     heroBadgeIcon: 'star',
     showTrustBar: false,
     ctaTitle: 'Ready to Experience Our Service?',
@@ -104,7 +104,7 @@ export const companyValues = [
   {
     icon: 'check-circle',
     title: '100% Satisfaction',
-    description: 'Our 116 five-star reviews speak for themselves. We don\'t consider the job done until you\'re completely satisfied.',
+    description: 'Our 121 five-star reviews speak for themselves. We don\'t consider the job done until you\'re completely satisfied.',
   },
   {
     icon: 'home',
