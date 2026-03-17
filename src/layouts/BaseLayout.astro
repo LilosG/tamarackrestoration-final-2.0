@@ -71,13 +71,13 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
 
     {ga4MeasurementId && (
       <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`}></script>
-        <script is:inline>
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
-gtag('js', new Date());
-gtag('config', '${ga4MeasurementId}', { send_page_view: true });`}
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`}></script>
+        <script is:inline define:vars={{ ga4MeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', ga4MeasurementId, { send_page_view: true });
         </script>
       </>
     )}
