@@ -191,7 +191,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyC4_tV4_ZyxWxAktce0tyx7l5F1KSGpWxg';
 </section>
 
 {showMap && (
-  <script define:vars={{ mapCities, hqCoords, GOOGLE_MAPS_API_KEY }}>
+  <script is:inline define:vars={{ mapCities, hqCoords, GOOGLE_MAPS_API_KEY }}>
     function initServiceAreaMap() {
       const mapElement = document.getElementById('service-area-map');
       if (!mapElement) return;
