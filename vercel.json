@@ -12,6 +12,156 @@
       "permanent": true
     },
     {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/mold-removal",
+      "destination": "/projects/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/mold-removal/",
+      "destination": "/projects/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/fire-and-smoke-restoration",
+      "destination": "/projects/fire-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/fire-and-smoke-restoration/",
+      "destination": "/projects/fire-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/sewage-clean-up",
+      "destination": "/projects/sewage-cleanup/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/sewage-clean-up/",
+      "destination": "/projects/sewage-cleanup/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/north-county-san-diego",
+      "destination": "/service-area/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/north-county-san-diego/",
+      "destination": "/service-area/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/burst-pipe-water-damage-carlsbad",
+      "destination": "/blog/burst-pipe-carlsbad-response-times-process/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/burst-pipe-water-damage-carlsbad/",
+      "destination": "/blog/burst-pipe-carlsbad-response-times-process/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/san-marcos-slab-leaks-signs-insurance-checklist",
+      "destination": "/blog/san-marcos-water-damage-insurance-claim-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/san-marcos-slab-leaks-signs-insurance-checklist/",
+      "destination": "/blog/san-marcos-water-damage-insurance-claim-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-drying-take-vista-water-damage-timeline",
+      "destination": "/blog/how-long-does-structural-drying-take-north-san-diego/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-drying-take-vista-water-damage-timeline/",
+      "destination": "/blog/how-long-does-structural-drying-take-north-san-diego/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mold-removal-carlsbad-ca",
+      "destination": "/service-area/carlsbad/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mold-removal-carlsbad-ca/",
+      "destination": "/service-area/carlsbad/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold Restoration",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold Restoration/",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold%20Restoration",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold%20Restoration/",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold Remediation",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold Remediation/",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold%20Remediation",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/Mold%20Remediation/",
+      "destination": "/blog/category/mold/",
+      "permanent": true
+    },
+    {
       "source": "/welcome(/)?",
       "destination": "/",
       "permanent": true
@@ -89,16 +239,6 @@
     {
       "source": "/insurance-information(/)?",
       "destination": "/insurance/",
-      "permanent": true
-    },
-    {
-      "source": "/new-folder(/)?",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/new-page(/)?",
-      "destination": "/",
       "permanent": true
     },
     {
@@ -207,33 +347,38 @@
       "permanent": true
     },
     {
-      "source": "/service-area/:city/mold-remediation(/)?",
-      "destination": "/service-area/",
-      "permanent": true
-    },
-    {
-      "source": "/service-area/:city/water-restoration(/)?",
-      "destination": "/service-area/",
-      "permanent": true
-    },
-    {
-      "source": "/our-projects/:slug(/)?",
-      "destination": "/projects/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/category/:category(/)?",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/top-10-mold-removal-companies-carlsba-ca(/)?",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-to-do-after-water-damage-in-your-carlsbad-home-a-step-by-step-guide",
+      "destination": "/blog/how-to-handle-water-damage-emergency-first-24-hours/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-to-do-after-water-damage-in-your-carlsbad-home-a-step-by-step-guide/",
+      "destination": "/blog/how-to-handle-water-damage-emergency-first-24-hours/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-to-do-after-water-damage-in-your-oceanside-home",
+      "destination": "/blog/oceanside-ceiling-leak-steps-before-mold-starts/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-to-do-after-water-damage-in-your-oceanside-home/",
+      "destination": "/blog/oceanside-ceiling-leak-steps-before-mold-starts/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/signs-of-mold-in-carlsbad-homes",
+      "destination": "/service-area/carlsbad/mold-removal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/signs-of-mold-in-carlsbad-homes/",
+      "destination": "/service-area/carlsbad/mold-removal/",
       "permanent": true
     }
   ],
