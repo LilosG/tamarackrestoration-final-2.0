@@ -7,6 +7,7 @@
 
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import { business } from '@/data/site';
 
 interface Props {
@@ -34,11 +35,12 @@ const currentYear = new Date().getFullYear();
             </p>
           </div>
           <div class="flex flex-col sm:flex-row gap-4">
-            <Button 
+            <Button
               href={`tel:${business.phone}`}
               variant="secondary"
               size="lg"
               class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+              onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'footer_cta',page_path:window.location.pathname});}`}
             >
               <Icon name="phone" size="md" />
               {business.phoneFormatted}
@@ -111,13 +113,18 @@ const currentYear = new Date().getFullYear();
           <h3 class="font-heading font-bold text-white mb-4">Quick Info</h3>
           <ul class="space-y-4">
             <li>
-              <a href={`tel:${business.phone}`} class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors">
+              <PhoneCTA
+                phone={business.phone}
+                phoneFormatted={business.phoneFormatted}
+                ctaLocation="footer"
+                class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors"
+              >
                 <Icon name="phone" size="sm" class="mt-0.5 flex-shrink-0" />
                 <span>
                   <span class="block text-sm font-medium text-white">{business.phoneFormatted}</span>
                   <span class="block text-xs">24/7 Emergency Line</span>
                 </span>
-              </a>
+              </PhoneCTA>
             </li>
             <li>
               <div class="flex items-start gap-3 text-brand-cream-400">

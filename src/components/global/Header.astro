@@ -7,6 +7,7 @@
 
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import { business, mainNavigation } from '@/data/site';
 
 interface Props {
@@ -29,13 +30,15 @@ function isActive(href: string): boolean {
     <div class="container">
       <div class="flex items-center justify-between text-body-sm">
         <div class="flex items-center gap-6">
-          <a 
-            href={`tel:${business.phone}`} 
+          <PhoneCTA
+            phone={business.phone}
+            phoneFormatted={business.phoneFormatted}
+            ctaLocation="header_topbar"
             class="flex items-center gap-2 hover:text-brand-orange transition-colors"
           >
             <Icon name="phone" size="sm" />
             <span>{business.phoneFormatted}</span>
-          </a>
+          </PhoneCTA>
           <span class="flex items-center gap-2 text-brand-cream-400">
             <Icon name="clock" size="sm" />
             <span>24/7 Emergency Service</span>
@@ -127,13 +130,15 @@ function isActive(href: string): boolean {
         
         <!-- CTA Button (Desktop) -->
         <div class="hidden lg:flex items-center gap-4">
-          <a 
-            href={`tel:${business.phone}`}
+          <PhoneCTA
+            phone={business.phone}
+            phoneFormatted={business.phoneFormatted}
+            ctaLocation="header_nav"
             class="flex items-center gap-2 text-brand-black font-semibold hover:text-brand-orange transition-colors"
           >
             <Icon name="phone" size="md" />
             <span class="hidden xl:inline">{business.phoneFormatted}</span>
-          </a>
+          </PhoneCTA>
           <Button href="/contact/" variant="primary" size="sm">
             Get Help Now
           </Button>
@@ -223,13 +228,15 @@ function isActive(href: string): boolean {
         
         <!-- Mobile menu footer -->
         <div class="p-4 border-t border-brand-cream-300 space-y-4">
-          <a 
-            href={`tel:${business.phone}`}
+          <PhoneCTA
+            phone={business.phone}
+            phoneFormatted={business.phoneFormatted}
+            ctaLocation="header_mobile"
             class="flex items-center justify-center gap-2 w-full py-3 bg-brand-cream-200 rounded-lg text-brand-black font-semibold"
           >
             <Icon name="phone" size="md" />
             {business.phoneFormatted}
-          </a>
+          </PhoneCTA>
           <Button href="/contact/" variant="primary" fullWidth>
             Get Help Now
           </Button>

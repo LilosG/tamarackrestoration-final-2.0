@@ -29,7 +29,12 @@ const canonical = getCanonicalUrl('/404/');
           <Button href="/contact/" variant="outline">Contact</Button>
         </div>
 
-        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+        <Button
+          href={`tel:${business.phone}`}
+          variant="primary"
+          size="lg"
+          onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'404_page',page_path:window.location.pathname});}`}
+        >
           Call {business.phoneFormatted}
         </Button>
       </div>

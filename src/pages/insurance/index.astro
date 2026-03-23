@@ -8,6 +8,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { insuranceCarriers, business } from '@/data/site';
@@ -224,13 +225,15 @@ const benefits = [
               <p class="text-brand-gray mb-6">
                 Whether you're dealing with water damage, fire, or mold, we'll help you navigate the insurance process and get your property restored.
               </p>
-              <a 
-                href={`tel:${business.phone}`}
+              <PhoneCTA
+                phone={business.phone}
+                phoneFormatted={business.phoneFormatted}
+                ctaLocation="insurance_index"
                 class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
               >
                 <Icon name="phone" size="md" />
                 <span class="text-xl">{business.phoneFormatted}</span>
-              </a>
+              </PhoneCTA>
             </div>
             <div>
               <LeadForm 

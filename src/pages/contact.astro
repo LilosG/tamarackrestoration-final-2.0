@@ -8,6 +8,7 @@
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import ContactForm from '@/components/forms/ContactForm.astro';
 import { business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
@@ -94,12 +95,13 @@ const contactMethods = [
     <div class="container">
       <div class="grid md:grid-cols-3 gap-6">
         {contactMethods.map((method) => (
-          <a 
+          <a
             href={method.action.href}
+            onclick={method.action.href.startsWith('tel:') ? `if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'contact_methods',page_path:window.location.pathname});}` : undefined}
             class:list={[
               'group flex items-start gap-4 p-6 rounded-xl transition-all',
-              method.highlight 
-                ? 'bg-brand-orange text-white hover:bg-brand-orange-600' 
+              method.highlight
+                ? 'bg-brand-orange text-white hover:bg-brand-orange-600'
                 : 'bg-brand-cream-200 hover:bg-brand-cream-300'
             ]}
           >
@@ -170,13 +172,15 @@ const contactMethods = [
             <p class="text-brand-cream-300 mb-4">
               Don't wait—call us now for immediate 24/7 emergency response. We'll have a team to your property within 60 minutes.
             </p>
-            <a 
-              href={`tel:${business.phone}`}
+            <PhoneCTA
+              phone={business.phone}
+              phoneFormatted={business.phoneFormatted}
+              ctaLocation="contact_page"
               class="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-orange-600 transition-colors w-full justify-center"
             >
               <Icon name="phone" size="md" />
               {business.phoneFormatted}
-            </a>
+            </PhoneCTA>
           </div>
           
           <!-- Business Hours -->

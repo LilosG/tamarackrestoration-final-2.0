@@ -77,20 +77,6 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
       gtag('js', new Date());
       gtag('config', 'G-WH27G3H1XN');
     </script>
-    <script is:inline>
-      document.addEventListener('click', function(event) {
-        var link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
-        if (!link || typeof window.gtag !== 'function') return;
-        var href = link.getAttribute('href') || '';
-        var phoneNumber = href.replace('tel:', '');
-        window.gtag('event', 'click_to_call', {
-          phone_number: phoneNumber,
-          link_url: href,
-          page_path: window.location.pathname,
-        });
-      });
-    </script>
-
     <!-- SEO -->
     <SEOHead
       title={title}

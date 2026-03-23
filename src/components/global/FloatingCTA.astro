@@ -6,6 +6,7 @@
  */
 
 import Icon from '@/components/ui/Icon.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import { business } from '@/data/site';
 ---
 
@@ -15,13 +16,15 @@ import { business } from '@/data/site';
 >
   <div class="bg-white border-t border-brand-cream-300 shadow-lg px-4 py-3" style="padding-bottom: max(12px, env(safe-area-inset-bottom));">
     <div class="flex items-center gap-3">
-      <a 
-        href={`tel:${business.phone}`}
+      <PhoneCTA
+        phone={business.phone}
+        phoneFormatted={business.phoneFormatted}
+        ctaLocation="floating_cta"
         class="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-600 transition-colors"
       >
         <Icon name="phone" size="sm" />
         <span>Call Now</span>
-      </a>
+      </PhoneCTA>
       <a 
         href="/contact/"
         class="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-black text-white font-semibold rounded-lg hover:bg-brand-black/90 transition-colors"

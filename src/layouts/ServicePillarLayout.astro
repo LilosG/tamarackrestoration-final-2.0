@@ -10,6 +10,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
@@ -160,15 +161,26 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
           
           <!-- Mobile CTAs -->
           <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
-            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+            <Button
+              href={`tel:${business.phone}`}
+              variant="primary"
+              size="lg"
+              class="justify-center"
+              onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'service_pillar_mobile',page_path:window.location.pathname});}`}
+            >
               <Icon name="phone" size="sm" />
               Call {business.phoneFormatted}
             </Button>
           </div>
-          
+
           <!-- Desktop Phone -->
           <div class="hidden lg:flex items-center gap-6 mt-2">
-            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+            <PhoneCTA
+              phone={business.phone}
+              phoneFormatted={business.phoneFormatted}
+              ctaLocation="service_pillar_hero"
+              class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+            >
               <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
                 <Icon name="phone" size="md" class="text-white" />
               </span>
@@ -176,7 +188,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
                 <span class="block text-sm text-brand-cream-400">Call 24/7</span>
                 <span class="block font-bold text-xl tracking-tight">{business.phoneFormatted}</span>
               </span>
-            </a>
+            </PhoneCTA>
           </div>
         </div>
         

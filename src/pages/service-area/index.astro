@@ -7,6 +7,7 @@
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { cities, business } from '@/data/site';
@@ -184,13 +185,15 @@ const tier3Cities = sortedCities.filter(c => c.tier === 3);
               <p class="text-brand-gray mb-6">
                 We serve all of North San Diego County. If your city isn't listed, give us a call—we likely cover your area and can have a team to you within 60 minutes.
               </p>
-              <a 
-                href={`tel:${business.phone}`}
+              <PhoneCTA
+                phone={business.phone}
+                phoneFormatted={business.phoneFormatted}
+                ctaLocation="service_area_index"
                 class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
               >
                 <Icon name="phone" size="md" />
                 <span class="text-xl">{business.phoneFormatted}</span>
-              </a>
+              </PhoneCTA>
             </div>
             <div>
               <LeadForm 

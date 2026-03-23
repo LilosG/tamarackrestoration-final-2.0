@@ -43,11 +43,12 @@ const {
         
         <div class="flex flex-col sm:flex-row gap-4">
           {showPhone && (
-            <Button 
+            <Button
               href={`tel:${business.phone}`}
               variant="secondary"
               size="lg"
               class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+              onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'cta_banner',page_path:window.location.pathname});}`}
             >
               <Icon name="phone" size="md" />
               {business.phoneFormatted}
@@ -92,10 +93,11 @@ const {
         </p>
         
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button 
+          <Button
             href={`tel:${business.phone}`}
             variant="primary"
             size="lg"
+            onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'cta_banner_emergency',page_path:window.location.pathname});}`}
           >
             <Icon name="phone" size="md" />
             Call {business.phoneFormatted}
@@ -138,9 +140,10 @@ const {
           Need emergency restoration? 
           <span class="text-brand-gray font-normal">We're available 24/7.</span>
         </p>
-        <Button 
+        <Button
           href={`tel:${business.phone}`}
           variant="primary"
+          onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'cta_banner_minimal',page_path:window.location.pathname});}`}
         >
           <Icon name="phone" size="sm" />
           {business.phoneFormatted}

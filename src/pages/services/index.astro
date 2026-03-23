@@ -60,7 +60,12 @@ const serviceFaqs = globalFaqs.filter(f => f.category === 'process' || f.categor
         </p>
         
         <div class="flex flex-wrap items-center gap-4">
-          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+          <Button
+            href={`tel:${business.phone}`}
+            variant="primary"
+            size="lg"
+            onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'services_index',page_path:window.location.pathname});}`}
+          >
             <Icon name="phone" size="md" />
             Call {business.phoneFormatted}
           </Button>

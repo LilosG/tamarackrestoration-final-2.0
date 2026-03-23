@@ -10,6 +10,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
@@ -141,7 +142,12 @@ const jsonLd = combineSchemas(breadcrumbSchema, faqSchema, ...serviceSchemas);
           </div>
           
           <div class="hidden lg:flex items-center gap-6">
-            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+            <PhoneCTA
+              phone={business.phone}
+              phoneFormatted={business.phoneFormatted}
+              ctaLocation="insurance_carrier_hero"
+              class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+            >
               <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
                 <Icon name="phone" size="md" class="text-white" />
               </span>
@@ -149,12 +155,12 @@ const jsonLd = combineSchemas(breadcrumbSchema, faqSchema, ...serviceSchemas);
                 <span class="block text-sm text-brand-cream-400">Call 24/7</span>
                 <span class="block font-bold text-xl tracking-tight">{business.phoneFormatted}</span>
               </span>
-            </a>
+            </PhoneCTA>
           </div>
         </div>
-        
+
         <div class="hidden lg:block lg:col-span-5">
-          <LeadForm 
+          <LeadForm
             variant="card"
             title={`${carrier.name} Claim Help`}
             subtitle="We handle the insurance process"
@@ -191,7 +197,11 @@ const jsonLd = combineSchemas(breadcrumbSchema, faqSchema, ...serviceSchemas);
           </div>
           
           <div class="mt-8 flex flex-wrap gap-4">
-            <Button href={`tel:${business.phone}`} variant="primary">
+            <Button
+              href={`tel:${business.phone}`}
+              variant="primary"
+              onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'insurance_carrier_cta',page_path:window.location.pathname});}`}
+            >
               <Icon name="phone" size="sm" />
               Call {business.phoneFormatted}
             </Button>
