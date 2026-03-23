@@ -34,8 +34,7 @@ const label = titleCaseFromSlug(category.slug);
 const title = `${label} | Tamarack Restoration Blog`;
 const canonical = new URL(`/blog/category/${slug}/`, SITE).toString();
 
-// quality policy: noindex thin taxonomy archives
-const robots = posts.length >= 2 ? "index,follow" : "noindex,follow";
+const robots = "index,follow";
 ---
 <html lang="en">
   <head>
