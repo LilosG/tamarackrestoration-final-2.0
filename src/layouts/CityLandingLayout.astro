@@ -219,7 +219,11 @@ const faqSchema = getFAQSchema(cityFaqs);
             </p>
             
             <div class="flex flex-wrap gap-4">
-              <Button href={`tel:${business.phone}`} variant="primary">
+              <Button
+                href={`tel:${business.phone}`}
+                variant="primary"
+                onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'city_landing',page_path:window.location.pathname});}`}
+              >
                 <Icon name="phone" size="sm" />
                 Call {business.phoneFormatted}
               </Button>

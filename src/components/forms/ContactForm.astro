@@ -8,6 +8,7 @@
  */
 
 import Button from '@/components/ui/Button.astro';
+import PhoneCTA from '@/components/PhoneCTA.astro';
 import { formConfig, services, business } from '@/data/site';
 
 interface Props {
@@ -165,7 +166,7 @@ const urgencyOptions = [
       Send Message
     </Button>
     <p class="text-xs text-brand-gray text-center mt-3">
-      For emergencies, call us directly at <a href={`tel:${business.phone}`} class="text-brand-orange font-semibold hover:underline">{business.phoneFormatted}</a>
+      For emergencies, call us directly at <PhoneCTA phone={business.phone} phoneFormatted={business.phoneFormatted} ctaLocation="contact_form" class="text-brand-orange font-semibold hover:underline" />
     </p>
   </div>
 </form>

@@ -164,7 +164,12 @@ const featuredProjects = projects.slice(0, 4);
           Every project you see here started with a phone call. We're ready to help 24/7 with 60-minute response times.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+          <Button
+            href={`tel:${business.phone}`}
+            variant="primary"
+            size="lg"
+            onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'projects_index',page_path:window.location.pathname});}`}
+          >
             <Icon name="phone" size="sm" />
             {business.phoneFormatted}
           </Button>

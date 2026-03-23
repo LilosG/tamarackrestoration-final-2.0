@@ -150,7 +150,11 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyC4_tV4_ZyxWxAktce0tyx7l5F1KSGpWxg';
             <Button href="/service-area/" variant="primary">
               View All Service Areas
             </Button>
-            <Button href={`tel:${business.phone}`} variant="outline">
+            <Button
+              href={`tel:${business.phone}`}
+              variant="outline"
+              onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'service_areas',page_path:window.location.pathname});}`}
+            >
               <Icon name="phone" size="sm" />
               Call for Service
             </Button>

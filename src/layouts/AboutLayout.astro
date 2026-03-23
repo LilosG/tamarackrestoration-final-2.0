@@ -59,7 +59,12 @@ const phoneHref = `tel:${business.phone}`;
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-6">{ctaTitle}</h2>
         <p class="text-brand-cream-300 text-lg mb-8">{ctaSubtitle}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href={phoneHref} variant="primary" size="lg">
+          <Button
+            href={phoneHref}
+            variant="primary"
+            size="lg"
+            onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'about_cta',page_path:window.location.pathname});}`}
+          >
             <Icon name="phone" size="sm" />
             Call {business.phoneFormatted}
           </Button>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  phone: string;
+  phoneFormatted: string;
+  ctaLocation: string;
+  class?: string;
+}
+const { phone, phoneFormatted, ctaLocation, class: className = '' } = Astro.props;
+---
+<a
+  href={`tel:${phone}`}
+  class={className}
+  data-cta-location={ctaLocation}
+  onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${phone}',cta_location:'${ctaLocation}',page_path:window.location.pathname});}`}
+><slot>{phoneFormatted}</slot></a>
