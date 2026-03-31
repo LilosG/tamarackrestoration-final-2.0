@@ -132,13 +132,31 @@ const faqs: FAQ[] = uniqueContent
     <section class="section bg-brand-cream-200">
       <div class="container">
         <div class="max-w-4xl mx-auto">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
+          <div class="inline-flex items-center gap-2 bg-brand-orange-100 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <Icon name="map-pin" size="sm" />
+            {cityData.name} Local Expertise
+          </div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-8">
             Understanding {serviceData.name} in {cityData.name}
           </h2>
-          <div class="prose prose-lg max-w-none">
-            {uniqueContent.localChallenges.split('\n\n').map((paragraph) => (
-              <p class="text-lg text-brand-gray leading-relaxed mb-6">{paragraph}</p>
-            ))}
+          <div class="space-y-6">
+            {uniqueContent.localChallenges.split('\n\n').map((paragraph, index) => {
+              const firstPeriod = paragraph.indexOf('. ');
+              const leadSentence = firstPeriod > 0 ? paragraph.slice(0, firstPeriod + 1) : '';
+              const bodyText = firstPeriod > 0 ? paragraph.slice(firstPeriod + 2) : paragraph;
+              return (
+                <div class="bg-white rounded-xl p-6 shadow-soft border-l-4 border-brand-orange">
+                  {leadSentence && (
+                    <p class="font-heading font-semibold text-brand-black text-lg mb-3 leading-snug">
+                      {leadSentence}
+                    </p>
+                  )}
+                  <p class="text-brand-gray leading-relaxed">
+                    {bodyText}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

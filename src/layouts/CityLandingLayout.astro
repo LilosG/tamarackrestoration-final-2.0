@@ -58,7 +58,7 @@ const landmarkMap: Record<string, string[]> = {
 const landmarks = landmarkMap[citySlug] || [];
 
 // SEO
-const title = `Emergency Restoration Services in ${city.name}, CA | Tamarack Restoration`;
+const title = `${city.name} Water Damage, Fire & Mold Restoration | Tamarack Restoration`;
 const description = `24/7 emergency water damage, fire, mold & flood restoration in ${city.name}. ${business.reviewCount} five-star reviews. 60-minute response. IICRC certified. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl(`/service-area/${city.slug}/`);
 
@@ -467,6 +467,36 @@ const faqSchema = getFAQSchema(cityFaqs);
 
   <Testimonials limit={3} class="bg-brand-cream-200" />
   
+  <!-- Mid-Page CTA -->
+  <section class="bg-brand-black py-12">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="text-brand-orange text-sm font-semibold uppercase tracking-widest mb-1">Available 24/7</p>
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-white">
+            Emergency in {city.name}? We Respond in 60 Minutes.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+          
+            href={`tel:${business.phone}`}
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-orange hover:bg-brand-orange-600 text-white font-heading font-bold rounded-lg transition-colors text-lg"
+            onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'city_landing_midpage',page_path:window.location.pathname});}`}
+          >
+            <Icon name="phone" size="sm" />
+            {business.phoneFormatted}
+          </a>
+          
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/30 hover:border-white text-white font-heading font-semibold rounded-lg transition-colors"
+          >
+            Free Estimate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <FAQ
     title={`${city.name} Restoration FAQs`}
     subtitle="Common questions from our customers"

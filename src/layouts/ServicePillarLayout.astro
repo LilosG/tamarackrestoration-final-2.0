@@ -580,6 +580,36 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     </section>
   )}
   
+  <!-- Mid-Page CTA -->
+  <section class="bg-brand-black py-12">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="text-brand-orange text-sm font-semibold uppercase tracking-widest mb-1">Available 24/7</p>
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-white">
+            Need {service.name}? We Respond in 60 Minutes.
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+          
+            href={`tel:${business.phone}`}
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-orange hover:bg-brand-orange-600 text-white font-heading font-bold rounded-lg transition-colors text-lg"
+            onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'service_pillar_midpage',page_path:window.location.pathname});}`}
+          >
+            <Icon name="phone" size="sm" />
+            {business.phoneFormatted}
+          </a>
+          
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/30 hover:border-white text-white font-heading font-semibold rounded-lg transition-colors"
+          >
+            Free Estimate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ — FAQPage schema already injected in <head> via jsonLd prop; suppress inline re-injection -->
   <FAQ
     title={`${service.name} FAQs`}
