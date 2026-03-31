@@ -129,6 +129,18 @@ function toCityNode(city: City) {
 }
 
 /**
+ * Generate LocalBusiness stub for non-homepage pages.
+ * References the root entity by @id without duplicating the full node.
+ */
+export function getLocalBusinessStub(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['HomeAndConstructionBusiness', 'EmergencyService'],
+    '@id': BUSINESS_SCHEMA_ID,
+  };
+}
+
+/**
  * Generate LocalBusiness schema (base for all pages).
  * Uses HomeAndConstructionBusiness + EmergencyService @type per schema.org hierarchy.
  */

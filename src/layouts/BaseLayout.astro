@@ -11,11 +11,12 @@ import Header from '@/components/global/Header.astro';
 import Footer from '@/components/global/Footer.astro';
 import FloatingCTA from '@/components/global/FloatingCTA.astro';
 import type { SEOProps } from '@/types';
-import { getLocalBusinessSchema } from '@/utils/seo';
+import { getLocalBusinessSchema, getLocalBusinessStub } from '@/utils/seo';
 
 interface Props extends SEOProps {
   class?: string;
   preloadImage?: string;
+  fullLocalBusiness?: boolean;
 }
 
 const {
@@ -30,10 +31,11 @@ const {
   jsonLd,
   class: className,
   preloadImage = '/images/hero/truck-hero.webp',
+  fullLocalBusiness = false,
 } = Astro.props;
 
-// Always include LocalBusiness schema
-const baseSchema = getLocalBusinessSchema();
+// Full LocalBusiness on homepage only; stub reference on all other pages
+const baseSchema = fullLocalBusiness ? getLocalBusinessSchema() : getLocalBusinessStub();
 const allSchemas = jsonLd 
   ? [baseSchema, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])]
   : [baseSchema];
