@@ -12,9 +12,12 @@ import Button from '@/components/ui/Button.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import { companyValues, certifications, companyStory } from '@/data/about';
+import { getFAQSchema } from '@/utils/seo';
+import { allFaqs } from '@/data/faqs';
+const aboutFaqSchema = getFAQSchema(allFaqs.slice(0, 4));
 ---
 
-<AboutLayout page="index">
+<AboutLayout page="index" jsonLd={[aboutFaqSchema]}>
   <!-- Our Story -->
   <section class="section bg-white">
     <div class="container">
@@ -134,6 +137,7 @@ import { companyValues, certifications, companyStory } from '@/data/about';
     subtitle="Quick answers about our restoration services."
     limit={4}
     showViewAll={true}
+    showSchema={false}
     class="bg-white"
   />
 </AboutLayout>
