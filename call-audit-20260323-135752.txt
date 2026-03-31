@@ -1,0 +1,987 @@
+=== STATIC TEL LINKS ===
+./src/pages/services/index.astro:63:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/components/global/Header.astro:33:            href={`tel:${business.phone}`} 
+./src/components/global/Header.astro:131:            href={`tel:${business.phone}`}
+./src/components/global/Header.astro:227:            href={`tel:${business.phone}`}
+./src/components/global/Footer.astro:38:              href={`tel:${business.phone}`}
+./src/components/global/Footer.astro:114:              <a href={`tel:${business.phone}`} class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors">
+./src/pages/contact.astro:33:      href: `tel:${business.phone}`,
+./src/pages/contact.astro:174:              href={`tel:${business.phone}`}
+./src/pages/projects/[category].astro:154:            <Button href={`tel:${business.phone}`} variant="outline" size="lg">
+./src/pages/projects/[category].astro:203:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/components/global/FloatingCTA.astro:19:        href={`tel:${business.phone}`}
+./src/pages/insurance/index.astro:228:                href={`tel:${business.phone}`}
+./src/pages/projects/index.astro:167:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/404.astro:32:        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/blog/index.astro:178:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/service-area/index.astro:188:                href={`tel:${business.phone}`}
+./scripts/extract-legacy-urls.mjs:67:    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+./src/components/forms/ContactForm.astro:168:      For emergencies, call us directly at <a href={`tel:${business.phone}`} class="text-brand-orange font-semibold hover:underline">{business.phoneFormatted}</a>
+./src/components/sections/CTABanner.astro:47:              href={`tel:${business.phone}`}
+./src/components/sections/CTABanner.astro:96:            href={`tel:${business.phone}`}
+./src/components/sections/CTABanner.astro:142:          href={`tel:${business.phone}`}
+./src/components/sections/Hero.astro:121:            href={`tel:${business.phone}`}
+./src/components/sections/Hero.astro:142:            href={`tel:${business.phone}`}
+./src/components/sections/ServiceAreas.astro:153:            <Button href={`tel:${business.phone}`} variant="outline">
+./src/layouts/ServicePillarLayout.astro:163:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+./src/layouts/ServicePillarLayout.astro:171:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/AboutLayout.astro:36:const phoneHref = `tel:${business.phone}`;
+./src/layouts/InsuranceCarrierLayout.astro:144:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/InsuranceCarrierLayout.astro:194:            <Button href={`tel:${business.phone}`} variant="primary">
+./src/layouts/CityLandingLayout.astro:222:              <Button href={`tel:${business.phone}`} variant="primary">
+./src/layouts/InsuranceServiceLayout.astro:140:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/BlogPostLayout.astro:195:              <Button href={`tel:${business.phone}`} variant="primary" size="md" class="w-full justify-center mb-3">
+./src/layouts/BlogPostLayout.astro:343:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/layouts/BaseLayout.astro:82:        var link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
+./src/layouts/BaseLayout.astro:85:        var phoneNumber = href.replace('tel:', '');
+./src/layouts/MoneyPageLayout.astro:127:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+./src/layouts/MoneyPageLayout.astro:134:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+
+=== JS/TS CALL TRIGGERS OR REDIRECTS ===
+./src/layouts/BaseLayout.astro:89:          page_path: window.location.pathname,
+./src/components/forms/LeadForm.astro:174:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+./src/components/forms/LeadForm.astro:219:                page_path: window.location.pathname
+./src/components/forms/ContactForm.astro:180:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+./src/components/forms/ContactForm.astro:187:            page_path: window.location.pathname,
+
+=== AUTO-RUN / MOBILE / TIMER TRIGGERS ===
+./src/layouts/BaseLayout.astro:81:      document.addEventListener('click', function(event) {
+./src/components/global/Header.astro:269:      setTimeout(() => {
+./src/components/global/Header.astro:281:    menuToggle?.addEventListener('click', () => {
+./src/components/global/Header.astro:290:    menuClose?.addEventListener('click', closeMenu);
+./src/components/global/Header.astro:293:    mobileMenu?.addEventListener('click', (e) => {
+./src/components/global/Header.astro:313:      trigger?.addEventListener('click', () => {
+./src/components/forms/ContactForm.astro:174:  document.addEventListener('DOMContentLoaded', () => {
+./scripts/extract-legacy-urls.mjs:29:const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+./scripts/check-legacy-redirects.mjs:61:const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+./scripts/check-legacy-redirects.mjs:65:  const timer = setTimeout(() => controller.abort(), timeoutMs);
+./src/components/ui/Accordion.astro:86:        trigger.addEventListener('click', () => {
+
+=== HIGH-CONTEXT REVIEW ===
+src/pages/services/index.astro-59-          When disaster strikes, Tamarack Restoration responds fast. Our IICRC-certified team provides comprehensive restoration services throughout North San Diego County—available 24/7 with 60-minute response times.
+src/pages/services/index.astro-60-        </p>
+src/pages/services/index.astro-61-        
+src/pages/services/index.astro-62-        <div class="flex flex-wrap items-center gap-4">
+src/pages/services/index.astro:63:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+src/pages/services/index.astro-64-            <Icon name="phone" size="md" />
+src/pages/services/index.astro-65-            Call {business.phoneFormatted}
+src/pages/services/index.astro-66-          </Button>
+src/pages/services/index.astro-67-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+src/pages/contact.astro-29-    title: 'Call Us 24/7',
+src/pages/contact.astro-30-    description: 'For emergencies, call us directly for immediate assistance.',
+src/pages/contact.astro-31-    action: {
+src/pages/contact.astro-32-      text: business.phoneFormatted,
+src/pages/contact.astro:33:      href: `tel:${business.phone}`,
+src/pages/contact.astro-34-    },
+src/pages/contact.astro-35-    highlight: true,
+src/pages/contact.astro-36-  },
+src/pages/contact.astro-37-  {
+--
+src/pages/contact.astro-170-            <p class="text-brand-cream-300 mb-4">
+src/pages/contact.astro-171-              Don't wait—call us now for immediate 24/7 emergency response. We'll have a team to your property within 60 minutes.
+src/pages/contact.astro-172-            </p>
+src/pages/contact.astro-173-            <a 
+src/pages/contact.astro:174:              href={`tel:${business.phone}`}
+src/pages/contact.astro-175-              class="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-orange-600 transition-colors w-full justify-center"
+src/pages/contact.astro-176-            >
+src/pages/contact.astro-177-              <Icon name="phone" size="md" />
+src/pages/contact.astro-178-              {business.phoneFormatted}
+--
+src/pages/insurance/index.astro-224-              <p class="text-brand-gray mb-6">
+src/pages/insurance/index.astro-225-                Whether you're dealing with water damage, fire, or mold, we'll help you navigate the insurance process and get your property restored.
+src/pages/insurance/index.astro-226-              </p>
+src/pages/insurance/index.astro-227-              <a 
+src/pages/insurance/index.astro:228:                href={`tel:${business.phone}`}
+src/pages/insurance/index.astro-229-                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+src/pages/insurance/index.astro-230-              >
+src/pages/insurance/index.astro-231-                <Icon name="phone" size="md" />
+src/pages/insurance/index.astro-232-                <span class="text-xl">{business.phoneFormatted}</span>
+--
+src/pages/404.astro-28-          <Button href="/service-area/" variant="outline">Service Areas</Button>
+src/pages/404.astro-29-          <Button href="/contact/" variant="outline">Contact</Button>
+src/pages/404.astro-30-        </div>
+src/pages/404.astro-31-
+src/pages/404.astro:32:        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+src/pages/404.astro-33-          Call {business.phoneFormatted}
+src/pages/404.astro-34-        </Button>
+src/pages/404.astro-35-      </div>
+src/pages/404.astro-36-    </div>
+--
+src/pages/projects/[category].astro-150-          <div class="flex flex-wrap justify-center gap-4">
+src/pages/projects/[category].astro-151-            <Button href={`/services/${relatedService.slug}/`} variant="primary" size="lg">
+src/pages/projects/[category].astro-152-              Learn About Our {relatedService.name} Service
+src/pages/projects/[category].astro-153-            </Button>
+src/pages/projects/[category].astro:154:            <Button href={`tel:${business.phone}`} variant="outline" size="lg">
+src/pages/projects/[category].astro-155-              <Icon name="phone" size="sm" />
+src/pages/projects/[category].astro-156-              {business.phoneFormatted}
+src/pages/projects/[category].astro-157-            </Button>
+src/pages/projects/[category].astro-158-          </div>
+--
+src/pages/projects/[category].astro-199-        <p class="text-brand-cream-300 mb-8">
+src/pages/projects/[category].astro-200-          Every project you see here started with a phone call. We're ready to help 24/7.
+src/pages/projects/[category].astro-201-        </p>
+src/pages/projects/[category].astro-202-        <div class="flex flex-wrap justify-center gap-4">
+src/pages/projects/[category].astro:203:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+src/pages/projects/[category].astro-204-            <Icon name="phone" size="sm" />
+src/pages/projects/[category].astro-205-            {business.phoneFormatted}
+src/pages/projects/[category].astro-206-          </Button>
+src/pages/projects/[category].astro-207-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+src/pages/projects/index.astro-163-        <p class="text-brand-cream-300 mb-8">
+src/pages/projects/index.astro-164-          Every project you see here started with a phone call. We're ready to help 24/7 with 60-minute response times.
+src/pages/projects/index.astro-165-        </p>
+src/pages/projects/index.astro-166-        <div class="flex flex-wrap justify-center gap-4">
+src/pages/projects/index.astro:167:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+src/pages/projects/index.astro-168-            <Icon name="phone" size="sm" />
+src/pages/projects/index.astro-169-            {business.phoneFormatted}
+src/pages/projects/index.astro-170-          </Button>
+src/pages/projects/index.astro-171-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+src/pages/blog/index.astro-174-        <p class="text-brand-cream-300 mb-8">
+src/pages/blog/index.astro-175-          Don't wait—call us 24/7 for 60-minute response throughout North San Diego County.
+src/pages/blog/index.astro-176-        </p>
+src/pages/blog/index.astro-177-        <div class="flex flex-wrap justify-center gap-4">
+src/pages/blog/index.astro:178:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+src/pages/blog/index.astro-179-            <Icon name="phone" size="sm" />
+src/pages/blog/index.astro-180-            {business.phoneFormatted}
+src/pages/blog/index.astro-181-          </Button>
+src/pages/blog/index.astro-182-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+src/pages/service-area/index.astro-184-              <p class="text-brand-gray mb-6">
+src/pages/service-area/index.astro-185-                We serve all of North San Diego County. If your city isn't listed, give us a call—we likely cover your area and can have a team to you within 60 minutes.
+src/pages/service-area/index.astro-186-              </p>
+src/pages/service-area/index.astro-187-              <a 
+src/pages/service-area/index.astro:188:                href={`tel:${business.phone}`}
+src/pages/service-area/index.astro-189-                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+src/pages/service-area/index.astro-190-              >
+src/pages/service-area/index.astro-191-                <Icon name="phone" size="md" />
+src/pages/service-area/index.astro-192-                <span class="text-xl">{business.phoneFormatted}</span>
+--
+src/components/global/Header.astro-29-    <div class="container">
+src/components/global/Header.astro-30-      <div class="flex items-center justify-between text-body-sm">
+src/components/global/Header.astro-31-        <div class="flex items-center gap-6">
+src/components/global/Header.astro-32-          <a 
+src/components/global/Header.astro:33:            href={`tel:${business.phone}`} 
+src/components/global/Header.astro-34-            class="flex items-center gap-2 hover:text-brand-orange transition-colors"
+src/components/global/Header.astro-35-          >
+src/components/global/Header.astro-36-            <Icon name="phone" size="sm" />
+src/components/global/Header.astro-37-            <span>{business.phoneFormatted}</span>
+--
+src/components/global/Header.astro-127-        
+src/components/global/Header.astro-128-        <!-- CTA Button (Desktop) -->
+src/components/global/Header.astro-129-        <div class="hidden lg:flex items-center gap-4">
+src/components/global/Header.astro-130-          <a 
+src/components/global/Header.astro:131:            href={`tel:${business.phone}`}
+src/components/global/Header.astro-132-            class="flex items-center gap-2 text-brand-black font-semibold hover:text-brand-orange transition-colors"
+src/components/global/Header.astro-133-          >
+src/components/global/Header.astro-134-            <Icon name="phone" size="md" />
+src/components/global/Header.astro-135-            <span class="hidden xl:inline">{business.phoneFormatted}</span>
+--
+src/components/global/Header.astro-223-        
+src/components/global/Header.astro-224-        <!-- Mobile menu footer -->
+src/components/global/Header.astro-225-        <div class="p-4 border-t border-brand-cream-300 space-y-4">
+src/components/global/Header.astro-226-          <a 
+src/components/global/Header.astro:227:            href={`tel:${business.phone}`}
+src/components/global/Header.astro-228-            class="flex items-center justify-center gap-2 w-full py-3 bg-brand-cream-200 rounded-lg text-brand-black font-semibold"
+src/components/global/Header.astro-229-          >
+src/components/global/Header.astro-230-            <Icon name="phone" size="md" />
+src/components/global/Header.astro-231-            {business.phoneFormatted}
+--
+./src/pages/services/index.astro-59-          When disaster strikes, Tamarack Restoration responds fast. Our IICRC-certified team provides comprehensive restoration services throughout North San Diego County—available 24/7 with 60-minute response times.
+./src/pages/services/index.astro-60-        </p>
+./src/pages/services/index.astro-61-        
+./src/pages/services/index.astro-62-        <div class="flex flex-wrap items-center gap-4">
+./src/pages/services/index.astro:63:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/services/index.astro-64-            <Icon name="phone" size="md" />
+./src/pages/services/index.astro-65-            Call {business.phoneFormatted}
+./src/pages/services/index.astro-66-          </Button>
+./src/pages/services/index.astro-67-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+src/layouts/ServicePillarLayout.astro-159-          </div>
+src/layouts/ServicePillarLayout.astro-160-          
+src/layouts/ServicePillarLayout.astro-161-          <!-- Mobile CTAs -->
+src/layouts/ServicePillarLayout.astro-162-          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+src/layouts/ServicePillarLayout.astro:163:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+src/layouts/ServicePillarLayout.astro-164-              <Icon name="phone" size="sm" />
+src/layouts/ServicePillarLayout.astro-165-              Call {business.phoneFormatted}
+src/layouts/ServicePillarLayout.astro-166-            </Button>
+src/layouts/ServicePillarLayout.astro-167-          </div>
+src/layouts/ServicePillarLayout.astro-168-          
+src/layouts/ServicePillarLayout.astro-169-          <!-- Desktop Phone -->
+src/layouts/ServicePillarLayout.astro-170-          <div class="hidden lg:flex items-center gap-6 mt-2">
+src/layouts/ServicePillarLayout.astro:171:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+src/layouts/ServicePillarLayout.astro-172-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+src/layouts/ServicePillarLayout.astro-173-                <Icon name="phone" size="md" class="text-white" />
+src/layouts/ServicePillarLayout.astro-174-              </span>
+src/layouts/ServicePillarLayout.astro-175-              <span>
+--
+src/layouts/InsuranceCarrierLayout.astro-140-            </div>
+src/layouts/InsuranceCarrierLayout.astro-141-          </div>
+src/layouts/InsuranceCarrierLayout.astro-142-          
+src/layouts/InsuranceCarrierLayout.astro-143-          <div class="hidden lg:flex items-center gap-6">
+src/layouts/InsuranceCarrierLayout.astro:144:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+src/layouts/InsuranceCarrierLayout.astro-145-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+src/layouts/InsuranceCarrierLayout.astro-146-                <Icon name="phone" size="md" class="text-white" />
+src/layouts/InsuranceCarrierLayout.astro-147-              </span>
+src/layouts/InsuranceCarrierLayout.astro-148-              <span>
+--
+src/layouts/InsuranceCarrierLayout.astro-190-            </p>
+src/layouts/InsuranceCarrierLayout.astro-191-          </div>
+src/layouts/InsuranceCarrierLayout.astro-192-          
+src/layouts/InsuranceCarrierLayout.astro-193-          <div class="mt-8 flex flex-wrap gap-4">
+src/layouts/InsuranceCarrierLayout.astro:194:            <Button href={`tel:${business.phone}`} variant="primary">
+src/layouts/InsuranceCarrierLayout.astro-195-              <Icon name="phone" size="sm" />
+src/layouts/InsuranceCarrierLayout.astro-196-              Call {business.phoneFormatted}
+src/layouts/InsuranceCarrierLayout.astro-197-            </Button>
+src/layouts/InsuranceCarrierLayout.astro-198-            <Button href="/contact/" variant="outline">
+--
+src/layouts/MoneyPageLayout.astro-123-            </div>
+src/layouts/MoneyPageLayout.astro-124-          </div>
+src/layouts/MoneyPageLayout.astro-125-          
+src/layouts/MoneyPageLayout.astro-126-          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+src/layouts/MoneyPageLayout.astro:127:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+src/layouts/MoneyPageLayout.astro-128-              <Icon name="phone" size="sm" />
+src/layouts/MoneyPageLayout.astro-129-              Call {business.phoneFormatted}
+src/layouts/MoneyPageLayout.astro-130-            </Button>
+src/layouts/MoneyPageLayout.astro-131-          </div>
+src/layouts/MoneyPageLayout.astro-132-          
+src/layouts/MoneyPageLayout.astro-133-          <div class="hidden lg:flex items-center gap-6">
+src/layouts/MoneyPageLayout.astro:134:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+src/layouts/MoneyPageLayout.astro-135-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+src/layouts/MoneyPageLayout.astro-136-                <Icon name="phone" size="md" class="text-white" />
+src/layouts/MoneyPageLayout.astro-137-              </span>
+src/layouts/MoneyPageLayout.astro-138-              <span>
+--
+src/components/global/FloatingCTA.astro-15->
+src/components/global/FloatingCTA.astro-16-  <div class="bg-white border-t border-brand-cream-300 shadow-lg px-4 py-3" style="padding-bottom: max(12px, env(safe-area-inset-bottom));">
+src/components/global/FloatingCTA.astro-17-    <div class="flex items-center gap-3">
+src/components/global/FloatingCTA.astro-18-      <a 
+src/components/global/FloatingCTA.astro:19:        href={`tel:${business.phone}`}
+src/components/global/FloatingCTA.astro-20-        class="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-600 transition-colors"
+src/components/global/FloatingCTA.astro-21-      >
+src/components/global/FloatingCTA.astro-22-        <Icon name="phone" size="sm" />
+src/components/global/FloatingCTA.astro-23-        <span>Call Now</span>
+--
+./src/pages/insurance/index.astro-224-              <p class="text-brand-gray mb-6">
+./src/pages/insurance/index.astro-225-                Whether you're dealing with water damage, fire, or mold, we'll help you navigate the insurance process and get your property restored.
+./src/pages/insurance/index.astro-226-              </p>
+./src/pages/insurance/index.astro-227-              <a 
+./src/pages/insurance/index.astro:228:                href={`tel:${business.phone}`}
+./src/pages/insurance/index.astro-229-                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+./src/pages/insurance/index.astro-230-              >
+./src/pages/insurance/index.astro-231-                <Icon name="phone" size="md" />
+./src/pages/insurance/index.astro-232-                <span class="text-xl">{business.phoneFormatted}</span>
+--
+src/components/global/Footer.astro-34-            </p>
+src/components/global/Footer.astro-35-          </div>
+src/components/global/Footer.astro-36-          <div class="flex flex-col sm:flex-row gap-4">
+src/components/global/Footer.astro-37-            <Button 
+src/components/global/Footer.astro:38:              href={`tel:${business.phone}`}
+src/components/global/Footer.astro-39-              variant="secondary"
+src/components/global/Footer.astro-40-              size="lg"
+src/components/global/Footer.astro-41-              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+src/components/global/Footer.astro-42-            >
+--
+src/components/global/Footer.astro-110-        <div>
+src/components/global/Footer.astro-111-          <h3 class="font-heading font-bold text-white mb-4">Quick Info</h3>
+src/components/global/Footer.astro-112-          <ul class="space-y-4">
+src/components/global/Footer.astro-113-            <li>
+src/components/global/Footer.astro:114:              <a href={`tel:${business.phone}`} class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors">
+src/components/global/Footer.astro-115-                <Icon name="phone" size="sm" class="mt-0.5 flex-shrink-0" />
+src/components/global/Footer.astro-116-                <span>
+src/components/global/Footer.astro-117-                  <span class="block text-sm font-medium text-white">{business.phoneFormatted}</span>
+src/components/global/Footer.astro-118-                  <span class="block text-xs">24/7 Emergency Line</span>
+--
+src/components/forms/LeadForm.astro-170-      // Set hidden field values
+src/components/forms/LeadForm.astro-171-      const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
+src/components/forms/LeadForm.astro-172-      const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+src/components/forms/LeadForm.astro-173-      
+src/components/forms/LeadForm.astro:174:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+src/components/forms/LeadForm.astro-175-      if (timestampInput) timestampInput.value = new Date().toISOString();
+src/components/forms/LeadForm.astro-176-      
+src/components/forms/LeadForm.astro-177-      // Handle form submission
+src/components/forms/LeadForm.astro-178-      form.addEventListener('submit', async (e) => {
+--
+src/components/forms/LeadForm.astro-215-            // Track conversion if analytics available
+src/components/forms/LeadForm.astro-216-            if (typeof window !== 'undefined' && (window as any).gtag) {
+src/components/forms/LeadForm.astro-217-              (window as any).gtag('event', 'webform_submit', {
+src/components/forms/LeadForm.astro-218-                form_name: 'lead_form',
+src/components/forms/LeadForm.astro:219:                page_path: window.location.pathname
+src/components/forms/LeadForm.astro-220-              });
+src/components/forms/LeadForm.astro-221-            }
+src/components/forms/LeadForm.astro-222-          } else {
+src/components/forms/LeadForm.astro-223-            throw new Error('Form submission failed');
+--
+src/layouts/InsuranceServiceLayout.astro-136-            </div>
+src/layouts/InsuranceServiceLayout.astro-137-          </div>
+src/layouts/InsuranceServiceLayout.astro-138-          
+src/layouts/InsuranceServiceLayout.astro-139-          <div class="hidden lg:flex items-center gap-6">
+src/layouts/InsuranceServiceLayout.astro:140:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+src/layouts/InsuranceServiceLayout.astro-141-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+src/layouts/InsuranceServiceLayout.astro-142-                <Icon name="phone" size="md" class="text-white" />
+src/layouts/InsuranceServiceLayout.astro-143-              </span>
+src/layouts/InsuranceServiceLayout.astro-144-              <span>
+--
+src/layouts/BlogPostLayout.astro-191-              </h3>
+src/layouts/BlogPostLayout.astro-192-              <p class="text-brand-gray text-sm mb-4">
+src/layouts/BlogPostLayout.astro-193-                Available 24/7 for emergencies throughout North San Diego County.
+src/layouts/BlogPostLayout.astro-194-              </p>
+src/layouts/BlogPostLayout.astro:195:              <Button href={`tel:${business.phone}`} variant="primary" size="md" class="w-full justify-center mb-3">
+src/layouts/BlogPostLayout.astro-196-                <Icon name="phone" size="sm" />
+src/layouts/BlogPostLayout.astro-197-                Call {business.phoneFormatted}
+src/layouts/BlogPostLayout.astro-198-              </Button>
+src/layouts/BlogPostLayout.astro-199-              <Button href="/contact/" variant="outline" size="md" class="w-full justify-center">
+--
+src/layouts/BlogPostLayout.astro-339-        <p class="text-brand-cream-300 mb-8">
+src/layouts/BlogPostLayout.astro-340-          24/7 emergency service with 60-minute response time.
+src/layouts/BlogPostLayout.astro-341-        </p>
+src/layouts/BlogPostLayout.astro-342-        <div class="flex flex-wrap justify-center gap-4">
+src/layouts/BlogPostLayout.astro:343:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+src/layouts/BlogPostLayout.astro-344-            <Icon name="phone" size="sm" />
+src/layouts/BlogPostLayout.astro-345-            {business.phoneFormatted}
+src/layouts/BlogPostLayout.astro-346-          </Button>
+src/layouts/BlogPostLayout.astro-347-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+src/layouts/CityLandingLayout.astro-218-              {context.proximityStatement}
+src/layouts/CityLandingLayout.astro-219-            </p>
+src/layouts/CityLandingLayout.astro-220-            
+src/layouts/CityLandingLayout.astro-221-            <div class="flex flex-wrap gap-4">
+src/layouts/CityLandingLayout.astro:222:              <Button href={`tel:${business.phone}`} variant="primary">
+src/layouts/CityLandingLayout.astro-223-                <Icon name="phone" size="sm" />
+src/layouts/CityLandingLayout.astro-224-                Call {business.phoneFormatted}
+src/layouts/CityLandingLayout.astro-225-              </Button>
+src/layouts/CityLandingLayout.astro-226-              <Button href="/contact/" variant="outline">
+--
+src/layouts/BaseLayout.astro-78-      gtag('config', 'G-WH27G3H1XN');
+src/layouts/BaseLayout.astro-79-    </script>
+src/layouts/BaseLayout.astro-80-    <script is:inline>
+src/layouts/BaseLayout.astro-81-      document.addEventListener('click', function(event) {
+src/layouts/BaseLayout.astro:82:        var link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
+src/layouts/BaseLayout.astro-83-        if (!link || typeof window.gtag !== 'function') return;
+src/layouts/BaseLayout.astro-84-        var href = link.getAttribute('href') || '';
+src/layouts/BaseLayout.astro:85:        var phoneNumber = href.replace('tel:', '');
+src/layouts/BaseLayout.astro-86-        window.gtag('event', 'click_to_call', {
+src/layouts/BaseLayout.astro-87-          phone_number: phoneNumber,
+src/layouts/BaseLayout.astro-88-          link_url: href,
+src/layouts/BaseLayout.astro:89:          page_path: window.location.pathname,
+src/layouts/BaseLayout.astro-90-        });
+src/layouts/BaseLayout.astro-91-      });
+src/layouts/BaseLayout.astro-92-    </script>
+src/layouts/BaseLayout.astro-93-
+--
+src/layouts/AboutLayout.astro-32-const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+src/layouts/AboutLayout.astro-33-
+src/layouts/AboutLayout.astro-34-const ctaTitle = config.ctaTitle || 'Ready to Experience the Tamarack Difference?';
+src/layouts/AboutLayout.astro-35-const ctaSubtitle = config.ctaSubtitle || '24/7 emergency service with 60-minute response time throughout North San Diego County.';
+src/layouts/AboutLayout.astro:36:const phoneHref = `tel:${business.phone}`;
+src/layouts/AboutLayout.astro-37-
+src/layouts/AboutLayout.astro-38----
+src/layouts/AboutLayout.astro-39-
+src/layouts/AboutLayout.astro-40-<BaseLayout title={config.title} description={config.description} canonical={canonical} jsonLd={[breadcrumbSchema, ...pageJsonLd]}>
+--
+./src/pages/service-area/index.astro-184-              <p class="text-brand-gray mb-6">
+./src/pages/service-area/index.astro-185-                We serve all of North San Diego County. If your city isn't listed, give us a call—we likely cover your area and can have a team to you within 60 minutes.
+./src/pages/service-area/index.astro-186-              </p>
+./src/pages/service-area/index.astro-187-              <a 
+./src/pages/service-area/index.astro:188:                href={`tel:${business.phone}`}
+./src/pages/service-area/index.astro-189-                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+./src/pages/service-area/index.astro-190-              >
+./src/pages/service-area/index.astro-191-                <Icon name="phone" size="md" />
+./src/pages/service-area/index.astro-192-                <span class="text-xl">{business.phoneFormatted}</span>
+--
+src/components/forms/ContactForm.astro-164-    <Button type="submit" variant="primary" size="lg" class="w-full justify-center">
+src/components/forms/ContactForm.astro-165-      Send Message
+src/components/forms/ContactForm.astro-166-    </Button>
+src/components/forms/ContactForm.astro-167-    <p class="text-xs text-brand-gray text-center mt-3">
+src/components/forms/ContactForm.astro:168:      For emergencies, call us directly at <a href={`tel:${business.phone}`} class="text-brand-orange font-semibold hover:underline">{business.phoneFormatted}</a>
+src/components/forms/ContactForm.astro-169-    </p>
+src/components/forms/ContactForm.astro-170-  </div>
+src/components/forms/ContactForm.astro-171-</form>
+src/components/forms/ContactForm.astro-172-
+--
+src/components/forms/ContactForm.astro-176-    forms.forEach(form => {
+src/components/forms/ContactForm.astro-177-      const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
+src/components/forms/ContactForm.astro-178-      const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+src/components/forms/ContactForm.astro-179-      
+src/components/forms/ContactForm.astro:180:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+src/components/forms/ContactForm.astro-181-      if (timestampInput) timestampInput.value = new Date().toISOString();
+src/components/forms/ContactForm.astro-182-
+src/components/forms/ContactForm.astro-183-      form.addEventListener('submit', () => {
+src/components/forms/ContactForm.astro-184-        if (typeof window !== 'undefined' && (window as any).gtag) {
+src/components/forms/ContactForm.astro-185-          (window as any).gtag('event', 'webform_submit', {
+src/components/forms/ContactForm.astro-186-            form_name: 'contact_form',
+src/components/forms/ContactForm.astro:187:            page_path: window.location.pathname,
+src/components/forms/ContactForm.astro-188-          });
+src/components/forms/ContactForm.astro-189-        }
+src/components/forms/ContactForm.astro-190-      });
+src/components/forms/ContactForm.astro-191-    });
+--
+src/components/sections/CTABanner.astro-43-        
+src/components/sections/CTABanner.astro-44-        <div class="flex flex-col sm:flex-row gap-4">
+src/components/sections/CTABanner.astro-45-          {showPhone && (
+src/components/sections/CTABanner.astro-46-            <Button 
+src/components/sections/CTABanner.astro:47:              href={`tel:${business.phone}`}
+src/components/sections/CTABanner.astro-48-              variant="secondary"
+src/components/sections/CTABanner.astro-49-              size="lg"
+src/components/sections/CTABanner.astro-50-              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+src/components/sections/CTABanner.astro-51-            >
+--
+src/components/sections/CTABanner.astro-92-        </p>
+src/components/sections/CTABanner.astro-93-        
+src/components/sections/CTABanner.astro-94-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+src/components/sections/CTABanner.astro-95-          <Button 
+src/components/sections/CTABanner.astro:96:            href={`tel:${business.phone}`}
+src/components/sections/CTABanner.astro-97-            variant="primary"
+src/components/sections/CTABanner.astro-98-            size="lg"
+src/components/sections/CTABanner.astro-99-          >
+src/components/sections/CTABanner.astro-100-            <Icon name="phone" size="md" />
+--
+src/components/sections/CTABanner.astro-138-          Need emergency restoration? 
+src/components/sections/CTABanner.astro-139-          <span class="text-brand-gray font-normal">We're available 24/7.</span>
+src/components/sections/CTABanner.astro-140-        </p>
+src/components/sections/CTABanner.astro-141-        <Button 
+src/components/sections/CTABanner.astro:142:          href={`tel:${business.phone}`}
+src/components/sections/CTABanner.astro-143-          variant="primary"
+src/components/sections/CTABanner.astro-144-        >
+src/components/sections/CTABanner.astro-145-          <Icon name="phone" size="sm" />
+src/components/sections/CTABanner.astro-146-          {business.phoneFormatted}
+--
+./call-audit-20260323-135752.txt-1-=== STATIC TEL LINKS ===
+./call-audit-20260323-135752.txt:2:./src/pages/services/index.astro:63:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt:3:./src/components/global/Header.astro:33:            href={`tel:${business.phone}`} 
+./call-audit-20260323-135752.txt:4:./src/components/global/Header.astro:131:            href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:5:./src/components/global/Header.astro:227:            href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:6:./src/components/global/Footer.astro:38:              href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:7:./src/components/global/Footer.astro:114:              <a href={`tel:${business.phone}`} class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors">
+./call-audit-20260323-135752.txt:8:./src/pages/contact.astro:33:      href: `tel:${business.phone}`,
+./call-audit-20260323-135752.txt:9:./src/pages/contact.astro:174:              href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:10:./src/pages/projects/[category].astro:154:            <Button href={`tel:${business.phone}`} variant="outline" size="lg">
+./call-audit-20260323-135752.txt:11:./src/pages/projects/[category].astro:203:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt:12:./src/components/global/FloatingCTA.astro:19:        href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:13:./src/pages/insurance/index.astro:228:                href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:14:./src/pages/projects/index.astro:167:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt:15:./src/pages/404.astro:32:        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt:16:./src/pages/blog/index.astro:178:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt:17:./src/pages/service-area/index.astro:188:                href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:18:./scripts/extract-legacy-urls.mjs:67:    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+./call-audit-20260323-135752.txt:19:./src/components/forms/ContactForm.astro:168:      For emergencies, call us directly at <a href={`tel:${business.phone}`} class="text-brand-orange font-semibold hover:underline">{business.phoneFormatted}</a>
+./call-audit-20260323-135752.txt:20:./src/components/sections/CTABanner.astro:47:              href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:21:./src/components/sections/CTABanner.astro:96:            href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:22:./src/components/sections/CTABanner.astro:142:          href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:23:./src/components/sections/Hero.astro:121:            href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:24:./src/components/sections/Hero.astro:142:            href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt:25:./src/components/sections/ServiceAreas.astro:153:            <Button href={`tel:${business.phone}`} variant="outline">
+./call-audit-20260323-135752.txt:26:./src/layouts/ServicePillarLayout.astro:163:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+./call-audit-20260323-135752.txt:27:./src/layouts/ServicePillarLayout.astro:171:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./call-audit-20260323-135752.txt:28:./src/layouts/AboutLayout.astro:36:const phoneHref = `tel:${business.phone}`;
+./call-audit-20260323-135752.txt:29:./src/layouts/InsuranceCarrierLayout.astro:144:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./call-audit-20260323-135752.txt:30:./src/layouts/InsuranceCarrierLayout.astro:194:            <Button href={`tel:${business.phone}`} variant="primary">
+./call-audit-20260323-135752.txt:31:./src/layouts/CityLandingLayout.astro:222:              <Button href={`tel:${business.phone}`} variant="primary">
+./call-audit-20260323-135752.txt:32:./src/layouts/InsuranceServiceLayout.astro:140:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./call-audit-20260323-135752.txt:33:./src/layouts/BlogPostLayout.astro:195:              <Button href={`tel:${business.phone}`} variant="primary" size="md" class="w-full justify-center mb-3">
+./call-audit-20260323-135752.txt:34:./src/layouts/BlogPostLayout.astro:343:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt:35:./src/layouts/BaseLayout.astro:82:        var link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
+./call-audit-20260323-135752.txt:36:./src/layouts/BaseLayout.astro:85:        var phoneNumber = href.replace('tel:', '');
+./call-audit-20260323-135752.txt:37:./src/layouts/MoneyPageLayout.astro:127:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+./call-audit-20260323-135752.txt:38:./src/layouts/MoneyPageLayout.astro:134:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./call-audit-20260323-135752.txt-39-
+./call-audit-20260323-135752.txt-40-=== JS/TS CALL TRIGGERS OR REDIRECTS ===
+./call-audit-20260323-135752.txt:41:./src/layouts/BaseLayout.astro:89:          page_path: window.location.pathname,
+./call-audit-20260323-135752.txt:42:./src/components/forms/LeadForm.astro:174:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+./call-audit-20260323-135752.txt:43:./src/components/forms/LeadForm.astro:219:                page_path: window.location.pathname
+./call-audit-20260323-135752.txt:44:./src/components/forms/ContactForm.astro:180:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+./call-audit-20260323-135752.txt:45:./src/components/forms/ContactForm.astro:187:            page_path: window.location.pathname,
+./call-audit-20260323-135752.txt-46-
+./call-audit-20260323-135752.txt-47-=== AUTO-RUN / MOBILE / TIMER TRIGGERS ===
+./call-audit-20260323-135752.txt-48-./src/layouts/BaseLayout.astro:81:      document.addEventListener('click', function(event) {
+./call-audit-20260323-135752.txt-49-./src/components/global/Header.astro:269:      setTimeout(() => {
+--
+./call-audit-20260323-135752.txt-61-src/pages/services/index.astro-59-          When disaster strikes, Tamarack Restoration responds fast. Our IICRC-certified team provides comprehensive restoration services throughout North San Diego County—available 24/7 with 60-minute response times.
+./call-audit-20260323-135752.txt-62-src/pages/services/index.astro-60-        </p>
+./call-audit-20260323-135752.txt-63-src/pages/services/index.astro-61-        
+./call-audit-20260323-135752.txt-64-src/pages/services/index.astro-62-        <div class="flex flex-wrap items-center gap-4">
+./call-audit-20260323-135752.txt:65:src/pages/services/index.astro:63:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt-66-src/pages/services/index.astro-64-            <Icon name="phone" size="md" />
+./call-audit-20260323-135752.txt-67-src/pages/services/index.astro-65-            Call {business.phoneFormatted}
+./call-audit-20260323-135752.txt-68-src/pages/services/index.astro-66-          </Button>
+./call-audit-20260323-135752.txt-69-src/pages/services/index.astro-67-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./call-audit-20260323-135752.txt-71-src/pages/contact.astro-29-    title: 'Call Us 24/7',
+./call-audit-20260323-135752.txt-72-src/pages/contact.astro-30-    description: 'For emergencies, call us directly for immediate assistance.',
+./call-audit-20260323-135752.txt-73-src/pages/contact.astro-31-    action: {
+./call-audit-20260323-135752.txt-74-src/pages/contact.astro-32-      text: business.phoneFormatted,
+./call-audit-20260323-135752.txt:75:src/pages/contact.astro:33:      href: `tel:${business.phone}`,
+./call-audit-20260323-135752.txt-76-src/pages/contact.astro-34-    },
+./call-audit-20260323-135752.txt-77-src/pages/contact.astro-35-    highlight: true,
+./call-audit-20260323-135752.txt-78-src/pages/contact.astro-36-  },
+./call-audit-20260323-135752.txt-79-src/pages/contact.astro-37-  {
+--
+./call-audit-20260323-135752.txt-81-src/pages/contact.astro-170-            <p class="text-brand-cream-300 mb-4">
+./call-audit-20260323-135752.txt-82-src/pages/contact.astro-171-              Don't wait—call us now for immediate 24/7 emergency response. We'll have a team to your property within 60 minutes.
+./call-audit-20260323-135752.txt-83-src/pages/contact.astro-172-            </p>
+./call-audit-20260323-135752.txt-84-src/pages/contact.astro-173-            <a 
+./call-audit-20260323-135752.txt:85:src/pages/contact.astro:174:              href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt-86-src/pages/contact.astro-175-              class="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-orange-600 transition-colors w-full justify-center"
+./call-audit-20260323-135752.txt-87-src/pages/contact.astro-176-            >
+./call-audit-20260323-135752.txt-88-src/pages/contact.astro-177-              <Icon name="phone" size="md" />
+./call-audit-20260323-135752.txt-89-src/pages/contact.astro-178-              {business.phoneFormatted}
+--
+./call-audit-20260323-135752.txt-91-src/pages/insurance/index.astro-224-              <p class="text-brand-gray mb-6">
+./call-audit-20260323-135752.txt-92-src/pages/insurance/index.astro-225-                Whether you're dealing with water damage, fire, or mold, we'll help you navigate the insurance process and get your property restored.
+./call-audit-20260323-135752.txt-93-src/pages/insurance/index.astro-226-              </p>
+./call-audit-20260323-135752.txt-94-src/pages/insurance/index.astro-227-              <a 
+./call-audit-20260323-135752.txt:95:src/pages/insurance/index.astro:228:                href={`tel:${business.phone}`}
+./call-audit-20260323-135752.txt-96-src/pages/insurance/index.astro-229-                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+./call-audit-20260323-135752.txt-97-src/pages/insurance/index.astro-230-              >
+./call-audit-20260323-135752.txt-98-src/pages/insurance/index.astro-231-                <Icon name="phone" size="md" />
+./call-audit-20260323-135752.txt-99-src/pages/insurance/index.astro-232-                <span class="text-xl">{business.phoneFormatted}</span>
+--
+./call-audit-20260323-135752.txt-101-src/pages/404.astro-28-          <Button href="/service-area/" variant="outline">Service Areas</Button>
+./call-audit-20260323-135752.txt-102-src/pages/404.astro-29-          <Button href="/contact/" variant="outline">Contact</Button>
+./call-audit-20260323-135752.txt-103-src/pages/404.astro-30-        </div>
+./call-audit-20260323-135752.txt-104-src/pages/404.astro-31-
+./call-audit-20260323-135752.txt:105:src/pages/404.astro:32:        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt-106-src/pages/404.astro-33-          Call {business.phoneFormatted}
+./call-audit-20260323-135752.txt-107-src/pages/404.astro-34-        </Button>
+./call-audit-20260323-135752.txt-108-src/pages/404.astro-35-      </div>
+./call-audit-20260323-135752.txt-109-src/pages/404.astro-36-    </div>
+--
+./call-audit-20260323-135752.txt-111-src/pages/projects/[category].astro-150-          <div class="flex flex-wrap justify-center gap-4">
+./call-audit-20260323-135752.txt-112-src/pages/projects/[category].astro-151-            <Button href={`/services/${relatedService.slug}/`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt-113-src/pages/projects/[category].astro-152-              Learn About Our {relatedService.name} Service
+./call-audit-20260323-135752.txt-114-src/pages/projects/[category].astro-153-            </Button>
+./call-audit-20260323-135752.txt:115:src/pages/projects/[category].astro:154:            <Button href={`tel:${business.phone}`} variant="outline" size="lg">
+./call-audit-20260323-135752.txt-116-src/pages/projects/[category].astro-155-              <Icon name="phone" size="sm" />
+./call-audit-20260323-135752.txt-117-src/pages/projects/[category].astro-156-              {business.phoneFormatted}
+./call-audit-20260323-135752.txt-118-src/pages/projects/[category].astro-157-            </Button>
+./call-audit-20260323-135752.txt-119-src/pages/projects/[category].astro-158-          </div>
+--
+./call-audit-20260323-135752.txt-121-src/pages/projects/[category].astro-199-        <p class="text-brand-cream-300 mb-8">
+./call-audit-20260323-135752.txt-122-src/pages/projects/[category].astro-200-          Every project you see here started with a phone call. We're ready to help 24/7.
+./call-audit-20260323-135752.txt-123-src/pages/projects/[category].astro-201-        </p>
+./call-audit-20260323-135752.txt-124-src/pages/projects/[category].astro-202-        <div class="flex flex-wrap justify-center gap-4">
+./call-audit-20260323-135752.txt:125:src/pages/projects/[category].astro:203:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt-126-src/pages/projects/[category].astro-204-            <Icon name="phone" size="sm" />
+./call-audit-20260323-135752.txt-127-src/pages/projects/[category].astro-205-            {business.phoneFormatted}
+./call-audit-20260323-135752.txt-128-src/pages/projects/[category].astro-206-          </Button>
+./call-audit-20260323-135752.txt-129-src/pages/projects/[category].astro-207-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./call-audit-20260323-135752.txt-131-src/pages/projects/index.astro-163-        <p class="text-brand-cream-300 mb-8">
+./call-audit-20260323-135752.txt-132-src/pages/projects/index.astro-164-          Every project you see here started with a phone call. We're ready to help 24/7 with 60-minute response times.
+./call-audit-20260323-135752.txt-133-src/pages/projects/index.astro-165-        </p>
+./call-audit-20260323-135752.txt-134-src/pages/projects/index.astro-166-        <div class="flex flex-wrap justify-center gap-4">
+./call-audit-20260323-135752.txt:135:src/pages/projects/index.astro:167:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt-136-src/pages/projects/index.astro-168-            <Icon name="phone" size="sm" />
+./call-audit-20260323-135752.txt-137-src/pages/projects/index.astro-169-            {business.phoneFormatted}
+./call-audit-20260323-135752.txt-138-src/pages/projects/index.astro-170-          </Button>
+./call-audit-20260323-135752.txt-139-src/pages/projects/index.astro-171-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./call-audit-20260323-135752.txt-141-src/pages/blog/index.astro-174-        <p class="text-brand-cream-300 mb-8">
+./call-audit-20260323-135752.txt-142-src/pages/blog/index.astro-175-          Don't wait—call us 24/7 for 60-minute response throughout North San Diego County.
+./call-audit-20260323-135752.txt-143-src/pages/blog/index.astro-176-        </p>
+./call-audit-20260323-135752.txt-144-src/pages/blog/index.astro-177-        <div class="flex flex-wrap justify-center gap-4">
+./call-audit-20260323-135752.txt:145:src/pages/blog/index.astro:178:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./call-audit-20260323-135752.txt-146-src/pages/blog/index.astro-179-            <Icon name="phone" size="sm" />
+./call-audit-20260323-135752.txt-147-src/pages/blog/index.astro-180-            {business.phoneFormatted}
+./call-audit-20260323-135752.txt-148-src/pages/blog/index.astro-181-          </Button>
+./call-audit-20260323-135752.txt-149-src/pages/blog/index.astro-182-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./src/pages/contact.astro-29-    title: 'Call Us 24/7',
+./src/pages/contact.astro-30-    description: 'For emergencies, call us directly for immediate assistance.',
+./src/pages/contact.astro-31-    action: {
+./src/pages/contact.astro-32-      text: business.phoneFormatted,
+./src/pages/contact.astro:33:      href: `tel:${business.phone}`,
+./src/pages/contact.astro-34-    },
+./src/pages/contact.astro-35-    highlight: true,
+./src/pages/contact.astro-36-  },
+./src/pages/contact.astro-37-  {
+--
+./src/pages/contact.astro-170-            <p class="text-brand-cream-300 mb-4">
+./src/pages/contact.astro-171-              Don't wait—call us now for immediate 24/7 emergency response. We'll have a team to your property within 60 minutes.
+./src/pages/contact.astro-172-            </p>
+./src/pages/contact.astro-173-            <a 
+./src/pages/contact.astro:174:              href={`tel:${business.phone}`}
+./src/pages/contact.astro-175-              class="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-orange-600 transition-colors w-full justify-center"
+./src/pages/contact.astro-176-            >
+./src/pages/contact.astro-177-              <Icon name="phone" size="md" />
+./src/pages/contact.astro-178-              {business.phoneFormatted}
+--
+./scripts/extract-legacy-urls.mjs-63-  let match;
+./scripts/extract-legacy-urls.mjs-64-
+./scripts/extract-legacy-urls.mjs-65-  while ((match = hrefRegex.exec(htmlText)) !== null) {
+./scripts/extract-legacy-urls.mjs-66-    const href = match[1];
+./scripts/extract-legacy-urls.mjs:67:    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+./scripts/extract-legacy-urls.mjs-68-
+./scripts/extract-legacy-urls.mjs-69-    const abs = toAbsolute(href, origin);
+./scripts/extract-legacy-urls.mjs-70-    if (!abs) continue;
+./scripts/extract-legacy-urls.mjs-71-    urls.push(abs);
+--
+./src/pages/404.astro-28-          <Button href="/service-area/" variant="outline">Service Areas</Button>
+./src/pages/404.astro-29-          <Button href="/contact/" variant="outline">Contact</Button>
+./src/pages/404.astro-30-        </div>
+./src/pages/404.astro-31-
+./src/pages/404.astro:32:        <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/404.astro-33-          Call {business.phoneFormatted}
+./src/pages/404.astro-34-        </Button>
+./src/pages/404.astro-35-      </div>
+./src/pages/404.astro-36-    </div>
+--
+./src/layouts/ServicePillarLayout.astro-159-          </div>
+./src/layouts/ServicePillarLayout.astro-160-          
+./src/layouts/ServicePillarLayout.astro-161-          <!-- Mobile CTAs -->
+./src/layouts/ServicePillarLayout.astro-162-          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+./src/layouts/ServicePillarLayout.astro:163:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+./src/layouts/ServicePillarLayout.astro-164-              <Icon name="phone" size="sm" />
+./src/layouts/ServicePillarLayout.astro-165-              Call {business.phoneFormatted}
+./src/layouts/ServicePillarLayout.astro-166-            </Button>
+./src/layouts/ServicePillarLayout.astro-167-          </div>
+./src/layouts/ServicePillarLayout.astro-168-          
+./src/layouts/ServicePillarLayout.astro-169-          <!-- Desktop Phone -->
+./src/layouts/ServicePillarLayout.astro-170-          <div class="hidden lg:flex items-center gap-6 mt-2">
+./src/layouts/ServicePillarLayout.astro:171:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/ServicePillarLayout.astro-172-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+./src/layouts/ServicePillarLayout.astro-173-                <Icon name="phone" size="md" class="text-white" />
+./src/layouts/ServicePillarLayout.astro-174-              </span>
+./src/layouts/ServicePillarLayout.astro-175-              <span>
+--
+src/components/sections/Hero.astro-117-        
+src/components/sections/Hero.astro-118-        <!-- Mobile CTAs -->
+src/components/sections/Hero.astro-119-        <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+src/components/sections/Hero.astro-120-          <Button 
+src/components/sections/Hero.astro:121:            href={`tel:${business.phone}`}
+src/components/sections/Hero.astro-122-            variant="primary"
+src/components/sections/Hero.astro-123-            size="lg"
+src/components/sections/Hero.astro-124-            class="justify-center"
+src/components/sections/Hero.astro-125-          >
+--
+src/components/sections/Hero.astro-138-        
+src/components/sections/Hero.astro-139-        <!-- Desktop Phone CTA -->
+src/components/sections/Hero.astro-140-        <div class="hidden lg:flex items-center gap-6 mt-2">
+src/components/sections/Hero.astro-141-          <a 
+src/components/sections/Hero.astro:142:            href={`tel:${business.phone}`}
+src/components/sections/Hero.astro-143-            class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+src/components/sections/Hero.astro-144-          >
+src/components/sections/Hero.astro-145-            <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+src/components/sections/Hero.astro-146-              <Icon name="phone" size="md" class="text-white" />
+--
+src/components/sections/ServiceAreas.astro-149-          <div class="flex flex-wrap gap-4">
+src/components/sections/ServiceAreas.astro-150-            <Button href="/service-area/" variant="primary">
+src/components/sections/ServiceAreas.astro-151-              View All Service Areas
+src/components/sections/ServiceAreas.astro-152-            </Button>
+src/components/sections/ServiceAreas.astro:153:            <Button href={`tel:${business.phone}`} variant="outline">
+src/components/sections/ServiceAreas.astro-154-              <Icon name="phone" size="sm" />
+src/components/sections/ServiceAreas.astro-155-              Call for Service
+src/components/sections/ServiceAreas.astro-156-            </Button>
+src/components/sections/ServiceAreas.astro-157-          </div>
+--
+./src/pages/blog/index.astro-174-        <p class="text-brand-cream-300 mb-8">
+./src/pages/blog/index.astro-175-          Don't wait—call us 24/7 for 60-minute response throughout North San Diego County.
+./src/pages/blog/index.astro-176-        </p>
+./src/pages/blog/index.astro-177-        <div class="flex flex-wrap justify-center gap-4">
+./src/pages/blog/index.astro:178:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/blog/index.astro-179-            <Icon name="phone" size="sm" />
+./src/pages/blog/index.astro-180-            {business.phoneFormatted}
+./src/pages/blog/index.astro-181-          </Button>
+./src/pages/blog/index.astro-182-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./src/layouts/InsuranceCarrierLayout.astro-140-            </div>
+./src/layouts/InsuranceCarrierLayout.astro-141-          </div>
+./src/layouts/InsuranceCarrierLayout.astro-142-          
+./src/layouts/InsuranceCarrierLayout.astro-143-          <div class="hidden lg:flex items-center gap-6">
+./src/layouts/InsuranceCarrierLayout.astro:144:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/InsuranceCarrierLayout.astro-145-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+./src/layouts/InsuranceCarrierLayout.astro-146-                <Icon name="phone" size="md" class="text-white" />
+./src/layouts/InsuranceCarrierLayout.astro-147-              </span>
+./src/layouts/InsuranceCarrierLayout.astro-148-              <span>
+--
+./src/layouts/InsuranceCarrierLayout.astro-190-            </p>
+./src/layouts/InsuranceCarrierLayout.astro-191-          </div>
+./src/layouts/InsuranceCarrierLayout.astro-192-          
+./src/layouts/InsuranceCarrierLayout.astro-193-          <div class="mt-8 flex flex-wrap gap-4">
+./src/layouts/InsuranceCarrierLayout.astro:194:            <Button href={`tel:${business.phone}`} variant="primary">
+./src/layouts/InsuranceCarrierLayout.astro-195-              <Icon name="phone" size="sm" />
+./src/layouts/InsuranceCarrierLayout.astro-196-              Call {business.phoneFormatted}
+./src/layouts/InsuranceCarrierLayout.astro-197-            </Button>
+./src/layouts/InsuranceCarrierLayout.astro-198-            <Button href="/contact/" variant="outline">
+--
+./src/layouts/MoneyPageLayout.astro-123-            </div>
+./src/layouts/MoneyPageLayout.astro-124-          </div>
+./src/layouts/MoneyPageLayout.astro-125-          
+./src/layouts/MoneyPageLayout.astro-126-          <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+./src/layouts/MoneyPageLayout.astro:127:            <Button href={`tel:${business.phone}`} variant="primary" size="lg" class="justify-center">
+./src/layouts/MoneyPageLayout.astro-128-              <Icon name="phone" size="sm" />
+./src/layouts/MoneyPageLayout.astro-129-              Call {business.phoneFormatted}
+./src/layouts/MoneyPageLayout.astro-130-            </Button>
+./src/layouts/MoneyPageLayout.astro-131-          </div>
+./src/layouts/MoneyPageLayout.astro-132-          
+./src/layouts/MoneyPageLayout.astro-133-          <div class="hidden lg:flex items-center gap-6">
+./src/layouts/MoneyPageLayout.astro:134:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/MoneyPageLayout.astro-135-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+./src/layouts/MoneyPageLayout.astro-136-                <Icon name="phone" size="md" class="text-white" />
+./src/layouts/MoneyPageLayout.astro-137-              </span>
+./src/layouts/MoneyPageLayout.astro-138-              <span>
+--
+./src/layouts/InsuranceServiceLayout.astro-136-            </div>
+./src/layouts/InsuranceServiceLayout.astro-137-          </div>
+./src/layouts/InsuranceServiceLayout.astro-138-          
+./src/layouts/InsuranceServiceLayout.astro-139-          <div class="hidden lg:flex items-center gap-6">
+./src/layouts/InsuranceServiceLayout.astro:140:            <a href={`tel:${business.phone}`} class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors">
+./src/layouts/InsuranceServiceLayout.astro-141-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+./src/layouts/InsuranceServiceLayout.astro-142-                <Icon name="phone" size="md" class="text-white" />
+./src/layouts/InsuranceServiceLayout.astro-143-              </span>
+./src/layouts/InsuranceServiceLayout.astro-144-              <span>
+--
+./src/layouts/BaseLayout.astro-78-      gtag('config', 'G-WH27G3H1XN');
+./src/layouts/BaseLayout.astro-79-    </script>
+./src/layouts/BaseLayout.astro-80-    <script is:inline>
+./src/layouts/BaseLayout.astro-81-      document.addEventListener('click', function(event) {
+./src/layouts/BaseLayout.astro:82:        var link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
+./src/layouts/BaseLayout.astro-83-        if (!link || typeof window.gtag !== 'function') return;
+./src/layouts/BaseLayout.astro-84-        var href = link.getAttribute('href') || '';
+./src/layouts/BaseLayout.astro:85:        var phoneNumber = href.replace('tel:', '');
+./src/layouts/BaseLayout.astro-86-        window.gtag('event', 'click_to_call', {
+./src/layouts/BaseLayout.astro-87-          phone_number: phoneNumber,
+./src/layouts/BaseLayout.astro-88-          link_url: href,
+./src/layouts/BaseLayout.astro:89:          page_path: window.location.pathname,
+./src/layouts/BaseLayout.astro-90-        });
+./src/layouts/BaseLayout.astro-91-      });
+./src/layouts/BaseLayout.astro-92-    </script>
+./src/layouts/BaseLayout.astro-93-
+--
+./src/layouts/CityLandingLayout.astro-218-              {context.proximityStatement}
+./src/layouts/CityLandingLayout.astro-219-            </p>
+./src/layouts/CityLandingLayout.astro-220-            
+./src/layouts/CityLandingLayout.astro-221-            <div class="flex flex-wrap gap-4">
+./src/layouts/CityLandingLayout.astro:222:              <Button href={`tel:${business.phone}`} variant="primary">
+./src/layouts/CityLandingLayout.astro-223-                <Icon name="phone" size="sm" />
+./src/layouts/CityLandingLayout.astro-224-                Call {business.phoneFormatted}
+./src/layouts/CityLandingLayout.astro-225-              </Button>
+./src/layouts/CityLandingLayout.astro-226-              <Button href="/contact/" variant="outline">
+--
+./src/layouts/AboutLayout.astro-32-const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+./src/layouts/AboutLayout.astro-33-
+./src/layouts/AboutLayout.astro-34-const ctaTitle = config.ctaTitle || 'Ready to Experience the Tamarack Difference?';
+./src/layouts/AboutLayout.astro-35-const ctaSubtitle = config.ctaSubtitle || '24/7 emergency service with 60-minute response time throughout North San Diego County.';
+./src/layouts/AboutLayout.astro:36:const phoneHref = `tel:${business.phone}`;
+./src/layouts/AboutLayout.astro-37-
+./src/layouts/AboutLayout.astro-38----
+./src/layouts/AboutLayout.astro-39-
+./src/layouts/AboutLayout.astro-40-<BaseLayout title={config.title} description={config.description} canonical={canonical} jsonLd={[breadcrumbSchema, ...pageJsonLd]}>
+--
+./src/layouts/BlogPostLayout.astro-191-              </h3>
+./src/layouts/BlogPostLayout.astro-192-              <p class="text-brand-gray text-sm mb-4">
+./src/layouts/BlogPostLayout.astro-193-                Available 24/7 for emergencies throughout North San Diego County.
+./src/layouts/BlogPostLayout.astro-194-              </p>
+./src/layouts/BlogPostLayout.astro:195:              <Button href={`tel:${business.phone}`} variant="primary" size="md" class="w-full justify-center mb-3">
+./src/layouts/BlogPostLayout.astro-196-                <Icon name="phone" size="sm" />
+./src/layouts/BlogPostLayout.astro-197-                Call {business.phoneFormatted}
+./src/layouts/BlogPostLayout.astro-198-              </Button>
+./src/layouts/BlogPostLayout.astro-199-              <Button href="/contact/" variant="outline" size="md" class="w-full justify-center">
+--
+./src/layouts/BlogPostLayout.astro-339-        <p class="text-brand-cream-300 mb-8">
+./src/layouts/BlogPostLayout.astro-340-          24/7 emergency service with 60-minute response time.
+./src/layouts/BlogPostLayout.astro-341-        </p>
+./src/layouts/BlogPostLayout.astro-342-        <div class="flex flex-wrap justify-center gap-4">
+./src/layouts/BlogPostLayout.astro:343:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/layouts/BlogPostLayout.astro-344-            <Icon name="phone" size="sm" />
+./src/layouts/BlogPostLayout.astro-345-            {business.phoneFormatted}
+./src/layouts/BlogPostLayout.astro-346-          </Button>
+./src/layouts/BlogPostLayout.astro-347-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./src/pages/projects/[category].astro-150-          <div class="flex flex-wrap justify-center gap-4">
+./src/pages/projects/[category].astro-151-            <Button href={`/services/${relatedService.slug}/`} variant="primary" size="lg">
+./src/pages/projects/[category].astro-152-              Learn About Our {relatedService.name} Service
+./src/pages/projects/[category].astro-153-            </Button>
+./src/pages/projects/[category].astro:154:            <Button href={`tel:${business.phone}`} variant="outline" size="lg">
+./src/pages/projects/[category].astro-155-              <Icon name="phone" size="sm" />
+./src/pages/projects/[category].astro-156-              {business.phoneFormatted}
+./src/pages/projects/[category].astro-157-            </Button>
+./src/pages/projects/[category].astro-158-          </div>
+--
+./src/pages/projects/[category].astro-199-        <p class="text-brand-cream-300 mb-8">
+./src/pages/projects/[category].astro-200-          Every project you see here started with a phone call. We're ready to help 24/7.
+./src/pages/projects/[category].astro-201-        </p>
+./src/pages/projects/[category].astro-202-        <div class="flex flex-wrap justify-center gap-4">
+./src/pages/projects/[category].astro:203:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/projects/[category].astro-204-            <Icon name="phone" size="sm" />
+./src/pages/projects/[category].astro-205-            {business.phoneFormatted}
+./src/pages/projects/[category].astro-206-          </Button>
+./src/pages/projects/[category].astro-207-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./src/pages/projects/index.astro-163-        <p class="text-brand-cream-300 mb-8">
+./src/pages/projects/index.astro-164-          Every project you see here started with a phone call. We're ready to help 24/7 with 60-minute response times.
+./src/pages/projects/index.astro-165-        </p>
+./src/pages/projects/index.astro-166-        <div class="flex flex-wrap justify-center gap-4">
+./src/pages/projects/index.astro:167:          <Button href={`tel:${business.phone}`} variant="primary" size="lg">
+./src/pages/projects/index.astro-168-            <Icon name="phone" size="sm" />
+./src/pages/projects/index.astro-169-            {business.phoneFormatted}
+./src/pages/projects/index.astro-170-          </Button>
+./src/pages/projects/index.astro-171-          <Button href="/contact/" variant="outline" size="lg" class="border-white/30 text-white hover:bg-white hover:text-brand-black">
+--
+./src/components/global/Header.astro-29-    <div class="container">
+./src/components/global/Header.astro-30-      <div class="flex items-center justify-between text-body-sm">
+./src/components/global/Header.astro-31-        <div class="flex items-center gap-6">
+./src/components/global/Header.astro-32-          <a 
+./src/components/global/Header.astro:33:            href={`tel:${business.phone}`} 
+./src/components/global/Header.astro-34-            class="flex items-center gap-2 hover:text-brand-orange transition-colors"
+./src/components/global/Header.astro-35-          >
+./src/components/global/Header.astro-36-            <Icon name="phone" size="sm" />
+./src/components/global/Header.astro-37-            <span>{business.phoneFormatted}</span>
+--
+./src/components/global/Header.astro-127-        
+./src/components/global/Header.astro-128-        <!-- CTA Button (Desktop) -->
+./src/components/global/Header.astro-129-        <div class="hidden lg:flex items-center gap-4">
+./src/components/global/Header.astro-130-          <a 
+./src/components/global/Header.astro:131:            href={`tel:${business.phone}`}
+./src/components/global/Header.astro-132-            class="flex items-center gap-2 text-brand-black font-semibold hover:text-brand-orange transition-colors"
+./src/components/global/Header.astro-133-          >
+./src/components/global/Header.astro-134-            <Icon name="phone" size="md" />
+./src/components/global/Header.astro-135-            <span class="hidden xl:inline">{business.phoneFormatted}</span>
+--
+./src/components/global/Header.astro-223-        
+./src/components/global/Header.astro-224-        <!-- Mobile menu footer -->
+./src/components/global/Header.astro-225-        <div class="p-4 border-t border-brand-cream-300 space-y-4">
+./src/components/global/Header.astro-226-          <a 
+./src/components/global/Header.astro:227:            href={`tel:${business.phone}`}
+./src/components/global/Header.astro-228-            class="flex items-center justify-center gap-2 w-full py-3 bg-brand-cream-200 rounded-lg text-brand-black font-semibold"
+./src/components/global/Header.astro-229-          >
+./src/components/global/Header.astro-230-            <Icon name="phone" size="md" />
+./src/components/global/Header.astro-231-            {business.phoneFormatted}
+--
+./src/components/global/Footer.astro-34-            </p>
+./src/components/global/Footer.astro-35-          </div>
+./src/components/global/Footer.astro-36-          <div class="flex flex-col sm:flex-row gap-4">
+./src/components/global/Footer.astro-37-            <Button 
+./src/components/global/Footer.astro:38:              href={`tel:${business.phone}`}
+./src/components/global/Footer.astro-39-              variant="secondary"
+./src/components/global/Footer.astro-40-              size="lg"
+./src/components/global/Footer.astro-41-              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+./src/components/global/Footer.astro-42-            >
+--
+./src/components/global/Footer.astro-110-        <div>
+./src/components/global/Footer.astro-111-          <h3 class="font-heading font-bold text-white mb-4">Quick Info</h3>
+./src/components/global/Footer.astro-112-          <ul class="space-y-4">
+./src/components/global/Footer.astro-113-            <li>
+./src/components/global/Footer.astro:114:              <a href={`tel:${business.phone}`} class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors">
+./src/components/global/Footer.astro-115-                <Icon name="phone" size="sm" class="mt-0.5 flex-shrink-0" />
+./src/components/global/Footer.astro-116-                <span>
+./src/components/global/Footer.astro-117-                  <span class="block text-sm font-medium text-white">{business.phoneFormatted}</span>
+./src/components/global/Footer.astro-118-                  <span class="block text-xs">24/7 Emergency Line</span>
+--
+./src/components/global/FloatingCTA.astro-15->
+./src/components/global/FloatingCTA.astro-16-  <div class="bg-white border-t border-brand-cream-300 shadow-lg px-4 py-3" style="padding-bottom: max(12px, env(safe-area-inset-bottom));">
+./src/components/global/FloatingCTA.astro-17-    <div class="flex items-center gap-3">
+./src/components/global/FloatingCTA.astro-18-      <a 
+./src/components/global/FloatingCTA.astro:19:        href={`tel:${business.phone}`}
+./src/components/global/FloatingCTA.astro-20-        class="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange-600 transition-colors"
+./src/components/global/FloatingCTA.astro-21-      >
+./src/components/global/FloatingCTA.astro-22-        <Icon name="phone" size="sm" />
+./src/components/global/FloatingCTA.astro-23-        <span>Call Now</span>
+--
+./src/components/forms/LeadForm.astro-170-      // Set hidden field values
+./src/components/forms/LeadForm.astro-171-      const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
+./src/components/forms/LeadForm.astro-172-      const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+./src/components/forms/LeadForm.astro-173-      
+./src/components/forms/LeadForm.astro:174:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+./src/components/forms/LeadForm.astro-175-      if (timestampInput) timestampInput.value = new Date().toISOString();
+./src/components/forms/LeadForm.astro-176-      
+./src/components/forms/LeadForm.astro-177-      // Handle form submission
+./src/components/forms/LeadForm.astro-178-      form.addEventListener('submit', async (e) => {
+--
+./src/components/forms/LeadForm.astro-215-            // Track conversion if analytics available
+./src/components/forms/LeadForm.astro-216-            if (typeof window !== 'undefined' && (window as any).gtag) {
+./src/components/forms/LeadForm.astro-217-              (window as any).gtag('event', 'webform_submit', {
+./src/components/forms/LeadForm.astro-218-                form_name: 'lead_form',
+./src/components/forms/LeadForm.astro:219:                page_path: window.location.pathname
+./src/components/forms/LeadForm.astro-220-              });
+./src/components/forms/LeadForm.astro-221-            }
+./src/components/forms/LeadForm.astro-222-          } else {
+./src/components/forms/LeadForm.astro-223-            throw new Error('Form submission failed');
+--
+./src/components/forms/ContactForm.astro-164-    <Button type="submit" variant="primary" size="lg" class="w-full justify-center">
+./src/components/forms/ContactForm.astro-165-      Send Message
+./src/components/forms/ContactForm.astro-166-    </Button>
+./src/components/forms/ContactForm.astro-167-    <p class="text-xs text-brand-gray text-center mt-3">
+./src/components/forms/ContactForm.astro:168:      For emergencies, call us directly at <a href={`tel:${business.phone}`} class="text-brand-orange font-semibold hover:underline">{business.phoneFormatted}</a>
+./src/components/forms/ContactForm.astro-169-    </p>
+./src/components/forms/ContactForm.astro-170-  </div>
+./src/components/forms/ContactForm.astro-171-</form>
+./src/components/forms/ContactForm.astro-172-
+--
+./src/components/forms/ContactForm.astro-176-    forms.forEach(form => {
+./src/components/forms/ContactForm.astro-177-      const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
+./src/components/forms/ContactForm.astro-178-      const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+./src/components/forms/ContactForm.astro-179-      
+./src/components/forms/ContactForm.astro:180:      if (pageUrlInput) pageUrlInput.value = window.location.href;
+./src/components/forms/ContactForm.astro-181-      if (timestampInput) timestampInput.value = new Date().toISOString();
+./src/components/forms/ContactForm.astro-182-
+./src/components/forms/ContactForm.astro-183-      form.addEventListener('submit', () => {
+./src/components/forms/ContactForm.astro-184-        if (typeof window !== 'undefined' && (window as any).gtag) {
+./src/components/forms/ContactForm.astro-185-          (window as any).gtag('event', 'webform_submit', {
+./src/components/forms/ContactForm.astro-186-            form_name: 'contact_form',
+./src/components/forms/ContactForm.astro:187:            page_path: window.location.pathname,
+./src/components/forms/ContactForm.astro-188-          });
+./src/components/forms/ContactForm.astro-189-        }
+./src/components/forms/ContactForm.astro-190-      });
+./src/components/forms/ContactForm.astro-191-    });
+--
+./src/components/sections/CTABanner.astro-43-        
+./src/components/sections/CTABanner.astro-44-        <div class="flex flex-col sm:flex-row gap-4">
+./src/components/sections/CTABanner.astro-45-          {showPhone && (
+./src/components/sections/CTABanner.astro-46-            <Button 
+./src/components/sections/CTABanner.astro:47:              href={`tel:${business.phone}`}
+./src/components/sections/CTABanner.astro-48-              variant="secondary"
+./src/components/sections/CTABanner.astro-49-              size="lg"
+./src/components/sections/CTABanner.astro-50-              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
+./src/components/sections/CTABanner.astro-51-            >
+--
+./src/components/sections/CTABanner.astro-92-        </p>
+./src/components/sections/CTABanner.astro-93-        
+./src/components/sections/CTABanner.astro-94-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+./src/components/sections/CTABanner.astro-95-          <Button 
+./src/components/sections/CTABanner.astro:96:            href={`tel:${business.phone}`}
+./src/components/sections/CTABanner.astro-97-            variant="primary"
+./src/components/sections/CTABanner.astro-98-            size="lg"
+./src/components/sections/CTABanner.astro-99-          >
+./src/components/sections/CTABanner.astro-100-            <Icon name="phone" size="md" />
+--
+./src/components/sections/CTABanner.astro-138-          Need emergency restoration? 
+./src/components/sections/CTABanner.astro-139-          <span class="text-brand-gray font-normal">We're available 24/7.</span>
+./src/components/sections/CTABanner.astro-140-        </p>
+./src/components/sections/CTABanner.astro-141-        <Button 
+./src/components/sections/CTABanner.astro:142:          href={`tel:${business.phone}`}
+./src/components/sections/CTABanner.astro-143-          variant="primary"
+./src/components/sections/CTABanner.astro-144-        >
+./src/components/sections/CTABanner.astro-145-          <Icon name="phone" size="sm" />
+./src/components/sections/CTABanner.astro-146-          {business.phoneFormatted}
+--
+./src/components/sections/Hero.astro-117-        
+./src/components/sections/Hero.astro-118-        <!-- Mobile CTAs -->
+./src/components/sections/Hero.astro-119-        <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+./src/components/sections/Hero.astro-120-          <Button 
+./src/components/sections/Hero.astro:121:            href={`tel:${business.phone}`}
+./src/components/sections/Hero.astro-122-            variant="primary"
+./src/components/sections/Hero.astro-123-            size="lg"
+./src/components/sections/Hero.astro-124-            class="justify-center"
+./src/components/sections/Hero.astro-125-          >
+--
+./src/components/sections/Hero.astro-138-        
+./src/components/sections/Hero.astro-139-        <!-- Desktop Phone CTA -->
+./src/components/sections/Hero.astro-140-        <div class="hidden lg:flex items-center gap-6 mt-2">
+./src/components/sections/Hero.astro-141-          <a 
+./src/components/sections/Hero.astro:142:            href={`tel:${business.phone}`}
+./src/components/sections/Hero.astro-143-            class="group flex items-center gap-3 text-white hover:text-brand-orange transition-colors"
+./src/components/sections/Hero.astro-144-          >
+./src/components/sections/Hero.astro-145-            <span class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange group-hover:bg-brand-orange-600 transition-colors">
+./src/components/sections/Hero.astro-146-              <Icon name="phone" size="md" class="text-white" />
+--
+./src/components/sections/ServiceAreas.astro-149-          <div class="flex flex-wrap gap-4">
+./src/components/sections/ServiceAreas.astro-150-            <Button href="/service-area/" variant="primary">
+./src/components/sections/ServiceAreas.astro-151-              View All Service Areas
+./src/components/sections/ServiceAreas.astro-152-            </Button>
+./src/components/sections/ServiceAreas.astro:153:            <Button href={`tel:${business.phone}`} variant="outline">
+./src/components/sections/ServiceAreas.astro-154-              <Icon name="phone" size="sm" />
+./src/components/sections/ServiceAreas.astro-155-              Call for Service
+./src/components/sections/ServiceAreas.astro-156-            </Button>
+./src/components/sections/ServiceAreas.astro-157-          </div>

@@ -16,7 +16,7 @@ import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
-import { services, cities, business } from '@/data/site';
+import { allServices, cities, business } from '@/data/site';
 import { serviceContent } from '@/data/content';
 import { getServicePillarContent } from '@/data/servicePillarContent';
 import {
@@ -37,11 +37,11 @@ interface Props {
 const { serviceSlug } = Astro.props;
 
 // Get service data
-const service = services.find(s => s.slug === serviceSlug)!;
+const service = allServices.find(s => s.slug === serviceSlug)!;
 const content = serviceContent[serviceSlug] || null;
 const pillarContent = getServicePillarContent(serviceSlug);
 const citiesServed = cities.filter(c => c.tier === 1 || c.tier === 2);
-const relatedServices = services.filter(s => 
+const relatedServices = allServices.filter(s => 
   service.relatedServices?.includes(s.slug) && s.slug !== serviceSlug
 ).slice(0, 3);
 

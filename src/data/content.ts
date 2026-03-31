@@ -493,6 +493,163 @@ export const serviceContent: Record<string, ServiceContent> = {
       'Minimally invasive repairs',
     ],
   },
+
+  'slab-leak-repair': {
+    slug: 'slab-leak-repair',
+    heroSubtitle: 'Advanced slab leak detection and minimally invasive repair to protect your foundation.',
+    problemStatement: `A slab leak is one of the most damaging plumbing failures a homeowner can face. Water escaping beneath your concrete foundation saturates the soil, destabilizes the slab, and migrates upward through flooring — warping hardwood, buckling tile, and creating ideal mold conditions inside walls you cannot see. Because the leak is hidden under concrete, most homeowners discover it only after significant damage has already occurred. In North San Diego County, the combination of aging copper supply lines, expansive clay soils, and coastal ground shifting makes slab leaks more common than in inland regions.`,
+    solutionOverview: `We locate slab leaks precisely using electronic leak detection, thermal imaging cameras, and acoustic listening equipment — without tearing up your floor to find them. Once pinpointed, we determine the least invasive repair method: direct access repair, pipe rerouting, or epoxy pipe lining depending on pipe condition and leak location. Every repair is followed by a full moisture assessment of affected flooring and walls to ensure no hidden water damage is left behind.`,
+    processSteps: [
+      {
+        title: 'Non-Invasive Detection',
+        description: 'Thermal imaging, electronic amplification, and acoustic sensors pinpoint the leak location through the slab without any demolition.',
+      },
+      {
+        title: 'Repair Method Selection',
+        description: 'We evaluate pipe age, material, and leak location to determine the optimal repair: direct access, reroute, or epoxy lining.',
+      },
+      {
+        title: 'Targeted Access',
+        description: 'We open only what is necessary — a precise core or saw cut at the confirmed leak location, minimizing floor and foundation disruption.',
+      },
+      {
+        title: 'Pipe Repair or Reroute',
+        description: 'We repair or replace the damaged section. For extensively corroded lines, full rerouting through walls or attic avoids future slab penetrations.',
+      },
+      {
+        title: 'Moisture & Damage Assessment',
+        description: 'After repair, we map moisture levels throughout the affected area using calibrated meters to identify any water migration into walls, cabinets, or subfloor.',
+      },
+      {
+        title: 'Drying & Restoration',
+        description: 'We dry any water-damaged materials and restore concrete, tile, hardwood, or flooring to pre-loss condition.',
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Detect Without Destruction',
+        description: 'Our thermal imaging and acoustic equipment finds the exact leak location before we touch your floor — minimizing repair scope and cost.',
+      },
+      {
+        title: 'Repair and Restore',
+        description: 'We fix the pipe and the water damage it caused. Most contractors do one or the other. We do both, under one roof.',
+      },
+      {
+        title: 'Foundation Protection',
+        description: 'We assess and dry the soil and structural environment around the repair, protecting your slab from long-term saturation damage.',
+      },
+    ],
+    commonCauses: [
+      'Corroded or pinhole-pitted copper supply lines',
+      'Expansive clay soil shifting under the slab',
+      'High water pressure stressing pipe joints',
+      'Electrolytic corrosion from dissimilar metals',
+      'Poor original installation with pipe contact against aggregate',
+      'Age — most copper slab plumbing exceeds its design life after 25–40 years',
+    ],
+    warningSigns: [
+      'Warm or hot spots on floor surface (hot water line leak)',
+      'Sound of running water when all fixtures are off',
+      'Unexplained increase in water bill',
+      'Cracks appearing in floor tile or foundation',
+      'Wet or damp flooring with no visible source',
+      'Low water pressure throughout the home',
+      'Mold or mildew smell near baseboards',
+    ],
+    costFactors: [
+      'Leak location and depth within the slab',
+      'Pipe material and overall pipe condition',
+      'Repair method selected (direct, reroute, or lining)',
+      'Extent of water migration into flooring and walls',
+      'Flooring material requiring restoration',
+      'Mold remediation if moisture was present long-term',
+    ],
+    serviceHighlights: [
+      'Electronic and acoustic leak detection — no guesswork',
+      'Thermal imaging confirms leak location before access',
+      'Pipe rerouting available for extensively corroded systems',
+      'Combined leak repair and water damage restoration',
+    ],
+  },
+
+  'leak-detection': {
+    slug: 'leak-detection',
+    heroSubtitle: 'Precision leak detection using thermal imaging and acoustic technology — no unnecessary demolition.',
+    problemStatement: `Hidden leaks are the most destructive plumbing problem homeowners face precisely because they are invisible. A pinhole in a supply line inside a wall, a slow drip at a slab penetration, or a hairline crack in a roof flashing can silently discharge hundreds of gallons per month — rotting framing, saturating insulation, and growing mold colonies behind surfaces that look perfectly normal. By the time visible symptoms appear, the damage is often significant. In North San Diego County, coastal humidity, aging copper infrastructure, and clay soil movement create leak conditions that manifest in ways that are difficult to diagnose without specialized equipment.`,
+    solutionOverview: `Professional leak detection eliminates the guesswork — and the unnecessary demolition — that comes from searching for a hidden leak without proper tools. We use a layered detection approach: thermal imaging cameras identify temperature anomalies caused by evaporating water, acoustic amplification equipment listens for the pressure signature of water escaping pipe walls, and calibrated moisture meters map the extent of water migration. The result is a precise leak location and a clear repair plan before we open a single wall.`,
+    processSteps: [
+      {
+        title: 'Pressure Testing',
+        description: 'We isolate supply lines and measure pressure drop to confirm an active leak and narrow its location to a specific zone or pipe run.',
+      },
+      {
+        title: 'Thermal Imaging Scan',
+        description: 'Infrared cameras detect surface temperature anomalies caused by evaporating moisture — revealing hidden wet areas through walls, floors, and ceilings.',
+      },
+      {
+        title: 'Acoustic Detection',
+        description: 'Ground microphones and electronic amplifiers listen for the distinct acoustic signature of water escaping under pressure — pinpointing leaks through concrete, tile, and framing.',
+      },
+      {
+        title: 'Moisture Mapping',
+        description: 'Calibrated moisture meters and probes map the full extent of water migration, identifying all affected materials beyond the immediate leak location.',
+      },
+      {
+        title: 'Findings Report',
+        description: 'We provide a written report with confirmed leak location, moisture readings, affected materials, and recommended repair scope — documentation suitable for insurance submission.',
+      },
+      {
+        title: 'Repair Coordination',
+        description: 'We repair the leak directly or coordinate with your licensed plumber, then address any water damage found during detection.',
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Find It Without Destroying It',
+        description: 'Our multi-technology approach confirms leak location precisely before any access is made, eliminating exploratory demolition.',
+      },
+      {
+        title: 'Full Moisture Assessment',
+        description: 'We map every square foot of water migration, not just the leak point — so nothing is left wet behind walls or under floors.',
+      },
+      {
+        title: 'Documentation for Insurance',
+        description: 'Our written detection reports include moisture readings, photos, and repair recommendations — exactly what insurance adjusters require.',
+      },
+    ],
+    commonCauses: [
+      'Pinhole corrosion in copper supply lines',
+      'Failed plumbing fittings and compression joints',
+      'Cracked or displaced roof flashing',
+      'Deteriorated wax rings or toilet supply lines',
+      'Irrigation system failures — subsurface and at valve manifolds',
+      'HVAC condensate line clogs causing overflow',
+      'Slab penetration failures where pipes exit the foundation',
+    ],
+    warningSigns: [
+      'Water bill increasing without change in usage',
+      'Sound of running water when everything is off',
+      'Unexplained wet spots on walls, ceilings, or floors',
+      'Musty odor in a specific room or area',
+      'Paint bubbling, wallpaper peeling, or drywall soft to the touch',
+      'Warm or discolored floor sections',
+      'Meter spinning with all fixtures closed',
+    ],
+    costFactors: [
+      'Number of suspected leak zones requiring investigation',
+      'Access difficulty — slab vs. wall vs. ceiling leak',
+      'Extent of moisture migration requiring mapping',
+      'Repair scope once leak is located',
+      'Water damage remediation needs',
+      'Insurance documentation requirements',
+    ],
+    serviceHighlights: [
+      'Thermal imaging cameras for non-invasive detection',
+      'Acoustic ground microphones for slab and wall leaks',
+      'Written detection report with moisture readings',
+      'Insurance-ready documentation included',
+    ],
+  },
 };
 
 // ===================

@@ -14,7 +14,7 @@
 import MoneyPageLayout from '@/layouts/MoneyPageLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
-import { cities, services } from '@/data/site';
+import { cities, allServices } from '@/data/site';
 import { serviceContent, cityContext, generateServiceCityFAQs } from '@/data/content';
 import { getCityServiceContent } from '@/data/cityServiceContent';
 import type { FAQ } from '@/types';
@@ -23,7 +23,7 @@ export function getStaticPaths() {
   const paths = [];
 
   for (const city of cities) {
-    for (const service of services) {
+    for (const service of allServices) {
       paths.push({
         params: {
           city: city.slug,
@@ -39,7 +39,7 @@ export function getStaticPaths() {
 const { city, service } = Astro.params;
 
 const cityData = cities.find(c => c.slug === city)!;
-const serviceData = services.find(s => s.slug === service)!;
+const serviceData = allServices.find(s => s.slug === service)!;
 
 // Get layered content
 const content = serviceContent[service] || null;

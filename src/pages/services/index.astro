@@ -12,7 +12,7 @@ import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
 import FAQ from '@/components/sections/FAQ.astro';
-import { services, business, globalFaqs } from '@/data/site';
+import { services, leakServices, business, globalFaqs } from '@/data/site';
 import { generateTitle, getCanonicalUrl } from '@/utils/seo';
 import type { BreadcrumbItem } from '@/types';
 
@@ -93,7 +93,7 @@ const serviceFaqs = globalFaqs.filter(f => f.category === 'process' || f.categor
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service) => (
+        {[...services, ...leakServices].map((service) => (
           <a 
             href={`/services/${service.slug}/`}
             class="group relative bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-normal overflow-hidden"

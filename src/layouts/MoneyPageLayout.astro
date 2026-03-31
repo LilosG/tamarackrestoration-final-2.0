@@ -15,7 +15,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
-import { services, cities, business } from '@/data/site';
+import { allServices, cities, business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema, getServiceSchema, combineSchemas } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 import type { CityServiceContent } from '@/data/cityServiceContent';
@@ -30,7 +30,7 @@ interface Props {
 const { citySlug, serviceSlug, faqs = [], uniqueContent = null } = Astro.props;
 
 const city = cities.find(c => c.slug === citySlug)!;
-const service = services.find(s => s.slug === serviceSlug)!;
+const service = allServices.find(s => s.slug === serviceSlug)!;
 
 // SEO
 const title = `${service.name} in ${city.name}, CA | Tamarack Restoration`;
