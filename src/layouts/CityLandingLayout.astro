@@ -12,6 +12,7 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
+import ProcessSteps from '@/components/sections/ProcessSteps.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
@@ -195,6 +196,14 @@ const faqSchema = getFAQSchema(cityFaqs);
     </div>
   </section>
   
+  <!-- How It Works -->
+  <ProcessSteps
+    title={`How Our ${city.name} Restoration Process Works`}
+    subtitle={`From your first call to final walkthrough — a proven process that gets ${city.name} properties back to normal faster.`}
+    variant="numbered"
+    class="bg-brand-cream-200"
+  />
+
   <!-- Local Expertise Section -->
   {context && (
     <section class="section bg-brand-cream-200">
