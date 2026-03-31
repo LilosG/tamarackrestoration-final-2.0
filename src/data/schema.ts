@@ -40,6 +40,7 @@ export const CITY_SAME_AS: Record<string, string> = {
   'Encinitas': 'https://en.wikipedia.org/wiki/Encinitas,_California',
   'Rancho Santa Fe': 'https://en.wikipedia.org/wiki/Rancho_Santa_Fe,_California',
   'Solana Beach': 'https://en.wikipedia.org/wiki/Solana_Beach,_California',
+  'Bressi Ranch': 'https://en.wikipedia.org/wiki/Bressi_Ranch,_California',
 };
 
 /** Default areaServed for LocalBusiness — all primary service cities with sameAs. */
