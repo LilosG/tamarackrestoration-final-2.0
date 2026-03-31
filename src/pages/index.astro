@@ -27,17 +27,19 @@ import InsurancePartners from '@/components/sections/InsurancePartners.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
 import { business } from '@/data/site';
-import { getHomeTitle, getWebSiteSchema } from '@/utils/seo';
+import { getHomeTitle, getWebSiteSchema, getFAQSchema } from '@/utils/seo';
+import { allFaqs } from '@/data/faqs';
 
 const seoTitle = getHomeTitle();
 const seoDescription = `24/7 emergency restoration in Carlsbad & North San Diego County. Water damage, mold removal, fire restoration. ${business.yearsInBusiness}+ years experience, ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted} for 60-minute response.`;
 const webSiteSchema = getWebSiteSchema();
+const homepageFaqSchema = getFAQSchema(allFaqs.slice(0, 5));
 ---
 
 <BaseLayout
   title={seoTitle}
   description={seoDescription}
-  jsonLd={[webSiteSchema]}
+  jsonLd={[webSiteSchema, homepageFaqSchema]}
 >
   <!-- Hero Section with Lead Form (BLACK) -->
   <Hero 
@@ -117,6 +119,7 @@ const webSiteSchema = getWebSiteSchema();
     title="Frequently Asked Questions"
     subtitle="Get answers to common questions about our restoration services"
     limit={5}
+    showSchema={false}
     class="bg-brand-cream-200"
   />
   
