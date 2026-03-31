@@ -142,7 +142,7 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
       'IICRC-certified emergency water, fire, and mold restoration in Carlsbad, CA. 60-minute response, 24/7.',
     image: `${SITE_URL}/images/logo/tamarack-logo.webp`,
     logo: `${SITE_URL}/images/logo/tamarack-logo.webp`,
-    telephone: '+1-760-500-2211',
+    telephone: `+1${business.phone}`,
     email: business.email,
     address: {
       '@type': 'PostalAddress',
@@ -185,7 +185,7 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
       {
         '@type': 'ContactPoint',
         contactType: 'customer service',
-        telephone: '+1-760-500-2211',
+        telephone: `+1${business.phone}`,
         email: business.email,
         availableLanguage: ['English'],
         areaServed: AREA_SERVED_CITIES.map((c) => c.name),
