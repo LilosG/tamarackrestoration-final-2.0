@@ -380,6 +380,36 @@
       "source": "/blog/signs-of-mold-in-carlsbad-homes/",
       "destination": "/service-area/carlsbad/mold-removal/",
       "permanent": true
+    },
+    {
+      "source": "/our-projects/water-restoration",
+      "destination": "/projects/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/water-restoration/",
+      "destination": "/projects/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/rancho-santa-fe/water-restoration",
+      "destination": "/service-area/rancho-santa-fe/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/rancho-santa-fe/water-restoration/",
+      "destination": "/service-area/rancho-santa-fe/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/vista/water-restoration",
+      "destination": "/service-area/vista/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/vista/water-restoration/",
+      "destination": "/service-area/vista/water-damage-restoration/",
+      "permanent": true
     }
   ],
   "headers": [
