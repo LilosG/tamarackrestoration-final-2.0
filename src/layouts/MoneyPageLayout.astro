@@ -16,7 +16,7 @@ import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { allServices, cities, business } from '@/data/site';
-import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema, getServiceSchema, combineSchemas } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema, getServiceSchema, combineSchemas, getMoneyPageTitle } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
 import type { CityServiceContent } from '@/data/cityServiceContent';
 
@@ -33,7 +33,7 @@ const city = cities.find(c => c.slug === citySlug)!;
 const service = allServices.find(s => s.slug === serviceSlug)!;
 
 // SEO
-const title = `${service.name} in ${city.name}, CA | Tamarack Restoration`;
+const title = getMoneyPageTitle(service.name, city.name);
 const description = `Professional ${service.name.toLowerCase()} in ${city.name}. 24/7 emergency response, 60-minute arrival. IICRC certified. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl(`/service-area/${city.slug}/${service.slug}/`);
 
