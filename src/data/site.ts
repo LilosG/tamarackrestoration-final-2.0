@@ -552,6 +552,8 @@ export const mainNavigation: NavItem[] = [
     children: [
       { label: 'Water Damage Restoration', href: '/services/water-damage-restoration/' },
       { label: 'Water Leak Repair', href: '/services/water-leak-repair/' },
+      { label: 'Slab Leak Repair', href: '/services/slab-leak-repair/' },
+      { label: 'Leak Detection', href: '/services/leak-detection/' },
       { label: 'Mold Removal', href: '/services/mold-removal/' },
       { label: 'Fire Damage Restoration', href: '/services/fire-damage-restoration/' },
       { label: 'Flood Cleanup', href: '/services/flood-cleanup/' },

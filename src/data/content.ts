@@ -838,7 +838,7 @@ export const cityContext: Record<string, CityContext> = {
 
 export function generateServiceCityFAQs(
   serviceName: string,
-  _serviceSlug: string,
+  serviceSlug: string,
   cityName: string,
   _citySlug: string,
   neighborhoods: string[] = []
@@ -846,7 +846,67 @@ export function generateServiceCityFAQs(
   const neighborhoodList = neighborhoods.length > 0 
     ? neighborhoods.slice(0, 3).join(', ') 
     : '';
-  
+
+  // Service-specific FAQ sets for technical leak services
+  if (serviceSlug === 'slab-leak-repair') {
+    return [
+      {
+        question: `What are the warning signs of a slab leak in a ${cityName} home?`,
+        answer: `The most common early sign is a warm or hot spot on your floor — most slab leaks involve hot-water lines running beneath the foundation. Other indicators include an unexplained increase in your water bill, the sound of running water when all fixtures are off, new cracks appearing in floor tile or the foundation, and damp or buckled flooring with no visible source. In ${cityName}, where soil movement and aging copper plumbing are common, we recommend investigating any of these symptoms promptly.`,
+      },
+      {
+        question: `How do you locate a slab leak in ${cityName} without tearing up the floor?`,
+        answer: `We use three non-invasive detection technologies: thermal imaging cameras that identify temperature anomalies caused by water escaping beneath the slab, acoustic listening equipment that amplifies the sound of pressurized water escaping through pipe cracks, and electronic amplification that pinpoints the leak location through concrete. We mark the exact leak location before opening anything — minimizing the repair footprint and protecting your flooring.`,
+      },
+      {
+        question: `How much does slab leak repair cost in ${cityName}?`,
+        answer: `Cost depends on the leak location, pipe material, and repair method. A targeted direct-access repair typically runs $1,500–$3,500. Full pipe rerouting through walls or attic — the right choice for extensively corroded systems — ranges from $3,000–$6,000. We provide free on-site assessments and detailed estimates. Most ${cityName} homeowners use homeowner insurance to cover water damage resulting from the leak, and we handle all documentation and adjuster coordination.`,
+      },
+      {
+        question: `Do you repair the pipe and restore the water damage, or just fix the leak?`,
+        answer: `We do both — and this is what separates us from plumbing-only contractors. After locating and repairing the slab leak, we conduct a full moisture assessment of the surrounding flooring, walls, and cabinets using calibrated moisture meters. Any water-damaged materials are dried with commercial equipment, and we restore flooring, tile, and drywall to pre-loss condition. ${cityName} homeowners work with one company from first call through final walkthrough.`,
+      },
+      {
+        question: `Why are slab leaks more common in ${cityName} than in other areas?`,
+        answer: `${cityName} properties sit on soils that shift more than stable inland substrates — whether from coastal sand movement, clay expansion and contraction, or hillside settling. This cyclical soil movement flexes under-slab copper plumbing at every elbow and connection over years, eventually causing metal fatigue. Combined with salt-air corrosion on pipes in coastal areas and aging copper infrastructure throughout North County, ${cityName} properties develop slab leaks at a rate higher than most inland California cities.`,
+      },
+      {
+        question: `How quickly can you respond to a slab leak emergency in ${cityName}?`,
+        answer: `We dispatch slab leak detection and repair crews 24 hours a day, 7 days a week from our Carlsbad headquarters. Response times to ${cityName} average 45–60 minutes depending on your location${neighborhoodList ? `, including ${neighborhoodList}` : ''}. If you hear running water with fixtures off, notice a warm floor spot, or receive an unexpected high water bill, call us at (760) 500-2211 immediately — the sooner we locate the leak, the less structural damage occurs.`,
+      },
+    ];
+  }
+
+  if (serviceSlug === 'leak-detection') {
+    return [
+      {
+        question: `How do you detect hidden leaks in ${cityName} homes without opening walls?`,
+        answer: `We use three complementary technologies. Thermal imaging cameras detect temperature anomalies caused by water evaporating behind walls and under floors — even a slow drip creates a visible thermal signature. Acoustic sensors amplify the ultrasonic frequency of water escaping pressurized pipes through walls, slabs, and ceilings. Calibrated moisture meters map water migration through building materials. Together, these tools locate leaks within inches before we open anything, eliminating exploratory demolition.`,
+      },
+      {
+        question: `What are the signs I might have a hidden water leak in my ${cityName} home?`,
+        answer: `The most reliable early indicator is an unexplained water bill increase — even a 10–15% spike warrants investigation. Other signs include the sound of running water when all fixtures are off, musty odors without visible mold, soft or discolored areas on walls or ceilings, warm floor spots, and paint bubbling or wallpaper peeling without a clear cause. In ${cityName}'s environment, hidden leaks progress to structural damage and mold faster than in drier inland areas, so prompt detection pays for itself many times over.`,
+      },
+      {
+        question: `How much does professional leak detection cost in ${cityName}?`,
+        answer: `Our comprehensive leak detection assessment — including thermal imaging, acoustic testing, and moisture mapping — runs $250–$450 depending on property size and complexity. This fee is typically credited toward the repair if we perform the work. Given that an undetected leak can cause $10,000–$30,000 in hidden structural and mold damage over several months in ${cityName}'s humid coastal environment, professional detection is one of the most cost-effective investments a homeowner can make.`,
+      },
+      {
+        question: `Do you repair the leak after you find it, or just provide a report?`,
+        answer: `We do both. After pinpointing the leak, we repair it directly or coordinate with a licensed plumber for pipe work, then address any water damage found during detection. ${cityName} homeowners receive a written detection report with confirmed leak location, moisture readings, affected materials, and repair recommendations — documentation suitable for insurance submission. Our goal is a complete solution, not just a diagnosis.`,
+      },
+      {
+        question: `Why are hidden leaks so damaging in ${cityName} specifically?`,
+        answer: `${cityName}'s coastal humidity means moisture from a hidden leak cannot evaporate naturally — it accumulates continuously in wall cavities, saturating insulation and framing. Mold can establish colonies within 48–72 hours on wet drywall in these conditions. Salt air also accelerates corrosion on copper plumbing, meaning pinhole leaks in ${cityName} homes progress faster than in drier inland cities. We have found leaks in ${cityName} homes that were active for 3–4 months and caused $20,000+ in hidden structural and mold damage with no visible surface signs.`,
+      },
+      {
+        question: `How quickly can you perform leak detection at my ${cityName} property?`,
+        answer: `We dispatch leak detection technicians with full thermal imaging and acoustic equipment from our Carlsbad headquarters, reaching ${cityName} addresses in an average of 45–60 minutes${neighborhoodList ? ` — including ${neighborhoodList}` : ''}. Same-day detection appointments are available 7 days a week. If you suspect a hidden leak, call (760) 500-2211 — the cost of early detection is a fraction of the cost of the water damage and mold remediation that follows an undetected leak.`,
+      },
+    ];
+  }
+
+  // Default FAQ set for all other services
   const baseFAQs = [
     {
       question: `How quickly can you respond to ${serviceName.toLowerCase()} emergencies in ${cityName}?`,

@@ -13,7 +13,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import { services, leakServices, business, globalFaqs } from '@/data/site';
-import { generateTitle, getCanonicalUrl } from '@/utils/seo';
+import { generateTitle, getCanonicalUrl, getFAQSchema } from '@/utils/seo';
 import type { BreadcrumbItem } from '@/types';
 
 const title = generateTitle('Emergency Restoration Services | Water, Fire, Mold');
@@ -27,12 +27,14 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 // Filter FAQs related to services
 const serviceFaqs = globalFaqs.filter(f => f.category === 'process' || f.category === 'emergency').slice(0, 5);
+const faqSchema = getFAQSchema(serviceFaqs);
 ---
 
 <BaseLayout 
   title={title}
   description={description}
   canonical={canonical}
+  jsonLd={[faqSchema]}
 >
   <!-- Hero Section -->
   <section class="relative bg-brand-black overflow-hidden">
@@ -262,6 +264,7 @@ const serviceFaqs = globalFaqs.filter(f => f.category === 'process' || f.categor
     subtitle="Get quick answers to frequently asked questions about our restoration services"
     faqs={serviceFaqs}
     limit={5}
+    showSchema={false}
     class="bg-brand-cream-200"
   />
   
