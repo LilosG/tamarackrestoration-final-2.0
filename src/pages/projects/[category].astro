@@ -81,8 +81,16 @@ const otherCategories = projectCategories.filter(c => c.slug !== category.slug);
         {categoryProjects.map((project, index) => (
           <div class={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-start ${index > 0 ? 'pt-12 border-t border-brand-cream-300' : ''}`}>
             <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
-              <div class="aspect-video rounded-2xl bg-brand-cream-200 overflow-hidden flex items-center justify-center">
-                <Icon name="camera" size="xl" class="text-brand-gray-light" />
+              <div class="aspect-video rounded-2xl bg-brand-cream-200 overflow-hidden">
+                <img
+                  src={project.afterImage}
+                  alt={`${project.title} - after restoration in ${project.city}`}
+                  width="800"
+                  height="450"
+                  class="w-full h-full object-cover"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
               </div>
             </div>
 
