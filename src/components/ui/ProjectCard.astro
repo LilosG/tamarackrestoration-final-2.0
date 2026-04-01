@@ -28,7 +28,7 @@ const cityName = city?.name || project.city;
 <div class:list={['project-card group relative', className]}>
   {variant === 'default' ? (
     <!-- Default variant: full card with image toggle -->
-    <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-shadow">
+    <a href={`/projects/${project.service}/`} class="block bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-shadow">
       <!-- Before/After Image Container -->
       <div class="relative aspect-[4/3] overflow-hidden bg-brand-cream-300">
         <img
@@ -77,10 +77,10 @@ const cityName = city?.name || project.city;
           {project.description}
         </p>
       </div>
-    </div>
+    </a>
   ) : (
     <!-- Compact variant: smaller card for money pages -->
-    <div class="bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-shadow">
+    <a href={`/projects/${project.service}/`} class="block bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-shadow">
       <div class="relative aspect-video overflow-hidden bg-brand-cream-300">
         <img
           src={project.afterImage}
@@ -121,6 +121,6 @@ const cityName = city?.name || project.city;
           {project.description}
         </p>
       </div>
-    </div>
+    </a>
   )}
 </div>
