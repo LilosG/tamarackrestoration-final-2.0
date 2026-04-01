@@ -591,20 +591,23 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
           </h2>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
-          
+          <Button
             href={`tel:${business.phone}`}
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-orange hover:bg-brand-orange-600 text-white font-heading font-bold rounded-lg transition-colors text-lg"
+            variant="primary"
+            size="lg"
             onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'service_pillar_midpage',page_path:window.location.pathname});}`}
           >
             <Icon name="phone" size="sm" />
             {business.phoneFormatted}
-          </a>
-          
+          </Button>
+          <Button
             href="/contact/"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/30 hover:border-white text-white font-heading font-semibold rounded-lg transition-colors"
+            variant="outline"
+            size="lg"
+            class="border-white/30 text-white hover:bg-white hover:text-brand-black"
           >
             Free Estimate
-          </a>
+          </Button>
         </div>
       </div>
     </div>
