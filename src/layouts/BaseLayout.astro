@@ -79,6 +79,18 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
       gtag('js', new Date());
       gtag('config', 'G-WH27G3H1XN');
     </script>
+    <script is:inline>
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('a[href^="tel:"]');
+        if (!el) return;
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_to_call', {
+            event_category: 'engagement',
+            event_label: el.href.replace('tel:', ''),
+          });
+        }
+      });
+    </script>
     <!-- SEO -->
     <SEOHead
       title={title}
