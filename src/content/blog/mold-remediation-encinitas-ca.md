@@ -107,3 +107,20 @@ When selecting a mold remediation contractor, look for:
 - **Local references** from Encinitas or North County homeowners
 
 Tamarack Restoration is an IICRC-certified firm based in Carlsbad serving Encinitas, Solana Beach, Oceanside, and communities throughout North San Diego County. We provide free assessments and respond within 60 minutes for emergency situations. Call (760) 500-2211 any time.
+
+---
+
+## Related Resources
+
+**Our services:**
+- [Mold Removal in Encinitas](/service-area/encinitas/mold-removal/)
+- [Mold Removal in Carlsbad](/service-area/carlsbad/mold-removal/)
+- [Water Damage Restoration in Encinitas](/service-area/encinitas/water-damage-restoration/)
+- [Mold Removal Services](/services/mold-removal/)
+- [Water Leak Repair](/services/water-leak-repair/)
+
+**Related articles:**
+- [Mold vs. Mildew: What's the Difference?](/blog/mold-vs-mildew-whats-the-difference/)
+- [How Much Does Mold Testing Cost in Carlsbad, CA?](/blog/how-much-does-mold-testing-cost-in-carlsbad-ca/)
+- [Mold After Water Damage: Timeline, Risk & Safe Remediation](/blog/mold-after-water-damage-timeline-risk-safe-remediation/)
+- [Is Mold Making You Sick? Warning Signs Oceanside Homeowners Shouldn't Ignore](/blog/is-mold-making-you-sick-warning-signs-oceanside-homeowners-shouldnt-ignore/)

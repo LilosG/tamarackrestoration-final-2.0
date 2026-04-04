@@ -110,3 +110,20 @@ Tamarack Restoration works directly with all major homeowners insurance carriers
 When a storm hits Carlsbad, Oceanside, Encinitas, Vista, San Marcos, Solana Beach, or Rancho Santa Fe, Tamarack Restoration is ready to respond. We are locally based in Carlsbad, we know this community, and we are available 24 hours a day, 7 days a week for emergency dispatch.
 
 If you are dealing with storm damage right now, call us at (760) 500-2211. We will be at your door within 60 minutes.
+
+---
+
+## Related Resources
+
+**Our services:**
+- [Water Damage Restoration in Carlsbad](/service-area/carlsbad/water-damage-restoration/)
+- [Water Damage Restoration in Oceanside](/service-area/oceanside/water-damage-restoration/)
+- [Water Damage Restoration in Encinitas](/service-area/encinitas/water-damage-restoration/)
+- [Flood Cleanup](/services/flood-cleanup/)
+- [Water Damage Restoration](/services/water-damage-restoration/)
+
+**Related articles:**
+- [Flood Cleanup in Carlsbad After a Storm](/blog/flood-cleanup-carlsbad-storm/)
+- [Does Homeowners Insurance Cover Water Damage?](/blog/does-homeowners-insurance-cover-water-damage/)
+- [How to Handle a Water Damage Emergency in the First 24 Hours](/blog/how-to-handle-water-damage-emergency-first-24-hours/)
+- [How Long Does Structural Drying Take in North San Diego?](/blog/how-long-does-structural-drying-take-north-san-diego/)

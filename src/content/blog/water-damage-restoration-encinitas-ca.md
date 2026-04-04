@@ -105,3 +105,20 @@ What is typically not covered:
 Tamarack Restoration works directly with all major carriers serving the Encinitas market — State Farm, Allstate, Farmers, USAA, and Liberty Mutual. We provide the documentation your adjuster needs to process your claim accurately and efficiently.
 
 If you are experiencing water damage in Encinitas right now, call us at (760) 500-2211. We are available 24/7 and typically on-site within 60 minutes.
+
+---
+
+## Related Resources
+
+**Our services:**
+- [Water Damage Restoration in Encinitas](/service-area/encinitas/water-damage-restoration/)
+- [Mold Removal in Encinitas](/service-area/encinitas/mold-removal/)
+- [Leak Detection](/services/leak-detection/)
+- [Water Leak Repair](/services/water-leak-repair/)
+- [Slab Leak Repair in Encinitas](/service-area/encinitas/slab-leak-repair/)
+
+**Related articles:**
+- [How Much Does Water Damage Restoration Cost in San Diego County?](/blog/how-much-does-water-damage-restoration-cost-in-san-diego-county/)
+- [Mold After Water Damage: Timeline, Risk & Safe Remediation](/blog/mold-after-water-damage-timeline-risk-safe-remediation/)
+- [Can You Stay in Your Home During Water Damage Restoration?](/blog/can-you-stay-in-home-during-water-damage-restoration/)
+- [How to Handle a Water Damage Emergency in the First 24 Hours](/blog/how-to-handle-water-damage-emergency-first-24-hours/)

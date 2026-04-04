@@ -107,3 +107,18 @@ Tamarack Restoration works directly with all major carriers including State Farm
 No online cost calculator can give you an accurate number. Fire damage is highly site-specific, and the only way to know what restoration will cost in your Carlsbad, Oceanside, or Encinitas home is through an on-site assessment by a licensed restoration professional.
 
 At Tamarack Restoration, we provide free assessments 24 hours a day, 7 days a week. We will walk through the damage with you, explain exactly what needs to happen and why, and provide a detailed written scope before any work begins. Call us at (760) 500-2211 — we respond within 60 minutes throughout North San Diego County.
+
+---
+
+## Related Resources
+
+**Our services:**
+- [Fire Damage Restoration in Carlsbad](/service-area/carlsbad/fire-damage-restoration/)
+- [Fire Damage Restoration in Encinitas](/service-area/encinitas/fire-damage-restoration/)
+- [Fire Damage Restoration in Oceanside](/service-area/oceanside/fire-damage-restoration/)
+- [Water Damage Restoration](/services/water-damage-restoration/)
+
+**Related articles:**
+- [Fire Damage Restoration Process: What to Expect](/blog/fire-damage-restoration-process-what-to-expect/)
+- [Does Homeowners Insurance Cover Water Damage?](/blog/does-homeowners-insurance-cover-water-damage/)
+- [Hidden Costs of Delaying Water Damage Cleanup](/blog/hidden-costs-of-delaying-water-damage-cleanup/)
