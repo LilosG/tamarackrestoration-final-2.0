@@ -4,14 +4,7 @@
  * Central data file for business info, services, cities, etc.
  */
 
-import type {
-  BusinessInfo,
-  Service,
-  City,
-  InsuranceCarrier,
-  NavItem,
-  FAQ,
-} from '@/types';
+import type { BusinessInfo, Service, City, InsuranceCarrier, NavItem, FAQ } from '@/types';
 
 // ===================
 // BUSINESS INFO
@@ -82,8 +75,10 @@ export const services: Service[] = [
     id: 'water-damage-restoration',
     name: 'Water Damage Restoration',
     slug: 'water-damage-restoration',
-    shortDescription: 'Fast water extraction and complete restoration for flooded homes and businesses.',
-    description: 'Professional water damage restoration services including emergency water extraction, structural drying, and complete property restoration. We handle everything from burst pipes to major flooding.',
+    shortDescription:
+      'Fast water extraction and complete restoration for flooded homes and businesses.',
+    description:
+      'Professional water damage restoration services including emergency water extraction, structural drying, and complete property restoration. We handle everything from burst pipes to major flooding.',
     icon: 'droplet',
     image: '/images/services/water-damage/drying-equipment-room.webp',
     features: [
@@ -103,7 +98,8 @@ export const services: Service[] = [
     name: 'Water Leak Repair',
     slug: 'water-leak-repair',
     shortDescription: 'Expert leak detection and repair before major damage occurs.',
-    description: 'Professional water leak detection and repair services. We find and fix leaks in slabs, roofs, pipes, and foundations before they cause extensive water damage.',
+    description:
+      'Professional water leak detection and repair services. We find and fix leaks in slabs, roofs, pipes, and foundations before they cause extensive water damage.',
     icon: 'search',
     image: '/images/services/leak-detection/thermal-camera-floor.webp',
     features: [
@@ -123,7 +119,8 @@ export const services: Service[] = [
     name: 'Mold Removal',
     slug: 'mold-removal',
     shortDescription: 'Safe, thorough mold remediation to protect your health and property.',
-    description: 'Comprehensive mold removal and remediation services. We safely eliminate mold, address the moisture source, and restore healthy indoor air quality.',
+    description:
+      'Comprehensive mold removal and remediation services. We safely eliminate mold, address the moisture source, and restore healthy indoor air quality.',
     icon: 'shield',
     image: '/images/services/mold-removal/technician-respirator.webp',
     features: [
@@ -143,7 +140,8 @@ export const services: Service[] = [
     name: 'Fire Damage Restoration',
     slug: 'fire-damage-restoration',
     shortDescription: 'Complete fire and smoke damage restoration to rebuild your property.',
-    description: 'Full-service fire damage restoration including smoke and soot removal, structural repairs, odor elimination, and content cleaning. We help you recover from fire damage.',
+    description:
+      'Full-service fire damage restoration including smoke and soot removal, structural repairs, odor elimination, and content cleaning. We help you recover from fire damage.',
     icon: 'flame',
     image: '/images/services/fire-damage/containment-setup.webp',
     features: [
@@ -163,7 +161,8 @@ export const services: Service[] = [
     name: 'Flood Cleanup',
     slug: 'flood-cleanup',
     shortDescription: 'Rapid flood response to minimize damage and restore your property.',
-    description: 'Emergency flood cleanup services for storm damage, flash floods, and natural disasters. We provide rapid water removal and complete property restoration.',
+    description:
+      'Emergency flood cleanup services for storm damage, flash floods, and natural disasters. We provide rapid water removal and complete property restoration.',
     icon: 'waves',
     image: '/images/services/flood-cleanup/flooded-basement.webp',
     features: [
@@ -183,7 +182,8 @@ export const services: Service[] = [
     name: 'Sewage Cleanup',
     slug: 'sewage-cleanup',
     shortDescription: 'Safe sewage removal and sanitation to protect your health.',
-    description: 'Professional sewage cleanup and biohazard remediation. We safely remove sewage, sanitize affected areas, and restore your property to a healthy condition.',
+    description:
+      'Professional sewage cleanup and biohazard remediation. We safely remove sewage, sanitize affected areas, and restore your property to a healthy condition.',
     icon: 'alert-triangle',
     image: '/images/services/sewage-cleanup/demolition-repair.webp',
     features: [
@@ -207,7 +207,8 @@ export const leakServices: Service[] = [
     name: 'Slab Leak Repair',
     slug: 'slab-leak-repair',
     shortDescription: 'Expert detection and repair of water leaks beneath your foundation.',
-    description: 'Specialized slab leak detection and repair services. We use advanced technology to locate leaks under your foundation and provide minimally invasive repairs.',
+    description:
+      'Specialized slab leak detection and repair services. We use advanced technology to locate leaks under your foundation and provide minimally invasive repairs.',
     icon: 'home',
     image: '/images/services/leak-detection/thermal-camera-plumbing.webp',
     features: [
@@ -227,7 +228,8 @@ export const leakServices: Service[] = [
     name: 'Leak Detection',
     slug: 'leak-detection',
     shortDescription: 'Advanced technology to find hidden leaks without destruction.',
-    description: 'State-of-the-art leak detection services using thermal imaging, acoustic detection, and moisture meters to find hidden leaks without tearing apart your property.',
+    description:
+      'State-of-the-art leak detection services using thermal imaging, acoustic detection, and moisture meters to find hidden leaks without tearing apart your property.',
     icon: 'radar',
     image: '/images/services/leak-detection/thermal-camera-garage.webp',
     features: [
@@ -259,7 +261,8 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 1,
-    description: 'Serving Carlsbad with 24/7 emergency restoration services. Our headquarters is located in Carlsbad, allowing us to respond within 60 minutes.',
+    description:
+      'Serving Carlsbad with 24/7 emergency restoration services. Our headquarters is located in Carlsbad, allowing us to respond within 60 minutes.',
     neighborhoods: [
       'La Costa',
       'Aviara',
@@ -288,7 +291,8 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 2,
-    description: 'Fast emergency restoration services in Oceanside. We serve all neighborhoods from the coast to the inland communities.',
+    description:
+      'Fast emergency restoration services in Oceanside. We serve all neighborhoods from the coast to the inland communities.',
     neighborhoods: [
       'Downtown Oceanside',
       'Fire Mountain',
@@ -316,16 +320,11 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 2,
-    description: 'Professional restoration services for Vista homes and businesses. Quick response times throughout the city.',
-    neighborhoods: [
-      'Downtown Vista',
-      'Shadowridge',
-      'Lake Vista',
-      'Breeze Hill',
-      'Alta Vista',
-    ],
+    description:
+      'Professional restoration services for Vista homes and businesses. Quick response times throughout the city.',
+    neighborhoods: ['Downtown Vista', 'Shadowridge', 'Lake Vista', 'Breeze Hill', 'Alta Vista'],
     zipCodes: ['92081', '92083', '92084', '92085'],
-    coordinates: { latitude: 33.2000, longitude: -117.2426 },
+    coordinates: { latitude: 33.2, longitude: -117.2426 },
     services: [
       'water-damage-restoration',
       'water-leak-repair',
@@ -343,7 +342,8 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 2,
-    description: 'Comprehensive restoration services in San Marcos. Serving residential and commercial properties throughout the area.',
+    description:
+      'Comprehensive restoration services in San Marcos. Serving residential and commercial properties throughout the area.',
     neighborhoods: [
       'San Elijo Hills',
       'Lake San Marcos',
@@ -370,7 +370,8 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 2,
-    description: 'Expert restoration services for Encinitas coastal and inland communities. Specialized in addressing moisture issues common to beach properties.',
+    description:
+      'Expert restoration services for Encinitas coastal and inland communities. Specialized in addressing moisture issues common to beach properties.',
     neighborhoods: [
       'Downtown Encinitas',
       'Leucadia',
@@ -379,7 +380,7 @@ export const cities: City[] = [
       'New Encinitas',
     ],
     zipCodes: ['92007', '92023', '92024'],
-    coordinates: { latitude: 33.0370, longitude: -117.2920 },
+    coordinates: { latitude: 33.037, longitude: -117.292 },
     services: [
       'water-damage-restoration',
       'water-leak-repair',
@@ -397,13 +398,9 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 3,
-    description: 'Premium restoration services for Rancho Santa Fe estates. Discreet, professional service for luxury properties.',
-    neighborhoods: [
-      'The Covenant',
-      'Fairbanks Ranch',
-      'Rancho Del Lago',
-      'Morgan Run',
-    ],
+    description:
+      'Premium restoration services for Rancho Santa Fe estates. Discreet, professional service for luxury properties.',
+    neighborhoods: ['The Covenant', 'Fairbanks Ranch', 'Rancho Del Lago', 'Morgan Run'],
     zipCodes: ['92067', '92091'],
     coordinates: { latitude: 33.0203, longitude: -117.2028 },
     services: [
@@ -413,6 +410,8 @@ export const cities: City[] = [
       'fire-damage-restoration',
       'flood-cleanup',
       'sewage-cleanup',
+      'slab-leak-repair',
+      'leak-detection',
     ],
   },
   {
@@ -422,12 +421,9 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 3,
-    description: 'Restoration services for Solana Beach properties. Experienced with coastal moisture and water damage issues.',
-    neighborhoods: [
-      'Solana Beach',
-      'Eden Gardens',
-      'Lomas Santa Fe',
-    ],
+    description:
+      'Restoration services for Solana Beach properties. Experienced with coastal moisture and water damage issues.',
+    neighborhoods: ['Solana Beach', 'Eden Gardens', 'Lomas Santa Fe'],
     zipCodes: ['92075'],
     coordinates: { latitude: 32.9912, longitude: -117.2712 },
     services: [
@@ -437,6 +433,8 @@ export const cities: City[] = [
       'fire-damage-restoration',
       'flood-cleanup',
       'sewage-cleanup',
+      'slab-leak-repair',
+      'leak-detection',
     ],
   },
   {
@@ -446,10 +444,9 @@ export const cities: City[] = [
     county: 'San Diego',
     state: 'CA',
     tier: 3,
-    description: 'Serving Bressi Ranch with fast emergency restoration. Located minutes away in Carlsbad for rapid response.',
-    neighborhoods: [
-      'Bressi Ranch',
-    ],
+    description:
+      'Serving Bressi Ranch with fast emergency restoration. Located minutes away in Carlsbad for rapid response.',
+    neighborhoods: ['Bressi Ranch'],
     zipCodes: ['92009'],
     coordinates: { latitude: 33.1295, longitude: -117.2653 },
     services: [
@@ -459,6 +456,8 @@ export const cities: City[] = [
       'fire-damage-restoration',
       'flood-cleanup',
       'sewage-cleanup',
+      'slab-leak-repair',
+      'leak-detection',
     ],
   },
 ];
@@ -485,7 +484,8 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     logo: '/images/insurance/state-farm.png',
     logoWidth: 3079,
     logoHeight: 1453,
-    description: 'We work directly with State Farm adjusters to streamline your water damage, fire damage, and mold claims.',
+    description:
+      'We work directly with State Farm adjusters to streamline your water damage, fire damage, and mold claims.',
     claimProcess: [
       'Document the damage',
       'Contact State Farm to file a claim',
@@ -493,7 +493,12 @@ export const insuranceCarriers: InsuranceCarrier[] = [
       'We work directly with your adjuster',
       'Receive restoration services covered by your policy',
     ],
-    coveredServices: ['water-damage-restoration', 'fire-damage-restoration', 'mold-removal', 'flood-cleanup'],
+    coveredServices: [
+      'water-damage-restoration',
+      'fire-damage-restoration',
+      'mold-removal',
+      'flood-cleanup',
+    ],
   },
   {
     id: 'allstate',
@@ -502,9 +507,15 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     logo: '/images/insurance/allstate.jpg',
     logoWidth: 600,
     logoHeight: 353,
-    description: 'Experienced working with Allstate claims for all types of property damage restoration.',
+    description:
+      'Experienced working with Allstate claims for all types of property damage restoration.',
     claimProcess: [],
-    coveredServices: ['water-damage-restoration', 'fire-damage-restoration', 'mold-removal', 'flood-cleanup'],
+    coveredServices: [
+      'water-damage-restoration',
+      'fire-damage-restoration',
+      'mold-removal',
+      'flood-cleanup',
+    ],
   },
   {
     id: 'farmers',
@@ -513,9 +524,15 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     logo: '/images/insurance/farmers.png',
     logoWidth: 2400,
     logoHeight: 1277,
-    description: 'Trusted restoration partner for Farmers Insurance policyholders in North San Diego County.',
+    description:
+      'Trusted restoration partner for Farmers Insurance policyholders in North San Diego County.',
     claimProcess: [],
-    coveredServices: ['water-damage-restoration', 'fire-damage-restoration', 'mold-removal', 'flood-cleanup'],
+    coveredServices: [
+      'water-damage-restoration',
+      'fire-damage-restoration',
+      'mold-removal',
+      'flood-cleanup',
+    ],
   },
   {
     id: 'usaa',
@@ -524,9 +541,15 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     logo: '/images/insurance/usaa.png',
     logoWidth: 1200,
     logoHeight: 675,
-    description: 'Proud to serve military families with USAA coverage for property damage restoration.',
+    description:
+      'Proud to serve military families with USAA coverage for property damage restoration.',
     claimProcess: [],
-    coveredServices: ['water-damage-restoration', 'fire-damage-restoration', 'mold-removal', 'flood-cleanup'],
+    coveredServices: [
+      'water-damage-restoration',
+      'fire-damage-restoration',
+      'mold-removal',
+      'flood-cleanup',
+    ],
   },
   {
     id: 'liberty-mutual',
@@ -535,9 +558,15 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     logo: '/images/insurance/liberty-mutual.png',
     logoWidth: 2000,
     logoHeight: 938,
-    description: 'Seamless claims process for Liberty Mutual policyholders needing restoration services.',
+    description:
+      'Seamless claims process for Liberty Mutual policyholders needing restoration services.',
     claimProcess: [],
-    coveredServices: ['water-damage-restoration', 'fire-damage-restoration', 'mold-removal', 'flood-cleanup'],
+    coveredServices: [
+      'water-damage-restoration',
+      'fire-damage-restoration',
+      'mold-removal',
+      'flood-cleanup',
+    ],
   },
 ];
 
@@ -612,32 +641,38 @@ export const mainNavigation: NavItem[] = [
 export const globalFaqs: FAQ[] = [
   {
     question: 'How quickly can you respond to an emergency?',
-    answer: 'We offer 24/7 emergency services and guarantee a 60-minute response time to properties in North San Diego County. Our team is always ready to help when disaster strikes.',
+    answer:
+      'We offer 24/7 emergency services and guarantee a 60-minute response time to properties in North San Diego County. Our team is always ready to help when disaster strikes.',
     category: 'emergency',
   },
   {
     question: 'Do you work with insurance companies?',
-    answer: 'Yes, we work with all major insurance carriers including State Farm, Allstate, Farmers, USAA, and Liberty Mutual. We can help document the damage and work directly with your adjuster to streamline the claims process.',
+    answer:
+      'Yes, we work with all major insurance carriers including State Farm, Allstate, Farmers, USAA, and Liberty Mutual. We can help document the damage and work directly with your adjuster to streamline the claims process.',
     category: 'insurance',
   },
   {
     question: 'Are you licensed and certified?',
-    answer: 'Yes, Tamarack Restoration is fully licensed, bonded, and insured. Our technicians are IICRC certified in water damage restoration, fire restoration, and mold remediation.',
+    answer:
+      'Yes, Tamarack Restoration is fully licensed, bonded, and insured. Our technicians are IICRC certified in water damage restoration, fire restoration, and mold remediation.',
     category: 'credentials',
   },
   {
     question: 'How long does water damage restoration take?',
-    answer: 'The timeline depends on the extent of the damage. Minor water damage may be restored in 3-5 days, while extensive damage can take 1-2 weeks. We provide a detailed timeline during our initial assessment.',
+    answer:
+      'The timeline depends on the extent of the damage. Minor water damage may be restored in 3-5 days, while extensive damage can take 1-2 weeks. We provide a detailed timeline during our initial assessment.',
     category: 'process',
   },
   {
     question: 'Do I need to leave my home during restoration?',
-    answer: 'In most cases, you can remain in your home during restoration. However, for extensive damage or health hazards like significant mold or sewage contamination, temporary relocation may be recommended for your safety.',
+    answer:
+      'In most cases, you can remain in your home during restoration. However, for extensive damage or health hazards like significant mold or sewage contamination, temporary relocation may be recommended for your safety.',
     category: 'process',
   },
   {
     question: 'What should I do while waiting for your team to arrive?',
-    answer: 'If safe to do so: turn off the water source, avoid electrical hazards, move valuable items away from affected areas, and document the damage with photos. Do not attempt to remove standing water without proper equipment.',
+    answer:
+      'If safe to do so: turn off the water source, avoid electrical hazards, move valuable items away from affected areas, and document the damage with photos. Do not attempt to remove standing water without proper equipment.',
     category: 'emergency',
   },
 ];
@@ -690,7 +725,8 @@ export const whyChooseUs = [
   },
   {
     title: 'IICRC Certified',
-    description: 'Our technicians hold industry-leading certifications for all restoration services.',
+    description:
+      'Our technicians hold industry-leading certifications for all restoration services.',
     icon: 'award',
   },
   {
@@ -714,7 +750,8 @@ export const whyChooseUs = [
 // FORM CONFIG
 // ===================
 
-const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim() || 'https://formspree.io/f/mnjbbqea';
+const formspreeEndpoint =
+  import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim() || 'https://formspree.io/f/mnjbbqea';
 
 if (import.meta.env.PROD && (!formspreeEndpoint || formspreeEndpoint.includes('PLACEHOLDER'))) {
   throw new Error('Missing PUBLIC_FORMSPREE_ENDPOINT for production build');
@@ -749,66 +786,66 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    text: "Tamarack responded within 30 minutes when our pipe burst at 2 AM. Their team was professional, efficient, and made a stressful situation much easier to handle. Robert and his crew are the best!",
-    author: "Sarah M.",
-    location: "Carlsbad",
+    text: 'Tamarack responded within 30 minutes when our pipe burst at 2 AM. Their team was professional, efficient, and made a stressful situation much easier to handle. Robert and his crew are the best!',
+    author: 'Sarah M.',
+    location: 'Carlsbad',
     rating: 5,
-    date: "2 months ago"
+    date: '2 months ago',
   },
   {
     text: "We had mold in our bathroom that we didn't even know about. Tamarack found it, removed it safely, and made sure it wouldn't come back. Great communication throughout the entire process.",
-    author: "Michael T.",
-    location: "Oceanside",
+    author: 'Michael T.',
+    location: 'Oceanside',
     rating: 5,
-    date: "1 month ago"
+    date: '1 month ago',
   },
   {
-    text: "After a small kitchen fire, I was devastated. The Tamarack team not only restored my kitchen but helped me navigate the insurance process. They truly care about their customers.",
-    author: "Jennifer L.",
-    location: "Encinitas",
+    text: 'After a small kitchen fire, I was devastated. The Tamarack team not only restored my kitchen but helped me navigate the insurance process. They truly care about their customers.',
+    author: 'Jennifer L.',
+    location: 'Encinitas',
     rating: 5,
-    date: "3 weeks ago"
+    date: '3 weeks ago',
   },
   {
-    text: "Fast, professional, and thorough. They handled our water damage from a broken dishwasher line with expertise. The team even moved our furniture carefully and put everything back.",
-    author: "David R.",
-    location: "Vista",
+    text: 'Fast, professional, and thorough. They handled our water damage from a broken dishwasher line with expertise. The team even moved our furniture carefully and put everything back.',
+    author: 'David R.',
+    location: 'Vista',
     rating: 5,
-    date: "1 month ago"
+    date: '1 month ago',
   },
   {
-    text: "Robert and his team are fantastic! They detected a slab leak that two other companies missed. Fixed it quickly and the price was fair. Highly recommend for any water issues.",
-    author: "Patricia K.",
-    location: "San Marcos",
+    text: 'Robert and his team are fantastic! They detected a slab leak that two other companies missed. Fixed it quickly and the price was fair. Highly recommend for any water issues.',
+    author: 'Patricia K.',
+    location: 'San Marcos',
     rating: 5,
-    date: "2 months ago"
+    date: '2 months ago',
   },
   {
     text: "Emergency flooding on a Sunday night - they were here in 45 minutes. Professional equipment, professional team, professional results. Can't thank them enough.",
-    author: "James W.",
-    location: "Carlsbad",
+    author: 'James W.',
+    location: 'Carlsbad',
     rating: 5,
-    date: "3 weeks ago"
+    date: '3 weeks ago',
   },
   {
-    text: "Outstanding service from start to finish. They explained everything clearly, worked with our insurance, and left our home cleaner than they found it. True professionals.",
-    author: "Linda H.",
-    location: "Rancho Santa Fe",
+    text: 'Outstanding service from start to finish. They explained everything clearly, worked with our insurance, and left our home cleaner than they found it. True professionals.',
+    author: 'Linda H.',
+    location: 'Rancho Santa Fe',
     rating: 5,
-    date: "1 month ago"
+    date: '1 month ago',
   },
   {
-    text: "Called at 6 AM for sewage backup - they arrived within the hour. Handled a horrible situation with expertise and compassion. Forever grateful for their quick response.",
-    author: "Mark S.",
-    location: "Carlsbad",
+    text: 'Called at 6 AM for sewage backup - they arrived within the hour. Handled a horrible situation with expertise and compassion. Forever grateful for their quick response.',
+    author: 'Mark S.',
+    location: 'Carlsbad',
     rating: 5,
-    date: "2 weeks ago"
+    date: '2 weeks ago',
   },
   {
-    text: "The thermal imaging they use found water damage behind our walls that we never would have known about. Saved us from a much bigger problem down the road.",
-    author: "Karen B.",
-    location: "Solana Beach",
+    text: 'The thermal imaging they use found water damage behind our walls that we never would have known about. Saved us from a much bigger problem down the road.',
+    author: 'Karen B.',
+    location: 'Solana Beach',
     rating: 5,
-    date: "1 month ago"
-  }
+    date: '1 month ago',
+  },
 ];
