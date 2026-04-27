@@ -38,7 +38,6 @@ export interface CityServiceContent {
 }
 
 export const cityServiceContent: Record<string, CityServiceContent> = {
-
   // ============================================================
   // CARLSBAD — WATER DAMAGE RESTORATION
   // ============================================================
@@ -50,42 +49,79 @@ export const cityServiceContent: Record<string, CityServiceContent> = {
 In the master-planned communities east of I-5 — La Costa, Aviara, and Rancho Carrillo — the risks shift toward appliance failures and HVAC condensation. Homes in these neighborhoods often have multiple stories with bathrooms above living areas, meaning a second-floor toilet overflow or failed shower pan can cascade water through ceilings and walls before anyone realizes there is a problem. Bressi Ranch homes, though newer in construction, are not immune; we have responded to several water heater failures in this community where tank corrosion went undetected during routine inspections.
 
 The Batiquitos Lagoon and Buena Vista Lagoon also raise the water table in adjacent neighborhoods, making foundation seepage a recurring issue during wet winters. Homes near Cannon Road and along Batiquitos Drive often require post-storm moisture assessments to catch water infiltration early.`,
-    localProof: 'Over 200 water damage restoration projects completed in Carlsbad since 2014, with a 4.9-star average rating from Carlsbad homeowners.',
+    localProof:
+      'Over 200 water damage restoration projects completed in Carlsbad since 2014, with a 4.9-star average rating from Carlsbad homeowners.',
     projectCount: '200+',
     avgResponseTime: '38 minutes',
-    landmarks: ['Carlsbad Village', 'LEGOLAND California', 'The Flower Fields', 'Batiquitos Lagoon', 'Carlsbad Premium Outlets'],
+    landmarks: [
+      'Carlsbad Village',
+      'LEGOLAND California',
+      'The Flower Fields',
+      'Batiquitos Lagoon',
+      'Carlsbad Premium Outlets',
+    ],
     neighborhoodContext: [
-      { name: 'Carlsbad Village & Olde Carlsbad', detail: 'Older plumbing in 1960s-70s homes makes pinhole leaks and supply-line failures our most common call in this area.' },
-      { name: 'La Costa', detail: 'Multi-story luxury homes with complex plumbing — second-floor bath overflows and failed shower pans are frequent causes of ceiling and wall damage.' },
-      { name: 'Aviara', detail: 'High-end finishes in Aviara homes demand careful extraction and drying to protect hardwood floors, custom cabinetry, and integrated smart-home systems.' },
-      { name: 'Bressi Ranch', detail: 'Newer construction does not eliminate risk — we see water heater failures and HVAC condensation leaks regularly in this community.' },
-      { name: 'Rancho Carrillo', detail: 'Hillside grading in Rancho Carrillo can direct storm runoff toward foundations, causing basement and garage flooding during heavy rain events.' },
-      { name: 'Calavera Hills', detail: 'Mature landscaping and clay soils in Calavera Hills contribute to foundation moisture issues, especially in homes with older drainage systems.' },
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          'Older plumbing in 1960s-70s homes makes pinhole leaks and supply-line failures our most common call in this area.',
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Multi-story luxury homes with complex plumbing — second-floor bath overflows and failed shower pans are frequent causes of ceiling and wall damage.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'High-end finishes in Aviara homes demand careful extraction and drying to protect hardwood floors, custom cabinetry, and integrated smart-home systems.',
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'Newer construction does not eliminate risk — we see water heater failures and HVAC condensation leaks regularly in this community.',
+      },
+      {
+        name: 'Rancho Carrillo',
+        detail:
+          'Hillside grading in Rancho Carrillo can direct storm runoff toward foundations, causing basement and garage flooding during heavy rain events.',
+      },
+      {
+        name: 'Calavera Hills',
+        detail:
+          'Mature landscaping and clay soils in Calavera Hills contribute to foundation moisture issues, especially in homes with older drainage systems.',
+      },
     ],
     faqs: [
       {
         question: 'How fast can Tamarack reach my Carlsbad home for a water emergency?',
-        answer: 'Our headquarters is located on El Camino Real in Carlsbad, so we average 38-minute arrival times to most Carlsbad addresses. Properties in Carlsbad Village and Bressi Ranch typically see us within 25 minutes because of our proximity. We dispatch trucks 24 hours a day, 7 days a week, including holidays — just call (760) 500-2211.',
+        answer:
+          'Our headquarters is located on El Camino Real in Carlsbad, so we average 38-minute arrival times to most Carlsbad addresses. Properties in Carlsbad Village and Bressi Ranch typically see us within 25 minutes because of our proximity. We dispatch trucks 24 hours a day, 7 days a week, including holidays — just call (760) 500-2211.',
       },
       {
         question: 'Why do older Carlsbad Village homes have more water damage issues?',
-        answer: 'Many homes in Carlsbad Village and Olde Carlsbad were built in the 1960s and 1970s with copper supply lines that are now 50-60 years old. Carlsbad\'s salt air accelerates corrosion on these pipes, causing pinhole leaks that seep behind walls silently. We recommend annual plumbing inspections for any Carlsbad home with original copper piping.',
+        answer:
+          "Many homes in Carlsbad Village and Olde Carlsbad were built in the 1960s and 1970s with copper supply lines that are now 50-60 years old. Carlsbad's salt air accelerates corrosion on these pipes, causing pinhole leaks that seep behind walls silently. We recommend annual plumbing inspections for any Carlsbad home with original copper piping.",
       },
       {
         question: 'Will my insurance cover water damage restoration in Carlsbad?',
-        answer: 'Most homeowner policies cover sudden and accidental water damage — burst pipes, appliance failures, and supply-line breaks are typically covered. Gradual leaks that were ignored may be denied. We work directly with all major carriers serving Carlsbad, including State Farm, USAA, and Farmers, handling documentation and adjuster coordination so you can focus on your family.',
+        answer:
+          'Most homeowner policies cover sudden and accidental water damage — burst pipes, appliance failures, and supply-line breaks are typically covered. Gradual leaks that were ignored may be denied. We work directly with all major carriers serving Carlsbad, including State Farm, USAA, and Farmers, handling documentation and adjuster coordination so you can focus on your family.',
       },
       {
         question: 'What should I do if my Carlsbad home floods while I am away?',
-        answer: 'Carlsbad has a large number of seasonal and vacation properties, especially near the coast. If you return to find water damage, do not turn on the HVAC system — this can spread moisture and mold through ductwork. Shut off the main water valve, call us immediately at (760) 500-2211, and we will begin emergency extraction. The sooner we start, the more flooring, drywall, and personal belongings we can save.',
+        answer:
+          'Carlsbad has a large number of seasonal and vacation properties, especially near the coast. If you return to find water damage, do not turn on the HVAC system — this can spread moisture and mold through ductwork. Shut off the main water valve, call us immediately at (760) 500-2211, and we will begin emergency extraction. The sooner we start, the more flooring, drywall, and personal belongings we can save.',
       },
       {
         question: 'How long does water damage restoration take for a typical Carlsbad home?',
-        answer: 'A single-room incident — such as a kitchen sink overflow — usually takes 3-4 days to fully dry and restore. Larger events involving multiple rooms or slab leaks can take 7-10 days for drying alone, plus additional time for repairs. We set up commercial dehumidifiers and air movers, then take daily moisture readings until readings hit target levels. Every Carlsbad project gets a detailed timeline during our initial assessment.',
+        answer:
+          'A single-room incident — such as a kitchen sink overflow — usually takes 3-4 days to fully dry and restore. Larger events involving multiple rooms or slab leaks can take 7-10 days for drying alone, plus additional time for repairs. We set up commercial dehumidifiers and air movers, then take daily moisture readings until readings hit target levels. Every Carlsbad project gets a detailed timeline during our initial assessment.',
       },
       {
         question: 'Do you handle water damage from slab leaks in Carlsbad?',
-        answer: 'Absolutely. Slab leaks are one of the most common causes of water damage in Carlsbad, especially in La Costa and Calavera Hills where the soil conditions place extra stress on under-slab plumbing. We use thermal imaging and acoustic detection to locate the leak precisely, then coordinate the plumbing repair alongside our water damage restoration so you deal with one company, not three.',
+        answer:
+          'Absolutely. Slab leaks are one of the most common causes of water damage in Carlsbad, especially in La Costa and Calavera Hills where the soil conditions place extra stress on under-slab plumbing. We use thermal imaging and acoustic detection to locate the leak precisely, then coordinate the plumbing repair alongside our water damage restoration so you deal with one company, not three.',
       },
     ],
   },
@@ -101,41 +137,74 @@ The Batiquitos Lagoon and Buena Vista Lagoon also raise the water table in adjac
 The master-planned communities of La Costa and Aviara present different restoration challenges. Modern open floor plans allow smoke to travel throughout the entire home within minutes, contaminating rooms far from the fire's origin. We commonly see kitchen fires in these neighborhoods — a grease flare-up or oven malfunction — that cause relatively minor flame damage but fill every room with soot and smoke residue. HVAC systems in these larger homes distribute smoke particles into ductwork, requiring complete duct cleaning or replacement as part of the restoration.
 
 Bressi Ranch and Rancho Carrillo homes, built with modern fire-resistant materials, generally sustain less structural damage from equivalent fires. However, their engineered wood products and composite materials can off-gas toxic compounds when heated, requiring specialized air-quality testing and remediation. Additionally, the proximity of properties in these planned communities means a fire in one home can cause smoke damage to neighboring properties, and we frequently handle multi-home smoke restoration projects in these areas.`,
-    localProof: 'Over 75 fire damage restoration projects completed in Carlsbad, including full kitchen rebuilds in La Costa and whole-home smoke remediation in Aviara and the Village.',
+    localProof:
+      'Over 75 fire damage restoration projects completed in Carlsbad, including full kitchen rebuilds in La Costa and whole-home smoke remediation in Aviara and the Village.',
     projectCount: '75+',
     avgResponseTime: '40 minutes',
-    landmarks: ['Carlsbad Village', 'LEGOLAND California', 'Carlsbad Fire Station 1', 'The Flower Fields', 'Batiquitos Lagoon'],
+    landmarks: [
+      'Carlsbad Village',
+      'LEGOLAND California',
+      'Carlsbad Fire Station 1',
+      'The Flower Fields',
+      'Batiquitos Lagoon',
+    ],
     neighborhoodContext: [
-      { name: 'Carlsbad Village & Olde Carlsbad', detail: 'Older wood-frame homes burn faster and require complete framing replacement — our restoration projects here balance code compliance with preserving the home\'s original character.' },
-      { name: 'La Costa', detail: 'Open floor plans in La Costa homes allow smoke to spread rapidly. Kitchen fires are our most frequent call, with smoke contaminating every room and the HVAC system.' },
-      { name: 'Aviara', detail: 'High-end finishes in Aviara — hardwood, marble, custom cabinetry — require specialized cleaning techniques. We use dry-chem sponges and ultrasonic cleaning to save premium materials.' },
-      { name: 'Bressi Ranch', detail: 'Newer construction resists flame spread but engineered materials off-gas when heated. Air-quality testing is standard for every Bressi Ranch fire project.' },
-      { name: 'Rancho Carrillo', detail: 'Close-proximity homes in Rancho Carrillo mean a fire in one property often causes smoke damage to neighbors. We coordinate multi-home restoration efficiently.' },
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          "Older wood-frame homes burn faster and require complete framing replacement — our restoration projects here balance code compliance with preserving the home's original character.",
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Open floor plans in La Costa homes allow smoke to spread rapidly. Kitchen fires are our most frequent call, with smoke contaminating every room and the HVAC system.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'High-end finishes in Aviara — hardwood, marble, custom cabinetry — require specialized cleaning techniques. We use dry-chem sponges and ultrasonic cleaning to save premium materials.',
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'Newer construction resists flame spread but engineered materials off-gas when heated. Air-quality testing is standard for every Bressi Ranch fire project.',
+      },
+      {
+        name: 'Rancho Carrillo',
+        detail:
+          'Close-proximity homes in Rancho Carrillo mean a fire in one property often causes smoke damage to neighbors. We coordinate multi-home restoration efficiently.',
+      },
     ],
     faqs: [
       {
         question: 'What should I do immediately after a fire in my Carlsbad home?',
-        answer: 'First, ensure the Carlsbad Fire Department has cleared the property for re-entry. Do not try to clean soot yourself — improper wiping bonds soot permanently into surfaces. Call Tamarack at (760) 500-2211 and we will arrive within 40 minutes to board up openings, tarp the roof if needed, and begin emergency stabilization. Time is critical: soot begins permanently etching metal fixtures and countertops within 24-48 hours.',
+        answer:
+          'First, ensure the Carlsbad Fire Department has cleared the property for re-entry. Do not try to clean soot yourself — improper wiping bonds soot permanently into surfaces. Call Tamarack at (760) 500-2211 and we will arrive within 40 minutes to board up openings, tarp the roof if needed, and begin emergency stabilization. Time is critical: soot begins permanently etching metal fixtures and countertops within 24-48 hours.',
       },
       {
         question: 'How long does fire damage restoration take in a typical Carlsbad home?',
-        answer: 'Timeline varies significantly based on damage extent. A contained kitchen fire with smoke spread typically takes 3-6 weeks for complete restoration. A fire affecting multiple rooms or structural elements can take 3-6 months, including reconstruction. We create a detailed project timeline during our initial assessment and update Carlsbad homeowners weekly throughout the process.',
+        answer:
+          'Timeline varies significantly based on damage extent. A contained kitchen fire with smoke spread typically takes 3-6 weeks for complete restoration. A fire affecting multiple rooms or structural elements can take 3-6 months, including reconstruction. We create a detailed project timeline during our initial assessment and update Carlsbad homeowners weekly throughout the process.',
       },
       {
         question: 'Can you save smoke-damaged furniture and personal items in my Carlsbad home?',
-        answer: 'In many cases, yes. We operate content restoration services including ultrasonic cleaning for hard goods, ozone treatment for fabrics, and specialized document and photo recovery. For Carlsbad clients, we provide on-site pack-out services, inventorying and transporting salvageable items to our climate-controlled facility for cleaning and storage while restoration work proceeds.',
+        answer:
+          'In many cases, yes. We operate content restoration services including ultrasonic cleaning for hard goods, ozone treatment for fabrics, and specialized document and photo recovery. For Carlsbad clients, we provide on-site pack-out services, inventorying and transporting salvageable items to our climate-controlled facility for cleaning and storage while restoration work proceeds.',
       },
       {
         question: 'Will my insurance cover fire restoration in Carlsbad?',
-        answer: 'Fire damage is one of the most comprehensively covered perils in homeowner policies. Coverage typically includes structural repairs, smoke and soot cleanup, content restoration, and additional living expenses while your Carlsbad home is being restored. We work directly with all major carriers serving Carlsbad — State Farm, USAA, Allstate, Farmers, and Liberty Mutual — handling the extensive documentation that fire claims require.',
+        answer:
+          'Fire damage is one of the most comprehensively covered perils in homeowner policies. Coverage typically includes structural repairs, smoke and soot cleanup, content restoration, and additional living expenses while your Carlsbad home is being restored. We work directly with all major carriers serving Carlsbad — State Farm, USAA, Allstate, Farmers, and Liberty Mutual — handling the extensive documentation that fire claims require.',
       },
       {
         question: 'Do you handle the reconstruction after fire damage, or just the cleanup?',
-        answer: 'We provide complete fire restoration from start to finish — emergency board-up, smoke and soot removal, water extraction from firefighting, odor elimination, and full reconstruction. Carlsbad homeowners work with a single project manager throughout the entire process. We handle permits, coordinate with Carlsbad building inspectors, and rebuild to current code while matching your home\'s original style.',
+        answer:
+          "We provide complete fire restoration from start to finish — emergency board-up, smoke and soot removal, water extraction from firefighting, odor elimination, and full reconstruction. Carlsbad homeowners work with a single project manager throughout the entire process. We handle permits, coordinate with Carlsbad building inspectors, and rebuild to current code while matching your home's original style.",
       },
       {
         question: 'How do you eliminate smoke odor from a Carlsbad home?',
-        answer: 'Smoke odor requires a multi-step approach because smoke particles penetrate porous materials at a molecular level. We use thermal fogging to reach the same spaces smoke reached, hydroxyl generators for continuous air treatment, and ozone shock treatment for severe cases. In Carlsbad coastal homes, we pay special attention to HVAC systems where smoke residue mixes with salt-air deposits in ductwork, creating persistent odor sources that basic cleaning misses.',
+        answer:
+          'Smoke odor requires a multi-step approach because smoke particles penetrate porous materials at a molecular level. We use thermal fogging to reach the same spaces smoke reached, hydroxyl generators for continuous air treatment, and ozone shock treatment for severe cases. In Carlsbad coastal homes, we pay special attention to HVAC systems where smoke residue mixes with salt-air deposits in ductwork, creating persistent odor sources that basic cleaning misses.',
       },
     ],
   },
@@ -151,37 +220,69 @@ Bressi Ranch and Rancho Carrillo homes, built with modern fire-resistant materia
 The Batiquitos Lagoon corridor on Carlsbad's south side presents similar risks. Homes along Batiquitos Drive and in the La Costa Valley area sit in a natural drainage path. During high-tide storm events, lagoon water levels rise simultaneously with storm runoff, creating a backflow effect that can push water into garages and lower-level living spaces. We've completed dozens of post-storm restorations in this corridor over the past decade.
 
 Inland Carlsbad neighborhoods — Calavera Hills, Rancho Carrillo, and parts of La Costa — face flash-flood risk from hillside runoff rather than coastal flooding. Graded slopes can channel enormous volumes of water toward downhill properties during intense rain bursts, overwhelming landscape drains and sending water against foundations. Older drainage systems in Calavera Hills are particularly prone to this, and we see foundation-level flooding there during nearly every significant storm.`,
-    localProof: 'Over 85 flood cleanup projects in Carlsbad, including multi-home response during the January 2023 atmospheric river event. Average time from call to water extraction: 38 minutes.',
+    localProof:
+      'Over 85 flood cleanup projects in Carlsbad, including multi-home response during the January 2023 atmospheric river event. Average time from call to water extraction: 38 minutes.',
     projectCount: '85+',
     avgResponseTime: '30 minutes',
-    landmarks: ['Buena Vista Lagoon', 'Batiquitos Lagoon', 'Agua Hedionda Creek', 'Carlsbad Village', 'LEGOLAND California'],
+    landmarks: [
+      'Buena Vista Lagoon',
+      'Batiquitos Lagoon',
+      'Agua Hedionda Creek',
+      'Carlsbad Village',
+      'LEGOLAND California',
+    ],
     neighborhoodContext: [
-      { name: 'Olde Carlsbad & Buena Vista Lagoon Area', detail: 'Properties near Jefferson Street and the lagoon outlet experience repeat flooding during sustained rain — the Buena Vista Creek watershed backs up and overflows into residential streets.' },
-      { name: 'La Costa Valley & Batiquitos Corridor', detail: 'Homes along Batiquitos Drive sit in a natural drainage path. High-tide storm events create backflow that pushes water into garages and ground-floor rooms.' },
-      { name: 'Calavera Hills', detail: 'Hillside runoff overwhelms older landscape drains during heavy bursts, sending water against downhill foundations. We respond to foundation flooding here during nearly every major storm.' },
-      { name: 'Rancho Carrillo', detail: 'Graded slopes channel runoff toward lower properties. Homes at the bottom of Rancho Carrillo\'s hills need functioning French drains and sump systems to prevent repeat flooding.' },
-      { name: 'Bressi Ranch', detail: 'Newer infrastructure handles typical storms well, but record rainfall events have still caused garage flooding where community storm drains reach capacity.' },
+      {
+        name: 'Olde Carlsbad & Buena Vista Lagoon Area',
+        detail:
+          'Properties near Jefferson Street and the lagoon outlet experience repeat flooding during sustained rain — the Buena Vista Creek watershed backs up and overflows into residential streets.',
+      },
+      {
+        name: 'La Costa Valley & Batiquitos Corridor',
+        detail:
+          'Homes along Batiquitos Drive sit in a natural drainage path. High-tide storm events create backflow that pushes water into garages and ground-floor rooms.',
+      },
+      {
+        name: 'Calavera Hills',
+        detail:
+          'Hillside runoff overwhelms older landscape drains during heavy bursts, sending water against downhill foundations. We respond to foundation flooding here during nearly every major storm.',
+      },
+      {
+        name: 'Rancho Carrillo',
+        detail:
+          "Graded slopes channel runoff toward lower properties. Homes at the bottom of Rancho Carrillo's hills need functioning French drains and sump systems to prevent repeat flooding.",
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'Newer infrastructure handles typical storms well, but record rainfall events have still caused garage flooding where community storm drains reach capacity.',
+      },
     ],
     faqs: [
       {
         question: 'Which Carlsbad neighborhoods are most prone to flooding?',
-        answer: 'Areas near Buena Vista Lagoon in Olde Carlsbad, the Batiquitos corridor in south Carlsbad, and hillside-adjacent homes in Calavera Hills and Rancho Carrillo see the most flood calls during storms. Properties on Jefferson Street, Batiquitos Drive, and at the base of graded slopes in La Costa Valley are repeat flood zones. If you live in any of these areas, we recommend pre-season preparation including drain maintenance and sump pump testing.',
+        answer:
+          'Areas near Buena Vista Lagoon in Olde Carlsbad, the Batiquitos corridor in south Carlsbad, and hillside-adjacent homes in Calavera Hills and Rancho Carrillo see the most flood calls during storms. Properties on Jefferson Street, Batiquitos Drive, and at the base of graded slopes in La Costa Valley are repeat flood zones. If you live in any of these areas, we recommend pre-season preparation including drain maintenance and sump pump testing.',
       },
       {
         question: 'Is flood water in Carlsbad dangerous?',
-        answer: 'Yes. Flood water in Carlsbad often picks up contaminants from lagoon sediment, agricultural runoff, street debris, and sewage system overflow. The Buena Vista and Batiquitos lagoon waters carry bacteria levels that make any contact a health concern. All flood water is treated as Category 2 or Category 3 contamination, meaning we use full protective equipment and EPA-registered antimicrobial treatments during cleanup. Porous materials that absorb flood water — carpet, drywall, insulation — must be removed and replaced.',
+        answer:
+          'Yes. Flood water in Carlsbad often picks up contaminants from lagoon sediment, agricultural runoff, street debris, and sewage system overflow. The Buena Vista and Batiquitos lagoon waters carry bacteria levels that make any contact a health concern. All flood water is treated as Category 2 or Category 3 contamination, meaning we use full protective equipment and EPA-registered antimicrobial treatments during cleanup. Porous materials that absorb flood water — carpet, drywall, insulation — must be removed and replaced.',
       },
       {
         question: 'Does homeowner insurance cover flood damage in Carlsbad?',
-        answer: 'Standard homeowner policies do not cover flood damage — you need a separate flood policy through the National Flood Insurance Program or a private flood insurer. This catches many Carlsbad homeowners off guard because properties outside FEMA-designated flood zones still flood during extreme events. If you have flood insurance, we work directly with NFIP adjusters and meet their specific documentation requirements. If you do not have flood insurance, we provide detailed cost estimates and flexible scheduling.',
+        answer:
+          'Standard homeowner policies do not cover flood damage — you need a separate flood policy through the National Flood Insurance Program or a private flood insurer. This catches many Carlsbad homeowners off guard because properties outside FEMA-designated flood zones still flood during extreme events. If you have flood insurance, we work directly with NFIP adjusters and meet their specific documentation requirements. If you do not have flood insurance, we provide detailed cost estimates and flexible scheduling.',
       },
       {
         question: 'How quickly can you start flood cleanup at my Carlsbad property?',
-        answer: 'Our Carlsbad headquarters means we can have truck-mounted extractors running at your property within 30 minutes of your call. During major storm events, we pre-position crews and equipment throughout Carlsbad to ensure rapid response even when call volume spikes. Every hour flood water sits increases damage exponentially, so we prioritize getting extraction started immediately — we can complete the full assessment while pumps are already running.',
+        answer:
+          'Our Carlsbad headquarters means we can have truck-mounted extractors running at your property within 30 minutes of your call. During major storm events, we pre-position crews and equipment throughout Carlsbad to ensure rapid response even when call volume spikes. Every hour flood water sits increases damage exponentially, so we prioritize getting extraction started immediately — we can complete the full assessment while pumps are already running.',
       },
       {
         question: 'What does flood cleanup in a Carlsbad home involve?',
-        answer: 'Flood cleanup is more intensive than standard water damage restoration because of contamination. We start with rapid water extraction using truck-mounted pumps. Then we remove all porous materials that absorbed flood water — carpet, padding, lower drywall sections, and insulation. All remaining surfaces are scrubbed with antimicrobial solutions and disinfected. We then set up commercial drying equipment and monitor moisture levels daily until the structure reaches target dryness. Only then do we begin reconstruction of removed materials.',
+        answer:
+          'Flood cleanup is more intensive than standard water damage restoration because of contamination. We start with rapid water extraction using truck-mounted pumps. Then we remove all porous materials that absorbed flood water — carpet, padding, lower drywall sections, and insulation. All remaining surfaces are scrubbed with antimicrobial solutions and disinfected. We then set up commercial drying equipment and monitor moisture levels daily until the structure reaches target dryness. Only then do we begin reconstruction of removed materials.',
       },
     ],
   },
@@ -197,41 +298,74 @@ Inland Carlsbad neighborhoods — Calavera Hills, Rancho Carrillo, and parts of 
 La Costa and Aviara face a different sewage risk: their longer lateral runs from home to street main create more potential failure points. These laterals often travel 50-80 feet from the home's foundation to the city connection, passing under driveways and landscaping. Bellied pipes — sections that sag and collect waste — develop over time as soil settles beneath these long runs. We have responded to numerous La Costa sewage emergencies caused by bellied laterals that slowly worsened over years before failing completely.
 
 During heavy rainstorms, Carlsbad's municipal sewer system can experience capacity surges that cause backups through floor drains and lower-level fixtures. Properties at lower elevations in the sewer grid — particularly in areas near Agua Hedionda and along Carlsbad Boulevard — are most susceptible. A backwater valve can prevent this type of backup, and we recommend installation for every Carlsbad home that has experienced even a minor backup during storms.`,
-    localProof: 'Over 60 sewage cleanup projects in Carlsbad, with biohazard-certified technicians who follow strict containment and decontamination protocols for every project.',
+    localProof:
+      'Over 60 sewage cleanup projects in Carlsbad, with biohazard-certified technicians who follow strict containment and decontamination protocols for every project.',
     projectCount: '60+',
     avgResponseTime: '35 minutes',
-    landmarks: ['Carlsbad Village', 'Carlsbad Boulevard', 'Agua Hedionda', 'Buena Vista Lagoon', 'LEGOLAND California'],
+    landmarks: [
+      'Carlsbad Village',
+      'Carlsbad Boulevard',
+      'Agua Hedionda',
+      'Buena Vista Lagoon',
+      'LEGOLAND California',
+    ],
     neighborhoodContext: [
-      { name: 'Carlsbad Village & Olde Carlsbad', detail: 'Clay sewer laterals from the 1960s-70s are highly prone to tree-root intrusion. Mature ficus and eucalyptus trees along Village streets aggressively invade sewer lines, causing annual backup spikes each fall.' },
-      { name: 'La Costa', detail: 'Long lateral runs of 50-80 feet create multiple potential failure points. Bellied pipe sections develop as soil settles under driveways and landscaping, trapping waste until the line fails completely.' },
-      { name: 'Aviara', detail: 'Premium properties with complex plumbing demand careful sewage extraction to protect high-end flooring and finishes. We use targeted extraction and rapid antimicrobial treatment to minimize material replacement.' },
-      { name: 'Carlsbad Boulevard Area', detail: 'Lower-elevation properties near the coast are vulnerable to municipal sewer surges during storms. Backwater valve installation is essential for homes in this area.' },
-      { name: 'Calavera Hills', detail: 'Established homes with aging lateral lines and mature trees face the same root-intrusion risks as the Village. Regular sewer camera inspections can catch problems before they become emergencies.' },
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          'Clay sewer laterals from the 1960s-70s are highly prone to tree-root intrusion. Mature ficus and eucalyptus trees along Village streets aggressively invade sewer lines, causing annual backup spikes each fall.',
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Long lateral runs of 50-80 feet create multiple potential failure points. Bellied pipe sections develop as soil settles under driveways and landscaping, trapping waste until the line fails completely.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'Premium properties with complex plumbing demand careful sewage extraction to protect high-end flooring and finishes. We use targeted extraction and rapid antimicrobial treatment to minimize material replacement.',
+      },
+      {
+        name: 'Carlsbad Boulevard Area',
+        detail:
+          'Lower-elevation properties near the coast are vulnerable to municipal sewer surges during storms. Backwater valve installation is essential for homes in this area.',
+      },
+      {
+        name: 'Calavera Hills',
+        detail:
+          'Established homes with aging lateral lines and mature trees face the same root-intrusion risks as the Village. Regular sewer camera inspections can catch problems before they become emergencies.',
+      },
     ],
     faqs: [
       {
         question: 'How dangerous is a sewage backup in my Carlsbad home?',
-        answer: 'Sewage contains E. coli, Salmonella, hepatitis, and parasites that can cause serious illness within hours of exposure. Children, elderly household members, and anyone with compromised immunity are at highest risk. Do not attempt to clean sewage yourself — the risk of pathogen exposure without proper PPE and containment is significant. Call Tamarack at (760) 500-2211 and keep family members and pets away from affected areas until our certified crew arrives.',
+        answer:
+          'Sewage contains E. coli, Salmonella, hepatitis, and parasites that can cause serious illness within hours of exposure. Children, elderly household members, and anyone with compromised immunity are at highest risk. Do not attempt to clean sewage yourself — the risk of pathogen exposure without proper PPE and containment is significant. Call Tamarack at (760) 500-2211 and keep family members and pets away from affected areas until our certified crew arrives.',
       },
       {
         question: 'Why are sewage backups common in Carlsbad Village?',
-        answer: 'Carlsbad Village homes built in the 1960s-70s have clay sewer laterals that deteriorate and develop cracks over time. The mature trees lining Village streets — particularly ficus and eucalyptus species — send roots toward these cracked lines seeking moisture. Once roots enter the pipe, they grow rapidly and create blockages that cause sewage to back up into the home. We see a reliable spike in Village sewage calls each fall during peak root-growth season.',
+        answer:
+          'Carlsbad Village homes built in the 1960s-70s have clay sewer laterals that deteriorate and develop cracks over time. The mature trees lining Village streets — particularly ficus and eucalyptus species — send roots toward these cracked lines seeking moisture. Once roots enter the pipe, they grow rapidly and create blockages that cause sewage to back up into the home. We see a reliable spike in Village sewage calls each fall during peak root-growth season.',
       },
       {
         question: 'What does sewage cleanup cost in Carlsbad?',
-        answer: 'Costs depend on the volume of sewage, the area affected, and the materials that need replacement. A contained backup affecting a single bathroom typically costs $2,000-$5,000 for extraction, decontamination, and material replacement. A major backup flooding multiple rooms can range from $8,000-$20,000. Many Carlsbad homeowners have sewer backup endorsements on their insurance policies that cover these costs — we help you verify coverage and coordinate the claim.',
+        answer:
+          'Costs depend on the volume of sewage, the area affected, and the materials that need replacement. A contained backup affecting a single bathroom typically costs $2,000-$5,000 for extraction, decontamination, and material replacement. A major backup flooding multiple rooms can range from $8,000-$20,000. Many Carlsbad homeowners have sewer backup endorsements on their insurance policies that cover these costs — we help you verify coverage and coordinate the claim.',
       },
       {
         question: 'Can my Carlsbad home be safe to live in after a sewage backup?',
-        answer: 'Yes, but only after professional decontamination. We remove all porous materials that absorbed sewage — carpet, padding, lower sections of drywall, and insulation. Hard surfaces are scrubbed with hospital-grade disinfectants, and we apply antimicrobial treatments to framing and subfloors. After drying, we conduct clearance testing to verify bacteria levels are within safe limits before any Carlsbad family re-occupies affected areas.',
+        answer:
+          'Yes, but only after professional decontamination. We remove all porous materials that absorbed sewage — carpet, padding, lower sections of drywall, and insulation. Hard surfaces are scrubbed with hospital-grade disinfectants, and we apply antimicrobial treatments to framing and subfloors. After drying, we conduct clearance testing to verify bacteria levels are within safe limits before any Carlsbad family re-occupies affected areas.',
       },
       {
         question: 'How can I prevent sewage backups in my Carlsbad home?',
-        answer: 'For Village and Calavera Hills homes with older laterals, annual sewer camera inspections catch root intrusion and bellied sections before they cause backups. For all Carlsbad homes, we recommend installing a backwater valve on your main sewer line to prevent municipal system surges from entering your home during storms. Avoid flushing anything other than waste and toilet paper, and never pour grease down drains — grease buildup is the second most common cause of Carlsbad residential sewer backups after root intrusion.',
+        answer:
+          'For Village and Calavera Hills homes with older laterals, annual sewer camera inspections catch root intrusion and bellied sections before they cause backups. For all Carlsbad homes, we recommend installing a backwater valve on your main sewer line to prevent municipal system surges from entering your home during storms. Avoid flushing anything other than waste and toilet paper, and never pour grease down drains — grease buildup is the second most common cause of Carlsbad residential sewer backups after root intrusion.',
       },
       {
         question: 'Do you repair the sewer line that caused the backup, or just clean up?',
-        answer: 'We focus on the cleanup, decontamination, and interior restoration. For the sewer line repair itself, we coordinate with trusted licensed plumbers in Carlsbad who specialize in lateral replacement and trenchless pipe relining. This ensures you have one point of contact — us — managing both the restoration and the root-cause repair, so the problem gets fixed completely rather than recurring.',
+        answer:
+          'We focus on the cleanup, decontamination, and interior restoration. For the sewer line repair itself, we coordinate with trusted licensed plumbers in Carlsbad who specialize in lateral replacement and trenchless pipe relining. This ensures you have one point of contact — us — managing both the restoration and the root-cause repair, so the problem gets fixed completely rather than recurring.',
       },
     ],
   },
@@ -247,41 +381,74 @@ During heavy rainstorms, Carlsbad's municipal sewer system can experience capaci
 Slab leaks represent the most damaging type of hidden leak in Carlsbad, and they are more common here than in most North County cities. The sandy, shifting soils beneath Carlsbad foundations put constant stress on under-slab copper lines, particularly at elbows and connections where the pipe changes direction. La Costa and Calavera Hills properties are especially prone because of the hillside grading beneath their slabs. Symptoms are subtle at first — a warm spot on the floor, a slight increase in water bills — but by the time most homeowners call, significant damage has already occurred beneath the slab and to surrounding materials.
 
 Newer Carlsbad homes in Bressi Ranch and portions of Rancho Carrillo generally use PEX or CPVC plumbing that resists corrosion, but they are not leak-free. We see failures at connection fittings, at transitions between PEX and copper, and at water heater connections. Additionally, the HVAC condensation systems in these tightly sealed newer homes can develop leaks in drain lines that drip into wall cavities for months before producing visible damage.`,
-    localProof: 'Over 120 hidden leaks located and repaired across Carlsbad, saving homeowners an estimated $2.4 million in prevented structural damage through early detection.',
+    localProof:
+      'Over 120 hidden leaks located and repaired across Carlsbad, saving homeowners an estimated $2.4 million in prevented structural damage through early detection.',
     projectCount: '120+',
     avgResponseTime: '35 minutes',
-    landmarks: ['Carlsbad Village', 'LEGOLAND California', 'Batiquitos Lagoon', 'The Flower Fields', 'Carlsbad Premium Outlets'],
+    landmarks: [
+      'Carlsbad Village',
+      'LEGOLAND California',
+      'Batiquitos Lagoon',
+      'The Flower Fields',
+      'Carlsbad Premium Outlets',
+    ],
     neighborhoodContext: [
-      { name: 'Carlsbad Village & Olde Carlsbad', detail: 'Original copper supply lines from the 1960s-70s develop pinhole leaks at twice the inland rate due to salt-air corrosion. Horizontal pipe runs inside walls are the most common failure point.' },
-      { name: 'La Costa', detail: 'Hillside grading beneath La Costa foundations stresses under-slab copper lines at elbows and connections. Slab leaks here are our most common detection call.' },
-      { name: 'Calavera Hills', detail: 'Similar slab-leak risk to La Costa, compounded by mature landscaping whose root systems shift soil around foundations and increase stress on under-slab plumbing.' },
-      { name: 'Aviara', detail: 'Luxury finishes make early leak detection critical — a hidden leak behind a marble shower wall or beneath imported hardwood flooring causes disproportionately expensive damage if not caught early.' },
-      { name: 'Bressi Ranch', detail: 'PEX plumbing resists corrosion but fails at connection fittings and at PEX-to-copper transitions. HVAC condensation drain leaks in tightly sealed homes are an emerging issue.' },
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          'Original copper supply lines from the 1960s-70s develop pinhole leaks at twice the inland rate due to salt-air corrosion. Horizontal pipe runs inside walls are the most common failure point.',
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Hillside grading beneath La Costa foundations stresses under-slab copper lines at elbows and connections. Slab leaks here are our most common detection call.',
+      },
+      {
+        name: 'Calavera Hills',
+        detail:
+          'Similar slab-leak risk to La Costa, compounded by mature landscaping whose root systems shift soil around foundations and increase stress on under-slab plumbing.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'Luxury finishes make early leak detection critical — a hidden leak behind a marble shower wall or beneath imported hardwood flooring causes disproportionately expensive damage if not caught early.',
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'PEX plumbing resists corrosion but fails at connection fittings and at PEX-to-copper transitions. HVAC condensation drain leaks in tightly sealed homes are an emerging issue.',
+      },
     ],
     faqs: [
       {
         question: 'How do you detect hidden leaks in Carlsbad homes without tearing apart walls?',
-        answer: 'We use three complementary technologies. Thermal imaging cameras detect temperature differences caused by water evaporation behind walls and under floors — even small leaks create visible thermal signatures. Acoustic listening equipment amplifies the sound of water escaping from pressurized pipes, pinpointing the leak location through walls and slabs. Moisture meters and mapping tools measure moisture content in building materials to confirm the leak\'s path and extent. Together, these tools let us locate leaks precisely without exploratory demolition.',
+        answer:
+          "We use three complementary technologies. Thermal imaging cameras detect temperature differences caused by water evaporation behind walls and under floors — even small leaks create visible thermal signatures. Acoustic listening equipment amplifies the sound of water escaping from pressurized pipes, pinpointing the leak location through walls and slabs. Moisture meters and mapping tools measure moisture content in building materials to confirm the leak's path and extent. Together, these tools let us locate leaks precisely without exploratory demolition.",
       },
       {
         question: 'What are the signs of a slab leak in a Carlsbad home?',
-        answer: 'The most common early sign is a warm or hot spot on the floor, since most slab leaks involve hot water lines. Other indicators include an unexplained increase in water bills, the sound of running water when all fixtures are off, cracks appearing in the foundation or floor tiles, and damp carpet or flooring in areas away from any water source. In Carlsbad homes with La Costa and Calavera Hills addresses, we recommend investigating any of these symptoms promptly because sandy soils allow slab leaks to erode quickly.',
+        answer:
+          'The most common early sign is a warm or hot spot on the floor, since most slab leaks involve hot water lines. Other indicators include an unexplained increase in water bills, the sound of running water when all fixtures are off, cracks appearing in the foundation or floor tiles, and damp carpet or flooring in areas away from any water source. In Carlsbad homes with La Costa and Calavera Hills addresses, we recommend investigating any of these symptoms promptly because sandy soils allow slab leaks to erode quickly.',
       },
       {
         question: 'How much does leak detection cost in Carlsbad?',
-        answer: 'Our comprehensive leak detection assessment — including thermal imaging, acoustic testing, and moisture mapping — runs between $250-$450 depending on the complexity and size of the property. This fee is often waived or credited toward the repair if we perform the fix. Many Carlsbad homeowners find that the detection fee saves them thousands by preventing unnecessary drywall opening or slab cutting in the wrong location.',
+        answer:
+          'Our comprehensive leak detection assessment — including thermal imaging, acoustic testing, and moisture mapping — runs between $250-$450 depending on the complexity and size of the property. This fee is often waived or credited toward the repair if we perform the fix. Many Carlsbad homeowners find that the detection fee saves them thousands by preventing unnecessary drywall opening or slab cutting in the wrong location.',
       },
       {
         question: 'Why are slab leaks so common in Carlsbad?',
-        answer: 'Two factors converge in Carlsbad. First, the sandy coastal soils shift more than the clay soils found in inland cities, putting stress on under-slab copper pipes at every bend and connection. Second, salt air accelerates copper corrosion even on pipes buried beneath the slab, because salty moisture migrates through the concrete over decades. La Costa, Calavera Hills, and Aviara — neighborhoods built on graded hillsides — experience the most slab leaks because the soil movement beneath their foundations is greatest.',
+        answer:
+          'Two factors converge in Carlsbad. First, the sandy coastal soils shift more than the clay soils found in inland cities, putting stress on under-slab copper pipes at every bend and connection. Second, salt air accelerates copper corrosion even on pipes buried beneath the slab, because salty moisture migrates through the concrete over decades. La Costa, Calavera Hills, and Aviara — neighborhoods built on graded hillsides — experience the most slab leaks because the soil movement beneath their foundations is greatest.',
       },
       {
         question: 'Should I repipe my entire Carlsbad home if I have a leak?',
-        answer: 'Not always, but sometimes it is the most cost-effective long-term decision. If your Carlsbad home has original copper plumbing from the 1960s-70s and you have experienced multiple pinhole leaks, a full repipe to PEX eliminates the recurring problem permanently. For a single isolated leak in an otherwise healthy system, a targeted repair makes more sense. We assess your entire plumbing system during every leak detection visit and give you an honest recommendation based on pipe age, condition, and history.',
+        answer:
+          'Not always, but sometimes it is the most cost-effective long-term decision. If your Carlsbad home has original copper plumbing from the 1960s-70s and you have experienced multiple pinhole leaks, a full repipe to PEX eliminates the recurring problem permanently. For a single isolated leak in an otherwise healthy system, a targeted repair makes more sense. We assess your entire plumbing system during every leak detection visit and give you an honest recommendation based on pipe age, condition, and history.',
       },
       {
         question: 'Can a small leak really cause serious damage to my Carlsbad home?',
-        answer: 'A pinhole leak dripping one drop per second wastes over 3,000 gallons per year and saturates the surrounding wall cavity continuously. Within weeks, that moisture rots wood framing, delaminates drywall, and creates ideal conditions for mold growth. In Carlsbad\'s humid coastal environment, mold colonizes wet materials faster than in drier inland areas. We have responded to Carlsbad homes where a tiny leak — undetected for 3-4 months — caused $15,000-$30,000 in hidden structural and mold damage. Early detection is always cheaper than delayed restoration.',
+        answer:
+          "A pinhole leak dripping one drop per second wastes over 3,000 gallons per year and saturates the surrounding wall cavity continuously. Within weeks, that moisture rots wood framing, delaminates drywall, and creates ideal conditions for mold growth. In Carlsbad's humid coastal environment, mold colonizes wet materials faster than in drier inland areas. We have responded to Carlsbad homes where a tiny leak — undetected for 3-4 months — caused $15,000-$30,000 in hidden structural and mold damage. Early detection is always cheaper than delayed restoration.",
       },
     ],
   },
@@ -297,41 +464,75 @@ Newer Carlsbad homes in Bressi Ranch and portions of Rancho Carrillo generally u
 In the master-planned communities of La Costa and Aviara, the mold risk profile is different but equally persistent. These larger homes often have complex HVAC systems with extensive ductwork running through unconditioned attic spaces. When cool, conditioned air meets warm attic air at duct joints, condensation forms — and that hidden moisture feeds mold colonies that can spread for months before anyone detects a musty odor in the living spaces below.
 
 Carlsbad Village presents its own mold challenge. Older construction in the Village often lacks modern vapor barriers and adequate ventilation. We routinely find mold behind original plaster walls and beneath hardwood floors in homes built before 1980. These remediation projects require extra care to preserve the character of these properties while eliminating every trace of contamination.`,
-    localProof: 'Over 150 mold remediation projects completed across Carlsbad neighborhoods including La Costa, Aviara, and the Village — with post-remediation clearance testing passed on the first attempt in 97% of projects.',
+    localProof:
+      'Over 150 mold remediation projects completed across Carlsbad neighborhoods including La Costa, Aviara, and the Village — with post-remediation clearance testing passed on the first attempt in 97% of projects.',
     projectCount: '150+',
     avgResponseTime: '35 minutes',
-    landmarks: ['Carlsbad Village', 'Batiquitos Lagoon', 'Buena Vista Lagoon', 'LEGOLAND California', 'The Flower Fields'],
+    landmarks: [
+      'Carlsbad Village',
+      'Batiquitos Lagoon',
+      'Buena Vista Lagoon',
+      'LEGOLAND California',
+      'The Flower Fields',
+    ],
     neighborhoodContext: [
-      { name: 'Carlsbad Village & Olde Carlsbad', detail: 'Homes built before 1980 often lack vapor barriers and modern ventilation, making hidden mold behind plaster walls and under original hardwood floors a recurring finding.' },
-      { name: 'La Costa', detail: 'Complex HVAC systems in large La Costa homes create condensation at duct joints in unconditioned attics — a hidden moisture source that feeds mold colonies for months before detection.' },
-      { name: 'Aviara', detail: 'High-end Aviara properties near the Four Seasons often have wine cellars, bonus rooms, and below-grade spaces where humidity accumulates and mold takes hold without visible signs.' },
-      { name: 'Bressi Ranch', detail: 'Newer Bressi Ranch homes have tighter building envelopes, which improves energy efficiency but can trap indoor moisture if bathroom exhaust fans are undersized or vented into attic spaces.' },
-      { name: 'Calavera Hills', detail: 'Properties backing to natural open space in Calavera Hills experience elevated outdoor spore counts, increasing the risk of indoor colonization whenever windows are left open.' },
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          'Homes built before 1980 often lack vapor barriers and modern ventilation, making hidden mold behind plaster walls and under original hardwood floors a recurring finding.',
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Complex HVAC systems in large La Costa homes create condensation at duct joints in unconditioned attics — a hidden moisture source that feeds mold colonies for months before detection.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'High-end Aviara properties near the Four Seasons often have wine cellars, bonus rooms, and below-grade spaces where humidity accumulates and mold takes hold without visible signs.',
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'Newer Bressi Ranch homes have tighter building envelopes, which improves energy efficiency but can trap indoor moisture if bathroom exhaust fans are undersized or vented into attic spaces.',
+      },
+      {
+        name: 'Calavera Hills',
+        detail:
+          'Properties backing to natural open space in Calavera Hills experience elevated outdoor spore counts, increasing the risk of indoor colonization whenever windows are left open.',
+      },
     ],
     faqs: [
       {
         question: 'Why is mold so common in Carlsbad compared to inland cities?',
-        answer: 'Carlsbad\'s ocean proximity keeps relative humidity 10-15 percent higher than cities like Vista or San Marcos, especially during the marine layer season from May through September. Mold spores need moisture above 60 percent to colonize, and many Carlsbad homes — particularly in Olde Carlsbad and the Village — exceed that threshold for months at a time. This is why we see roughly twice the mold remediation volume in Carlsbad as we do in comparable inland areas.',
+        answer:
+          "Carlsbad's ocean proximity keeps relative humidity 10-15 percent higher than cities like Vista or San Marcos, especially during the marine layer season from May through September. Mold spores need moisture above 60 percent to colonize, and many Carlsbad homes — particularly in Olde Carlsbad and the Village — exceed that threshold for months at a time. This is why we see roughly twice the mold remediation volume in Carlsbad as we do in comparable inland areas.",
       },
       {
-        question: 'How do you handle mold in older Carlsbad Village homes without destroying the character?',
-        answer: 'Carlsbad Village has some of the most charming older homes in North County, and we take preservation seriously. Our technicians use targeted containment and HEPA-filtered negative air to isolate work areas, then carefully remove mold from plaster, lath, and original hardwood without unnecessary demolition. When materials must be replaced, we match existing profiles and finishes as closely as possible. We have completed dozens of Village remediation projects while maintaining the homes\' historic character.',
+        question:
+          'How do you handle mold in older Carlsbad Village homes without destroying the character?',
+        answer:
+          "Carlsbad Village has some of the most charming older homes in North County, and we take preservation seriously. Our technicians use targeted containment and HEPA-filtered negative air to isolate work areas, then carefully remove mold from plaster, lath, and original hardwood without unnecessary demolition. When materials must be replaced, we match existing profiles and finishes as closely as possible. We have completed dozens of Village remediation projects while maintaining the homes' historic character.",
       },
       {
         question: 'Can mold in my Carlsbad home make my family sick?',
-        answer: 'Yes. Mold produces allergens, irritants, and in some cases mycotoxins that can cause respiratory symptoms, skin rashes, headaches, and aggravated asthma. In Carlsbad, where homes are often closed up with air conditioning running, mold spores circulate through HVAC systems and affect every room. Children, elderly family members, and anyone with respiratory conditions are particularly vulnerable. If you notice musty odors or unexplained allergy symptoms, schedule a professional inspection immediately.',
+        answer:
+          'Yes. Mold produces allergens, irritants, and in some cases mycotoxins that can cause respiratory symptoms, skin rashes, headaches, and aggravated asthma. In Carlsbad, where homes are often closed up with air conditioning running, mold spores circulate through HVAC systems and affect every room. Children, elderly family members, and anyone with respiratory conditions are particularly vulnerable. If you notice musty odors or unexplained allergy symptoms, schedule a professional inspection immediately.',
       },
       {
         question: 'What does mold remediation cost for a typical Carlsbad home?',
-        answer: 'Costs depend on the size of the affected area, the type of materials involved, and whether the moisture source requires repair. A contained bathroom mold issue in a Carlsbad home typically runs $1,500-$3,500. Larger projects involving multiple rooms, attic spaces, or HVAC system contamination can range from $5,000-$15,000. We provide free on-site assessments with detailed written estimates, and most Carlsbad homeowners use insurance to cover mold remediation when it stems from a covered water event.',
+        answer:
+          'Costs depend on the size of the affected area, the type of materials involved, and whether the moisture source requires repair. A contained bathroom mold issue in a Carlsbad home typically runs $1,500-$3,500. Larger projects involving multiple rooms, attic spaces, or HVAC system contamination can range from $5,000-$15,000. We provide free on-site assessments with detailed written estimates, and most Carlsbad homeowners use insurance to cover mold remediation when it stems from a covered water event.',
       },
       {
         question: 'Do you test for mold before and after remediation in Carlsbad?',
-        answer: 'We always recommend pre-remediation testing to identify mold species and establish baseline spore counts. After remediation is complete, we perform post-remediation clearance testing — an independent air-quality assessment that verifies spore levels have returned to normal. In Carlsbad, where ambient outdoor spore counts are elevated due to coastal vegetation and humidity, our technicians calibrate clearance thresholds to local conditions rather than generic national standards.',
+        answer:
+          'We always recommend pre-remediation testing to identify mold species and establish baseline spore counts. After remediation is complete, we perform post-remediation clearance testing — an independent air-quality assessment that verifies spore levels have returned to normal. In Carlsbad, where ambient outdoor spore counts are elevated due to coastal vegetation and humidity, our technicians calibrate clearance thresholds to local conditions rather than generic national standards.',
       },
       {
         question: 'How can I prevent mold from returning in my Carlsbad home?',
-        answer: 'In Carlsbad\'s coastal climate, prevention requires active humidity management. We recommend keeping indoor relative humidity below 50 percent using dehumidifiers, ensuring all bathroom exhaust fans vent to the exterior rather than into the attic, and running HVAC fans periodically to circulate air through the home. For La Costa and Aviara homes with complex ductwork, annual HVAC inspections that include checking duct joints for condensation are essential. We provide every Carlsbad client with a customized prevention plan after remediation.',
+        answer:
+          "In Carlsbad's coastal climate, prevention requires active humidity management. We recommend keeping indoor relative humidity below 50 percent using dehumidifiers, ensuring all bathroom exhaust fans vent to the exterior rather than into the attic, and running HVAC fans periodically to circulate air through the home. For La Costa and Aviara homes with complex ductwork, annual HVAC inspections that include checking duct joints for condensation are essential. We provide every Carlsbad client with a customized prevention plan after remediation.",
       },
     ],
   },
@@ -347,41 +548,76 @@ Carlsbad Village presents its own mold challenge. Older construction in the Vill
 The San Luis Rey River corridor running through central Oceanside creates elevated groundwater conditions that affect homes in Mission San Luis Rey, Mira Costa, and surrounding neighborhoods. During wet winters, the water table rises and pushes moisture through foundation walls and floor slabs. Homeowners in these areas often discover water stains on basement or garage floors that seem to appear from nowhere — the moisture is coming up through the slab rather than from a plumbing failure. Addressing this type of water intrusion requires specialized vapor-barrier installation alongside our standard drying protocols.
 
 Rancho Del Oro, Arrowood, and Fire Mountain represent Oceanside's newer and mid-age housing stock, where the primary water damage risks mirror those of other planned communities: appliance failures, water heater ruptures, and second-story bathroom leaks. However, Fire Mountain's hillside positioning adds a unique factor — homes at lower elevations on Fire Mountain collect runoff from upslope properties during storms, and inadequate drainage systems cause water to pool against foundations and seep into ground-level rooms.`,
-    localProof: 'Over 180 water damage restoration projects completed across Oceanside, from emergency pipe-burst response in South O to storm-damage recovery in Fire Mountain.',
+    localProof:
+      'Over 180 water damage restoration projects completed across Oceanside, from emergency pipe-burst response in South O to storm-damage recovery in Fire Mountain.',
     projectCount: '180+',
     avgResponseTime: '42 minutes',
-    landmarks: ['Oceanside Pier', 'Oceanside Harbor', 'Mission San Luis Rey', 'Camp Pendleton', 'Heritage Park'],
+    landmarks: [
+      'Oceanside Pier',
+      'Oceanside Harbor',
+      'Mission San Luis Rey',
+      'Camp Pendleton',
+      'Heritage Park',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown & South Oceanside', detail: 'Galvanized steel supply lines in 1940s-50s homes fail suddenly and dramatically. Emergency pipe-burst calls here are high-volume, high-urgency events requiring immediate extraction.' },
-      { name: 'Fire Mountain', detail: 'Hillside homes at lower elevations collect upslope runoff during storms. Inadequate drainage causes water to pool against foundations and seep into ground-level rooms.' },
-      { name: 'Mira Costa & Mission Area', detail: 'Proximity to the San Luis Rey River raises the water table during wet winters, pushing moisture through foundation walls and slabs — a unique intrusion pattern requiring vapor barriers.' },
-      { name: 'Rancho Del Oro', detail: 'Modern planned community with typical appliance and water-heater failure risks. Second-story bathroom leaks damaging ground-floor ceilings are our most common call here.' },
-      { name: 'Arrowood', detail: 'Family-oriented community where we frequently respond to washing machine hose bursts and dishwasher connection failures — quick extraction prevents flooring replacement in most cases.' },
+      {
+        name: 'Downtown & South Oceanside',
+        detail:
+          'Galvanized steel supply lines in 1940s-50s homes fail suddenly and dramatically. Emergency pipe-burst calls here are high-volume, high-urgency events requiring immediate extraction.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside homes at lower elevations collect upslope runoff during storms. Inadequate drainage causes water to pool against foundations and seep into ground-level rooms.',
+      },
+      {
+        name: 'Mira Costa & Mission Area',
+        detail:
+          'Proximity to the San Luis Rey River raises the water table during wet winters, pushing moisture through foundation walls and slabs — a unique intrusion pattern requiring vapor barriers.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'Modern planned community with typical appliance and water-heater failure risks. Second-story bathroom leaks damaging ground-floor ceilings are our most common call here.',
+      },
+      {
+        name: 'Arrowood',
+        detail:
+          'Family-oriented community where we frequently respond to washing machine hose bursts and dishwasher connection failures — quick extraction prevents flooring replacement in most cases.',
+      },
     ],
     faqs: [
       {
         question: 'How quickly can Tamarack respond to water damage in Oceanside?',
-        answer: 'We are based in Carlsbad, just 10 minutes south of Oceanside, and maintain equipment staged for rapid deployment to all Oceanside neighborhoods. Our average response time to Oceanside is 42 minutes, with South Oceanside and downtown locations typically seeing us within 35 minutes. We dispatch 24/7/365 — call (760) 500-2211 for immediate emergency response.',
+        answer:
+          'We are based in Carlsbad, just 10 minutes south of Oceanside, and maintain equipment staged for rapid deployment to all Oceanside neighborhoods. Our average response time to Oceanside is 42 minutes, with South Oceanside and downtown locations typically seeing us within 35 minutes. We dispatch 24/7/365 — call (760) 500-2211 for immediate emergency response.',
       },
       {
         question: 'Why do South Oceanside homes experience so many pipe bursts?',
-        answer: 'Many South Oceanside and downtown homes were built in the 1940s and 1950s with galvanized steel water supply lines. Unlike copper, which develops slow pinhole leaks, galvanized steel corrodes from the inside out, building up rust deposits that restrict flow. Eventually the corroded section fails catastrophically, releasing full-pressure water into walls and floors. If your Oceanside home has galvanized piping and you notice declining water pressure or rusty water, a proactive repipe prevents an emergency.',
+        answer:
+          'Many South Oceanside and downtown homes were built in the 1940s and 1950s with galvanized steel water supply lines. Unlike copper, which develops slow pinhole leaks, galvanized steel corrodes from the inside out, building up rust deposits that restrict flow. Eventually the corroded section fails catastrophically, releasing full-pressure water into walls and floors. If your Oceanside home has galvanized piping and you notice declining water pressure or rusty water, a proactive repipe prevents an emergency.',
       },
       {
-        question: 'Does water come up through the floor in Oceanside homes near the San Luis Rey River?',
-        answer: 'Yes. During wet winters, the San Luis Rey River corridor raises the local water table significantly. Homes in Mission San Luis Rey, Mira Costa, and adjacent neighborhoods can experience moisture migrating upward through concrete slabs and foundation walls. This is not a plumbing leak — it is hydrostatic pressure from groundwater. Our solution combines water extraction, structural drying, and installation of sub-slab vapor barriers to prevent recurrence.',
+        question:
+          'Does water come up through the floor in Oceanside homes near the San Luis Rey River?',
+        answer:
+          'Yes. During wet winters, the San Luis Rey River corridor raises the local water table significantly. Homes in Mission San Luis Rey, Mira Costa, and adjacent neighborhoods can experience moisture migrating upward through concrete slabs and foundation walls. This is not a plumbing leak — it is hydrostatic pressure from groundwater. Our solution combines water extraction, structural drying, and installation of sub-slab vapor barriers to prevent recurrence.',
       },
       {
         question: 'Will insurance cover water damage restoration for my Oceanside home?',
-        answer: 'Sudden water damage from pipe bursts, appliance failures, and supply-line breaks is covered by most standard homeowner policies. Gradual damage from long-term leaks or deferred maintenance may be excluded. We work with every major carrier serving Oceanside — State Farm, USAA, Allstate, Farmers, and Liberty Mutual — and handle all damage documentation, adjuster meetings, and supplement requests. Most Oceanside homeowners pay only their deductible.',
+        answer:
+          'Sudden water damage from pipe bursts, appliance failures, and supply-line breaks is covered by most standard homeowner policies. Gradual damage from long-term leaks or deferred maintenance may be excluded. We work with every major carrier serving Oceanside — State Farm, USAA, Allstate, Farmers, and Liberty Mutual — and handle all damage documentation, adjuster meetings, and supplement requests. Most Oceanside homeowners pay only their deductible.',
       },
       {
-        question: 'What should I do if my Oceanside home floods while Camp Pendleton restricts base access?',
-        answer: 'Military families living off-base in Oceanside sometimes face water emergencies while a spouse is deployed or during base access restrictions. We serve as your on-the-ground emergency response — just call us and we handle everything from emergency extraction through insurance coordination and final repairs. We can communicate project updates via email and phone to deployed service members, and we work with USAA and military-affiliated insurers daily.',
+        question:
+          'What should I do if my Oceanside home floods while Camp Pendleton restricts base access?',
+        answer:
+          'Military families living off-base in Oceanside sometimes face water emergencies while a spouse is deployed or during base access restrictions. We serve as your on-the-ground emergency response — just call us and we handle everything from emergency extraction through insurance coordination and final repairs. We can communicate project updates via email and phone to deployed service members, and we work with USAA and military-affiliated insurers daily.',
       },
       {
         question: 'How long does it take to dry out a water-damaged Oceanside home?',
-        answer: 'Typical drying time is 3-5 days for moderate water damage using commercial dehumidifiers and air movers. Coastal Oceanside homes take slightly longer than inland properties because ambient humidity near the ocean slows evaporation rates. We compensate by deploying additional dehumidifier capacity in beachside homes. We take daily moisture readings and only release equipment when every reading hits the target — never on a fixed schedule.',
+        answer:
+          'Typical drying time is 3-5 days for moderate water damage using commercial dehumidifiers and air movers. Coastal Oceanside homes take slightly longer than inland properties because ambient humidity near the ocean slows evaporation rates. We compensate by deploying additional dehumidifier capacity in beachside homes. We take daily moisture readings and only release equipment when every reading hits the target — never on a fixed schedule.',
       },
     ],
   },
@@ -397,41 +633,75 @@ Rancho Del Oro, Arrowood, and Fire Mountain represent Oceanside's newer and mid-
 The San Luis Rey River corridor adds a groundwater component to mold risk for central Oceanside neighborhoods. Homes in the Mission area, along North River Road, and in parts of Mira Costa sit on soil with elevated moisture content year-round. This ground moisture wicks into foundations, creating damp conditions in crawl spaces and along lower wall sections that mold exploits. Crawl-space mold remediation is one of our most frequent Oceanside service calls — many homeowners discover the issue during a home sale inspection and need rapid remediation to close escrow.
 
 Newer Oceanside communities like Rancho Del Oro, Arrowood, and the developments along College Boulevard face mold challenges related to construction quality rather than building age. Improperly installed bathroom tile, gaps in shower pan membranes, and inadequate caulking allow water to seep into wall cavities where it feeds mold growth in the dark, enclosed space between studs. These moisture intrusions often go undetected for 6-12 months because the exterior surface looks fine while mold spreads behind it.`,
-    localProof: 'Over 130 mold remediation projects across Oceanside, with clearance testing passed on the first attempt in 96% of cases. We serve every Oceanside neighborhood from the coast to inland developments.',
+    localProof:
+      'Over 130 mold remediation projects across Oceanside, with clearance testing passed on the first attempt in 96% of cases. We serve every Oceanside neighborhood from the coast to inland developments.',
     projectCount: '130+',
     avgResponseTime: '45 minutes',
-    landmarks: ['Oceanside Pier', 'Mission San Luis Rey', 'Oceanside Harbor', 'Camp Pendleton', 'Heritage Park'],
+    landmarks: [
+      'Oceanside Pier',
+      'Mission San Luis Rey',
+      'Oceanside Harbor',
+      'Camp Pendleton',
+      'Heritage Park',
+    ],
     neighborhoodContext: [
-      { name: 'South Oceanside', detail: 'Pre-1950s beach cottages with single-wall construction allow ocean moisture to pass through walls and condense on interior surfaces — hidden mold behind wood paneling is a common finding.' },
-      { name: 'Downtown Oceanside', detail: 'Older mixed-use buildings and converted properties lack modern ventilation. Mold behind bathroom walls and in units with shared plumbing is a frequent remediation scenario.' },
-      { name: 'Mira Costa & Mission Area', detail: 'Elevated ground moisture from the San Luis Rey corridor wicks into foundations, creating damp crawl spaces where mold thrives. Crawl-space remediation is our top call type here.' },
-      { name: 'Rancho Del Oro', detail: 'Construction-quality issues — improper tile installation, shower pan gaps, inadequate caulking — allow hidden moisture intrusion that feeds mold behind intact-looking walls for months.' },
-      { name: 'Fire Mountain', detail: 'Hillside homes experience moisture condensation on cooler north-facing walls, particularly in rooms without direct sunlight. Closets and storage rooms against hillside walls are frequent mold sites.' },
+      {
+        name: 'South Oceanside',
+        detail:
+          'Pre-1950s beach cottages with single-wall construction allow ocean moisture to pass through walls and condense on interior surfaces — hidden mold behind wood paneling is a common finding.',
+      },
+      {
+        name: 'Downtown Oceanside',
+        detail:
+          'Older mixed-use buildings and converted properties lack modern ventilation. Mold behind bathroom walls and in units with shared plumbing is a frequent remediation scenario.',
+      },
+      {
+        name: 'Mira Costa & Mission Area',
+        detail:
+          'Elevated ground moisture from the San Luis Rey corridor wicks into foundations, creating damp crawl spaces where mold thrives. Crawl-space remediation is our top call type here.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'Construction-quality issues — improper tile installation, shower pan gaps, inadequate caulking — allow hidden moisture intrusion that feeds mold behind intact-looking walls for months.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside homes experience moisture condensation on cooler north-facing walls, particularly in rooms without direct sunlight. Closets and storage rooms against hillside walls are frequent mold sites.',
+      },
     ],
     faqs: [
       {
         question: 'Why does mold grow so easily in Oceanside beach homes?',
-        answer: 'Oceanside\'s beachside neighborhoods experience relative humidity levels of 65-75 percent during summer marine layer season. Many beach homes in South Oceanside and along The Strand were built before 1960 with single-wall construction that provides no moisture barrier between the humid exterior and interior living spaces. This allows continuous moisture transfer into walls, ceilings, and floors — conditions that Aspergillus, Penicillium, and Cladosporium species thrive in year-round.',
+        answer:
+          "Oceanside's beachside neighborhoods experience relative humidity levels of 65-75 percent during summer marine layer season. Many beach homes in South Oceanside and along The Strand were built before 1960 with single-wall construction that provides no moisture barrier between the humid exterior and interior living spaces. This allows continuous moisture transfer into walls, ceilings, and floors — conditions that Aspergillus, Penicillium, and Cladosporium species thrive in year-round.",
       },
       {
-        question: 'I found mold during a home inspection in Oceanside — can you remediate before closing?',
-        answer: 'Yes, escrow-timeline mold remediation is one of our most common Oceanside requests. We understand the urgency of real estate transactions and prioritize these projects accordingly. A typical contained mold issue — bathroom wall, closet, or small section of crawl space — can be remediated with clearance testing completed in 3-5 business days. We coordinate directly with the buyer\'s inspector, the listing agent, and escrow to provide documentation that satisfies all parties.',
+        question:
+          'I found mold during a home inspection in Oceanside — can you remediate before closing?',
+        answer:
+          "Yes, escrow-timeline mold remediation is one of our most common Oceanside requests. We understand the urgency of real estate transactions and prioritize these projects accordingly. A typical contained mold issue — bathroom wall, closet, or small section of crawl space — can be remediated with clearance testing completed in 3-5 business days. We coordinate directly with the buyer's inspector, the listing agent, and escrow to provide documentation that satisfies all parties.",
       },
       {
         question: 'Is crawl-space mold common in Oceanside?',
-        answer: 'Extremely common, particularly in neighborhoods near the San Luis Rey River — Mission area, Mira Costa, and North River Road. Elevated ground moisture wicks through soil into crawl spaces, where limited airflow and darkness create perfect mold habitat. Many Oceanside homeowners are unaware of crawl-space mold until a home inspection, a musty odor investigation, or unexplained allergy symptoms lead to discovery. We remediate the mold, install vapor barriers, and improve ventilation to prevent regrowth.',
+        answer:
+          'Extremely common, particularly in neighborhoods near the San Luis Rey River — Mission area, Mira Costa, and North River Road. Elevated ground moisture wicks through soil into crawl spaces, where limited airflow and darkness create perfect mold habitat. Many Oceanside homeowners are unaware of crawl-space mold until a home inspection, a musty odor investigation, or unexplained allergy symptoms lead to discovery. We remediate the mold, install vapor barriers, and improve ventilation to prevent regrowth.',
       },
       {
         question: 'How much does mold removal cost in an Oceanside home?',
-        answer: 'A contained mold issue in a single bathroom or closet typically runs $1,500-$4,000. Crawl-space remediation, which is very common in Oceanside, ranges from $3,000-$8,000 depending on the size and accessibility of the space. Whole-home remediation for severe or multi-room contamination can reach $10,000-$20,000. We provide free on-site assessments with written estimates. Insurance covers mold remediation when it results from a sudden covered water event.',
+        answer:
+          'A contained mold issue in a single bathroom or closet typically runs $1,500-$4,000. Crawl-space remediation, which is very common in Oceanside, ranges from $3,000-$8,000 depending on the size and accessibility of the space. Whole-home remediation for severe or multi-room contamination can reach $10,000-$20,000. We provide free on-site assessments with written estimates. Insurance covers mold remediation when it results from a sudden covered water event.',
       },
       {
         question: 'Can mold in my Oceanside home affect my neighbors in attached housing?',
-        answer: 'In Oceanside\'s many condominiums, townhomes, and duplexes — particularly common in downtown and South Oceanside — mold can absolutely spread through shared walls, common attic spaces, and connected plumbing chases. We frequently remediate mold that originated in one unit and spread to adjacent ones. Proper containment during remediation is critical in attached housing to prevent cross-contamination, and we coordinate with HOAs and neighboring unit owners when shared structures are involved.',
+        answer:
+          "In Oceanside's many condominiums, townhomes, and duplexes — particularly common in downtown and South Oceanside — mold can absolutely spread through shared walls, common attic spaces, and connected plumbing chases. We frequently remediate mold that originated in one unit and spread to adjacent ones. Proper containment during remediation is critical in attached housing to prevent cross-contamination, and we coordinate with HOAs and neighboring unit owners when shared structures are involved.",
       },
       {
         question: 'Do military families near Camp Pendleton face special mold risks?',
-        answer: 'Military families frequently rent homes in Oceanside during assignments at Camp Pendleton and may inherit mold issues from previous tenants or deferred maintenance. As renters, you should report any mold signs — musty odors, visible growth, persistent allergies — to your landlord immediately and document the condition in writing. If you own your Oceanside home, USAA and other military-affiliated insurers cover mold remediation from covered water events. We work with USAA regularly and understand their claims process.',
+        answer:
+          'Military families frequently rent homes in Oceanside during assignments at Camp Pendleton and may inherit mold issues from previous tenants or deferred maintenance. As renters, you should report any mold signs — musty odors, visible growth, persistent allergies — to your landlord immediately and document the condition in writing. If you own your Oceanside home, USAA and other military-affiliated insurers cover mold remediation from covered water events. We work with USAA regularly and understand their claims process.',
       },
     ],
   },
@@ -447,41 +717,75 @@ Newer Oceanside communities like Rancho Del Oro, Arrowood, and the developments 
 The older construction in South Oceanside and the Mission area means many homes lack modern fire-rated assemblies between rooms and between floors. Fire and smoke travel through wall cavities, floor systems, and attic spaces more freely in these structures, often causing contamination in areas that appear undamaged on the surface. Our Oceanside fire assessments include thermal imaging of walls and ceilings to detect hidden heat damage and smoke penetration that visual inspection alone would miss.
 
 In Oceanside's newer communities — Rancho Del Oro, Arrowood, and developments along El Camino Real — kitchen fires are the primary fire-damage scenario. Modern open floor plans allow smoke from a cooking fire to fill the entire home within minutes, depositing soot on every surface and saturating soft furnishings with smoke odor. While structural damage is often limited, the smoke remediation required in these homes is extensive — every wall, ceiling, cabinet interior, and HVAC duct requires cleaning or replacement.`,
-    localProof: 'Over 55 fire and smoke damage restorations completed across Oceanside, including multi-unit projects in downtown and complete kitchen rebuilds in Rancho Del Oro.',
+    localProof:
+      'Over 55 fire and smoke damage restorations completed across Oceanside, including multi-unit projects in downtown and complete kitchen rebuilds in Rancho Del Oro.',
     projectCount: '55+',
     avgResponseTime: '45 minutes',
-    landmarks: ['Oceanside Pier', 'Oceanside Fire Department', 'Mission San Luis Rey', 'Camp Pendleton', 'Oceanside Harbor'],
+    landmarks: [
+      'Oceanside Pier',
+      'Oceanside Fire Department',
+      'Mission San Luis Rey',
+      'Camp Pendleton',
+      'Oceanside Harbor',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Oceanside', detail: 'Building density and multi-unit properties mean a fire in one unit causes smoke damage to neighbors. We coordinate complex multi-party restoration projects with property managers and multiple insurers.' },
-      { name: 'South Oceanside', detail: 'Older wood-frame construction lacks modern fire-rated assemblies — smoke and heat travel through wall cavities and attic spaces, causing hidden damage that requires thermal imaging to detect.' },
-      { name: 'Fire Mountain', detail: 'Hillside properties face brush fire risk during dry seasons. We provide emergency board-up and smoke remediation for homes affected by wildland-urban interface fire events.' },
-      { name: 'Rancho Del Oro', detail: 'Kitchen fires in open floor plans fill entire homes with smoke in minutes. Structural damage is often limited, but smoke remediation of every surface and the HVAC system is extensive.' },
-      { name: 'Mira Costa', detail: 'Mid-century homes with updated interiors require careful fire restoration that preserves renovations while addressing smoke penetration into original framing and wall cavities.' },
+      {
+        name: 'Downtown Oceanside',
+        detail:
+          'Building density and multi-unit properties mean a fire in one unit causes smoke damage to neighbors. We coordinate complex multi-party restoration projects with property managers and multiple insurers.',
+      },
+      {
+        name: 'South Oceanside',
+        detail:
+          'Older wood-frame construction lacks modern fire-rated assemblies — smoke and heat travel through wall cavities and attic spaces, causing hidden damage that requires thermal imaging to detect.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside properties face brush fire risk during dry seasons. We provide emergency board-up and smoke remediation for homes affected by wildland-urban interface fire events.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'Kitchen fires in open floor plans fill entire homes with smoke in minutes. Structural damage is often limited, but smoke remediation of every surface and the HVAC system is extensive.',
+      },
+      {
+        name: 'Mira Costa',
+        detail:
+          'Mid-century homes with updated interiors require careful fire restoration that preserves renovations while addressing smoke penetration into original framing and wall cavities.',
+      },
     ],
     faqs: [
       {
         question: 'What should I do after a fire in my Oceanside home?',
-        answer: 'Wait for the Oceanside Fire Department to clear the structure for re-entry. Do not attempt to clean any soot — wiping or touching soot on surfaces can permanently bond it to the material. Call Tamarack at (760) 500-2211 immediately. We will arrive within 45 minutes to board up windows and doors, tarp any roof openings, and begin emergency stabilization. Quick action in the first 24-48 hours prevents soot from permanently damaging metals, countertops, and appliances.',
+        answer:
+          'Wait for the Oceanside Fire Department to clear the structure for re-entry. Do not attempt to clean any soot — wiping or touching soot on surfaces can permanently bond it to the material. Call Tamarack at (760) 500-2211 immediately. We will arrive within 45 minutes to board up windows and doors, tarp any roof openings, and begin emergency stabilization. Quick action in the first 24-48 hours prevents soot from permanently damaging metals, countertops, and appliances.',
       },
       {
-        question: 'I rent an apartment in downtown Oceanside and there was a fire in another unit — who pays for restoration?',
-        answer: 'When fire in an adjacent unit causes smoke damage to yours, the at-fault party\'s insurance typically covers your unit\'s restoration. However, your renter\'s insurance may provide faster coverage for your personal belongings and additional living expenses while restoration is underway. We work with all parties\' insurance carriers simultaneously to ensure nothing falls through the cracks, and we coordinate with the property manager on building-wide restoration.',
+        question:
+          'I rent an apartment in downtown Oceanside and there was a fire in another unit — who pays for restoration?',
+        answer:
+          "When fire in an adjacent unit causes smoke damage to yours, the at-fault party's insurance typically covers your unit's restoration. However, your renter's insurance may provide faster coverage for your personal belongings and additional living expenses while restoration is underway. We work with all parties' insurance carriers simultaneously to ensure nothing falls through the cracks, and we coordinate with the property manager on building-wide restoration.",
       },
       {
         question: 'How do you remove smoke odor from an Oceanside home?',
-        answer: 'Smoke odor elimination requires reaching every space the smoke reached. We use thermal fogging — a process that creates a deodorizing fog with the same particle size as smoke, allowing it to penetrate the same cracks and cavities. For severe cases, we add hydroxyl generators for continuous air treatment and ozone shock treatment for enclosed spaces. In coastal Oceanside homes, we also address salt-air residue that mixes with smoke deposits in HVAC systems, creating a compound odor that requires duct cleaning or replacement.',
+        answer:
+          'Smoke odor elimination requires reaching every space the smoke reached. We use thermal fogging — a process that creates a deodorizing fog with the same particle size as smoke, allowing it to penetrate the same cracks and cavities. For severe cases, we add hydroxyl generators for continuous air treatment and ozone shock treatment for enclosed spaces. In coastal Oceanside homes, we also address salt-air residue that mixes with smoke deposits in HVAC systems, creating a compound odor that requires duct cleaning or replacement.',
       },
       {
         question: 'Does fire damage restoration in Oceanside include rebuilding the damaged areas?',
-        answer: 'Yes, we provide complete restoration from emergency response through final reconstruction. After cleaning smoke and soot from salvageable areas, we rebuild everything that was damaged — drywall, framing, flooring, cabinetry, painting, and trim work. We pull permits through the City of Oceanside, coordinate inspections, and rebuild to current code. Oceanside homeowners work with a single Tamarack project manager from day one through final walkthrough.',
+        answer:
+          'Yes, we provide complete restoration from emergency response through final reconstruction. After cleaning smoke and soot from salvageable areas, we rebuild everything that was damaged — drywall, framing, flooring, cabinetry, painting, and trim work. We pull permits through the City of Oceanside, coordinate inspections, and rebuild to current code. Oceanside homeowners work with a single Tamarack project manager from day one through final walkthrough.',
       },
       {
         question: 'Are Oceanside homes near brush areas at higher fire risk?',
-        answer: 'Properties on Fire Mountain and along the eastern edges of Oceanside near Camp Pendleton sit in the wildland-urban interface zone, where brush fires can threaten structures during dry, windy conditions. While wildfire damage is relatively rare in central Oceanside, smoke from nearby brush fires can affect homes miles from the fire line. We provide smoke damage assessment and cleaning for Oceanside properties affected by regional fire events, even when the fire itself is miles away.',
+        answer:
+          'Properties on Fire Mountain and along the eastern edges of Oceanside near Camp Pendleton sit in the wildland-urban interface zone, where brush fires can threaten structures during dry, windy conditions. While wildfire damage is relatively rare in central Oceanside, smoke from nearby brush fires can affect homes miles from the fire line. We provide smoke damage assessment and cleaning for Oceanside properties affected by regional fire events, even when the fire itself is miles away.',
       },
       {
         question: 'How long does fire restoration take for a typical Oceanside home?',
-        answer: 'A contained kitchen fire with smoke spread throughout the home typically requires 4-8 weeks for complete cleaning, odor elimination, and kitchen reconstruction. Significant structural fire damage can extend the timeline to 3-6 months depending on the scope of reconstruction and permit review timelines with the City of Oceanside. We provide a detailed project schedule during our initial assessment and keep you updated throughout the process.',
+        answer:
+          'A contained kitchen fire with smoke spread throughout the home typically requires 4-8 weeks for complete cleaning, odor elimination, and kitchen reconstruction. Significant structural fire damage can extend the timeline to 3-6 months depending on the scope of reconstruction and permit review timelines with the City of Oceanside. We provide a detailed project schedule during our initial assessment and keep you updated throughout the process.',
       },
     ],
   },
@@ -497,37 +801,69 @@ In Oceanside's newer communities — Rancho Del Oro, Arrowood, and developments 
 Loma Alta Creek, running through central Oceanside from Fire Mountain to the coast, is a secondary flood source that catches many homeowners off-guard. This creek channel passes through residential neighborhoods and can overflow during intense rain bursts, flooding streets and adjacent properties in areas that are not technically in FEMA flood zones. Homes along Loma Alta Drive and in the surrounding blocks have experienced repeat flooding that surprises residents who never expected flood risk when they purchased their property.
 
 Oceanside's beachfront properties face a different flood threat: coastal storm surge combined with high tide events. During winter storms with large swells, wave runoff and elevated tide levels can push ocean water into ground-level units along The Strand and Pacific Street. Salt-water flooding causes accelerated corrosion damage to electrical systems, metal fixtures, and appliances, and requires specialized salt-water decontamination protocols during cleanup.`,
-    localProof: 'Over 70 flood cleanup projects in Oceanside, including rapid multi-home response during the 2023 atmospheric river. Pre-staged equipment during storm forecasts for fastest possible extraction.',
+    localProof:
+      'Over 70 flood cleanup projects in Oceanside, including rapid multi-home response during the 2023 atmospheric river. Pre-staged equipment during storm forecasts for fastest possible extraction.',
     projectCount: '70+',
     avgResponseTime: '40 minutes',
-    landmarks: ['San Luis Rey River', 'Oceanside Harbor', 'Mission San Luis Rey', 'Oceanside Pier', 'Loma Alta Creek'],
+    landmarks: [
+      'San Luis Rey River',
+      'Oceanside Harbor',
+      'Mission San Luis Rey',
+      'Oceanside Pier',
+      'Loma Alta Creek',
+    ],
     neighborhoodContext: [
-      { name: 'North River Road & Benet Road', detail: 'Highest flood risk in Oceanside — the San Luis Rey River overflows during prolonged rain, carrying sediment and agricultural contamination into homes. Full decontamination protocols required.' },
-      { name: 'Mission San Luis Rey Area', detail: 'Low-lying properties near the river corridor experience both river overflow and groundwater rise during storms, creating dual-source flood events that require specialized drying.' },
-      { name: 'Fire Mountain & Loma Alta Creek', detail: 'Loma Alta Creek overflows during intense rain bursts, flooding properties in areas not technically mapped as FEMA flood zones — catching homeowners without flood insurance.' },
-      { name: 'The Strand & Pacific Street', detail: 'Coastal storm surge during high-tide winter swell events pushes salt water into ground-level units. Salt-water flooding requires specialized decontamination to prevent accelerated corrosion.' },
-      { name: 'Downtown Oceanside', detail: 'Aging stormwater infrastructure overwhelms during heavy rain, causing street flooding that enters ground-floor commercial spaces and residential units.' },
+      {
+        name: 'North River Road & Benet Road',
+        detail:
+          'Highest flood risk in Oceanside — the San Luis Rey River overflows during prolonged rain, carrying sediment and agricultural contamination into homes. Full decontamination protocols required.',
+      },
+      {
+        name: 'Mission San Luis Rey Area',
+        detail:
+          'Low-lying properties near the river corridor experience both river overflow and groundwater rise during storms, creating dual-source flood events that require specialized drying.',
+      },
+      {
+        name: 'Fire Mountain & Loma Alta Creek',
+        detail:
+          'Loma Alta Creek overflows during intense rain bursts, flooding properties in areas not technically mapped as FEMA flood zones — catching homeowners without flood insurance.',
+      },
+      {
+        name: 'The Strand & Pacific Street',
+        detail:
+          'Coastal storm surge during high-tide winter swell events pushes salt water into ground-level units. Salt-water flooding requires specialized decontamination to prevent accelerated corrosion.',
+      },
+      {
+        name: 'Downtown Oceanside',
+        detail:
+          'Aging stormwater infrastructure overwhelms during heavy rain, causing street flooding that enters ground-floor commercial spaces and residential units.',
+      },
     ],
     faqs: [
       {
         question: 'Which Oceanside neighborhoods flood most often?',
-        answer: 'The San Luis Rey River corridor — particularly homes along North River Road, Benet Road, and in the Mission area — carries the highest flood risk. Loma Alta Creek through central Oceanside is a secondary risk zone that floods during intense rain bursts. Beachfront properties along The Strand and Pacific Street face coastal storm surge during winter high-tide events. Properties in any of these areas should have flood insurance and a pre-established relationship with a restoration company.',
+        answer:
+          'The San Luis Rey River corridor — particularly homes along North River Road, Benet Road, and in the Mission area — carries the highest flood risk. Loma Alta Creek through central Oceanside is a secondary risk zone that floods during intense rain bursts. Beachfront properties along The Strand and Pacific Street face coastal storm surge during winter high-tide events. Properties in any of these areas should have flood insurance and a pre-established relationship with a restoration company.',
       },
       {
         question: 'Do I need flood insurance if I live in Oceanside?',
-        answer: 'If your Oceanside home is in a FEMA-designated flood zone near the San Luis Rey River, your mortgage lender likely requires it. However, we strongly recommend flood insurance for any Oceanside homeowner, even outside mapped zones. Over 25 percent of flood insurance claims nationwide come from properties outside FEMA flood zones. Homes near Loma Alta Creek, in low-lying downtown areas, and along the beachfront have all flooded without being in mapped zones. Standard homeowner policies do not cover flood damage.',
+        answer:
+          'If your Oceanside home is in a FEMA-designated flood zone near the San Luis Rey River, your mortgage lender likely requires it. However, we strongly recommend flood insurance for any Oceanside homeowner, even outside mapped zones. Over 25 percent of flood insurance claims nationwide come from properties outside FEMA flood zones. Homes near Loma Alta Creek, in low-lying downtown areas, and along the beachfront have all flooded without being in mapped zones. Standard homeowner policies do not cover flood damage.',
       },
       {
         question: 'Is flood water in Oceanside contaminated?',
-        answer: 'Almost always. San Luis Rey River floodwater carries agricultural runoff, sediment, and potentially sewage from overwhelmed systems upstream. Loma Alta Creek floodwater picks up street contaminants, fertilizers, and debris. Coastal flooding introduces salt water that is corrosive to building systems. All Oceanside flood events are treated as Category 2 or Category 3 water, requiring full PPE, antimicrobial treatment of all contacted surfaces, and removal of all porous materials that absorbed the water.',
+        answer:
+          'Almost always. San Luis Rey River floodwater carries agricultural runoff, sediment, and potentially sewage from overwhelmed systems upstream. Loma Alta Creek floodwater picks up street contaminants, fertilizers, and debris. Coastal flooding introduces salt water that is corrosive to building systems. All Oceanside flood events are treated as Category 2 or Category 3 water, requiring full PPE, antimicrobial treatment of all contacted surfaces, and removal of all porous materials that absorbed the water.',
       },
       {
         question: 'How quickly can you respond to flooding in Oceanside during a major storm?',
-        answer: 'During major storm forecasts, we pre-position crews and truck-mounted extraction equipment in Oceanside so we can respond within 30-40 minutes even during peak call volume. For the January 2023 atmospheric river, we had crews on North River Road within 35 minutes of the first call. During normal conditions, our response time from Carlsbad to Oceanside averages 40 minutes. Call (760) 500-2211 at the first sign of water entry — do not wait for the storm to pass.',
+        answer:
+          'During major storm forecasts, we pre-position crews and truck-mounted extraction equipment in Oceanside so we can respond within 30-40 minutes even during peak call volume. For the January 2023 atmospheric river, we had crews on North River Road within 35 minutes of the first call. During normal conditions, our response time from Carlsbad to Oceanside averages 40 minutes. Call (760) 500-2211 at the first sign of water entry — do not wait for the storm to pass.',
       },
       {
         question: 'What does flood cleanup involve for a home near the San Luis Rey River?',
-        answer: 'River flooding requires more intensive cleanup than clean-water events. After rapid extraction of standing water using truck-mounted pumps, we remove all porous materials that absorbed flood water — carpet, padding, drywall up to at least 12 inches above the high-water mark, and insulation. Hard surfaces are scrubbed and treated with EPA-registered antimicrobial solutions. Sediment deposits require physical removal and cleaning. Commercial drying equipment runs for 4-7 days until all moisture readings hit targets.',
+        answer:
+          'River flooding requires more intensive cleanup than clean-water events. After rapid extraction of standing water using truck-mounted pumps, we remove all porous materials that absorbed flood water — carpet, padding, drywall up to at least 12 inches above the high-water mark, and insulation. Hard surfaces are scrubbed and treated with EPA-registered antimicrobial solutions. Sediment deposits require physical removal and cleaning. Commercial drying equipment runs for 4-7 days until all moisture readings hit targets.',
       },
     ],
   },
@@ -543,37 +879,70 @@ Oceanside's beachfront properties face a different flood threat: coastal storm s
 The multi-unit residential buildings common in downtown Oceanside create compounded sewage risks. When a shared lateral line fails — or when one unit's blockage backs up into another — the contamination can affect multiple residences simultaneously. We have managed several downtown Oceanside projects where a single sewer failure required coordinated cleanup and decontamination across three or four connected units, working with multiple tenants, the property owner, and several insurance carriers concurrently.
 
 Military families renting homes in Oceanside near Camp Pendleton are particularly vulnerable to sewage issues in older rental properties where sewer maintenance has been deferred. Rental homes with mature trees, aging laterals, and landlords who have not performed preventive sewer inspections account for a significant portion of our Oceanside sewage calls. We work with tenants, property managers, and landlords to ensure proper remediation and root-cause repair regardless of the property ownership structure.`,
-    localProof: 'Over 50 sewage cleanup projects across Oceanside, including multi-unit biohazard response in downtown and aging-infrastructure failures in South Oceanside.',
+    localProof:
+      'Over 50 sewage cleanup projects across Oceanside, including multi-unit biohazard response in downtown and aging-infrastructure failures in South Oceanside.',
     projectCount: '50+',
     avgResponseTime: '45 minutes',
-    landmarks: ['Oceanside Pier', 'Mission San Luis Rey', 'Camp Pendleton', 'Oceanside Harbor', 'Heritage Park'],
+    landmarks: [
+      'Oceanside Pier',
+      'Mission San Luis Rey',
+      'Camp Pendleton',
+      'Oceanside Harbor',
+      'Heritage Park',
+    ],
     neighborhoodContext: [
-      { name: 'South Oceanside', detail: 'Vitrified clay sewer laterals from the 1940s-60s are past their service life — root intrusion, joint separation, and pipe collapse cause frequent backups in this neighborhood.' },
-      { name: 'Downtown Oceanside', detail: 'Multi-unit buildings with shared lateral lines create compounded backup events — one unit\'s blockage backs into others, requiring coordinated cleanup across multiple residences.' },
-      { name: 'Mira Costa & Mission Area', detail: 'Proximity to the San Luis Rey River means municipal sewer lines here experience storm-related surges that push sewage back through floor drains into ground-level rooms.' },
-      { name: 'Rancho Del Oro', detail: 'Newer infrastructure reduces backup frequency, but grease buildup and improper flushing still cause blockages. HOA coordination is often needed for shared sewer connections.' },
-      { name: 'Fire Mountain', detail: 'Hillside sewer laterals run at steep grades, creating velocity issues that lead to solids buildup and eventual blockage at slope transitions.' },
+      {
+        name: 'South Oceanside',
+        detail:
+          'Vitrified clay sewer laterals from the 1940s-60s are past their service life — root intrusion, joint separation, and pipe collapse cause frequent backups in this neighborhood.',
+      },
+      {
+        name: 'Downtown Oceanside',
+        detail:
+          "Multi-unit buildings with shared lateral lines create compounded backup events — one unit's blockage backs into others, requiring coordinated cleanup across multiple residences.",
+      },
+      {
+        name: 'Mira Costa & Mission Area',
+        detail:
+          'Proximity to the San Luis Rey River means municipal sewer lines here experience storm-related surges that push sewage back through floor drains into ground-level rooms.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'Newer infrastructure reduces backup frequency, but grease buildup and improper flushing still cause blockages. HOA coordination is often needed for shared sewer connections.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside sewer laterals run at steep grades, creating velocity issues that lead to solids buildup and eventual blockage at slope transitions.',
+      },
     ],
     faqs: [
       {
         question: 'How dangerous is sewage in my Oceanside home?',
-        answer: 'Sewage is a serious biohazard containing E. coli, Salmonella, hepatitis A, norovirus, and parasites. Exposure risk begins immediately upon contact with contaminated surfaces or inhalation of aerosolized pathogens. Keep all family members and pets away from affected areas, do not attempt to clean up sewage without professional PPE and containment, and call Tamarack at (760) 500-2211 immediately. Our biohazard-certified team will arrive within 45 minutes.',
+        answer:
+          'Sewage is a serious biohazard containing E. coli, Salmonella, hepatitis A, norovirus, and parasites. Exposure risk begins immediately upon contact with contaminated surfaces or inhalation of aerosolized pathogens. Keep all family members and pets away from affected areas, do not attempt to clean up sewage without professional PPE and containment, and call Tamarack at (760) 500-2211 immediately. Our biohazard-certified team will arrive within 45 minutes.',
       },
       {
-        question: 'I rent a home in Oceanside and the sewer backed up — who is responsible for cleanup?',
-        answer: 'In most cases, the property owner or landlord is responsible for sewer lateral maintenance and repair, and their insurance should cover the restoration. As a tenant, you should document the backup immediately with photos, notify your landlord in writing, and call a professional restoration company. Your renter\'s insurance may cover damage to your personal belongings and temporary housing. We coordinate between tenants, landlords, and property managers regularly for Oceanside sewage events.',
+        question:
+          'I rent a home in Oceanside and the sewer backed up — who is responsible for cleanup?',
+        answer:
+          "In most cases, the property owner or landlord is responsible for sewer lateral maintenance and repair, and their insurance should cover the restoration. As a tenant, you should document the backup immediately with photos, notify your landlord in writing, and call a professional restoration company. Your renter's insurance may cover damage to your personal belongings and temporary housing. We coordinate between tenants, landlords, and property managers regularly for Oceanside sewage events.",
       },
       {
         question: 'Why are sewage backups so common in older Oceanside neighborhoods?',
-        answer: 'South Oceanside and downtown homes have vitrified clay sewer laterals that are 60-80 years old — well past their intended lifespan. These clay pipes crack and separate at joints, allowing tree roots to enter and create blockages. Combined with the City of Oceanside\'s older main sewer lines that reach capacity during storms, this creates a system-wide vulnerability. The only permanent solution is lateral replacement, which we can coordinate through our licensed plumbing partners.',
+        answer:
+          "South Oceanside and downtown homes have vitrified clay sewer laterals that are 60-80 years old — well past their intended lifespan. These clay pipes crack and separate at joints, allowing tree roots to enter and create blockages. Combined with the City of Oceanside's older main sewer lines that reach capacity during storms, this creates a system-wide vulnerability. The only permanent solution is lateral replacement, which we can coordinate through our licensed plumbing partners.",
       },
       {
         question: 'What does professional sewage cleanup in Oceanside cost?',
-        answer: 'A contained bathroom backup typically costs $2,500-$5,500 for extraction, decontamination, material removal, and restoration. Multi-room backups affecting living areas can range from $7,000-$18,000 depending on the volume of sewage and the materials affected. Many Oceanside homeowners and landlords carry sewer backup endorsements on their insurance policies that cover these costs. We verify coverage and handle the insurance claim process.',
+        answer:
+          'A contained bathroom backup typically costs $2,500-$5,500 for extraction, decontamination, material removal, and restoration. Multi-room backups affecting living areas can range from $7,000-$18,000 depending on the volume of sewage and the materials affected. Many Oceanside homeowners and landlords carry sewer backup endorsements on their insurance policies that cover these costs. We verify coverage and handle the insurance claim process.',
       },
       {
         question: 'Can you prevent future sewage backups in my Oceanside home?',
-        answer: 'We recommend three preventive measures for Oceanside homes. First, a sewer camera inspection of your lateral line to identify roots, bellied sections, and pipe deterioration before they cause backups. Second, installation of a backwater valve that prevents municipal system surges from entering your home during storms. Third, for homes with known root intrusion, annual hydro-jetting to clear roots before they create blockages. We coordinate all three services through our trusted Oceanside-area plumbing partners.',
+        answer:
+          'We recommend three preventive measures for Oceanside homes. First, a sewer camera inspection of your lateral line to identify roots, bellied sections, and pipe deterioration before they cause backups. Second, installation of a backwater valve that prevents municipal system surges from entering your home during storms. Third, for homes with known root intrusion, annual hydro-jetting to clear roots before they create blockages. We coordinate all three services through our trusted Oceanside-area plumbing partners.',
       },
     ],
   },
@@ -582,53 +951,86 @@ Military families renting homes in Oceanside near Camp Pendleton are particularl
   // OCEANSIDE — WATER LEAK REPAIR
   // ============================================================
   'oceanside-water-leak-repair': {
-    uniqueH1: 'Water Leak Detection & Repair in Oceanside — Advanced Technology, Minimal Disruption',
+    uniqueH1:
+      'Water Leak Detection & Repair in Oceanside — Advanced Technology, Minimal Disruption',
     uniqueIntro: `Hidden water leaks silently damage more Oceanside homes each year than any sudden flood or storm, because they persist undetected behind walls and under slabs for weeks or months at a time. Tamarack Restoration has detected and repaired over 95 concealed leaks across Oceanside since 2014, using thermal imaging, acoustic listening devices, and comprehensive moisture mapping to find leaks without unnecessary demolition. From corroded galvanized lines in South Oceanside to slab leaks beneath Fire Mountain foundations, we locate the source precisely and fix it — typically arriving within 42 minutes of your call.`,
     localChallenges: `Oceanside's older neighborhoods — South Oceanside, Downtown, and parts of the Mission area — contain extensive galvanized steel and older copper plumbing systems that are well past their expected lifespan. Galvanized steel pipes corrode from the inside, building rust deposits that narrow the interior diameter and create weak points prone to failure. Unlike copper pinhole leaks that drip slowly, galvanized failures often crack along corroded seams, releasing water at supply pressure into wall cavities. Our thermal imaging cameras reveal these leaks as dramatic temperature anomalies that pinpoint the failure location precisely.
 
 Slab leaks in Oceanside are driven by different soil conditions than in neighboring Carlsbad. Central Oceanside sits on alluvial deposits from the San Luis Rey River — soil that expands and contracts with moisture changes more than coastal sand. This soil movement puts cyclical stress on under-slab copper lines, flexing them at connection points and elbows until metal fatigue creates cracks. We see the highest concentration of Oceanside slab leaks in Mira Costa and the Mission area, where river-deposited soils are deepest.
 
 The military housing rental market in Oceanside adds a unique dimension to leak detection needs. Homes rented by military families stationed at Camp Pendleton often receive minimal maintenance between tenants. We frequently detect leaks in rental properties that have been hidden for months — behind bathroom vanities, under kitchen sinks, and in laundry areas where slow drips have caused concealed rot, mold growth, and structural damage that new tenants discover after moving in.`,
-    localProof: 'Over 95 hidden leaks detected and repaired across Oceanside, from galvanized pipe failures in South O to slab leaks in Mira Costa — saving homeowners an estimated $1.8 million in prevented damage.',
+    localProof:
+      'Over 95 hidden leaks detected and repaired across Oceanside, from galvanized pipe failures in South O to slab leaks in Mira Costa — saving homeowners an estimated $1.8 million in prevented damage.',
     projectCount: '95+',
     avgResponseTime: '42 minutes',
-    landmarks: ['Oceanside Pier', 'Mission San Luis Rey', 'Camp Pendleton', 'Oceanside Harbor', 'San Luis Rey River'],
+    landmarks: [
+      'Oceanside Pier',
+      'Mission San Luis Rey',
+      'Camp Pendleton',
+      'Oceanside Harbor',
+      'San Luis Rey River',
+    ],
     neighborhoodContext: [
-      { name: 'South Oceanside & Downtown', detail: 'Galvanized steel supply lines from the 1940s-60s corrode internally, crack along seams, and release water at full pressure into wall cavities — our thermal imaging reveals these dramatically.' },
-      { name: 'Mira Costa & Mission Area', detail: 'Alluvial soils from the San Luis Rey River expand and contract, flexing under-slab copper at connections and elbows. Highest slab-leak concentration in Oceanside.' },
-      { name: 'Fire Mountain', detail: 'Hillside foundations shift subtly over time, stressing both under-slab and in-wall plumbing. Homes here develop leaks at pipe hangers and support brackets where movement concentrates.' },
-      { name: 'Rancho Del Oro', detail: 'CPVC plumbing in mid-2000s homes can become brittle and crack at fittings. Leaks behind second-story shower walls are our most common Rancho Del Oro detection call.' },
-      { name: 'Arrowood', detail: 'Water heater connections and washing machine supply hoses are the primary leak sources in this family-oriented community. Annual inspection of these connections prevents most emergencies.' },
+      {
+        name: 'South Oceanside & Downtown',
+        detail:
+          'Galvanized steel supply lines from the 1940s-60s corrode internally, crack along seams, and release water at full pressure into wall cavities — our thermal imaging reveals these dramatically.',
+      },
+      {
+        name: 'Mira Costa & Mission Area',
+        detail:
+          'Alluvial soils from the San Luis Rey River expand and contract, flexing under-slab copper at connections and elbows. Highest slab-leak concentration in Oceanside.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside foundations shift subtly over time, stressing both under-slab and in-wall plumbing. Homes here develop leaks at pipe hangers and support brackets where movement concentrates.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'CPVC plumbing in mid-2000s homes can become brittle and crack at fittings. Leaks behind second-story shower walls are our most common Rancho Del Oro detection call.',
+      },
+      {
+        name: 'Arrowood',
+        detail:
+          'Water heater connections and washing machine supply hoses are the primary leak sources in this family-oriented community. Annual inspection of these connections prevents most emergencies.',
+      },
     ],
     faqs: [
       {
         question: 'How do you find hidden leaks in Oceanside homes without cutting into walls?',
-        answer: 'We use a three-tool approach. Thermal imaging cameras detect the temperature differential caused by water evaporation behind walls and under floors, showing the leak as a cool spot on an otherwise uniform surface. Acoustic sensors amplify the ultrasonic sound of water escaping from pressurized pipes, allowing us to hear the leak through concrete slabs and wall assemblies. Moisture meters confirm the extent of water migration through building materials. Together, these tools pinpoint the leak location within inches.',
+        answer:
+          'We use a three-tool approach. Thermal imaging cameras detect the temperature differential caused by water evaporation behind walls and under floors, showing the leak as a cool spot on an otherwise uniform surface. Acoustic sensors amplify the ultrasonic sound of water escaping from pressurized pipes, allowing us to hear the leak through concrete slabs and wall assemblies. Moisture meters confirm the extent of water migration through building materials. Together, these tools pinpoint the leak location within inches.',
       },
       {
         question: 'My Oceanside water bill suddenly increased — could I have a hidden leak?',
-        answer: 'A sudden unexplained increase in water usage is one of the most reliable indicators of a hidden leak. The Oceanside water department can help you confirm whether the increase is on the supply side or the irrigation side. If supply-side, common sources include slab leaks (check for warm floor spots), toilet flappers that allow continuous tank-to-bowl flow, and pipe leaks inside walls. Our detection assessment can identify or rule out hidden leaks quickly and prevent months of wasted water and concealed damage.',
+        answer:
+          'A sudden unexplained increase in water usage is one of the most reliable indicators of a hidden leak. The Oceanside water department can help you confirm whether the increase is on the supply side or the irrigation side. If supply-side, common sources include slab leaks (check for warm floor spots), toilet flappers that allow continuous tank-to-bowl flow, and pipe leaks inside walls. Our detection assessment can identify or rule out hidden leaks quickly and prevent months of wasted water and concealed damage.',
       },
       {
         question: 'Are slab leaks common in Oceanside?',
-        answer: 'Yes, particularly in neighborhoods built on San Luis Rey River alluvial deposits — Mira Costa, the Mission area, and portions of central Oceanside. These soils expand and contract with moisture changes, cyclically stressing under-slab copper pipes. Over years, this flexing causes metal fatigue at elbows and connections. Signs include warm floor spots, the sound of running water with fixtures off, unexplained water-bill increases, and foundation cracks. Early detection with thermal imaging prevents thousands in additional damage.',
+        answer:
+          'Yes, particularly in neighborhoods built on San Luis Rey River alluvial deposits — Mira Costa, the Mission area, and portions of central Oceanside. These soils expand and contract with moisture changes, cyclically stressing under-slab copper pipes. Over years, this flexing causes metal fatigue at elbows and connections. Signs include warm floor spots, the sound of running water with fixtures off, unexplained water-bill increases, and foundation cracks. Early detection with thermal imaging prevents thousands in additional damage.',
       },
       {
         question: 'Should I repipe my older Oceanside home to prevent leaks?',
-        answer: 'If your South Oceanside or downtown home still has original galvanized steel supply lines, a full repipe to PEX or copper is one of the best investments you can make. Galvanized pipes do not develop isolated leaks — the corrosion is systemic, meaning a repair today will be followed by another failure next month. We assess your entire plumbing system during every detection visit and provide honest recommendations. For copper systems with isolated failures, targeted repair is usually more cost-effective.',
+        answer:
+          'If your South Oceanside or downtown home still has original galvanized steel supply lines, a full repipe to PEX or copper is one of the best investments you can make. Galvanized pipes do not develop isolated leaks — the corrosion is systemic, meaning a repair today will be followed by another failure next month. We assess your entire plumbing system during every detection visit and provide honest recommendations. For copper systems with isolated failures, targeted repair is usually more cost-effective.',
       },
       {
-        question: 'I just moved into an Oceanside rental and found water damage — what should I do?',
-        answer: 'Document the damage immediately with photos and written descriptions, then notify your landlord in writing. Call Tamarack for a leak detection assessment — finding the active leak source protects you from being held responsible for ongoing damage. Your renter\'s insurance may cover damage to your personal property. We regularly work with tenants, landlords, and property managers in Oceanside\'s active rental market to coordinate detection, repair, and restoration responsibilities.',
+        question:
+          'I just moved into an Oceanside rental and found water damage — what should I do?',
+        answer:
+          "Document the damage immediately with photos and written descriptions, then notify your landlord in writing. Call Tamarack for a leak detection assessment — finding the active leak source protects you from being held responsible for ongoing damage. Your renter's insurance may cover damage to your personal property. We regularly work with tenants, landlords, and property managers in Oceanside's active rental market to coordinate detection, repair, and restoration responsibilities.",
       },
       {
         question: 'How much does leak detection cost in Oceanside?',
-        answer: 'Our comprehensive detection assessment — including thermal imaging, acoustic testing, and moisture mapping — costs $250-$450 depending on property size and complexity. For properties where we perform the repair, this fee is typically credited toward the work. Given that an undetected leak can cause $10,000-$30,000 in hidden damage over several months, the detection fee is one of the best prevention investments an Oceanside homeowner can make.',
+        answer:
+          'Our comprehensive detection assessment — including thermal imaging, acoustic testing, and moisture mapping — costs $250-$450 depending on property size and complexity. For properties where we perform the repair, this fee is typically credited toward the work. Given that an undetected leak can cause $10,000-$30,000 in hidden damage over several months, the detection fee is one of the best prevention investments an Oceanside homeowner can make.',
       },
     ],
   },
-
-
 
   // ============================================================
   // VISTA — WATER DAMAGE RESTORATION
@@ -644,13 +1046,39 @@ Vista's agricultural heritage also plays a role in water damage patterns. Proper
     localProof: `Over 140 water damage restoration projects completed across Vista since 2014, with a 4.9-star average rating from Vista homeowners and consistent sub-45-minute response times.`,
     projectCount: '140+',
     avgResponseTime: '43 minutes',
-    landmarks: ['Moonlight Amphitheatre', 'Brengle Terrace Park', 'Rancho Buena Vista Adobe', 'Guajome Regional Park', 'Vista Village'],
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Rancho Buena Vista Adobe',
+      'Guajome Regional Park',
+      'Vista Village',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Vista', detail: 'Copper supply lines from the 1960s-70s suffer thermal-expansion fatigue in Vista\'s hotter inland climate. Attic pipe failures are our most frequent call type in this area.' },
-      { name: 'Shadowridge', detail: 'Two-story homes with second-floor bathrooms over living areas create cascading water events when shower pans or aging CPVC fittings fail — multi-room drying is standard here.' },
-      { name: 'Lake Vista', detail: 'Proximity to Lake Vista\'s elevated water table pushes moisture against foundations during wet seasons. Ground-level rooms and garages are the primary damage zones in this neighborhood.' },
-      { name: 'Breeze Hill', detail: 'Gentle slopes and clay soils channel rainwater toward downhill properties. Foundation seepage during winter storms is a recurring problem that worsens without proper grading and drainage.' },
-      { name: 'Alta Vista', detail: 'Older homes on Vista\'s west side face a combination of aging plumbing and hillside runoff exposure. We see both interior pipe failures and exterior water intrusion here regularly.' },
+      {
+        name: 'Downtown Vista',
+        detail:
+          "Copper supply lines from the 1960s-70s suffer thermal-expansion fatigue in Vista's hotter inland climate. Attic pipe failures are our most frequent call type in this area.",
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Two-story homes with second-floor bathrooms over living areas create cascading water events when shower pans or aging CPVC fittings fail — multi-room drying is standard here.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          "Proximity to Lake Vista's elevated water table pushes moisture against foundations during wet seasons. Ground-level rooms and garages are the primary damage zones in this neighborhood.",
+      },
+      {
+        name: 'Breeze Hill',
+        detail:
+          'Gentle slopes and clay soils channel rainwater toward downhill properties. Foundation seepage during winter storms is a recurring problem that worsens without proper grading and drainage.',
+      },
+      {
+        name: 'Alta Vista',
+        detail:
+          "Older homes on Vista's west side face a combination of aging plumbing and hillside runoff exposure. We see both interior pipe failures and exterior water intrusion here regularly.",
+      },
     ],
     faqs: [
       {
@@ -694,13 +1122,39 @@ Vista's agricultural soils add a ground-level mold component that distinguishes 
     localProof: `Over 110 mold remediation projects completed across Vista, with post-remediation clearance testing passed on the first attempt in 96 percent of projects.`,
     projectCount: '110+',
     avgResponseTime: '44 minutes',
-    landmarks: ['Moonlight Amphitheatre', 'Brengle Terrace Park', 'Rancho Buena Vista Adobe', 'Guajome Regional Park', 'Vista Historical Museum'],
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Rancho Buena Vista Adobe',
+      'Guajome Regional Park',
+      'Vista Historical Museum',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Vista', detail: 'Homes from the 1960s-70s lack modern vapor barriers, allowing overnight condensation inside wall cavities that feeds hidden mold colonies detectable only by musty odor or allergy symptoms.' },
-      { name: 'Shadowridge', detail: 'Bathroom exhaust fans venting into attic spaces rather than to the exterior dump warm, moist air onto roof sheathing and trusses — attic mold is our most common Shadowridge remediation call.' },
-      { name: 'Lake Vista', detail: 'Moisture-retentive soils near the lake keep crawl spaces and perimeter foundations damp well into the dry season, creating ideal conditions for crawl-space mold colonization.' },
-      { name: 'Breeze Hill', detail: 'Clay soils on sloped lots hold water against downhill foundations for weeks after rain. Persistent dampness along foundation walls drives mold growth in garages and ground-floor closets.' },
-      { name: 'Alta Vista', detail: 'Older homes with original single-pane windows experience interior condensation during cool mornings, wetting window frames and adjacent drywall — a common mold initiation point in this neighborhood.' },
+      {
+        name: 'Downtown Vista',
+        detail:
+          'Homes from the 1960s-70s lack modern vapor barriers, allowing overnight condensation inside wall cavities that feeds hidden mold colonies detectable only by musty odor or allergy symptoms.',
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Bathroom exhaust fans venting into attic spaces rather than to the exterior dump warm, moist air onto roof sheathing and trusses — attic mold is our most common Shadowridge remediation call.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Moisture-retentive soils near the lake keep crawl spaces and perimeter foundations damp well into the dry season, creating ideal conditions for crawl-space mold colonization.',
+      },
+      {
+        name: 'Breeze Hill',
+        detail:
+          'Clay soils on sloped lots hold water against downhill foundations for weeks after rain. Persistent dampness along foundation walls drives mold growth in garages and ground-floor closets.',
+      },
+      {
+        name: 'Alta Vista',
+        detail:
+          'Older homes with original single-pane windows experience interior condensation during cool mornings, wetting window frames and adjacent drywall — a common mold initiation point in this neighborhood.',
+      },
     ],
     faqs: [
       {
@@ -744,13 +1198,39 @@ Vista's inland location also introduces a seasonal wildfire exposure that coasta
     localProof: `Over 50 fire damage restoration projects completed across Vista, including full-structure rebuilds in Downtown Vista and comprehensive smoke remediation in Shadowridge and Breeze Hill.`,
     projectCount: '50+',
     avgResponseTime: '45 minutes',
-    landmarks: ['Moonlight Amphitheatre', 'Brengle Terrace Park', 'Vista Fire Department', 'Rancho Buena Vista Adobe', 'Guajome Regional Park'],
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Vista Fire Department',
+      'Rancho Buena Vista Adobe',
+      'Guajome Regional Park',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Vista', detail: 'Older wood-paneled homes without fire-rated attic barriers allow fire and smoke to travel through concealed cavities. Thermal imaging is essential to detect hidden structural charring in these properties.' },
-      { name: 'Shadowridge', detail: 'Open floor plans allow smoke from a contained kitchen fire to coat every surface in the home. Smoke remediation in Shadowridge typically exceeds the scope of the actual fire repair.' },
-      { name: 'Breeze Hill', detail: 'Hillside-adjacent properties face seasonal brush-fire smoke exposure during Santa Ana wind events. Fine ash infiltrates attics through roof vents and settles on interior surfaces throughout the home.' },
-      { name: 'Lake Vista', detail: 'Mature landscaping near Lake Vista can carry embers during dry-season fire events. Debris management around eaves and roof lines is critical for fire prevention in this neighborhood.' },
-      { name: 'Alta Vista', detail: 'Mid-century homes with enclosed garages converted to living spaces may lack fire-rated wall assemblies between the living area and the main structure, complicating fire damage repair.' },
+      {
+        name: 'Downtown Vista',
+        detail:
+          'Older wood-paneled homes without fire-rated attic barriers allow fire and smoke to travel through concealed cavities. Thermal imaging is essential to detect hidden structural charring in these properties.',
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Open floor plans allow smoke from a contained kitchen fire to coat every surface in the home. Smoke remediation in Shadowridge typically exceeds the scope of the actual fire repair.',
+      },
+      {
+        name: 'Breeze Hill',
+        detail:
+          'Hillside-adjacent properties face seasonal brush-fire smoke exposure during Santa Ana wind events. Fine ash infiltrates attics through roof vents and settles on interior surfaces throughout the home.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Mature landscaping near Lake Vista can carry embers during dry-season fire events. Debris management around eaves and roof lines is critical for fire prevention in this neighborhood.',
+      },
+      {
+        name: 'Alta Vista',
+        detail:
+          'Mid-century homes with enclosed garages converted to living spaces may lack fire-rated wall assemblies between the living area and the main structure, complicating fire damage repair.',
+      },
     ],
     faqs: [
       {
@@ -758,11 +1238,12 @@ Vista's inland location also introduces a seasonal wildfire exposure that coasta
         answer: `Wait for the Vista Fire Department to confirm the structure is safe to approach. Do not touch or wipe any soot-covered surfaces — improper contact permanently bonds soot into porous materials and finishes. Call Tamarack at (760) 500-2211 and we will dispatch a crew to arrive within 45 minutes for emergency board-up, tarp placement, and initial damage stabilization. Acting within the first 24 hours is critical because soot begins chemically etching metal surfaces, stone countertops, and appliance finishes if left untreated.`,
       },
       {
-        question: 'How does Vista\'s inland heat affect fire damage restoration timelines?',
+        question: "How does Vista's inland heat affect fire damage restoration timelines?",
         answer: `Vista's warmer temperatures actually work in our favor during certain phases of restoration. Higher ambient heat accelerates the curing of replacement drywall compounds and paint, and aids the evaporation of moisture from firefighting water that saturated walls and framing. However, heat also intensifies smoke odor re-release from affected materials, which means odor elimination treatments must be more aggressive and thorough in Vista homes than in cooler coastal properties. We account for these temperature effects when planning every Vista fire restoration project.`,
       },
       {
-        question: 'Can you restore my Vista home after fire damage or does it need to be torn down?',
+        question:
+          'Can you restore my Vista home after fire damage or does it need to be torn down?',
         answer: `The vast majority of fire-damaged Vista homes can be fully restored rather than demolished. Even homes with significant structural charring can be rebuilt by replacing compromised framing members, roof trusses, and floor systems while preserving the foundation and undamaged portions of the structure. We work with licensed structural engineers to assess load-bearing integrity and develop rebuild plans that satisfy City of Vista building inspectors. Complete demolition is only necessary when foundation damage or fire-weakened structural connections make restoration unsafe or economically impractical.`,
       },
       {
@@ -794,13 +1275,39 @@ Shadowridge's storm-drain infrastructure, designed in the 1980s for the communit
     localProof: `Over 65 flood cleanup projects completed across Vista, including multi-home response during atmospheric river events along Buena Vista Creek and hillside-runoff emergencies in Breeze Hill and Alta Vista.`,
     projectCount: '65+',
     avgResponseTime: '42 minutes',
-    landmarks: ['Buena Vista Creek', 'Brengle Terrace Park', 'Moonlight Amphitheatre', 'Guajome Regional Park', 'Rancho Buena Vista Adobe'],
+    landmarks: [
+      'Buena Vista Creek',
+      'Brengle Terrace Park',
+      'Moonlight Amphitheatre',
+      'Guajome Regional Park',
+      'Rancho Buena Vista Adobe',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Vista & Buena Vista Creek Corridor', detail: 'Properties along the creek experience repeat flooding when the channel overflows during storms. Floodwater carries sediment and agricultural runoff requiring contamination-grade cleanup protocols.' },
-      { name: 'Breeze Hill', detail: 'Clay soils on sloped terrain shed runoff toward downhill properties once saturated. Homes at the base of graded hillsides collect channeled water against their foundations during multi-day storms.' },
-      { name: 'Alta Vista', detail: 'Similar hillside-runoff dynamics to Breeze Hill, compounded by aging landscape drainage systems in older sections of the neighborhood that cannot handle high-volume storm events.' },
-      { name: 'Shadowridge', detail: 'Community storm drains designed in the 1980s occasionally reach capacity during record rainfall, causing street pooling and garage flooding at the lowest elevation points in the development.' },
-      { name: 'Lake Vista', detail: 'Elevated water table near the lake rises significantly during wet winters, contributing to foundation-level moisture intrusion and ground-floor flooding in adjacent homes.' },
+      {
+        name: 'Downtown Vista & Buena Vista Creek Corridor',
+        detail:
+          'Properties along the creek experience repeat flooding when the channel overflows during storms. Floodwater carries sediment and agricultural runoff requiring contamination-grade cleanup protocols.',
+      },
+      {
+        name: 'Breeze Hill',
+        detail:
+          'Clay soils on sloped terrain shed runoff toward downhill properties once saturated. Homes at the base of graded hillsides collect channeled water against their foundations during multi-day storms.',
+      },
+      {
+        name: 'Alta Vista',
+        detail:
+          'Similar hillside-runoff dynamics to Breeze Hill, compounded by aging landscape drainage systems in older sections of the neighborhood that cannot handle high-volume storm events.',
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Community storm drains designed in the 1980s occasionally reach capacity during record rainfall, causing street pooling and garage flooding at the lowest elevation points in the development.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Elevated water table near the lake rises significantly during wet winters, contributing to foundation-level moisture intrusion and ground-floor flooding in adjacent homes.',
+      },
     ],
     faqs: [
       {
@@ -824,7 +1331,8 @@ Shadowridge's storm-drain infrastructure, designed in the 1980s for the communit
         answer: `Flood cleanup in Vista begins with rapid water extraction using truck-mounted pumps that remove hundreds of gallons per minute. We then remove all porous materials that absorbed floodwater — carpet, padding, baseboards, drywall cut to at least 12 inches above the high-water mark, and insulation. All remaining hard surfaces are scrubbed with antimicrobial solutions and disinfected. We set up commercial dehumidifiers and air movers for structural drying, taking daily moisture readings until every measurement reaches the target range. Only after the structure is verified dry do we begin reconstruction of removed materials.`,
       },
       {
-        question: 'Can heavy rain cause flooding in Shadowridge even though it is a newer community?',
+        question:
+          'Can heavy rain cause flooding in Shadowridge even though it is a newer community?',
         answer: `Yes. Shadowridge's storm-drain infrastructure was engineered in the 1980s for expected rainfall volumes at that time. Record-breaking rain events, which have become more frequent, can exceed the system's designed capacity. When drains back up, water pools in streets and flows into garages and ground-floor rooms at the lowest elevation points within the community. Homes near the bottom of Shadowridge's internal grades are most vulnerable. If you have experienced even minor water entry during a storm, it is likely to recur during the next major event without drainage improvements.`,
       },
     ],
@@ -844,13 +1352,39 @@ Vista's extensive stock of rental properties, particularly in the downtown area 
     localProof: `Over 45 sewage cleanup projects completed across Vista, with biohazard-certified technicians following strict containment and decontamination protocols verified by independent post-cleanup testing.`,
     projectCount: '45+',
     avgResponseTime: '46 minutes',
-    landmarks: ['Moonlight Amphitheatre', 'Brengle Terrace Park', 'Vista Irrigation District', 'Rancho Buena Vista Adobe', 'Guajome Regional Park'],
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Vista Irrigation District',
+      'Rancho Buena Vista Adobe',
+      'Guajome Regional Park',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Vista', detail: 'Clay sewer laterals from the 1960s-70s combined with Vista\'s mature tree canopy create severe root-intrusion blockages. Downtown accounts for the highest concentration of sewage backup calls in the city.' },
-      { name: 'Lake Vista', detail: 'Low-lying position in the sewer grid makes this neighborhood susceptible to storm-driven sewer surges when rainwater infiltrates cracked mains and overwhelms system capacity.' },
-      { name: 'Shadowridge', detail: 'Newer PVC laterals reduce root-intrusion risk, but grease buildup and improper flushing still cause blockages. HOA coordination is sometimes needed for shared lateral connections in townhome sections.' },
-      { name: 'Breeze Hill', detail: 'Sloped sewer laterals running downhill to street mains develop velocity issues at grade transitions, allowing solids to accumulate and eventually create full blockages that force sewage back into the home.' },
-      { name: 'Alta Vista', detail: 'Older homes with mature landscaping face the same root-intrusion problems as Downtown Vista. Many Alta Vista properties lack backwater valves, leaving them unprotected from municipal sewer surges during storms.' },
+      {
+        name: 'Downtown Vista',
+        detail:
+          "Clay sewer laterals from the 1960s-70s combined with Vista's mature tree canopy create severe root-intrusion blockages. Downtown accounts for the highest concentration of sewage backup calls in the city.",
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Low-lying position in the sewer grid makes this neighborhood susceptible to storm-driven sewer surges when rainwater infiltrates cracked mains and overwhelms system capacity.',
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Newer PVC laterals reduce root-intrusion risk, but grease buildup and improper flushing still cause blockages. HOA coordination is sometimes needed for shared lateral connections in townhome sections.',
+      },
+      {
+        name: 'Breeze Hill',
+        detail:
+          'Sloped sewer laterals running downhill to street mains develop velocity issues at grade transitions, allowing solids to accumulate and eventually create full blockages that force sewage back into the home.',
+      },
+      {
+        name: 'Alta Vista',
+        detail:
+          'Older homes with mature landscaping face the same root-intrusion problems as Downtown Vista. Many Alta Vista properties lack backwater valves, leaving them unprotected from municipal sewer surges during storms.',
+      },
     ],
     faqs: [
       {
@@ -894,13 +1428,39 @@ Shadowridge's CPVC plumbing, installed during the community's 1980s and 1990s co
     localProof: `Over 90 hidden leaks located and repaired across Vista, saving homeowners an estimated $1.7 million in prevented structural damage through early detection and targeted repair.`,
     projectCount: '90+',
     avgResponseTime: '44 minutes',
-    landmarks: ['Moonlight Amphitheatre', 'Brengle Terrace Park', 'Rancho Buena Vista Adobe', 'Vista Village', 'Guajome Regional Park'],
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Rancho Buena Vista Adobe',
+      'Vista Village',
+      'Guajome Regional Park',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Vista', detail: 'Copper supply lines in 1960s-70s homes suffer thermal-expansion fatigue from Vista\'s extreme attic temperatures. Hairline cracks at solder joints create slow leaks behind walls and in attic insulation.' },
-      { name: 'Shadowridge', detail: 'CPVC plumbing from the 1980s-90s becomes brittle with age and temperature cycling. Push-fit connections and elbows are the primary failure points, ranging from slow seeps to sudden pressurized releases.' },
-      { name: 'Lake Vista', detail: 'Clay soils that swell and shrink seasonally flex under-slab copper at elbows and connections. Slab leaks presenting as warm floor spots or elevated water bills are our most common detection call here.' },
-      { name: 'Breeze Hill', detail: 'High clay content in hillside soils creates aggressive expansion-contraction cycles that stress both under-slab plumbing and supply lines running through exterior walls on sun-exposed elevations.' },
-      { name: 'Alta Vista', detail: 'Aging copper systems combined with mature landscaping whose root systems shift soil around foundations compound leak risk. Annual detection sweeps are recommended for homes over 40 years old in this neighborhood.' },
+      {
+        name: 'Downtown Vista',
+        detail:
+          "Copper supply lines in 1960s-70s homes suffer thermal-expansion fatigue from Vista's extreme attic temperatures. Hairline cracks at solder joints create slow leaks behind walls and in attic insulation.",
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'CPVC plumbing from the 1980s-90s becomes brittle with age and temperature cycling. Push-fit connections and elbows are the primary failure points, ranging from slow seeps to sudden pressurized releases.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Clay soils that swell and shrink seasonally flex under-slab copper at elbows and connections. Slab leaks presenting as warm floor spots or elevated water bills are our most common detection call here.',
+      },
+      {
+        name: 'Breeze Hill',
+        detail:
+          'High clay content in hillside soils creates aggressive expansion-contraction cycles that stress both under-slab plumbing and supply lines running through exterior walls on sun-exposed elevations.',
+      },
+      {
+        name: 'Alta Vista',
+        detail:
+          'Aging copper systems combined with mature landscaping whose root systems shift soil around foundations compound leak risk. Annual detection sweeps are recommended for homes over 40 years old in this neighborhood.',
+      },
     ],
     faqs: [
       {
@@ -930,8 +1490,6 @@ Shadowridge's CPVC plumbing, installed during the community's 1980s and 1990s co
     ],
   },
 
-
-
   // ============================================================
   // SAN MARCOS — WATER DAMAGE RESTORATION
   // ============================================================
@@ -946,13 +1504,39 @@ San Elijo Hills and Discovery Hills represent San Marcos at its newest, but mode
     localProof: `Over 110 water damage restoration projects completed across San Marcos neighborhoods, from lakefront condos to hilltop communities, with a 4.9-star average rating from San Marcos homeowners.`,
     projectCount: '110+',
     avgResponseTime: '45 minutes',
-    landmarks: ['Double Peak Park', 'Lake San Marcos', 'Cal State San Marcos', 'San Marcos Creek', 'Discovery Hills'],
+    landmarks: [
+      'Double Peak Park',
+      'Lake San Marcos',
+      'Cal State San Marcos',
+      'San Marcos Creek',
+      'Discovery Hills',
+    ],
     neighborhoodContext: [
-      { name: 'Lake San Marcos', detail: 'Lakefront homes built in the 1960s-70s have aging copper and galvanized plumbing corroded by decades of elevated humidity from the lake. Supply-riser failures behind bathroom walls are our most common emergency call here.' },
-      { name: 'San Elijo Hills', detail: 'Multi-story homes with second-floor bathrooms above main living areas are prone to cascading water damage from failed shower pans, toilet wax rings, and supply-line connections.' },
-      { name: 'Twin Oaks Valley', detail: 'Older ranch-style homes on larger lots often have extended plumbing runs and aging well systems. Long lateral supply lines develop pinhole leaks that go undetected in crawl spaces beneath these properties.' },
-      { name: 'Discovery Hills', detail: 'Newer construction with tight building envelopes traps HVAC condensation moisture. Clogged condensate drain lines in attics and wall cavities are an emerging water damage source here.' },
-      { name: 'Rancho Santa Fe Road Corridor', detail: 'Mixed-age housing along this corridor faces both aging-pipe risks in older homes and appliance-failure risks in remodeled properties. Dishwasher and washing machine supply-hose failures are frequent causes of kitchen and laundry flooding.' },
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Lakefront homes built in the 1960s-70s have aging copper and galvanized plumbing corroded by decades of elevated humidity from the lake. Supply-riser failures behind bathroom walls are our most common emergency call here.',
+      },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'Multi-story homes with second-floor bathrooms above main living areas are prone to cascading water damage from failed shower pans, toilet wax rings, and supply-line connections.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Older ranch-style homes on larger lots often have extended plumbing runs and aging well systems. Long lateral supply lines develop pinhole leaks that go undetected in crawl spaces beneath these properties.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Newer construction with tight building envelopes traps HVAC condensation moisture. Clogged condensate drain lines in attics and wall cavities are an emerging water damage source here.',
+      },
+      {
+        name: 'Rancho Santa Fe Road Corridor',
+        detail:
+          'Mixed-age housing along this corridor faces both aging-pipe risks in older homes and appliance-failure risks in remodeled properties. Dishwasher and washing machine supply-hose failures are frequent causes of kitchen and laundry flooding.',
+      },
     ],
     faqs: [
       {
@@ -972,7 +1556,8 @@ San Elijo Hills and Discovery Hills represent San Marcos at its newest, but mode
         answer: `Most standard homeowner policies cover sudden and accidental water damage, including burst pipes, appliance malfunctions, and supply-line breaks. Damage caused by gradual leaks or deferred maintenance may be partially or fully excluded. We work directly with every major insurance carrier serving San Marcos, including State Farm, Allstate, Farmers, and USAA, handling all documentation, moisture readings, adjuster coordination, and supplement requests so you can focus on your household rather than paperwork.`,
       },
       {
-        question: 'What should I do if water is coming through my ceiling in a San Elijo Hills home?',
+        question:
+          'What should I do if water is coming through my ceiling in a San Elijo Hills home?',
         answer: `Ceiling water intrusion in San Elijo Hills almost always originates from a second-floor bathroom or HVAC system above. First, shut off the main water supply to stop the flow if it is plumbing-related. Place buckets or bins under dripping areas to limit floor damage, and avoid walking on saturated ceiling drywall, which can collapse under its own weight. Call Tamarack at (760) 500-2211 immediately. We will identify the source, stop the leak, extract standing water, and begin structural drying to prevent mold colonization in the wall and ceiling cavities.`,
       },
       {
@@ -996,17 +1581,44 @@ Twin Oaks Valley and the older residential areas along Rancho Santa Fe Road pres
     localProof: `Over 95 mold remediation projects completed across San Marcos, including lakefront properties, hilltop communities, and rural valley homes — with post-remediation clearance testing passed on the first attempt in 96% of cases.`,
     projectCount: '95+',
     avgResponseTime: '47 minutes',
-    landmarks: ['Lake San Marcos', 'Double Peak Park', 'Cal State San Marcos', 'Palomar College', 'San Marcos Creek'],
+    landmarks: [
+      'Lake San Marcos',
+      'Double Peak Park',
+      'Cal State San Marcos',
+      'Palomar College',
+      'San Marcos Creek',
+    ],
     neighborhoodContext: [
-      { name: 'Lake San Marcos', detail: 'Lakefront humidity creates a persistent condensation cycle on cooler interior walls, especially during temperature transitions. Mold behind bathroom vanities and beneath window sills is our most common finding in this neighborhood.' },
-      { name: 'San Elijo Hills', detail: 'Hilltop homes with panoramic views have large window assemblies where thermal bridging creates condensation points. Mold at window frames and along exterior wall corners appears during cooler months when indoor heating meets cold glass surfaces.' },
-      { name: 'Twin Oaks Valley', detail: 'Pre-1985 ranch homes often lack vapor barriers and have deteriorated insulation. Mold behind original paneling and beneath slab-on-grade carpeting without moisture barriers is a recurring remediation scenario.' },
-      { name: 'Discovery Hills', detail: 'Tight building envelopes in newer homes trap indoor moisture if bathroom exhaust fans are undersized or improperly vented. We frequently find mold in attic spaces where exhaust vents terminate inside the attic rather than through the roof.' },
-      { name: 'Rancho Santa Fe Road Area', detail: 'Mixed-vintage housing means mold sources vary from aging plumbing seepage in older homes to construction defects in remodeled properties. Each requires a different remediation approach.' },
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Lakefront humidity creates a persistent condensation cycle on cooler interior walls, especially during temperature transitions. Mold behind bathroom vanities and beneath window sills is our most common finding in this neighborhood.',
+      },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'Hilltop homes with panoramic views have large window assemblies where thermal bridging creates condensation points. Mold at window frames and along exterior wall corners appears during cooler months when indoor heating meets cold glass surfaces.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Pre-1985 ranch homes often lack vapor barriers and have deteriorated insulation. Mold behind original paneling and beneath slab-on-grade carpeting without moisture barriers is a recurring remediation scenario.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Tight building envelopes in newer homes trap indoor moisture if bathroom exhaust fans are undersized or improperly vented. We frequently find mold in attic spaces where exhaust vents terminate inside the attic rather than through the roof.',
+      },
+      {
+        name: 'Rancho Santa Fe Road Area',
+        detail:
+          'Mixed-vintage housing means mold sources vary from aging plumbing seepage in older homes to construction defects in remodeled properties. Each requires a different remediation approach.',
+      },
     ],
     faqs: [
       {
-        question: 'Why does mold grow in San Marcos homes when the climate is drier than the coast?',
+        question:
+          'Why does mold grow in San Marcos homes when the climate is drier than the coast?',
         answer: `San Marcos has lower average outdoor humidity than coastal cities, but indoor mold depends on localized moisture sources rather than ambient conditions. Lake San Marcos creates a microclimate with elevated humidity for surrounding homes. Across the city, attic condensation from the extreme temperature differential between 140-degree attic spaces and air-conditioned rooms below is a major hidden moisture source. Older homes without vapor barriers allow ground moisture to migrate into wall cavities. These localized sources provide all the moisture mold needs, regardless of outdoor conditions.`,
       },
       {
@@ -1014,7 +1626,8 @@ Twin Oaks Valley and the older residential areas along Rancho Santa Fe Road pres
         answer: `Yes, the Lake San Marcos neighborhood experiences higher mold incidence than other parts of the city because the lake surface continuously releases moisture into the surrounding air. This elevated humidity condenses on cooler interior walls, particularly along north-facing exterior walls and in rooms without direct sunlight. Bathrooms and closets positioned against exterior walls in lakefront condominiums are especially prone. We have remediated dozens of Lake San Marcos properties where mold had been growing behind vanities and inside closets for months before discovery.`,
       },
       {
-        question: 'Can mold grow in my attic in San Marcos even though it gets extremely hot up there?',
+        question:
+          'Can mold grow in my attic in San Marcos even though it gets extremely hot up there?',
         answer: `Absolutely. While extreme heat inhibits mold growth during peak daytime hours, the condensation that forms at the boundary between your hot attic and cooled living space provides consistent moisture that sustains colonies. Mold grows on the attic side of ceiling drywall, around recessed light housings that create thermal bridges, and on duct surfaces where cool air meets hot air. During cooler nighttime hours, temperatures in the attic moderate enough for active mold growth on these pre-moistened surfaces.`,
       },
       {
@@ -1046,13 +1659,39 @@ Lake San Marcos and the condominiums along San Marcos Boulevard present fire res
     localProof: `Over 50 fire and smoke damage restoration projects completed across San Marcos, including wildfire smoke remediation in San Elijo Hills and multi-unit restoration coordination at Lake San Marcos condominiums.`,
     projectCount: '50+',
     avgResponseTime: '44 minutes',
-    landmarks: ['Double Peak Park', 'Lake San Marcos', 'San Marcos Fire Station', 'Cal State San Marcos', 'Twin Oaks Valley Road'],
+    landmarks: [
+      'Double Peak Park',
+      'Lake San Marcos',
+      'San Marcos Fire Station',
+      'Cal State San Marcos',
+      'Twin Oaks Valley Road',
+    ],
     neighborhoodContext: [
-      { name: 'San Elijo Hills', detail: 'Hilltop homes adjacent to open chaparral face wildfire smoke exposure during fire season. Ember intrusion through attic vents and smoke saturation of exterior materials are primary restoration concerns.' },
-      { name: 'Twin Oaks Valley', detail: 'Rural properties with older electrical systems are prone to wiring-related fires, especially during summer when AC demand overloads aging panels. Smoldering electrical fires spread smoke through wall cavities before flames appear.' },
-      { name: 'Lake San Marcos', detail: 'Attached condominiums and townhomes share attic spaces and walls. A fire in one unit pushes smoke into neighboring units through shared construction, requiring multi-unit remediation coordination.' },
-      { name: 'Discovery Hills', detail: 'Newer construction uses fire-resistant materials that limit flame spread, but modern open floor plans allow smoke from a kitchen fire to contaminate every room within minutes, requiring whole-home remediation.' },
-      { name: 'Rancho Santa Fe Road Corridor', detail: 'Proximity to undeveloped hillsides creates brush fire exposure risk during Santa Ana wind events. Homes backing to canyon open space should maintain defensible space and have an emergency plan.' },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'Hilltop homes adjacent to open chaparral face wildfire smoke exposure during fire season. Ember intrusion through attic vents and smoke saturation of exterior materials are primary restoration concerns.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Rural properties with older electrical systems are prone to wiring-related fires, especially during summer when AC demand overloads aging panels. Smoldering electrical fires spread smoke through wall cavities before flames appear.',
+      },
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Attached condominiums and townhomes share attic spaces and walls. A fire in one unit pushes smoke into neighboring units through shared construction, requiring multi-unit remediation coordination.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Newer construction uses fire-resistant materials that limit flame spread, but modern open floor plans allow smoke from a kitchen fire to contaminate every room within minutes, requiring whole-home remediation.',
+      },
+      {
+        name: 'Rancho Santa Fe Road Corridor',
+        detail:
+          'Proximity to undeveloped hillsides creates brush fire exposure risk during Santa Ana wind events. Homes backing to canyon open space should maintain defensible space and have an emergency plan.',
+      },
     ],
     faqs: [
       {
@@ -1064,7 +1703,8 @@ Lake San Marcos and the condominiums along San Marcos Boulevard present fire res
         answer: `Wait for the San Marcos Fire Department to confirm the structure is safe to approach. Do not touch or wipe any surfaces — disturbing soot bonds it permanently into countertops, metals, and painted surfaces. Call Tamarack at (760) 500-2211 and we will arrive within 44 minutes to board up openings, tarp any roof damage, and begin stabilization. The first 24-48 hours after a fire are critical because soot chemistry changes rapidly, making surfaces progressively harder to restore the longer treatment is delayed.`,
       },
       {
-        question: 'My San Marcos condo at Lake San Marcos had smoke damage from a fire in a neighboring unit — what are my options?',
+        question:
+          'My San Marcos condo at Lake San Marcos had smoke damage from a fire in a neighboring unit — what are my options?',
         answer: `Smoke damage from an adjacent unit's fire is typically covered by the at-fault party's insurance or the HOA master policy, depending on where the fire originated and your association's CC&Rs. Your own HO-6 condo policy may also provide coverage for interior finishes and personal property. We routinely coordinate multi-unit fire restoration at Lake San Marcos, working with individual unit owners, the HOA board, and multiple insurance carriers simultaneously. We will assess your unit's smoke exposure independently and ensure thorough remediation of all affected surfaces and systems.`,
       },
       {
@@ -1096,13 +1736,39 @@ Twin Oaks Valley's rural character and larger lots create flood challenges relat
     localProof: `Over 60 flood cleanup projects across San Marcos, including rapid multi-property response along San Marcos Creek and hillside runoff recovery in San Elijo Hills and Discovery Hills.`,
     projectCount: '60+',
     avgResponseTime: '46 minutes',
-    landmarks: ['San Marcos Creek', 'Double Peak Park', 'Lake San Marcos', 'Cal State San Marcos', 'Palomar College'],
+    landmarks: [
+      'San Marcos Creek',
+      'Double Peak Park',
+      'Lake San Marcos',
+      'Cal State San Marcos',
+      'Palomar College',
+    ],
     neighborhoodContext: [
-      { name: 'San Marcos Creek Corridor', detail: 'Properties along San Marcos Boulevard and Creek Road flood when the creek exceeds its channelized capacity during heavy storms. Floodwater carries sediment and potential sewage contamination requiring full decontamination protocols.' },
-      { name: 'San Elijo Hills', detail: 'Graded hillside slopes channel runoff toward downslope homes during intense rain bursts. Properties near retention basins and at the base of graded slopes experience sheet flooding against foundations and into garages.' },
-      { name: 'Discovery Hills', detail: 'Engineered drainage systems handle typical storms well, but extreme events overwhelm catch basins and redirect water toward lower-elevation homes within the development.' },
-      { name: 'Twin Oaks Valley', detail: 'Valley-floor properties collect runoff from surrounding hills. Clay-heavy soils shed water rather than absorbing it, and equestrian outbuildings without foundation waterproofing are especially vulnerable to storm flooding.' },
-      { name: 'Lake San Marcos', detail: 'Lake level fluctuations during prolonged wet weather can raise groundwater in adjacent neighborhoods, causing moisture infiltration through foundations and slabs in the lowest-elevation lakeside properties.' },
+      {
+        name: 'San Marcos Creek Corridor',
+        detail:
+          'Properties along San Marcos Boulevard and Creek Road flood when the creek exceeds its channelized capacity during heavy storms. Floodwater carries sediment and potential sewage contamination requiring full decontamination protocols.',
+      },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'Graded hillside slopes channel runoff toward downslope homes during intense rain bursts. Properties near retention basins and at the base of graded slopes experience sheet flooding against foundations and into garages.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Engineered drainage systems handle typical storms well, but extreme events overwhelm catch basins and redirect water toward lower-elevation homes within the development.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Valley-floor properties collect runoff from surrounding hills. Clay-heavy soils shed water rather than absorbing it, and equestrian outbuildings without foundation waterproofing are especially vulnerable to storm flooding.',
+      },
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Lake level fluctuations during prolonged wet weather can raise groundwater in adjacent neighborhoods, causing moisture infiltration through foundations and slabs in the lowest-elevation lakeside properties.',
+      },
     ],
     faqs: [
       {
@@ -1122,7 +1788,8 @@ Twin Oaks Valley's rural character and larger lots create flood challenges relat
         answer: `During major storm forecasts, we pre-position crews and truck-mounted extraction equipment along the CA-78 corridor to ensure rapid deployment throughout San Marcos. Under these conditions, we can begin extraction within 35-40 minutes of your call. During normal weather, our average response time from Carlsbad to San Marcos is 46 minutes. Every hour flood water remains in your home increases damage exponentially and elevates contamination risk, so call us at (760) 500-2211 immediately when water begins entering your property.`,
       },
       {
-        question: 'My San Marcos garage flooded from hillside runoff — is that serious enough to call a professional?',
+        question:
+          'My San Marcos garage flooded from hillside runoff — is that serious enough to call a professional?',
         answer: `Yes. Garage flooding from hillside runoff may seem minor compared to a whole-home flood, but storm runoff carries contaminants including pesticides, fertilizers, petroleum residue, and soil bacteria. Water pooled against your garage foundation can also seep into wall cavities and beneath the slab, creating hidden moisture that leads to mold growth within 48-72 hours in San Marcos's warm climate. Professional extraction, antimicrobial treatment, and monitored drying prevents costly secondary damage and health hazards that DIY cleanup typically misses.`,
       },
       {
@@ -1146,13 +1813,39 @@ Storm events intensify San Marcos's sewage risk because the city's sewer system 
     localProof: `Over 40 sewage cleanup projects across San Marcos, with biohazard-certified technicians who follow strict containment and decontamination protocols, including multi-unit coordination at Lake San Marcos condominium complexes.`,
     projectCount: '40+',
     avgResponseTime: '48 minutes',
-    landmarks: ['Lake San Marcos', 'Twin Oaks Valley Road', 'San Marcos Creek', 'Cal State San Marcos', 'Double Peak Park'],
+    landmarks: [
+      'Lake San Marcos',
+      'Twin Oaks Valley Road',
+      'San Marcos Creek',
+      'Cal State San Marcos',
+      'Double Peak Park',
+    ],
     neighborhoodContext: [
-      { name: 'Twin Oaks Valley', detail: 'Extended sewer lateral runs exceeding 100 feet pass beneath driveways and equestrian facilities. Mature tree roots invade pipe joints aggressively, and Orangeburg pipe from the 1960s-70s collapses under root pressure.' },
-      { name: 'Lake San Marcos', detail: 'Shared lateral lines in 1960s-70s condominium complexes mean a single blockage backs sewage into multiple units. Deferred HOA sewer maintenance increases the frequency of multi-unit events.' },
-      { name: 'San Marcos Boulevard Corridor', detail: 'Lower-elevation properties in the sewer grid are vulnerable to storm-related surges when heavy rainfall overwhelms system capacity through infiltration and inflow into cracked pipes and manholes.' },
-      { name: 'Rancho Santa Fe Road Area', detail: 'Mixed-age housing with varying lateral conditions — older homes with clay pipe face root intrusion while remodeled properties sometimes have mismatched connections between old and new plumbing that create failure points.' },
-      { name: 'Discovery Hills', detail: 'Newer sewer infrastructure handles normal conditions well, but grease buildup from kitchen waste remains the primary blockage cause in newer homes where residents may not realize grease should never go down the drain.' },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Extended sewer lateral runs exceeding 100 feet pass beneath driveways and equestrian facilities. Mature tree roots invade pipe joints aggressively, and Orangeburg pipe from the 1960s-70s collapses under root pressure.',
+      },
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Shared lateral lines in 1960s-70s condominium complexes mean a single blockage backs sewage into multiple units. Deferred HOA sewer maintenance increases the frequency of multi-unit events.',
+      },
+      {
+        name: 'San Marcos Boulevard Corridor',
+        detail:
+          'Lower-elevation properties in the sewer grid are vulnerable to storm-related surges when heavy rainfall overwhelms system capacity through infiltration and inflow into cracked pipes and manholes.',
+      },
+      {
+        name: 'Rancho Santa Fe Road Area',
+        detail:
+          'Mixed-age housing with varying lateral conditions — older homes with clay pipe face root intrusion while remodeled properties sometimes have mismatched connections between old and new plumbing that create failure points.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Newer sewer infrastructure handles normal conditions well, but grease buildup from kitchen waste remains the primary blockage cause in newer homes where residents may not realize grease should never go down the drain.',
+      },
     ],
     faqs: [
       {
@@ -1168,7 +1861,8 @@ Storm events intensify San Marcos's sewage risk because the city's sewer system 
         answer: `A contained sewage backup affecting a single bathroom typically costs $2,000-$5,500 for full extraction, decontamination, material removal, and restoration. A major backup flooding multiple rooms with standing sewage can range from $7,000-$20,000 depending on the volume and materials affected. Many San Marcos homeowners carry sewer backup endorsements on their homeowner policies that cover these costs. We verify your coverage, document all damage thoroughly, and manage the insurance claim process on your behalf.`,
       },
       {
-        question: 'My Lake San Marcos condo had sewage back up from a blockage in the shared line — who pays for cleanup?',
+        question:
+          'My Lake San Marcos condo had sewage back up from a blockage in the shared line — who pays for cleanup?',
         answer: `Responsibility depends on where the blockage occurred and your HOA's CC&Rs. If the blockage is in a shared lateral line maintained by the HOA, the association's master insurance policy typically covers the cleanup. If the blockage originated within your unit's individual plumbing, your personal HO-6 policy handles it. In practice, determining the exact failure point often requires a sewer camera inspection. We coordinate with the HOA, your personal insurer, and the association's carrier to ensure all affected units receive proper cleanup regardless of how the cost allocation is ultimately resolved.`,
       },
       {
@@ -1196,13 +1890,39 @@ The newer communities of San Elijo Hills and Discovery Hills have modern PEX and
     localProof: `Over 75 hidden leaks detected and repaired across San Marcos, from corroded copper lines in Lake San Marcos to slab leaks in Twin Oaks Valley — saving homeowners an estimated $1.5 million in prevented structural and mold damage.`,
     projectCount: '75+',
     avgResponseTime: '42 minutes',
-    landmarks: ['Lake San Marcos', 'Double Peak Park', 'Cal State San Marcos', 'San Marcos Creek', 'Palomar College'],
+    landmarks: [
+      'Lake San Marcos',
+      'Double Peak Park',
+      'Cal State San Marcos',
+      'San Marcos Creek',
+      'Palomar College',
+    ],
     neighborhoodContext: [
-      { name: 'Lake San Marcos', detail: 'Lake humidity accelerates copper pipe corrosion from the outside in. Homes built in the 1960s-70s develop pinhole leaks at horizontal supply runs behind bathroom walls and beneath kitchen sinks at the highest rate in San Marcos.' },
-      { name: 'Twin Oaks Valley', detail: 'Deep alluvial soil deposits create significant ground movement that flexes under-slab copper at elbows and connections. Slab leaks here often go undetected on large lots where subtle floor warm spots are harder to notice.' },
-      { name: 'San Elijo Hills', detail: 'PEX plumbing resists corrosion but fails at connection fittings and manifold joints. HVAC condensate drain blockages from biofilm cause overflow into wall cavities that goes unnoticed until mold or staining appears.' },
-      { name: 'Discovery Hills', detail: 'Newer construction with CPVC supply lines can develop stress cracks at fittings, especially in attic runs exposed to extreme summer heat. Thermal cycling in unconditioned spaces weakens CPVC joints over time.' },
-      { name: 'Rancho Santa Fe Road Area', detail: 'Remodeled older homes often have mixed plumbing materials — original copper connected to newer PEX or CPVC — and the transition fittings between dissimilar materials are common leak points we detect frequently.' },
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Lake humidity accelerates copper pipe corrosion from the outside in. Homes built in the 1960s-70s develop pinhole leaks at horizontal supply runs behind bathroom walls and beneath kitchen sinks at the highest rate in San Marcos.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Deep alluvial soil deposits create significant ground movement that flexes under-slab copper at elbows and connections. Slab leaks here often go undetected on large lots where subtle floor warm spots are harder to notice.',
+      },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'PEX plumbing resists corrosion but fails at connection fittings and manifold joints. HVAC condensate drain blockages from biofilm cause overflow into wall cavities that goes unnoticed until mold or staining appears.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Newer construction with CPVC supply lines can develop stress cracks at fittings, especially in attic runs exposed to extreme summer heat. Thermal cycling in unconditioned spaces weakens CPVC joints over time.',
+      },
+      {
+        name: 'Rancho Santa Fe Road Area',
+        detail:
+          'Remodeled older homes often have mixed plumbing materials — original copper connected to newer PEX or CPVC — and the transition fittings between dissimilar materials are common leak points we detect frequently.',
+      },
     ],
     faqs: [
       {
@@ -1232,8 +1952,6 @@ The newer communities of San Elijo Hills and Discovery Hills have modern PEX and
     ],
   },
 
-
-
   // ============================================================
   // ENCINITAS — WATER DAMAGE RESTORATION
   // ============================================================
@@ -1245,41 +1963,74 @@ The newer communities of San Elijo Hills and Discovery Hills have modern PEX and
 Cardiff-by-the-Sea presents a distinct set of water damage risks tied to its geography. Homes perched along the coastal bluffs near Swami's Beach and Restaurant Row sit on terrain that absorbs and redirects rainfall in unpredictable patterns, and the proximity of San Elijo Lagoon raises the ambient moisture level around properties on its eastern edge. When winter storms push groundwater upward through the sandy soils common in Cardiff, lower-level rooms and garages can take on moisture through slab penetrations and foundation joints without any plumbing failure involved.
 
 Olivenhain and New Encinitas face water damage patterns more typical of inland communities, but with a coastal twist. Larger properties in Olivenhain often rely on private well systems and extended supply runs that increase the number of potential failure points, while the planned developments east of El Camino Real in New Encinitas see appliance failures, water heater ruptures, and second-floor bathroom leaks as primary causes. The marine layer that blankets all of Encinitas through summer months keeps ambient humidity elevated even in these inland-leaning neighborhoods, slowing natural evaporation and extending the window for mold colonization after any water event.`,
-    localProof: 'Over 160 water damage restoration projects completed across Encinitas since 2014, spanning every neighborhood from the Leucadia bluffs to the Olivenhain backcountry.',
+    localProof:
+      'Over 160 water damage restoration projects completed across Encinitas since 2014, spanning every neighborhood from the Leucadia bluffs to the Olivenhain backcountry.',
     projectCount: '160+',
     avgResponseTime: '34 minutes',
-    landmarks: ['Moonlight State Beach', 'Swami\'s Beach', 'Self-Realization Fellowship', 'San Elijo Lagoon', 'Encinitas Community Park'],
+    landmarks: [
+      'Moonlight State Beach',
+      "Swami's Beach",
+      'Self-Realization Fellowship',
+      'San Elijo Lagoon',
+      'Encinitas Community Park',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Encinitas', detail: 'Aging copper supply lines in homes along Coast Highway 101 corrode at accelerated rates from salt air exposure, making pinhole leaks behind walls the most frequent water damage call in this area.' },
-      { name: 'Leucadia', detail: 'Bohemian beach cottages with decades-old plumbing and limited crawl-space ventilation experience both supply-line failures and condensation-driven moisture accumulation beneath floors.' },
-      { name: 'Cardiff-by-the-Sea', detail: 'Blufftop and lagoon-adjacent properties contend with elevated groundwater during storms, and San Elijo Lagoon proximity raises ambient moisture that compounds any plumbing leak.' },
-      { name: 'Olivenhain', detail: 'Larger lots and extended plumbing runs on equestrian properties mean leaks can persist longer before detection. Private well systems add a failure point not found in other Encinitas neighborhoods.' },
-      { name: 'New Encinitas', detail: 'Newer construction east of El Camino Real sees water heater failures and second-floor bathroom overflows as the leading causes, with marine layer humidity slowing the drying process.' },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Aging copper supply lines in homes along Coast Highway 101 corrode at accelerated rates from salt air exposure, making pinhole leaks behind walls the most frequent water damage call in this area.',
+      },
+      {
+        name: 'Leucadia',
+        detail:
+          'Bohemian beach cottages with decades-old plumbing and limited crawl-space ventilation experience both supply-line failures and condensation-driven moisture accumulation beneath floors.',
+      },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'Blufftop and lagoon-adjacent properties contend with elevated groundwater during storms, and San Elijo Lagoon proximity raises ambient moisture that compounds any plumbing leak.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Larger lots and extended plumbing runs on equestrian properties mean leaks can persist longer before detection. Private well systems add a failure point not found in other Encinitas neighborhoods.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Newer construction east of El Camino Real sees water heater failures and second-floor bathroom overflows as the leading causes, with marine layer humidity slowing the drying process.',
+      },
     ],
     faqs: [
       {
         question: 'How quickly can Tamarack reach my Encinitas home during a water emergency?',
-        answer: 'Our headquarters in Carlsbad sits just north of Encinitas along the Coast Highway corridor, so we average 34-minute response times to addresses across the city. Properties in Downtown Encinitas and Leucadia typically see our crew within 25 minutes because of the direct route south on Highway 101. We dispatch emergency teams around the clock, every day of the year, and carry extraction equipment on every truck so work begins the moment we arrive.',
+        answer:
+          'Our headquarters in Carlsbad sits just north of Encinitas along the Coast Highway corridor, so we average 34-minute response times to addresses across the city. Properties in Downtown Encinitas and Leucadia typically see our crew within 25 minutes because of the direct route south on Highway 101. We dispatch emergency teams around the clock, every day of the year, and carry extraction equipment on every truck so work begins the moment we arrive.',
       },
       {
         question: 'Why do Leucadia homes seem especially prone to water damage?',
-        answer: 'Leucadia\'s eclectic housing stock includes many beach cottages and bungalows built in the 1950s through 1970s with copper plumbing that is now well past its expected service life. The neighborhood sits directly in the path of onshore marine layer flow, exposing these aging pipes to some of the highest salt-air concentrations in North County. Compounding the issue, many Leucadia homes have limited crawl-space ventilation, which traps moisture beneath the structure and accelerates deterioration of both plumbing and subfloor materials from below.',
+        answer:
+          "Leucadia's eclectic housing stock includes many beach cottages and bungalows built in the 1950s through 1970s with copper plumbing that is now well past its expected service life. The neighborhood sits directly in the path of onshore marine layer flow, exposing these aging pipes to some of the highest salt-air concentrations in North County. Compounding the issue, many Leucadia homes have limited crawl-space ventilation, which traps moisture beneath the structure and accelerates deterioration of both plumbing and subfloor materials from below.",
       },
       {
         question: 'Does the marine layer in Encinitas make water damage worse?',
-        answer: 'It absolutely does. The marine layer that settles over Encinitas from late spring through early fall keeps relative humidity elevated well above 60 percent for extended periods. When a water leak occurs in this humid environment, building materials absorb moisture more slowly but release it far less readily, extending the drying timeline and widening the window during which mold can colonize wet surfaces. Our Encinitas projects routinely require additional dehumidifier capacity compared to identical damage scenarios in drier inland cities like Vista or San Marcos.',
+        answer:
+          'It absolutely does. The marine layer that settles over Encinitas from late spring through early fall keeps relative humidity elevated well above 60 percent for extended periods. When a water leak occurs in this humid environment, building materials absorb moisture more slowly but release it far less readily, extending the drying timeline and widening the window during which mold can colonize wet surfaces. Our Encinitas projects routinely require additional dehumidifier capacity compared to identical damage scenarios in drier inland cities like Vista or San Marcos.',
       },
       {
         question: 'Can groundwater cause water damage in Cardiff-by-the-Sea homes?',
-        answer: 'Yes, and it catches many Cardiff homeowners off-guard because there is no plumbing failure to identify. During prolonged winter storms, the water table rises beneath Cardiff\'s sandy coastal soils and pushes moisture upward through slab penetrations, expansion joints, and foundation cracks. Properties near San Elijo Lagoon are especially susceptible because the lagoon\'s water level rises simultaneously with storm runoff. We use moisture mapping to distinguish groundwater intrusion from plumbing leaks and tailor our drying approach accordingly.',
+        answer:
+          "Yes, and it catches many Cardiff homeowners off-guard because there is no plumbing failure to identify. During prolonged winter storms, the water table rises beneath Cardiff's sandy coastal soils and pushes moisture upward through slab penetrations, expansion joints, and foundation cracks. Properties near San Elijo Lagoon are especially susceptible because the lagoon's water level rises simultaneously with storm runoff. We use moisture mapping to distinguish groundwater intrusion from plumbing leaks and tailor our drying approach accordingly.",
       },
       {
         question: 'Will my homeowner insurance cover water damage in Encinitas?',
-        answer: 'Most standard policies cover sudden, accidental water damage such as burst pipes, appliance malfunctions, and supply-line failures. Gradual damage from a long-ignored leak or deferred maintenance may be excluded. We work with every major carrier insuring Encinitas properties — including State Farm, Allstate, USAA, and Farmers — and handle the complete documentation and adjuster coordination process so you can focus on your household rather than paperwork.',
+        answer:
+          'Most standard policies cover sudden, accidental water damage such as burst pipes, appliance malfunctions, and supply-line failures. Gradual damage from a long-ignored leak or deferred maintenance may be excluded. We work with every major carrier insuring Encinitas properties — including State Farm, Allstate, USAA, and Farmers — and handle the complete documentation and adjuster coordination process so you can focus on your household rather than paperwork.',
       },
       {
         question: 'How long does water damage restoration take in a typical Encinitas home?',
-        answer: 'A single-room event like a kitchen supply-line break generally requires 3-5 days for complete extraction, drying, and restoration. Multi-room incidents or slab leaks can extend the timeline to 7-12 days for structural drying alone, with additional time for material replacement and finish work. Because Encinitas\'s coastal humidity slows evaporation, we deploy higher-capacity dehumidification equipment than we would use for the same square footage in an inland city, which helps keep our timelines competitive despite the challenging climate.',
+        answer:
+          "A single-room event like a kitchen supply-line break generally requires 3-5 days for complete extraction, drying, and restoration. Multi-room incidents or slab leaks can extend the timeline to 7-12 days for structural drying alone, with additional time for material replacement and finish work. Because Encinitas's coastal humidity slows evaporation, we deploy higher-capacity dehumidification equipment than we would use for the same square footage in an inland city, which helps keep our timelines competitive despite the challenging climate.",
       },
     ],
   },
@@ -1295,41 +2046,74 @@ Olivenhain and New Encinitas face water damage patterns more typical of inland c
 San Elijo Lagoon, the 979-acre ecological reserve bordering Cardiff-by-the-Sea, introduces a secondary humidity source that elevates mold risk in surrounding properties. Homes along Manchester Avenue and San Elijo Avenue sit within the lagoon's microclimate, where evaporation from the wetlands keeps ambient moisture consistently higher than even the rest of coastal Encinitas. We have remediated mold in Cardiff properties where indoor humidity readings exceeded 75 percent even with windows closed and air conditioning running — a clear indication that moisture was entering through the building shell rather than from interior sources.
 
 Olivenhain and New Encinitas are not immune despite their more inland positioning. Olivenhain's large properties often include detached structures — barns, workshops, guest houses — with minimal climate control, making them prime mold environments during the damp winter months. New Encinitas homes built in the 1990s and 2000s feature tight building envelopes that trap interior moisture from showers, cooking, and laundry if exhaust ventilation is undersized or improperly routed. We find bathroom exhaust fans vented into attic spaces rather than to the exterior in a surprising number of New Encinitas homes, creating hidden mold colonies above the ceiling.`,
-    localProof: 'Over 145 mold remediation projects completed across Encinitas, with post-remediation clearance testing passed on the first attempt in 96 percent of cases.',
+    localProof:
+      'Over 145 mold remediation projects completed across Encinitas, with post-remediation clearance testing passed on the first attempt in 96 percent of cases.',
     projectCount: '145+',
     avgResponseTime: '35 minutes',
-    landmarks: ['San Elijo Lagoon', 'Moonlight State Beach', 'Self-Realization Fellowship', 'Swami\'s Beach', 'Encinitas Community Park'],
+    landmarks: [
+      'San Elijo Lagoon',
+      'Moonlight State Beach',
+      'Self-Realization Fellowship',
+      "Swami's Beach",
+      'Encinitas Community Park',
+    ],
     neighborhoodContext: [
-      { name: 'Leucadia', detail: 'Beach cottages built before modern vapor barrier requirements allow ocean moisture to migrate through walls freely. Mold behind original wood paneling and beneath vintage flooring is a routine finding during remediation.' },
-      { name: 'Downtown Encinitas', detail: 'Mixed-use buildings and older residences along Coast Highway 101 lack adequate ventilation, and the constant marine layer pushes indoor humidity into the mold-growth zone throughout summer.' },
-      { name: 'Cardiff-by-the-Sea', detail: 'San Elijo Lagoon creates a localized humidity microclimate that keeps ambient moisture elevated beyond typical coastal levels. Homes on Manchester and San Elijo Avenues are our highest-frequency Cardiff mold calls.' },
-      { name: 'Olivenhain', detail: 'Detached barns, guest houses, and workshops on large lots often lack climate control, becoming mold incubators during damp winter months when temperatures drop and condensation forms on uninsulated surfaces.' },
-      { name: 'New Encinitas', detail: 'Tightly sealed newer homes trap interior moisture when exhaust fans are undersized or vented into attic spaces. We frequently find hidden mold above bathroom ceilings in this neighborhood.' },
+      {
+        name: 'Leucadia',
+        detail:
+          'Beach cottages built before modern vapor barrier requirements allow ocean moisture to migrate through walls freely. Mold behind original wood paneling and beneath vintage flooring is a routine finding during remediation.',
+      },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Mixed-use buildings and older residences along Coast Highway 101 lack adequate ventilation, and the constant marine layer pushes indoor humidity into the mold-growth zone throughout summer.',
+      },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'San Elijo Lagoon creates a localized humidity microclimate that keeps ambient moisture elevated beyond typical coastal levels. Homes on Manchester and San Elijo Avenues are our highest-frequency Cardiff mold calls.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Detached barns, guest houses, and workshops on large lots often lack climate control, becoming mold incubators during damp winter months when temperatures drop and condensation forms on uninsulated surfaces.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Tightly sealed newer homes trap interior moisture when exhaust fans are undersized or vented into attic spaces. We frequently find hidden mold above bathroom ceilings in this neighborhood.',
+      },
     ],
     faqs: [
       {
         question: 'Why is mold such a persistent problem in Encinitas specifically?',
-        answer: 'Encinitas occupies a coastal position where the marine layer lingers longer and more frequently than in cities even a few miles inland. Combined with the humidity contribution from San Elijo Lagoon and the prevalence of older construction that lacks modern moisture barriers, the city creates nearly ideal year-round conditions for mold colonization. We see roughly 40 percent more mold remediation demand in Encinitas than in comparably sized inland communities, and the species we encounter — including Stachybotrys and Chaetomium — reflect the consistently high moisture levels.',
+        answer:
+          'Encinitas occupies a coastal position where the marine layer lingers longer and more frequently than in cities even a few miles inland. Combined with the humidity contribution from San Elijo Lagoon and the prevalence of older construction that lacks modern moisture barriers, the city creates nearly ideal year-round conditions for mold colonization. We see roughly 40 percent more mold remediation demand in Encinitas than in comparably sized inland communities, and the species we encounter — including Stachybotrys and Chaetomium — reflect the consistently high moisture levels.',
       },
       {
         question: 'Can the San Elijo Lagoon actually affect mold growth in nearby Cardiff homes?',
-        answer: 'Absolutely. The lagoon\'s 979 acres of wetland continuously release moisture through evaporation, creating a localized humidity zone that measurably exceeds conditions even a quarter-mile away. Homes along Manchester Avenue, San Elijo Avenue, and the streets bordering the lagoon reserve register indoor humidity readings 8 to 12 percent higher than homes in New Encinitas at the same time of day. That difference is enough to push moisture levels across the threshold where Aspergillus, Cladosporium, and Penicillium species actively colonize building materials.',
+        answer:
+          "Absolutely. The lagoon's 979 acres of wetland continuously release moisture through evaporation, creating a localized humidity zone that measurably exceeds conditions even a quarter-mile away. Homes along Manchester Avenue, San Elijo Avenue, and the streets bordering the lagoon reserve register indoor humidity readings 8 to 12 percent higher than homes in New Encinitas at the same time of day. That difference is enough to push moisture levels across the threshold where Aspergillus, Cladosporium, and Penicillium species actively colonize building materials.",
       },
       {
         question: 'How do you handle mold remediation in older Leucadia beach cottages?',
-        answer: 'Leucadia cottages demand a careful balance between thorough remediation and character preservation. We establish full containment with HEPA-filtered negative air pressure to prevent cross-contamination, then remove mold from original wood siding, lath, and plaster using controlled methods that minimize unnecessary demolition. When materials must be replaced, we match original profiles and finishes to maintain the cottage aesthetic. After remediation, we install concealed vapor barriers and improve ventilation pathways to reduce the chance of recurrence in these moisture-vulnerable structures.',
+        answer:
+          'Leucadia cottages demand a careful balance between thorough remediation and character preservation. We establish full containment with HEPA-filtered negative air pressure to prevent cross-contamination, then remove mold from original wood siding, lath, and plaster using controlled methods that minimize unnecessary demolition. When materials must be replaced, we match original profiles and finishes to maintain the cottage aesthetic. After remediation, we install concealed vapor barriers and improve ventilation pathways to reduce the chance of recurrence in these moisture-vulnerable structures.',
       },
       {
         question: 'What does mold remediation cost for an Encinitas home?',
-        answer: 'Scope drives cost more than any other factor. A contained mold issue in a single Encinitas bathroom or closet typically runs $1,800 to $4,000, including containment, removal, antimicrobial treatment, and clearance testing. Larger projects involving multiple rooms, attic contamination, or crawl spaces range from $5,000 to $14,000 depending on affected area and material types. We provide detailed written estimates after a free on-site assessment, and most Encinitas homeowners whose mold stems from a covered water event can file an insurance claim to offset costs.',
+        answer:
+          'Scope drives cost more than any other factor. A contained mold issue in a single Encinitas bathroom or closet typically runs $1,800 to $4,000, including containment, removal, antimicrobial treatment, and clearance testing. Larger projects involving multiple rooms, attic contamination, or crawl spaces range from $5,000 to $14,000 depending on affected area and material types. We provide detailed written estimates after a free on-site assessment, and most Encinitas homeowners whose mold stems from a covered water event can file an insurance claim to offset costs.',
       },
       {
         question: 'How can I prevent mold from returning after remediation in Encinitas?',
-        answer: 'In Encinitas\'s coastal climate, passive prevention is not sufficient — active humidity management is essential. We recommend maintaining indoor relative humidity below 50 percent using whole-house or portable dehumidifiers, verifying that every bathroom and kitchen exhaust fan vents to the exterior rather than into the attic, and running HVAC fans on a timer cycle to circulate air even when heating or cooling is not needed. For Cardiff homes near the lagoon, we often recommend continuous dehumidification during the warmer months when lagoon evaporation peaks.',
+        answer:
+          "In Encinitas's coastal climate, passive prevention is not sufficient — active humidity management is essential. We recommend maintaining indoor relative humidity below 50 percent using whole-house or portable dehumidifiers, verifying that every bathroom and kitchen exhaust fan vents to the exterior rather than into the attic, and running HVAC fans on a timer cycle to circulate air even when heating or cooling is not needed. For Cardiff homes near the lagoon, we often recommend continuous dehumidification during the warmer months when lagoon evaporation peaks.",
       },
       {
         question: 'Do you perform mold testing before and after remediation in Encinitas?',
-        answer: 'We strongly recommend pre-remediation air sampling and surface testing to identify the mold species present, establish baseline spore counts, and define the contamination boundaries precisely. After remediation is complete, independent post-remediation clearance testing confirms that airborne spore levels have returned to acceptable thresholds. In Encinitas, ambient outdoor spore counts tend to run higher than inland areas due to coastal vegetation and humidity, so our clearance protocols are calibrated to local conditions rather than generic national benchmarks.',
+        answer:
+          'We strongly recommend pre-remediation air sampling and surface testing to identify the mold species present, establish baseline spore counts, and define the contamination boundaries precisely. After remediation is complete, independent post-remediation clearance testing confirms that airborne spore levels have returned to acceptable thresholds. In Encinitas, ambient outdoor spore counts tend to run higher than inland areas due to coastal vegetation and humidity, so our clearance protocols are calibrated to local conditions rather than generic national benchmarks.',
       },
     ],
   },
@@ -1345,41 +2129,75 @@ Olivenhain and New Encinitas are not immune despite their more inland positionin
 Cardiff-by-the-Sea and the blufftop areas near Swami's Beach present unique fire restoration logistics. Many Cardiff homes sit on narrow lots with limited access, and blufftop properties may have constrained staging areas for restoration equipment and debris removal. The upscale finishes common in Cardiff — imported tile, custom hardwood, designer fixtures — require specialized cleaning techniques to salvage. We use dry-chemical sponges, ultrasonic baths, and HEPA vacuuming rather than aggressive wet cleaning to preserve materials that would be destroyed by conventional methods.
 
 Olivenhain's rural character introduces a wildland-urban interface fire risk that no other Encinitas neighborhood shares. Properties surrounded by native chaparral and dry grasslands face brush fire exposure during Santa Ana wind events, and the larger lot sizes mean structures are more isolated from fire department response. Smoke from wildland fires can saturate horse barns, workshops, and guest houses across Olivenhain even when direct flame contact is avoided, and these detached structures often require full smoke remediation alongside the primary residence.`,
-    localProof: 'Over 100 fire and smoke damage restorations completed in Encinitas, from cottage fires in Leucadia to wildland-interface smoke events in Olivenhain.',
+    localProof:
+      'Over 100 fire and smoke damage restorations completed in Encinitas, from cottage fires in Leucadia to wildland-interface smoke events in Olivenhain.',
     projectCount: '100+',
     avgResponseTime: '36 minutes',
-    landmarks: ['Self-Realization Fellowship', 'Moonlight State Beach', 'Swami\'s Beach', 'Encinitas Community Park', 'San Elijo Lagoon'],
+    landmarks: [
+      'Self-Realization Fellowship',
+      'Moonlight State Beach',
+      "Swami's Beach",
+      'Encinitas Community Park',
+      'San Elijo Lagoon',
+    ],
     neighborhoodContext: [
-      { name: 'Downtown Encinitas', detail: 'Older mixed-use buildings along Coast Highway 101 lack fire-rated assemblies, and salt-air deposits on interior surfaces react with soot to cause accelerated permanent staining if not addressed within hours.' },
-      { name: 'Leucadia', detail: 'Wood-frame beach cottages built before modern fire codes allow fire and smoke to spread through wall cavities rapidly. Restoration requires careful structural assessment before any rebuild work begins.' },
-      { name: 'Cardiff-by-the-Sea', detail: 'Narrow lots and blufftop positions create access challenges for restoration equipment. Upscale finishes demand specialized cleaning — dry-chemical sponges and ultrasonic methods preserve materials that wet cleaning would destroy.' },
-      { name: 'Olivenhain', detail: 'Wildland-urban interface fire risk from surrounding chaparral and grasslands. Smoke from brush fires saturates barns, workshops, and guest houses across large properties even without direct flame contact.' },
-      { name: 'New Encinitas', detail: 'Modern open floor plans allow kitchen fire smoke to spread through entire homes within minutes, contaminating every room and the HVAC system even when flame damage is localized.' },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Older mixed-use buildings along Coast Highway 101 lack fire-rated assemblies, and salt-air deposits on interior surfaces react with soot to cause accelerated permanent staining if not addressed within hours.',
+      },
+      {
+        name: 'Leucadia',
+        detail:
+          'Wood-frame beach cottages built before modern fire codes allow fire and smoke to spread through wall cavities rapidly. Restoration requires careful structural assessment before any rebuild work begins.',
+      },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'Narrow lots and blufftop positions create access challenges for restoration equipment. Upscale finishes demand specialized cleaning — dry-chemical sponges and ultrasonic methods preserve materials that wet cleaning would destroy.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Wildland-urban interface fire risk from surrounding chaparral and grasslands. Smoke from brush fires saturates barns, workshops, and guest houses across large properties even without direct flame contact.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Modern open floor plans allow kitchen fire smoke to spread through entire homes within minutes, contaminating every room and the HVAC system even when flame damage is localized.',
+      },
     ],
     faqs: [
       {
         question: 'What should I do immediately after a fire in my Encinitas home?',
-        answer: 'Wait for the Encinitas Fire Department to confirm the structure is safe to approach. Do not touch or attempt to wipe soot from any surface — improper cleaning permanently bonds soot into finishes, especially in Encinitas homes where salt-air residue creates a reactive surface. Call Tamarack at (760) 500-2211 and we will arrive within 36 minutes to board up openings, tarp exposed roof sections, and begin emergency stabilization. Acting within the first 24 hours prevents the worst permanent damage to metals, countertops, and fixtures.',
+        answer:
+          'Wait for the Encinitas Fire Department to confirm the structure is safe to approach. Do not touch or attempt to wipe soot from any surface — improper cleaning permanently bonds soot into finishes, especially in Encinitas homes where salt-air residue creates a reactive surface. Call Tamarack at (760) 500-2211 and we will arrive within 36 minutes to board up openings, tarp exposed roof sections, and begin emergency stabilization. Acting within the first 24 hours prevents the worst permanent damage to metals, countertops, and fixtures.',
       },
       {
         question: 'Why does smoke odor linger longer in coastal Encinitas homes?',
-        answer: 'The elevated humidity in Encinitas keeps smoke particles suspended in air and embedded in porous materials longer than in drier environments. Ocean moisture reactivates smoke residue that has settled into fabrics, carpet fibers, and drywall, releasing odor repeatedly — especially on foggy marine layer mornings. Standard ventilation cannot overcome this cycle. Our odor elimination protocol for Encinitas homes combines thermal fogging, hydroxyl generators, and in severe cases ozone shock treatment, addressing every space the smoke reached at the molecular level.',
+        answer:
+          'The elevated humidity in Encinitas keeps smoke particles suspended in air and embedded in porous materials longer than in drier environments. Ocean moisture reactivates smoke residue that has settled into fabrics, carpet fibers, and drywall, releasing odor repeatedly — especially on foggy marine layer mornings. Standard ventilation cannot overcome this cycle. Our odor elimination protocol for Encinitas homes combines thermal fogging, hydroxyl generators, and in severe cases ozone shock treatment, addressing every space the smoke reached at the molecular level.',
       },
       {
-        question: 'Do you handle fire restoration for historic or character homes in Downtown Encinitas?',
-        answer: 'We do, and we approach these projects with the preservation mindset they deserve. Many Downtown Encinitas homes have original architectural details — exposed beams, craftsman trim, period hardware — that cannot be replicated with modern materials. Our technicians assess what can be cleaned and salvaged before removing anything, using techniques calibrated to the material type. When structural rebuilding is necessary, we work with the homeowner and, where applicable, local design guidelines to maintain the home\'s established character while meeting current building code requirements.',
+        question:
+          'Do you handle fire restoration for historic or character homes in Downtown Encinitas?',
+        answer:
+          "We do, and we approach these projects with the preservation mindset they deserve. Many Downtown Encinitas homes have original architectural details — exposed beams, craftsman trim, period hardware — that cannot be replicated with modern materials. Our technicians assess what can be cleaned and salvaged before removing anything, using techniques calibrated to the material type. When structural rebuilding is necessary, we work with the homeowner and, where applicable, local design guidelines to maintain the home's established character while meeting current building code requirements.",
       },
       {
         question: 'Is Olivenhain at higher fire risk than other Encinitas neighborhoods?',
-        answer: 'Olivenhain\'s rural setting surrounded by native chaparral and grasslands places it firmly in the wildland-urban interface zone, which carries meaningfully higher fire exposure during dry seasons and Santa Ana wind events. The larger lot sizes and longer driveways in Olivenhain also mean longer fire department response times compared to compact urban neighborhoods like Downtown Encinitas. We recommend that Olivenhain property owners maintain defensible space around all structures and have a restoration company contact established before fire season begins each year.',
+        answer:
+          "Olivenhain's rural setting surrounded by native chaparral and grasslands places it firmly in the wildland-urban interface zone, which carries meaningfully higher fire exposure during dry seasons and Santa Ana wind events. The larger lot sizes and longer driveways in Olivenhain also mean longer fire department response times compared to compact urban neighborhoods like Downtown Encinitas. We recommend that Olivenhain property owners maintain defensible space around all structures and have a restoration company contact established before fire season begins each year.",
       },
       {
         question: 'Will my insurance cover fire damage restoration in Encinitas?',
-        answer: 'Fire damage is one of the most comprehensively covered perils in standard homeowner policies. Coverage typically extends to structural repair, smoke and soot remediation, content cleaning and replacement, and additional living expenses while your Encinitas home is being restored. We work directly with all major insurers serving Encinitas — State Farm, Allstate, USAA, Farmers, and Liberty Mutual — managing the extensive documentation, adjuster coordination, and supplemental claims that fire projects require.',
+        answer:
+          'Fire damage is one of the most comprehensively covered perils in standard homeowner policies. Coverage typically extends to structural repair, smoke and soot remediation, content cleaning and replacement, and additional living expenses while your Encinitas home is being restored. We work directly with all major insurers serving Encinitas — State Farm, Allstate, USAA, Farmers, and Liberty Mutual — managing the extensive documentation, adjuster coordination, and supplemental claims that fire projects require.',
       },
       {
         question: 'How long does fire damage restoration typically take in Encinitas?',
-        answer: 'A contained kitchen fire with whole-home smoke spread generally requires 4 to 8 weeks for complete cleaning, odor elimination, and kitchen reconstruction. Fires that cause significant structural damage can extend the timeline to 3 to 6 months depending on the scope of rebuilding and permit review timelines with the City of Encinitas. We establish a detailed project schedule during our initial assessment and assign a dedicated project manager who provides weekly updates throughout the restoration process.',
+        answer:
+          'A contained kitchen fire with whole-home smoke spread generally requires 4 to 8 weeks for complete cleaning, odor elimination, and kitchen reconstruction. Fires that cause significant structural damage can extend the timeline to 3 to 6 months depending on the scope of rebuilding and permit review timelines with the City of Encinitas. We establish a detailed project schedule during our initial assessment and assign a dedicated project manager who provides weekly updates throughout the restoration process.',
       },
     ],
   },
@@ -1395,37 +2213,69 @@ Olivenhain's rural character introduces a wildland-urban interface fire risk tha
 The coastal bluff neighborhoods of Leucadia and Cardiff-by-the-Sea face a different but equally serious flood pattern. Bluff erosion creates unstable drainage channels that shift with each storm season, redirecting runoff toward properties that may not have experienced flooding in prior years. Homes near Beacon's Beach and along Neptune Avenue have dealt with storm runoff cascading across yards and pooling against foundations as established drainage paths collapsed or redirected. These events often combine rainwater with bluff soil and debris, requiring sediment removal alongside water extraction.
 
 New Encinitas and Olivenhain occupy the eastern portion of the city where Escondido Creek and its tributaries wind through residential areas. During intense rain events, these normally dry creek beds can transform into fast-moving channels that exceed their banks and push water across adjacent properties. Olivenhain's large lots with natural landscaping and unpaved areas absorb significant rainfall before saturating, but once the ground reaches capacity, runoff accelerates quickly across the open terrain. Homes at lower elevations along Rancho Santa Fe Road and Lone Jack Road are particularly susceptible to this overflow pattern.`,
-    localProof: 'Over 110 flood cleanup projects across Encinitas, including multi-property response along the San Elijo Lagoon corridor and bluff-drainage emergencies in Leucadia and Cardiff.',
+    localProof:
+      'Over 110 flood cleanup projects across Encinitas, including multi-property response along the San Elijo Lagoon corridor and bluff-drainage emergencies in Leucadia and Cardiff.',
     projectCount: '110+',
     avgResponseTime: '32 minutes',
-    landmarks: ['San Elijo Lagoon', 'Beacon\'s Beach', 'Moonlight State Beach', 'Swami\'s Beach', 'Encinitas Community Park'],
+    landmarks: [
+      'San Elijo Lagoon',
+      "Beacon's Beach",
+      'Moonlight State Beach',
+      "Swami's Beach",
+      'Encinitas Community Park',
+    ],
     neighborhoodContext: [
-      { name: 'Cardiff-by-the-Sea', detail: 'San Elijo Lagoon overflow during sustained storms sends contaminated water toward adjacent properties on Manchester and San Elijo Avenues, requiring Category 2 or 3 cleanup protocols.' },
-      { name: 'Leucadia', detail: 'Coastal bluff erosion shifts drainage channels between storm seasons, redirecting runoff toward homes near Beacon\'s Beach and Neptune Avenue that may not have flooded in previous years.' },
-      { name: 'Downtown Encinitas', detail: 'Storm drain capacity along Coast Highway 101 can be overwhelmed during heavy downpours, sending water into ground-floor commercial spaces and adjacent residences.' },
-      { name: 'Olivenhain', detail: 'Large lots with natural landscaping absorb rainfall until soil saturation, then release runoff rapidly across open terrain toward lower-elevation homes along Rancho Santa Fe Road.' },
-      { name: 'New Encinitas', detail: 'Escondido Creek tributaries transform from dry beds to fast-moving overflow channels during atmospheric river events, threatening properties at lower elevations along the creek corridor.' },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'San Elijo Lagoon overflow during sustained storms sends contaminated water toward adjacent properties on Manchester and San Elijo Avenues, requiring Category 2 or 3 cleanup protocols.',
+      },
+      {
+        name: 'Leucadia',
+        detail:
+          "Coastal bluff erosion shifts drainage channels between storm seasons, redirecting runoff toward homes near Beacon's Beach and Neptune Avenue that may not have flooded in previous years.",
+      },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Storm drain capacity along Coast Highway 101 can be overwhelmed during heavy downpours, sending water into ground-floor commercial spaces and adjacent residences.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Large lots with natural landscaping absorb rainfall until soil saturation, then release runoff rapidly across open terrain toward lower-elevation homes along Rancho Santa Fe Road.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Escondido Creek tributaries transform from dry beds to fast-moving overflow channels during atmospheric river events, threatening properties at lower elevations along the creek corridor.',
+      },
     ],
     faqs: [
       {
         question: 'Which Encinitas neighborhoods are most prone to flooding?',
-        answer: 'Properties bordering San Elijo Lagoon in Cardiff-by-the-Sea carry the highest flood risk during prolonged winter storms. Blufftop homes in Leucadia near Beacon\'s Beach face runoff from eroding drainage channels that shift unpredictably between seasons. Low-elevation properties in Olivenhain along Rancho Santa Fe Road and in New Encinitas near Escondido Creek tributaries are vulnerable during atmospheric river events. If you live in any of these zones, we recommend pre-season sump pump testing, drain clearing, and having our emergency number saved before storm season arrives.',
+        answer:
+          "Properties bordering San Elijo Lagoon in Cardiff-by-the-Sea carry the highest flood risk during prolonged winter storms. Blufftop homes in Leucadia near Beacon's Beach face runoff from eroding drainage channels that shift unpredictably between seasons. Low-elevation properties in Olivenhain along Rancho Santa Fe Road and in New Encinitas near Escondido Creek tributaries are vulnerable during atmospheric river events. If you live in any of these zones, we recommend pre-season sump pump testing, drain clearing, and having our emergency number saved before storm season arrives.",
       },
       {
         question: 'Is flood water from San Elijo Lagoon contaminated?',
-        answer: 'Yes, lagoon overflow water carries elevated bacteria levels, organic sediment, and potentially agricultural runoff from upstream tributaries. We classify all lagoon-origin flood water as Category 2 or Category 3 contamination, which requires our crews to wear full personal protective equipment and treat all contacted surfaces with EPA-registered antimicrobial solutions. Porous materials that absorb lagoon water — carpet, padding, drywall, and insulation — must be removed and replaced rather than simply dried in place.',
+        answer:
+          'Yes, lagoon overflow water carries elevated bacteria levels, organic sediment, and potentially agricultural runoff from upstream tributaries. We classify all lagoon-origin flood water as Category 2 or Category 3 contamination, which requires our crews to wear full personal protective equipment and treat all contacted surfaces with EPA-registered antimicrobial solutions. Porous materials that absorb lagoon water — carpet, padding, drywall, and insulation — must be removed and replaced rather than simply dried in place.',
       },
       {
         question: 'Does standard homeowner insurance cover flooding in Encinitas?',
-        answer: 'Standard homeowner policies do not cover flood damage from external water sources such as lagoon overflow, bluff runoff, or creek flooding. A separate flood insurance policy through the National Flood Insurance Program or a private flood insurer is required. Many Encinitas homeowners outside FEMA-mapped zones are surprised to learn they lack coverage after a flood event. If you do carry flood insurance, we work directly with NFIP adjusters and private flood carriers, meeting their specific documentation and timing requirements.',
+        answer:
+          'Standard homeowner policies do not cover flood damage from external water sources such as lagoon overflow, bluff runoff, or creek flooding. A separate flood insurance policy through the National Flood Insurance Program or a private flood insurer is required. Many Encinitas homeowners outside FEMA-mapped zones are surprised to learn they lack coverage after a flood event. If you do carry flood insurance, we work directly with NFIP adjusters and private flood carriers, meeting their specific documentation and timing requirements.',
       },
       {
         question: 'How quickly can you begin flood extraction at my Encinitas property?',
-        answer: 'Under normal conditions, our crew reaches Encinitas within 32 minutes and begins extraction immediately with truck-mounted pumps capable of removing over 1,500 gallons per hour. During major storm forecasts, we pre-position equipment in the Encinitas area to ensure rapid deployment even when call volume spikes. Every hour that flood water remains in a structure compounds the damage exponentially — so we prioritize getting pumps running first and complete the full damage assessment while extraction is already underway.',
+        answer:
+          'Under normal conditions, our crew reaches Encinitas within 32 minutes and begins extraction immediately with truck-mounted pumps capable of removing over 1,500 gallons per hour. During major storm forecasts, we pre-position equipment in the Encinitas area to ensure rapid deployment even when call volume spikes. Every hour that flood water remains in a structure compounds the damage exponentially — so we prioritize getting pumps running first and complete the full damage assessment while extraction is already underway.',
       },
       {
         question: 'Can bluff erosion in Leucadia and Cardiff cause flooding in my home?',
-        answer: 'Bluff erosion does not cause flooding directly, but it destabilizes the natural drainage channels that direct storm runoff away from residential properties. When these channels shift, collapse, or redirect during a storm, water that previously flowed safely toward the ocean can instead pool against foundations, cascade across yards, and enter homes through garage doors and ground-level openings. Properties near Beacon\'s Beach and along the Leucadia bluffs should monitor for changes in drainage patterns after each storm season and address any new runoff paths before the next winter.',
+        answer:
+          "Bluff erosion does not cause flooding directly, but it destabilizes the natural drainage channels that direct storm runoff away from residential properties. When these channels shift, collapse, or redirect during a storm, water that previously flowed safely toward the ocean can instead pool against foundations, cascade across yards, and enter homes through garage doors and ground-level openings. Properties near Beacon's Beach and along the Leucadia bluffs should monitor for changes in drainage patterns after each storm season and address any new runoff paths before the next winter.",
       },
     ],
   },
@@ -1441,41 +2291,74 @@ New Encinitas and Olivenhain occupy the eastern portion of the city where Escond
 Cardiff-by-the-Sea and the areas adjacent to San Elijo Lagoon face a sewage risk tied to the water table rather than pipe age alone. During heavy winter rainfall, rising groundwater applies hydrostatic pressure to sewer laterals from the outside, and if the pipe has any cracks or joint separations, groundwater infiltrates the sewer system. This infiltration overloads the municipal sewer capacity, and the excess volume can back up through residential connections — particularly in homes at lower elevations where the sewer lateral runs closer to the groundwater level. Properties on the lagoon side of Manchester Avenue are among the most affected.
 
 Olivenhain presents a less frequent but more complex sewage scenario. Some older Olivenhain properties rely on private septic systems rather than connections to the Encinitas municipal sewer. Septic failures on these larger lots can contaminate surrounding soil and groundwater, and the cleanup requires coordination between sewage extraction specialists, septic system contractors, and potentially the San Diego County Department of Environmental Health. The rural character of Olivenhain means that septic failures may go undetected longer than sewer backups in urban neighborhoods, resulting in more extensive contamination by the time professional help is called.`,
-    localProof: 'Over 105 sewage cleanup projects completed across Encinitas, with biohazard-certified crews following strict containment and decontamination protocols for every incident regardless of scale.',
+    localProof:
+      'Over 105 sewage cleanup projects completed across Encinitas, with biohazard-certified crews following strict containment and decontamination protocols for every incident regardless of scale.',
     projectCount: '105+',
     avgResponseTime: '37 minutes',
-    landmarks: ['Moonlight State Beach', 'San Elijo Lagoon', 'Self-Realization Fellowship', 'Swami\'s Beach', 'Encinitas Community Park'],
+    landmarks: [
+      'Moonlight State Beach',
+      'San Elijo Lagoon',
+      'Self-Realization Fellowship',
+      "Swami's Beach",
+      'Encinitas Community Park',
+    ],
     neighborhoodContext: [
-      { name: 'Leucadia', detail: 'Mature eucalyptus and ficus trees aggressively invade aging clay sewer laterals, causing the highest concentration of root-related sewage backups in Encinitas. Fall root-growth season brings a predictable spike in calls.' },
-      { name: 'Downtown Encinitas', detail: 'Older sewer infrastructure along Coast Highway 101 serves both commercial and residential properties, and blockages in shared lateral runs can affect multiple addresses simultaneously.' },
-      { name: 'Cardiff-by-the-Sea', detail: 'Rising groundwater during storms infiltrates cracked sewer laterals and overloads municipal capacity. Lower-elevation homes near San Elijo Lagoon on Manchester Avenue are most frequently affected.' },
-      { name: 'Olivenhain', detail: 'Some older properties operate on private septic systems. Septic failures contaminate surrounding soil and require coordination between restoration, septic, and county environmental health services.' },
-      { name: 'New Encinitas', detail: 'Newer sewer infrastructure reduces backup frequency, but grease accumulation and improper flushing still cause blockages in residential laterals. We recommend kitchen grease management as primary prevention.' },
+      {
+        name: 'Leucadia',
+        detail:
+          'Mature eucalyptus and ficus trees aggressively invade aging clay sewer laterals, causing the highest concentration of root-related sewage backups in Encinitas. Fall root-growth season brings a predictable spike in calls.',
+      },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Older sewer infrastructure along Coast Highway 101 serves both commercial and residential properties, and blockages in shared lateral runs can affect multiple addresses simultaneously.',
+      },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'Rising groundwater during storms infiltrates cracked sewer laterals and overloads municipal capacity. Lower-elevation homes near San Elijo Lagoon on Manchester Avenue are most frequently affected.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Some older properties operate on private septic systems. Septic failures contaminate surrounding soil and require coordination between restoration, septic, and county environmental health services.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Newer sewer infrastructure reduces backup frequency, but grease accumulation and improper flushing still cause blockages in residential laterals. We recommend kitchen grease management as primary prevention.',
+      },
     ],
     faqs: [
       {
         question: 'How dangerous is a sewage backup in my Encinitas home?',
-        answer: 'Raw sewage contains E. coli, Salmonella, hepatitis A, norovirus, and various parasites capable of causing serious illness through direct contact or inhalation of airborne pathogens. Health risks escalate rapidly — within hours, bacterial counts in affected areas can reach levels that pose danger even to healthy adults. Keep all household members and pets completely away from contaminated areas, do not attempt any cleanup without professional PPE and containment, and call Tamarack immediately at (760) 500-2211.',
+        answer:
+          'Raw sewage contains E. coli, Salmonella, hepatitis A, norovirus, and various parasites capable of causing serious illness through direct contact or inhalation of airborne pathogens. Health risks escalate rapidly — within hours, bacterial counts in affected areas can reach levels that pose danger even to healthy adults. Keep all household members and pets completely away from contaminated areas, do not attempt any cleanup without professional PPE and containment, and call Tamarack immediately at (760) 500-2211.',
       },
       {
         question: 'Why are sewage backups so common in Leucadia?',
-        answer: 'Leucadia\'s mature tree canopy is the primary driver. The neighborhood\'s towering eucalyptus, cypress, and ficus trees extend root systems that aggressively seek out the moisture in aging clay sewer laterals. These lateral pipes, many installed in the 1960s and 1970s, have developed cracks and joint separations over decades that provide entry points for roots. Once inside the pipe, roots grow rapidly and create blockages that force sewage back into the home. We see a reliable surge in Leucadia sewage calls each fall when root growth is most vigorous.',
+        answer:
+          "Leucadia's mature tree canopy is the primary driver. The neighborhood's towering eucalyptus, cypress, and ficus trees extend root systems that aggressively seek out the moisture in aging clay sewer laterals. These lateral pipes, many installed in the 1960s and 1970s, have developed cracks and joint separations over decades that provide entry points for roots. Once inside the pipe, roots grow rapidly and create blockages that force sewage back into the home. We see a reliable surge in Leucadia sewage calls each fall when root growth is most vigorous.",
       },
       {
         question: 'Can rising groundwater near San Elijo Lagoon cause sewage problems?',
-        answer: 'Yes, and this mechanism catches many Cardiff homeowners off-guard. When prolonged rain raises the water table around San Elijo Lagoon, groundwater seeps into cracked or separated sewer laterals through the same openings that roots exploit. This infiltration volume overloads the municipal sewer system\'s capacity, and the excess backs up through residential connections at lower elevations. Installing a backwater valve on your main sewer connection is the most effective protection against this type of storm-related sewage intrusion for homes in the lagoon-adjacent zone.',
+        answer:
+          "Yes, and this mechanism catches many Cardiff homeowners off-guard. When prolonged rain raises the water table around San Elijo Lagoon, groundwater seeps into cracked or separated sewer laterals through the same openings that roots exploit. This infiltration volume overloads the municipal sewer system's capacity, and the excess backs up through residential connections at lower elevations. Installing a backwater valve on your main sewer connection is the most effective protection against this type of storm-related sewage intrusion for homes in the lagoon-adjacent zone.",
       },
       {
         question: 'What does sewage cleanup cost for an Encinitas home?',
-        answer: 'A contained backup affecting a single bathroom or laundry room typically ranges from $2,500 to $6,000 for complete extraction, decontamination, material removal, and restoration. Major backups affecting multiple rooms or involving extended saturation of building materials can range from $8,000 to $22,000 depending on scope. Many Encinitas homeowner policies include sewer backup endorsements that cover these costs — we verify your coverage immediately and handle the complete claims coordination process.',
+        answer:
+          'A contained backup affecting a single bathroom or laundry room typically ranges from $2,500 to $6,000 for complete extraction, decontamination, material removal, and restoration. Major backups affecting multiple rooms or involving extended saturation of building materials can range from $8,000 to $22,000 depending on scope. Many Encinitas homeowner policies include sewer backup endorsements that cover these costs — we verify your coverage immediately and handle the complete claims coordination process.',
       },
       {
         question: 'My Olivenhain property has a septic system — do you handle septic failures?',
-        answer: 'We handle the cleanup, decontamination, and interior restoration portion of septic failures, and we coordinate the septic system repair through licensed septic contractors who service the Olivenhain area. For larger contamination events that affect soil and potentially groundwater, we also coordinate with the San Diego County Department of Environmental Health as needed. Our role is to serve as a single point of contact managing the full recovery, so you deal with one company rather than juggling multiple contractors independently.',
+        answer:
+          'We handle the cleanup, decontamination, and interior restoration portion of septic failures, and we coordinate the septic system repair through licensed septic contractors who service the Olivenhain area. For larger contamination events that affect soil and potentially groundwater, we also coordinate with the San Diego County Department of Environmental Health as needed. Our role is to serve as a single point of contact managing the full recovery, so you deal with one company rather than juggling multiple contractors independently.',
       },
       {
         question: 'How can I prevent sewage backups in my Encinitas home?',
-        answer: 'Prevention depends on your neighborhood. For Leucadia and Downtown Encinitas homes with older laterals and mature trees, annual sewer camera inspections identify root intrusion and pipe deterioration before they cause backups, and periodic hydro-jetting clears developing root masses. For all Encinitas homes, installing a backwater valve on the main sewer line prevents municipal system surges from entering during storms. Avoid flushing anything other than waste and toilet paper, and never pour cooking grease down drains — grease solidifies inside laterals and creates the blockages that roots then exploit.',
+        answer:
+          'Prevention depends on your neighborhood. For Leucadia and Downtown Encinitas homes with older laterals and mature trees, annual sewer camera inspections identify root intrusion and pipe deterioration before they cause backups, and periodic hydro-jetting clears developing root masses. For all Encinitas homes, installing a backwater valve on the main sewer line prevents municipal system surges from entering during storms. Avoid flushing anything other than waste and toilet paper, and never pour cooking grease down drains — grease solidifies inside laterals and creates the blockages that roots then exploit.',
       },
     ],
   },
@@ -1491,46 +2374,77 @@ Olivenhain presents a less frequent but more complex sewage scenario. Some older
 Cardiff-by-the-Sea's blufftop properties face a slab-leak risk driven by terrain rather than pipe age alone. The coastal bluffs are geologically active, with subtle soil movement and settling that places mechanical stress on under-slab copper lines at every elbow, tee, and coupling. Properties near Swami's Beach and along the bluffs south of Encinitas Boulevard experience this movement more acutely, and we have detected slab leaks in Cardiff homes less than 20 years old where soil shifting stressed copper connections beyond their tolerance. Warning signs include unexplained warm spots on tile or concrete floors and a water meter that continues spinning when all fixtures are turned off.
 
 Olivenhain's larger properties introduce leak detection challenges related to scale. Extended supply runs from the street main to distant structures — guest houses, barns, pool equipment — create lengthy underground pipe segments that are difficult to monitor and expensive to excavate for repair. Leaks in these buried runs can waste thousands of gallons monthly while saturating soil around foundations. Our acoustic detection equipment is particularly valuable on Olivenhain properties, as it can trace pressurized water sounds through long underground segments and isolate the failure point without excavating the entire length of the run.`,
-    localProof: 'Over 130 hidden leaks detected and repaired across Encinitas, preventing an estimated $2.6 million in structural and mold damage through early identification.',
+    localProof:
+      'Over 130 hidden leaks detected and repaired across Encinitas, preventing an estimated $2.6 million in structural and mold damage through early identification.',
     projectCount: '130+',
     avgResponseTime: '38 minutes',
-    landmarks: ['Swami\'s Beach', 'Self-Realization Fellowship', 'San Elijo Lagoon', 'Moonlight State Beach', 'Encinitas Community Park'],
+    landmarks: [
+      "Swami's Beach",
+      'Self-Realization Fellowship',
+      'San Elijo Lagoon',
+      'Moonlight State Beach',
+      'Encinitas Community Park',
+    ],
     neighborhoodContext: [
-      { name: 'Leucadia', detail: 'Original copper plumbing in beach cottages endures the highest salt-air exposure in Encinitas. Chloride-induced pitting on horizontal pipe runs inside walls is the most common leak pattern we detect here.' },
-      { name: 'Downtown Encinitas', detail: 'Mixed-age plumbing in residences and commercial buildings along Coast Highway 101 creates varied leak risks, from corroded copper in older structures to failed compression fittings in renovated properties.' },
-      { name: 'Cardiff-by-the-Sea', detail: 'Geologically active coastal bluffs cause soil movement that stresses under-slab copper at elbows and connections. We have detected slab leaks in Cardiff homes less than 20 years old due to terrain shifting.' },
-      { name: 'Olivenhain', detail: 'Extended underground supply runs to guest houses, barns, and outbuildings create lengthy buried pipe segments where leaks waste thousands of gallons monthly before detection. Acoustic tracing is essential here.' },
-      { name: 'New Encinitas', detail: 'PEX and CPVC plumbing in newer homes resists corrosion but fails at connection fittings and material transitions. HVAC condensation drain leaks into wall cavities are an emerging detection call in this area.' },
+      {
+        name: 'Leucadia',
+        detail:
+          'Original copper plumbing in beach cottages endures the highest salt-air exposure in Encinitas. Chloride-induced pitting on horizontal pipe runs inside walls is the most common leak pattern we detect here.',
+      },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Mixed-age plumbing in residences and commercial buildings along Coast Highway 101 creates varied leak risks, from corroded copper in older structures to failed compression fittings in renovated properties.',
+      },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'Geologically active coastal bluffs cause soil movement that stresses under-slab copper at elbows and connections. We have detected slab leaks in Cardiff homes less than 20 years old due to terrain shifting.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Extended underground supply runs to guest houses, barns, and outbuildings create lengthy buried pipe segments where leaks waste thousands of gallons monthly before detection. Acoustic tracing is essential here.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'PEX and CPVC plumbing in newer homes resists corrosion but fails at connection fittings and material transitions. HVAC condensation drain leaks into wall cavities are an emerging detection call in this area.',
+      },
     ],
     faqs: [
       {
         question: 'How do you detect hidden leaks in Encinitas homes without opening walls?',
-        answer: 'We employ three complementary detection technologies. Thermal imaging cameras reveal temperature anomalies caused by water evaporating behind walls or beneath floors — even a slow drip creates a measurable cool spot against the surrounding material. Acoustic listening devices amplify the ultrasonic frequency of pressurized water escaping through pipe defects, allowing us to hear leaks through concrete, stucco, and drywall. Moisture meters and mapping instruments measure water content in building materials to confirm the leak path and determine how far moisture has migrated. Used together, these tools locate leaks within inches without exploratory demolition.',
+        answer:
+          'We employ three complementary detection technologies. Thermal imaging cameras reveal temperature anomalies caused by water evaporating behind walls or beneath floors — even a slow drip creates a measurable cool spot against the surrounding material. Acoustic listening devices amplify the ultrasonic frequency of pressurized water escaping through pipe defects, allowing us to hear leaks through concrete, stucco, and drywall. Moisture meters and mapping instruments measure water content in building materials to confirm the leak path and determine how far moisture has migrated. Used together, these tools locate leaks within inches without exploratory demolition.',
       },
       {
         question: 'Why are pinhole leaks so common in coastal Encinitas homes?',
-        answer: 'Encinitas sits in a high-chloride environment where salt-laden ocean air continuously deposits on building surfaces and migrates into wall cavities. These chloride particles settle on copper pipe surfaces and initiate pitting corrosion — a localized attack that eventually penetrates the pipe wall from the outside in. The marine layer compounds the problem by keeping pipe surfaces damp, which accelerates the electrochemical corrosion process. Homes west of Interstate 5, particularly in Leucadia and Downtown Encinitas, experience pinhole leak rates roughly double those of comparable plumbing in inland communities.',
+        answer:
+          'Encinitas sits in a high-chloride environment where salt-laden ocean air continuously deposits on building surfaces and migrates into wall cavities. These chloride particles settle on copper pipe surfaces and initiate pitting corrosion — a localized attack that eventually penetrates the pipe wall from the outside in. The marine layer compounds the problem by keeping pipe surfaces damp, which accelerates the electrochemical corrosion process. Homes west of Interstate 5, particularly in Leucadia and Downtown Encinitas, experience pinhole leak rates roughly double those of comparable plumbing in inland communities.',
       },
       {
         question: 'What are the signs of a slab leak in an Encinitas home?',
-        answer: 'The earliest indicator is often a warm or hot spot on a tile or concrete floor, since most slab leaks involve hot water lines. Other warning signs include a water meter that continues to register flow when every fixture in the home is turned off, a gradual unexplained increase in monthly water bills, the faint sound of running water when nothing is in use, and hairline cracks appearing in the foundation or floor surface. In Cardiff-by-the-Sea and blufftop properties where soil movement is a factor, we recommend investigating any of these symptoms promptly to catch slab leaks before they escalate.',
+        answer:
+          'The earliest indicator is often a warm or hot spot on a tile or concrete floor, since most slab leaks involve hot water lines. Other warning signs include a water meter that continues to register flow when every fixture in the home is turned off, a gradual unexplained increase in monthly water bills, the faint sound of running water when nothing is in use, and hairline cracks appearing in the foundation or floor surface. In Cardiff-by-the-Sea and blufftop properties where soil movement is a factor, we recommend investigating any of these symptoms promptly to catch slab leaks before they escalate.',
       },
       {
         question: 'Should I repipe my older Encinitas home to prevent future leaks?',
-        answer: 'If your Leucadia or Downtown Encinitas home has original copper plumbing from the 1960s or 1970s and you have experienced two or more pinhole leaks, a full repipe to PEX is generally the most cost-effective long-term decision. The corrosion affecting one section of pipe is systemic — the entire system has endured the same decades of salt-air exposure, so additional failures are statistically inevitable. For homes with a single isolated leak in an otherwise sound system, targeted repair is more appropriate. We evaluate your complete plumbing system during every detection visit and provide an honest assessment.',
+        answer:
+          'If your Leucadia or Downtown Encinitas home has original copper plumbing from the 1960s or 1970s and you have experienced two or more pinhole leaks, a full repipe to PEX is generally the most cost-effective long-term decision. The corrosion affecting one section of pipe is systemic — the entire system has endured the same decades of salt-air exposure, so additional failures are statistically inevitable. For homes with a single isolated leak in an otherwise sound system, targeted repair is more appropriate. We evaluate your complete plumbing system during every detection visit and provide an honest assessment.',
       },
       {
         question: 'How much does leak detection cost in Encinitas?',
-        answer: 'Our comprehensive leak detection service — including thermal imaging, acoustic analysis, and moisture mapping — runs between $250 and $450 depending on the size and complexity of the property. For Olivenhain estates with extensive underground supply runs, detection may run slightly higher due to the additional time required for acoustic tracing across long distances. When we perform the subsequent repair, the detection fee is typically credited toward the total project cost. Considering that an undetected leak can cause $15,000 to $35,000 in concealed damage over several months, the detection investment pays for itself many times over.',
+        answer:
+          'Our comprehensive leak detection service — including thermal imaging, acoustic analysis, and moisture mapping — runs between $250 and $450 depending on the size and complexity of the property. For Olivenhain estates with extensive underground supply runs, detection may run slightly higher due to the additional time required for acoustic tracing across long distances. When we perform the subsequent repair, the detection fee is typically credited toward the total project cost. Considering that an undetected leak can cause $15,000 to $35,000 in concealed damage over several months, the detection investment pays for itself many times over.',
       },
       {
         question: 'Can a small leak in my Encinitas home really lead to serious mold problems?',
-        answer: 'In Encinitas\'s coastal humidity, a small leak becomes a mold problem faster than in any inland city. A pinhole leak dripping just one drop per second saturates the surrounding wall cavity continuously, and Encinitas\'s ambient humidity above 60 percent means that moisture never dries naturally — it simply accumulates and spreads. Mold species like Aspergillus and Cladosporium can establish visible colonies within 48 to 72 hours on wet drywall in these conditions. We have responded to Encinitas homes where a pinhole leak undetected for two to three months created mold contamination requiring $20,000 or more in remediation and reconstruction.',
+        answer:
+          "In Encinitas's coastal humidity, a small leak becomes a mold problem faster than in any inland city. A pinhole leak dripping just one drop per second saturates the surrounding wall cavity continuously, and Encinitas's ambient humidity above 60 percent means that moisture never dries naturally — it simply accumulates and spreads. Mold species like Aspergillus and Cladosporium can establish visible colonies within 48 to 72 hours on wet drywall in these conditions. We have responded to Encinitas homes where a pinhole leak undetected for two to three months created mold contamination requiring $20,000 or more in remediation and reconstruction.",
       },
     ],
   },
-
-
 
   // ============================================================
   // RANCHO SANTA FE — WATER DAMAGE RESTORATION
@@ -1571,12 +2485,30 @@ Rancho Del Lago's lakefront properties and Morgan Run's golf-course homes face w
       },
     ],
     neighborhoodContext: [
-      { name: 'The Covenant', detail: `Historic gated estates of 8,000-15,000+ square feet with hand-troweled plaster, imported stone, and custom millwork that require meticulous moisture control during extraction to prevent irreversible material damage.` },
-      { name: 'Fairbanks Ranch', detail: `Multi-structure compounds with guest houses, pool pavilions, and equestrian buildings create multiple exposure points. Private wells and absent-owner scenarios make rapid authorized response essential.` },
-      { name: 'Rancho Del Lago', detail: `Lakefront properties with below-grade living spaces and wine cellars face groundwater seepage risk during wet seasons, requiring foundation-level moisture barriers alongside interior restoration.` },
-      { name: 'Morgan Run', detail: `Golf-course estates along Morgan Run feature elaborate irrigation systems whose subsurface leaks can saturate foundations and push moisture into lower-level rooms over extended periods.` },
+      {
+        name: 'The Covenant',
+        detail: `Historic gated estates of 8,000-15,000+ square feet with hand-troweled plaster, imported stone, and custom millwork that require meticulous moisture control during extraction to prevent irreversible material damage.`,
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail: `Multi-structure compounds with guest houses, pool pavilions, and equestrian buildings create multiple exposure points. Private wells and absent-owner scenarios make rapid authorized response essential.`,
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail: `Lakefront properties with below-grade living spaces and wine cellars face groundwater seepage risk during wet seasons, requiring foundation-level moisture barriers alongside interior restoration.`,
+      },
+      {
+        name: 'Morgan Run',
+        detail: `Golf-course estates along Morgan Run feature elaborate irrigation systems whose subsurface leaks can saturate foundations and push moisture into lower-level rooms over extended periods.`,
+      },
     ],
-    landmarks: ['Rancho Santa Fe Golf Club', 'The Inn at Rancho Santa Fe', 'Fairbanks Ranch Country Club', 'Del Dios Highway', 'Lake Hodges'],
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'The Inn at Rancho Santa Fe',
+      'Fairbanks Ranch Country Club',
+      'Del Dios Highway',
+      'Lake Hodges',
+    ],
     projectCount: '55+',
     avgResponseTime: '48 minutes',
   },
@@ -1620,12 +2552,30 @@ Horse properties throughout Rancho Santa Fe add another dimension to mold risk. 
       },
     ],
     neighborhoodContext: [
-      { name: 'The Covenant', detail: `Heritage-style construction with specific architectural mandates can trap moisture in wall assemblies more readily than modern rainscreen systems, and expansive attic spaces over multi-wing homes harbor condensation-fed mold colonies.` },
-      { name: 'Fairbanks Ranch', detail: `Wine cellars, art vaults, and below-grade media rooms operating at controlled humidity create ideal mold environments when vapor barriers fail or condensate drains clog behind racking and wall panels.` },
-      { name: 'Rancho Del Lago', detail: `Lakefront proximity elevates ambient humidity near foundations and lower-level rooms, increasing mold risk in below-grade spaces where dehumidification systems may be undersized for the moisture load.` },
-      { name: 'Morgan Run', detail: `Golf-course irrigation keeps surrounding soil saturated, and moisture migrating through slab edges into ground-level rooms of Morgan Run estates feeds hidden mold growth beneath hardwood flooring and behind baseboards.` },
+      {
+        name: 'The Covenant',
+        detail: `Heritage-style construction with specific architectural mandates can trap moisture in wall assemblies more readily than modern rainscreen systems, and expansive attic spaces over multi-wing homes harbor condensation-fed mold colonies.`,
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail: `Wine cellars, art vaults, and below-grade media rooms operating at controlled humidity create ideal mold environments when vapor barriers fail or condensate drains clog behind racking and wall panels.`,
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail: `Lakefront proximity elevates ambient humidity near foundations and lower-level rooms, increasing mold risk in below-grade spaces where dehumidification systems may be undersized for the moisture load.`,
+      },
+      {
+        name: 'Morgan Run',
+        detail: `Golf-course irrigation keeps surrounding soil saturated, and moisture migrating through slab edges into ground-level rooms of Morgan Run estates feeds hidden mold growth beneath hardwood flooring and behind baseboards.`,
+      },
     ],
-    landmarks: ['Rancho Santa Fe Golf Club', 'The Inn at Rancho Santa Fe', 'Fairbanks Ranch Country Club', 'Del Dios Highway', 'Lake Hodges'],
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'The Inn at Rancho Santa Fe',
+      'Fairbanks Ranch Country Club',
+      'Del Dios Highway',
+      'Lake Hodges',
+    ],
     projectCount: '45+',
     avgResponseTime: '50 minutes',
   },
@@ -1669,12 +2619,30 @@ Detached structures common throughout Rancho Santa Fe — guest casitas, pool ho
       },
     ],
     neighborhoodContext: [
-      { name: 'The Covenant', detail: `The historic eucalyptus canopy that defines The Covenant also creates extreme fire exposure — bark and leaf litter accumulate on roofs, and embers travel freely through the tree canopy during Santa Ana events. Post-fire restoration here must comply with strict architectural review.` },
-      { name: 'Fairbanks Ranch', detail: `Multi-structure estates with guest casitas, pool houses, and equestrian barns mean a fire in any detached building can send smoke into the main residence through HVAC intakes, requiring whole-estate remediation.` },
-      { name: 'Rancho Del Lago', detail: `Properties bordering open-space canyons south of the community face direct wildfire exposure. Below-grade rooms and wine cellars can trap smoke that migrates downward during fire events, requiring specialized extraction.` },
-      { name: 'Morgan Run', detail: `Golf-course-adjacent estates have less wildfire brush exposure than canyon properties but remain in the Very High Fire Hazard zone. Interior fire events in Morgan Run's large homes generate smoke volumes that require multi-day remediation.` },
+      {
+        name: 'The Covenant',
+        detail: `The historic eucalyptus canopy that defines The Covenant also creates extreme fire exposure — bark and leaf litter accumulate on roofs, and embers travel freely through the tree canopy during Santa Ana events. Post-fire restoration here must comply with strict architectural review.`,
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail: `Multi-structure estates with guest casitas, pool houses, and equestrian barns mean a fire in any detached building can send smoke into the main residence through HVAC intakes, requiring whole-estate remediation.`,
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail: `Properties bordering open-space canyons south of the community face direct wildfire exposure. Below-grade rooms and wine cellars can trap smoke that migrates downward during fire events, requiring specialized extraction.`,
+      },
+      {
+        name: 'Morgan Run',
+        detail: `Golf-course-adjacent estates have less wildfire brush exposure than canyon properties but remain in the Very High Fire Hazard zone. Interior fire events in Morgan Run's large homes generate smoke volumes that require multi-day remediation.`,
+      },
     ],
-    landmarks: ['Rancho Santa Fe Golf Club', 'The Inn at Rancho Santa Fe', 'Del Dios Highway', 'Elfin Forest Reserve', 'Lake Hodges'],
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'The Inn at Rancho Santa Fe',
+      'Del Dios Highway',
+      'Elfin Forest Reserve',
+      'Lake Hodges',
+    ],
     projectCount: '40+',
     avgResponseTime: '47 minutes',
   },
@@ -1718,12 +2686,30 @@ The private water infrastructure common in Rancho Santa Fe — wells, storage ta
       },
     ],
     neighborhoodContext: [
-      { name: 'The Covenant', detail: `Below-grade wine cellars, media rooms, and fitness spaces in Covenant estates become collection basins during intense storms when private drainage capacity is exceeded, requiring rapid extraction to protect subterranean finishes and collections.` },
-      { name: 'Fairbanks Ranch', detail: `Expansive properties with multiple structures spread flood risk across a larger area. Detached guest houses and equestrian buildings at lower elevations on the parcel often flood before the main residence, providing early warning for alert caretakers.` },
-      { name: 'Rancho Del Lago', detail: `Lakefront positioning and proximity to natural drainage courses make Rancho Del Lago properties among the most flood-exposed in RSF during prolonged winter storm events, with water approaching from both uphill runoff and rising lake levels.` },
-      { name: 'Morgan Run', detail: `Golf-course drainage infrastructure provides some runoff buffering, but Morgan Run properties with below-grade rooms still face flood risk when saturated turf can no longer absorb rainfall and surface water migrates toward foundations.` },
+      {
+        name: 'The Covenant',
+        detail: `Below-grade wine cellars, media rooms, and fitness spaces in Covenant estates become collection basins during intense storms when private drainage capacity is exceeded, requiring rapid extraction to protect subterranean finishes and collections.`,
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail: `Expansive properties with multiple structures spread flood risk across a larger area. Detached guest houses and equestrian buildings at lower elevations on the parcel often flood before the main residence, providing early warning for alert caretakers.`,
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail: `Lakefront positioning and proximity to natural drainage courses make Rancho Del Lago properties among the most flood-exposed in RSF during prolonged winter storm events, with water approaching from both uphill runoff and rising lake levels.`,
+      },
+      {
+        name: 'Morgan Run',
+        detail: `Golf-course drainage infrastructure provides some runoff buffering, but Morgan Run properties with below-grade rooms still face flood risk when saturated turf can no longer absorb rainfall and surface water migrates toward foundations.`,
+      },
     ],
-    landmarks: ['Del Dios Highway', 'Lake Hodges', 'Rancho Santa Fe Golf Club', 'The Inn at Rancho Santa Fe', 'Fairbanks Ranch Country Club'],
+    landmarks: [
+      'Del Dios Highway',
+      'Lake Hodges',
+      'Rancho Santa Fe Golf Club',
+      'The Inn at Rancho Santa Fe',
+      'Fairbanks Ranch Country Club',
+    ],
     projectCount: '40+',
     avgResponseTime: '50 minutes',
   },
@@ -1767,12 +2753,30 @@ Sewage cleanup in Rancho Santa Fe estates requires material expertise that goes 
       },
     ],
     neighborhoodContext: [
-      { name: 'The Covenant', detail: `Mature eucalyptus and oak root systems aggressively infiltrate aging septic lines and tank seams throughout The Covenant, creating blockages that culminate in interior sewage backups through ground-floor fixtures.` },
-      { name: 'Fairbanks Ranch', detail: `Multi-structure estates with guest houses, pool baths, and equestrian facilities overload septic systems during heavy use periods. Drain-field saturation sends effluent back through the lowest plumbing fixtures in the main residence.` },
-      { name: 'Rancho Del Lago', detail: `High water tables near the lake stress septic drain fields by reducing the soil's absorption capacity, leading to surfacing effluent and potential backup into below-grade living spaces during wet seasons.` },
-      { name: 'Morgan Run', detail: `Golf-course irrigation saturates soil near Morgan Run properties, diminishing septic drain-field performance and increasing backup risk during periods when both irrigation and rainfall contribute to soil moisture.` },
+      {
+        name: 'The Covenant',
+        detail: `Mature eucalyptus and oak root systems aggressively infiltrate aging septic lines and tank seams throughout The Covenant, creating blockages that culminate in interior sewage backups through ground-floor fixtures.`,
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail: `Multi-structure estates with guest houses, pool baths, and equestrian facilities overload septic systems during heavy use periods. Drain-field saturation sends effluent back through the lowest plumbing fixtures in the main residence.`,
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail: `High water tables near the lake stress septic drain fields by reducing the soil's absorption capacity, leading to surfacing effluent and potential backup into below-grade living spaces during wet seasons.`,
+      },
+      {
+        name: 'Morgan Run',
+        detail: `Golf-course irrigation saturates soil near Morgan Run properties, diminishing septic drain-field performance and increasing backup risk during periods when both irrigation and rainfall contribute to soil moisture.`,
+      },
     ],
-    landmarks: ['Rancho Santa Fe Golf Club', 'Fairbanks Ranch Country Club', 'The Inn at Rancho Santa Fe', 'Del Dios Highway', 'Lake Hodges'],
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'Fairbanks Ranch Country Club',
+      'The Inn at Rancho Santa Fe',
+      'Del Dios Highway',
+      'Lake Hodges',
+    ],
     projectCount: '45+',
     avgResponseTime: '49 minutes',
   },
@@ -1816,17 +2820,33 @@ Below-grade construction in RSF estates presents particular detection challenges
       },
     ],
     neighborhoodContext: [
-      { name: 'The Covenant', detail: `Estates with eight or more bathrooms, multiple wet bars, and extensive plumbing runs through thick plaster walls present detection challenges that require extended thermal imaging surveys to cover every potential leak path.` },
-      { name: 'Fairbanks Ranch', detail: `Private well systems with pressure cycling create water-hammer stress on pipe joints and fittings throughout multi-structure compounds. We detect these stress-induced leaks as localized moisture plumes around affected connections.` },
-      { name: 'Rancho Del Lago', detail: `Below-grade construction built into lakeside hillsides conceals plumbing behind concrete walls where leaks wick moisture for months before producing visible symptoms in the living space above.` },
-      { name: 'Morgan Run', detail: `Elaborate landscape irrigation systems with dozens of zones and hundreds of feet of buried pipe can develop subsurface leaks that saturate soil around foundations, mimicking slab-leak symptoms and requiring irrigation-specific detection methods.` },
+      {
+        name: 'The Covenant',
+        detail: `Estates with eight or more bathrooms, multiple wet bars, and extensive plumbing runs through thick plaster walls present detection challenges that require extended thermal imaging surveys to cover every potential leak path.`,
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail: `Private well systems with pressure cycling create water-hammer stress on pipe joints and fittings throughout multi-structure compounds. We detect these stress-induced leaks as localized moisture plumes around affected connections.`,
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail: `Below-grade construction built into lakeside hillsides conceals plumbing behind concrete walls where leaks wick moisture for months before producing visible symptoms in the living space above.`,
+      },
+      {
+        name: 'Morgan Run',
+        detail: `Elaborate landscape irrigation systems with dozens of zones and hundreds of feet of buried pipe can develop subsurface leaks that saturate soil around foundations, mimicking slab-leak symptoms and requiring irrigation-specific detection methods.`,
+      },
     ],
-    landmarks: ['Rancho Santa Fe Golf Club', 'The Inn at Rancho Santa Fe', 'Fairbanks Ranch Country Club', 'Del Dios Highway', 'Lake Hodges'],
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'The Inn at Rancho Santa Fe',
+      'Fairbanks Ranch Country Club',
+      'Del Dios Highway',
+      'Lake Hodges',
+    ],
     projectCount: '65+',
     avgResponseTime: '52 minutes',
   },
-
-
 
   // ============================================================
   // SOLANA BEACH — WATER DAMAGE RESTORATION
@@ -2202,7 +3222,6 @@ Lomas Santa Fe homes introduce leak detection complications tied to their multi-
     avgResponseTime: `35 minutes`,
   },
 
-
   // ============================================================
   // BRESSI RANCH — WATER DAMAGE RESTORATION
   // ============================================================
@@ -2217,12 +3236,34 @@ Construction-era defects also contribute to water damage in this community, part
     localProof: `Over 50 water damage restoration projects completed within Bressi Ranch, including numerous water heater failures, HVAC condensation leaks, and construction-defect moisture intrusion repairs.`,
     projectCount: '50+',
     avgResponseTime: '22 minutes',
-    landmarks: ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Palomar Airport', 'El Camino Real Corridor', 'Bressi Ranch Community Pool'],
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport',
+      'El Camino Real Corridor',
+      'Bressi Ranch Community Pool',
+    ],
     neighborhoodContext: [
-      { name: 'Single-Family Homes on Avenida Soledad', detail: 'Larger floor plans with multiple bathrooms and two-story layouts increase the risk of second-floor leaks cascading into lower living areas. Water heater failures in garage utility closets are the most frequent emergency call from this section.' },
-      { name: 'Townhomes Along Palomar Airport Road', detail: 'Shared walls in attached townhome units mean a water event in one home can migrate into the adjacent property through common framing. We coordinate multi-unit responses when moisture readings indicate cross-wall migration.' },
-      { name: 'Homes Backing to Open Space and Trails', detail: 'Properties along the community trail system face elevated soil moisture from irrigated landscaping on HOA-maintained open space, which can drive moisture against foundations and into ground-level rooms during wet seasons.' },
-      { name: 'Interior Courtyard Homes Near Bressi Ranch Park', detail: 'Compact courtyard-style floor plans concentrate plumbing runs into tight interior walls, making leak detection more challenging. Our acoustic and thermal equipment is essential for locating leaks in these configurations without unnecessary demolition.' },
+      {
+        name: 'Single-Family Homes on Avenida Soledad',
+        detail:
+          'Larger floor plans with multiple bathrooms and two-story layouts increase the risk of second-floor leaks cascading into lower living areas. Water heater failures in garage utility closets are the most frequent emergency call from this section.',
+      },
+      {
+        name: 'Townhomes Along Palomar Airport Road',
+        detail:
+          'Shared walls in attached townhome units mean a water event in one home can migrate into the adjacent property through common framing. We coordinate multi-unit responses when moisture readings indicate cross-wall migration.',
+      },
+      {
+        name: 'Homes Backing to Open Space and Trails',
+        detail:
+          'Properties along the community trail system face elevated soil moisture from irrigated landscaping on HOA-maintained open space, which can drive moisture against foundations and into ground-level rooms during wet seasons.',
+      },
+      {
+        name: 'Interior Courtyard Homes Near Bressi Ranch Park',
+        detail:
+          'Compact courtyard-style floor plans concentrate plumbing runs into tight interior walls, making leak detection more challenging. Our acoustic and thermal equipment is essential for locating leaks in these configurations without unnecessary demolition.',
+      },
     ],
     faqs: [
       {
@@ -2234,7 +3275,8 @@ Construction-era defects also contribute to water damage in this community, part
         answer: `The Bressi Ranch HOA enforces architectural standards that affect exterior repairs, roofing materials, paint colors, and structural modifications. If your water damage restoration requires replacing stucco, modifying exterior drainage, or repairing shared structural elements in attached townhome units, the HOA will need to approve the scope and materials. Tamarack Restoration is familiar with the Bressi Ranch community guidelines and will prepare documentation that satisfies HOA review requirements. For interior-only restoration, HOA involvement is typically not required, but we recommend notifying them as a courtesy.`,
       },
       {
-        question: 'My Bressi Ranch home is newer construction — why would it have water damage issues?',
+        question:
+          'My Bressi Ranch home is newer construction — why would it have water damage issues?',
         answer: `Newer construction eliminates some risks associated with aging plumbing, but it introduces others. The tight building envelopes mandated by modern energy codes trap indoor moisture more effectively, which means HVAC condensation leaks and bathroom humidity can cause problems that older, draftier homes would naturally ventilate away. Additionally, homes built during the mid-2000s construction boom were sometimes completed under compressed timelines, resulting in occasional defects in window flashing, shower pan installation, and stucco-to-framing transitions that allow slow moisture intrusion over the years.`,
       },
       {
@@ -2242,11 +3284,13 @@ Construction-era defects also contribute to water damage in this community, part
         answer: `Bressi Ranch is one of the closest communities to our Carlsbad headquarters, located just minutes away along El Camino Real and Palomar Airport Road. Our average response time to Bressi Ranch addresses is approximately 22 minutes, and we have reached properties in this community in as few as 15 minutes during off-peak hours. We dispatch fully equipped extraction trucks around the clock, including weekends and holidays, so emergency response is always available at (760) 500-2211.`,
       },
       {
-        question: 'Will water damage restoration in my Bressi Ranch home match the original finishes?',
+        question:
+          'Will water damage restoration in my Bressi Ranch home match the original finishes?',
         answer: `We make finish-matching a priority on every Bressi Ranch project. Because this community was built within a defined timeframe, many homes share similar flooring, cabinetry, and trim profiles, which actually makes sourcing matching materials easier than in neighborhoods with mixed-era construction. Our project managers document existing finishes with detailed photographs before any demolition begins, and we work with suppliers who stock or can source the product lines commonly used by Bressi Ranch's original builders. The goal is always a restoration that is indistinguishable from the original condition.`,
       },
       {
-        question: 'What should I do if I notice a warm spot on my floor or an unexplained spike in my water bill?',
+        question:
+          'What should I do if I notice a warm spot on my floor or an unexplained spike in my water bill?',
         answer: `Both of these symptoms can indicate a hidden slab leak or supply-line failure behind walls. In Bressi Ranch homes, the most likely culprit is a failing water heater connection or a compromised fitting on a PEX-to-copper transition point. Do not ignore these signs — even a slow leak compounds damage daily, saturating insulation, warping subfloor materials, and creating conditions for mold growth. Call us for a non-invasive leak detection assessment using thermal imaging and acoustic equipment, which can pinpoint the source without opening walls.`,
       },
     ],
@@ -2266,12 +3310,34 @@ Construction-defect moisture intrusion also drives mold growth in certain sectio
     localProof: `More than 45 mold remediation projects completed in Bressi Ranch, with 98% of post-remediation clearance tests passed on the first attempt.`,
     projectCount: '45+',
     avgResponseTime: '25 minutes',
-    landmarks: ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Palomar Airport', 'El Camino Real Corridor', 'Bressi Ranch Community Pool'],
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport',
+      'El Camino Real Corridor',
+      'Bressi Ranch Community Pool',
+    ],
     neighborhoodContext: [
-      { name: 'Two-Story Homes Along Community Trails', detail: 'Upper-floor bathrooms generate significant humidity that migrates into attic spaces through poorly sealed penetrations. Mold on roof sheathing directly above master bath exhaust fan locations is a recurring finding in these properties.' },
-      { name: 'Attached Townhome Units', detail: 'Shared wall assemblies in townhomes can harbor mold growth that originates from either side of the demising wall. Remediation sometimes requires coordination between adjacent homeowners when moisture has migrated through common framing.' },
-      { name: 'Ground-Floor Units and Homes on Lower Grades', detail: 'Properties situated at lower elevations within the community experience higher soil moisture contact along foundations, particularly during winter months when irrigation and rainfall saturate surrounding landscaping.' },
-      { name: 'Homes with Interior HVAC Closets', detail: 'Air handler units installed in interior closets concentrate condensation in enclosed spaces with minimal ventilation. Clogged condensation drain lines in these configurations are the leading cause of concealed mold growth we encounter in Bressi Ranch.' },
+      {
+        name: 'Two-Story Homes Along Community Trails',
+        detail:
+          'Upper-floor bathrooms generate significant humidity that migrates into attic spaces through poorly sealed penetrations. Mold on roof sheathing directly above master bath exhaust fan locations is a recurring finding in these properties.',
+      },
+      {
+        name: 'Attached Townhome Units',
+        detail:
+          'Shared wall assemblies in townhomes can harbor mold growth that originates from either side of the demising wall. Remediation sometimes requires coordination between adjacent homeowners when moisture has migrated through common framing.',
+      },
+      {
+        name: 'Ground-Floor Units and Homes on Lower Grades',
+        detail:
+          'Properties situated at lower elevations within the community experience higher soil moisture contact along foundations, particularly during winter months when irrigation and rainfall saturate surrounding landscaping.',
+      },
+      {
+        name: 'Homes with Interior HVAC Closets',
+        detail:
+          'Air handler units installed in interior closets concentrate condensation in enclosed spaces with minimal ventilation. Clogged condensation drain lines in these configurations are the leading cause of concealed mold growth we encounter in Bressi Ranch.',
+      },
     ],
     faqs: [
       {
@@ -2287,11 +3353,13 @@ Construction-defect moisture intrusion also drives mold growth in certain sectio
         answer: `Responsibility depends on the specific Bressi Ranch CC&Rs and where the mold originates. Generally, the HOA is responsible for mold in common-area structures, exterior walls, and roofing assemblies, while individual homeowners are responsible for mold within their unit's interior. For shared demising walls in attached townhomes, responsibility is typically determined by which side the moisture source originated from. We provide detailed documentation identifying the moisture source and affected areas, which helps resolve responsibility questions between homeowners and the HOA efficiently.`,
       },
       {
-        question: 'Will mold remediation in my Bressi Ranch home require me to move out temporarily?',
+        question:
+          'Will mold remediation in my Bressi Ranch home require me to move out temporarily?',
         answer: `For most projects involving one to two rooms, you can remain in the home while we work. We install full HEPA-filtered containment barriers with negative air pressure to prevent spore migration from the work zone into occupied living spaces. For larger projects affecting central HVAC systems or multiple rooms, we may recommend temporary relocation for 3 to 5 days, particularly if household members include young children or individuals with respiratory sensitivities. We provide a clear recommendation during our initial assessment so you can plan accordingly.`,
       },
       {
-        question: 'How do you prevent mold from returning after remediation in a Bressi Ranch home?',
+        question:
+          'How do you prevent mold from returning after remediation in a Bressi Ranch home?',
         answer: `Eliminating the moisture source is the single most important step, and we address this as part of every remediation project. For HVAC-related mold, we repair or reroute condensation drain lines and recommend installing a secondary drain pan with a float switch that shuts down the unit if the primary drain clogs again. For construction-defect moisture intrusion, we coordinate flashing repairs and waterproofing corrections with qualified contractors. We also provide each Bressi Ranch homeowner with a humidity monitoring plan and recommend maintaining indoor relative humidity below 50 percent year-round.`,
       },
       {
@@ -2315,20 +3383,44 @@ The close proximity of homes within Bressi Ranch creates significant secondary s
     localProof: `More than 40 fire and smoke damage projects completed in Bressi Ranch, including coordinated multi-home smoke remediation efforts and full kitchen rebuilds meeting both building code and HOA architectural standards.`,
     projectCount: '40+',
     avgResponseTime: '25 minutes',
-    landmarks: ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Carlsbad Fire Station 4', 'Palomar Airport', 'El Camino Real Corridor'],
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Carlsbad Fire Station 4',
+      'Palomar Airport',
+      'El Camino Real Corridor',
+    ],
     neighborhoodContext: [
-      { name: 'Open-Concept Single-Family Homes', detail: 'Open floor plans allow smoke from a single kitchen fire to contaminate the entire home within minutes. HVAC systems distribute smoke particles into ductwork, requiring comprehensive duct cleaning or replacement as part of every fire restoration.' },
-      { name: 'Attached Townhome Rows', detail: 'Fire-rated demising walls between townhome units slow flame spread but do not prevent smoke migration through shared attic spaces and utility penetrations. Adjacent-unit smoke assessments are standard protocol for any townhome fire call in Bressi Ranch.' },
-      { name: 'Properties Adjacent to Open Space', detail: 'Homes bordering community open space and trails face elevated wildfire ember exposure during Santa Ana wind events. Ember-resistant vent screens and vegetation management around these properties are critical prevention measures.' },
-      { name: 'Homes on Cul-de-Sacs and Interior Streets', detail: 'Tighter lot configurations on interior streets mean radiant heat from a structure fire can damage siding, windows, and exterior trim on neighboring homes even without direct flame contact. We assess adjacent properties for heat and smoke damage as a standard practice.' },
+      {
+        name: 'Open-Concept Single-Family Homes',
+        detail:
+          'Open floor plans allow smoke from a single kitchen fire to contaminate the entire home within minutes. HVAC systems distribute smoke particles into ductwork, requiring comprehensive duct cleaning or replacement as part of every fire restoration.',
+      },
+      {
+        name: 'Attached Townhome Rows',
+        detail:
+          'Fire-rated demising walls between townhome units slow flame spread but do not prevent smoke migration through shared attic spaces and utility penetrations. Adjacent-unit smoke assessments are standard protocol for any townhome fire call in Bressi Ranch.',
+      },
+      {
+        name: 'Properties Adjacent to Open Space',
+        detail:
+          'Homes bordering community open space and trails face elevated wildfire ember exposure during Santa Ana wind events. Ember-resistant vent screens and vegetation management around these properties are critical prevention measures.',
+      },
+      {
+        name: 'Homes on Cul-de-Sacs and Interior Streets',
+        detail:
+          'Tighter lot configurations on interior streets mean radiant heat from a structure fire can damage siding, windows, and exterior trim on neighboring homes even without direct flame contact. We assess adjacent properties for heat and smoke damage as a standard practice.',
+      },
     ],
     faqs: [
       {
-        question: 'How do modern building materials in Bressi Ranch affect fire damage restoration?',
+        question:
+          'How do modern building materials in Bressi Ranch affect fire damage restoration?',
         answer: `Engineered wood products used in Bressi Ranch framing — such as laminated veneer lumber and oriented strand board — can lose structural capacity at lower temperatures than traditional solid lumber, even when surface charring appears minimal. These materials also release volatile chemical compounds when heated, requiring air-quality testing before and after restoration. Our structural assessments in Bressi Ranch involve engineer evaluation of any engineered wood member exposed to sustained heat, ensuring that compromised components are identified and replaced rather than inadvertently left in service.`,
       },
       {
-        question: 'Will my Bressi Ranch HOA approve the materials used in fire damage reconstruction?',
+        question:
+          'Will my Bressi Ranch HOA approve the materials used in fire damage reconstruction?',
         answer: `Bressi Ranch HOA maintains architectural standards covering exterior colors, roofing materials, trim profiles, and stucco finishes. We submit detailed material specifications and color matches to the HOA architectural review committee before beginning any exterior reconstruction work. Because we have completed multiple fire restoration projects in this community, we maintain records of approved materials and color palettes that streamline the approval process. Interior reconstruction does not typically require HOA review unless structural modifications are involved.`,
       },
       {
@@ -2364,12 +3456,34 @@ Flooding from internal sources also affects this community with surprising regul
     localProof: `More than 40 flood cleanup projects completed in Bressi Ranch, including multi-home responses during major storm events and rapid-response extraction for appliance and plumbing failures.`,
     projectCount: '40+',
     avgResponseTime: '23 minutes',
-    landmarks: ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Palomar Airport Road', 'Bressi Ranch Community Pool', 'College Boulevard Corridor'],
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport Road',
+      'Bressi Ranch Community Pool',
+      'College Boulevard Corridor',
+    ],
     neighborhoodContext: [
-      { name: 'Low-Point Properties Within Housing Clusters', detail: 'Homes situated at the lowest grade within each housing cluster receive the most runoff when community storm drains reach capacity during intense rainfall events. These properties experience repeat garage and entry flooding during major storms.' },
-      { name: 'Courtyard and Patio Homes', detail: 'Enclosed courtyard spaces with limited drainage fill rapidly during heavy rain. A single clogged floor drain can turn a courtyard into a pool that pushes water across door thresholds into adjacent living areas.' },
-      { name: 'Townhome Ground-Floor Units', detail: 'Ground-level townhome living spaces are most vulnerable to both storm flooding and plumbing failures in upper-level units. Hard-surface flooring allows water to spread across entire floor planes within minutes of the initial failure.' },
-      { name: 'Homes Along Community Storm Drain Corridors', detail: 'Properties adjacent to major community drainage channels may experience surface water backup when downstream capacity is exceeded, sending sheet flow across yards and against foundations.' },
+      {
+        name: 'Low-Point Properties Within Housing Clusters',
+        detail:
+          'Homes situated at the lowest grade within each housing cluster receive the most runoff when community storm drains reach capacity during intense rainfall events. These properties experience repeat garage and entry flooding during major storms.',
+      },
+      {
+        name: 'Courtyard and Patio Homes',
+        detail:
+          'Enclosed courtyard spaces with limited drainage fill rapidly during heavy rain. A single clogged floor drain can turn a courtyard into a pool that pushes water across door thresholds into adjacent living areas.',
+      },
+      {
+        name: 'Townhome Ground-Floor Units',
+        detail:
+          'Ground-level townhome living spaces are most vulnerable to both storm flooding and plumbing failures in upper-level units. Hard-surface flooring allows water to spread across entire floor planes within minutes of the initial failure.',
+      },
+      {
+        name: 'Homes Along Community Storm Drain Corridors',
+        detail:
+          'Properties adjacent to major community drainage channels may experience surface water backup when downstream capacity is exceeded, sending sheet flow across yards and against foundations.',
+      },
     ],
     faqs: [
       {
@@ -2413,16 +3527,39 @@ Sewage damage in Bressi Ranch's finished living spaces escalates rapidly because
     localProof: `More than 45 sewage cleanup and decontamination projects completed in Bressi Ranch, with full Category 3 biohazard protocols followed on every project and clearance testing verifying safe pathogen levels before reoccupancy.`,
     projectCount: '45+',
     avgResponseTime: '24 minutes',
-    landmarks: ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Palomar Airport Road', 'El Camino Real Corridor', 'College Boulevard'],
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport Road',
+      'El Camino Real Corridor',
+      'College Boulevard',
+    ],
     neighborhoodContext: [
-      { name: 'Ground-Floor Bathrooms and Laundry Rooms', detail: 'Fixtures closest to the sewer lateral connection are most vulnerable to backups during municipal capacity surges. Floor drains and shower drains in these rooms are the first entry points for backflowing sewage during storm events.' },
-      { name: 'Townhome Units on Lower Grades', detail: 'Attached townhomes at lower elevations within the community sewer grid experience higher backpressure during storm events. Backwater valve installation is especially critical for these units to prevent sewage entry through ground-level fixtures.' },
-      { name: 'Single-Family Homes with Hard-Surface Flooring', detail: 'Tile, vinyl plank, and engineered hardwood flooring allows sewage to spread rapidly across entire ground floors. Containment and extraction must begin immediately to prevent contamination from reaching every room connected by continuous flooring.' },
-      { name: 'Homes with Multiple Bathrooms on Ground Level', detail: 'Properties with two or more ground-floor bathrooms have additional drain entry points during sewer backups. Each fixture connected to the main lateral becomes a potential sewage entry point when backpressure builds in the system.' },
+      {
+        name: 'Ground-Floor Bathrooms and Laundry Rooms',
+        detail:
+          'Fixtures closest to the sewer lateral connection are most vulnerable to backups during municipal capacity surges. Floor drains and shower drains in these rooms are the first entry points for backflowing sewage during storm events.',
+      },
+      {
+        name: 'Townhome Units on Lower Grades',
+        detail:
+          'Attached townhomes at lower elevations within the community sewer grid experience higher backpressure during storm events. Backwater valve installation is especially critical for these units to prevent sewage entry through ground-level fixtures.',
+      },
+      {
+        name: 'Single-Family Homes with Hard-Surface Flooring',
+        detail:
+          'Tile, vinyl plank, and engineered hardwood flooring allows sewage to spread rapidly across entire ground floors. Containment and extraction must begin immediately to prevent contamination from reaching every room connected by continuous flooring.',
+      },
+      {
+        name: 'Homes with Multiple Bathrooms on Ground Level',
+        detail:
+          'Properties with two or more ground-floor bathrooms have additional drain entry points during sewer backups. Each fixture connected to the main lateral becomes a potential sewage entry point when backpressure builds in the system.',
+      },
     ],
     faqs: [
       {
-        question: 'Why do Bressi Ranch homes experience sewage backups if the plumbing is relatively new?',
+        question:
+          'Why do Bressi Ranch homes experience sewage backups if the plumbing is relatively new?',
         answer: `Newer PVC and ABS sewer laterals are resistant to root intrusion and pipe deterioration, but they remain vulnerable to blockages caused by accumulated materials inside the pipe. Non-flushable wipes, grease buildup, and foreign objects are the primary causes of lateral blockages in Bressi Ranch, regardless of pipe age. Additionally, municipal sewer capacity surges during heavy storms can force sewage back through any lateral that lacks a backwater prevention valve, and many Bressi Ranch homes were not built with these valves as standard equipment.`,
       },
       {
@@ -2462,12 +3599,34 @@ HVAC condensation drain leaks account for a growing share of our Bressi Ranch de
     localProof: `More than 55 hidden leaks detected and repaired throughout Bressi Ranch, preventing an estimated $1.2 million in structural damage through early identification of water heater connection failures, PEX fitting leaks, and HVAC condensation line defects.`,
     projectCount: '55+',
     avgResponseTime: '25 minutes',
-    landmarks: ['Bressi Ranch Park', 'The Crossings at Carlsbad', 'Palomar Airport', 'El Camino Real Corridor', 'Bressi Ranch Community Pool'],
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport',
+      'El Camino Real Corridor',
+      'Bressi Ranch Community Pool',
+    ],
     neighborhoodContext: [
-      { name: 'Homes with Original Water Heaters', detail: 'Properties that still have the tank-style water heaters installed during original construction are at highest risk for connection-point leaks. Supply fittings, T&P valve discharge lines, and flex connector hoses degrade steadily after 15 years of continuous service.' },
-      { name: 'Two-Story Homes with Upper Bathrooms', detail: 'Second-floor bathroom supply connections experience thermal stress from hot water cycling through PEX fittings behind shower walls. Leaks at these concealed connection points drip into first-floor ceiling cavities, often presenting as staining on the ceiling below weeks after the leak begins.' },
-      { name: 'Homes with Attic-Mounted HVAC Air Handlers', detail: 'Condensation drain lines running from attic-mounted air handlers through interior wall chases are prone to biofilm clogging. When primary and secondary drains both fail, condensation enters the wall cavity and saturates insulation and framing before producing any visible symptoms.' },
-      { name: 'End-Unit Townhomes', detail: 'End units have more exterior wall exposure than interior townhome units, increasing the risk of rain-driven moisture intrusion through stucco cracks, failed caulk joints, and degraded window flashing — particularly on the unit side facing prevailing weather.' },
+      {
+        name: 'Homes with Original Water Heaters',
+        detail:
+          'Properties that still have the tank-style water heaters installed during original construction are at highest risk for connection-point leaks. Supply fittings, T&P valve discharge lines, and flex connector hoses degrade steadily after 15 years of continuous service.',
+      },
+      {
+        name: 'Two-Story Homes with Upper Bathrooms',
+        detail:
+          'Second-floor bathroom supply connections experience thermal stress from hot water cycling through PEX fittings behind shower walls. Leaks at these concealed connection points drip into first-floor ceiling cavities, often presenting as staining on the ceiling below weeks after the leak begins.',
+      },
+      {
+        name: 'Homes with Attic-Mounted HVAC Air Handlers',
+        detail:
+          'Condensation drain lines running from attic-mounted air handlers through interior wall chases are prone to biofilm clogging. When primary and secondary drains both fail, condensation enters the wall cavity and saturates insulation and framing before producing any visible symptoms.',
+      },
+      {
+        name: 'End-Unit Townhomes',
+        detail:
+          'End units have more exterior wall exposure than interior townhome units, increasing the risk of rain-driven moisture intrusion through stucco cracks, failed caulk joints, and degraded window flashing — particularly on the unit side facing prevailing weather.',
+      },
     ],
     faqs: [
       {
@@ -2483,7 +3642,8 @@ HVAC condensation drain leaks account for a growing share of our Bressi Ranch de
         answer: `We strongly recommend proactive replacement of any original tank-style water heater in Bressi Ranch. Most manufacturers rate these units for 12 to 15 years, and every original unit in this community has now exceeded that service life. The cost of a replacement water heater — typically $1,500 to $3,000 installed — is a fraction of the $8,000 to $25,000 that a catastrophic tank failure and resulting water damage restoration can cost. Consider upgrading to a tankless unit, which eliminates the stored-water rupture risk entirely and provides a longer useful lifespan of 20 to 25 years.`,
       },
       {
-        question: 'My water bill increased but I do not see any water damage — should I be concerned?',
+        question:
+          'My water bill increased but I do not see any water damage — should I be concerned?',
         answer: `An unexplained water bill increase is one of the earliest and most reliable indicators of a hidden leak. Even a small leak — one that drips a single drop per second — wastes over 3,000 gallons per year and will produce a noticeable bill increase. In Bressi Ranch homes, this type of slow leak often occurs at concealed PEX fittings, water heater connections, or toilet fill valves that drip into drain lines. Schedule a professional leak detection assessment promptly, because the longer a hidden leak persists, the more extensive the resulting structural damage and potential mold growth becomes.`,
       },
       {
@@ -2497,13 +3657,709 @@ HVAC condensation drain leaks account for a growing share of our Bressi Ranch de
     ],
   },
 
+  // ============================================================
+  // CARLSBAD — SLAB LEAK REPAIR
+  // ============================================================
+  'carlsbad-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Carlsbad — Detection, Repair & Restoration',
+    uniqueIntro: `Carlsbad sits on a combination of sandy coastal soils and clay-heavy inland substrates that shift seasonally, placing mechanical stress on the copper supply lines running beneath every slab foundation in the city. Tamarack Restoration has located and repaired more than 120 slab leaks across Carlsbad since 2014 — from pinhole corrosion failures in 1960s Carlsbad Village homes to hot-water line failures beneath newer La Costa and Aviara estates. Our headquarters on El Camino Real puts us within minutes of every Carlsbad ZIP code, and we carry thermal imaging cameras and acoustic detection equipment on every truck so detection begins the moment we arrive.`,
+    localChallenges: `Carlsbad Village and Olde Carlsbad contain the city's oldest housing stock, with copper supply lines installed in the 1960s and 1970s that are now approaching or exceeding their 50-year design life. Salt-laden air from the Pacific accelerates exterior corrosion on any exposed copper, and the same chemistry affects buried supply lines through soil contact. We consistently find pinhole clusters in these neighborhoods on pipes that show no external symptoms — the only indicators being a rising water bill and a faint sound of running water at night.
+
+La Costa, Aviara, and Rancho Carrillo present a different slab leak profile. These master-planned communities were built on engineered fill over native soils, and seasonal moisture variation causes the fill to expand and contract. This movement flexes copper at elbows and tee fittings over years, eventually causing fatigue cracks at joints rather than the corrosion-driven pinholes seen in older neighborhoods. Multi-story homes in La Costa are particularly vulnerable because the slab carries load-bearing walls above, meaning any significant moisture saturation around the slab edge can compromise the structural bearing plane.
+
+The Batiquitos Lagoon corridor — including homes along Batiquitos Drive and near Cannon Road — sits on a higher water table that keeps under-slab soils persistently moist. This eliminates the drying cycles that normally arrest corrosion progression on buried copper. Properties in this corridor develop slab leaks at a statistically higher rate than comparable homes farther east, and we factor this into our inspection priorities during any water damage call in this zone.`,
+    localProof:
+      '120+ slab leak repairs completed in Carlsbad since 2014, including La Costa, Aviara, Carlsbad Village, and Rancho Carrillo.',
+    projectCount: '120+',
+    avgResponseTime: '35 minutes',
+    landmarks: [
+      'Carlsbad Village',
+      'LEGOLAND California',
+      'Batiquitos Lagoon',
+      'The Flower Fields',
+      'Carlsbad Premium Outlets',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          'Original 1960s–70s copper supply lines at end of service life. Salt-air soil chemistry accelerates corrosion at buried joints. Highest slab leak frequency in Carlsbad.',
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Engineered fill soils shift seasonally, flexing copper at elbows and tees. Multi-story construction amplifies structural risk when slab saturation occurs.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'High-end finishes — hardwood, custom tile, built-in cabinetry — mean water migration from a slab leak causes disproportionate damage. Early detection is critical.',
+      },
+      {
+        name: 'Rancho Carrillo',
+        detail:
+          'Hillside grading directs storm runoff toward foundations. Persistent soil moisture around the slab perimeter creates ideal conditions for accelerated pipe corrosion.',
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'Newer construction does not guarantee immunity. Water heater supply lines and recirculation loops in Bressi Ranch homes develop slab leaks at hot-water connection points.',
+      },
+      {
+        name: 'Batiquitos Lagoon Corridor',
+        detail:
+          'Elevated water table keeps under-slab soils persistently moist, eliminating drying cycles and accelerating copper corrosion at a higher rate than inland Carlsbad neighborhoods.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do you find a slab leak in a Carlsbad home without tearing up the floor?',
+        answer:
+          'We use a three-stage detection sequence. First, electronic pressure testing isolates the leak to a specific supply line and zone. Then thermal imaging cameras scan the floor surface for temperature anomalies caused by hot water escaping beneath the slab — even a half-degree differential is visible with professional equipment. Finally, acoustic listening devices amplify the sound of pressurized water escaping through pipe cracks. The combination pinpoints the leak location within inches before we open anything. In Carlsbad homes with hardwood or custom tile, this precision matters — we protect your floor by minimizing the repair footprint.',
+      },
+      {
+        question: 'Why are slab leaks so common in Carlsbad compared to inland cities?',
+        answer:
+          'Carlsbad has three factors that inland cities do not: coastal soil chemistry that accelerates copper corrosion through salt content, clay-heavy inland substrates in neighborhoods like La Costa and Rancho Carrillo that shift seasonally and flex pipe joints, and a significant inventory of 50-to-60-year-old copper plumbing in Carlsbad Village and Olde Carlsbad that has reached the end of its design life. The combination makes Carlsbad one of the higher-frequency slab leak markets in North San Diego County.',
+      },
+      {
+        question: 'How much does slab leak repair cost in Carlsbad?',
+        answer:
+          'A targeted direct-access repair for a single confirmed leak location typically runs $1,500–$3,500. Full pipe rerouting through walls or attic — appropriate for older Carlsbad Village homes with extensively corroded copper systems — ranges from $3,000–$6,000. We provide a free on-site assessment with a written estimate before any work begins. Most Carlsbad homeowners use their homeowner insurance to cover water damage caused by the leak, and we manage all documentation and adjuster coordination.',
+      },
+      {
+        question: 'Do you repair the water damage the slab leak caused, or just the pipe?',
+        answer:
+          'We do both. After the pipe repair, we conduct a full moisture assessment of the surrounding flooring, walls, and cabinets using calibrated moisture meters. Wet materials are dried with commercial dehumidifiers and air movers, and we restore tile, hardwood, drywall, or cabinetry to pre-loss condition. Carlsbad homeowners deal with one company from first call through final walkthrough — not separate plumbers and restoration contractors.',
+      },
+      {
+        question: 'How quickly can you respond to a slab leak emergency in Carlsbad?',
+        answer:
+          'Our trucks dispatch from our Carlsbad headquarters on El Camino Real 24 hours a day, 7 days a week. Average response time to Carlsbad addresses is 35 minutes. Properties in Carlsbad Village and Bressi Ranch typically see us in under 25 minutes. If you hear running water with all fixtures off, notice a warm floor spot, or receive an unexpectedly high water bill, call us immediately at (760) 500-2211.',
+      },
+      {
+        question: 'What happens if my Carlsbad home has multiple slab leaks?',
+        answer:
+          'Older Carlsbad homes — particularly in Carlsbad Village and Olde Carlsbad — sometimes present with multiple pinhole leaks across a corroded copper system. In these cases, repairing individual leaks is a short-term solution. We evaluate the full pipe condition and present options including staged repairs, targeted rerouting of the most problematic runs, or whole-system rerouting through walls and attic to eliminate all future slab penetration risk. We provide honest guidance on which approach makes financial sense for your specific situation.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // OCEANSIDE — SLAB LEAK REPAIR
+  // ============================================================
+  'oceanside-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Oceanside — 24/7 Detection & Restoration',
+    uniqueIntro: `Oceanside's diverse housing stock — from 1940s bungalows in South Oceanside to newer inland developments in Rancho Del Oro — presents a wide range of slab leak scenarios. Alluvial soils deposited by the San Luis Rey River create unstable bearing conditions in the Mission Area and Fire Mountain, flexing under-slab copper at connections and elbows with every seasonal soil shift. Tamarack Restoration has completed more than 85 slab leak repairs in Oceanside, and our average response time from Carlsbad is 20 minutes to most Oceanside addresses.`,
+    localChallenges: `Downtown Oceanside and South Oceanside contain significant numbers of properties built in the 1940s through 1960s with original galvanized and copper plumbing that has never been replaced. These supply lines carry decades of mineral scale buildup that restricts flow and accelerates internal corrosion, eventually causing pinhole failures at pipe walls and at threaded galvanized-to-copper transitions. When these leaks occur beneath concrete slabs, the water migrates laterally through the gravel course before surfacing — often appearing far from the actual leak location and making detection difficult without thermal imaging.
+
+The Mission Area and Fire Mountain sit on alluvial fan soils derived from the San Luis Rey River drainage. These soils have irregular composition and consolidation, meaning they respond differently to moisture than the more uniform soils in planned communities. When storm water infiltrates or irrigation saturates these soils, they swell and shift — placing unpredictable stress on under-slab plumbing. We have documented the highest concentration of slab leaks in Oceanside in these two neighborhoods.
+
+Oceanside's military community adds a unique dimension to slab leak repair. Many homeowners near Camp Pendleton are active duty families who may be temporarily absent or stationed elsewhere. We work with authorized representatives and property managers to access and repair slab leaks without requiring the homeowner to be present, and we provide full written documentation of all work performed for absentee owners.`,
+    localProof:
+      '85+ slab leak detection and repair projects completed in Oceanside across South Oceanside, Fire Mountain, Rancho Del Oro, and the Mission Area.',
+    projectCount: '85+',
+    avgResponseTime: '20 minutes',
+    landmarks: [
+      'Oceanside Pier',
+      'Camp Pendleton',
+      'Mission San Luis Rey',
+      'Oceanside Harbor',
+      'San Luis Rey River',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'South Oceanside',
+        detail:
+          'Oldest housing stock in the city. Original 1940s–50s galvanized and copper plumbing at critical failure age. Pinhole leaks and joint failures are the dominant slab leak type.',
+      },
+      {
+        name: 'Downtown Oceanside',
+        detail:
+          'Mixed-age commercial and residential stock with complex plumbing histories. Renovations often mask original pipe condition, making professional detection essential.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside properties on alluvial soils with irregular settlement. Soil movement stresses under-slab pipe joints seasonally. High slab leak concentration relative to property age.',
+      },
+      {
+        name: 'Mira Costa & Mission Area',
+        detail:
+          'Alluvial soils from the San Luis Rey River expand and contract with moisture, flexing under-slab copper at connections and elbows. Highest slab leak concentration in Oceanside.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'Newer planned community with more stable soil conditions, but water heater supply lines and recirculation loops still develop slab leaks as systems age past 15 years.',
+      },
+      {
+        name: 'Arrowood',
+        detail:
+          'Inland hillside community with expansive soil conditions similar to Fire Mountain. We recommend annual plumbing pressure checks for homes over 20 years old in this area.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What are the signs of a slab leak in an Oceanside home?',
+        answer:
+          'The most common early indicator in Oceanside is a warm spot on the floor — most slab leaks involve hot-water lines. Other signs include a water bill that increases without any usage change, the sound of running water when every fixture is off, new cracks in floor tile or the foundation, and damp flooring with no visible source. In older South Oceanside and Downtown properties, visible efflorescence — white mineral deposits — on the slab surface can also indicate long-term water migration beneath the floor.',
+      },
+      {
+        question:
+          'How do alluvial soils near the San Luis Rey River affect slab leaks in Oceanside?',
+        answer:
+          'Alluvial soils are deposited in irregular layers with varying density and compaction. When these soils absorb moisture from rain or irrigation, different layers expand at different rates, creating differential movement beneath the slab. This movement flexes under-slab copper at every elbow, tee, and coupling — eventually causing fatigue cracks at connection points. Properties in the Mission Area, Fire Mountain, and along the San Luis Rey River corridor are particularly affected.',
+      },
+      {
+        question: 'Can you handle a slab leak repair if I am stationed or deployed from Oceanside?',
+        answer:
+          'Yes. We regularly work with active duty families near Camp Pendleton who cannot be present for emergency repairs. We coordinate with your designated representative, property manager, or a trusted neighbor. We provide full written documentation, photos of all work, and a complete moisture assessment report that you can review remotely. All billing and insurance coordination can be handled electronically.',
+      },
+      {
+        question: 'How long does slab leak repair take in Oceanside?',
+        answer:
+          'Detection takes 1–2 hours. A targeted direct-access repair typically takes one day. Pipe rerouting for extensively corroded systems runs 1–2 days depending on scope. Post-repair moisture drying takes 3–5 days if water migration was significant. We provide a clear timeline on-site after the detection assessment, and we schedule work to minimize disruption to your household.',
+      },
+      {
+        question: 'Does homeowner insurance cover slab leak repair in Oceanside?',
+        answer:
+          'Most homeowner policies cover water damage caused by a slab leak — the saturated flooring, walls, and cabinetry — but coverage for the pipe repair itself varies by policy. We document all damage thoroughly using moisture readings, thermal images, and written reports, and we coordinate directly with your insurance adjuster. Most Oceanside homeowners end up paying only their deductible.',
+      },
+      {
+        question: 'How quickly can you respond to a slab leak in Oceanside?',
+        answer:
+          'We dispatch from our Carlsbad headquarters 24/7 and average 20 minutes to most Oceanside addresses. South Oceanside and Downtown are the farthest points in our Oceanside service area and typically take 25 minutes. Call (760) 500-2211 any time — slab leaks cause structural damage and mold risk with every hour of delay.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // VISTA — SLAB LEAK REPAIR
+  // ============================================================
+  'vista-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Vista — Detection, Repair & Water Damage Restoration',
+    uniqueIntro: `Vista's established neighborhoods contain a large inventory of homes built in the 1960s through 1980s — an age range where copper supply lines are at or past their design life and slab leak frequency rises sharply. The inland valley climate brings temperature extremes that coastal cities do not experience: summer heat expands buried copper, winter cold contracts it, and these thermal cycles cause cumulative fatigue at joints and fittings over decades. Tamarack Restoration has completed more than 70 slab leak repairs across Vista, covering everything from pinhole failures in Shadowridge to joint separations in the older Breeze Hill and Alta Vista neighborhoods.`,
+    localChallenges: `The neighborhoods of Breeze Hill, Alta Vista, and downtown Vista contain Vista's oldest housing stock, with copper plumbing systems installed in the early-to-mid 1960s that have been underground for 60 years. At this age, corrosion is not a risk — it is a certainty. We find multiple pinhole clusters on single pipe runs in these neighborhoods, and a repair-one-leak-at-a-time approach is often not cost-effective. We assess full pipe condition and present honest options including targeted rerouting for the highest-risk runs.
+
+Shadowridge and Lake Vista were developed in the late 1970s through the 1980s and represent the next wave of Vista slab leak vulnerability. These homes used Type M copper — a thinner-walled specification than the Type L used in commercial construction — which is more susceptible to pinhole corrosion from Vista's moderately hard water. Hard water deposits mineral scale on the interior of copper pipes, and where scale forms, corrosion accelerates beneath it on the pipe wall. We see a consistent pattern of pinhole failures in Shadowridge homes now entering their fourth decade.
+
+Vista's inland location means soil moisture levels fluctuate more dramatically than in coastal cities. During wet winters, clay-bearing soils in eastern Vista expand and shift beneath slabs, stressing copper at fittings. During dry summers, these same soils contract and pull away from pipe surfaces, changing the stress profile again. This continuous mechanical cycling is why Vista homes develop slab leaks even when the copper is not visibly corroded.`,
+    localProof:
+      '70+ slab leak repairs completed across Vista including Shadowridge, Breeze Hill, Lake Vista, and Alta Vista neighborhoods.',
+    projectCount: '70+',
+    avgResponseTime: '30 minutes',
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Guajome Regional Park',
+      'Shadowridge Golf Club',
+      'Vista Village',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Breeze Hill & Alta Vista',
+        detail:
+          '1960s copper plumbing at 60 years of age. Multiple pinhole failures common on single pipe runs. Full-system rerouting is often the most cost-effective long-term solution.',
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Late-1970s to early-1980s Type M copper entering peak failure age. Hard water mineral scale accelerates internal corrosion. Hot-water lines fail first.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Properties adjacent to the lake sit on soils with higher moisture retention, creating persistent corrosive conditions around buried copper supply lines.',
+      },
+      {
+        name: 'Downtown Vista',
+        detail:
+          'Mixed commercial and residential stock with renovation histories that complicate pipe mapping. We always verify plumbing configuration before detection begins.',
+      },
+      {
+        name: 'East Vista',
+        detail:
+          'Newer construction in eastern Vista has more stable soil conditions, but clay subsoils still cause seasonal differential movement that stresses under-slab pipe joints.',
+      },
+      {
+        name: 'Rancho Buena Vista',
+        detail:
+          'Mid-range age properties from the 1980s–90s. Water heater supply lines and recirculation pump connections are the most common slab leak source in this area.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What are the warning signs of a slab leak in a Vista home?',
+        answer:
+          'The earliest indicator is often a warm or hot spot on the floor, since most slab leaks in Vista involve hot-water lines running beneath the foundation. Other symptoms include a water bill that increases without any change in usage habits, the sound of water flowing when every faucet and fixture in the home is shut off, new cracks in floor tile or the foundation itself, and damp or buckled flooring in areas nowhere near any water source. In Vista neighborhoods with clay soils — Lake Vista, Breeze Hill, and eastern portions of the city — any of these signs warrants prompt investigation because soil conditions accelerate slab-leak damage.',
+      },
+      {
+        question: 'Why do older Vista neighborhoods like Breeze Hill have more slab leaks?',
+        answer:
+          "Homes in Breeze Hill and Alta Vista were built in the early-to-mid 1960s with copper supply lines that are now 60 years old. Standard copper plumbing has a 40-to-50-year design life under normal conditions. Vista's inland climate adds thermal cycling stress from summer heat expansion and winter contraction that coastal copper does not experience. The combination of age and thermal fatigue means these pipes are well past reliable service life, and multiple pinhole failures on a single pipe run are common.",
+      },
+      {
+        question: "How does Vista's hard water affect slab leak frequency?",
+        answer:
+          "Vista's water supply has moderate hardness that deposits mineral scale on the interior walls of copper pipes over time. Where scale adheres to the pipe wall, it traps moisture between the scale and the copper surface, creating a localized corrosion cell. This process — called under-deposit corrosion — produces pinholes that are not distributed randomly but tend to cluster where scale has built up at slower-flow areas like elbows and horizontal runs. It is one of the reasons we see multiple pinholes close together in Shadowridge and similar-era neighborhoods.",
+      },
+      {
+        question: 'Can you repair a slab leak in Vista without replacing all my flooring?',
+        answer:
+          'In most cases, yes. Our detection sequence — pressure testing, thermal imaging, and acoustic listening — pinpoints the leak location precisely before we open the floor. We cut only what is necessary at the confirmed leak point. For direct-access repairs, this is typically a single core or saw cut of 12–18 inches. After the pipe repair, we restore the concrete, re-install tile or refinish hardwood to match the surrounding floor. The goal is a repair that is visually indistinguishable from the original.',
+      },
+      {
+        question: 'How much does slab leak repair cost in Vista?',
+        answer:
+          'A targeted direct-access repair for a single confirmed slab leak in Vista runs $1,500–$3,500. Pipe rerouting through walls or attic — the right choice for older Breeze Hill and Shadowridge homes with corroded systems — ranges from $3,000–$6,000. Water damage restoration costs depend on how long the leak was active. We provide free on-site assessments with written estimates. Insurance covers the water damage in most cases, and we handle all documentation.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Vista for a slab leak emergency?',
+        answer:
+          'We dispatch from Carlsbad and average 30 minutes to Vista addresses. Shadowridge and Lake Vista, being closer to Carlsbad, typically see us in 25 minutes. Downtown Vista and eastern neighborhoods are 30–35 minutes. We are available 24 hours a day, 7 days a week. Call (760) 500-2211 — early detection prevents the structural damage and mold growth that follow long-term slab saturation.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // SAN MARCOS — SLAB LEAK REPAIR
+  // ============================================================
+  'san-marcos-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in San Marcos — Local Detection & Full Restoration',
+    uniqueIntro: `San Marcos presents two distinct slab leak environments: the established neighborhoods near downtown and Lake San Marcos where 1960s–1980s copper plumbing is entering its failure window, and the newer master-planned communities of San Elijo Hills and Discovery Hills where engineered fill soils create unexpected pipe stress despite newer construction. Tamarack Restoration has completed more than 65 slab leak projects in San Marcos, and our Carlsbad location means average response times of 15 minutes to most San Marcos addresses — faster than any locally-based competitor.`,
+    localChallenges: `The established neighborhoods surrounding downtown San Marcos and Lake San Marcos were built primarily in the 1960s through early 1980s. Homes in this corridor have copper supply lines at 40-to-60-year age, and the valley floor soils beneath them — a mix of alluvial deposits and engineered fill from early development — have settled unevenly over decades. This uneven settlement places differential stress on under-slab plumbing: some pipe sections remain stable while adjacent sections experience movement, concentrating stress at the transition points where settled and stable soil zones meet. We find this failure pattern consistently in the blocks immediately surrounding Lake San Marcos.
+
+San Elijo Hills and Discovery Hills were built on hillside terrain with significant cut-and-fill grading. The fill sections of these lots — typically the downslope half — compress over years after construction as the disturbed soil consolidates. This slow settlement continues for 10–15 years on heavily graded lots, and the compression cycles stress under-slab copper at every fitting in the settling zone. We have detected slab leaks in San Elijo Hills homes less than 15 years old where fill settlement caused joint separation on hot-water supply lines.
+
+Cal State San Marcos and the surrounding university district add a rental property dimension to our San Marcos work. Investment properties and multi-unit buildings in this area often have deferred maintenance histories, and slab leaks in these properties can go undetected for months because tenant-reported symptoms are not acted on promptly. We work with property managers and owners to assess and repair slab leaks efficiently with minimal tenant disruption.`,
+    localProof:
+      '65+ slab leak repairs completed in San Marcos including San Elijo Hills, Lake San Marcos, Discovery Hills, and the downtown corridor.',
+    projectCount: '65+',
+    avgResponseTime: '15 minutes',
+    landmarks: [
+      'Cal State San Marcos',
+      'Lake San Marcos',
+      'Double Peak Park',
+      'San Marcos Creek',
+      'Discovery Hills',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Lakeside properties with older copper plumbing sitting on unevenly settled alluvial soils. Differential settlement concentrates stress at pipe transition zones adjacent to the lake perimeter.',
+      },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'Cut-and-fill grading creates fill zones that continue settling for 10–15 years post-construction. Joint separation on hot-water lines in fill sections is the dominant failure pattern.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Similar hillside grading profile to San Elijo Hills. Newer homes are not immune — fill settlement causes slab leaks independent of pipe age.',
+      },
+      {
+        name: 'Downtown San Marcos',
+        detail:
+          'Mixed-age residential and commercial stock. Older homes near Twin Oaks Valley Road have original copper plumbing at 50+ years. Commercial properties often have complex, multi-zone supply systems.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Rural and semi-rural properties with private irrigation systems. Subsurface irrigation failures can mimic slab leak symptoms — we diagnose the actual source before recommending repair.',
+      },
+      {
+        name: 'University District',
+        detail:
+          'Rental property concentration near Cal State San Marcos. Deferred maintenance and delayed reporting mean slab leaks in this area are often discovered at an advanced stage with significant water migration.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Why do newer San Elijo Hills homes develop slab leaks?',
+        answer:
+          'San Elijo Hills was built on hillside terrain with significant cut-and-fill grading. The fill portions of these lots — typically the downslope half — continue to compress and settle for 10–15 years after construction as disturbed soil consolidates. This gradual settlement flexes under-slab copper at pipe joints and fittings in the settling zone. We have detected slab leaks in San Elijo Hills homes under 15 years old where fill settlement caused joint separation on hot-water supply lines — completely independent of pipe age or water chemistry.',
+      },
+      {
+        question: 'How quickly can you respond to a slab leak in San Marcos?',
+        answer:
+          'San Marcos is one of our closest service areas — our Carlsbad headquarters is 15 minutes from most San Marcos addresses. We dispatch 24 hours a day, 7 days a week, including holidays. San Elijo Hills and Discovery Hills are typically 15–20 minutes. Downtown San Marcos and Lake San Marcos are 15 minutes. Call (760) 500-2211 immediately if you suspect a slab leak — the sooner we locate it, the less structural damage occurs.',
+      },
+      {
+        question:
+          'Do you work with property managers for slab leaks in rental properties near Cal State San Marcos?',
+        answer:
+          'Yes. We regularly coordinate with property managers and landlords in the university district. We schedule access with tenants, perform detection and repair with minimal disruption, and provide complete written documentation for property management records and insurance claims. We also flag any additional water damage or moisture issues found during the repair so property managers can address deferred maintenance before it becomes a larger claim.',
+      },
+      {
+        question:
+          'What is the difference between a slab leak and a foundation problem in San Marcos?',
+        answer:
+          'Both produce overlapping symptoms — floor cracks, damp flooring, and settlement — but the causes and solutions are entirely different. A slab leak is a plumbing failure beneath the concrete, while foundation issues involve soil movement beneath the structural slab. Our detection process distinguishes between them: thermal imaging and acoustic testing confirm active water flow from a pipe, which rules out pure foundation movement. If we find no active leak but significant settlement symptoms, we recommend a structural engineering assessment.',
+      },
+      {
+        question: 'How much does slab leak detection cost in San Marcos?',
+        answer:
+          'Our comprehensive detection assessment — thermal imaging, acoustic testing, and moisture mapping — runs $250–$450 depending on property size and layout. This fee is credited toward the repair if we perform the work. Repair costs range from $1,500–$3,500 for a targeted direct-access repair to $3,000–$6,000 for pipe rerouting on corroded systems. We provide a written estimate before any work begins.',
+      },
+      {
+        question: 'Will my insurance cover a slab leak in San Marcos?',
+        answer:
+          'Most homeowner policies cover the water damage caused by a slab leak — saturated flooring, walls, and cabinetry — but pipe repair coverage varies. We provide detailed documentation including thermal images, moisture readings, and a written findings report that insurance adjusters require. We have worked with every major carrier serving San Marcos and manage the entire claims process so you deal with restoration, not paperwork.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // ENCINITAS — SLAB LEAK REPAIR
+  // ============================================================
+  'encinitas-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Encinitas — Coastal Property Specialists',
+    uniqueIntro: `Encinitas combines three distinct slab leak risk environments in a single coastal city: the blufftop properties of Cardiff and Leucadia where geological movement stresses foundations and buried plumbing, the older downtown Encinitas and North Leucadia homes with original 1960s copper approaching end of service life, and the rural estates of Olivenhain where private well systems operate without the pressure regulation of municipal connections. Tamarack Restoration has completed more than 90 slab leak repairs across Encinitas, and our Carlsbad location means 20-minute average response times to the entire city.`,
+    localChallenges: `Cardiff-by-the-Sea's blufftop properties face a slab leak risk driven by terrain rather than pipe age alone. The coastal bluffs are geologically active, with subtle soil movement and settling that places mechanical stress on under-slab copper lines at every elbow, tee, and coupling. Properties near Swami's Beach and along the bluffs south of Encinitas Boulevard experience this movement more acutely, and we have detected slab leaks in Cardiff homes less than 20 years old where soil shifting stressed copper connections beyond their tolerance. Warning signs include unexplained warm spots on tile or concrete floors and a water meter that continues spinning when all fixtures are turned off.
+
+Downtown Encinitas and North Leucadia contain a large inventory of beach cottages and bungalows built in the 1950s through 1970s. The charm of these older properties comes with an infrastructure reality: copper supply lines at 50-to-70-year age in a coastal salt-air environment. Salt chemistry in coastal soils accelerates copper corrosion at a measurable rate compared to inland locations, and we consistently find more advanced corrosion on buried copper at comparable property ages in Encinitas than in inland cities like Vista or San Marcos. The coastal premium on these properties makes early slab leak detection economically critical — water damage to original hardwood floors and vintage tilework is expensive to restore.
+
+Olivenhain's rural estates operate on private well systems that introduce a pressure variable absent in municipal-connected properties. Well pressure tanks cycle between threshold pressures that are often higher than municipal supply — typically 60–80 PSI versus 40–60 PSI on city water. This elevated and variable pressure places additional stress on pipe joints and fittings, and we have responded to several Olivenhain properties where pressure-switch failure caused supply line ruptures at under-slab fittings.`,
+    localProof:
+      '90+ slab leak repairs completed in Encinitas including Cardiff, Leucadia, downtown Encinitas, and Olivenhain estates.',
+    projectCount: '90+',
+    avgResponseTime: '20 minutes',
+    landmarks: [
+      "Swami's Beach",
+      'Moonlight State Beach',
+      'San Elijo Lagoon',
+      'Self-Realization Fellowship',
+      'Cardiff-by-the-Sea',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'Geologically active blufftop terrain causes soil movement independent of pipe age. Slab leaks in Cardiff homes under 20 years old are not uncommon when bluff-edge settling stresses copper connections.',
+      },
+      {
+        name: 'Leucadia',
+        detail:
+          'Older beach cottages from the 1950s–70s with coastal-corroded copper supply lines. Salt-air soil chemistry accelerates corrosion beyond what comparable-age inland properties experience.',
+      },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Mixed-age residential stock with renovation histories. Original plumbing often hidden behind updated finishes. We map the full plumbing configuration before detection begins.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Private well systems with variable pressure introduce stress absent in municipal connections. Pressure-switch failures can cause supply line ruptures at under-slab fittings on ranch properties.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Planned communities from the 1980s–90s with more uniform soil conditions, but Type M copper on hot-water recirculation loops is entering its peak failure window.',
+      },
+      {
+        name: 'Encinitas Ranch',
+        detail:
+          'HOA community with maintained infrastructure. Slab leaks here typically involve hot-water supply lines and recirculation loops rather than main supply line corrosion.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Why do blufftop homes in Cardiff and Leucadia have more slab leaks?',
+        answer:
+          'The coastal bluffs in Cardiff and Leucadia are geologically active — subtle soil movement and settling occur continuously as the bluff edge erodes and the underlying geology adjusts. This movement places mechanical stress on under-slab copper plumbing at every elbow, tee, and coupling. Unlike corrosion-driven failures that take decades to develop, bluff-movement failures can appear in properties less than 20 years old. The stress is concentrated at connection points, which is why we often find joint separations rather than pinholes in these neighborhoods.',
+      },
+      {
+        question: 'How does the coastal environment in Encinitas affect copper pipe corrosion?',
+        answer:
+          'Salt-air chemistry in coastal soils creates a more corrosive environment for buried copper than inland locations. Salt ions in the soil and groundwater accelerate electrochemical corrosion on copper pipe surfaces, producing pinholes at a measurable rate compared to same-age pipes in inland cities. In Leucadia and coastal Cardiff, we consistently find more advanced corrosion on copper at comparable property ages than in Vista or San Marcos. Properties within a half-mile of the ocean face the most accelerated timeline.',
+      },
+      {
+        question: 'Do private well systems in Olivenhain increase slab leak risk?',
+        answer:
+          'Yes. Private well pressure tanks cycle between 60–80 PSI, which is often higher than municipal supply pressure of 40–60 PSI. This elevated and variable pressure places additional mechanical stress on pipe joints and fittings with every pressure cycle. A pressure-switch failure can drive supply pressure above 100 PSI momentarily, which can cause immediate joint failure at under-slab copper connections. We recommend whole-house pressure regulators and automatic shutoff valves for Olivenhain properties on private wells.',
+      },
+      {
+        question: 'How do you detect a slab leak in a beach cottage with original hardwood floors?',
+        answer:
+          'We use non-invasive detection specifically to protect vintage and original flooring in older Encinitas homes. Thermal imaging detects temperature anomalies through the floor surface without contact. Acoustic sensors listen through the slab from the exterior perimeter or through access points in cabinets. We mark the leak location precisely and discuss repair options before opening anything. In many Leucadia and Cardiff cottages, we can access the pipe through a perimeter core that avoids the interior hardwood entirely.',
+      },
+      {
+        question: 'How much does slab leak repair cost in Encinitas?',
+        answer:
+          'A targeted direct-access repair runs $1,500–$3,500. Pipe rerouting for corroded Leucadia and Cardiff systems — where multiple pinholes make direct repair impractical — ranges from $3,000–$6,000. Restoration of original hardwood or custom tile adds to the repair cost but we match materials carefully. Free on-site assessments with written estimates. Most Encinitas homeowners use their insurance for water damage coverage, and we handle all documentation.',
+      },
+      {
+        question: 'How quickly can Tamarack respond to a slab leak emergency in Encinitas?',
+        answer:
+          'We average 20 minutes from our Carlsbad headquarters to Encinitas. Cardiff and Leucadia, being closest to Carlsbad, typically see us in 15–18 minutes. Olivenhain and New Encinitas are 20–25 minutes. We dispatch 24/7, including weekends and holidays. Call (760) 500-2211 — in coastal Encinitas, moisture accumulates faster than in dry inland areas, making rapid response especially important.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // RANCHO SANTA FE — SLAB LEAK REPAIR
+  // ============================================================
+  'rancho-santa-fe-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Rancho Santa Fe — Estate-Grade Detection & Restoration',
+    uniqueIntro: `Rancho Santa Fe estates present slab leak challenges that are categorically different from standard residential properties. Properties in The Covenant and Fairbanks Ranch commonly exceed 5,000 square feet with multiple structures, complex multi-zone plumbing systems, private well infrastructure, and extensive subsurface irrigation networks that can mask or mimic slab leak symptoms. Tamarack Restoration has completed more than 40 slab leak and subsurface water investigations on RSF properties, approaching every project with the discretion and precision these properties require.`,
+    localChallenges: `Rancho Santa Fe's estate properties have plumbing systems of unusual complexity. A single Covenant estate may have a main residence, guest house, pool house, and equipment room — each with independent supply lines crossing the property in a subsurface network that was custom-designed decades ago without always being properly documented. When a slab leak occurs, locating it requires both detection technology and an understanding of the estate's plumbing architecture. We review original construction documents when available and conduct a systematic pressure-zone isolation before deploying thermal imaging and acoustic equipment.
+
+Private water systems are common throughout RSF, and they introduce pressure variables that municipal connections regulate away. Well pressure tanks typically operate at 60–80 PSI, and on larger estates with high-flow demands, tanks can be set even higher. Pressure-switch failures on these systems can briefly spike supply pressure to 100+ PSI — enough to cause immediate joint failures at under-slab copper connections. We have responded to several Fairbanks Ranch and Covenant estates where a pressure-system malfunction caused catastrophic flooding overnight. We recommend installing whole-house automatic shutoff valves with leak-detection sensors for any RSF property on a private well.
+
+The extensive subsurface irrigation systems that maintain RSF's signature landscaping create a detection challenge unique to this community. Irrigation line failures at subsurface valve manifolds and lateral connections can saturate soil around foundations to a depth that closely mimics slab leak symptoms — warm floors, rising water bills, and foundation moisture. We distinguish between irrigation and plumbing failures using pressure zone isolation: we shut off the irrigation system independently and test plumbing supply lines separately to confirm which system is the source before any recommendation is made.`,
+    localProof:
+      '40+ slab leak and subsurface water investigations completed on Rancho Santa Fe estates including Fairbanks Ranch, The Covenant, and Morgan Run properties.',
+    projectCount: '40+',
+    avgResponseTime: '30 minutes',
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'The Inn at Rancho Santa Fe',
+      'Fairbanks Ranch Country Club',
+      'Del Dios Highway',
+      'Lake Hodges',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'The Covenant',
+        detail:
+          'Historic estate properties with complex, often undocumented plumbing systems. Multi-structure properties require zone-by-zone pressure isolation before detection begins.',
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail:
+          'Gated community with newer estate construction. Private well systems with variable pressure are the primary slab leak risk factor. Automatic shutoff systems strongly recommended.',
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail:
+          'Properties with proximity to Lake Hodges experience elevated groundwater during wet seasons, creating persistent moisture around foundations that accelerates pipe corrosion.',
+      },
+      {
+        name: 'Morgan Run',
+        detail:
+          'Elaborate landscape irrigation systems with dozens of zones can develop subsurface leaks that saturate soil around foundations, mimicking slab-leak symptoms and requiring irrigation-specific detection methods.',
+      },
+      {
+        name: 'Cielo',
+        detail:
+          'High-elevation estate community with terrain-driven soil movement. Properties on cut-and-fill lots experience gradual settlement that stresses under-slab plumbing over decades.',
+      },
+      {
+        name: 'Santa Fe Valley',
+        detail:
+          'Newer estate development with engineered foundations, but complex multi-zone plumbing systems still require professional detection when leaks develop.',
+      },
+    ],
+    faqs: [
+      {
+        question:
+          'How do you handle slab leak detection on a large RSF estate with multiple structures?',
+        answer:
+          'We begin with a systematic pressure-zone isolation — shutting off supply to each structure independently and testing for pressure drop to narrow the leak to a specific building and zone. Once isolated, we deploy thermal imaging and acoustic equipment in the confirmed zone. For properties without current plumbing documentation, we map the supply system before detection begins. This process takes longer than a single-family residential detection but ensures we find the correct leak location in complex multi-structure systems without opening the wrong floor.',
+      },
+      {
+        question: 'Can irrigation system failures mimic slab leaks at RSF properties?',
+        answer:
+          'Yes — and this is one of the most common misdiagnoses we see at RSF properties. Subsurface irrigation line failures at valve manifolds and lateral connections can saturate soil around a foundation to a depth that produces identical surface symptoms: warm floors, rising water bills, and moisture at the slab edge. We isolate the irrigation system and plumbing supply lines independently, testing each under pressure, before any conclusion is drawn. This step alone has saved several RSF clients from unnecessary slab repair.',
+      },
+      {
+        question: 'Do private well systems in RSF increase the risk of slab leaks?',
+        answer:
+          'Yes. Private well pressure tanks operate at 60–80 PSI, often higher than municipal supply pressure. A pressure-switch failure can spike supply pressure above 100 PSI momentarily — enough to cause immediate joint failure at under-slab copper fittings. We recommend and install whole-house automatic leak-detection and shutoff systems for RSF properties, particularly those with absent owners or properties on private wells.',
+      },
+      {
+        question: 'How do you protect RSF estate finishes during slab leak repair?',
+        answer:
+          'RSF properties commonly have imported stone tile, wide-plank hardwood, and custom masonry that cannot be matched from standard suppliers. We document existing floor materials with detailed photos, source matching materials from specialty suppliers when restoration is required, and use precision cutting tools that minimize the repair footprint. For extremely rare or irreplaceable materials, we present rerouting options that avoid floor access entirely.',
+      },
+      {
+        question: 'Do you provide slab leak detection reports for RSF property transactions?',
+        answer:
+          'Yes. We provide comprehensive written detection reports with thermal images, moisture readings, pressure test results, and repair recommendations — documentation suitable for property transactions, insurance claims, and estate management records. Pre-purchase slab leak inspections on RSF properties are a service we provide regularly, given the complexity and value of the infrastructure involved.',
+      },
+      {
+        question: 'How quickly can you respond to a slab leak emergency in Rancho Santa Fe?',
+        answer:
+          'We average 30 minutes from our Carlsbad headquarters to RSF. Fairbanks Ranch and properties near Via de la Valle are closest at 25 minutes. The Covenant and Cielo are 30–35 minutes. We dispatch 24/7. For properties with caretakers or property managers, we coordinate arrival with whoever has access authority. Call (760) 500-2211 at any hour.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // SOLANA BEACH — SLAB LEAK REPAIR
+  // ============================================================
+  'solana-beach-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Solana Beach — Coastal Detection & Restoration',
+    uniqueIntro: `Solana Beach is a compact coastal city where nearly every property sits within a mile of the Pacific — close enough that salt-air chemistry affects buried copper supply lines at an accelerated rate compared to inland communities. The blufftop properties along the Del Mar Scenic Parkway and Fletcher Cove area face both corrosion-driven and geology-driven slab leak risk, as the same coastal bluff dynamics that affect Cardiff to the north are present here. Tamarack Restoration has completed more than 35 slab leak repairs in Solana Beach, and our Carlsbad location puts us 25 minutes from any address in the city.`,
+    localChallenges: `Solana Beach's housing stock is concentrated in two age brackets: older beach cottages and mid-century homes in Eden Gardens and west of the 5 Freeway, and mid-1980s to 1990s condominiums and townhomes in the Lomas Santa Fe corridor. Both age brackets are entering or in their peak slab leak window. The older western properties have copper supply lines at 50-to-70-year age in a high-corrosion coastal environment. The Lomas Santa Fe corridor properties are now 30-to-40 years old — the age range where Type M copper on hot-water recirculation loops begins to fail systemically.
+
+The coastal bluffs in western Solana Beach are geologically active in the same way as Cardiff to the north. Bluff-edge erosion and the seismic micro-activity common to coastal Southern California create gradual soil movement that stresses under-slab pipe fittings over years. Properties on streets like South Sierra Avenue and Rios Avenue — which run parallel to the bluff — experience more bluff-influence than properties farther east, and we factor this into our detection approach for these addresses.
+
+Solana Beach's high property values and density of luxury condominiums create a unique restoration challenge. In multi-unit buildings, a slab leak in one unit can migrate water to adjacent units and the units below. HOA involvement, shared water shutoffs, and coordinating access across multiple unit owners add complexity to both detection and restoration. We have extensive experience navigating these situations — coordinating with HOA management, conducting multi-unit moisture assessments, and managing insurance claims across multiple policyholders simultaneously.`,
+    localProof:
+      '35+ slab leak repairs completed in Solana Beach including blufftop properties, Eden Gardens, and Lomas Santa Fe corridor condominiums.',
+    projectCount: '35+',
+    avgResponseTime: '25 minutes',
+    landmarks: [
+      'Fletcher Cove Beach Park',
+      'Cedros Avenue Design District',
+      'Tide Beach Park',
+      'San Elijo Lagoon',
+      'Del Mar Racetrack',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Eden Gardens',
+        detail:
+          'Older residential neighborhood with mid-century homes on original copper supply lines. Salt-air proximity accelerates corrosion beyond what comparable-age inland properties experience.',
+      },
+      {
+        name: 'West of I-5',
+        detail:
+          'Highest coastal exposure in Solana Beach. Properties within two blocks of the bluff face both corrosion-driven and geology-driven slab leak risk simultaneously.',
+      },
+      {
+        name: 'Lomas Santa Fe',
+        detail:
+          '1980s–90s condominiums and townhomes entering the 30-to-40-year window where Type M copper recirculation loops begin to fail. Multi-unit slab leaks require HOA coordination.',
+      },
+      {
+        name: 'Del Mar Heights Corridor',
+        detail:
+          'Properties along the I-5 corridor with mixed construction ages. Newer construction near the freeway has more stable soil conditions than blufftop addresses.',
+      },
+      {
+        name: 'Solana Beach Commercial District',
+        detail:
+          'Commercial properties along Cedros Avenue and Highway 101 with complex plumbing histories. We work with commercial property managers for minimal business disruption during repairs.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How does living close to the ocean affect slab leak frequency in Solana Beach?',
+        answer:
+          'Properties within a mile of the Pacific are exposed to elevated salt content in both air and soil. Salt ions create a more corrosive electrochemical environment for buried copper, accelerating the corrosion rate measurably compared to inland properties at the same pipe age. In Solana Beach, where virtually every property sits within coastal influence, this means copper supply lines reach their failure threshold 5-to-10 years sooner than comparable pipes in cities like Vista or San Marcos. We recommend plumbing pressure checks every two years for Solana Beach homes with copper supply lines over 25 years old.',
+      },
+      {
+        question: 'How do you handle a slab leak in a Solana Beach condominium or townhome?',
+        answer:
+          'Condominium slab leaks require HOA coordination in addition to standard detection and repair. We contact the HOA management company, confirm shared water shutoff access and procedures, and conduct a multi-unit moisture assessment to determine if water has migrated to adjacent or lower units. We document all affected units with moisture readings for insurance purposes and coordinate claims across multiple policyholders when necessary. We have navigated this process dozens of times in Lomas Santa Fe and similar communities.',
+      },
+      {
+        question: 'What is the typical slab leak timeline in a Solana Beach home?',
+        answer:
+          'Detection takes 1–2 hours. A direct-access repair for a single confirmed leak is typically completed in one day. Pipe rerouting for extensively corroded coastal copper systems runs 1–2 days. Post-repair drying takes 3–5 days if water migration was significant. In multi-unit situations, we coordinate unit access and schedule work to minimize disruption to residents. We provide a clear timeline on-site after the initial assessment.',
+      },
+      {
+        question: 'Do you restore the flooring and walls after a slab leak repair in Solana Beach?',
+        answer:
+          'Yes, completely. After the pipe repair, we conduct a full moisture assessment and dry all affected materials with commercial equipment. We restore concrete, tile, or hardwood floors to pre-loss condition, and we repair any wall or cabinet damage caused by water migration. Solana Beach homeowners deal with one company from the emergency call through the final walkthrough — not a plumber, a restoration contractor, and a flooring company separately.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Solana Beach for a slab leak emergency?',
+        answer:
+          'We average 25 minutes from Carlsbad to Solana Beach. Properties in the Lomas Santa Fe corridor are closest at 20 minutes. Blufftop and western addresses are 25–30 minutes. We dispatch 24 hours a day, 7 days a week. Call (760) 500-2211 — in a coastal environment where moisture accumulation is rapid, early response prevents the mold growth and structural damage that follow a delayed repair.',
+      },
+      {
+        question: 'Does insurance cover slab leak repair in Solana Beach?',
+        answer:
+          'Most homeowner and condominium association policies cover water damage caused by slab leaks — saturated flooring, walls, and adjacent unit damage. The pipe repair itself has variable coverage. We provide thermal images, moisture readings, and a written detection report that insurance adjusters require. For multi-unit situations, we coordinate documentation across all affected unit policies simultaneously.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // BRESSI RANCH — SLAB LEAK REPAIR
+  // ============================================================
+  'bressi-ranch-slab-leak-repair': {
+    uniqueH1: 'Slab Leak Repair in Bressi Ranch — Fast Local Response from Carlsbad',
+    uniqueIntro: `Bressi Ranch is one of Carlsbad's newest master-planned communities, with most homes built between 2002 and 2012 — an age range that puts the community's copper plumbing at 15-to-25-year maturity, the window where hot-water supply lines and recirculation loops begin to develop slab leaks from a combination of water chemistry and thermal cycling. Because Bressi Ranch borders our Carlsbad headquarters on El Camino Real, we consistently reach any address in this community within 15 minutes, faster than any other restoration contractor serving the area.`,
+    localChallenges: `Bressi Ranch homes were built with Type L copper supply lines and cross-linked polyethylene (PEX) distribution in many units, but the hot-water supply lines running from the water heater to recirculation loops and main distribution points are typically copper — and these are the lines we see failing first. The recirculation system design in Bressi Ranch homes keeps hot water continuously moving through a copper loop that runs beneath the slab. This continuous flow causes gradual erosion of the pipe interior at bends and elbows, eventually producing through-wall pinholes. Water heater proximity and thermal gradients amplify the erosion rate at the first 10-to-15 feet of pipe from the heater.
+
+Bressi Ranch was built on previously graded Carlsbad inland terrain with engineered fill in many areas. The community is now 15-to-20 years post-construction, an age at which initial fill settlement has largely completed — but seasonal soil moisture variation still causes minor movement at fill-to-native-soil transitions beneath some properties. We have detected slab leaks at these transition zones in Bressi Ranch homes where the pipe crosses from a stable native-soil section to an adjacent fill section, with the stress concentrated at the transition point.
+
+The HOA structure in Bressi Ranch means that water shutoffs, access easements, and property boundaries are more complex than in non-HOA neighborhoods. We are familiar with Bressi Ranch's HOA requirements, know who to contact for after-hours water shutoff access, and can coordinate emergency repairs within the community's protocols without delay.`,
+    localProof:
+      '50+ slab leak repairs and water damage calls completed in Bressi Ranch since the community reached maturity, with an average response time of under 15 minutes.',
+    projectCount: '50+',
+    avgResponseTime: '12 minutes',
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport Road',
+      'El Camino Real Corridor',
+      'Bressi Ranch Village',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Bressi Ranch Single-Family Homes',
+        detail:
+          'Hot-water recirculation loop copper is the primary slab leak source. Continuous flow causes gradual erosion at elbows in the 15-to-25-year window. Water heater supply connections are the most common failure point.',
+      },
+      {
+        name: 'Bressi Ranch Townhomes',
+        detail:
+          'Shared walls in townhome units mean water migration from a slab leak can affect adjacent units before the source homeowner notices symptoms. We assess all potentially affected units during every townhome slab leak call.',
+      },
+      {
+        name: 'Bressi Ranch Condominiums',
+        detail:
+          'HOA-managed water shutoffs require coordination with the community management company for after-hours emergencies. We know the Bressi Ranch HOA protocols and can initiate this coordination as part of our emergency response.',
+      },
+      {
+        name: 'El Camino Real Corridor (Bressi)',
+        detail:
+          'Properties along the eastern Bressi Ranch boundary near El Camino Real are our closest service area — we can be on-site in 10 minutes from our headquarters.',
+      },
+    ],
+    faqs: [
+      {
+        question:
+          'Why do newer Bressi Ranch homes develop slab leaks if the construction is modern?',
+        answer:
+          "Bressi Ranch homes are 15-to-25 years old — far newer than Carlsbad Village's 1960s stock, but old enough for hot-water recirculation loop copper to enter its primary failure window. Recirculation loops keep hot water continuously moving through a copper loop beneath the slab. This continuous flow erodes the pipe interior at bends and elbows over time through a process called erosion-corrosion. The first 10-to-15 feet of copper from the water heater, where thermal gradients are highest, typically fails first.",
+      },
+      {
+        question: 'How quickly can Tamarack reach Bressi Ranch for a slab leak emergency?',
+        answer:
+          'Bressi Ranch is adjacent to our Carlsbad headquarters on El Camino Real. We average 12 minutes to any Bressi Ranch address — faster than any other restoration contractor serving this community. We dispatch 24 hours a day, 7 days a week. Call (760) 500-2211 the moment you notice warm floors, hear running water with fixtures off, or receive an unexpectedly high water bill.',
+      },
+      {
+        question: 'What should I do if I suspect a slab leak in my Bressi Ranch home?',
+        answer:
+          'Shut off your main water supply valve if you can do so without flooding risk — this stops additional water from escaping the leak and limits the moisture migration. Do not turn on the HVAC system, as this can spread moisture through ductwork. Call us at (760) 500-2211 immediately. We bring thermal imaging and acoustic detection equipment on the first visit, so detection begins as soon as we arrive. Do not wait to see if symptoms worsen — early detection saves flooring, walls, and cabinetry.',
+      },
+      {
+        question: 'How do you handle a slab leak in a Bressi Ranch HOA community?',
+        answer:
+          "We are familiar with Bressi Ranch's HOA structure and management contacts. For emergencies requiring shared water shutoff access, we coordinate with the HOA management company directly — you do not need to navigate that process during an emergency. We also conduct adjacent-unit moisture assessments in attached properties to identify any water migration before it causes secondary damage claims.",
+      },
+      {
+        question: 'What does slab leak repair cost in Bressi Ranch?',
+        answer:
+          "A targeted direct-access repair for a hot-water recirculation loop slab leak in a Bressi Ranch home typically runs $1,500–$2,500, on the lower end of the range because Bressi Ranch's newer plumbing is generally in better overall condition than older-city systems. Pipe rerouting, if warranted, runs $2,500–$4,500. Water damage restoration costs depend on how long the leak was active before detection. We provide a free on-site assessment with a written estimate.",
+      },
+      {
+        question: 'Will my Bressi Ranch HOA insurance or my homeowner insurance cover the repair?',
+        answer:
+          "This depends on whether the leak originates within your unit's individual supply lines or in common-area plumbing. In most Bressi Ranch HOA structures, supply lines within the unit boundaries are the individual owner's responsibility and covered under homeowner insurance. Common-area plumbing falls under the HOA master policy. We help determine which policy applies, provide documentation for both if needed, and coordinate with both adjusters when the damage crosses coverage boundaries.",
+      },
+    ],
+  },
 };
 
 /**
  * Retrieve unique content for a city+service combination.
  * Returns null if no unique content exists yet (allows graceful fallback).
  */
-export function getCityServiceContent(citySlug: string, serviceSlug: string): CityServiceContent | null {
+export function getCityServiceContent(
+  citySlug: string,
+  serviceSlug: string
+): CityServiceContent | null {
   const key = `${citySlug}-${serviceSlug}`;
   return cityServiceContent[key] || null;
 }
