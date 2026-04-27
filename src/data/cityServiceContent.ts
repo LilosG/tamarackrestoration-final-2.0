@@ -4350,6 +4350,701 @@ The HOA structure in Bressi Ranch means that water shutoffs, access easements, a
       },
     ],
   },
+  // ============================================================
+  // CARLSBAD — LEAK DETECTION
+  // ============================================================
+  'carlsbad-leak-detection': {
+    uniqueH1: 'Leak Detection in Carlsbad — Thermal Imaging & Acoustic Technology',
+    uniqueIntro: `Carlsbad's combination of aging copper infrastructure in Carlsbad Village, engineered-fill construction in La Costa and Aviara, and persistent coastal humidity creates a hidden leak environment where damage accumulates faster than homeowners expect. A pinhole leak in a wall cavity in Carlsbad Village cannot evaporate — coastal humidity keeps the cavity saturated, and mold establishes within 48 hours on wet drywall. Tamarack Restoration has performed more than 150 leak detection investigations across Carlsbad, using thermal imaging cameras, acoustic listening equipment, and calibrated moisture meters to locate leaks precisely before opening a single wall.`,
+    localChallenges: `Carlsbad Village and Olde Carlsbad present the most complex leak detection environment in the city. Homes built in the 1960s and 1970s have original copper supply lines that have been repaired and modified over decades, creating a plumbing map that rarely matches any original documentation. Multiple repair patches on aging pipe runs mean that when a new leak develops, it may be anywhere along the system — not necessarily at an obvious fitting or connection. We conduct systematic pressure-zone isolation before deploying detection equipment, narrowing the leak to a specific pipe run before thermal imaging and acoustic work begins.
+
+La Costa, Aviara, and Bressi Ranch present a different detection challenge. These newer communities have more uniform construction, but multi-story homes with bathrooms and laundry rooms above living areas create vertical leak pathways that are difficult to trace. Water from a second-floor shower pan failure or supply line pinhole can travel down through wall framing, across subfloor, and pool above a first-floor ceiling — appearing far from the actual leak source. Thermal imaging is essential in these situations because it maps the full moisture migration path, not just the surface symptom.
+
+The Batiquitos Lagoon corridor elevates baseline humidity for adjacent properties year-round. In these homes, moisture meter readings require calibration against ambient conditions — a reading that would indicate a dry wall in an inland city indicates borderline saturation in a lagoon-adjacent Carlsbad property. Our technicians adjust baseline thresholds for coastal Carlsbad properties to avoid both false positives and missed detections.`,
+    localProof:
+      '150+ leak detection investigations completed in Carlsbad since 2014, with confirmed leak locations on every project.',
+    projectCount: '150+',
+    avgResponseTime: '35 minutes',
+    landmarks: [
+      'Carlsbad Village',
+      'Batiquitos Lagoon',
+      'LEGOLAND California',
+      'The Flower Fields',
+      'Carlsbad Premium Outlets',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Carlsbad Village & Olde Carlsbad',
+        detail:
+          'Aging copper with undocumented repair history. Pressure-zone isolation is mandatory before detection begins. Multiple active leak points on a single system are not uncommon.',
+      },
+      {
+        name: 'La Costa',
+        detail:
+          'Multi-story construction creates vertical leak migration. Thermal imaging maps the full moisture path from source to symptom — which are often in different rooms.',
+      },
+      {
+        name: 'Aviara',
+        detail:
+          'High-end finishes make early detection critical. Water migration behind custom cabinetry and under wide-plank hardwood is invisible until significant damage has occurred.',
+      },
+      {
+        name: 'Batiquitos Lagoon Corridor',
+        detail:
+          'Elevated baseline humidity requires adjusted moisture meter thresholds. Standard readings underestimate saturation in this zone without coastal calibration.',
+      },
+      {
+        name: 'Bressi Ranch',
+        detail:
+          'HOA communities with shared walls require adjacent-unit moisture assessment when a leak is detected. We document all potentially affected units for insurance purposes.',
+      },
+      {
+        name: 'Rancho Carrillo',
+        detail:
+          'Hillside grading means storm water intrusion can mimic supply-line leak symptoms. We distinguish between plumbing and intrusion sources using pressure isolation before thermal scanning.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do you detect a hidden leak in a Carlsbad home without opening the walls?',
+        answer:
+          "We use three complementary technologies in sequence. First, pressure testing isolates the leak to a specific supply zone and confirms an active leak rather than a past event. Then thermal imaging cameras scan walls, floors, and ceilings for temperature anomalies caused by evaporating moisture — even a slow drip creates a detectable thermal signature in Carlsbad's humid coastal environment. Finally, acoustic sensors amplify the sound of pressurized water escaping pipe walls through building materials. The combination pinpoints the leak within inches before we open anything.",
+      },
+      {
+        question:
+          'Why does coastal humidity in Carlsbad make hidden leaks more damaging than in inland cities?',
+        answer:
+          'In a dry inland environment, some of the moisture from a hidden leak evaporates into the wall cavity, slowing damage progression. In coastal Carlsbad, ambient humidity is high enough that evaporation is negligible — moisture from a leak accumulates continuously in wall and floor cavities. Mold can establish colonies on wet drywall in Carlsbad within 48 hours, compared to 72 hours or more in drier conditions. This accelerated timeline is why we treat every suspected leak in Carlsbad as time-sensitive regardless of how minor the surface symptoms appear.',
+      },
+      {
+        question: 'How much does leak detection cost in Carlsbad?',
+        answer:
+          'Our comprehensive leak detection assessment — thermal imaging, acoustic testing, pressure testing, and moisture mapping — runs $250–$450 depending on property size and the number of suspected zones. This fee is credited toward the repair if we perform the work. Given that an undetected leak in Carlsbad can cause $15,000–$40,000 in hidden structural and mold damage over a few months, professional detection is among the most cost-effective decisions a homeowner can make.',
+      },
+      {
+        question: 'What does a Carlsbad leak detection report include?',
+        answer:
+          'Our written detection report includes the confirmed leak location with thermal images, moisture meter readings at all tested points, a map of water migration through affected materials, identification of all secondary wet areas beyond the leak point, and recommended repair scope. This documentation is formatted for insurance submission and is accepted by all major carriers serving Carlsbad, including State Farm, USAA, Farmers, and Allstate.',
+      },
+      {
+        question: 'Can you detect irrigation system leaks as well as plumbing leaks in Carlsbad?',
+        answer:
+          'Yes. Carlsbad properties with subsurface irrigation systems can develop valve manifold and lateral line failures that saturate soil around foundations and mimic plumbing leak symptoms. We isolate irrigation and supply systems independently during our pressure testing sequence to determine which system is the source before deploying thermal and acoustic equipment. Several Carlsbad homeowners have avoided unnecessary plumbing repairs after we identified the irrigation system as the actual leak source.',
+      },
+      {
+        question: 'How quickly can you perform leak detection at a Carlsbad property?',
+        answer:
+          'We dispatch from our El Camino Real headquarters in Carlsbad 24 hours a day, 7 days a week, averaging 35 minutes to most Carlsbad addresses. Same-day detection appointments are available 7 days a week for non-emergency situations. If you notice a rising water bill, hear running water with fixtures off, or see unexplained staining on walls or ceilings, call (760) 500-2211 — the cost of early detection is a fraction of the remediation that follows an undetected leak.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // OCEANSIDE — LEAK DETECTION
+  // ============================================================
+  'oceanside-leak-detection': {
+    uniqueH1: 'Leak Detection in Oceanside — Find Hidden Leaks Before Major Damage',
+    uniqueIntro: `Oceanside's aging housing stock in South Oceanside and Downtown — combined with the alluvial soil conditions near the San Luis Rey River — creates a hidden leak environment where plumbing failures often go undetected for months. Older galvanized and copper systems in 1940s and 1950s properties develop pinhole leaks that seep at low volume behind walls, producing mold and structural damage long before any surface symptom appears. Tamarack Restoration has completed more than 100 leak detection investigations in Oceanside, serving everything from historic downtown commercial buildings to newer Rancho Del Oro residences.`,
+    localChallenges: `South Oceanside and Downtown contain Oceanside's oldest properties, many with plumbing systems that have been partially replaced over decades without full system documentation. Galvanized-to-copper transitions — common in 1960s and 1970s updates to original 1940s systems — are particularly prone to galvanic corrosion leaks where the two metals meet. These transition-point leaks are often inside wall cavities at locations that are not accessible without detection equipment. We use thermal imaging to identify the thermal signature of these leaks and acoustic equipment to confirm the exact pipe location before any access is made.
+
+The alluvial soils of the Mission Area and Fire Mountain create a detection complication unique to this part of Oceanside. When these soils absorb moisture — whether from a plumbing leak, irrigation failure, or storm water — they can transmit that moisture laterally for significant distances before it surfaces. A supply line leak in a wall can saturate soil beneath the foundation and re-enter the structure at a completely different location, appearing as floor moisture or wall staining far from the actual leak. Thermal imaging of the full affected area, not just the symptom location, is essential to map this moisture migration correctly.
+
+Oceanside's military housing near Camp Pendleton adds a property management dimension to leak detection. Active duty homeowners who are deployed or stationed elsewhere rely on property managers or family members to identify and respond to leaks. We work directly with authorized representatives and provide full written documentation of all findings for absentee owners.`,
+    localProof:
+      '100+ leak detection investigations completed in Oceanside including South Oceanside, Downtown, Fire Mountain, and Rancho Del Oro.',
+    projectCount: '100+',
+    avgResponseTime: '20 minutes',
+    landmarks: [
+      'Oceanside Pier',
+      'Camp Pendleton',
+      'Mission San Luis Rey',
+      'San Luis Rey River',
+      'Oceanside Harbor',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'South Oceanside',
+        detail:
+          'Oldest properties in the city. Galvanized-to-copper transition joints are the most common hidden leak source. Thermal imaging finds these without wall demolition.',
+      },
+      {
+        name: 'Downtown Oceanside',
+        detail:
+          'Mixed residential and commercial stock with complex plumbing histories. Commercial properties require business-hours scheduling and minimal disruption protocols.',
+      },
+      {
+        name: 'Fire Mountain',
+        detail:
+          'Hillside alluvial soils transmit moisture laterally, meaning surface symptoms appear far from the actual leak. Full-area thermal scanning is mandatory for accurate source identification.',
+      },
+      {
+        name: 'Mission Area',
+        detail:
+          'San Luis Rey River alluvial deposits create identical lateral moisture transmission. We map the full moisture migration path before recommending any repair scope.',
+      },
+      {
+        name: 'Rancho Del Oro',
+        detail:
+          'Newer planned community with more uniform construction. Hidden leaks here typically involve failed HVAC condensate lines and supply line pinholes at copper fittings.',
+      },
+      {
+        name: 'Camp Pendleton Adjacent',
+        detail:
+          'Absentee military owners require full written detection reports for remote review. We coordinate with property managers and provide insurance-ready documentation.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What are the signs of a hidden water leak in an Oceanside home?',
+        answer:
+          'The most reliable early indicator is a water bill that increases without any change in usage — even a 10% spike warrants investigation. Other signs include the sound of running water when all fixtures are off, musty odors in a specific room, soft or discolored patches on walls or ceilings, warm floor sections, and paint bubbling or peeling without visible cause. In older South Oceanside and Downtown properties, efflorescence — white mineral deposits on concrete or masonry — can indicate long-term moisture migration through foundation walls.',
+      },
+      {
+        question: 'How do alluvial soils in Oceanside affect where leak symptoms appear?',
+        answer:
+          'Alluvial soils in Fire Mountain and the Mission Area can transmit moisture laterally for 10–20 feet before it surfaces. A supply line leak inside a wall can saturate the soil beneath the foundation and re-enter the structure as floor moisture or wall staining in a completely different room. This is why we scan the full affected area with thermal imaging rather than just the symptom location — the surface stain and the actual leak can be in different rooms entirely.',
+      },
+      {
+        question: 'Can you perform leak detection in an Oceanside commercial property?',
+        answer:
+          'Yes. We perform leak detection in commercial buildings, multi-unit residential properties, and mixed-use Downtown Oceanside buildings. Commercial detection is scheduled to minimize business disruption — we can perform thermal imaging and acoustic testing during off-hours or in non-customer-facing areas during business hours. We provide written reports suitable for commercial property management records and insurance claims.',
+      },
+      {
+        question:
+          'How do you handle leak detection for a military property where the owner is deployed?',
+        answer:
+          'We coordinate with whoever holds access authority — property manager, spouse, or designated representative. All detection findings are documented in a written report with thermal images and moisture readings that can be reviewed remotely. We conduct all insurance coordination electronically and can provide video walkthroughs of damage documentation for deployed owners who cannot be present.',
+      },
+      {
+        question: 'How much does leak detection cost in Oceanside?',
+        answer:
+          'A comprehensive leak detection assessment runs $250–$450 depending on property size and complexity. This fee is credited toward repair costs if we perform the work. For older South Oceanside properties with galvanized plumbing and complex repair histories, the detection scope may require additional pressure zone testing that adds to the assessment time. We provide a clear estimate of the detection scope before starting.',
+      },
+      {
+        question: 'How quickly can you perform leak detection in Oceanside?',
+        answer:
+          'We average 20 minutes from our Carlsbad headquarters to Oceanside. Same-day detection appointments are available 7 days a week. For emergencies — active leaks with visible water damage — we dispatch immediately. Call (760) 500-2211 any time.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // VISTA — LEAK DETECTION
+  // ============================================================
+  'vista-leak-detection': {
+    uniqueH1: 'Leak Detection in Vista — Thermal Imaging for Hidden Plumbing Leaks',
+    uniqueIntro: `Vista's inland valley location and large inventory of 1960s through 1980s homes create a hidden leak environment defined by aging copper infrastructure and hard-water mineral scaling. Unlike coastal cities where humidity accelerates damage, Vista's dry summer conditions can actually mask leak symptoms — moisture evaporates from wall cavities faster, reducing surface staining and delaying detection while the underlying structural damage continues. Tamarack Restoration has completed more than 80 leak detection investigations across Vista, and our thermal imaging approach is calibrated for Vista's drier ambient conditions.`,
+    localChallenges: `Breeze Hill, Alta Vista, and downtown Vista neighborhoods have copper plumbing at 50-to-60-year age with hard-water scaling on interior pipe walls. Under-deposit corrosion — where mineral scale traps moisture against the copper surface — produces pinhole clusters that are not randomly distributed but concentrated at slow-flow areas like elbows and horizontal runs. When these pinholes develop inside wall cavities in Vista's drier climate, they can seep for weeks before producing any visible surface symptom. A water bill that increases gradually is often the only indicator until the cavity is saturated enough to produce staining.
+
+Shadowridge and Lake Vista represent a transitional age bracket — homes built in the late 1970s through the 1980s with Type M copper that is now entering its 40-to-50-year window. Hot-water recirculation systems in these homes are particularly vulnerable because continuous flow erodes the pipe interior at bends over time. We see a consistent pattern of recirculation loop pinholes in Shadowridge homes that have been seeping for months before the homeowner notices any symptom — the dry climate masks the surface staining that would appear quickly in a coastal city.
+
+Vista's agricultural and semi-rural properties in the eastern portions of the city add irrigation system complexity. Large irrigation networks on these properties can develop subsurface valve and lateral failures that saturate soil around foundations and mimic plumbing leak symptoms. We always isolate irrigation and supply systems independently during pressure testing to confirm the actual leak source before deploying thermal and acoustic equipment.`,
+    localProof:
+      '80+ leak detection investigations completed in Vista including Shadowridge, Breeze Hill, Lake Vista, and downtown Vista neighborhoods.',
+    projectCount: '80+',
+    avgResponseTime: '30 minutes',
+    landmarks: [
+      'Moonlight Amphitheatre',
+      'Brengle Terrace Park',
+      'Guajome Regional Park',
+      'Shadowridge Golf Club',
+      'Alta Vista Botanical Gardens',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Breeze Hill & Alta Vista',
+        detail:
+          "Hard-water scale causes under-deposit corrosion on 60-year-old copper. Pinhole clusters at elbows and horizontal runs seep for weeks before producing surface symptoms in Vista's dry climate.",
+      },
+      {
+        name: 'Shadowridge',
+        detail:
+          'Late-1970s Type M copper on recirculation loops entering failure age. Continuous flow erosion at bends produces pinholes that seep for months before the dry climate allows surface staining to appear.',
+      },
+      {
+        name: 'Lake Vista',
+        detail:
+          'Properties near the lake have higher ambient soil moisture, which shortens the time between leak onset and visible symptom compared to drier Vista neighborhoods.',
+      },
+      {
+        name: 'Downtown Vista',
+        detail:
+          'Older commercial and residential stock with complex plumbing histories. We map the full system configuration before detection begins on properties with undocumented repair histories.',
+      },
+      {
+        name: 'East Vista',
+        detail:
+          'Agricultural and semi-rural properties with large irrigation systems. Subsurface irrigation failures frequently mimic plumbing leak symptoms and require independent isolation testing.',
+      },
+      {
+        name: 'Rancho Buena Vista',
+        detail:
+          'Mid-1980s to 1990s homes with aging HVAC condensate systems. Condensate line clogs overflow into wall and ceiling cavities and are a common hidden leak source in this area.',
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does Vista's dry climate make hidden leaks harder to detect?",
+        answer:
+          "In coastal cities, moisture from a hidden leak accumulates in wall cavities because ambient humidity prevents evaporation. In Vista's drier climate, some moisture evaporates from the cavity — slowing the progression of visible symptoms like staining and paint bubbling. A leak that would produce visible wall staining in two weeks in Carlsbad might take six weeks to surface in Vista. The structural and mold damage continues during that delay, it just stays hidden longer. This is why a water bill increase or the sound of running water with fixtures off should trigger a professional detection call in Vista rather than a wait-and-see approach.",
+      },
+      {
+        question: 'How does hard water in Vista affect hidden leak risk?',
+        answer:
+          "Vista's water supply has moderate hardness that deposits mineral scale on copper pipe interiors over time. Where scale builds up at slow-flow areas — elbows, horizontal runs, and near shut-off valves — it traps moisture between the scale and the pipe wall, creating localized corrosion cells that produce pinhole failures. These pinholes cluster at the scale deposit locations rather than being randomly distributed, which is why our pressure zone testing targets these specific pipe sections when investigating suspected leaks in older Vista homes.",
+      },
+      {
+        question: 'What equipment do you use for leak detection in Vista homes?',
+        answer:
+          "We use thermal imaging cameras calibrated for Vista's lower ambient humidity, acoustic ground microphones and electronic amplifiers for slab and wall leaks, calibrated moisture meters with probes for penetrating wall surfaces without demolition, and electronic pressure testing equipment for supply line isolation. The thermal imaging calibration for Vista is different from coastal Carlsbad because the temperature differential caused by evaporating moisture is smaller in drier air — we adjust sensitivity thresholds accordingly.",
+      },
+      {
+        question: 'Can you distinguish between a plumbing leak and an irrigation leak in Vista?',
+        answer:
+          'Yes, and this distinction is critical for Vista properties with large irrigation systems. We shut off the irrigation system and plumbing supply lines independently, testing each under pressure to identify which system is losing pressure. An irrigation failure shows no pressure drop on the plumbing system. We have redirected several Vista homeowners from expensive plumbing repairs to irrigation repairs after isolating the correct source — saving thousands of dollars on unnecessary work.',
+      },
+      {
+        question: 'How much does leak detection cost in Vista?',
+        answer:
+          'Our comprehensive detection assessment — pressure testing, thermal imaging, acoustic scanning, and moisture mapping — runs $250–$450 depending on property size. For Vista properties with large agricultural or irrigation systems requiring additional isolation testing, the assessment may be on the higher end of this range. The fee is credited toward repair if we perform the work.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Vista for leak detection?',
+        answer:
+          'We average 30 minutes from Carlsbad to Vista. Shadowridge and Lake Vista are closest at 25 minutes. Downtown Vista and eastern neighborhoods are 30–35 minutes. Same-day detection appointments available 7 days a week. Call (760) 500-2211.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // SAN MARCOS — LEAK DETECTION
+  // ============================================================
+  'san-marcos-leak-detection': {
+    uniqueH1: 'Leak Detection in San Marcos — Precision Technology, Same-Day Response',
+    uniqueIntro: `San Marcos combines two leak detection environments in one city: established downtown neighborhoods with aging copper infrastructure and fill-graded hillside communities where soil settlement creates plumbing stress independent of pipe age. Tamarack Restoration has completed more than 75 leak detection investigations in San Marcos, and our 15-minute average response time from Carlsbad makes us the fastest professional detection service available in the city.`,
+    localChallenges: `The established neighborhoods surrounding downtown San Marcos and Lake San Marcos have copper supply lines at 40-to-60-year age sitting on unevenly settled alluvial soils. Hidden leaks in these properties often develop at pipe joints that have shifted with soil movement rather than at corrosion pinholes — and joint-separation leaks produce higher flow rates than pinholes, causing faster damage progression. When these leaks develop inside wall or floor cavities, the higher flow rate means damage can become significant within days rather than the weeks typical of pinhole leaks.
+
+San Elijo Hills and Discovery Hills were built on hillside terrain with significant cut-and-fill grading. The fill portions of these lots continue to settle for years after construction, and this settlement creates differential movement between adjacent pipe sections — some resting on stable native soil, others on still-settling fill. Hidden leaks at these soil-transition zones are particularly common in properties 10–20 years post-construction, the period when fill settlement produces the most pipe stress. We factor this into our detection approach for hillside San Marcos properties, targeting the fill-transition zones during our initial pressure isolation.
+
+The university district near Cal State San Marcos presents a rental property detection challenge. Tenants often delay reporting leak symptoms, and by the time property managers are notified, significant hidden damage has accumulated. We work with San Marcos property managers to establish responsive leak investigation protocols and provide written reports that document the full damage scope for both insurance and tenant-dispute purposes.`,
+    localProof:
+      '75+ leak detection investigations completed in San Marcos including San Elijo Hills, Lake San Marcos, downtown San Marcos, and Discovery Hills.',
+    projectCount: '75+',
+    avgResponseTime: '15 minutes',
+    landmarks: [
+      'Cal State San Marcos',
+      'Lake San Marcos',
+      'Double Peak Park',
+      'San Marcos Creek',
+      'San Elijo Hills Community Park',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Lake San Marcos',
+        detail:
+          'Older properties on unevenly settled alluvial soils. Joint-separation leaks from soil movement produce higher flow rates than pinholes — damage progresses faster and detection is more time-sensitive.',
+      },
+      {
+        name: 'San Elijo Hills',
+        detail:
+          'Fill-section soil settlement creates leak stress at soil-transition zones beneath slabs and inside walls. Properties 10–20 years post-construction are in the highest-risk window.',
+      },
+      {
+        name: 'Discovery Hills',
+        detail:
+          'Similar hillside grading profile to San Elijo Hills. We target fill-transition zones during initial pressure isolation for all hillside Discovery Hills properties.',
+      },
+      {
+        name: 'Downtown San Marcos',
+        detail:
+          'Mixed-age residential and commercial stock. Older properties near Twin Oaks Valley Road have original copper at 50+ years with undocumented repair histories.',
+      },
+      {
+        name: 'University District',
+        detail:
+          'Rental properties with delayed reporting histories. Written detection reports documenting full damage scope are essential for insurance and property management records.',
+      },
+      {
+        name: 'Twin Oaks Valley',
+        detail:
+          'Rural properties with private wells and extensive irrigation. Independent isolation of well, supply, and irrigation systems is required before detection begins.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do you detect a hidden leak in a hillside San Elijo Hills home?',
+        answer:
+          'Hillside homes in San Elijo Hills and Discovery Hills have a specific leak detection challenge: fill-section soil settlement creates movement at soil-transition zones that can cause pipe joint failures inside walls and beneath slabs. We begin with pressure zone isolation to identify the pipe run losing pressure, then use thermal imaging to locate the temperature anomaly caused by escaping moisture. In hillside properties, we pay particular attention to the downslope half of the structure where fill soils are deepest and settlement is greatest.',
+      },
+      {
+        question: 'What causes hidden leaks in newer San Marcos homes?',
+        answer:
+          'Newer construction does not eliminate hidden leak risk — it shifts the source. In San Elijo Hills and Discovery Hills homes under 20 years old, fill-section soil settlement is the primary cause of pipe stress and joint failures. HVAC condensate line clogs that overflow into wall and ceiling cavities are also a common hidden leak source in newer San Marcos construction. Water heater supply connections and recirculation loop fittings develop pinholes as systems enter the 15-to-25-year range.',
+      },
+      {
+        question: 'How do you handle leak detection for a San Marcos rental property?',
+        answer:
+          'We coordinate access with tenants and property managers, schedule detection to minimize disruption, and provide a complete written report documenting confirmed leak location, moisture readings at all affected areas, and repair recommendations. For insurance claims, we provide thermal images and documentation formatted for adjuster review. We have established relationships with several San Marcos property management companies and understand the documentation requirements for both insurance and tenant dispute purposes.',
+      },
+      {
+        question: 'How much does leak detection cost in San Marcos?',
+        answer:
+          'A comprehensive detection assessment runs $250–$450 depending on property size and scope. For hillside properties in San Elijo Hills and Discovery Hills that require additional soil-transition zone analysis, the assessment may be on the higher end. The fee is credited toward repair if we perform the work. Same-day detection appointments are available 7 days a week.',
+      },
+      {
+        question: 'How quickly can Tamarack reach San Marcos for leak detection?',
+        answer:
+          'San Marcos is 15 minutes from our Carlsbad headquarters — our fastest response time of any city we serve. San Elijo Hills and Discovery Hills are 15–20 minutes. Downtown San Marcos and Lake San Marcos are 15 minutes. We dispatch 24/7. Call (760) 500-2211.',
+      },
+      {
+        question: 'Can you detect HVAC condensate leaks in San Marcos homes?',
+        answer:
+          'Yes. HVAC condensate line clogs are among the most common hidden leak sources in newer San Marcos construction. A clogged condensate drain causes the drip pan to overflow — typically into a wall or ceiling cavity adjacent to the air handler. Thermal imaging detects the moisture accumulation in these cavities without opening walls. We locate the clog, clear the line, dry the affected cavity, and assess for mold if the leak was long-running.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // ENCINITAS — LEAK DETECTION
+  // ============================================================
+  'encinitas-leak-detection': {
+    uniqueH1: 'Leak Detection in Encinitas — Coastal Property Leak Specialists',
+    uniqueIntro: `Encinitas combines the highest hidden leak risk environment on the North County coast with some of the most damage-sensitive property types in the region. Coastal humidity in Leucadia and Cardiff means hidden leaks produce mold within 48 hours. Blufftop geological movement creates pipe stress in newer properties. Olivenhain private well systems introduce pressure variables that municipal connections never encounter. Tamarack Restoration has completed more than 95 leak detection investigations in Encinitas, calibrating our detection approach for each of these distinct environments.`,
+    localChallenges: `Downtown Encinitas and Leucadia contain a large inventory of beach cottages and bungalows from the 1950s through 1970s where original copper supply lines have been in a salt-air coastal environment for 50-to-70 years. Salt chemistry in coastal soils creates a more corrosive environment for buried and wall-embedded copper than inland locations, producing pinholes at a measurably faster rate. When these pinholes develop inside cottage wall cavities — typically with minimal insulation and unventilated stud bays — the coastal humidity prevents any evaporation, and mold establishes on the wet drywall or plaster within 48 hours. Early detection is not just cost-effective in these properties — it is the difference between a repair and a remediation.
+
+Cardiff-by-the-Sea blufftop properties face a leak detection challenge driven by geology. The coastal bluffs are in continuous slow movement, and this movement creates micro-fractures at plumbing penetrations through foundations and walls — locations where rigid pipe passes through moving structure. Water that enters through these micro-fractures does not behave like supply-line leak water; it migrates with gravity through the structure rather than emanating from a pressure source. Our thermal imaging approach for Cardiff blufftop properties includes a scan of all foundation penetrations and wall-to-slab interfaces in addition to the standard supply-line investigation.
+
+Olivenhain estates on private well systems can experience pressure transients that are completely absent from municipal-connected properties. When a pressure-switch failure spikes supply pressure above 100 PSI, it can blow fitting seals and crack compression joints throughout the supply system simultaneously — producing multiple leak points that require a full-system investigation rather than a targeted single-leak search.`,
+    localProof:
+      '95+ leak detection investigations completed in Encinitas including Cardiff, Leucadia, downtown Encinitas, and Olivenhain.',
+    projectCount: '95+',
+    avgResponseTime: '20 minutes',
+    landmarks: [
+      "Swami's Beach",
+      'Moonlight State Beach',
+      'San Elijo Lagoon',
+      'Cardiff-by-the-Sea',
+      'Self-Realization Fellowship',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Leucadia',
+        detail:
+          '50-to-70-year coastal copper in salt-air environment. Pinholes develop faster than inland cities, and coastal humidity means mold establishes in 48 hours rather than 72. Early detection is critical.',
+      },
+      {
+        name: 'Cardiff-by-the-Sea',
+        detail:
+          'Blufftop geological movement creates micro-fractures at plumbing penetrations. Our scan protocol includes all foundation and wall-to-slab interfaces in addition to supply-line investigation.',
+      },
+      {
+        name: 'Downtown Encinitas',
+        detail:
+          'Mixed-age renovation history. Original plumbing often hidden behind updated finishes. We map the full plumbing configuration before thermal scanning begins.',
+      },
+      {
+        name: 'Olivenhain',
+        detail:
+          'Private well pressure transients can produce multiple simultaneous leak points throughout the supply system. Full-system investigation required when pressure-switch failure is suspected.',
+      },
+      {
+        name: 'New Encinitas',
+        detail:
+          'Planned communities from the 1980s–90s. HVAC condensate overflows and hot-water recirculation loop pinholes are the most common hidden leak sources at this construction age.',
+      },
+      {
+        name: 'Encinitas Ranch',
+        detail:
+          'HOA community with maintained infrastructure. Adjacent-unit moisture assessment required for townhome and attached-property leak investigations.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How does coastal humidity in Encinitas affect hidden leak damage?',
+        answer:
+          'Coastal humidity in Leucadia and Cardiff means moisture from a hidden leak cannot evaporate from wall cavities — it accumulates continuously. Mold establishes on wet drywall in these areas within 48 hours of the first moisture contact, compared to 72 hours in drier conditions. A leak that would be contained to a small damp patch in an inland city produces an active mold colony in a Leucadia cottage within two days. This is why we treat every suspected hidden leak in coastal Encinitas as an emergency regardless of surface symptom severity.',
+      },
+      {
+        question:
+          'How do you detect leaks in blufftop Cardiff homes where geological movement is a factor?',
+        answer:
+          'For Cardiff blufftop properties, our detection protocol extends beyond standard supply-line investigation. In addition to pressure testing and acoustic scanning, we scan all foundation penetrations, wall-to-slab interfaces, and structural movement joints with thermal imaging — these are locations where geological movement can create water intrusion pathways that behave differently from pressure-driven supply-line leaks. We distinguish between active supply-line leaks and passive intrusion by testing supply pressure while scanning, confirming which moisture sources are pressure-driven.',
+      },
+      {
+        question: 'Do you perform leak detection in Olivenhain estates on private wells?',
+        answer:
+          'Yes, and private well properties require a detection approach that accounts for pressure system behavior. We assess the pressure tank and switch system before testing supply lines, identifying whether a pressure-switch failure may have caused multiple simultaneous leak points across the system. For Olivenhain properties where a pressure transient is suspected, we conduct a full-system pressure test across all supply zones rather than targeting a single suspected area.',
+      },
+      {
+        question:
+          'Can you detect leaks in older Leucadia and Cardiff beach cottages without damaging original materials?',
+        answer:
+          'Yes — non-invasive detection is specifically why thermal imaging and acoustic technology exist. We locate leaks in older Encinitas cottages through wall and floor surfaces without contact, marking the confirmed leak location before any access is made. In properties with original hardwood, vintage tile, or plaster walls, we discuss repair access options that preserve as much original material as possible before any work begins.',
+      },
+      {
+        question: 'How much does leak detection cost in Encinitas?',
+        answer:
+          'A comprehensive detection assessment runs $250–$450 for standard residential properties. Cardiff blufftop and Olivenhain estate properties with extended detection protocols may be on the higher end of this range. The fee is credited toward repair if we perform the work. Given the 48-hour mold timeline in coastal Encinitas, the cost of early detection is always less than the cost of delayed detection plus remediation.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Encinitas for leak detection?',
+        answer:
+          'We average 20 minutes from Carlsbad to Encinitas. Cardiff and Leucadia are 15–18 minutes. Olivenhain and New Encinitas are 20–25 minutes. We dispatch 24/7. For coastal Encinitas properties with suspected active leaks, we treat every call as time-sensitive given the 48-hour mold onset window. Call (760) 500-2211 immediately.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // RANCHO SANTA FE — LEAK DETECTION
+  // ============================================================
+  'rancho-santa-fe-leak-detection': {
+    uniqueH1: 'Leak Detection in Rancho Santa Fe — Estate-Grade Investigation & Documentation',
+    uniqueIntro: `Leak detection on Rancho Santa Fe estates requires a systematic approach that accounts for property complexity far beyond standard residential investigation. Multi-structure compounds, private well systems, extensive subsurface irrigation networks, and custom construction with rare finishes make RSF leak detection a specialized discipline. Tamarack Restoration has completed more than 45 leak detection investigations on RSF properties, providing the precision documentation and discreet professional service these properties require.`,
+    localChallenges: `RSF estate properties commonly have three or more independent water sources — municipal connection or private well supplying the main residence, a separate irrigation system with dozens of zones covering the grounds, and potentially independent supply to guest houses, pool equipment, and estate outbuildings. When a hidden leak develops, determining which system is the source requires systematic isolation of each supply independently. We conduct a full pressure-zone mapping of all water sources on the property before deploying detection equipment, ensuring we investigate the correct system and do not miss a secondary leak source that would cause a repeat call.
+
+The subsurface irrigation systems that maintain RSF properties are elaborate enough to warrant their own leak investigation methodology. Irrigation valve manifold failures, lateral line breaks at 12–18 inches below grade, and rotor head seal failures can collectively discharge hundreds of gallons per day into the soil around foundations without any surface symptom. This chronic subsurface saturation mimics the symptom pattern of plumbing slab leaks — warm floors, rising water meter readings, and foundation moisture — and has led to incorrect slab repair recommendations by less thorough contractors. We isolate irrigation completely before any plumbing conclusion is drawn.
+
+RSF estates with absentee owners — including seasonal residents, those with primary residences elsewhere, and families with extended travel schedules — face an elevated hidden damage risk. A slow leak in an unoccupied residence can go undetected for weeks or months, producing structural damage and mold that would have been a simple repair if caught early. We provide pre-departure plumbing assessments and recommend whole-house automatic shutoff systems for absentee RSF owners.`,
+    localProof:
+      '45+ leak detection investigations completed on Rancho Santa Fe estates including Fairbanks Ranch, The Covenant, Morgan Run, and Cielo properties.',
+    projectCount: '45+',
+    avgResponseTime: '30 minutes',
+    landmarks: [
+      'Rancho Santa Fe Golf Club',
+      'Fairbanks Ranch Country Club',
+      'The Inn at Rancho Santa Fe',
+      'Lake Hodges',
+      'Del Dios Highway',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'The Covenant',
+        detail:
+          'Historic estate properties with multi-structure compounds and undocumented plumbing histories. Full pressure-zone mapping of all water sources required before detection begins.',
+      },
+      {
+        name: 'Fairbanks Ranch',
+        detail:
+          'Private well systems require pressure-tank assessment before supply-line testing. Pressure transients from switch failures can produce multiple simultaneous leak points.',
+      },
+      {
+        name: 'Morgan Run',
+        detail:
+          'Elaborate multi-zone irrigation systems are the most common hidden moisture source. We isolate irrigation independently before any plumbing conclusion is drawn.',
+      },
+      {
+        name: 'Cielo',
+        detail:
+          'High-elevation estate community with terrain-driven soil movement. Foundation penetration and wall-to-slab interface scanning added to standard detection protocol.',
+      },
+      {
+        name: 'Rancho Del Lago',
+        detail:
+          'Properties near Lake Hodges have elevated groundwater during wet seasons. Groundwater intrusion must be distinguished from supply-line leaks using independent pressure testing.',
+      },
+      {
+        name: 'Santa Fe Valley',
+        detail:
+          'Newer estate development with complex multi-zone plumbing. HVAC systems in large RSF homes have multiple condensate runs that can overflow into wall cavities.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do you detect a hidden leak on a large RSF estate with multiple structures?',
+        answer:
+          'We begin with a full pressure-zone mapping of every water source on the property — main supply, irrigation, guest house supply, and any independent outbuilding connections. Each zone is isolated and pressure-tested independently to identify which system is losing pressure. Only after the leak is confined to a specific system and zone do we deploy thermal imaging and acoustic equipment. This systematic approach ensures we find the correct leak source on complex multi-structure properties without missing secondary leaks.',
+      },
+      {
+        question:
+          'How do you distinguish between an irrigation leak and a plumbing leak on RSF grounds?',
+        answer:
+          'We shut off the irrigation system completely and conduct a plumbing supply pressure test independently. If the plumbing system holds pressure with irrigation off, the leak is in the irrigation system. If pressure drops with irrigation off, the leak is in the plumbing supply. This single isolation step has redirected multiple RSF clients from expensive plumbing investigations to irrigation repairs. We perform this step on every RSF property before any detection equipment is deployed.',
+      },
+      {
+        question: 'Do you provide leak detection reports for RSF property transactions?',
+        answer:
+          'Yes. We provide comprehensive written detection reports with thermal images, pressure test results, moisture readings at all tested points, and repair recommendations. These reports are formatted for property transaction disclosure, insurance submission, and estate management records. Pre-purchase leak inspections on RSF properties are a service we provide regularly, given the complexity and value of the infrastructure involved.',
+      },
+      {
+        question: 'Can you detect leaks in an RSF home while the owners are away?',
+        answer:
+          'Yes. We coordinate with property managers, estate managers, caretakers, or designated representatives for access. All findings are documented with thermal images, moisture readings, and written reports that can be reviewed remotely. We conduct insurance coordination electronically and can provide video documentation of all findings for owners who cannot be present. We also provide recommendations for whole-house automatic shutoff systems that prevent damage during future absences.',
+      },
+      {
+        question: 'How much does leak detection cost on an RSF estate?',
+        answer:
+          'RSF estate detection assessments run $350–$650 depending on property size, number of structures, and scope of investigation required. Properties requiring full irrigation isolation, multi-structure pressure mapping, and extended thermal scanning will be at the higher end of this range. The fee is credited toward repair if we perform the work. Given the asset value and custom finish cost on RSF properties, professional detection is the most cost-effective investment in hidden leak risk management.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Rancho Santa Fe for leak detection?',
+        answer:
+          'We average 30 minutes from Carlsbad to RSF. Fairbanks Ranch and properties near Via de la Valle are 25 minutes. The Covenant and Cielo are 30–35 minutes. We dispatch 24/7. For absentee properties where a leak has been running undetected, we treat every RSF call as time-sensitive. Call (760) 500-2211.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // SOLANA BEACH — LEAK DETECTION
+  // ============================================================
+  'solana-beach-leak-detection': {
+    uniqueH1: 'Leak Detection in Solana Beach — Coastal Leak Specialists',
+    uniqueIntro: `Solana Beach is one of the most leak-risk-concentrated cities on the North County coast. Nearly every property sits within a mile of the Pacific, giving salt-air soil chemistry maximum reach into buried copper supply lines. Condominium and townhome density in the Lomas Santa Fe corridor means a single hidden leak can affect multiple units simultaneously. Blufftop properties in western Solana Beach face both corrosion and geological movement as leak sources. Tamarack Restoration has completed more than 40 leak detection investigations in Solana Beach, serving both individual homeowners and HOA management companies.`,
+    localChallenges: `Solana Beach's condominium and townhome density in the Lomas Santa Fe corridor creates a multi-unit hidden leak dynamic that is uncommon in single-family neighborhoods. When a supply line develops a pinhole inside a shared wall, the moisture migration can affect the source unit, the adjacent unit, and the unit below before any surface symptom appears in any of the three. HOA management companies face the challenge of identifying which unit contains the leak source, which units are affected, and how to coordinate access and insurance claims across multiple policyholders. We work directly with Solana Beach HOA management to provide detection reports that map the leak source and all affected units in a single investigation.
+
+Western Solana Beach properties — those west of Interstate 5 and along the Del Mar Scenic Parkway — face the combined pressure of coastal copper corrosion and blufftop geological movement. These properties are effectively in the highest-risk zone for hidden plumbing failures in Solana Beach: old enough to have corrosion-age copper, close enough to the ocean for salt chemistry to have maximum effect, and on terrain that moves enough to stress pipe fittings at foundation penetrations. Our detection protocol for these properties includes both standard supply-line investigation and a bluff-influence scan of foundation and wall-to-slab interfaces.
+
+Solana Beach also has a significant second-home and seasonal resident population, particularly in the beachfront and blufftop properties. Unoccupied homes accumulate hidden leak damage at a rate that can produce catastrophic structural and mold damage during an absence of several months. We provide pre-departure plumbing assessments and recommend automatic shutoff systems for Solana Beach seasonal residents.`,
+    localProof:
+      '40+ leak detection investigations completed in Solana Beach including blufftop properties, Eden Gardens, and Lomas Santa Fe corridor condominiums.',
+    projectCount: '40+',
+    avgResponseTime: '25 minutes',
+    landmarks: [
+      'Fletcher Cove Beach Park',
+      'Cedros Avenue Design District',
+      'Tide Beach Park',
+      'San Elijo Lagoon',
+      'Del Mar Scenic Parkway',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Lomas Santa Fe Condominiums',
+        detail:
+          'Multi-unit shared-wall construction means a single hidden leak can affect three or more units before any surface symptom appears. HOA coordination and multi-unit moisture mapping are standard for every investigation here.',
+      },
+      {
+        name: 'Eden Gardens',
+        detail:
+          'Mid-century homes with 50-to-70-year copper in high-corrosion coastal environment. Salt-air soil chemistry at maximum effect given proximity to the ocean.',
+      },
+      {
+        name: 'West of I-5',
+        detail:
+          'Highest risk zone in Solana Beach: coastal corrosion plus blufftop geological movement. Detection protocol includes both supply-line investigation and foundation penetration scanning.',
+      },
+      {
+        name: 'Del Mar Scenic Parkway Blufftop',
+        detail:
+          'Active bluff geology stresses pipe fittings at foundation penetrations. Water intrusion through geological micro-fractures requires extended detection protocol beyond standard supply-line investigation.',
+      },
+      {
+        name: 'Solana Beach Commercial',
+        detail:
+          'Commercial properties along Cedros Avenue and Highway 101 with complex plumbing histories. Off-hours detection scheduling available to minimize business disruption.',
+      },
+    ],
+    faqs: [
+      {
+        question:
+          'How do you handle leak detection in a Solana Beach condominium where multiple units may be affected?',
+        answer:
+          'We coordinate with the HOA management company to obtain access to all potentially affected units simultaneously. Our investigation maps the leak source unit and all adjacent and lower units with thermal imaging and moisture meters in a single visit, providing a complete picture of the damage scope across all affected policyholders. We produce unit-specific moisture reading reports for each affected owner and a summary report for HOA management, formatted for simultaneous insurance submission across multiple policies.',
+      },
+      {
+        question: 'Why are hidden leaks so damaging in western Solana Beach specifically?',
+        answer:
+          'Western Solana Beach properties face three compounding risk factors: coastal salt-air chemistry that corrodes copper supply lines faster than inland cities, blufftop geological movement that stresses pipe fittings at foundation penetrations, and high ambient humidity that prevents moisture from evaporating out of wall cavities. A pinhole leak in a western Solana Beach property accumulates damage faster than in any other location in our service area.',
+      },
+      {
+        question:
+          'Do you provide leak detection assessments for Solana Beach seasonal residents before they leave for extended periods?',
+        answer:
+          'Yes. Pre-departure plumbing assessments include a full pressure test of all supply zones, thermal imaging of suspected high-risk areas, and moisture baseline readings throughout the property. We document current conditions and note any areas of concern that warrant monitoring or repair before the property is left unoccupied. We also install or recommend whole-house automatic shutoff systems that detect abnormal flow patterns and close the main supply valve automatically.',
+      },
+      {
+        question: 'How much does leak detection cost in Solana Beach?',
+        answer:
+          'A residential detection assessment runs $250–$450. Multi-unit condominium investigations requiring access to multiple units and coordinated HOA reporting run $350–$550 depending on the number of units assessed. Pre-departure assessments for seasonal residents are priced based on property size and scope. All fees credited toward repair if we perform the work.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Solana Beach for leak detection?',
+        answer:
+          'We average 25 minutes from Carlsbad to Solana Beach. Lomas Santa Fe corridor properties are closest at 20 minutes. Blufftop and western addresses are 25–30 minutes. We dispatch 24/7. Call (760) 500-2211.',
+      },
+      {
+        question: 'Can you detect leaks behind tile walls in Solana Beach condominiums?',
+        answer:
+          'Yes. Thermal imaging detects temperature anomalies through tile surfaces without contact or damage. Acoustic sensors identify the pressure signature of escaping water through tile and concrete walls. In Solana Beach condominiums where shower enclosure and bathroom tile walls are a common hidden leak location, we locate the leak source precisely before any tile is removed — protecting finishes and minimizing repair scope.',
+      },
+    ],
+  },
+
+  // ============================================================
+  // BRESSI RANCH — LEAK DETECTION
+  // ============================================================
+  'bressi-ranch-leak-detection': {
+    uniqueH1: 'Leak Detection in Bressi Ranch — Fast Local Response from Carlsbad',
+    uniqueIntro: `Bressi Ranch is adjacent to our Carlsbad headquarters — we average 12 minutes to any address in this community, faster than any other professional leak detection service. Homes built between 2002 and 2012 are entering the 15-to-25-year window where HVAC condensate systems, hot-water recirculation loops, and supply line fittings begin to develop hidden leaks. HOA-managed attached properties require adjacent-unit moisture assessment as a standard part of every investigation. Tamarack Restoration has completed more than 55 leak detection investigations in Bressi Ranch.`,
+    localChallenges: `Bressi Ranch homes at 15-to-25-year age have three common hidden leak sources that we investigate in sequence. First, HVAC condensate systems: air handler drip pans and condensate drain lines that clog and overflow into ceiling and wall cavities are the most common hidden leak source in this construction age range. Second, hot-water recirculation loops: continuous water flow through copper loops beneath slabs and inside walls erodes the pipe interior at bends over time, producing pinholes that seep into wall cavities before any surface symptom appears. Third, supply line fittings: compression and push-fit fittings installed during original construction develop micro-leaks as the fittings age and thermal cycling causes dimensional changes at the connection points.
+
+The HOA structure in Bressi Ranch means that attached townhomes and condominiums have shared walls where a hidden leak in one unit can migrate to adjacent units before any owner notices. We conduct adjacent-unit moisture assessments as a standard component of every Bressi Ranch townhome and condominium leak investigation — not as an add-on. This approach has identified secondary unit damage in approximately 30% of Bressi Ranch multi-unit investigations, preventing secondary insurance claims that would have developed within days if the adjacent moisture had gone undetected.
+
+Bressi Ranch landscaping and the engineered fill soils beneath some properties mean that subsurface irrigation failures can produce soil saturation around foundations that mimics supply-line leak symptoms. We isolate irrigation and plumbing supply systems independently before thermal scanning to ensure we identify the correct leak source on the first visit.`,
+    localProof:
+      '55+ leak detection investigations completed in Bressi Ranch, with adjacent-unit moisture assessments performed on all attached-property investigations.',
+    projectCount: '55+',
+    avgResponseTime: '12 minutes',
+    landmarks: [
+      'Bressi Ranch Park',
+      'The Crossings at Carlsbad',
+      'Palomar Airport Road',
+      'El Camino Real',
+      'Bressi Ranch Village',
+    ],
+    neighborhoodContext: [
+      {
+        name: 'Bressi Ranch Single-Family Homes',
+        detail:
+          'HVAC condensate overflows and recirculation loop pinholes are the primary hidden leak sources at 15-to-25-year construction age. Thermal imaging locates both without wall access.',
+      },
+      {
+        name: 'Bressi Ranch Townhomes',
+        detail:
+          'Shared walls require adjacent-unit moisture assessment on every investigation. We identify secondary unit moisture in approximately 30% of Bressi Ranch townhome leak calls.',
+      },
+      {
+        name: 'Bressi Ranch Condominiums',
+        detail:
+          'HOA-coordinated access and multi-unit moisture documentation are standard. We produce unit-specific reports for each affected owner formatted for insurance submission.',
+      },
+      {
+        name: 'El Camino Real Corridor',
+        detail:
+          'Closest addresses to our Carlsbad headquarters — typically 10 minutes or less. We carry full detection equipment on every truck for immediate on-site investigation.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What are the most common hidden leak sources in Bressi Ranch homes?',
+        answer:
+          'At 15-to-25-year construction age, Bressi Ranch homes have three primary hidden leak sources in order of frequency. First, HVAC condensate drain clogs: the condensate drain line from the air handler collects algae and debris over time, eventually clogging and causing the drip pan to overflow into the ceiling or wall cavity adjacent to the unit. Second, hot-water recirculation loop pinholes: continuous flow erodes copper at bends, producing pinholes that seep into wall cavities before surfacing. Third, supply line fitting failures: compression and push-fit fittings develop micro-leaks as they age through thermal cycling.',
+      },
+      {
+        question: 'How quickly can Tamarack reach Bressi Ranch for leak detection?',
+        answer:
+          'Bressi Ranch is adjacent to our Carlsbad headquarters on El Camino Real. We average 12 minutes to any Bressi Ranch address — the fastest response time in our service area. We carry full thermal imaging and acoustic detection equipment on every truck, so detection begins immediately on arrival. We dispatch 24/7. Call (760) 500-2211.',
+      },
+      {
+        question: 'Do you always check adjacent units in Bressi Ranch townhomes and condominiums?',
+        answer:
+          'Yes, always. We have found secondary unit moisture in approximately 30% of Bressi Ranch multi-unit leak investigations — moisture that would have produced its own insurance claim within days if left undetected. Adjacent-unit assessment is included in our standard investigation fee for all attached Bressi Ranch properties, not charged as an additional service. We coordinate access with adjacent owners or HOA management as part of our standard process.',
+      },
+      {
+        question: 'Can you detect an HVAC condensate leak in a Bressi Ranch home?',
+        answer:
+          'Yes. HVAC condensate overflows are one of the most common hidden leak sources we investigate in Bressi Ranch. Thermal imaging detects the moisture accumulation in ceiling and wall cavities adjacent to the air handler without opening drywall. We locate the clog, confirm the drain line is clear, assess the affected cavity for mold if the leak was long-running, and dry any wet materials with commercial equipment. Most condensate overflow investigations are completed in a single visit.',
+      },
+      {
+        question: 'How much does leak detection cost in Bressi Ranch?',
+        answer:
+          'A single-family residential detection assessment in Bressi Ranch runs $250–$400. Townhome and condominium investigations including adjacent-unit assessment run $300–$450 depending on the number of units requiring access. All fees credited toward repair if we perform the work. Same-day appointments available 7 days a week.',
+      },
+      {
+        question: 'What documentation do you provide after a Bressi Ranch leak detection?',
+        answer:
+          'We provide a written detection report with confirmed leak location, thermal images of the moisture anomaly, moisture meter readings at all tested points in all assessed units, identification of all secondary wet areas, and recommended repair scope. For HOA management, we produce a summary report covering all affected units formatted for coordinated insurance submission. All documentation is provided within 24 hours of the investigation.',
+      },
+    ],
+  },
 };
 
 /**
