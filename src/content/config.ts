@@ -23,6 +23,7 @@ const blogCollection = defineCollection({
       'flood',
       'insurance',
       'prevention',
+      'leak-detection',
       'tips',
       'news',
     ]),
