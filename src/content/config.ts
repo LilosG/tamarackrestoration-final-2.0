@@ -28,10 +28,14 @@ const blogCollection = defineCollection({
       'news',
     ]),
     tags: z.array(z.string()).default([]),
-    faqs: z.array(z.object({
-      question: z.string(),
-      answer: z.string(),
-    })).default([]),
+    faqs: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        })
+      )
+      .default([]),
     // Internal linking - connect to services and cities
     relatedServices: z.array(z.string()).default([]),
     relatedCities: z.array(z.string()).default([]),
