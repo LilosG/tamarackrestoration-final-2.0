@@ -22,50 +22,52 @@ const currentYear = new Date().getFullYear();
 
 <footer class:list={['bg-brand-black text-white', className]}>
   <!-- CTA Section (Optional) -->
-  {showCTA && (
-    <div class="bg-brand-orange py-12 lg:py-16">
-      <div class="container">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-2">
-              Ready to Restore Your Property?
-            </h2>
-            <p class="text-white/90 text-lg">
-              24/7 emergency service with 60-minute response time
-            </p>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <Button
-              href={`tel:${business.phone}`}
-              variant="secondary"
-              size="lg"
-              class="bg-white text-brand-orange border-white hover:bg-brand-cream hover:text-brand-orange-700"
-              onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'footer_cta',page_path:window.location.pathname});}`}
-            >
-              <Icon name="phone" size="md" />
-              {business.phoneFormatted}
-            </Button>
-            <Button 
-              href="/contact/"
-              variant="outline"
-              size="lg"
-              class="border-white text-white hover:bg-white hover:text-brand-orange"
-            >
-              Request Service
-            </Button>
+  {
+    showCTA && (
+      <div class="bg-brand-orange py-12 lg:py-16">
+        <div class="container">
+          <div class="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+            <div>
+              <h2 class="mb-2 font-heading text-2xl font-bold text-white md:text-3xl">
+                Ready to Restore Your Property?
+              </h2>
+              <p class="text-lg text-white/90">
+                24/7 emergency service with 60-minute response time
+              </p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <Button
+                href={`tel:${business.phone}`}
+                variant="secondary"
+                size="lg"
+                class="border-white bg-white text-brand-orange hover:bg-brand-cream hover:text-brand-orange-700"
+                onclick={`if(window.gtag){window.gtag('event','click_to_call',{phone_number:'${business.phone}',cta_location:'footer_cta',page_path:window.location.pathname});}`}
+              >
+                <Icon name="phone" size="md" />
+                {business.phoneFormatted}
+              </Button>
+              <Button
+                href="/contact/"
+                variant="outline"
+                size="lg"
+                class="border-white text-white hover:bg-white hover:text-brand-orange"
+              >
+                Request Service
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )}
-  
+    )
+  }
+
   <!-- Main Footer -->
   <div class="py-12 lg:py-16">
     <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <!-- Company Info -->
         <div class="lg:col-span-1">
-          <a href="/" class="inline-block mb-6">
+          <a href="/" class="mb-6 inline-block">
             <img
               src="/images/logo/tamarack-logo.webp"
               alt="Tamarack Restoration"
@@ -75,59 +77,141 @@ const currentYear = new Date().getFullYear();
               height="960"
             />
           </a>
-          <p class="text-brand-cream-400 text-sm mb-6 leading-relaxed">
-            Professional emergency restoration services for water damage, fire damage, mold, and more. Serving North San Diego County 24/7.
+          <p class="mb-6 text-sm leading-relaxed text-brand-cream-400">
+            Professional emergency restoration services for water damage, fire damage, mold, and
+            more. Serving North San Diego County 24/7.
           </p>
           <div class="flex items-center gap-2 text-brand-orange">
             <Icon name="award" size="sm" />
             <span class="text-sm font-medium">IICRC Certified</span>
           </div>
         </div>
-        
+
         <!-- Services -->
         <div>
-          <h3 class="font-heading font-bold text-white mb-4">Services</h3>
+          <h3 class="mb-4 font-heading font-bold text-white">Services</h3>
           <ul class="space-y-3">
-            <li><a href="/services/water-damage-restoration/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Water Damage Restoration</a></li>
-            <li><a href="/services/water-leak-repair/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Water Leak Repair</a></li>
-            <li><a href="/services/slab-leak-repair/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Slab Leak Repair</a></li>
-            <li><a href="/services/leak-detection/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Leak Detection</a></li>
-            <li><a href="/services/mold-removal/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Mold Removal</a></li>
-            <li><a href="/services/fire-damage-restoration/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Fire Damage Restoration</a></li>
-            <li><a href="/services/flood-cleanup/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Flood Cleanup</a></li>
-            <li><a href="/services/sewage-cleanup/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Sewage Cleanup</a></li>
+            <li>
+              <a
+                href="/services/water-damage-restoration/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Water Damage Restoration</a>
+            </li>
+            <li>
+              <a
+                href="/services/water-leak-repair/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Water Leak Repair</a>
+            </li>
+            <li>
+              <a
+                href="/services/slab-leak-repair/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Slab Leak Repair</a>
+            </li>
+            <li>
+              <a
+                href="/services/leak-detection/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Leak Detection</a>
+            </li>
+            <li>
+              <a
+                href="/services/mold-removal/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Mold Removal</a>
+            </li>
+            <li>
+              <a
+                href="/services/fire-damage-restoration/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Fire Damage Restoration</a>
+            </li>
+            <li>
+              <a
+                href="/services/flood-cleanup/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Flood Cleanup</a>
+            </li>
+            <li>
+              <a
+                href="/services/sewage-cleanup/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Sewage Cleanup</a>
+            </li>
           </ul>
         </div>
-        
+
         <!-- Service Areas -->
         <div>
-          <h3 class="font-heading font-bold text-white mb-4">Service Areas</h3>
+          <h3 class="mb-4 font-heading font-bold text-white">Service Areas</h3>
           <ul class="space-y-3">
-            <li><a href="/service-area/carlsbad/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Carlsbad</a></li>
-            <li><a href="/service-area/oceanside/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Oceanside</a></li>
-            <li><a href="/service-area/vista/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Vista</a></li>
-            <li><a href="/service-area/san-marcos/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">San Marcos</a></li>
-            <li><a href="/service-area/encinitas/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Encinitas</a></li>
-            <li><a href="/service-area/rancho-santa-fe/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Rancho Santa Fe</a></li>
-            <li><a href="/service-area/solana-beach/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Solana Beach</a></li>
-            <li><a href="/service-area/bressi-ranch/" class="text-brand-cream-400 hover:text-brand-orange transition-colors text-sm">Bressi Ranch</a></li>
+            <li>
+              <a
+                href="/service-area/carlsbad/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Carlsbad</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/oceanside/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Oceanside</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/vista/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Vista</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/san-marcos/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >San Marcos</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/encinitas/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Encinitas</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/rancho-santa-fe/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Rancho Santa Fe</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/solana-beach/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Solana Beach</a>
+            </li>
+            <li>
+              <a
+                href="/service-area/bressi-ranch/"
+                class="text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+                >Bressi Ranch</a>
+            </li>
           </ul>
         </div>
-        
+
         <!-- Contact Info -->
         <div>
-          <h3 class="font-heading font-bold text-white mb-4">Quick Info</h3>
+          <h3 class="mb-4 font-heading font-bold text-white">Quick Info</h3>
           <ul class="space-y-4">
             <li>
               <PhoneCTA
                 phone={business.phone}
                 phoneFormatted={business.phoneFormatted}
                 ctaLocation="footer"
-                class="flex items-start gap-3 text-brand-cream-400 hover:text-brand-orange transition-colors"
+                class="flex items-start gap-3 text-brand-cream-400 transition-colors hover:text-brand-orange"
               >
                 <Icon name="phone" size="sm" class="mt-0.5 flex-shrink-0" />
                 <span>
-                  <span class="block text-sm font-medium text-white">{business.phoneFormatted}</span>
+                  <span class="block text-sm font-medium text-white">{business.phoneFormatted}</span
+                  >
                   <span class="block text-xs">24/7 Emergency Line</span>
                 </span>
               </PhoneCTA>
@@ -138,7 +222,8 @@ const currentYear = new Date().getFullYear();
                 <span class="text-sm">
                   {business.address.street}<br />
                   {business.address.suite}<br />
-                  {business.address.city}, {business.address.state} {business.address.zip}
+                  {business.address.city}, {business.address.state}
+                  {business.address.zip}
                 </span>
               </div>
             </li>
@@ -153,15 +238,28 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
   </div>
-  
+
   <!-- Bottom Bar -->
   <div class="border-t border-white/10 py-6">
     <div class="container">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-cream-400">
+      <div
+        class="flex flex-col items-center justify-between gap-4 text-sm text-brand-cream-400 md:flex-row"
+      >
         <p>&copy; {currentYear} {business.name}. All rights reserved.</p>
+        <p class="text-xs text-brand-cream-500">
+          Website by <a
+            href="https://www.lilosgrowth.com"
+            target="_blank"
+            rel="noopener"
+            class="transition-colors hover:text-brand-orange">Lilos Growth</a>
+        </p>
         <div class="flex items-center gap-6">
-          <a href="/privacy-policy/" class="hover:text-brand-orange transition-colors">Privacy Policy</a>
-          <a href="/terms-of-service/" class="hover:text-brand-orange transition-colors">Terms of Service</a>
+          <a href="/privacy-policy/" class="transition-colors hover:text-brand-orange"
+            >Privacy Policy</a
+          >
+          <a href="/terms-of-service/" class="transition-colors hover:text-brand-orange"
+            >Terms of Service</a
+          >
         </div>
       </div>
     </div>
