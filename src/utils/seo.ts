@@ -24,9 +24,7 @@ import {
   PAYMENT_METHODS,
   ACCEPTED_CURRENCIES,
   AREA_SERVED_CITIES,
-  CITY_SAME_AS,
-  REVIEW_NODES,
-
+  CITY_SAME_AS
 } from '@/data/schema';
 
 const SITE_URL = 'https://www.tamarackrestoration.com';
@@ -110,13 +108,6 @@ export function getCanonicalUrl(path: string): string {
 // SCHEMA GENERATORS
 // ===================
 
-const AGGREGATE_RATING = {
-  '@type': 'AggregateRating' as const,
-  ratingValue: business.rating.toString(),
-  reviewCount: business.reviewCount.toString(),
-  bestRating: '5',
-  worstRating: '1',
-};
 
 /**
  * Map a City object to a schema.org City node, enriching with sameAs when available.
@@ -188,8 +179,6 @@ export function getLocalBusinessSchema(areaServed?: City[]): LocalBusinessSchema
       opens: '00:00',
       closes: '23:59',
     },
-    aggregateRating: AGGREGATE_RATING,
-    review: REVIEW_NODES,
     areaServed: areaServed
       ? areaServed.map(toCityNode)
       : AREA_SERVED_CITIES,
