@@ -9,13 +9,12 @@
 import Icon from '@/components/ui/Icon.astro';
 import Card from '@/components/ui/Card.astro';
 import Button from '@/components/ui/Button.astro';
-import { business, testimonials as allTestimonials, type Testimonial } from '@/data/site';
+import { getGoogleReviews, formatReviewDate } from '@/utils/googleReviews';
 
 interface Props {
   class?: string;
   title?: string;
   subtitle?: string;
-  testimonials?: Testimonial[];
   showGoogleBadge?: boolean;
   limit?: number;
 }
@@ -28,9 +27,8 @@ const {
   limit = 3,
 } = Astro.props;
 
-// Use provided testimonials or fall back to centralized data
-const testimonialData = Astro.props.testimonials || allTestimonials;
-const displayTestimonials = testimonialData.slice(0, limit);
+const reviewData = getGoogleReviews(limit);
+const displayTestimonials = reviewData.reviews;
 ---
 
 <section class:list={['testimonials section', className]}>
@@ -62,9 +60,9 @@ const displayTestimonials = testimonialData.slice(0, limit);
               ))}
             </div>
             <p class="text-brand-gray">
-              <span class="font-bold text-brand-black text-lg">{business.rating}</span>
+              <span class="font-bold text-brand-black text-lg">{reviewData.rating ? reviewData.rating.toFixed(1) : 'Google'}</span>
               <span class="mx-1">·</span>
-              <span>{business.reviewCount} reviews on Google</span>
+              <span>{reviewData.totalReviewCount ? `${reviewData.totalReviewCount} Google reviews` : 'Verified Google reviews'}</span>
             </p>
           </div>
         </div>
@@ -87,26 +85,21 @@ const displayTestimonials = testimonialData.slice(0, limit);
           <!-- Quote -->
           <blockquote class="flex-1 mb-4">
             <p class="text-brand-gray leading-relaxed">
-              "{testimonial.text}"
+              "{testimonial.comment}"
             </p>
           </blockquote>
           
           <!-- Author -->
           <footer class="flex items-center gap-3 pt-4 border-t border-brand-cream-300">
             <div class="w-10 h-10 rounded-full bg-brand-orange-100 flex items-center justify-center text-brand-orange font-bold">
-              {testimonial.author.charAt(0)}
+              {testimonial.authorName.charAt(0)}
             </div>
             <div>
-              <p class="font-semibold text-brand-black">{testimonial.author}</p>
+              <p class="font-semibold text-brand-black">{testimonial.authorName}</p>
               <p class="text-body-sm text-brand-gray flex items-center gap-1">
                 <Icon name="map-pin" size="sm" />
-                {testimonial.location}
-                {testimonial.date && (
-                  <>
-                    <span class="mx-1">·</span>
-                    {testimonial.date}
-                  </>
-                )}
+                {testimonial.location || "North San Diego County"}
+                {formatReviewDate(testimonial.publishedAt) && (<> <span class="mx-1">·</span>{formatReviewDate(testimonial.publishedAt)}</>)}
               </p>
             </div>
           </footer>
@@ -116,7 +109,7 @@ const displayTestimonials = testimonialData.slice(0, limit);
     
     <!-- View More Button -->
     <div class="text-center mt-10">
-      <Button href="/about/testimonials/" variant="outline">
+      <Button href={reviewData.googleBusinessProfileUrl} variant="outline">
         Read More Reviews
         <Icon name="arrow-right" size="sm" />
       </Button>

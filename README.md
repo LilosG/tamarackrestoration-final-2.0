@@ -161,3 +161,26 @@ Pass criteria used by the report:
 
 Private - All rights reserved
 # Force deploy
+
+## Google Business Profile Reviews (Homepage Trust Section)
+
+- Refresh cached reviews with `npm run reviews:fetch`.
+- Script: `scripts/fetch-google-reviews.mjs`.
+- Data cache file used at build time: `src/data/google-reviews.json`.
+- Static fallback if API is unavailable: `src/data/google-reviews-fallback.json`.
+
+### Required environment variables
+
+- `GOOGLE_BUSINESS_PROFILE_ACCOUNT_ID`
+- `GOOGLE_BUSINESS_PROFILE_LOCATION_ID`
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_CLIENT_SECRET`
+- `GOOGLE_REFRESH_TOKEN`
+- `GOOGLE_REVIEWS_PROFILE_URL` (optional CTA URL)
+
+### Notes
+
+- Reviews are rendered server-side from cached JSON so static builds remain stable.
+- No Google API credentials are exposed to browsers.
+- If refresh fails, existing cached data is preserved.
+- The site intentionally does **not** emit `Review` or `AggregateRating` schema for these first-party business reviews to stay compliant with Google self-serving review rich result rules.
