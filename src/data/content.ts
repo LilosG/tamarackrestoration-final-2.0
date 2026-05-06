@@ -79,7 +79,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       },
       {
         title: 'Insurance Experts',
-        description: 'We work directly with your insurance company, documenting damage thoroughly and maximizing your claim.',
+        description: 'We help coordinate with your insurance company, documenting damage thoroughly for carrier review.',
       },
     ],
     commonCauses: [
@@ -111,7 +111,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       'IICRC-certified water restoration technicians',
       'Truck-mounted extraction for maximum power',
       'Thermal imaging to find hidden moisture',
-      'Direct insurance billing available',
+      'Billing coordination available when applicable',
     ],
   },
   
@@ -234,7 +234,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       },
       {
         title: 'Insurance Coordination',
-        description: 'We work directly with your insurance adjuster, documenting everything for maximum claim approval.',
+        description: 'We help coordinate with your insurance adjuster and document visible damage, moisture readings, and scope notes for carrier review.',
       },
     ],
     commonCauses: [
@@ -918,7 +918,7 @@ export function generateServiceCityFAQs(
     },
     {
       question: `Do you work with insurance for ${serviceName.toLowerCase()} in ${cityName}?`,
-      answer: `Yes, we work with all major insurance carriers and have extensive experience with ${serviceName.toLowerCase()} claims. We document all damage thoroughly, communicate directly with your insurance adjuster, and help maximize your claim. Many ${cityName} homeowners pay little or nothing out of pocket.`,
+      answer: `Yes, we work with all major insurance carriers and have extensive experience with ${serviceName.toLowerCase()} claims. We document visible damage thoroughly and help coordinate with your insurance adjuster. Coverage and out-of-pocket costs depend on your policy, cause of loss, deductible, and carrier review.`,
     },
     {
       question: `How much does ${serviceName.toLowerCase()} cost in ${cityName}?`,
@@ -978,17 +978,17 @@ export interface InsuranceCarrierContent {
 export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = {
   'state-farm': {
     slug: 'state-farm',
-    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We simplify the process by working directly with State Farm adjusters on your behalf. Our team knows exactly what documentation State Farm requires and how to communicate effectively with their adjusters.`,
+    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We simplify the process by working directly with State Farm adjusters during the claim process. Our team knows exactly what documentation State Farm requires and how to communicate effectively with their adjusters.`,
     claimSteps: [
       { title: 'Document Everything', description: 'Take photos and videos of all damage before cleanup begins.' },
       { title: 'File Your State Farm Claim', description: 'Call State Farm at 1-800-732-5246 or file online.' },
       { title: 'Call Tamarack Restoration', description: 'We begin emergency mitigation immediately—no need to wait for approval.' },
-      { title: 'We Meet Your Adjuster', description: 'We coordinate directly with your State Farm adjuster on-site.' },
-      { title: 'Restoration Begins', description: 'State Farm pays us directly—you only pay your deductible.' },
+      { title: 'Adjuster Communication', description: 'We help coordinate with your State Farm adjuster on-site.' },
+      { title: 'Restoration Begins', description: 'We complete approved mitigation and help coordinate documentation and billing when applicable.' },
     ],
     whyChooseUs: [
       { title: 'State Farm Experience', description: 'Hundreds of successful State Farm claims processed.' },
-      { title: 'Direct Billing', description: 'We bill State Farm directly for covered work.' },
+      { title: 'Billing Coordination', description: 'We help coordinate State Farm documentation and billing when applicable.' },
       { title: 'Thorough Documentation', description: 'Reports that adjusters need to approve your claim.' },
     ],
     claimTips: [
@@ -1013,13 +1013,13 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
   },
   'allstate': {
     slug: 'allstate',
-    howWeHelp: `Allstate policyholders deserve a restoration company that understands their coverage. We work directly with Allstate's claims team to document damage and ensure your restoration meets their standards.`,
+    howWeHelp: `Allstate policyholders deserve a restoration company that understands their coverage. We work directly with Allstate's claims team to document damage and provide restoration scope information for review.`,
     claimSteps: [
       { title: 'Document the Damage', description: 'Capture photos and videos of all affected areas.' },
       { title: 'File Your Allstate Claim', description: 'Report online at allstate.com or call 1-800-255-7828.' },
       { title: 'Contact Tamarack', description: 'We begin mitigation immediately to prevent further damage.' },
       { title: 'Adjuster Coordination', description: 'We provide documentation and answer all questions.' },
-      { title: 'Complete Restoration', description: 'We restore your property and bill Allstate directly.' },
+      { title: 'Complete Restoration', description: 'We restore your property and help coordinate Allstate documentation and billing when applicable.' },
     ],
     whyChooseUs: [
       { title: 'Allstate-Approved Methods', description: 'Industry-standard methods Allstate recognizes.' },
@@ -1052,7 +1052,7 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
       { title: 'File Your Farmers Claim', description: 'Call 1-800-435-7764 or file online.' },
       { title: 'Call Us Immediately', description: 'Emergency mitigation protects your property.' },
       { title: 'Work With Your Adjuster', description: 'We provide detailed scope and documentation.' },
-      { title: 'Restoration Complete', description: 'We bill Farmers directly for covered work.' },
+      { title: 'Restoration Complete', description: 'We help coordinate Farmers documentation and billing when applicable.' },
     ],
     whyChooseUs: [
       { title: 'Farmers Familiarity', description: 'We know what Farmers adjusters require.' },
@@ -1085,7 +1085,7 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
       { title: 'File Your USAA Claim', description: 'Use the app, usaa.com, or call 1-800-531-8722.' },
       { title: 'Contact Tamarack', description: 'We provide 24/7 emergency response for USAA members.' },
       { title: 'Adjuster Coordination', description: 'We work with USAA\'s claims team.' },
-      { title: 'Complete Restoration', description: 'We coordinate directly with USAA for payment.' },
+      { title: 'Complete Restoration', description: 'We help coordinate USAA documentation and billing when applicable.' },
     ],
     whyChooseUs: [
       { title: 'Military Family Focus', description: 'We understand deployments and relocations.' },
@@ -1112,18 +1112,18 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
   },
   'liberty-mutual': {
     slug: 'liberty-mutual',
-    howWeHelp: `Liberty Mutual policyholders can count on us for professional, efficient restoration. We work directly with Liberty Mutual's claims process for smooth handling from start to finish.`,
+    howWeHelp: `Liberty Mutual policyholders can count on us for professional, efficient restoration. We work directly with Liberty Mutual's claims process by providing organized documentation and communication support.`,
     claimSteps: [
       { title: 'Document Everything', description: 'Photograph all damage before cleanup.' },
       { title: 'File Your Claim', description: 'Report at libertymutual.com or call 1-800-225-2467.' },
       { title: 'Call Tamarack', description: 'We respond 24/7 for emergencies.' },
       { title: 'Coordinate With Adjuster', description: 'We provide comprehensive documentation.' },
-      { title: 'Restoration Completed', description: 'We handle direct billing with Liberty Mutual.' },
+      { title: 'Restoration Completed', description: 'We handle billing coordination when applicable with Liberty Mutual.' },
     ],
     whyChooseUs: [
       { title: 'Quality Workmanship', description: 'IICRC-certified work meets their standards.' },
       { title: 'Clear Communication', description: 'We keep everyone informed throughout.' },
-      { title: 'Hassle-Free Billing', description: 'We work directly with Liberty Mutual on payment.' },
+      { title: 'Hassle-Free Billing', description: 'We help coordinate Liberty Mutual documentation and billing when applicable.' },
     ],
     claimTips: [
       'Report claims promptly',

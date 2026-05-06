@@ -14,7 +14,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
-import { insuranceCarriers, services, business } from '@/data/site';
+import { insuranceCarriers, services, business, cities } from '@/data/site';
 import { insuranceServiceContent, serviceContent } from '@/data/content';
 import { getCanonicalUrl, getBreadcrumbSchema, getServiceSchema, getFAQSchema, combineSchemas } from '@/utils/seo';
 import type { FAQ as FAQType } from '@/types';
@@ -33,7 +33,7 @@ const svcContent = serviceContent[serviceSlug] || null;
 
 // SEO
 const title = `${carrier.name} ${service.name} Claims | Tamarack Restoration`;
-const description = `${service.name} covered by ${carrier.name}? We work directly with ${carrier.name} adjusters in North San Diego County. 60-minute response, direct billing. Call ${business.phoneFormatted}.`;
+const description = `${service.name} after a loss with ${carrier.name}? We provide mitigation, documentation, and adjuster communication support in North San Diego County. Coverage depends on your policy, cause of loss, and carrier review. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl(`/insurance/${carrier.slug}/${service.slug}/`);
 
 const breadcrumbs = [
@@ -49,28 +49,36 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 const otherServices = services.filter(s => 
   carrier.coveredServices?.includes(s.slug as any) && s.slug !== serviceSlug
 );
+const priorityCityLinks = cities
+  .filter((city) => city.services.includes(service.slug as any))
+  .sort((a, b) => a.tier - b.tier || a.name.localeCompare(b.name))
+  .slice(0, 5)
+  .map((city) => ({
+    label: `${service.name} in ${city.name}`,
+    href: `/service-area/${city.slug}/${service.slug}/`,
+  }));
 
 // FAQs specific to this carrier + service combination
 const faqs: FAQType[] = [
   {
     question: `Does ${carrier.name} cover ${service.name.toLowerCase()}?`,
-    answer: insuranceService?.coverageOverview || `${carrier.name} typically covers ${service.name.toLowerCase()} when the damage is sudden and accidental. We work directly with ${carrier.name} to document all damage and ensure your claim is processed smoothly.`,
+    answer: insuranceService?.coverageOverview || `Coverage depends on your policy, cause of loss, and ${carrier.name} review. Sudden and accidental losses may be eligible, and we document visible damage, moisture readings, photos, and scope notes for adjuster evaluation.`,
   },
   {
     question: `What's my out-of-pocket cost for ${service.name.toLowerCase()} with ${carrier.name}?`,
-    answer: `With ${carrier.name}, you're typically responsible for your deductible. The rest of the covered restoration costs are paid directly by ${carrier.name}. We provide detailed documentation to maximize your claim.`,
+    answer: `Your out-of-pocket cost depends on your deductible, coverage, cause of loss, and ${carrier.name} review. We provide detailed documentation so your carrier can evaluate covered restoration work clearly.`,
   },
   {
     question: `How quickly can you start ${service.name.toLowerCase()} with a ${carrier.name} claim?`,
-    answer: `We can begin emergency ${service.name.toLowerCase()} within 60 minutes of your call. You don't need to wait for ${carrier.name} approval for emergency mitigation—we'll coordinate with your adjuster while protecting your property.`,
+    answer: `We can begin emergency ${service.name.toLowerCase()} within 60 minutes of your call. Emergency mitigation may be needed quickly to protect the property. We document the loss and help coordinate with your adjuster while coverage is reviewed.`,
   },
   {
     question: `What documentation does ${carrier.name} need for ${service.name.toLowerCase()}?`,
-    answer: insuranceService?.documentationNeeded ? `${carrier.name} typically requires: ${insuranceService.documentationNeeded.join(', ')}. We handle all documentation for you.` : `We provide complete documentation including photos, moisture readings, damage assessments, and detailed reports that ${carrier.name} adjusters require.`,
+    answer: insuranceService?.documentationNeeded ? `${carrier.name} typically requires: ${insuranceService.documentationNeeded.join(', ')}. We prepare organized documentation for you and your adjuster.` : `We provide organized documentation including photos, moisture readings, damage assessments, and detailed reports for ${carrier.name} adjuster review.`,
   },
   {
-    question: `Will ${carrier.name} pay you directly for ${service.name.toLowerCase()}?`,
-    answer: `Yes, we work directly with ${carrier.name} for payment. We handle all the documentation, adjuster meetings, and paperwork so you don't have to manage the process yourself.`,
+    question: `Can billing be coordinated with ${carrier.name} for ${service.name.toLowerCase()}?`,
+    answer: `Billing coordination depends on your policy, claim status, and carrier review. We help coordinate documentation, adjuster communication, and billing when applicable so the process is easier to manage.`,
   },
 ];
 
@@ -110,7 +118,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
         <div class="lg:col-span-7">
           <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="shield" size="sm" />
-            {carrier.name} Covered
+            {carrier.name} Claim Support
           </div>
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
@@ -119,7 +127,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
           </h1>
           
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-            Need {service.name.toLowerCase()} and have {carrier.name}? We work directly with your insurance to restore your property fast—and handle all the paperwork.
+            Need {service.name.toLowerCase()} and have {carrier.name}? We provide emergency restoration, document the loss, and help coordinate adjuster communication and billing when applicable.
           </p>
           
           <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm mb-8">
@@ -129,7 +137,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
             </div>
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="file-text" size="sm" class="text-brand-orange" />
-              <span>Direct {carrier.name} Billing</span>
+              <span>{carrier.name} Billing Coordination</span>
             </div>
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="award" size="sm" class="text-brand-orange" />
@@ -159,7 +167,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
           <LeadForm 
             variant="card"
             title={`${carrier.name} ${service.name}`}
-            subtitle="We handle your insurance claim"
+            subtitle="We help document your insurance claim"
             source={`insurance-${carrierSlug}-${serviceSlug}`}
           />
         </div>
@@ -182,7 +190,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
             {insuranceService?.coverageOverview || `When you need ${service.name.toLowerCase()} and have ${carrier.name} insurance, you want a restoration company that knows how to work with your carrier. Tamarack Restoration has extensive experience with ${carrier.name} claims throughout North San Diego County.`}
           </p>
           <p class="text-lg text-brand-gray leading-relaxed">
-            We handle everything from initial documentation to final adjuster sign-off. Our team communicates directly with {carrier.name}, providing the detailed reports and professional assessments they need to process your claim quickly.
+            We help with the process from initial documentation through adjuster communication. Our team prepares photos, moisture readings, scope notes, and professional assessments for {carrier.name} review.
           </p>
         </div>
       </div>
@@ -289,7 +297,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
           What's Included in Your {carrier.name} Claim
         </h2>
         <p class="text-lg text-brand-gray">
-          Full-service {service.name.toLowerCase()} with complete insurance coordination.
+          Full-service {service.name.toLowerCase()} with documentation and insurance coordination when applicable.
         </p>
       </div>
       
@@ -309,7 +317,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
             <div class="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center">
               <Icon name="check-circle" size="sm" class="text-brand-orange" />
             </div>
-            <span class="font-heading font-semibold text-brand-black">Direct {carrier.name} billing</span>
+            <span class="font-heading font-semibold text-brand-black">Billing coordination when applicable</span>
           </div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-soft">
@@ -332,16 +340,54 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
     </div>
   </section>
   
+
+  <!-- Related Core Service and Local Resources -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-2xl bg-brand-cream-200 p-8">
+          <h2 class="mb-4 font-heading text-2xl font-bold text-brand-black">
+            Core {service.name} Service Details
+          </h2>
+          <p class="mb-6 text-brand-gray">
+            The insurance page explains documentation and claim coordination. The core service page explains the mitigation process, equipment, safety steps, and restoration scope in more detail.
+          </p>
+          <a href={`/services/${service.slug}/`} class="inline-flex items-center gap-2 font-semibold text-brand-orange hover:text-brand-orange-600">
+            View {service.name} service details
+            <Icon name="arrow-right" size="sm" />
+          </a>
+        </div>
+
+        <div class="rounded-2xl bg-brand-cream-200 p-8">
+          <h2 class="mb-4 font-heading text-2xl font-bold text-brand-black">
+            Local {service.name} Resources
+          </h2>
+          <p class="mb-6 text-brand-gray">
+            Browse city-specific restoration pages for response expectations, local property concerns, and service-area details.
+          </p>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {priorityCityLinks.map((link) => (
+              <a href={link.href} class="group rounded-lg bg-white p-4 text-sm font-semibold text-brand-black transition-colors hover:bg-brand-orange hover:text-white">
+                {link.label}
+                <Icon name="arrow-right" size="sm" class="ml-1 inline text-brand-orange group-hover:text-white" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Other Services -->
   {otherServices.length > 0 && (
     <section class="section bg-white">
       <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-10">
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-            Other {carrier.name} Covered Services
+            Other {carrier.name} Claim Support Services
           </h2>
           <p class="text-lg text-brand-gray">
-            We also work with {carrier.name} for these restoration services.
+            We also help document these restoration services for {carrier.name} review when applicable.
           </p>
         </div>
         
@@ -381,7 +427,7 @@ const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);
       <LeadForm 
         variant="card"
         title={`${carrier.name} ${service.name}`}
-        subtitle="We handle your insurance claim"
+        subtitle="We help document your insurance claim"
         source={`insurance-${carrierSlug}-${serviceSlug}-mobile`}
       />
     </div>

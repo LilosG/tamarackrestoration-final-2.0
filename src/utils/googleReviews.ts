@@ -1,5 +1,6 @@
 import cached from '@/data/google-reviews.json';
 import fallback from '@/data/google-reviews-fallback.json';
+import { business } from '@/data/site';
 
 export interface GoogleReviewItem {
   reviewId?: string;
@@ -38,7 +39,24 @@ export function getGoogleReviews(limit = 3): GoogleReviewsPayload {
     .sort((a, b) => (b.rating - a.rating) || (toDateValue(b.publishedAt) - toDateValue(a.publishedAt)))
     .slice(0, limit);
 
-  return { ...active, reviews } as GoogleReviewsPayload;
+  return {
+    ...active,
+    rating: active.rating ?? business.rating,
+    totalReviewCount: active.totalReviewCount ?? business.reviewCount,
+    reviews,
+  } as GoogleReviewsPayload;
+}
+
+export function getReviewTrustSummary() {
+  const data = getGoogleReviews(3);
+
+  return {
+    rating: data.rating ?? business.rating,
+    reviewCount: data.totalReviewCount ?? business.reviewCount,
+    source: data.source,
+    lastUpdated: data.lastUpdated,
+    googleBusinessProfileUrl: data.googleBusinessProfileUrl,
+  };
 }
 
 export function formatReviewDate(date?: string): string | null {
