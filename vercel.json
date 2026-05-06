@@ -282,11 +282,6 @@
       "permanent": true
     },
     {
-      "source": "/service-area/carlsbad/slab-leak-repair(/)?",
-      "destination": "/service-area/carlsbad/water-leak-repair/",
-      "permanent": true
-    },
-    {
       "source": "/service-area/vista/water-restoration(/)?",
       "destination": "/service-area/vista/water-damage-restoration/",
       "permanent": true
