@@ -12,6 +12,7 @@ import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
 import FAQ from '@/components/sections/FAQ.astro';
+import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
 import { services, leakServices, business, globalFaqs } from '@/data/site';
 import { generateTitle, getCanonicalUrl, getFAQSchema } from '@/utils/seo';
 import type { BreadcrumbItem } from '@/types';
@@ -160,6 +161,38 @@ const faqSchema = getFAQSchema(serviceFaqs);
     </div>
   </section>
   
+
+
+  <PriorityInternalLinks
+    title="Restoration Help by Service and Proof"
+    subtitle="Start with the service you need, then review local response pages and real project examples without digging through the site."
+    groups={[
+      {
+        title: 'Priority local service pages',
+        description: 'Common emergency restoration needs near Carlsbad and North San Diego County.',
+        links: [
+          { label: 'Carlsbad Water Damage Restoration', href: '/service-area/carlsbad/water-damage-restoration/', description: 'Emergency extraction, drying, and repairs near Tamarack headquarters.' },
+          { label: 'Carlsbad Slab Leak Repair', href: '/service-area/carlsbad/slab-leak-repair/', description: 'Under-slab leak response and restoration coordination.' },
+          { label: 'Carlsbad Leak Detection', href: '/service-area/carlsbad/leak-detection/', description: 'Moisture assessment and leak-source guidance for hidden water issues.' },
+          { label: 'Encinitas Water Damage Restoration', href: '/service-area/encinitas/water-damage-restoration/', description: 'Water mitigation for coastal and inland Encinitas homes.' },
+          { label: 'San Marcos Water Damage Restoration', href: '/service-area/san-marcos/water-damage-restoration/', description: 'Structural drying and documentation support in San Marcos.' },
+          { label: 'Oceanside Mold Removal', href: '/service-area/oceanside/mold-removal/', description: 'Containment and mold remediation for Oceanside properties.' },
+        ],
+      },
+      {
+        title: 'Project examples',
+        description: 'See representative restoration work by service type.',
+        links: [
+          { label: 'All Restoration Projects', href: '/projects/', description: 'Browse before-and-after restoration examples across North County.' },
+          { label: 'Water Damage Projects', href: '/projects/water-damage-restoration/', description: 'Examples of extraction, drying, and rebuild work.' },
+          { label: 'Mold Removal Projects', href: '/projects/mold-removal/', description: 'Containment, remediation, and clearance-oriented examples.' },
+          { label: 'Fire Damage Projects', href: '/projects/fire-damage-restoration/', description: 'Smoke, soot, odor, and reconstruction examples.' },
+        ],
+      },
+    ]}
+    class="bg-brand-cream-200"
+  />
+
   <!-- Why Choose Us Section -->
   <section class="section bg-brand-cream-200">
     <div class="container">
@@ -198,8 +231,8 @@ const faqSchema = getFAQSchema(serviceFaqs);
                 <Icon name="shield" size="lg" />
               </div>
               <div>
-                <h3 class="font-heading font-bold text-brand-black mb-1">Insurance Experts</h3>
-                <p class="text-body-sm text-brand-gray">We handle claims to simplify your life.</p>
+                <h3 class="font-heading font-bold text-brand-black mb-1">Insurance Documentation Support</h3>
+                <p class="text-body-sm text-brand-gray">We organize photos, moisture readings, and scope notes for carrier review.</p>
               </div>
             </div>
             

@@ -978,18 +978,18 @@ export interface InsuranceCarrierContent {
 export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = {
   'state-farm': {
     slug: 'state-farm',
-    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We simplify the process by working directly with State Farm adjusters during the claim process. Our team knows exactly what documentation State Farm requires and how to communicate effectively with their adjusters.`,
+    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We help organize documentation, mitigation notes, photos, and communication for State Farm adjuster review while keeping coverage expectations tied to the policy, cause of loss, exclusions, and carrier review.`,
     claimSteps: [
       { title: 'Document Everything', description: 'Take photos and videos of all damage before cleanup begins.' },
       { title: 'File Your State Farm Claim', description: 'Call State Farm at 1-800-732-5246 or file online.' },
-      { title: 'Call Tamarack Restoration', description: 'We begin emergency mitigation immediately—no need to wait for approval.' },
+      { title: 'Call Tamarack Restoration', description: 'We begin emergency mitigation promptly when authorized so further damage can be limited while claim review proceeds.' },
       { title: 'Adjuster Communication', description: 'We help coordinate with your State Farm adjuster on-site.' },
-      { title: 'Restoration Begins', description: 'We complete approved mitigation and help coordinate documentation and billing when applicable.' },
+      { title: 'Restoration Begins', description: 'We complete authorized mitigation and help coordinate documentation and billing when applicable.' },
     ],
     whyChooseUs: [
-      { title: 'State Farm Experience', description: 'Hundreds of successful State Farm claims processed.' },
+      { title: 'State Farm Experience', description: 'Experience preparing documentation for State Farm claim review.' },
       { title: 'Billing Coordination', description: 'We help coordinate State Farm documentation and billing when applicable.' },
-      { title: 'Thorough Documentation', description: 'Reports that adjusters need to approve your claim.' },
+      { title: 'Thorough Documentation', description: 'Photos, moisture readings, estimates, and scope notes prepared for adjuster review.' },
     ],
     claimTips: [
       'File your claim as soon as possible',
@@ -1046,7 +1046,7 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
   },
   'farmers': {
     slug: 'farmers',
-    howWeHelp: `Farmers Insurance policyholders trust us because we understand how Farmers handles claims. Our team provides the detailed documentation that ensures your claim is processed efficiently.`,
+    howWeHelp: `Farmers Insurance policyholders trust us because we understand the importance of organized restoration documentation. Our team provides photos, moisture readings, scope notes, and estimates for Farmers claim review without promising coverage outcomes.`,
     claimSteps: [
       { title: 'Document All Damage', description: 'Take comprehensive photos before cleanup.' },
       { title: 'File Your Farmers Claim', description: 'Call 1-800-435-7764 or file online.' },
@@ -1155,10 +1155,10 @@ export interface InsuranceServiceContent {
 export const insuranceServiceContent: Record<string, InsuranceServiceContent> = {
   'water-damage-restoration': {
     serviceSlug: 'water-damage-restoration',
-    coverageOverview: `Most homeowner's insurance covers water damage from sudden events like burst pipes and appliance failures. Coverage varies based on water source and whether damage was sudden or gradual.`,
+    coverageOverview: `Homeowner's insurance may cover water damage from sudden events like burst pipes and appliance failures. Coverage varies based on the water source, timing, policy language, exclusions, and carrier review.`,
     serviceTips: [
       'Stop the water source if safe to do so',
-      'Don\'t wait for adjuster approval for emergency mitigation',
+      'Begin reasonable emergency mitigation promptly when authorized to limit further damage',
       'Document the water source and affected areas',
       'Keep a log of all water-damaged items',
     ],
@@ -1171,7 +1171,7 @@ export const insuranceServiceContent: Record<string, InsuranceServiceContent> = 
   },
   'fire-damage-restoration': {
     serviceSlug: 'fire-damage-restoration',
-    coverageOverview: `Fire damage is typically well-covered, including damage from flames, smoke, soot, and water used to extinguish the fire. Coverage usually extends to structural damage and personal property.`,
+    coverageOverview: `Fire damage may include flame, smoke, soot, and water-from-firefighting impacts. Coverage for structural damage, contents, and additional expenses depends on policy language, exclusions, cause of loss, and carrier review.`,
     serviceTips: [
       'Don\'t enter until fire department clears it',
       'Board up openings to prevent further damage',
@@ -1187,7 +1187,7 @@ export const insuranceServiceContent: Record<string, InsuranceServiceContent> = 
   },
   'mold-removal': {
     serviceSlug: 'mold-removal',
-    coverageOverview: `Mold coverage is often limited. It's typically covered only when resulting from a covered water event and addressed promptly. Some policies have mold coverage caps.`,
+    coverageOverview: `Mold coverage is often limited and may depend on whether growth resulted from a covered water event and was addressed promptly. Some policies include mold caps or exclusions, and all coverage decisions depend on carrier review.`,
     serviceTips: [
       'Link mold to a covered water event',
       'Act quickly—delays can result in denied claims',

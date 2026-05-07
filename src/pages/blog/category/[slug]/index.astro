@@ -6,6 +6,7 @@ import BlogCard from '@/components/blog/BlogCard.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
+import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
 import { allServices } from '@/data/site';
 import {
   getCategorySlugsFromPosts,
@@ -34,6 +35,29 @@ const categoryNames = getCategoryNameMap(allPosts);
 const relatedServices = category.relatedServiceSlugs
   .map((serviceSlug) => allServices.find((service) => service.slug === serviceSlug))
   .filter(Boolean);
+const supportLinkGroups = [];
+if (relatedServices.length > 0) {
+  supportLinkGroups.push({
+    title: 'Core Services',
+    description: 'Service pages with process details, equipment notes, and emergency response options.',
+    links: relatedServices.map((service) => ({
+      label: service!.name,
+      href: `/services/${service!.slug}/`,
+      description: service!.shortDescription,
+    })),
+  });
+}
+if (category.relatedCityServiceLinks.length > 0) {
+  supportLinkGroups.push({
+    title: 'Local Resources',
+    description: 'Relevant city and service pages for readers who need local restoration help.',
+    links: category.relatedCityServiceLinks.map((link) => ({
+      label: link.label,
+      href: link.href,
+      description: link.context,
+    })),
+  });
+}
 
 const canonical = getCanonicalUrl(`/blog/category/${slug}/`);
 const breadcrumbs = [
@@ -108,56 +132,10 @@ const jsonLd = combineSchemas(breadcrumbSchema, webPageSchema);
     </div>
   </section>
 
-  {(relatedServices.length > 0 || category.relatedCityServiceLinks.length > 0) && (
-    <section class="section bg-brand-cream-200">
-      <div class="container">
-        <div class="mb-10 max-w-3xl">
-          <h2 class="mb-4 font-heading text-3xl font-bold text-brand-black">
-            Related {category.label} Services
-          </h2>
-          <p class="text-brand-gray">
-            When an article points to a real restoration need, these central service and local pages provide the next step without relying on thin archive content.
-          </p>
-        </div>
-
-        <div class="grid gap-8 lg:grid-cols-2">
-          {relatedServices.length > 0 && (
-            <div class="rounded-2xl bg-white p-8 shadow-soft">
-              <h3 class="mb-5 font-heading text-xl font-bold text-brand-black">Core Services</h3>
-              <div class="space-y-3">
-                {relatedServices.map((service) => service && (
-                  <a href={`/services/${service.slug}/`} class="group flex items-center gap-3 rounded-xl border border-brand-cream-300 p-4 transition-colors hover:border-brand-orange hover:bg-brand-orange-50">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange">
-                      <Icon name={service.icon} size="md" />
-                    </span>
-                    <span>
-                      <span class="block font-heading font-semibold text-brand-black group-hover:text-brand-orange">{service.name}</span>
-                      <span class="block text-sm text-brand-gray">{service.shortDescription}</span>
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {category.relatedCityServiceLinks.length > 0 && (
-            <div class="rounded-2xl bg-white p-8 shadow-soft">
-              <h3 class="mb-5 font-heading text-xl font-bold text-brand-black">Local Resources</h3>
-              <div class="space-y-3">
-                {category.relatedCityServiceLinks.map((link) => (
-                  <a href={link.href} class="group block rounded-xl border border-brand-cream-300 p-4 transition-colors hover:border-brand-orange hover:bg-brand-orange-50">
-                    <span class="mb-1 flex items-center gap-2 font-heading font-semibold text-brand-black group-hover:text-brand-orange">
-                      {link.label}
-                      <Icon name="arrow-right" size="sm" />
-                    </span>
-                    <span class="text-sm text-brand-gray">{link.context}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  )}
+  <PriorityInternalLinks
+    title={`Related ${category.label} Services`}
+    subtitle="When an article points to a real restoration need, these central service and local pages provide a practical next step."
+    groups={supportLinkGroups}
+    class="bg-brand-cream-200"
+  />
 </BaseLayout>
