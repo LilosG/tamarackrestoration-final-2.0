@@ -14,6 +14,7 @@ import { getCollection } from 'astro:content';
 import { business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 import BlogCard from '@/components/blog/BlogCard.astro';
+import { getPublishedCategoryHubs, getCategoryNameMap } from '@/lib/blogTaxonomy';
 
 // Get all non-draft blog posts, sorted by date
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -26,16 +27,8 @@ const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 3)
 const regularPosts = sortedPosts.filter(post => !post.data.featured);
 const moreArticlePosts = featuredPosts.length > 0 ? regularPosts : sortedPosts;
 
-// Categories
-const categories = [
-  { slug: 'water-damage', name: 'Water Damage', icon: 'droplet' },
-  { slug: 'fire-damage', name: 'Fire Damage', icon: 'flame' },
-  { slug: 'mold', name: 'Mold', icon: 'alert-triangle' },
-  { slug: 'flood', name: 'Flood', icon: 'cloud-rain' },
-  { slug: 'insurance', name: 'Insurance', icon: 'shield' },
-  { slug: 'prevention', name: 'Prevention', icon: 'check-circle' },
-  { slug: 'tips', name: 'Tips & Guides', icon: 'lightbulb' },
-];
+// Categories are generated from published content and centralized hub metadata.
+const categories = getPublishedCategoryHubs(sortedPosts);
 
 // SEO
 const title = 'Restoration Tips & Guides | Tamarack Restoration Blog';
@@ -48,16 +41,7 @@ const breadcrumbs = [
 ];
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 
-// Category display names
-const categoryNames: Record<string, string> = {
-  'water-damage': 'Water Damage',
-  'fire-damage': 'Fire Damage',
-  'mold': 'Mold',
-  'flood': 'Flood',
-  'insurance': 'Insurance',
-  'prevention': 'Prevention',
-  'tips': 'Tips & Guides',
-};
+const categoryNames = getCategoryNameMap(sortedPosts);
 ---
 
 <BaseLayout 
@@ -107,7 +91,7 @@ const categoryNames: Record<string, string> = {
             href={`/blog/category/${cat.slug}/`}
             class="px-4 py-2 bg-brand-cream-200 text-brand-gray rounded-full text-sm font-medium hover:bg-brand-orange hover:text-white transition-colors"
           >
-            {cat.name}
+            {cat.label}
           </a>
         ))}
       </div>

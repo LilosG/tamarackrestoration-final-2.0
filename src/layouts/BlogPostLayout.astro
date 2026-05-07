@@ -15,6 +15,7 @@ import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 import type { CollectionEntry } from 'astro:content';
 import BlogCard from '@/components/blog/BlogCard.astro';
 import FAQSection from '@/components/sections/FAQ.astro';
+import { getCategoryNameMap } from '@/lib/blogTaxonomy';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -66,17 +67,8 @@ const breadcrumbs = [
 ];
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 
-// Category display names
-const categoryNames: Record<string, string> = {
-  'water-damage': 'Water Damage',
-  'fire-damage': 'Fire Damage',
-  'mold': 'Mold',
-  'flood': 'Flood',
-  'insurance': 'Insurance',
-  'prevention': 'Prevention',
-  'tips': 'Tips & Guides',
-  'news': 'Company News',
-};
+// Category display names come from the centralized blog taxonomy hub model.
+const categoryNames = getCategoryNameMap();
 
 // Article schema
 const articleSchema = {

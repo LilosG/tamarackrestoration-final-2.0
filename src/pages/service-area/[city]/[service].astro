@@ -14,9 +14,11 @@
 import MoneyPageLayout from '@/layouts/MoneyPageLayout.astro';
 import Icon from '@/components/ui/Icon.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
+import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
 import { cities, allServices } from '@/data/site';
 import { serviceContent, cityContext, generateServiceCityFAQs } from '@/data/content';
 import { getCityServiceContent } from '@/data/cityServiceContent';
+import { getCityServiceSupportLinks } from '@/data/cityServiceSupportLinks';
 import type { FAQ } from '@/types';
 
 export function getStaticPaths() {
@@ -47,6 +49,7 @@ const context = cityContext[city] || null;
 
 // Get unique city+service content (overrides template FAQs when available)
 const uniqueContent = getCityServiceContent(city, service);
+const supportLinkGroups = getCityServiceSupportLinks(city, service);
 
 // Use unique FAQs if available, otherwise fall back to generated template
 const faqs: FAQ[] = uniqueContent
@@ -439,4 +442,13 @@ const faqs: FAQ[] = uniqueContent
     variant="compact"
     class={uniqueContent ? "bg-white" : "bg-brand-cream-200"}
   />
+
+  {supportLinkGroups.length > 0 && (
+    <PriorityInternalLinks
+      title={`More Help for ${serviceData.name} in ${cityData.name}`}
+      subtitle="Focused next steps for related water services, practical guides, insurance documentation resources, and local proof."
+      groups={supportLinkGroups}
+      class={uniqueContent ? "bg-brand-cream-200" : "bg-white"}
+    />
+  )}
 </MoneyPageLayout>

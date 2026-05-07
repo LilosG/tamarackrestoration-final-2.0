@@ -13,13 +13,13 @@ featured: true
 draft: false
 ---
 
-Water damage is one of the most common—and costly—problems homeowners face. The key to minimizing damage and repair costs is early detection. Here are seven warning signs that you may have water damage in your home.
+Water damage is one of the most common—and costly—problems homeowners face. The key to minimizing damage and repair costs is early detection. Here are seven warning signs that you may have water damage in your home, plus when to call for professional [water damage restoration](/services/water-damage-restoration/).
 
 ## 1. Unexplained Increases in Your Water Bill
 
 If your water bill suddenly spikes without a change in usage, you may have a hidden leak. Even small leaks can waste thousands of gallons over time and cause significant damage to your home's structure.
 
-**What to do:** Check all visible pipes, faucets, and toilets. If you can't find an obvious leak, call a professional to inspect your plumbing.
+**What to do:** Check all visible pipes, faucets, and toilets. If you can't find an obvious leak, call a professional to inspect your plumbing. Hidden sources may require [leak detection](/services/leak-detection/) before restoration work begins.
 
 ## 2. Musty or Moldy Odors
 
@@ -31,7 +31,7 @@ A persistent musty smell, especially in basements, bathrooms, or near walls, oft
 
 While some mold is obvious (black spots on walls or ceilings), mold can also appear as fuzzy white patches, green spots, or even orange and pink stains in humid areas.
 
-**What to do:** Small areas of mold (less than 10 square feet) can sometimes be cleaned with proper precautions. Larger areas require professional mold remediation.
+**What to do:** Small areas of mold (less than 10 square feet) can sometimes be cleaned with proper precautions. Larger areas or recurring growth should be evaluated for professional [mold removal](/services/mold-removal/).
 
 ## 4. Water Stains on Ceilings and Walls
 
