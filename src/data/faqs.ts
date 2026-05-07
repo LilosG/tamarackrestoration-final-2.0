@@ -40,7 +40,7 @@ export const emergencyFaqs: FAQ[] = [
 export const insuranceFaqs: FAQ[] = [
   {
     question: 'Do you work with insurance companies?',
-    answer: 'Yes, we work with all major insurance carriers including State Farm, Allstate, Farmers, USAA, Liberty Mutual, and many others. We handle the documentation, communicate directly with adjusters, and can bill your insurance company directly in most cases.',
+    answer: 'Yes, we work with all major insurance carriers including State Farm, Allstate, Farmers, USAA, Liberty Mutual, and many others. We handle the documentation, communicate directly with adjusters, and can help coordinate billing with your insurance company when applicable.',
     category: 'insurance',
   },
   {
@@ -50,7 +50,7 @@ export const insuranceFaqs: FAQ[] = [
   },
   {
     question: 'Do I need to pay anything out of pocket?',
-    answer: 'Typically, you\'re responsible for your insurance deductible. The rest of the covered restoration costs are paid by your insurance company. We provide detailed documentation to maximize your claim and ensure all damage is properly covered.',
+    answer: 'Typically, you\'re responsible for your insurance deductible. The rest of the covered restoration costs are paid by your insurance company. We provide detailed documentation to document your claim and ensure all damage is properly covered.',
     category: 'insurance',
   },
   {

@@ -1,63 +1,94 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Button from '@/components/ui/Button.astro';
+import TrustBar from '@/components/sections/TrustBar.astro';
+import { getPublishedCategoryHubs } from '@/lib/blogTaxonomy';
+import { getCanonicalUrl, getBreadcrumbSchema, getWebPageSchema, combineSchemas } from '@/utils/seo';
 
-const SITE = new URL(import.meta.env.SITE ?? "https://www.tamarackrestoration.com");
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const categories = getPublishedCategoryHubs(posts).map((hub) => ({
+  ...hub,
+  count: posts.filter((post) => post.data.category === hub.slug).length,
+}));
 
-type Cat = { slug: string; count: number };
+const title = 'Blog Categories | Tamarack Restoration';
+const description = 'Browse Tamarack Restoration articles by topic, including water damage, mold removal, fire damage, flood cleanup, leak detection, insurance, and prevention guides.';
+const canonical = getCanonicalUrl('/blog/category/');
 
-function titleCaseFromSlug(slug: string) {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-const posts = await getCollection("blog", ({ data }) => !data.draft);
-
-// category is a single slug enum in your schema
-const map = new Map<string, number>(); // slug -> count
-for (const p of posts) {
-  const c = p.data.category;
-  if (!c) continue;
-  map.set(c, (map.get(c) ?? 0) + 1);
-}
-
-const categories: Cat[] = [...map.entries()]
-  .map(([slug, count]) => ({ slug, count }))
-  .sort((a, b) => titleCaseFromSlug(a.slug).localeCompare(titleCaseFromSlug(b.slug)));
-
-const title = "Blog Categories | Tamarack Restoration";
-const canonical = new URL("/blog/category/", SITE).toString();
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Categories', href: '/blog/category/', current: true },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const webPageSchema = getWebPageSchema({ url: canonical, name: title, description, breadcrumb: breadcrumbSchema });
+const jsonLd = combineSchemas(breadcrumbSchema, webPageSchema);
 ---
-<html lang="en">
-  <head>
-    <title>{title}</title>
-    <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="Browse restoration tips and guides by category." />
-  </head>
-  <body>
-    <main class="mx-auto max-w-5xl px-4 py-10">
-      <nav class="text-sm mb-6">
-        <a class="underline" href="/blog/">Blog</a>
-        <span class="mx-2">/</span>
-        <span>Categories</span>
-      </nav>
 
-      <h1 class="text-3xl font-semibold">Categories</h1>
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <section class="relative overflow-hidden bg-brand-black">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
+    <div class="container relative py-16 lg:py-20">
+      <Breadcrumbs items={breadcrumbs} variant="dark" class="mb-6" showSchema={false} />
+      <div class="max-w-3xl">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/20 px-4 py-2 text-sm font-medium text-brand-orange">
+          <Icon name="book-open" size="sm" />
+          Restoration Topic Hubs
+        </div>
+        <h1 class="mb-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Restoration Blog Categories
+        </h1>
+        <p class="text-lg leading-relaxed text-brand-cream-300 lg:text-xl">
+          Explore practical restoration guides by topic, then connect each article hub to the services and North San Diego County locations where Tamarack Restoration can help.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {categories.map((c) => (
-          <li class="rounded-xl border p-4">
-            <a class="text-lg font-medium underline" href={`/blog/category/${c.slug}/`}>
-              {titleCaseFromSlug(c.slug)}
-            </a>
-            <div class="mt-1 text-sm opacity-70">
-              {c.count} post{c.count === 1 ? "" : "s"}
+  <TrustBar variant="light" />
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="mb-3 font-heading text-3xl font-bold text-brand-black">Browse by Restoration Topic</h2>
+          <p class="text-brand-gray">
+            Each category includes related articles, core service links, and local service-area resources so the hub is useful for both readers and search crawlers.
+          </p>
+        </div>
+        <Button href="/blog/" variant="outline">
+          Back to All Articles
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {categories.map((category) => (
+          <a href={`/blog/category/${category.slug}/`} class="group flex h-full flex-col rounded-2xl border border-brand-cream-300 bg-white p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-orange-100 text-brand-orange">
+                <Icon name={category.icon} size="lg" />
+              </div>
+              <span class="rounded-full bg-brand-cream-200 px-3 py-1 text-sm font-semibold text-brand-gray">
+                {category.count} article{category.count === 1 ? '' : 's'}
+              </span>
             </div>
-          </li>
+            <h3 class="mb-3 font-heading text-xl font-bold text-brand-black transition-colors group-hover:text-brand-orange">
+              {category.label}
+            </h3>
+            <p class="mb-5 flex-1 text-sm leading-relaxed text-brand-gray">
+              {category.intro}
+            </p>
+            <span class="inline-flex items-center gap-2 font-semibold text-brand-orange">
+              View {category.label} articles
+              <Icon name="arrow-right" size="sm" />
+            </span>
+          </a>
         ))}
-      </ul>
-    </main>
-  </body>
-</html>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

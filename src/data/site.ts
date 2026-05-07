@@ -38,19 +38,25 @@ export const business: BusinessInfo = {
 // TRUST METRICS
 // ===================
 
+export const reviewTrust = {
+  reviewCount: business.reviewCount,
+  rating: business.rating,
+  source: 'Google Business Profile cache or verified fallback',
+};
+
 export const trustMetrics = [
   {
-    value: '10+',
+    value: `${business.yearsInBusiness}+`,
     label: 'Years Experience',
     icon: 'calendar',
   },
   {
-    value: '121',
+    value: `${reviewTrust.reviewCount}`,
     label: 'Five-Star Reviews',
     icon: 'star',
   },
   {
-    value: '5.0',
+    value: reviewTrust.rating.toFixed(1),
     label: 'Google Rating',
     icon: 'google',
   },
@@ -491,7 +497,7 @@ export const insuranceCarriers: InsuranceCarrier[] = [
       'Contact State Farm to file a claim',
       'Call Tamarack Restoration for emergency service',
       'We work directly with your adjuster',
-      'Receive restoration services covered by your policy',
+      'Review policy details and carrier decisions for covered work',
     ],
     coveredServices: [
       'water-damage-restoration',
@@ -731,7 +737,7 @@ export const whyChooseUs = [
   },
   {
     title: 'Insurance Specialists',
-    description: 'We work directly with your insurance to simplify the claims process.',
+    description: 'We help coordinate insurance documentation and billing when applicable.',
     icon: 'shield',
   },
   {

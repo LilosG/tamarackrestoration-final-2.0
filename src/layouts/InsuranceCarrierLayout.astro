@@ -38,7 +38,7 @@ const coveredServices = services.filter((s) => carrier.coveredServices?.includes
 
 // SEO
 const title = `${carrier.name} Insurance Claims | Tamarack Restoration`;
-const description = `We work directly with ${carrier.name} for water damage, fire, mold, and flood restoration claims in North San Diego County. Direct billing, thorough documentation. Call ${business.phoneFormatted}.`;
+const description = `We work directly with ${carrier.name} for water damage, fire, mold, and flood restoration claims in North San Diego County. Careful documentation and billing coordination when applicable. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl(`/insurance/${carrier.slug}/`);
 
 const breadcrumbs = [
@@ -59,15 +59,15 @@ const claimSteps = content?.claimSteps || [
   { title: 'Document Damage', description: 'Take photos and videos of all damage.' },
   { title: 'File Your Claim', description: `Contact ${carrier.name} to open your claim.` },
   { title: 'Call Tamarack', description: 'We begin emergency service immediately.' },
-  { title: 'Adjuster Coordination', description: 'We work directly with your adjuster.' },
-  { title: 'Restoration Complete', description: 'We restore and bill your insurance directly.' },
+  { title: 'Adjuster Coordination', description: 'We coordinate documentation and adjuster communication.' },
+  { title: 'Restoration Complete', description: 'We complete approved restoration work and help coordinate documentation and billing when applicable.' },
 ];
 
 // Insurance-specific FAQs
 const faqs: FAQType[] = [
   {
     question: `Does ${carrier.name} cover water damage restoration?`,
-    answer: `Yes, ${carrier.name} typically covers sudden and accidental water damage like burst pipes and appliance failures. We work directly with ${carrier.name} adjusters to document damage and maximize your claim.`,
+    answer: `Coverage depends on your policy, cause of loss, and carrier review. Sudden and accidental water damage may be covered, and we provide documentation for ${carrier.name} adjuster review.`,
   },
   {
     question: `How do I file a ${carrier.name} claim for property damage?`,
@@ -75,7 +75,7 @@ const faqs: FAQType[] = [
   },
   {
     question: `Will I have to pay out of pocket with ${carrier.name}?`,
-    answer: `You'll typically be responsible for your deductible. We work with ${carrier.name} to ensure all covered damage is documented so you receive the full benefits of your policy.`,
+    answer: `You'll typically be responsible for your deductible. We work with ${carrier.name} to ensure all covered damage is documented so your carrier can review the loss with clear information.`,
   },
   {
     question: `How long does the ${carrier.name} claims process take?`,
@@ -83,7 +83,7 @@ const faqs: FAQType[] = [
   },
   {
     question: `Does ${carrier.name} cover mold removal?`,
-    answer: `${carrier.name} typically covers mold remediation when it results from a covered water damage event and is addressed promptly. We document the connection between water damage and mold to support your claim.`,
+    answer: `Mold coverage depends on policy language, the cause of loss, timing, and ${carrier.name} review. We document moisture sources, affected materials, and remediation scope for claim evaluation.`,
   },
 ];
 
@@ -152,13 +152,13 @@ for (const svc of coveredServices.slice(0, 2)) {
           </h1>
 
           <p class="mb-8 max-w-xl text-lg leading-relaxed text-brand-cream-300 lg:text-xl">
-            {carrier.description} We handle the paperwork so you can focus on your family.
+            {carrier.description} We help coordinate documentation and communication so the process is easier to manage.
           </p>
 
           <div class="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="check-circle" size="sm" class="text-brand-orange" />
-              <span>Direct {carrier.name} Billing</span>
+              <span>{carrier.name} Billing Coordination</span>
             </div>
             <div class="flex items-center gap-2 text-brand-cream-300">
               <Icon name="file-text" size="sm" class="text-brand-orange" />
@@ -195,7 +195,7 @@ for (const svc of coveredServices.slice(0, 2)) {
           <LeadForm
             variant="card"
             title={`${carrier.name} Claim Help`}
-            subtitle="We handle the insurance process"
+            subtitle="We help document the insurance process"
             source={`insurance-${carrierSlug}`}
           />
         </div>
@@ -225,11 +225,11 @@ for (const svc of coveredServices.slice(0, 2)) {
             <p class="text-lg leading-relaxed">
               {
                 content?.howWeHelp ||
-                  `Filing a ${carrier.name} claim after property damage is stressful. We make it easier by working directly with ${carrier.name} on your behalf.`
+                  `Filing a ${carrier.name} claim after property damage is stressful. We make it easier by helping coordinate documentation and adjuster communication for carrier review.`
               }
             </p>
             <p class="leading-relaxed">
-              Our team understands what {carrier.name} adjusters need to approve claims quickly. We provide
+              Our team understands the documentation {carrier.name} adjusters commonly review. We provide
               detailed documentation, professional assessments, and clear communication throughout the
               restoration process.
             </p>
@@ -282,7 +282,7 @@ for (const svc of coveredServices.slice(0, 2)) {
               {carrier.name} Coverage Guide
             </h2>
             <p class="text-lg text-brand-gray">
-              Understanding what your {carrier.name} policy covers helps you know what to expect.
+              Coverage depends on your policy, cause of loss, and carrier review; this guide explains common documentation topics to discuss with your adjuster.
             </p>
           </div>
 
@@ -293,7 +293,7 @@ for (const svc of coveredServices.slice(0, 2)) {
                   <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-success-50">
                     <Icon name="check-circle" size="lg" class="text-success-500" />
                   </div>
-                  <h3 class="font-heading text-xl font-bold text-brand-black">Typically Covered</h3>
+                  <h3 class="font-heading text-xl font-bold text-brand-black">Often Reviewed for Coverage</h3>
                 </div>
                 <ul class="space-y-3">
                   {content.typicallyCovered.map((item) => (
@@ -344,7 +344,7 @@ for (const svc of coveredServices.slice(0, 2)) {
           Restoration Services for {carrier.name} Claims
         </h2>
         <p class="text-lg text-brand-gray">
-          We provide these services and coordinate directly with {carrier.name} for your claim.
+          We provide these services and help coordinate documentation for {carrier.name} review when applicable.
         </p>
       </div>
 
@@ -431,7 +431,7 @@ for (const svc of coveredServices.slice(0, 2)) {
               },
               {
                 title: 'Direct Communication',
-                description: `We coordinate directly with your ${carrier.name} adjuster.`,
+                description: `We help coordinate with your ${carrier.name} adjuster.`,
               },
               {
                 title: 'Maximize Your Claim',
@@ -499,7 +499,7 @@ for (const svc of coveredServices.slice(0, 2)) {
       <LeadForm
         variant="card"
         title={`${carrier.name} Claim Help`}
-        subtitle="We handle the insurance process"
+        subtitle="We help document the insurance process"
         source={`insurance-${carrierSlug}-mobile`}
       />
     </div>

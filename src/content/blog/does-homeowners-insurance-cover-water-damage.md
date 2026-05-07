@@ -1,6 +1,6 @@
 ---
 title: "Does Homeowners Insurance Cover Water Damage?"
-description: "Understand what types of water damage your homeowners insurance covers, what it doesn't, and how to maximize your claim. A guide for North San Diego County homeowners."
+description: "Understand what types of water damage your homeowners insurance may cover, common exclusions, and how to document your claim. A guide for North San Diego County homeowners."
 publishDate: 2025-05-01
 author: "Tamarack Restoration"
 image: "/images/insurance/insurance-banner.webp"
@@ -13,7 +13,7 @@ featured: true
 draft: false
 ---
 
-"Will my insurance cover this?" It's the first question most homeowners ask after discovering water damage. The answer depends on what caused the water damage, how your policy is written, and how quickly you respond. Here's a straightforward breakdown.
+"Will my insurance cover this?" It's the first question most homeowners ask after discovering water damage. The answer depends on what caused the water damage, how your policy is written, and how quickly you respond. Here's a straightforward breakdown, along with how professional [water damage restoration](/services/water-damage-restoration/) documentation can support carrier review.
 
 ## The General Rule
 
@@ -108,11 +108,11 @@ Mold coverage depends on the source:
 
 The critical factor is acting quickly. If you have a covered water event and mold develops because you waited too long to begin restoration, the insurer may deny the mold portion of the claim.
 
-## How to Maximize Your Water Damage Claim
+## How to Support Your Water Damage Claim
 
 ### 1. Act Immediately
 
-Policies require you to mitigate further damage. Don't wait for insurance approval to begin emergency measures. If you have standing water, you should be extracting it now—not waiting for an adjuster.
+Policies generally require you to take reasonable steps to mitigate further damage. If you have standing water, begin safe emergency measures promptly and document what you do while the claim review proceeds.
 
 ### 2. Document Before Cleanup
 
@@ -125,14 +125,14 @@ Before you touch anything:
 
 ### 3. Hire a Professional Restoration Company
 
-Professional restoration companies provide documentation that insurance companies recognize and rely on:
+Professional restoration companies provide documentation that insurance companies commonly request during review:
 
 - Moisture readings throughout the property
 - Photo documentation of the drying process
 - Detailed scope of work with line-item costs
 - Industry-standard drying protocols
 
-This documentation supports your claim and often results in faster approval.
+This documentation supports the review process, but coverage and payment decisions still depend on your policy, cause of loss, exclusions, and carrier review. Tamarack also explains its documentation process on the [insurance claim support page](/insurance/).
 
 ### 4. Understand Your Deductible
 
@@ -177,6 +177,6 @@ Save receipts for everything related to the loss:
 
 ## We Work With All Major Insurance Companies
 
-At Tamarack Restoration, we work with State Farm, Allstate, Farmers, USAA, Liberty Mutual, and all other carriers in the North San Diego County area. We handle the documentation, communicate with adjusters, and ensure your restoration is covered to the fullest extent of your policy.
+At Tamarack Restoration, we prepare organized documentation for State Farm, Allstate, Farmers, USAA, Liberty Mutual, and other carriers in the North San Diego County area. For example, our [State Farm water damage restoration resource](/insurance/state-farm/water-damage-restoration/) explains how mitigation, photos, moisture readings, and scope notes support carrier review. Coverage depends on your policy, cause of loss, exclusions, and carrier review.
 
 Need water damage restoration? Call **(760) 500-2211** for 24/7 emergency service throughout Carlsbad, Oceanside, Encinitas, Vista, and San Marcos.

@@ -12,6 +12,26 @@
       "permanent": true
     },
     {
+      "source": "/blog/top-10-mold-removal-companies-carlsba-ca",
+      "destination": "/blog/top-10-mold-removal-companies-carlsbad-ca/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/top-10-mold-removal-companies-carlsba-ca/",
+      "destination": "/blog/top-10-mold-removal-companies-carlsbad-ca/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/carlsbad/water-restoration",
+      "destination": "/service-area/carlsbad/water-damage-restoration/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/carlsbad/water-restoration/",
+      "destination": "/service-area/carlsbad/water-damage-restoration/",
+      "permanent": true
+    },
+    {
       "source": "/home",
       "destination": "/",
       "permanent": true

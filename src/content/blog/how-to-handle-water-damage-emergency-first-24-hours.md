@@ -13,7 +13,7 @@ featured: true
 draft: false
 ---
 
-When water damage hits your home, the clock starts immediately. What you do in the first 24 hours determines whether you're dealing with a manageable restoration or a major reconstruction project. Here's what you need to know.
+When water damage hits your home, the clock starts immediately. What you do in the first 24 hours determines whether you're dealing with a manageable restoration or a major reconstruction project. If you already have standing water or wet building materials, professional [water damage restoration](/services/water-damage-restoration/) should start as soon as it is safe.
 
 ## Why the First 24 Hours Matter
 
@@ -27,7 +27,7 @@ Before touching anything, assess the safety situation:
 
 - **Check for electrical hazards.** If water is near outlets, electrical panels, or appliances, do not wade through it. Turn off electricity at the breaker panel only if you can reach it safely without stepping in water.
 - **Watch for structural damage.** Sagging ceilings, bulging walls, or warped floors may indicate structural compromise. Stay away from visibly damaged areas.
-- **Identify the water source.** Clean water from a broken supply line is different from sewage backup. If you see or smell sewage, avoid contact and call professionals immediately.
+- **Identify the water source.** Clean water from a broken supply line is different from sewage backup. If you see or smell sewage, avoid contact and call professionals immediately. If warning signs point to a hidden pipe or slab issue, review how [slab leak repair](/services/slab-leak-repair/) connects leak location, plumbing repair, drying, and restoration.
 
 ## Step 2: Stop the Water Source
 
@@ -70,7 +70,7 @@ File your claim as early as possible. When you call:
 - Ask about your deductible and coverage limits
 - Ask whether you need approval before starting emergency mitigation (most policies do not require pre-approval for emergency measures)
 
-A professional restoration company will work directly with your insurance adjuster, providing the documentation and communication they need to process your claim.
+A professional restoration company can help coordinate with your insurance adjuster by providing photos, moisture readings, scope notes, and drying logs where applicable. Coverage depends on your policy, cause of loss, exclusions, and carrier review.
 
 ## Step 6: Protect Undamaged Property
 
@@ -121,4 +121,4 @@ Keep this checklist accessible:
 
 ## Get Help Now
 
-If you're dealing with water damage in Carlsbad, Oceanside, Vista, San Marcos, Encinitas, or anywhere in North San Diego County, call Tamarack Restoration at **(760) 500-2211**. We respond within 60 minutes, 24/7.
+If you're dealing with water damage in Carlsbad, Oceanside, Vista, San Marcos, Encinitas, or anywhere in North San Diego County, call Tamarack Restoration at **(760) 500-2211**. We respond within 60 minutes, 24/7, and our [Encinitas water damage restoration page](/service-area/encinitas/water-damage-restoration/) shows how local response and documentation fit together.
