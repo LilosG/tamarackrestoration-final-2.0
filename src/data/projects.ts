@@ -6,6 +6,7 @@
  * Used by ProjectsSection and ProjectCard components.
  */
 
+import { allServices, cities } from '@/data/site';
 import type { Project, ProjectCategoryInfo } from '@/types';
 export type { ProjectCategoryInfo };
 
@@ -273,21 +274,125 @@ export function getProjects(options?: {
   return filtered;
 }
 
+export type MoneyPageProjectMatchType =
+  | 'exact-city-service'
+  | 'same-service-nearby'
+  | 'same-city-related-service'
+  | 'north-county-related';
+
+export interface MoneyPageProjectMatch {
+  project: Project;
+  matchType: MoneyPageProjectMatchType;
+  matchLabel: string;
+}
+
+const relatedWaterProofServices: Record<string, string[]> = {
+  'water-damage-restoration': ['flood-cleanup', 'water-leak-repair', 'sewage-cleanup'],
+  'water-leak-repair': ['water-damage-restoration'],
+  'slab-leak-repair': ['water-leak-repair', 'water-damage-restoration'],
+  'leak-detection': ['water-leak-repair', 'water-damage-restoration'],
+  'flood-cleanup': ['water-damage-restoration', 'sewage-cleanup'],
+};
+
+const serviceShortNames: Record<string, string> = {
+  'water-damage-restoration': 'water damage',
+  'water-leak-repair': 'water leak',
+  'slab-leak-repair': 'slab leak',
+  'leak-detection': 'leak detection',
+  'flood-cleanup': 'flood cleanup',
+  'sewage-cleanup': 'sewage cleanup',
+  'mold-removal': 'mold removal',
+  'fire-damage-restoration': 'fire damage',
+};
+
+function getCityName(citySlug: string): string {
+  return cities.find((city) => city.slug === citySlug)?.name || citySlug;
+}
+
+function getServiceShortName(serviceSlug: string): string {
+  const serviceName = allServices.find((service) => service.slug === serviceSlug)?.name || serviceSlug;
+  return serviceShortNames[serviceSlug] || serviceName.toLowerCase();
+}
+
+function createMoneyPageProjectMatch(
+  project: Project,
+  matchType: MoneyPageProjectMatchType,
+): MoneyPageProjectMatch {
+  const projectCityName = getCityName(project.city);
+  const projectServiceName = getServiceShortName(project.service);
+
+  const matchLabel = (() => {
+    switch (matchType) {
+      case 'exact-city-service':
+        return `${projectCityName} ${projectServiceName} project`;
+      case 'same-service-nearby':
+        return `Nearby ${projectServiceName} project`;
+      case 'same-city-related-service':
+        return `Related ${projectServiceName} project`;
+      case 'north-county-related':
+        return 'North County project example';
+    }
+  })();
+
+  return { project, matchType, matchLabel };
+}
+
+function appendUniqueMatches(
+  matches: MoneyPageProjectMatch[],
+  candidateProjects: Project[],
+  matchType: MoneyPageProjectMatchType,
+  limit: number,
+): MoneyPageProjectMatch[] {
+  const seenProjectIds = new Set(matches.map((match) => match.project.id));
+
+  for (const project of candidateProjects) {
+    if (matches.length >= limit) break;
+    if (seenProjectIds.has(project.id)) continue;
+
+    matches.push(createMoneyPageProjectMatch(project, matchType));
+    seenProjectIds.add(project.id);
+  }
+
+  return matches;
+}
+
+/**
+ * Get labeled projects for a city+service money page.
+ * Labels are derived from existing project city/service slugs only.
+ */
+export function getMoneyPageProjectMatches(
+  city: string,
+  service: string,
+  limit = 3,
+): MoneyPageProjectMatch[] {
+  const matches: MoneyPageProjectMatch[] = [];
+
+  const exact = projects.filter((project) => project.city === city && project.service === service);
+  appendUniqueMatches(matches, exact, 'exact-city-service', limit);
+
+  const sameServiceNearby = projects.filter((project) => project.city !== city && project.service === service);
+  appendUniqueMatches(matches, sameServiceNearby, 'same-service-nearby', limit);
+
+  const relatedServices = relatedWaterProofServices[service] || [];
+  const sameCityRelated = projects
+    .filter((project) => project.city === city && relatedServices.includes(project.service))
+    .sort((a, b) => relatedServices.indexOf(a.service) - relatedServices.indexOf(b.service));
+  appendUniqueMatches(matches, sameCityRelated, 'same-city-related-service', limit);
+
+  const northCountyRelated = projects
+    .filter((project) => project.city !== city && relatedServices.includes(project.service))
+    .sort((a, b) => relatedServices.indexOf(a.service) - relatedServices.indexOf(b.service));
+  appendUniqueMatches(matches, northCountyRelated, 'north-county-related', limit);
+
+  return matches;
+}
+
 /**
  * Get projects for a city+service money page.
- * First tries exact city+service match, then falls back to same-service projects.
+ * Preserves the original plain Project[] return shape for existing callers.
  */
 export function getMoneyPageProjects(city: string, service: string, limit = 3): Project[] {
-  // First: exact city+service match
-  const exact = projects.filter(p => p.city === city && p.service === service);
-  if (exact.length >= limit) return exact.slice(0, limit);
-
-  // Second: fill with same-service from other cities
-  const sameService = projects.filter(
-    p => p.service === service && p.city !== city
-  );
-  const combined = [...exact, ...sameService];
-  return combined.slice(0, limit);
+  return getMoneyPageProjectMatches(city, service, limit).map((match) => match.project);
 }
 
 // ===================

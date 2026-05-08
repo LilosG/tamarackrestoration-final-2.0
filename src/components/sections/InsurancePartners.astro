@@ -20,7 +20,7 @@ interface Props {
 const {
   class: className,
   title = 'We Work With All Major Insurance Carriers',
-  subtitle = 'We handle the paperwork and work directly with your insurance company to make the claims process as smooth as possible.',
+  subtitle = 'We help coordinate documentation, adjuster communication, and billing when applicable so the claims process is easier to manage.',
   showCTA = true,
 } = Astro.props;
 
@@ -53,8 +53,8 @@ const featuredCarriers = insuranceCarriers.slice(0, 6);
               <Icon name="check" size="sm" class="text-brand-orange" />
             </div>
             <div>
-              <p class="font-semibold text-brand-black">Direct Insurance Billing</p>
-              <p class="text-brand-gray text-body-sm">We bill your insurance directly so you don't have to deal with paperwork.</p>
+              <p class="font-semibold text-brand-black">Billing Coordination</p>
+              <p class="text-brand-gray text-body-sm">We help coordinate documentation and billing when applicable, based on your policy, cause of loss, and carrier review.</p>
             </div>
           </div>
           <div class="flex items-start gap-3">
@@ -71,8 +71,8 @@ const featuredCarriers = insuranceCarriers.slice(0, 6);
               <Icon name="check" size="sm" class="text-brand-orange" />
             </div>
             <div>
-              <p class="font-semibold text-brand-black">Approved by Major Carriers</p>
-              <p class="text-brand-gray text-body-sm">We're a preferred vendor for many insurance companies.</p>
+              <p class="font-semibold text-brand-black">Experienced With Major Carriers</p>
+              <p class="text-brand-gray text-body-sm">We prepare clear documentation and communicate with adjusters for many major carriers without implying carrier endorsement.</p>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ const featuredCarriers = insuranceCarriers.slice(0, 6);
               <Icon name="arrow-right" size="sm" />
             </Button>
             <Button href="/contact/" variant="outline">
-              File a Claim
+              Request Help
             </Button>
           </div>
         )}
