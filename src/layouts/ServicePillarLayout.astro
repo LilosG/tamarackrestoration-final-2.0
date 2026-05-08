@@ -16,6 +16,7 @@ import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
+import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
 import { allServices, cities, business } from '@/data/site';
 import { serviceContent } from '@/data/content';
 import { getServicePillarContent } from '@/data/servicePillarContent';
@@ -46,7 +47,7 @@ const relatedServices = allServices.filter(s =>
 ).slice(0, 3);
 
 // Generate FAQs from content data or use defaults
-const faqs: FAQType[] = [
+const generatedFaqs: FAQType[] = [
   {
     question: `How quickly can you respond to ${service.name.toLowerCase()} emergencies?`,
     answer: `We offer 24/7 emergency service with guaranteed 60-minute response times throughout North San Diego County. Our team is always ready to help when disaster strikes.`,
@@ -56,12 +57,12 @@ const faqs: FAQType[] = [
     answer: `We provide ${service.name.toLowerCase()} services throughout North San Diego County, including Carlsbad, Oceanside, Vista, San Marcos, Encinitas, and surrounding communities.`,
   },
   {
-    question: `Do you work with insurance for ${service.name.toLowerCase()}?`,
-    answer: `Yes, we work with all major insurance carriers. We document all damage thoroughly, communicate directly with your adjuster, and help maximize your claim approval.`,
+    question: `Do you help with insurance documentation for ${service.name.toLowerCase()}?`,
+    answer: `Yes. We document damage with photos, moisture readings, scope notes, drying logs where applicable, and clear communication for carrier review. Billing coordination may be available when applicable, but coverage depends on your policy, cause of loss, exclusions, and carrier review.`,
   },
   {
     question: `How much does ${service.name.toLowerCase()} cost?`,
-    answer: `Costs vary based on the extent of damage and work required. We provide free on-site assessments and detailed estimates. Most homeowners use insurance to cover costs.`,
+    answer: `Costs vary based on the extent of damage, affected materials, contamination category, drying time, and repair scope. We provide free on-site assessments and detailed estimates so you can understand the recommended work before restoration begins.`,
   },
   {
     question: `Are your ${service.name.toLowerCase()} technicians certified?`,
@@ -73,8 +74,10 @@ const faqs: FAQType[] = [
   },
 ];
 
+const faqs: FAQType[] = pillarContent?.faqs?.length ? pillarContent.faqs : generatedFaqs;
+
 // SEO
-const metaDescription = `Professional ${service.name.toLowerCase()} in North San Diego County. 24/7 emergency response, 60-minute arrival. IICRC certified. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
+const metaDescription = pillarContent?.seoDescription || `Professional ${service.name.toLowerCase()} in North San Diego County. 24/7 emergency response, 60-minute arrival. IICRC certified. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
 const title = getServiceTitle(service.name);
 const canonical = getCanonicalUrl(`/services/${service.slug}/`);
 const breadcrumbs = getServiceBreadcrumbs(service);
@@ -505,6 +508,15 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
         </div>
       </div>
     </section>
+  )}
+
+  {pillarContent?.supportLinkGroups && pillarContent.supportLinkGroups.length > 0 && (
+    <PriorityInternalLinks
+      title={`Helpful ${service.name} Resources`}
+      subtitle="Related services, local pages, and guides that help you choose the right next step."
+      groups={pillarContent.supportLinkGroups}
+      class="bg-white"
+    />
   )}
 
   <!-- Cities Served -->

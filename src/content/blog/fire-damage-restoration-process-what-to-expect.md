@@ -13,7 +13,7 @@ featured: false
 draft: false
 ---
 
-A house fire is one of the most devastating events a homeowner can experience. Beyond the emotional toll, the practical reality of fire damage restoration can feel overwhelming. Understanding the process helps you know what to expect and make better decisions during a difficult time.
+A house fire is one of the most devastating events a homeowner can experience. Beyond the emotional toll, the practical reality of [fire damage restoration](/services/fire-damage-restoration/) can feel overwhelming. Understanding the process helps you know what to expect and make better decisions during a difficult time.
 
 ## Understanding Fire Damage
 
@@ -103,7 +103,7 @@ Materials too damaged to restore are carefully removed.
 - **Insulation** in affected areas is replaced
 - **Debris removal** follows proper disposal procedures
 
-All removed materials are documented for the insurance claim.
+All removed materials are documented for insurance review with photos, scope notes, and disposal details where applicable. You can also compare similar work in our [fire damage restoration project examples](/projects/fire-damage-restoration/).
 
 ### Phase 6: Reconstruction (Weeks 2-6+)
 
