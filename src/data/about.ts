@@ -96,7 +96,7 @@ export const companyValues = [
   {
     icon: 'shield',
     title: 'Insurance Expertise',
-    description: 'We work directly with all major insurance carriers, handling the paperwork and documentation so you can focus on your family.',
+    description: 'We provide organized restoration documentation for many insurance carriers, including photos, moisture readings, scope notes, and estimates when applicable.',
   },
   {
     icon: 'users',
