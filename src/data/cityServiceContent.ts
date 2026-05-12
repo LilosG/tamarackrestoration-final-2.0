@@ -106,7 +106,7 @@ The Batiquitos Lagoon and Buena Vista Lagoon also raise the water table in adjac
       {
         question: 'Will my insurance cover water damage restoration in Carlsbad?',
         answer:
-          'Most homeowner policies cover sudden and accidental water damage — burst pipes, appliance failures, and supply-line breaks are typically covered. Gradual leaks that were ignored may be denied. We work directly with all major carriers serving Carlsbad, including State Farm, USAA, and Farmers, handling documentation and adjuster coordination so you can focus on your family.',
+          'Coverage depends on the policy, cause of loss, exclusions, timing, and carrier review. Sudden Carlsbad water events such as burst pipes, appliance failures, and supply-line breaks may be reviewed differently from gradual leaks or maintenance-related damage. Tamarack can document visible damage with photos, moisture readings, drying logs where applicable, and scope notes, then share that restoration documentation with the homeowner, adjuster, or carrier when requested.',
       },
       {
         question: 'What should I do if my Carlsbad home floods while I am away?',
@@ -194,7 +194,7 @@ Bressi Ranch and Rancho Carrillo homes, built with modern fire-resistant materia
       {
         question: 'Will my insurance cover fire restoration in Carlsbad?',
         answer:
-          'Fire damage is one of the most comprehensively covered perils in homeowner policies. Coverage typically includes structural repairs, smoke and soot cleanup, content restoration, and additional living expenses while your Carlsbad home is being restored. We work directly with all major carriers serving Carlsbad — State Farm, USAA, Allstate, Farmers, and Liberty Mutual — handling the extensive documentation that fire claims require.',
+          'Fire-related damage in Carlsbad may be reviewed under homeowner insurance, but coverage depends on policy language, limits, exclusions, cause of loss, and carrier review. Tamarack documents fire, smoke, soot, water-from-firefighting, contents, and restoration scope details for homeowner, adjuster, or carrier review when requested.',
       },
       {
         question: 'Do you handle the reconstruction after fire damage, or just the cleanup?',
@@ -272,7 +272,7 @@ Inland Carlsbad neighborhoods — Calavera Hills, Rancho Carrillo, and parts of 
       {
         question: 'Does homeowner insurance cover flood damage in Carlsbad?',
         answer:
-          'Standard homeowner policies do not cover flood damage — you need a separate flood policy through the National Flood Insurance Program or a private flood insurer. This catches many Carlsbad homeowners off guard because properties outside FEMA-designated flood zones still flood during extreme events. If you have flood insurance, we work directly with NFIP adjusters and meet their specific documentation requirements. If you do not have flood insurance, we provide detailed cost estimates and flexible scheduling.',
+          'Flood damage may require separate NFIP or private flood coverage, and Carlsbad properties outside FEMA-designated flood zones can still experience flooding during extreme events. Coverage depends on your policy, flood coverage, cause of loss, exclusions, and carrier or flood adjuster review. Tamarack can provide photos, moisture readings, contamination notes, cleanup scope documentation, detailed cost estimates, and flexible scheduling when requested.',
       },
       {
         question: 'How quickly can you start flood cleanup at my Carlsbad property?',
@@ -606,13 +606,13 @@ Rancho Del Oro, Arrowood, and Fire Mountain represent Oceanside's newer and mid-
       {
         question: 'Will insurance cover water damage restoration for my Oceanside home?',
         answer:
-          'Sudden water damage from pipe bursts, appliance failures, and supply-line breaks is covered by most standard homeowner policies. Gradual damage from long-term leaks or deferred maintenance may be excluded. We work with every major carrier serving Oceanside — State Farm, USAA, Allstate, Farmers, and Liberty Mutual — and handle all damage documentation, adjuster meetings, and supplement requests. Most Oceanside homeowners pay only their deductible.',
+          'Coverage and out-of-pocket costs for Oceanside water damage depend on the policy, deductible, cause of loss, exclusions, timing, and carrier review. Sudden water events such as pipe bursts, appliance failures, and supply-line breaks may be reviewed differently from gradual leaks or deferred maintenance. Tamarack can document visible damage, mitigation scope, moisture readings, photos, and drying logs, then share restoration documentation with your homeowner, adjuster, or carrier when requested.',
       },
       {
         question:
           'What should I do if my Oceanside home floods while Camp Pendleton restricts base access?',
         answer:
-          'Military families living off-base in Oceanside sometimes face water emergencies while a spouse is deployed or during base access restrictions. We serve as your on-the-ground emergency response — just call us and we handle everything from emergency extraction through insurance coordination and final repairs. We can communicate project updates via email and phone to deployed service members, and we work with USAA and military-affiliated insurers daily.',
+          'Military families living off-base in Oceanside sometimes face water emergencies while a spouse is deployed or during base access restrictions. We serve as your on-the-ground emergency response for extraction, restoration coordination, and final repairs. We can communicate project updates via email and phone to deployed service members, and we can provide organized documentation for USAA or military-affiliated carrier review when requested.',
       },
       {
         question: 'How long does it take to dry out a water-damaged Oceanside home?',
@@ -765,7 +765,7 @@ In Oceanside's newer communities — Rancho Del Oro, Arrowood, and developments 
         question:
           'I rent an apartment in downtown Oceanside and there was a fire in another unit — who pays for restoration?',
         answer:
-          "When fire in an adjacent unit causes smoke damage to yours, the at-fault party's insurance typically covers your unit's restoration. However, your renter's insurance may provide faster coverage for your personal belongings and additional living expenses while restoration is underway. We work with all parties' insurance carriers simultaneously to ensure nothing falls through the cracks, and we coordinate with the property manager on building-wide restoration.",
+          "When fire in an adjacent unit causes smoke damage to yours, coverage may depend on the source of loss, lease terms, HOA documents, policy language, and carrier review. Your renter's policy may also be reviewed for personal belongings or additional living expense questions. We can help coordinate restoration documentation and communication among the owner, property manager, adjusters, and carriers when requested, while assessing your unit's smoke exposure independently.",
       },
       {
         question: 'How do you remove smoke odor from an Oceanside home?',
@@ -1248,7 +1248,7 @@ Vista's inland location also introduces a seasonal wildfire exposure that coasta
       },
       {
         question: 'Will insurance cover fire damage restoration for my Vista home?',
-        answer: `Fire damage is one of the most comprehensively covered perils under standard homeowner insurance policies. Coverage typically includes structural repairs, smoke and soot cleaning, content restoration or replacement, and additional living expenses while your Vista home is uninhabitable during restoration. We work directly with every major carrier serving Vista — State Farm, Allstate, Farmers, USAA, and Liberty Mutual — handling the extensive documentation, photo evidence, and itemized estimates that fire claims demand. Most Vista homeowners pay only their deductible.`,
+        answer: `Fire damage in Vista may be reviewed under homeowner insurance depending on policy language, limits, exclusions, cause of loss, and carrier review. Tamarack documents fire, smoke, soot, contents, and restoration scope with photos, inventories, and itemized estimates for homeowner, adjuster, or carrier review. Your carrier determines coverage and any deductible or out-of-pocket responsibility.`,
       },
       {
         question: 'How do you remove smoke odor from a Vista home after a fire?',
@@ -1320,7 +1320,7 @@ Shadowridge's storm-drain infrastructure, designed in the 1980s for the communit
       },
       {
         question: 'Does homeowner insurance cover flood damage in Vista?',
-        answer: `Standard homeowner policies do not cover flood damage — a separate flood insurance policy through the National Flood Insurance Program or a private carrier is required. Many Vista homeowners outside FEMA-designated flood zones assume they are safe, but over 25 percent of all flood claims nationally come from properties outside mapped zones. If you have flood insurance, we work directly with NFIP adjusters and meet their documentation standards. If you do not have coverage, we provide transparent estimates and work with you on scheduling and payment options.`,
+        answer: `Flood damage may require separate NFIP or private flood coverage. Many Vista homeowners outside FEMA-designated flood zones still evaluate flood coverage because flooding can occur outside mapped zones. Coverage depends on your policy, flood coverage, cause of loss, exclusions, and carrier or flood adjuster review. Tamarack can provide cleanup documentation, photos, moisture readings, scope notes, transparent estimates, and scheduling options when requested.`,
       },
       {
         question: 'How quickly can you respond to flooding in Vista during a major storm?',
@@ -1553,7 +1553,7 @@ San Elijo Hills and Discovery Hills represent San Marcos at its newest, but mode
       },
       {
         question: 'Will my insurance cover water damage restoration in San Marcos?',
-        answer: `Most standard homeowner policies cover sudden and accidental water damage, including burst pipes, appliance malfunctions, and supply-line breaks. Damage caused by gradual leaks or deferred maintenance may be partially or fully excluded. We work directly with every major insurance carrier serving San Marcos, including State Farm, Allstate, Farmers, and USAA, handling all documentation, moisture readings, adjuster coordination, and supplement requests so you can focus on your household rather than paperwork.`,
+        answer: `Coverage for San Marcos water damage depends on the policy, cause of loss, exclusions, timing, and carrier review. Sudden water events such as burst pipes, appliance malfunctions, and supply-line breaks may be reviewed differently from gradual leaks or deferred maintenance. Tamarack can document visible damage with photos, moisture readings, drying logs where applicable, and scope notes, then share restoration documentation with the homeowner, adjuster, or carrier when requested.`,
       },
       {
         question:
@@ -1705,7 +1705,7 @@ Lake San Marcos and the condominiums along San Marcos Boulevard present fire res
       {
         question:
           'My San Marcos condo at Lake San Marcos had smoke damage from a fire in a neighboring unit — what are my options?',
-        answer: `Smoke damage from an adjacent unit's fire is typically covered by the at-fault party's insurance or the HOA master policy, depending on where the fire originated and your association's CC&Rs. Your own HO-6 condo policy may also provide coverage for interior finishes and personal property. We routinely coordinate multi-unit fire restoration at Lake San Marcos, working with individual unit owners, the HOA board, and multiple insurance carriers simultaneously. We will assess your unit's smoke exposure independently and ensure thorough remediation of all affected surfaces and systems.`,
+        answer: `Smoke damage from an adjacent unit's fire may be reviewed under the at-fault party's policy, HOA master policy, or your own HO-6 condo policy depending on where the fire originated, association documents, policy language, and carrier review. We routinely coordinate multi-unit fire restoration documentation at Lake San Marcos, working with individual unit owners and the HOA board when requested. We will assess your unit's smoke exposure independently and document affected surfaces and systems for review.`,
       },
       {
         question: 'How do you remove smoke odor from a San Marcos home after a fire?',
@@ -1781,7 +1781,7 @@ Twin Oaks Valley's rural character and larger lots create flood challenges relat
       },
       {
         question: 'Does homeowner insurance cover flood damage in San Marcos?',
-        answer: `Standard homeowner policies do not cover flood damage — a separate flood insurance policy through the National Flood Insurance Program or a private insurer is required. Many San Marcos homeowners discover this gap only after a flooding event. Properties outside FEMA-designated flood zones can still flood during extreme storms, as we have seen repeatedly along San Marcos Creek and at the base of hillside communities. If you have flood insurance, we work directly with NFIP adjusters and understand their specific documentation and proof-of-loss requirements.`,
+        answer: `Flood damage may require separate NFIP or private flood coverage. Many San Marcos homeowners review flood coverage because properties outside FEMA-designated flood zones can still flood during extreme storms, as we have seen along San Marcos Creek and at the base of hillside communities. Coverage depends on the policy, flood coverage, cause of loss, exclusions, and carrier or flood adjuster review. Tamarack can provide photos, moisture readings, contamination notes, high-water documentation, and cleanup scope records when requested.`,
       },
       {
         question: 'How quickly can you respond to flooding in San Marcos during a major storm?',
@@ -1863,7 +1863,7 @@ Storm events intensify San Marcos's sewage risk because the city's sewer system 
       {
         question:
           'My Lake San Marcos condo had sewage back up from a blockage in the shared line — who pays for cleanup?',
-        answer: `Responsibility depends on where the blockage occurred and your HOA's CC&Rs. If the blockage is in a shared lateral line maintained by the HOA, the association's master insurance policy typically covers the cleanup. If the blockage originated within your unit's individual plumbing, your personal HO-6 policy handles it. In practice, determining the exact failure point often requires a sewer camera inspection. We coordinate with the HOA, your personal insurer, and the association's carrier to ensure all affected units receive proper cleanup regardless of how the cost allocation is ultimately resolved.`,
+        answer: `Responsibility may depend on where the blockage occurred, HOA documents, unit boundaries, policy language, endorsements, and carrier or HOA review. Determining the exact failure point often requires a sewer camera inspection. We can document the failure point, affected units, contamination conditions, and cleanup scope, then share restoration documentation with the homeowner, HOA, adjuster, or carrier when requested.`,
       },
       {
         question: 'Can I prevent sewage backups in my San Marcos home?',
@@ -2025,7 +2025,7 @@ Olivenhain and New Encinitas face water damage patterns more typical of inland c
       {
         question: 'Will my homeowner insurance cover water damage in Encinitas?',
         answer:
-          'Most standard policies cover sudden, accidental water damage such as burst pipes, appliance malfunctions, and supply-line failures. Gradual damage from a long-ignored leak or deferred maintenance may be excluded. We work with every major carrier insuring Encinitas properties — including State Farm, Allstate, USAA, and Farmers — and handle the complete documentation and adjuster coordination process so you can focus on your household rather than paperwork.',
+          'Coverage for Encinitas water damage depends on the policy, cause of loss, exclusions, timing, and carrier review. Sudden water events such as burst pipes, appliance malfunctions, and supply-line failures may be reviewed differently from long-term leaks or deferred maintenance. Tamarack can document visible damage with photos, moisture readings, drying logs where applicable, and scope notes, then share restoration documentation with the homeowner, adjuster, or carrier when requested.',
       },
       {
         question: 'How long does water damage restoration take in a typical Encinitas home?',
@@ -2192,7 +2192,7 @@ Olivenhain's rural character introduces a wildland-urban interface fire risk tha
       {
         question: 'Will my insurance cover fire damage restoration in Encinitas?',
         answer:
-          'Fire damage is one of the most comprehensively covered perils in standard homeowner policies. Coverage typically extends to structural repair, smoke and soot remediation, content cleaning and replacement, and additional living expenses while your Encinitas home is being restored. We work directly with all major insurers serving Encinitas — State Farm, Allstate, USAA, Farmers, and Liberty Mutual — managing the extensive documentation, adjuster coordination, and supplemental claims that fire projects require.',
+          'Fire-related damage in Encinitas may be reviewed under homeowner insurance, but coverage depends on policy language, limits, exclusions, cause of loss, and carrier review. Tamarack documents structural damage, smoke and soot conditions, contents, water-from-firefighting impacts, and restoration scope for homeowner, adjuster, or carrier review when requested.',
       },
       {
         question: 'How long does fire damage restoration typically take in Encinitas?',
@@ -2265,7 +2265,7 @@ New Encinitas and Olivenhain occupy the eastern portion of the city where Escond
       {
         question: 'Does standard homeowner insurance cover flooding in Encinitas?',
         answer:
-          'Standard homeowner policies do not cover flood damage from external water sources such as lagoon overflow, bluff runoff, or creek flooding. A separate flood insurance policy through the National Flood Insurance Program or a private flood insurer is required. Many Encinitas homeowners outside FEMA-mapped zones are surprised to learn they lack coverage after a flood event. If you do carry flood insurance, we work directly with NFIP adjusters and private flood carriers, meeting their specific documentation and timing requirements.',
+          'Flood damage from external water sources such as lagoon overflow, bluff runoff, or creek flooding may require separate NFIP or private flood coverage. Many Encinitas homeowners outside FEMA-mapped zones still evaluate flood coverage before storm season. Coverage depends on the policy, flood coverage, cause of loss, exclusions, and carrier or flood adjuster review. Tamarack can provide photos, moisture readings, contamination notes, and cleanup scope documentation when requested.',
       },
       {
         question: 'How quickly can you begin flood extraction at my Encinitas property?',
@@ -2481,7 +2481,7 @@ Rancho Del Lago's lakefront properties and Morgan Run's golf-course homes face w
       },
       {
         question: `Will my insurance cover water damage restoration for a Rancho Santa Fe estate?`,
-        answer: `Most homeowner policies cover sudden and accidental water damage, but RSF estates often carry high-value home policies from carriers like Chubb, AIG Private Client, PURE, or Cincinnati Insurance that include broader coverage and higher limits suited to luxury properties. These policies typically cover custom finishes, fine art, and wine collections under scheduled endorsements. We have extensive experience documenting losses for high-net-worth carriers and work directly with their specialized adjusters to ensure every element of your estate is properly valued and restored.`,
+        answer: `Coverage for sudden water damage at RSF estates depends on the policy, scheduled endorsements, cause of loss, exclusions, timing, and carrier review. High-value home policies may include different limits or documentation needs for custom finishes, fine art, wine collections, and other specialty contents. Tamarack has experience documenting estate losses with photos, inventories, moisture readings, scope notes, and estimates for homeowner, adjuster, or carrier review when requested.`,
       },
     ],
     neighborhoodContext: [
@@ -2883,7 +2883,7 @@ Eden Gardens, the charming neighborhood between Highway 101 and the railroad tra
       },
       {
         question: `Will my homeowner insurance cover water damage restoration in Solana Beach?`,
-        answer: `Most standard homeowner policies cover sudden and accidental water damage such as burst supply lines, appliance malfunctions, and failed plumbing fittings. Gradual leaks that could have been detected through reasonable maintenance are frequently denied. Given the high property values in Solana Beach, the financial stakes of a coverage dispute are substantial. We document every project with detailed moisture readings, timestamped photographs, and written scope assessments that insurers require, and we coordinate directly with adjusters from all major carriers serving the 92075 ZIP code.`,
+        answer: `Coverage for Solana Beach water damage depends on the policy, cause of loss, exclusions, timing, and carrier review. Sudden water events such as burst supply lines, appliance malfunctions, and failed plumbing fittings may be reviewed differently from gradual leaks or maintenance-related damage. We document every project with detailed moisture readings, timestamped photographs, and written scope assessments that can be shared with the homeowner, adjuster, or carrier when requested.`,
       },
     ],
     neighborhoodContext: [
@@ -3056,7 +3056,7 @@ Coastal flooding presents the most dramatic risk in Solana Beach. During king ti
       },
       {
         question: `Does homeowner insurance cover flood damage in Solana Beach?`,
-        answer: `Standard homeowner policies exclude flood damage. Coverage requires a separate flood insurance policy through the National Flood Insurance Program or a private flood insurer. Many Solana Beach homeowners are surprised to discover this exclusion after a storm, particularly those outside FEMA-designated flood zones who assumed their standard policy would cover storm water intrusion. If you do carry flood insurance, we work directly with NFIP adjusters and understand their specific documentation requirements. We strongly recommend every Solana Beach property owner verify their flood coverage status before storm season.`,
+        answer: `Flood damage may require separate NFIP or private flood coverage. Many Solana Beach homeowners review flood coverage before storm season, particularly outside FEMA-designated flood zones where storm water intrusion can still occur. Coverage depends on the policy, flood coverage, cause of loss, exclusions, and carrier or flood adjuster review. Tamarack can document high-water marks, photos, moisture readings, contamination concerns, and cleanup scope when requested.`,
       },
       {
         question: `How do you handle salt water flooding in blufftop Solana Beach homes?`,
@@ -3127,7 +3127,7 @@ Storm events introduce a third sewage risk specific to coastal Solana Beach. Whe
       },
       {
         question: `Does insurance cover sewage cleanup in Solana Beach?`,
-        answer: `Sewer backup coverage is not included in standard homeowner policies — it requires a specific endorsement that many Solana Beach homeowners do not realize they need until a backup occurs. If you have a sewer backup endorsement, coverage typically pays for extraction, decontamination, material replacement, and temporary housing if needed. We recommend all Solana Beach homeowners, particularly those in Eden Gardens and older sections of town with clay laterals, add this endorsement to their policy before storm season. We handle all insurance documentation and adjuster coordination for covered claims.`,
+        answer: `Sewer backup coverage may depend on policy language, endorsements, cause of loss, exclusions, and carrier review. Solana Beach homeowners in Eden Gardens and older sections of town with clay laterals may want to review sewer backup endorsement questions with their insurance professional before storm season. Tamarack can document extraction, decontamination, material removal, moisture readings, photos, and restoration scope for homeowner, adjuster, or carrier review when requested.`,
       },
       {
         question: `Can my Solana Beach home be safely occupied the same day as a sewage backup?`,
@@ -3186,7 +3186,7 @@ Lomas Santa Fe homes introduce leak detection complications tied to their multi-
       },
       {
         question: `Is a slab leak in my Solana Beach home covered by insurance?`,
-        answer: `Most homeowner policies cover the damage caused by a slab leak — saturated flooring, damaged drywall, mold growth — but do not cover the cost of the plumbing repair itself. This distinction catches many Solana Beach homeowners off guard. We document the water damage thoroughly with moisture maps, thermal images, and detailed written reports that satisfy insurer requirements. For the plumbing repair component, we coordinate with licensed plumbers who specialize in slab leak repair and rerouting, giving you a single point of contact managing the entire process.`,
+        answer: `Water damage from a slab leak in Solana Beach may be reviewed separately from plumbing repair costs, and coverage depends on policy language, cause of loss, exclusions, timing, and carrier review. We document observed water damage thoroughly with moisture maps, thermal images, photos, and detailed written reports that can be shared with the homeowner, adjuster, or carrier when requested. For the plumbing repair component, we coordinate with licensed plumbers who specialize in slab leak repair and rerouting.`,
       },
       {
         question: `How long can a hidden leak go undetected in a Solana Beach home?`,
@@ -3437,7 +3437,7 @@ The close proximity of homes within Bressi Ranch creates significant secondary s
       },
       {
         question: 'Does insurance cover fire damage restoration in Bressi Ranch?',
-        answer: `Fire damage is one of the most comprehensively covered perils under standard homeowner insurance policies. Coverage generally includes structural repair, smoke and soot removal, content cleaning and restoration, and additional living expenses while your home is being restored. We work directly with all major carriers serving Bressi Ranch homeowners and handle the extensive documentation that fire claims require, including itemized damage inventories, structural engineering reports, and photo documentation of every affected area. Our team manages the claims process so you can focus on your family during recovery.`,
+        answer: `Fire-related damage in Bressi Ranch may be reviewed under homeowner insurance, but coverage depends on policy language, limits, exclusions, cause of loss, and carrier review. Tamarack documents structural damage, smoke and soot conditions, contents, engineering notes when applicable, and photo documentation of affected areas for homeowner, adjuster, or carrier review. Our team focuses on restoration documentation and communication support so you can focus on your family during recovery.`,
       },
     ],
   },
@@ -3496,7 +3496,7 @@ Flooding from internal sources also affects this community with surprising regul
       },
       {
         question: 'Does standard homeowner insurance cover storm flooding in Bressi Ranch?',
-        answer: `Standard homeowner policies do not cover exterior flood damage caused by rising water or storm runoff overwhelming drainage systems. A separate flood insurance policy through the National Flood Insurance Program or a private insurer is required for that coverage. However, if flooding results from an internal source — a burst pipe, water heater failure, or appliance malfunction — your standard policy typically covers the resulting damage. We help Bressi Ranch homeowners determine which type of event caused their flooding and provide the specific documentation each insurance pathway requires.`,
+        answer: `Flood, storm runoff, and internal-source water events may be reviewed differently. Coverage depends on the policy, cause of loss, exclusions, flood coverage, HOA documents if applicable, and carrier review. Tamarack can document observed conditions, likely source indicators, moisture readings, photos, contamination concerns, and cleanup scope so Bressi Ranch homeowners have organized restoration records for review.`,
       },
       {
         question: 'What should I do if my Bressi Ranch garage floods during a storm?',
@@ -3725,7 +3725,7 @@ The Batiquitos Lagoon corridor — including homes along Batiquitos Drive and ne
       {
         question: 'How much does slab leak repair cost in Carlsbad?',
         answer:
-          'A targeted direct-access repair for a single confirmed leak location typically runs $1,500–$3,500. Full pipe rerouting through walls or attic — appropriate for older Carlsbad Village homes with extensively corroded copper systems — ranges from $3,000–$6,000. We provide a free on-site assessment with a written estimate before any work begins. Most Carlsbad homeowners use their homeowner insurance to cover water damage caused by the leak, and we manage all documentation and adjuster coordination.',
+          'A targeted direct-access repair for a single confirmed leak location typically runs $1,500–$3,500. Full pipe rerouting through walls or attic — appropriate for older Carlsbad Village homes with extensively corroded copper systems — ranges from $3,000–$6,000. We provide a free on-site assessment with a written estimate before any work begins. If water damage is present, coverage depends on your policy, the cause of loss, exclusions, timing, and carrier review. Tamarack can document the damage with photos, moisture readings, thermal images, and scope notes, then share documentation with your adjuster or carrier when requested.',
       },
       {
         question: 'Do you repair the water damage the slab leak caused, or just the pipe?',
@@ -3824,7 +3824,7 @@ Oceanside's military community adds a unique dimension to slab leak repair. Many
       {
         question: 'Does homeowner insurance cover slab leak repair in Oceanside?',
         answer:
-          'Most homeowner policies cover water damage caused by a slab leak — the saturated flooring, walls, and cabinetry — but coverage for the pipe repair itself varies by policy. We document all damage thoroughly using moisture readings, thermal images, and written reports, and we coordinate directly with your insurance adjuster. Most Oceanside homeowners end up paying only their deductible.',
+          'Water damage from a slab leak in Oceanside may be reviewed under homeowner insurance, but coverage for mitigation, repairs, and pipe work varies by policy, cause of loss, exclusions, timing, and carrier review. We document observed damage thoroughly using moisture readings, thermal images, photos, and written reports that can be shared with the homeowner, adjuster, or carrier when requested. Your carrier determines coverage and any deductible or out-of-pocket responsibility.',
       },
       {
         question: 'How quickly can you respond to a slab leak in Oceanside?',
@@ -3912,7 +3912,7 @@ Vista's inland location means soil moisture levels fluctuate more dramatically t
       {
         question: 'How much does slab leak repair cost in Vista?',
         answer:
-          'A targeted direct-access repair for a single confirmed slab leak in Vista runs $1,500–$3,500. Pipe rerouting through walls or attic — the right choice for older Breeze Hill and Shadowridge homes with corroded systems — ranges from $3,000–$6,000. Water damage restoration costs depend on how long the leak was active. We provide free on-site assessments with written estimates. Insurance covers the water damage in most cases, and we handle all documentation.',
+          'A targeted direct-access repair for a single confirmed slab leak in Vista runs $1,500–$3,500. Pipe rerouting through walls or attic — the right choice for older Breeze Hill and Shadowridge homes with corroded systems — ranges from $3,000–$6,000. Water damage restoration costs depend on how long the leak was active. We provide free on-site assessments with written estimates. Coverage for related water damage depends on the policy, cause of loss, exclusions, timing, and carrier review, and Tamarack can provide photos, moisture readings, thermal images, and scope notes for review.',
       },
       {
         question: 'How quickly can Tamarack reach Vista for a slab leak emergency?',
@@ -4007,7 +4007,7 @@ Cal State San Marcos and the surrounding university district add a rental proper
       {
         question: 'Will my insurance cover a slab leak in San Marcos?',
         answer:
-          'Most homeowner policies cover the water damage caused by a slab leak — saturated flooring, walls, and cabinetry — but pipe repair coverage varies. We provide detailed documentation including thermal images, moisture readings, and a written findings report that insurance adjusters require. We have worked with every major carrier serving San Marcos and manage the entire claims process so you deal with restoration, not paperwork.',
+          'Water damage from a slab leak in San Marcos may be eligible for review, but coverage depends on policy language, cause of loss, exclusions, timing, and carrier review. We provide detailed documentation including thermal images, moisture readings, photos, and a written findings report that can be shared with the homeowner, adjuster, or carrier when requested. Tamarack focuses on restoration documentation and communication support while your carrier determines coverage.',
       },
     ],
   },
@@ -4090,7 +4090,7 @@ Olivenhain's rural estates operate on private well systems that introduce a pres
       {
         question: 'How much does slab leak repair cost in Encinitas?',
         answer:
-          'A targeted direct-access repair runs $1,500–$3,500. Pipe rerouting for corroded Leucadia and Cardiff systems — where multiple pinholes make direct repair impractical — ranges from $3,000–$6,000. Restoration of original hardwood or custom tile adds to the repair cost but we match materials carefully. Free on-site assessments with written estimates. Most Encinitas homeowners use their insurance for water damage coverage, and we handle all documentation.',
+          'A targeted direct-access repair runs $1,500–$3,500. Pipe rerouting for corroded Leucadia and Cardiff systems — where multiple pinholes make direct repair impractical — ranges from $3,000–$6,000. Restoration of original hardwood or custom tile adds to the repair cost but we match materials carefully. Free on-site assessments with written estimates. If water damage is present, coverage depends on the policy, cause of loss, exclusions, timing, and carrier review, and Tamarack can document observed damage and repair scope for homeowner and adjuster review.',
       },
       {
         question: 'How quickly can Tamarack respond to a slab leak emergency in Encinitas?',
@@ -4267,7 +4267,7 @@ Solana Beach's high property values and density of luxury condominiums create a 
       {
         question: 'Does insurance cover slab leak repair in Solana Beach?',
         answer:
-          'Most homeowner and condominium association policies cover water damage caused by slab leaks — saturated flooring, walls, and adjacent unit damage. The pipe repair itself has variable coverage. We provide thermal images, moisture readings, and a written detection report that insurance adjusters require. For multi-unit situations, we coordinate documentation across all affected unit policies simultaneously.',
+          'Water damage from slab leaks in homeowner or condominium association settings may be reviewed differently from pipe repair costs, and coverage depends on policy language, HOA documents, cause of loss, exclusions, timing, and carrier review. We provide thermal images, moisture readings, photos, and a written detection report that can be shared with the homeowner, HOA, adjuster, or carrier when requested. For multi-unit situations, we can organize unit-specific documentation for affected owners.',
       },
     ],
   },
@@ -4346,7 +4346,7 @@ The HOA structure in Bressi Ranch means that water shutoffs, access easements, a
       {
         question: 'Will my Bressi Ranch HOA insurance or my homeowner insurance cover the repair?',
         answer:
-          "This depends on whether the leak originates within your unit's individual supply lines or in common-area plumbing. In most Bressi Ranch HOA structures, supply lines within the unit boundaries are the individual owner's responsibility and covered under homeowner insurance. Common-area plumbing falls under the HOA master policy. We help determine which policy applies, provide documentation for both if needed, and coordinate with both adjusters when the damage crosses coverage boundaries.",
+          "This may depend on whether the leak originates within your unit's individual supply lines, common-area plumbing, or another shared building component. HOA responsibility and coverage may depend on HOA documents, unit boundaries, policy language, source of loss, and carrier or HOA review. Tamarack can document the leak source, affected areas, moisture readings, and scope notes so the homeowner, HOA, adjusters, or carriers can review responsibility and coverage.",
       },
     ],
   },
@@ -4424,7 +4424,7 @@ The Batiquitos Lagoon corridor elevates baseline humidity for adjacent propertie
       {
         question: 'What does a Carlsbad leak detection report include?',
         answer:
-          'Our written detection report includes the confirmed leak location with thermal images, moisture meter readings at all tested points, a map of water migration through affected materials, identification of all secondary wet areas beyond the leak point, and recommended repair scope. This documentation is formatted for insurance submission and is accepted by all major carriers serving Carlsbad, including State Farm, USAA, Farmers, and Allstate.',
+          'Our written detection report includes the confirmed leak location with thermal images, moisture meter readings at all tested points, a map of water migration through affected materials, identification of all secondary wet areas beyond the leak point, and recommended repair scope. This documentation can be shared with the homeowner, plumber, adjuster, or carrier for review. Carrier acceptance and coverage decisions depend on the policy, cause of loss, exclusions, and carrier review.',
       },
       {
         question: 'Can you detect irrigation system leaks as well as plumbing leaks in Carlsbad?',
