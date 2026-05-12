@@ -9,7 +9,9 @@
 import ProjectCard from '@/components/ui/ProjectCard.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
-import { getProjects, getMoneyPageProjects } from '@/data/projects';
+import { allServices, cities } from '@/data/site';
+import { getMoneyPageProjectMatches, getProjects } from '@/data/projects';
+import type { MoneyPageProjectMatch } from '@/data/projects';
 import type { Project } from '@/types';
 
 interface Props {
@@ -46,12 +48,26 @@ const {
 } = Astro.props;
 
 let displayProjects: Project[];
+let displayProjectMatches: MoneyPageProjectMatch[] = [];
 
 if (moneyPageMode && city && service) {
-  displayProjects = getMoneyPageProjects(city, service, limit);
+  displayProjectMatches = getMoneyPageProjectMatches(city, service, limit);
+  displayProjects = displayProjectMatches.map((match) => match.project);
 } else {
   displayProjects = getProjects({ service, city, featured, limit });
 }
+
+const hasRelatedFallback = displayProjectMatches.some((match) =>
+  match.matchType === 'same-city-related-service' || match.matchType === 'north-county-related'
+);
+const cityName = city ? cities.find((cityItem) => cityItem.slug === city)?.name : undefined;
+const serviceName = service ? allServices.find((serviceItem) => serviceItem.slug === service)?.name : undefined;
+const displayTitle = moneyPageMode && hasRelatedFallback && cityName
+  ? `Related Water Project Examples Near ${cityName}`
+  : title;
+const displaySubtitle = moneyPageMode && hasRelatedFallback && serviceName
+  ? `These examples include related water projects when exact ${serviceName.toLowerCase()} project photos are not available.`
+  : subtitle;
 
 const gridCols = displayProjects.length <= 2
   ? 'md:grid-cols-2'
@@ -65,17 +81,21 @@ const gridCols = displayProjects.length <= 2
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          {title}
+          {displayTitle}
         </h2>
         <p class="text-lg text-brand-gray">
-          {subtitle}
+          {displaySubtitle}
         </p>
       </div>
 
       <div class:list={['grid gap-6 max-w-5xl mx-auto', gridCols]}>
-        {displayProjects.map((project) => (
-          <ProjectCard project={project} variant={variant} />
-        ))}
+        {moneyPageMode && displayProjectMatches.length > 0
+          ? displayProjectMatches.map((match) => (
+            <ProjectCard project={match.project} variant={variant} matchLabel={match.matchLabel} />
+          ))
+          : displayProjects.map((project) => (
+            <ProjectCard project={project} variant={variant} />
+          ))}
       </div>
 
       {showCTA && (

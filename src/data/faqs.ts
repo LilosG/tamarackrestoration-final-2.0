@@ -40,27 +40,27 @@ export const emergencyFaqs: FAQ[] = [
 export const insuranceFaqs: FAQ[] = [
   {
     question: 'Do you work with insurance companies?',
-    answer: 'Yes, we work with all major insurance carriers including State Farm, Allstate, Farmers, USAA, Liberty Mutual, and many others. We handle the documentation, communicate directly with adjusters, and can bill your insurance company directly in most cases.',
+    answer: 'We can provide restoration documentation for many carriers and can help share photos, moisture readings, drying logs, scope notes, and estimates with the homeowner, adjuster, or carrier when requested. Billing coordination may be available when applicable.',
     category: 'insurance',
   },
   {
     question: 'Will my homeowner\'s insurance cover water damage?',
-    answer: 'Most homeowner\'s insurance policies cover sudden and accidental water damage, such as burst pipes, water heater failures, or appliance malfunctions. However, damage from flooding, gradual leaks, or lack of maintenance is typically not covered. We can help you understand your coverage and document the damage properly for your claim.',
+    answer: 'Coverage depends on your policy, cause of loss, exclusions, timing, and carrier review. Sudden water events may be reviewed differently from flood, gradual, or maintenance-related damage. Tamarack can document observed damage and mitigation scope for your carrier\'s review.',
     category: 'insurance',
   },
   {
     question: 'Do I need to pay anything out of pocket?',
-    answer: 'Typically, you\'re responsible for your insurance deductible. The rest of the covered restoration costs are paid by your insurance company. We provide detailed documentation to maximize your claim and ensure all damage is properly covered.',
+    answer: 'Out-of-pocket costs depend on your deductible, policy limits, exclusions, claim status, and carrier review. We provide detailed documentation so your carrier can review the observed damage and recommended restoration scope.',
     category: 'insurance',
   },
   {
     question: 'Can you help me file an insurance claim?',
-    answer: 'Yes, we assist with every step of the insurance process. We provide comprehensive documentation including photos, moisture readings, damage assessments, and detailed repair estimates. We also communicate directly with your adjuster and can meet them on-site for inspections.',
+    answer: 'We can help document the loss with photos, moisture readings, damage assessments, and detailed repair estimates. When requested, we can share restoration documentation with the homeowner, adjuster, or carrier and be available for restoration-scope questions.',
     category: 'insurance',
   },
   {
     question: 'What if my insurance claim is denied?',
-    answer: 'If your claim is initially denied, we can help by providing additional documentation, detailed reports, and supplemental information to support an appeal. Our thorough documentation often helps overturn initial denials.',
+    answer: 'If a claim is denied or limited, the homeowner should review the carrier\'s explanation and policy terms. Tamarack can provide additional restoration documentation, photos, moisture readings, and scope notes for the homeowner to share with the carrier or appropriate advisor.',
     category: 'insurance',
   },
 ];

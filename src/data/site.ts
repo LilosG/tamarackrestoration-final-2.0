@@ -38,19 +38,25 @@ export const business: BusinessInfo = {
 // TRUST METRICS
 // ===================
 
+export const reviewTrust = {
+  reviewCount: business.reviewCount,
+  rating: business.rating,
+  source: 'Google Business Profile cache or verified fallback',
+};
+
 export const trustMetrics = [
   {
-    value: '10+',
+    value: `${business.yearsInBusiness}+`,
     label: 'Years Experience',
     icon: 'calendar',
   },
   {
-    value: '121',
+    value: `${reviewTrust.reviewCount}`,
     label: 'Five-Star Reviews',
     icon: 'star',
   },
   {
-    value: '5.0',
+    value: reviewTrust.rating.toFixed(1),
     label: 'Google Rating',
     icon: 'google',
   },
@@ -485,13 +491,13 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     logoWidth: 3079,
     logoHeight: 1453,
     description:
-      'We work directly with State Farm adjusters to streamline your water damage, fire damage, and mold claims.',
+      'We prepare organized documentation for State Farm claim review, including photos, moisture readings, scope notes, and estimates when applicable.',
     claimProcess: [
       'Document the damage',
       'Contact State Farm to file a claim',
       'Call Tamarack Restoration for emergency service',
-      'We work directly with your adjuster',
-      'Receive restoration services covered by your policy',
+      'We can share restoration documentation with your adjuster or carrier when requested',
+      'Review policy details and carrier decisions for covered work',
     ],
     coveredServices: [
       'water-damage-restoration',
@@ -648,7 +654,7 @@ export const globalFaqs: FAQ[] = [
   {
     question: 'Do you work with insurance companies?',
     answer:
-      'Yes, we work with all major insurance carriers including State Farm, Allstate, Farmers, USAA, and Liberty Mutual. We can help document the damage and work directly with your adjuster to streamline the claims process.',
+      'We can help document property damage for carrier review using photos, moisture readings, drying logs where applicable, and scope notes. When requested, we can share restoration documentation with the homeowner, adjuster, or carrier. Billing coordination may be available when applicable.',
     category: 'insurance',
   },
   {
@@ -731,7 +737,7 @@ export const whyChooseUs = [
   },
   {
     title: 'Insurance Specialists',
-    description: 'We work directly with your insurance to simplify the claims process.',
+    description: 'We help coordinate insurance documentation and billing when applicable.',
     icon: 'shield',
   },
   {

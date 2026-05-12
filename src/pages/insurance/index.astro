@@ -15,7 +15,7 @@ import { insuranceCarriers, business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
 
 const title = 'Insurance Claims for Water, Fire & Mold Damage | Tamarack Restoration';
-const description = `We work directly with State Farm, Allstate, Farmers, USAA, Liberty Mutual and all major insurance carriers for water, fire, and mold damage claims. Call ${business.phoneFormatted}.`;
+const description = `We help coordinate documentation and adjuster communication for State Farm, Allstate, Farmers, USAA, Liberty Mutual, and other major carriers after water, fire, mold, and flood damage. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl('/insurance/');
 
 const breadcrumbs = [
@@ -33,18 +33,18 @@ const benefits = [
   },
   {
     icon: 'users',
-    title: 'Direct Adjuster Communication',
-    description: 'We work directly with your insurance adjuster, handling meetings, questions, and supplemental claims.',
+    title: 'Adjuster Communication Support',
+    description: 'We help coordinate adjuster communication, meetings, questions, and supplemental documentation when applicable.',
   },
   {
     icon: 'dollar-sign',
-    title: 'Maximize Your Claim',
-    description: 'Our thorough documentation ensures all damage is captured so you receive the full benefits of your policy.',
+    title: 'Document the Full Scope',
+    description: 'Our documentation helps your carrier review visible damage, moisture readings, photos, and scope notes clearly.',
   },
   {
     icon: 'clock',
-    title: 'Fast Claim Processing',
-    description: 'Our experience with major carriers means we know exactly what they need, speeding up approval times.',
+    title: 'Organized Claim Support',
+    description: 'Our experience with major carriers helps us prepare organized information for carrier review without overpromising coverage outcomes.',
   },
 ];
 ---
@@ -72,17 +72,17 @@ const benefits = [
         </h1>
         
         <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
-          Filing an insurance claim is stressful. We make it easier by working directly with your carrier—handling documentation, adjuster communication, and billing so you can focus on your family.
+          Filing an insurance claim is stressful. We make it easier by helping coordinate documentation, adjuster communication, and billing when applicable. Coverage depends on your policy, cause of loss, and carrier review.
         </p>
         
         <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
           <div class="flex items-center gap-2 text-brand-cream-300">
             <Icon name="check-circle" size="sm" class="text-brand-orange" />
-            <span>All Major Carriers</span>
+            <span>Documentation Support for Many Carriers</span>
           </div>
           <div class="flex items-center gap-2 text-brand-cream-300">
             <Icon name="file-text" size="sm" class="text-brand-orange" />
-            <span>Direct Billing Available</span>
+            <span>Billing Coordination When Applicable</span>
           </div>
           <div class="flex items-center gap-2 text-brand-cream-300">
             <Icon name="clock" size="sm" class="text-brand-orange" />
@@ -103,7 +103,7 @@ const benefits = [
           Insurance Companies We Work With
         </h2>
         <p class="text-lg text-brand-gray">
-          We have experience with all major insurance carriers and know exactly what each one needs to process your claim quickly.
+          We have experience preparing restoration documentation for major insurance carriers, including photos, moisture readings, estimates, and scope notes used during claim review.
         </p>
       </div>
       
@@ -138,7 +138,7 @@ const benefits = [
       
       <div class="mt-12 text-center">
         <p class="text-brand-gray mb-4">
-          Don't see your insurance company? We work with all carriers.
+          Don't see your insurance company? Contact us to discuss documentation support for your carrier.
         </p>
         <Button href="/contact/" variant="outline">
           Contact Us About Your Coverage
@@ -155,7 +155,7 @@ const benefits = [
           Why Choose Tamarack for Insurance Claims
         </h2>
         <p class="text-lg text-brand-gray">
-          We take the stress out of the insurance process.
+          We support the insurance process with clear documentation and careful communication.
         </p>
       </div>
       
@@ -196,7 +196,7 @@ const benefits = [
             { num: 1, title: 'Call Us', desc: 'Contact us 24/7 for emergency response' },
             { num: 2, title: 'Document', desc: 'We thoroughly document all damage' },
             { num: 3, title: 'File Claim', desc: 'Contact your insurance to open a claim' },
-            { num: 4, title: 'Coordinate', desc: 'We work directly with your adjuster' },
+            { num: 4, title: 'Coordinate', desc: 'We help coordinate adjuster communication' },
             { num: 5, title: 'Restore', desc: 'We complete the restoration work' },
           ].map((step) => (
             <div class="text-center">
@@ -223,7 +223,7 @@ const benefits = [
                 Need Help With an Insurance Claim?
               </h2>
               <p class="text-brand-gray mb-6">
-                Whether you're dealing with water damage, fire, or mold, we'll help you navigate the insurance process and get your property restored.
+                Whether you're dealing with water damage, fire, mold, or flooding, we help document the loss, coordinate communication, and restore your property after carrier review.
               </p>
               <PhoneCTA
                 phone={business.phone}
@@ -239,7 +239,7 @@ const benefits = [
               <LeadForm 
                 variant="card"
                 title="Start Your Claim"
-                subtitle="We'll handle the insurance process"
+                subtitle="We help document the insurance process"
                 source="insurance-hub"
               />
             </div>

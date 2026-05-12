@@ -13,7 +13,7 @@ featured: false
 draft: false
 ---
 
-Homeowners often use "mold" and "mildew" interchangeably, but they're different organisms that require different responses. Understanding the distinction helps you know when you can handle the problem yourself and when you need professional help.
+Homeowners often use "mold" and "mildew" interchangeably, but they're different organisms that require different responses. Understanding the distinction helps you know when you can handle the problem yourself and when professional [mold removal](/services/mold-removal/) is the safer next step.
 
 ## The Short Answer
 
@@ -48,7 +48,7 @@ Mold is more destructive and potentially hazardous:
 ### Common Types Found in Homes
 
 - **Cladosporium:** Olive-green to brown, found on fabrics and wood surfaces
-- **Penicillium:** Blue or green, spreads quickly, common after water damage
+- **Penicillium:** Blue or green, spreads quickly, common after [water damage](/services/water-damage-restoration/)
 - **Aspergillus:** Various colors, very common in homes, can cause respiratory issues
 - **Stachybotrys chartarum ("black mold"):** Dark black or greenish-black, grows on materials with high cellulose content like drywall and wood. Requires sustained moisture.
 
@@ -139,4 +139,4 @@ The best strategy is preventing mold growth:
 
 ## Need Mold Inspection or Remediation?
 
-If you suspect mold in your North San Diego County home, Tamarack Restoration provides professional mold inspection, testing, and remediation. Our IICRC-certified technicians use proper containment, HEPA filtration, and clearance testing to ensure the mold is gone. Call **(760) 500-2211** for a free assessment.
+If you suspect mold in your North San Diego County home, Tamarack Restoration provides professional mold inspection, testing, and remediation. Our IICRC-certified technicians use containment, HEPA filtration, moisture-source correction, and clearance-oriented workflows; you can also review [mold remediation project examples](/projects/mold-removal/). Call **(760) 500-2211** for a free assessment.

@@ -27,7 +27,27 @@ export interface RecentProject {
   scope: string;
 }
 
+export interface PriorityInternalLink {
+  label: string;
+  href: string;
+  description?: string;
+}
+
+export interface PriorityInternalLinkGroup {
+  title: string;
+  description?: string;
+  links: PriorityInternalLink[];
+}
+
+export interface ServicePillarFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface ServicePillarContent {
+  seoDescription?: string;
+  faqs?: ServicePillarFAQ[];
+  supportLinkGroups?: PriorityInternalLinkGroup[];
   whenToCall: WhenToCallScenario[];
   whatsIncluded: ServiceIncluded[];
   recentProjects: RecentProject[];
@@ -98,7 +118,7 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
       },
       {
         title: 'Moisture Mapping and Documentation',
-        description: `Every water damage project begins with a thorough moisture inspection using infrared thermal imaging and calibrated moisture meters. We create a detailed moisture map documenting wet and dry zones across floors, walls, and ceilings, which becomes part of your insurance claim file. This documentation ensures nothing is missed and provides the adjuster with clear evidence of the damage scope, helping your claim move through approval faster.`,
+        description: `Every water damage project begins with a thorough moisture inspection using infrared thermal imaging and calibrated moisture meters. We create a detailed moisture map documenting wet and dry zones across floors, walls, and ceilings, which becomes part of your insurance claim file. This documentation helps the carrier and adjuster review the visible damage, moisture conditions, and mitigation scope with clearer supporting records. Coverage decisions depend on the policy, cause of loss, exclusions, and carrier review.`,
         equipment: 'FLIR thermal imaging cameras, Protimeter pin and pinless moisture meters',
       },
       {
@@ -108,12 +128,12 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
       },
       {
         title: 'Content Pack-Out and Storage',
-        description: `When water threatens furniture, electronics, documents, or personal belongings, our team inventories and carefully packs out affected contents to our climate-controlled storage facility in Carlsbad. Each item is catalogued with photos and descriptions for your insurance claim. Items are professionally cleaned, deodorized, and returned once your home restoration is complete. Most insurance policies cover pack-out and storage costs for the duration of the project.`,
+        description: `When water threatens furniture, electronics, documents, or personal belongings, our team inventories and carefully packs out affected contents to our climate-controlled storage facility in Carlsbad. Each item is catalogued with photos and descriptions for your restoration records. Items are professionally cleaned, deodorized, and returned once your home restoration is complete. Pack-out and storage may be reviewed under some policies, but coverage depends on policy language, limits, cause of loss, and carrier review.`,
         equipment: 'Inventory management system, climate-controlled storage facility, ultrasonic cleaning equipment',
       },
       {
         title: 'Insurance Coordination and Claims Support',
-        description: `We work directly with all major insurance carriers serving North San Diego County, including State Farm, Allstate, USAA, Farmers, and Liberty Mutual. Our project managers document the loss using Xactimate estimating software, the same platform your adjuster uses, so there is a common language for scope and pricing from day one. We handle supplement requests, adjuster meetings, and scope approvals so you can focus on your family rather than paperwork.`,
+        description: `We help coordinate documentation for major insurance carriers serving North San Diego County, including State Farm, Allstate, USAA, Farmers, and Liberty Mutual. Our project managers document the loss using photos, moisture readings, scope notes, drying logs where applicable, and Xactimate estimating software so there is a clear record for carrier review. Billing coordination may be available when applicable, but coverage depends on your policy, cause of loss, exclusions, and carrier review.`,
       },
       {
         title: 'Controlled Demolition and Material Removal',
@@ -303,7 +323,7 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
       },
       {
         title: 'Your Insurance Company Wants You to Choose a Restoration Contractor',
-        description: `After a fire, your insurance carrier will often provide a list of preferred vendors, but you have the legal right to choose any licensed restoration contractor in California. Selecting a contractor who handles both mitigation and reconstruction means a single point of accountability for the entire project. We work with all major carriers and submit detailed Xactimate estimates that align with insurance pricing guidelines, reducing delays and supplement disputes.`,
+        description: `After a fire, your carrier may provide contractor options, but California homeowners can generally choose a licensed restoration contractor. Selecting a team that handles mitigation and reconstruction creates one point of communication for documentation, estimates, and scope notes. We prepare organized photos, moisture readings when firefighting water is involved, and Xactimate estimates for carrier review without promising coverage outcomes.`,
       },
       {
         title: 'You Need Emergency Board-Up or Tarping After a Fire',
@@ -347,8 +367,8 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
         description: `Our in-house reconstruction team manages the full rebuild from framing to final finishes. This includes replacing fire-damaged framing and sheathing, running new electrical and plumbing where original systems were destroyed, hanging and finishing drywall, installing flooring, cabinetry, countertops, and trim, and completing interior and exterior painting. We pull all necessary building permits and schedule inspections with the local jurisdiction. Fire damage rebuilds typically range from four to twelve weeks depending on the scope of structural replacement required.`,
       },
       {
-        title: 'Insurance Claims Management',
-        description: `Fire losses are among the most complex insurance claims a homeowner will ever file. Our project managers handle the entire claims process including initial loss documentation, Xactimate scope and estimate preparation, adjuster coordination, supplement requests for hidden damage discovered during demolition, and line-item reconciliation. We attend all adjuster site visits and advocate for full coverage of the documented damage. Our team has managed hundreds of fire claims with carriers across North San Diego County.`,
+        title: 'Insurance Documentation Support',
+        description: `Fire losses often require detailed restoration documentation. Our project managers prepare photos, scope notes, Xactimate estimates, inventory documentation, and supplement documentation for hidden damage discovered during demolition when requested. We can attend adjuster site visits to answer restoration-scope questions, but coverage decisions remain with the carrier.`,
       },
     ],
 
@@ -374,7 +394,7 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
     ],
 
     deepDiveTitle: 'The Hidden Complexity of Fire Damage Restoration',
-    deepDiveContent: `What surprises most homeowners after a fire is how far smoke and soot travel beyond the area of direct flame contact. Smoke follows air currents and pressure differentials, migrating through HVAC ductwork, electrical and plumbing penetrations in walls, and even the gaps around door frames and outlet covers. It is common for us to find soot contamination in rooms on the opposite end of the house from the fire origin, inside closed dresser drawers, on dishes in closed kitchen cabinets, and coating the interior surfaces of electronics. This is why a fire that appears confined to one room frequently requires cleaning and deodorization of the entire structure. The type of soot also matters significantly: natural materials like wood produce a dry, powdery soot that is relatively easy to clean, while synthetic materials like plastics, nylon carpet, and polyester upholstery produce a sticky, oily soot that smears and stains permanently if not cleaned with the correct solvent within the first 48 to 72 hours.\n\nThe fire suppression water used by the fire department creates a second, parallel restoration challenge. Thousands of gallons of water applied during suppression efforts saturate flooring, wall cavities, and insulation, and this water becomes contaminated with dissolved soot, ash, and combustion byproducts as it flows through the burned areas. If not extracted and dried within 24 to 48 hours, this contaminated water will trigger mold growth in framing and subfloor materials that survived the fire itself. We address fire and water damage simultaneously from the first day on site, running extraction and drying equipment in water-affected areas while our fire damage team works on soot removal and structural assessment in other zones of the house.\n\nInsurance claims for fire damage are significantly more complex than water or mold claims because they typically involve three overlapping categories: structural damage, contents loss, and additional living expenses while the home is uninhabitable. A thorough initial assessment and ongoing documentation of hidden damage discovered during demolition are critical to ensuring the claim reflects the true cost of restoration. We frequently submit supplements when opening walls reveals fire travel or smoke damage that was not visible during the initial inspection. Our project managers track every line item against the insurance estimate and communicate directly with the adjuster throughout the project, reducing the burden on the homeowner during an already stressful time.`,
+    deepDiveContent: `What surprises most homeowners after a fire is how far smoke and soot travel beyond the area of direct flame contact. Smoke follows air currents and pressure differentials, migrating through HVAC ductwork, electrical and plumbing penetrations in walls, and even the gaps around door frames and outlet covers. It is common for us to find soot contamination in rooms on the opposite end of the house from the fire origin, inside closed dresser drawers, on dishes in closed kitchen cabinets, and coating the interior surfaces of electronics. This is why a fire that appears confined to one room frequently requires cleaning and deodorization of the entire structure. The type of soot also matters significantly: natural materials like wood produce a dry, powdery soot that is relatively easy to clean, while synthetic materials like plastics, nylon carpet, and polyester upholstery produce a sticky, oily soot that smears and stains permanently if not cleaned with the correct solvent within the first 48 to 72 hours.\n\nThe fire suppression water used by the fire department creates a second, parallel restoration challenge. Thousands of gallons of water applied during suppression efforts saturate flooring, wall cavities, and insulation, and this water becomes contaminated with dissolved soot, ash, and combustion byproducts as it flows through the burned areas. If not extracted and dried within 24 to 48 hours, this contaminated water will trigger mold growth in framing and subfloor materials that survived the fire itself. We address fire and water damage simultaneously from the first day on site, running extraction and drying equipment in water-affected areas while our fire damage team works on soot removal and structural assessment in other zones of the house.\n\nInsurance claims for fire damage are significantly more complex than water or mold claims because they typically involve three overlapping categories: structural damage, contents loss, and additional living expenses while the home is uninhabitable. A thorough initial assessment and ongoing documentation of hidden damage discovered during demolition are critical to giving the homeowner, adjuster, or carrier clear restoration records for review. When opening walls reveals fire travel or smoke damage that was not visible during the initial inspection, we can prepare supplemental documentation and answer restoration-scope questions when requested, reducing the documentation burden on the homeowner during an already stressful time.`,
   },
 
 
@@ -457,7 +477,7 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
       },
       {
         title: 'Insurance Documentation and Claims Coordination',
-        description: `We photograph and document every phase of the flood cleanup using industry-standard Xactimate estimating software, which most major carriers accept directly. Moisture maps, equipment logs, contamination test results, and before-and-after photos are compiled into a claim package. Our project managers communicate directly with your adjuster to streamline approvals and minimize out-of-pocket delays.`,
+        description: `We photograph and document every phase of the flood cleanup using moisture maps, equipment logs, contamination notes, before-and-after photos, and industry-standard estimating software where applicable. These records give your carrier and adjuster a clearer package to review. Coverage and payment decisions depend on your policy, flood endorsements or separate flood coverage, the cause of loss, exclusions, and carrier review.`,
       },
       {
         title: 'Reconstruction and Final Restoration',
@@ -582,7 +602,7 @@ The contamination risk of flood water also escalates over time. Category 1 water
       {
         title: 'Mainline Backup in Vista Townhome',
         location: 'Shadowridge, Vista',
-        summary: `A collapsed clay sewer lateral caused raw sewage to back up through a ground-floor shower drain and toilet, contaminating the master bathroom, hallway, and a portion of the living room. Our crew arrived within 45 minutes, extracted contaminated water, removed all flooring and lower drywall in the affected areas, and completed full biocide treatment within eight hours. Camera inspection confirmed a 12-foot section of collapsed pipe, and the homeowner's insurance covered both the cleanup and the lateral replacement. The home was fully reconstructed within 18 days.`,
+        summary: `A collapsed clay sewer lateral caused raw sewage to back up through a ground-floor shower drain and toilet, contaminating the master bathroom, hallway, and a portion of the living room. Our crew arrived within 45 minutes, extracted contaminated water, removed all flooring and lower drywall in the affected areas, and completed full biocide treatment within eight hours. Camera inspection confirmed a 12-foot section of collapsed pipe. In that specific project, the carrier reviewed documentation for the cleanup and lateral replacement under the policy; coverage outcomes vary by policy, cause of loss, exclusions, and carrier review. The home was fully reconstructed within 18 days.`,
         scope: 'Three rooms (680 sq ft), Category 3 black water, 4-day dry-out, full material removal and biocide protocol, lateral replacement coordination',
       },
       {
@@ -594,7 +614,7 @@ The contamination risk of flood water also escalates over time. Category 1 water
       {
         title: 'Restaurant Grease Backup in Carlsbad Village',
         location: 'Carlsbad Village, Carlsbad',
-        summary: `A grease blockage in the shared sewer lateral of a mixed-use building caused sewage to back up into the ground-floor commercial kitchen and an adjacent retail space after business hours. We mobilized a night crew to extract contaminated water, remove damaged ceiling tiles and drywall in the retail suite, and apply full biocide treatment to both spaces. Enzyme biotreatment was used on the concrete slab in the kitchen to eliminate embedded grease and sewage odor. Both tenants were able to reopen within 10 days, and the property manager's commercial policy covered the remediation and tenant business interruption.`,
+        summary: `A grease blockage in the shared sewer lateral of a mixed-use building caused sewage to back up into the ground-floor commercial kitchen and an adjacent retail space after business hours. We mobilized a night crew to extract contaminated water, remove damaged ceiling tiles and drywall in the retail suite, and apply full biocide treatment to both spaces. Enzyme biotreatment was used on the concrete slab in the kitchen to eliminate embedded grease and sewage odor. Both tenants were able to reopen within 10 days. In that specific project, the commercial carrier reviewed remediation and business-interruption documentation under the policy; commercial coverage outcomes vary by policy terms, endorsements, exclusions, and carrier review.`,
         scope: 'Commercial kitchen and retail suite (1,900 sq ft combined), Category 3, 5-day dry-out, enzyme biotreatment on concrete, after-hours emergency response',
       },
     ],
@@ -604,7 +624,7 @@ The contamination risk of flood water also escalates over time. Category 1 water
 
 The health risks of improper sewage cleanup are well documented and serious. Airborne exposure to dried sewage particulate can cause respiratory infections, gastrointestinal illness, and skin reactions, with immunocompromised individuals, children, and the elderly at greatest risk. OSHA classifies sewage cleanup workers under the Bloodborne Pathogen Standard (29 CFR 1910.1030) and requires employers to provide hepatitis B vaccination, fit-tested respirators, and written exposure control plans. When a homeowner attempts to clean a sewage spill without this level of protection, they are exposing themselves to the same hazards that require occupational safeguards for trained professionals. Additionally, improperly cleaned sewage creates a long-term mold risk because the organic nutrients in waste accelerate fungal colonization on any material that remains damp.
 
-San Diego County has specific regulatory requirements for sewage spill reporting and remediation. Spills that reach storm drains, waterways, or neighboring properties must be reported to the County Department of Environmental Health, and commercial properties may also need to notify the Regional Water Quality Control Board. Waste disposal must follow county protocols, which require sewage-contaminated solid materials to be transported in sealed containers by licensed haulers to approved facilities. A professional restoration company maintains the required waste hauler relationships, disposal documentation, and clearance testing capabilities to ensure full regulatory compliance. Attempting to handle a sewage loss without this infrastructure can result in health code violations, liability exposure, and insurance claim denials if the carrier determines that the cleanup was not performed to professional standards.`,
+San Diego County has specific regulatory requirements for sewage spill reporting and remediation. Spills that reach storm drains, waterways, or neighboring properties must be reported to the County Department of Environmental Health, and commercial properties may also need to notify the Regional Water Quality Control Board. Waste disposal must follow county protocols, which require sewage-contaminated solid materials to be transported in sealed containers by licensed haulers to approved facilities. A professional restoration company maintains the required waste hauler relationships, disposal documentation, and clearance testing capabilities to support regulatory compliance. Attempting to handle a sewage loss without this infrastructure can create health code, liability, documentation, and carrier-review complications.`,
   },
 
   // =====================================================================
@@ -707,7 +727,7 @@ San Diego County has specific regulatory requirements for sewage spill reporting
       {
         title: 'Whole-Home Repipe After Multiple Leak Failures in Vista',
         location: 'Breeze Hill, Vista',
-        summary: `A 1978 home had experienced three slab leak repairs in two years, each time in a different section of the original copper system. After the fourth leak was detected in a kitchen supply line, we recommended a full repipe using PEX-A tubing routed through the attic to bypass the slab entirely. The repipe was completed in two days with minimal drywall penetration, and each new line was pressure tested individually before connection. The homeowner received a 25-year manufacturer warranty on the PEX system and has had no further leak issues. Their homeowner's insurance covered the water damage remediation from the fourth leak, while the repipe was an out-of-pocket investment that eliminated future slab leak risk.`,
+        summary: `A 1978 home had experienced three slab leak repairs in two years, each time in a different section of the original copper system. After the fourth leak was detected in a kitchen supply line, we recommended a full repipe using PEX-A tubing routed through the attic to bypass the slab entirely. The repipe was completed in two days with minimal drywall penetration, and each new line was pressure tested individually before connection. The homeowner received a 25-year manufacturer warranty on the PEX system and has had no further leak issues. In that specific project, the carrier reviewed water damage remediation documentation under the policy, while the repipe was handled separately as an out-of-pocket investment; coverage outcomes vary by policy, cause of loss, exclusions, and carrier review.`,
         scope: 'Whole-home repipe (14 fixture supply lines), PEX-A via attic route, 2-day installation, individual line pressure testing',
       },
     ],
@@ -719,6 +739,207 @@ Slab leaks deserve special attention because they are the most common and conseq
 
 The decision between repairing a single leak and repiping all or part of the system depends on several factors: the age and material of the existing pipe, the number of prior failures, the accessibility of the pipe, and the homeowner's plans for the property. A single leak in a 15-year-old copper system with no history of issues is usually best addressed with a spot repair. However, when a system has experienced two or more failures within a few years, statistical likelihood strongly favors additional failures in the near future because the same corrosion conditions that caused the first leak are present throughout the system. In these cases, a full repipe using modern PEX-A or PEX-B tubing routed through accessible paths like the attic or interior walls eliminates slab leak risk entirely and typically costs less than three or four individual slab leak repairs. We always present both options with transparent cost comparisons so homeowners can make the decision that best fits their budget and long-term plans for the property.`,
   },
+
+  // -------------------------------------------------------
+  // SLAB LEAK REPAIR
+  // -------------------------------------------------------
+  'slab-leak-repair': {
+    seoDescription: 'Slab leak repair support in North San Diego County. Under-slab leak detection, moisture documentation, drying, flooring and wall restoration coordination. Call (760) 500-2211.',
+    faqs: [
+      {
+        question: 'How do you find a slab leak without unnecessary demolition?',
+        answer: 'We start with non-invasive diagnostics such as moisture meters, thermal imaging for temperature differences, acoustic listening where conditions allow, and visual inspection of floors, walls, and plumbing access points. Some situations still require plumber access or selective openings, but the goal is to narrow the leak area before repair work begins.',
+      },
+      {
+        question: 'What damage can a slab leak cause after the pipe is repaired?',
+        answer: 'Even after the plumbing repair, moisture can remain in concrete, flooring, baseboards, drywall, cabinets, and wall cavities. We document affected materials with photos, moisture readings, scope notes, and drying logs where applicable, then dry or remove materials based on the extent of saturation.',
+      },
+      {
+        question: 'Do you handle both slab leak repair and restoration?',
+        answer: 'We coordinate the leak response, moisture assessment, drying, and restoration work. Plumbing repair needs vary by property and may involve spot repair, rerouting, or repiping coordination. Our restoration scope focuses on documenting and repairing the water damage caused by the leak.',
+      },
+      {
+        question: 'Will insurance cover slab leak water damage?',
+        answer: 'Coverage depends on your policy, the cause of loss, exclusions, timing, and carrier review. Tamarack helps document the damage with photos, moisture readings, scope notes, and drying logs where applicable, and billing coordination may be available when applicable.',
+      },
+      {
+        question: 'How is slab leak repair different from leak detection or water leak repair?',
+        answer: 'Leak detection focuses on locating the source. Slab leak repair addresses leaks below or within the concrete foundation. Water leak repair and water damage restoration focus on stopping further damage, drying affected materials, and repairing impacted floors, walls, and finishes.',
+      },
+    ],
+    supportLinkGroups: [
+      {
+        title: 'Related leak services',
+        description: 'Understand where slab leak repair fits in the larger leak and water damage response.',
+        links: [
+          { label: 'Leak Detection', href: '/services/leak-detection/', description: 'Non-invasive methods for finding hidden moisture and suspected leak sources.' },
+          { label: 'Water Leak Repair', href: '/services/water-leak-repair/', description: 'Response and repair support for active plumbing, roof, wall, and foundation leaks.' },
+          { label: 'Water Damage Restoration', href: '/services/water-damage-restoration/', description: 'Extraction, drying, and rebuild support after water enters finished spaces.' },
+        ],
+      },
+      {
+        title: 'Slab leak help near Carlsbad',
+        links: [
+          { label: 'Slab Leak Repair in Carlsbad', href: '/service-area/carlsbad/slab-leak-repair/', description: 'Local slab leak response near Tamarack Restoration headquarters.' },
+          { label: 'Leak Detection in Carlsbad', href: '/service-area/carlsbad/leak-detection/', description: 'Moisture assessment and leak detection support for Carlsbad homes.' },
+          { label: 'Water Damage Restoration in Encinitas', href: '/service-area/encinitas/water-damage-restoration/', description: 'Drying and restoration after leak-related water damage in Encinitas.' },
+        ],
+      },
+      {
+        title: 'Helpful slab leak guides',
+        links: [
+          { label: 'Carlsbad slab leak detection and restoration guide', href: '/blog/slab-leak-repair-carlsbad-detection-repair-restoration/', description: 'How leak detection, plumbing repair, and restoration fit together.' },
+          { label: 'Encinitas slab leak vs. pipe leak', href: '/blog/encinitas-slab-leak-vs-pipe-leak-how-to-tell/', description: 'Warning signs that help separate slab leaks from other plumbing leaks.' },
+        ],
+      },
+    ],
+    whenToCall: [
+      {
+        title: 'You Notice Warm Spots on Tile or Concrete Floors',
+        description: 'Warm flooring can indicate a hot-water line leaking beneath the slab. Prompt inspection helps limit moisture spread into flooring, baseboards, cabinets, and adjacent walls.',
+      },
+      {
+        title: 'Your Water Bill Spikes Without a Clear Reason',
+        description: 'A sudden water bill increase can point to a hidden supply line leak. We help evaluate moisture impacts while leak detection and plumbing repair are coordinated.',
+      },
+      {
+        title: 'Flooring Is Buckling, Cupping, or Separating',
+        description: 'Slab moisture can travel laterally beneath flooring before it becomes visible. Early drying and material assessment reduce the chance of secondary mold or structural damage.',
+      },
+      {
+        title: 'You Hear Running Water When Fixtures Are Off',
+        description: 'Running-water sounds near floors or walls can signal a pressurized line leak. Shut off water if needed and schedule leak detection before opening floors or walls unnecessarily.',
+      },
+    ],
+    whatsIncluded: [
+      {
+        title: 'Under-Slab Leak Assessment',
+        description: 'We use moisture meters, thermal imaging, and inspection findings to document where water has migrated and to support targeted leak-location work where conditions allow.',
+        equipment: 'Thermal imaging cameras, pin and pinless moisture meters, hygrometers',
+      },
+      {
+        title: 'Plumbing Repair Coordination',
+        description: 'Depending on the leak location and pipe condition, the repair may involve spot access, rerouting, or repipe recommendations. We coordinate restoration sequencing around the plumbing repair so wet materials are addressed quickly.',
+      },
+      {
+        title: 'Concrete, Flooring, and Wall Drying',
+        description: 'After the leak is controlled, we dry affected concrete, flooring assemblies, baseboards, drywall, and wall cavities using commercial equipment and daily moisture checks.',
+        equipment: 'Air movers, dehumidifiers, floor drying systems, moisture meters',
+      },
+      {
+        title: 'Documentation for Carrier Review',
+        description: 'We prepare photos, moisture readings, scope notes, and drying logs where applicable. Coverage depends on your policy, the cause of loss, exclusions, and carrier review.',
+      },
+    ],
+    recentProjects: [],
+    deepDiveTitle: 'How Slab Leak Repair Connects Detection, Plumbing, and Restoration',
+    deepDiveContent: `A slab leak is not just a plumbing problem. Once water escapes below or within a concrete foundation, it can move under flooring, wick into baseboards, and raise moisture levels in adjacent wall cavities before the leak is visible. That is why a restoration assessment should happen alongside leak detection and plumbing repair, especially when floors feel warm, water bills spike, or rooms develop musty odors.
+
+The practical workflow is sequence-driven: locate the likely leak area, stop or repair the plumbing source, document moisture migration, dry affected materials, and then repair finishes. Thermal imaging and moisture meters can help narrow the affected area, while acoustic methods may help locate pressurized leaks when site conditions are favorable. Some homes still require selective access or plumber confirmation, so documentation should explain both findings and limitations.
+
+Insurance questions depend on the policy, cause of loss, exclusions, and carrier review. Tamarack supports the process with photos, moisture readings, scope notes, and drying logs where applicable, but does not guarantee coverage or claim outcomes.`,
+  },
+
+  // -------------------------------------------------------
+  // LEAK DETECTION
+  // -------------------------------------------------------
+  'leak-detection': {
+    seoDescription: 'Leak detection and moisture assessment in North San Diego County. Thermal imaging, moisture meters, acoustic methods where applicable, and restoration guidance. Call (760) 500-2211.',
+    faqs: [
+      {
+        question: 'What tools do you use for leak detection?',
+        answer: 'Depending on the situation, we may use pin and pinless moisture meters, thermal imaging, hygrometers, visual inspection, and acoustic listening methods where conditions allow. Tool selection depends on the suspected leak source, material type, access, and whether the line is pressurized.',
+      },
+      {
+        question: 'Can leak detection find every hidden leak without opening walls or floors?',
+        answer: 'Non-invasive tools can narrow many suspected leak areas, but no method can guarantee a source in every building condition. Some leaks require plumber testing, access openings, or additional diagnostics. We document findings and limitations so the next step is clear.',
+      },
+      {
+        question: 'When does leak detection become water damage restoration?',
+        answer: 'If moisture has reached drywall, flooring, cabinets, insulation, or wall cavities, the response usually shifts from locating the leak to drying and restoration. We identify affected materials, document moisture readings, and recommend drying or removal based on saturation and contamination.',
+      },
+      {
+        question: 'How is leak detection different from slab leak repair?',
+        answer: 'Leak detection focuses on finding evidence of a hidden moisture source. Slab leak repair is the response when the leak is below or within the concrete foundation and may require plumbing repair coordination plus drying and restoration of affected finishes.',
+      },
+      {
+        question: 'Will leak detection documentation help with insurance?',
+        answer: 'Documentation can help show observed moisture conditions, visible damage, and the recommended mitigation scope. Coverage depends on your policy, cause of loss, exclusions, timing, and carrier review.',
+      },
+    ],
+    supportLinkGroups: [
+      {
+        title: 'Next-step services',
+        description: 'Leak detection often connects to mitigation, repairs, or slab leak response depending on the source.',
+        links: [
+          { label: 'Water Leak Repair', href: '/services/water-leak-repair/', description: 'Repair and restoration support after a leak source is found.' },
+          { label: 'Slab Leak Repair', href: '/services/slab-leak-repair/', description: 'Under-slab leak response, drying, and restoration coordination.' },
+          { label: 'Water Damage Restoration', href: '/services/water-damage-restoration/', description: 'Extraction and drying when hidden water has affected building materials.' },
+        ],
+      },
+      {
+        title: 'Local leak detection resources',
+        links: [
+          { label: 'Leak Detection in Carlsbad', href: '/service-area/carlsbad/leak-detection/', description: 'Hidden leak and moisture assessment support in Carlsbad.' },
+          { label: 'Slab Leak Repair in Carlsbad', href: '/service-area/carlsbad/slab-leak-repair/', description: 'Local slab leak repair and restoration support near Tamarack headquarters.' },
+          { label: 'Water Damage Restoration in San Marcos', href: '/service-area/san-marcos/water-damage-restoration/', description: 'Drying and restoration after leak-related water damage in San Marcos.' },
+        ],
+      },
+      {
+        title: 'Helpful leak guides',
+        links: [
+          { label: 'Slab leak detection and restoration in Carlsbad', href: '/blog/slab-leak-repair-carlsbad-detection-repair-restoration/', description: 'A practical guide to detection, plumbing repair, and restoration sequencing.' },
+          { label: 'Water damage warning signs', href: '/blog/signs-of-water-damage-in-your-home/', description: 'Early clues that hidden moisture may already be affecting materials.' },
+        ],
+      },
+    ],
+    whenToCall: [
+      {
+        title: 'You Smell Musty Odors but Cannot See Water',
+        description: 'A persistent musty odor can indicate hidden moisture behind walls, under floors, or inside cabinets. Leak detection helps narrow the source before damage spreads.',
+      },
+      {
+        title: 'A Wall, Ceiling, or Floor Has New Staining',
+        description: 'New stains often mean active or recent moisture movement. Moisture mapping helps determine whether materials are wet now or only showing old damage.',
+      },
+      {
+        title: 'Your Water Meter Moves When Fixtures Are Off',
+        description: 'Meter movement can indicate a pressurized plumbing leak. Detection findings help guide plumbing repair and restoration decisions.',
+      },
+      {
+        title: 'You Need Documentation Before Repairs Begin',
+        description: 'Photos, moisture readings, and clear scope notes can help explain observed damage and the recommended mitigation plan to property owners, plumbers, and carriers.',
+      },
+    ],
+    whatsIncluded: [
+      {
+        title: 'Moisture Meter Survey',
+        description: 'We compare suspect areas with unaffected reference areas using pin and pinless meters to document moisture patterns in drywall, flooring, trim, and cabinets.',
+        equipment: 'Pin moisture meters, pinless moisture meters, hygrometers',
+      },
+      {
+        title: 'Thermal Imaging Review',
+        description: 'Thermal imaging can reveal temperature differences associated with wet materials or hot-water leaks. Findings are interpreted with meter readings because thermal images alone do not prove moisture.',
+        equipment: 'Infrared thermal imaging camera',
+      },
+      {
+        title: 'Acoustic and Access-Aware Diagnostics',
+        description: 'Where conditions allow, acoustic listening may help narrow pressurized pipe leaks. Access, background noise, pipe material, and leak size can affect results, so findings are documented with limitations.',
+      },
+      {
+        title: 'Restoration Recommendations',
+        description: 'If materials are wet, we identify the affected areas and recommend drying, removal, or repair steps based on moisture readings, material type, and contamination risk.',
+      },
+    ],
+    recentProjects: [],
+    deepDiveTitle: 'What Leak Detection Can and Cannot Tell You',
+    deepDiveContent: `Leak detection is a decision-making process, not a single tool. Moisture meters show whether materials are wet, thermal imaging can reveal temperature differences, acoustic methods may help with pressurized line leaks, and visual inspection connects those findings to real building conditions. The best results come from combining multiple observations rather than relying on one device.
+
+There are also practical limits. Thermal cameras do not see through walls; they show surface temperature differences. Acoustic detection depends on pressure, pipe material, background noise, and the size of the leak. Some drain, roof, or flashing leaks only appear during certain weather or use conditions. A professional report should explain both what was found and what could not be confirmed without additional access or plumber testing.
+
+When moisture has already affected drywall, flooring, cabinets, insulation, or framing, the next step is restoration planning. Tamarack documents moisture conditions and helps determine whether drying, selective removal, or further repair coordination is needed.`,
+  },
+
 };
 
 export function getServicePillarContent(serviceSlug: string): ServicePillarContent | null {

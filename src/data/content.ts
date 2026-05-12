@@ -79,7 +79,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       },
       {
         title: 'Insurance Experts',
-        description: 'We work directly with your insurance company, documenting damage thoroughly and maximizing your claim.',
+        description: 'We help coordinate with your insurance company, documenting damage thoroughly for carrier review.',
       },
     ],
     commonCauses: [
@@ -111,7 +111,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       'IICRC-certified water restoration technicians',
       'Truck-mounted extraction for maximum power',
       'Thermal imaging to find hidden moisture',
-      'Direct insurance billing available',
+      'Billing coordination available when applicable',
     ],
   },
   
@@ -234,7 +234,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       },
       {
         title: 'Insurance Coordination',
-        description: 'We work directly with your insurance adjuster, documenting everything for maximum claim approval.',
+        description: 'We help coordinate with your insurance adjuster and document visible damage, moisture readings, and scope notes for carrier review.',
       },
     ],
     commonCauses: [
@@ -614,7 +614,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       },
       {
         title: 'Documentation for Insurance',
-        description: 'Our written detection reports include moisture readings, photos, and repair recommendations — exactly what insurance adjusters require.',
+        description: 'Our written detection reports include moisture readings, photos, and repair recommendations that can be shared with the homeowner, adjuster, or carrier for review.',
       },
     ],
     commonCauses: [
@@ -860,7 +860,7 @@ export function generateServiceCityFAQs(
       },
       {
         question: `How much does slab leak repair cost in ${cityName}?`,
-        answer: `Cost depends on the leak location, pipe material, and repair method. A targeted direct-access repair typically runs $1,500–$3,500. Full pipe rerouting through walls or attic — the right choice for extensively corroded systems — ranges from $3,000–$6,000. We provide free on-site assessments and detailed estimates. Most ${cityName} homeowners use homeowner insurance to cover water damage resulting from the leak, and we handle all documentation and adjuster coordination.`,
+        answer: `Cost depends on the leak location, pipe material, and repair method. A targeted direct-access repair typically runs $1,500–$3,500. Full pipe rerouting through walls or attic — the right choice for extensively corroded systems — ranges from $3,000–$6,000. We provide free on-site assessments and detailed estimates. If water damage is present, coverage depends on the policy, cause of loss, exclusions, timing, and carrier review. Tamarack can document visible damage, moisture readings, thermal images, and scope notes, then share documentation with the homeowner, adjuster, or carrier when requested.`,
       },
       {
         question: `Do you repair the pipe and restore the water damage, or just fix the leak?`,
@@ -918,7 +918,7 @@ export function generateServiceCityFAQs(
     },
     {
       question: `Do you work with insurance for ${serviceName.toLowerCase()} in ${cityName}?`,
-      answer: `Yes, we work with all major insurance carriers and have extensive experience with ${serviceName.toLowerCase()} claims. We document all damage thoroughly, communicate directly with your insurance adjuster, and help maximize your claim. Many ${cityName} homeowners pay little or nothing out of pocket.`,
+      answer: `Yes, we work with all major insurance carriers and have extensive experience with ${serviceName.toLowerCase()} claims. We document visible damage thoroughly and help coordinate with your insurance adjuster. Coverage and out-of-pocket costs depend on your policy, cause of loss, deductible, and carrier review.`,
     },
     {
       question: `How much does ${serviceName.toLowerCase()} cost in ${cityName}?`,
@@ -954,7 +954,7 @@ export interface InsuranceCarrierContent {
   }[];
   // Tips for policyholders
   claimTips: string[];
-  // What's typically covered
+  // Potential coverage topics
   typicallyCovered: string[];
   // What may not be covered
   mayNotBeCovered: string[];
@@ -978,18 +978,18 @@ export interface InsuranceCarrierContent {
 export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = {
   'state-farm': {
     slug: 'state-farm',
-    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We simplify the process by working directly with State Farm adjusters on your behalf. Our team knows exactly what documentation State Farm requires and how to communicate effectively with their adjusters.`,
+    howWeHelp: `Filing a State Farm claim after property damage can feel overwhelming. We help organize documentation, mitigation notes, photos, and communication for State Farm adjuster review while keeping coverage expectations tied to the policy, cause of loss, exclusions, and carrier review.`,
     claimSteps: [
       { title: 'Document Everything', description: 'Take photos and videos of all damage before cleanup begins.' },
       { title: 'File Your State Farm Claim', description: 'Call State Farm at 1-800-732-5246 or file online.' },
-      { title: 'Call Tamarack Restoration', description: 'We begin emergency mitigation immediately—no need to wait for approval.' },
-      { title: 'We Meet Your Adjuster', description: 'We coordinate directly with your State Farm adjuster on-site.' },
-      { title: 'Restoration Begins', description: 'State Farm pays us directly—you only pay your deductible.' },
+      { title: 'Call Tamarack Restoration', description: 'We begin emergency mitigation promptly when authorized so further damage can be limited while claim review proceeds.' },
+      { title: 'Adjuster Communication', description: 'We help coordinate with your State Farm adjuster on-site.' },
+      { title: 'Restoration Begins', description: 'We complete authorized mitigation and help coordinate documentation and billing when applicable.' },
     ],
     whyChooseUs: [
-      { title: 'State Farm Experience', description: 'Hundreds of successful State Farm claims processed.' },
-      { title: 'Direct Billing', description: 'We bill State Farm directly for covered work.' },
-      { title: 'Thorough Documentation', description: 'Reports that adjusters need to approve your claim.' },
+      { title: 'State Farm Experience', description: 'Experience preparing documentation for State Farm claim review.' },
+      { title: 'Billing Coordination', description: 'We help coordinate State Farm documentation and billing when applicable.' },
+      { title: 'Thorough Documentation', description: 'Photos, moisture readings, estimates, and scope notes prepared for adjuster review.' },
     ],
     claimTips: [
       'File your claim as soon as possible',
@@ -1013,18 +1013,18 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
   },
   'allstate': {
     slug: 'allstate',
-    howWeHelp: `Allstate policyholders deserve a restoration company that understands their coverage. We work directly with Allstate's claims team to document damage and ensure your restoration meets their standards.`,
+    howWeHelp: `Allstate policyholders benefit from organized restoration documentation after property damage. We provide photos, moisture readings, scope notes, and estimates for Allstate claim review without determining coverage outcomes.`,
     claimSteps: [
       { title: 'Document the Damage', description: 'Capture photos and videos of all affected areas.' },
       { title: 'File Your Allstate Claim', description: 'Report online at allstate.com or call 1-800-255-7828.' },
       { title: 'Contact Tamarack', description: 'We begin mitigation immediately to prevent further damage.' },
       { title: 'Adjuster Coordination', description: 'We provide documentation and answer all questions.' },
-      { title: 'Complete Restoration', description: 'We restore your property and bill Allstate directly.' },
+      { title: 'Complete Restoration', description: 'We restore your property and help coordinate Allstate documentation and billing when applicable.' },
     ],
     whyChooseUs: [
-      { title: 'Allstate-Approved Methods', description: 'Industry-standard methods Allstate recognizes.' },
-      { title: 'Seamless Process', description: 'We handle paperwork so you can focus on family.' },
-      { title: 'Quality Guarantee', description: 'Work that meets Allstate standards.' },
+      { title: 'Industry-Standard Methods', description: 'IICRC-aligned restoration methods and organized documentation for carrier review.' },
+      { title: 'Seamless Process', description: 'We organize restoration documentation so you have clear records for review.' },
+      { title: 'Quality Guarantee', description: 'IICRC-aligned restoration practices and clear documentation.' },
     ],
     claimTips: [
       'Report your claim promptly',
@@ -1046,16 +1046,16 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
   },
   'farmers': {
     slug: 'farmers',
-    howWeHelp: `Farmers Insurance policyholders trust us because we understand how Farmers handles claims. Our team provides the detailed documentation that ensures your claim is processed efficiently.`,
+    howWeHelp: `Farmers Insurance policyholders trust us because we understand the importance of organized restoration documentation. Our team provides photos, moisture readings, scope notes, and estimates for Farmers claim review without promising coverage outcomes.`,
     claimSteps: [
       { title: 'Document All Damage', description: 'Take comprehensive photos before cleanup.' },
       { title: 'File Your Farmers Claim', description: 'Call 1-800-435-7764 or file online.' },
       { title: 'Call Us Immediately', description: 'Emergency mitigation protects your property.' },
       { title: 'Work With Your Adjuster', description: 'We provide detailed scope and documentation.' },
-      { title: 'Restoration Complete', description: 'We bill Farmers directly for covered work.' },
+      { title: 'Restoration Complete', description: 'We help coordinate Farmers documentation and billing when applicable.' },
     ],
     whyChooseUs: [
-      { title: 'Farmers Familiarity', description: 'We know what Farmers adjusters require.' },
+      { title: 'Farmers Familiarity', description: 'Experience preparing organized documentation for Farmers claim review.' },
       { title: 'Local Service', description: 'Fast, personalized service in North San Diego County.' },
       { title: 'Complete Care', description: 'From emergency response to final repairs.' },
     ],
@@ -1084,12 +1084,12 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
       { title: 'Document the Damage', description: 'Photos and videos are critical for your claim.' },
       { title: 'File Your USAA Claim', description: 'Use the app, usaa.com, or call 1-800-531-8722.' },
       { title: 'Contact Tamarack', description: 'We provide 24/7 emergency response for USAA members.' },
-      { title: 'Adjuster Coordination', description: 'We work with USAA\'s claims team.' },
-      { title: 'Complete Restoration', description: 'We coordinate directly with USAA for payment.' },
+      { title: 'Adjuster Coordination', description: 'We provide documentation for USAA claim review when requested.' },
+      { title: 'Complete Restoration', description: 'We help coordinate USAA documentation and billing when applicable.' },
     ],
     whyChooseUs: [
       { title: 'Military Family Focus', description: 'We understand deployments and relocations.' },
-      { title: 'USAA Experience', description: 'We know USAA\'s high standards.' },
+      { title: 'USAA Experience', description: 'Organized documentation for carrier review.' },
       { title: 'Clear Communication', description: 'We keep you informed even if stationed elsewhere.' },
     ],
     claimTips: [
@@ -1112,18 +1112,18 @@ export const insuranceCarrierContent: Record<string, InsuranceCarrierContent> = 
   },
   'liberty-mutual': {
     slug: 'liberty-mutual',
-    howWeHelp: `Liberty Mutual policyholders can count on us for professional, efficient restoration. We work directly with Liberty Mutual's claims process for smooth handling from start to finish.`,
+    howWeHelp: `Liberty Mutual policyholders can count on professional restoration documentation and communication support. We provide organized photos, moisture readings, scope notes, and estimates for carrier review.`,
     claimSteps: [
       { title: 'Document Everything', description: 'Photograph all damage before cleanup.' },
       { title: 'File Your Claim', description: 'Report at libertymutual.com or call 1-800-225-2467.' },
       { title: 'Call Tamarack', description: 'We respond 24/7 for emergencies.' },
       { title: 'Coordinate With Adjuster', description: 'We provide comprehensive documentation.' },
-      { title: 'Restoration Completed', description: 'We handle direct billing with Liberty Mutual.' },
+      { title: 'Restoration Completed', description: 'Billing coordination may be available when applicable, depending on policy, claim status, and carrier review.' },
     ],
     whyChooseUs: [
-      { title: 'Quality Workmanship', description: 'IICRC-certified work meets their standards.' },
+      { title: 'Quality Workmanship', description: 'IICRC-certified work with organized documentation for carrier review.' },
       { title: 'Clear Communication', description: 'We keep everyone informed throughout.' },
-      { title: 'Hassle-Free Billing', description: 'We work directly with Liberty Mutual on payment.' },
+      { title: 'Hassle-Free Billing', description: 'We help coordinate Liberty Mutual documentation and billing when applicable.' },
     ],
     claimTips: [
       'Report claims promptly',
@@ -1155,10 +1155,10 @@ export interface InsuranceServiceContent {
 export const insuranceServiceContent: Record<string, InsuranceServiceContent> = {
   'water-damage-restoration': {
     serviceSlug: 'water-damage-restoration',
-    coverageOverview: `Most homeowner's insurance covers water damage from sudden events like burst pipes and appliance failures. Coverage varies based on water source and whether damage was sudden or gradual.`,
+    coverageOverview: `Homeowner's insurance may cover water damage from sudden events like burst pipes and appliance failures. Coverage varies based on the water source, timing, policy language, exclusions, and carrier review.`,
     serviceTips: [
       'Stop the water source if safe to do so',
-      'Don\'t wait for adjuster approval for emergency mitigation',
+      'Begin reasonable emergency mitigation promptly when authorized to limit further damage',
       'Document the water source and affected areas',
       'Keep a log of all water-damaged items',
     ],
@@ -1171,7 +1171,7 @@ export const insuranceServiceContent: Record<string, InsuranceServiceContent> = 
   },
   'fire-damage-restoration': {
     serviceSlug: 'fire-damage-restoration',
-    coverageOverview: `Fire damage is typically well-covered, including damage from flames, smoke, soot, and water used to extinguish the fire. Coverage usually extends to structural damage and personal property.`,
+    coverageOverview: `Fire damage may include flame, smoke, soot, and water-from-firefighting impacts. Coverage for structural damage, contents, and additional expenses depends on policy language, exclusions, cause of loss, and carrier review.`,
     serviceTips: [
       'Don\'t enter until fire department clears it',
       'Board up openings to prevent further damage',
@@ -1187,7 +1187,7 @@ export const insuranceServiceContent: Record<string, InsuranceServiceContent> = 
   },
   'mold-removal': {
     serviceSlug: 'mold-removal',
-    coverageOverview: `Mold coverage is often limited. It's typically covered only when resulting from a covered water event and addressed promptly. Some policies have mold coverage caps.`,
+    coverageOverview: `Mold coverage is often limited and may depend on whether growth resulted from a covered water event and was addressed promptly. Some policies include mold caps or exclusions, and all coverage decisions depend on carrier review.`,
     serviceTips: [
       'Link mold to a covered water event',
       'Act quickly—delays can result in denied claims',
