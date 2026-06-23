@@ -57,10 +57,9 @@ const variantStyles: Record<string, string> = {
   
   <form 
     id={formId}
-    action={formConfig.formspreeEndpoint}
-    method="POST"
     class="space-y-4"
     data-lead-form
+    data-worker-url={formConfig.workerEndpoint}
   >
     <!-- Honeypot for spam protection -->
     <input type="text" name="_gotcha" class="absolute opacity-0 h-0 w-0 overflow-hidden" tabindex="-1" autocomplete="off" aria-label="Do not fill this field" />
@@ -197,15 +196,14 @@ const variantStyles: Record<string, string> = {
         
         try {
           const formData = new FormData(form as HTMLFormElement);
-          const response = await fetch((form as HTMLFormElement).action, {
+          const workerUrl = (form as HTMLElement).dataset.workerUrl!;
+          const response = await fetch(workerUrl, {
             method: 'POST',
             body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
           });
           
-          if (response.ok) {
+          const data = await response.json();
+          if (response.ok && data.success) {
             // Success
             statusDiv?.classList.remove('hidden');
             successMsg?.classList.remove('hidden');
