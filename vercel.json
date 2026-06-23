@@ -22,6 +22,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/category/water-damage",
+      "destination": "/blog/category/water-damage/",
+      "permanent": true
+    },
+    {
       "source": "/service-area/carlsbad/water-restoration",
       "destination": "/service-area/carlsbad/water-damage-restoration/",
       "permanent": true
@@ -404,26 +409,6 @@
     {
       "source": "/our-projects/water-restoration/",
       "destination": "/projects/water-damage-restoration/",
-      "permanent": true
-    },
-    {
-      "source": "/service-area/rancho-santa-fe/water-restoration",
-      "destination": "/service-area/rancho-santa-fe/water-damage-restoration/",
-      "permanent": true
-    },
-    {
-      "source": "/service-area/rancho-santa-fe/water-restoration/",
-      "destination": "/service-area/rancho-santa-fe/water-damage-restoration/",
-      "permanent": true
-    },
-    {
-      "source": "/service-area/vista/water-restoration",
-      "destination": "/service-area/vista/water-damage-restoration/",
-      "permanent": true
-    },
-    {
-      "source": "/service-area/vista/water-restoration/",
-      "destination": "/service-area/vista/water-damage-restoration/",
       "permanent": true
     }
   ],
