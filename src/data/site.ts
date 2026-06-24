@@ -756,15 +756,13 @@ export const whyChooseUs = [
 // FORM CONFIG
 // ===================
 
-const formspreeEndpoint =
-  import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim() || 'https://formspree.io/f/mnjbbqea';
-
 export const formConfig = {
-  formspreeEndpoint,
   workerEndpoint: 'https://tamarack-forms-worker.tamarack-restoration-ca.workers.dev',
   services: [
     { value: 'water-damage-restoration', label: 'Water Damage Restoration' },
     { value: 'water-leak-repair', label: 'Water Leak Repair' },
+    { value: 'slab-leak-repair', label: 'Slab Leak Repair' },
+    { value: 'leak-detection', label: 'Leak Detection' },
     { value: 'mold-removal', label: 'Mold Removal' },
     { value: 'fire-damage-restoration', label: 'Fire Damage Restoration' },
     { value: 'flood-cleanup', label: 'Flood Cleanup' },

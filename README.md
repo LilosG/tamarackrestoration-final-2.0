@@ -35,7 +35,7 @@ tamarack-restoration/
 - **Framework:** [Astro](https://astro.build/) v4
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) v3
 - **Deployment:** [Vercel](https://vercel.com/)
-- **Forms:** Formspree
+- **Forms:** Cloudflare Worker + Resend email delivery + Cloudflare R2 attachment storage
 - **TypeScript:** Strict mode
 
 ## 🧞 Commands
@@ -52,12 +52,12 @@ tamarack-restoration/
 
 ### Environment Variables
 
-Create a `.env` file (production builds require a real Formspree endpoint):
+Create a `.env` file for local configuration. Production form submissions post to the Cloudflare Worker endpoint configured in `src/data/site.ts`; the Worker handles Resend email delivery and Cloudflare R2 attachment storage.
 
 ```env
-PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/mnjbbqea
 PUBLIC_SITE_URL=https://www.tamarackrestoration.com
 PUBLIC_GA4_MEASUREMENT_ID=G-XZ2JSQZ99Y
+PUBLIC_GOOGLE_MAPS_API_KEY=your-google-maps-browser-key
 ```
 
 ### Brand Colors
