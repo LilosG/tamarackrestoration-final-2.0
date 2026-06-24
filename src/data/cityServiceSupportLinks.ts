@@ -638,6 +638,678 @@ const supportLinksByCityService: Record<string, CityServiceSupportLinkGroup[]> =
       ],
     },
   ],
+
+  'oceanside__water-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Same-city services when an Oceanside leak has affected walls, floors, or nearby rooms.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/oceanside/water-damage-restoration/',
+          description: 'Extraction, drying, and restoration after a leak causes property damage.',
+        },
+        {
+          label: 'Slab Leak Repair',
+          href: '/service-area/oceanside/slab-leak-repair/',
+          description: 'Support for leaks beneath slab foundations and related moisture spread.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/oceanside/flood-cleanup/',
+          description: 'Cleanup for storm water, overflows, and larger water intrusions.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Oceanside leak and water damage resources for early action and prevention.',
+      links: [
+        {
+          label: 'Oceanside Ceiling Leak Steps',
+          href: '/blog/oceanside-ceiling-leak-steps-before-mold-starts/',
+          description: 'What to do before ceiling leak moisture turns into a larger mold risk.',
+        },
+        {
+          label: 'Water Damage Prevention in Oceanside',
+          href: '/blog/water-damage-prevention-in-oceanside/',
+          description: 'Prevention tips for coastal and inland Oceanside properties.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for hidden leaks, slab leaks, and moisture diagnosis.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation-focused links when leak damage may need carrier review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Learn how photos, moisture readings, and scopes support claim review.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Coverage depends on the cause of loss, policy language, and exclusions.',
+        },
+      ],
+    },
+  ],
+
+  'vista__water-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Vista water services commonly needed after hidden plumbing or fixture leaks.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/vista/water-damage-restoration/',
+          description: 'Drying and repairs when leak moisture reaches building materials.',
+        },
+        {
+          label: 'Slab Leak Repair',
+          href: '/service-area/vista/slab-leak-repair/',
+          description: 'Under-slab leak support for Vista homes with foundation moisture symptoms.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/vista/flood-cleanup/',
+          description: 'Cleanup for bathroom floods, overflows, and larger water losses.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Resources for spotting leak damage and preventing spread in Vista homes.',
+      links: [
+        {
+          label: 'Vista Flooded Bathroom Guide',
+          href: '/blog/vista-flooded-bathroom-category-2-3-water-loss/',
+          description: 'How category 2 and category 3 bathroom water losses are handled.',
+        },
+        {
+          label: 'Warning Signs of Water Damage',
+          href: '/blog/signs-of-water-damage-in-your-home/',
+          description: 'Common visual and odor clues that hidden water may be spreading.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guidance on slab leaks, hidden leaks, and moisture mapping.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Nearby leak repair pages for homeowners comparing North County service coverage.',
+      links: [
+        {
+          label: 'San Marcos Water Leak Repair',
+          href: '/service-area/san-marcos/water-leak-repair/',
+          description: 'Leak repair support in nearby San Marcos neighborhoods.',
+        },
+        {
+          label: 'Oceanside Water Leak Repair',
+          href: '/service-area/oceanside/water-leak-repair/',
+          description: 'Leak detection and repair support across Oceanside.',
+        },
+      ],
+    },
+  ],
+
+  'san-marcos__water-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Same-city water services when a San Marcos leak affects floors, walls, or the slab.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/san-marcos/water-damage-restoration/',
+          description: 'Extraction, structural drying, and repair coordination after leak damage.',
+        },
+        {
+          label: 'Slab Leak Repair',
+          href: '/service-area/san-marcos/slab-leak-repair/',
+          description: 'Detection and drying support for under-slab plumbing leaks.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/san-marcos/flood-cleanup/',
+          description: 'Cleanup for overflows, storm water, and contaminated water events.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'San Marcos water damage and drying resources for leak-related decisions.',
+      links: [
+        {
+          label: 'San Marcos Claim Checklist',
+          href: '/blog/san-marcos-water-damage-insurance-claim-checklist/',
+          description: 'Documentation steps before and during carrier review.',
+        },
+        {
+          label: 'Structural Drying Timeline',
+          href: '/blog/how-long-does-structural-drying-take-north-san-diego/',
+          description: 'Typical drying timelines for North San Diego County water losses.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for hidden leaks, slab symptoms, and moisture diagnosis.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation support links when a covered water loss needs review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'How Tamarack documents moisture readings, photos, and restoration scopes.',
+        },
+        {
+          label: 'Farmers Water Damage',
+          href: '/insurance/farmers/water-damage-restoration/',
+          description: 'Water damage documentation support for Farmers policyholders.',
+        },
+      ],
+    },
+  ],
+
+  'encinitas__water-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Encinitas water services for leak damage, slab moisture, and overflow cleanup.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/encinitas/water-damage-restoration/',
+          description: 'Drying and restoration for coastal homes affected by leak moisture.',
+        },
+        {
+          label: 'Slab Leak Repair',
+          href: '/service-area/encinitas/slab-leak-repair/',
+          description: 'Support for foundation leaks and under-slab moisture issues.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/encinitas/flood-cleanup/',
+          description: 'Cleanup for storm water, overflows, and larger water intrusions.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Encinitas water and leak resources for quick decisions after symptoms appear.',
+      links: [
+        {
+          label: 'Encinitas Water Damage Guide',
+          href: '/blog/water-damage-restoration-encinitas-ca/',
+          description: 'Local water damage considerations for Encinitas properties.',
+        },
+        {
+          label: 'Encinitas Slab vs Pipe Leak Guide',
+          href: '/blog/encinitas-slab-leak-vs-pipe-leak-how-to-tell/',
+          description: 'How to compare common slab leak and pipe leak symptoms.',
+        },
+        {
+          label: 'First 24 Hours Guide',
+          href: '/blog/how-to-handle-water-damage-emergency-first-24-hours/',
+          description: 'Steps to reduce damage before and during professional response.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Nearby leak repair pages for coastal North County homeowners.',
+      links: [
+        {
+          label: 'Carlsbad Water Leak Repair',
+          href: '/service-area/carlsbad/water-leak-repair/',
+          description: 'Leak detection and repair near Tamarack Restoration headquarters.',
+        },
+        {
+          label: 'Oceanside Water Leak Repair',
+          href: '/service-area/oceanside/water-leak-repair/',
+          description: 'Leak repair support for nearby coastal and inland properties.',
+        },
+      ],
+    },
+  ],
+
+  'oceanside__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Oceanside services commonly needed after a slab leak affects interior materials.',
+      links: [
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/oceanside/water-leak-repair/',
+          description: 'Targeted repair support after a leak source is confirmed.',
+        },
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/oceanside/water-damage-restoration/',
+          description: 'Drying and restoration when slab moisture reaches walls or flooring.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/oceanside/flood-cleanup/',
+          description: 'Cleanup for larger water releases and contaminated water events.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Leak detection and water damage resources for Oceanside slab leak planning.',
+      links: [
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for slab leaks, hidden leaks, and moisture mapping.',
+        },
+        {
+          label: 'Oceanside Ceiling Leak Steps',
+          href: '/blog/oceanside-ceiling-leak-steps-before-mold-starts/',
+          description: 'Early steps when hidden moisture appears overhead or nearby.',
+        },
+        {
+          label: 'Water Damage Prevention in Oceanside',
+          href: '/blog/water-damage-prevention-in-oceanside/',
+          description: 'Prevention guidance for coastal and inland Oceanside homes.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation resources for slab leak damage and carrier review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Moisture readings, photos, and scopes can help document the loss.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Understand why coverage depends on cause, timing, and policy language.',
+        },
+      ],
+    },
+  ],
+
+  'vista__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Vista water services for under-slab leaks and related property damage.',
+      links: [
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/vista/water-leak-repair/',
+          description: 'Repair support for confirmed pipe, wall, and foundation leaks.',
+        },
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/vista/water-damage-restoration/',
+          description: 'Drying and restoration when slab leak moisture spreads indoors.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/vista/flood-cleanup/',
+          description: 'Cleanup for overflows, bathroom floods, and contaminated water losses.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Vista moisture and slab leak resources for homeowners comparing next steps.',
+      links: [
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for locating slab leaks and hidden plumbing issues.',
+        },
+        {
+          label: 'Vista Flooded Bathroom Guide',
+          href: '/blog/vista-flooded-bathroom-category-2-3-water-loss/',
+          description: 'How contaminated bathroom water losses are cleaned and dried.',
+        },
+        {
+          label: 'Warning Signs of Water Damage',
+          href: '/blog/signs-of-water-damage-in-your-home/',
+          description: 'Common signs that hidden water damage may be spreading.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Nearby slab leak pages for North County homeowners.',
+      links: [
+        {
+          label: 'San Marcos Slab Leak Repair',
+          href: '/service-area/san-marcos/slab-leak-repair/',
+          description: 'Slab leak detection and drying support in nearby San Marcos.',
+        },
+        {
+          label: 'Oceanside Slab Leak Repair',
+          href: '/service-area/oceanside/slab-leak-repair/',
+          description: 'Under-slab leak support for Oceanside properties.',
+        },
+      ],
+    },
+  ],
+
+  'san-marcos__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'San Marcos water services commonly paired with slab leak response.',
+      links: [
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/san-marcos/water-leak-repair/',
+          description: 'Repair support after under-slab or wall leaks are located.',
+        },
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/san-marcos/water-damage-restoration/',
+          description: 'Drying and restoration when slab moisture affects interior materials.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/san-marcos/flood-cleanup/',
+          description: 'Cleanup for larger water releases, overflows, and storm-related events.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'San Marcos guides for detection, drying timelines, and claim documentation.',
+      links: [
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for under-slab leaks, hidden leaks, and moisture mapping.',
+        },
+        {
+          label: 'Structural Drying Timeline',
+          href: '/blog/how-long-does-structural-drying-take-north-san-diego/',
+          description: 'What affects drying timelines for North County water damage.',
+        },
+        {
+          label: 'San Marcos Claim Checklist',
+          href: '/blog/san-marcos-water-damage-insurance-claim-checklist/',
+          description: 'Documentation checklist for water damage claims in San Marcos.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation support for slab leak water damage review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Learn how photos, moisture logs, and scopes support review.',
+        },
+        {
+          label: 'Farmers Water Damage',
+          href: '/insurance/farmers/water-damage-restoration/',
+          description: 'Water damage documentation support for Farmers policyholders.',
+        },
+      ],
+    },
+  ],
+
+  'encinitas__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Encinitas services for slab leaks, pipe leaks, and related water damage.',
+      links: [
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/encinitas/water-leak-repair/',
+          description: 'Repair coordination after a hidden or under-slab leak is located.',
+        },
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/encinitas/water-damage-restoration/',
+          description: 'Drying and restoration for coastal properties with moisture spread.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/encinitas/flood-cleanup/',
+          description: 'Cleanup for storm water, overflows, and larger water intrusions.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Encinitas resources for distinguishing slab leaks from other plumbing leaks.',
+      links: [
+        {
+          label: 'Encinitas Slab vs Pipe Leak Guide',
+          href: '/blog/encinitas-slab-leak-vs-pipe-leak-how-to-tell/',
+          description: 'How to compare common foundation and pipe leak symptoms.',
+        },
+        {
+          label: 'Encinitas Water Damage Guide',
+          href: '/blog/water-damage-restoration-encinitas-ca/',
+          description: 'Local water damage considerations for Encinitas coastal homes.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for hidden leaks, slab symptoms, and moisture diagnosis.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Nearby slab leak pages for coastal North County homeowners.',
+      links: [
+        {
+          label: 'Carlsbad Slab Leak Repair',
+          href: '/service-area/carlsbad/slab-leak-repair/',
+          description: 'Slab leak support near Tamarack Restoration headquarters.',
+        },
+        {
+          label: 'Oceanside Slab Leak Repair',
+          href: '/service-area/oceanside/slab-leak-repair/',
+          description: 'Under-slab leak support for nearby Oceanside properties.',
+        },
+      ],
+    },
+  ],
+
+  'carlsbad__mold-removal': [
+    {
+      title: 'Related Restoration Services',
+      description: 'Related Carlsbad services when mold is connected to leaks, flooding, or hidden moisture.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/carlsbad/water-damage-restoration/',
+          description: 'Drying and restoration for water losses that can lead to mold growth.',
+        },
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/carlsbad/water-leak-repair/',
+          description: 'Find and repair hidden leaks that may be feeding mold growth.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/carlsbad/flood-cleanup/',
+          description: 'Cleanup and drying after storm water, overflows, or contaminated water.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Mold resources for identifying moisture problems and planning safe remediation.',
+      links: [
+        {
+          label: 'Mold vs Mildew',
+          href: '/blog/mold-vs-mildew-whats-the-difference/',
+          description: 'Understand the difference between mildew-like growth and mold concerns.',
+        },
+        {
+          label: 'Mold After Water Damage',
+          href: '/blog/mold-after-water-damage-timeline-risk-safe-remediation/',
+          description: 'Timeline and safety considerations after water damage leads to mold risk.',
+        },
+        {
+          label: 'Mold Articles',
+          href: '/blog/category/mold/',
+          description: 'More guidance on mold inspection, remediation, and prevention.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation resources when mold is related to a water damage event.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Learn how documentation supports adjuster and carrier review.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Review why coverage depends on the cause of loss and policy language.',
+        },
+      ],
+    },
+  ],
+
+  'carlsbad__fire-damage-restoration': [
+    {
+      title: 'Related Restoration Services',
+      description: 'Carlsbad services commonly needed after fire, smoke, suppression water, or humidity damage.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/carlsbad/water-damage-restoration/',
+          description: 'Drying and restoration after firefighting water affects the structure.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/carlsbad/flood-cleanup/',
+          description: 'Cleanup for significant water intrusion during or after emergency response.',
+        },
+        {
+          label: 'Mold Removal',
+          href: '/service-area/carlsbad/mold-removal/',
+          description: 'Mold remediation when lingering moisture creates secondary damage risk.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Fire damage resources for understanding cleanup, odor removal, and restoration planning.',
+      links: [
+        {
+          label: 'Fire Damage Restoration Guide',
+          href: '/blog/fire-damage-restoration-carlsbad-guide/',
+          description: 'Carlsbad-specific guidance for smoke, soot, and fire restoration steps.',
+        },
+        {
+          label: 'Fire Damage Restoration Process',
+          href: '/blog/fire-damage-restoration-process-what-to-expect/',
+          description: 'What to expect from assessment through cleanup and repairs.',
+        },
+        {
+          label: 'Fire Damage Articles',
+          href: '/blog/category/fire-damage/',
+          description: 'More fire restoration guides, cost resources, and process explanations.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation links for fire losses and related water damage review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Photos, scopes, and documentation can support claim review.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Helpful context when suppression water causes additional damage.',
+        },
+      ],
+    },
+  ],
+
+  'carlsbad__sewage-cleanup': [
+    {
+      title: 'Related Restoration Services',
+      description: 'Carlsbad services related to sewage backups, contaminated water, and moisture damage.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/carlsbad/water-damage-restoration/',
+          description: 'Drying and restoration after water affects floors, walls, or contents.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/carlsbad/flood-cleanup/',
+          description: 'Cleanup for storm water, overflows, and contaminated water events.',
+        },
+        {
+          label: 'Mold Removal',
+          href: '/service-area/carlsbad/mold-removal/',
+          description: 'Remediation when moisture creates mold growth risk after cleanup.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Sewage and contaminated water resources for safe cleanup decisions.',
+      links: [
+        {
+          label: 'Sewage Backup Cleanup in Carlsbad',
+          href: '/blog/sewage-backup-cleanup-carlsbad-north-san-diego/',
+          description: 'Local guidance for cleanup after sewage backups in North San Diego County.',
+        },
+        {
+          label: 'Flood Cleanup Articles',
+          href: '/blog/category/flood/',
+          description: 'Guides for storm water, overflows, and contaminated water restoration.',
+        },
+        {
+          label: 'Water Damage Articles',
+          href: '/blog/category/water-damage/',
+          description: 'Emergency steps, drying timelines, and restoration documentation guides.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation resources when sewage damage needs insurance review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Learn how photos, mitigation notes, and scopes support claim review.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Coverage depends on cause, policy language, endorsements, and exclusions.',
+        },
+      ],
+    },
+  ],
+
 };
 
 export const enhancedCityServiceSupportLinkKeys = Object.keys(supportLinksByCityService);
