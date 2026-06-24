@@ -84,6 +84,83 @@ export const cityServiceSeoOverrides: Record<string, CityServiceSeoOverride> = {
     introEyebrow: 'Bressi Ranch Water Help',
     introHeading: 'Water Damage Help for Bressi Ranch Homes',
   },
+  'carlsbad__mold-removal': {
+    seoTitle: 'Mold Removal in Carlsbad | Inspection & Remediation',
+    seoDescription:
+      'Need mold removal in Carlsbad? Tamarack handles containment, HEPA filtration, moisture source checks, remediation, and repair coordination.',
+    introEyebrow: 'Carlsbad Mold Help',
+    introHeading: 'Mold Remediation for Carlsbad Homes',
+  },
+  'carlsbad__fire-damage-restoration': {
+    seoTitle: 'Fire Damage Restoration in Carlsbad | Smoke & Repairs',
+    seoDescription:
+      'Fire or smoke damage in Carlsbad? Tamarack provides board-up, soot cleanup, odor removal, water extraction, documentation, and repair coordination.',
+    introEyebrow: 'Fire & Smoke Recovery',
+    introHeading: 'Fire Damage Cleanup and Repair Support in Carlsbad',
+  },
+  'carlsbad__sewage-cleanup': {
+    seoTitle: 'Sewage Cleanup in Carlsbad | Sanitizing & Drying',
+    seoDescription:
+      'Sewage backup in Carlsbad? Tamarack provides safe extraction, contaminated-material removal, sanitizing, drying, odor control, and documentation.',
+    introEyebrow: 'Sewage Backup Cleanup',
+    introHeading: 'Safe Sewage Cleanup for Carlsbad Properties',
+  },
+  'oceanside__water-leak-repair': {
+    seoTitle: 'Water Leak Repair in Oceanside | Detection & Drying',
+    seoDescription:
+      'Hidden leak in Oceanside? Tamarack helps locate plumbing leaks, assess moisture spread, dry affected materials, and coordinate repairs.',
+    introEyebrow: 'Oceanside Leak Help',
+    introHeading: 'Find and Repair Water Leaks in Oceanside',
+  },
+  'vista__water-leak-repair': {
+    seoTitle: 'Water Leak Repair in Vista | Moisture Checks & Repair',
+    seoDescription:
+      'Water leak in Vista? Tamarack uses moisture meters, thermal imaging, and repair coordination to help stop leaks and limit property damage.',
+    introEyebrow: 'Vista Leak Response',
+    introHeading: 'Water Leak Detection and Repair Support in Vista',
+  },
+  'san-marcos__water-leak-repair': {
+    seoTitle: 'Water Leak Repair in San Marcos | Hidden Leak Help',
+    seoDescription:
+      'Need water leak repair in San Marcos? Tamarack helps locate hidden leaks, check moisture spread, dry affected areas, and coordinate repairs.',
+    introEyebrow: 'San Marcos Leak Help',
+    introHeading: 'Hidden Water Leak Help for San Marcos Homes',
+  },
+  'encinitas__water-leak-repair': {
+    seoTitle: 'Water Leak Repair in Encinitas | Coastal Leak Help',
+    seoDescription:
+      'Water leak in Encinitas? Tamarack helps find hidden leaks, assess coastal moisture issues, dry affected materials, and coordinate repairs.',
+    introEyebrow: 'Encinitas Leak Support',
+    introHeading: 'Water Leak Repair Support for Encinitas Properties',
+  },
+  'oceanside__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in Oceanside | Detection & Drying',
+    seoDescription:
+      'Suspect a slab leak in Oceanside? Tamarack helps locate under-slab leaks, document moisture, dry affected materials, and coordinate repair access.',
+    introEyebrow: 'Oceanside Slab Leak Help',
+    introHeading: 'Slab Leak Detection and Drying Support in Oceanside',
+  },
+  'vista__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in Vista | Under-Slab Leak Help',
+    seoDescription:
+      'Slab leak symptoms in Vista? Tamarack helps pinpoint under-slab leaks, assess moisture damage, dry affected areas, and coordinate repairs.',
+    introEyebrow: 'Vista Slab Leak Response',
+    introHeading: 'Under-Slab Leak Help for Vista Homes',
+  },
+  'san-marcos__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in San Marcos | Leak Detection & Drying',
+    seoDescription:
+      'Slab leak in San Marcos? Tamarack supports leak detection, moisture mapping, drying, documentation, and repair coordination for affected homes.',
+    introEyebrow: 'San Marcos Slab Leak Help',
+    introHeading: 'Slab Leak Detection and Drying in San Marcos',
+  },
+  'encinitas__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in Encinitas | Coastal Foundation Leaks',
+    seoDescription:
+      'Suspect a slab leak in Encinitas? Tamarack helps locate foundation leaks, check moisture spread, dry affected materials, and coordinate repairs.',
+    introEyebrow: 'Encinitas Slab Leak Help',
+    introHeading: 'Slab Leak Support for Encinitas Coastal Homes',
+  },
 };
 
 export const cityServiceSeoOverrideKeys = Object.keys(cityServiceSeoOverrides);
