@@ -25,6 +25,7 @@ const {
 } = Astro.props;
 
 const formId = `lead-form-${Math.random().toString(36).slice(2, 11)}`;
+const googleMapsApiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY?.trim() || '';
 
 const variantStyles: Record<string, string> = {
   default: 'bg-white',
@@ -60,6 +61,7 @@ const variantStyles: Record<string, string> = {
     class="space-y-4"
     data-lead-form
     data-worker-url={formConfig.workerEndpoint}
+    data-google-maps-api-key={googleMapsApiKey}
   >
     <!-- Honeypot for spam protection -->
     <input type="text" name="_gotcha" class="absolute opacity-0 h-0 w-0 overflow-hidden" tabindex="-1" autocomplete="off" aria-label="Do not fill this field" />
@@ -68,6 +70,10 @@ const variantStyles: Record<string, string> = {
     <input type="hidden" name="source" value={source} />
     <input type="hidden" name="page_url" value="" data-page-url />
     <input type="hidden" name="timestamp" value="" data-timestamp />
+    <input type="hidden" name="place_id" data-place-id />
+    <input type="hidden" name="formatted_address" data-formatted-address />
+    <input type="hidden" name="latitude" data-latitude />
+    <input type="hidden" name="longitude" data-longitude />
     
     <!-- Name -->
     <div>
@@ -98,6 +104,21 @@ const variantStyles: Record<string, string> = {
       />
     </div>
     
+    <!-- Property Location -->
+    <div>
+      <label for={`${formId}-address`} class="sr-only">Property Address / City / ZIP</label>
+      <input
+        type="text"
+        id={`${formId}-address`}
+        name="address"
+        placeholder="Property address, city, ZIP"
+        required
+        class="input"
+        autocomplete="street-address"
+        data-address-input
+      />
+    </div>
+
     <!-- Service -->
     <div>
       <label for={`${formId}-service`} class="sr-only">Service Needed</label>
@@ -114,6 +135,22 @@ const variantStyles: Record<string, string> = {
       </select>
     </div>
     
+    <!-- Urgency -->
+    <div>
+      <label for={`${formId}-urgency`} class="sr-only">Urgency Level</label>
+      <select
+        id={`${formId}-urgency`}
+        name="urgency"
+        required
+        class="input"
+      >
+        <option value="" disabled selected>Urgency Level</option>
+        {formConfig.urgencyLevels.map((urgency) => (
+          <option value={urgency.value}>{urgency.label}</option>
+        ))}
+      </select>
+    </div>
+
     <!-- Message (optional) -->
     <div>
       <label for={`${formId}-message`} class="sr-only">Brief Description (Optional)</label>
@@ -169,9 +206,61 @@ const variantStyles: Record<string, string> = {
       // Set hidden field values
       const pageUrlInput = form.querySelector('[data-page-url]') as HTMLInputElement;
       const timestampInput = form.querySelector('[data-timestamp]') as HTMLInputElement;
+      const googleMapsApiKey = (form as HTMLElement).dataset.googleMapsApiKey || '';
+      const addressInput = form.querySelector('[data-address-input]') as HTMLInputElement;
+      const placeIdInput = form.querySelector('[data-place-id]') as HTMLInputElement;
+      const formattedAddressInput = form.querySelector('[data-formatted-address]') as HTMLInputElement;
+      const latitudeInput = form.querySelector('[data-latitude]') as HTMLInputElement;
+      const longitudeInput = form.querySelector('[data-longitude]') as HTMLInputElement;
       
       if (pageUrlInput) pageUrlInput.value = window.location.href;
       if (timestampInput) timestampInput.value = new Date().toISOString();
+
+      function initAddressAutocomplete() {
+        if (!googleMapsApiKey || !addressInput) return;
+        const w = window as any;
+        const applyAutocomplete = () => {
+          if (!w.google?.maps?.places || addressInput.dataset.autocompleteReady === 'true') return;
+          addressInput.dataset.autocompleteReady = 'true';
+          const autocomplete = new w.google.maps.places.Autocomplete(addressInput, {
+            componentRestrictions: { country: 'us' },
+            fields: ['place_id', 'formatted_address', 'geometry'],
+            bounds: new w.google.maps.LatLngBounds(
+              new w.google.maps.LatLng(32.75, -117.45),
+              new w.google.maps.LatLng(33.35, -116.85)
+            ),
+            strictBounds: false,
+            types: ['address'],
+          });
+          autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (placeIdInput) placeIdInput.value = place.place_id || '';
+            if (formattedAddressInput) formattedAddressInput.value = place.formatted_address || addressInput.value;
+            const location = place.geometry?.location;
+            if (latitudeInput) latitudeInput.value = location ? String(location.lat()) : '';
+            if (longitudeInput) longitudeInput.value = location ? String(location.lng()) : '';
+            if (place.formatted_address) addressInput.value = place.formatted_address;
+          });
+        };
+        if (w.google?.maps?.places) {
+          applyAutocomplete();
+          return;
+        }
+        const existingScript = document.querySelector('[data-google-places-script]') as HTMLScriptElement;
+        if (existingScript) {
+          existingScript.addEventListener('load', applyAutocomplete, { once: true });
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(googleMapsApiKey)}&libraries=places`;
+        script.async = true;
+        script.defer = true;
+        script.dataset.googlePlacesScript = 'true';
+        script.addEventListener('load', applyAutocomplete, { once: true });
+        document.head.appendChild(script);
+      }
+
+      initAddressAutocomplete();
       
       // Handle form submission
       form.addEventListener('submit', async (e) => {
@@ -182,6 +271,14 @@ const variantStyles: Record<string, string> = {
         const successMsg = form.querySelector('.form-status-success') as HTMLElement;
         const errorMsg = form.querySelector('.form-status-error') as HTMLElement;
         
+        const honeypot = (form.querySelector('[name="_gotcha"]') as HTMLInputElement)?.value;
+        if (honeypot) return;
+
+        if (!(form as HTMLFormElement).checkValidity()) {
+          (form as HTMLFormElement).reportValidity();
+          return;
+        }
+
         // Update button state
         if (submitBtn) {
           submitBtn.disabled = true;
@@ -196,6 +293,10 @@ const variantStyles: Record<string, string> = {
         
         try {
           const formData = new FormData(form as HTMLFormElement);
+          const selectedService = String(formData.get('service') || '');
+          if (selectedService && !formData.get('serviceType')) {
+            formData.append('serviceType', selectedService);
+          }
           const workerUrl = (form as HTMLElement).dataset.workerUrl!;
           const response = await fetch(workerUrl, {
             method: 'POST',
