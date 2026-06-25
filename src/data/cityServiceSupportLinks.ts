@@ -1310,6 +1310,250 @@ const supportLinksByCityService: Record<string, CityServiceSupportLinkGroup[]> =
     },
   ],
 
+  'vista__fire-damage-restoration': [
+    {
+      title: 'Related Restoration Services',
+      description: 'Vista services often needed after fire, smoke, suppression water, or lingering moisture damage.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/vista/water-damage-restoration/',
+          description: 'Drying and restoration after firefighting water affects floors, walls, or ceilings.',
+        },
+        {
+          label: 'Mold Removal',
+          href: '/service-area/vista/mold-removal/',
+          description: 'Containment and remediation when post-fire moisture creates mold risk.',
+        },
+        {
+          label: 'Sewage Cleanup',
+          href: '/service-area/vista/sewage-cleanup/',
+          description: 'Sanitizing support for contaminated water and biohazard cleanup needs.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Fire damage resources for understanding cleanup, smoke odor, and repair planning.',
+      links: [
+        {
+          label: 'Fire Damage Restoration Process',
+          href: '/blog/fire-damage-restoration-process-what-to-expect/',
+          description: 'What to expect from emergency assessment through cleanup and repairs.',
+        },
+        {
+          label: 'Fire Damage Articles',
+          href: '/blog/category/fire-damage/',
+          description: 'Guides for fire restoration costs, cleanup steps, and recovery planning.',
+        },
+        {
+          label: 'Smoke Damage Cleanup',
+          href: '/services/fire-damage-restoration/',
+          description: 'Core fire and smoke damage restoration services from Tamarack.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Fire damage help in nearby North County communities.',
+      links: [
+        {
+          label: 'San Marcos Fire Damage Restoration',
+          href: '/service-area/san-marcos/fire-damage-restoration/',
+          description: 'Fire, smoke, odor, and repair coordination for San Marcos properties.',
+        },
+        {
+          label: 'Oceanside Fire Damage Restoration',
+          href: '/service-area/oceanside/fire-damage-restoration/',
+          description: 'Coastal and inland fire restoration support in Oceanside.',
+        },
+      ],
+    },
+  ],
+
+  'san-marcos__mold-removal': [
+    {
+      title: 'Related Restoration Services',
+      description: 'San Marcos services that help address moisture sources and secondary damage behind mold growth.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/san-marcos/water-damage-restoration/',
+          description: 'Extraction, drying, and repairs when water damage creates mold risk.',
+        },
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/san-marcos/water-leak-repair/',
+          description: 'Find and address hidden leaks that keep materials damp.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/san-marcos/flood-cleanup/',
+          description: 'Cleanup and sanitizing after storm water, overflows, or contaminated water.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Mold resources for San Marcos homeowners deciding what to inspect, document, and remediate.',
+      links: [
+        {
+          label: 'Mold After Water Damage',
+          href: '/blog/mold-after-water-damage-timeline-risk-safe-remediation/',
+          description: 'Understand when mold can start after a water loss and what to do next.',
+        },
+        {
+          label: 'Mold vs Mildew',
+          href: '/blog/mold-vs-mildew-whats-the-difference/',
+          description: 'How to tell surface mildew concerns from mold problems that need remediation.',
+        },
+        {
+          label: 'Mold Articles',
+          href: '/blog/category/mold/',
+          description: 'More guides for mold symptoms, testing, cleanup, and prevention.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Mold remediation support in nearby North County cities.',
+      links: [
+        {
+          label: 'Vista Mold Removal',
+          href: '/service-area/vista/mold-removal/',
+          description: 'Mold inspection, containment, and remediation for Vista properties.',
+        },
+        {
+          label: 'Encinitas Mold Removal',
+          href: '/service-area/encinitas/mold-removal/',
+          description: 'Coastal moisture and mold remediation support in Encinitas.',
+        },
+      ],
+    },
+  ],
+
+  'encinitas__mold-removal': [
+    {
+      title: 'Related Restoration Services',
+      description: 'Encinitas services that help stop moisture sources before mold spreads further.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/encinitas/water-damage-restoration/',
+          description: 'Drying and restoration after leaks, overflows, and coastal moisture issues.',
+        },
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/encinitas/water-leak-repair/',
+          description: 'Hidden leak support when damp materials keep returning.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/encinitas/flood-cleanup/',
+          description: 'Cleanup after storm water, flooding, and contaminated water events.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Mold resources for coastal homes, moisture control, and safe remediation decisions.',
+      links: [
+        {
+          label: 'Mold After Water Damage',
+          href: '/blog/mold-after-water-damage-timeline-risk-safe-remediation/',
+          description: 'Learn how quickly mold can develop after leaks or water damage.',
+        },
+        {
+          label: 'Mold vs Mildew',
+          href: '/blog/mold-vs-mildew-whats-the-difference/',
+          description: 'Compare common surface growth with mold concerns that need containment.',
+        },
+        {
+          label: 'Mold Articles',
+          href: '/blog/category/mold/',
+          description: 'More mold remediation, health, testing, and cleanup resources.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Mold remediation support in neighboring North County communities.',
+      links: [
+        {
+          label: 'Carlsbad Mold Removal',
+          href: '/service-area/carlsbad/mold-removal/',
+          description: 'Mold inspection, containment, and remediation near Tamarack headquarters.',
+        },
+        {
+          label: 'San Marcos Mold Removal',
+          href: '/service-area/san-marcos/mold-removal/',
+          description: 'Inland North County mold remediation and moisture-source support.',
+        },
+      ],
+    },
+  ],
+
+  'encinitas__fire-damage-restoration': [
+    {
+      title: 'Related Restoration Services',
+      description: 'Encinitas services commonly needed after fire, smoke, suppression water, or secondary moisture damage.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/encinitas/water-damage-restoration/',
+          description: 'Drying and restoration after firefighting water affects the structure.',
+        },
+        {
+          label: 'Mold Removal',
+          href: '/service-area/encinitas/mold-removal/',
+          description: 'Remediation when post-fire moisture creates mold growth risk.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/encinitas/flood-cleanup/',
+          description: 'Cleanup for major water intrusion during or after emergency response.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Fire damage resources for smoke cleanup, odor control, and restoration planning.',
+      links: [
+        {
+          label: 'Fire Damage Restoration Process',
+          href: '/blog/fire-damage-restoration-process-what-to-expect/',
+          description: 'What to expect from initial inspection through cleanup and repair planning.',
+        },
+        {
+          label: 'Fire Damage Articles',
+          href: '/blog/category/fire-damage/',
+          description: 'Fire restoration guides covering costs, cleanup, and recovery steps.',
+        },
+        {
+          label: 'Fire Damage Restoration Guide',
+          href: '/blog/fire-damage-restoration-carlsbad-guide/',
+          description: 'A local fire restoration guide with steps that also apply across North County.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Fire damage help in nearby North County cities.',
+      links: [
+        {
+          label: 'Carlsbad Fire Damage Restoration',
+          href: '/service-area/carlsbad/fire-damage-restoration/',
+          description: 'Fire, smoke, and repair coordination near Tamarack headquarters.',
+        },
+        {
+          label: 'Vista Fire Damage Restoration',
+          href: '/service-area/vista/fire-damage-restoration/',
+          description: 'Fire and smoke cleanup support for Vista homes and businesses.',
+        },
+      ],
+    },
+  ],
+
 };
 
 export const enhancedCityServiceSupportLinkKeys = Object.keys(supportLinksByCityService);
