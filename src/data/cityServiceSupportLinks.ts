@@ -1554,6 +1554,373 @@ const supportLinksByCityService: Record<string, CityServiceSupportLinkGroup[]> =
     },
   ],
 
+
+  'rancho-santa-fe__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Rancho Santa Fe services commonly needed when an under-slab leak affects premium flooring, walls, or adjacent rooms.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/rancho-santa-fe/water-damage-restoration/',
+          description: 'Drying and restoration when slab moisture spreads into flooring or walls.',
+        },
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/rancho-santa-fe/water-leak-repair/',
+          description: 'Repair coordination for hidden plumbing leaks in Rancho Santa Fe homes.',
+        },
+        {
+          label: 'Leak Detection',
+          href: '/service-area/rancho-santa-fe/leak-detection/',
+          description: 'Thermal and moisture checks to narrow down hidden under-slab leak sources.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Guides for slab leak symptoms, hidden moisture, and drying decisions after a leak is found.',
+      links: [
+        {
+          label: 'Carlsbad Slab Leak Guide',
+          href: '/blog/slab-leak-repair-carlsbad-detection-repair-restoration/',
+          description: 'Detection, repair access, drying, and restoration steps that also apply across North County.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Resources for under-slab leaks, pipe leaks, and moisture mapping.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Coverage depends on the cause of loss, timing, exclusions, and carrier review.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation support resources for moisture readings, photos, and scope notes after slab leak damage.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'How Tamarack documents water losses for carrier and adjuster review.',
+        },
+        {
+          label: 'Rancho Santa Fe Water Damage',
+          href: '/blog/rancho-santa-fe-water-damage-48-hour-playbook/',
+          description: 'Local guidance for protecting larger homes and high-value materials after water damage.',
+        },
+      ],
+    },
+  ],
+
+  'rancho-santa-fe__water-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Services that help protect Rancho Santa Fe estate homes when hidden leaks affect walls, floors, or slab areas.',
+      links: [
+        {
+          label: 'Slab Leak Repair',
+          href: '/service-area/rancho-santa-fe/slab-leak-repair/',
+          description: 'Detection and drying support for under-slab plumbing leaks.',
+        },
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/rancho-santa-fe/water-damage-restoration/',
+          description: 'Extraction, drying, and repairs when a leak has damaged materials.',
+        },
+        {
+          label: 'Leak Detection',
+          href: '/service-area/rancho-santa-fe/leak-detection/',
+          description: 'Moisture mapping and leak source checks before repair access is planned.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Leak and water damage resources for hidden plumbing issues and documentation planning.',
+      links: [
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for hidden leaks, slab symptoms, and moisture diagnosis.',
+        },
+        {
+          label: 'Water Leak Repair Cost Guide',
+          href: '/blog/water-leak-repair-cost-carlsbad-2026-pricing-guide/',
+          description: 'Cost factors for leak detection, repair coordination, drying, and restoration.',
+        },
+        {
+          label: 'First 24 Hours Guide',
+          href: '/blog/how-to-handle-water-damage-emergency-first-24-hours/',
+          description: 'Immediate steps to limit damage before and during professional response.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation-focused resources; coverage depends on policy language, cause, exclusions, and carrier review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Photos, moisture readings, and scope notes can support carrier communication.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Understand common coverage factors before making claim assumptions.',
+        },
+      ],
+    },
+  ],
+
+  'san-marcos__sewage-cleanup': [
+    {
+      title: 'Related Restoration Services',
+      description: 'San Marcos services commonly needed after sewage backups, contaminated water, and secondary moisture damage.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/san-marcos/water-damage-restoration/',
+          description: 'Drying and repair support after contaminated water affects building materials.',
+        },
+        {
+          label: 'Flood Cleanup',
+          href: '/service-area/san-marcos/flood-cleanup/',
+          description: 'Cleanup for larger water releases, storm water, and overflow events.',
+        },
+        {
+          label: 'Mold Removal',
+          href: '/service-area/san-marcos/mold-removal/',
+          description: 'Remediation support when sewage or moisture creates mold risk.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Resources for Category 3 cleanup, flood decisions, drying, and safety planning.',
+      links: [
+        {
+          label: 'Sewage Backup Cleanup Guide',
+          href: '/blog/sewage-backup-cleanup-carlsbad-north-san-diego/',
+          description: 'What homeowners should know about sewage cleanup in North San Diego County.',
+        },
+        {
+          label: 'Flood Cleanup vs Water Damage',
+          href: '/blog/north-county-water-damage-vs-flood-cleanup-which-service/',
+          description: 'How to decide which service fits contaminated water or large water losses.',
+        },
+        {
+          label: 'Vista Category 2/3 Guide',
+          href: '/blog/vista-flooded-bathroom-category-2-3-water-loss/',
+          description: 'When bathroom flooding becomes a Category 2 or Category 3 cleanup issue.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation resources for contaminated water losses; coverage varies by policy and carrier review.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'How Tamarack documents photos, affected materials, and mitigation scopes.',
+        },
+        {
+          label: 'San Marcos Claim Checklist',
+          href: '/blog/san-marcos-water-damage-insurance-claim-checklist/',
+          description: 'Local documentation checklist for organizing claim records.',
+        },
+      ],
+    },
+  ],
+
+  'solana-beach__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Solana Beach services commonly paired with coastal slab leak response and moisture control.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/solana-beach/water-damage-restoration/',
+          description: 'Drying and restoration when slab leak moisture reaches interior materials.',
+        },
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/solana-beach/water-leak-repair/',
+          description: 'Repair coordination for hidden plumbing leaks and moisture spread.',
+        },
+        {
+          label: 'Leak Detection',
+          href: '/service-area/solana-beach/leak-detection/',
+          description: 'Moisture checks and leak source support before repair access is planned.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Slab leak and hidden moisture resources for coastal North County homeowners.',
+      links: [
+        {
+          label: 'Encinitas Slab vs Pipe Leak Guide',
+          href: '/blog/encinitas-slab-leak-vs-pipe-leak-how-to-tell/',
+          description: 'Nearby coastal guidance for comparing slab leak and pipe leak symptoms.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'More guides for hidden leaks, under-slab moisture, and moisture mapping.',
+        },
+        {
+          label: 'Structural Drying Timeline',
+          href: '/blog/how-long-does-structural-drying-take-north-san-diego/',
+          description: 'What affects drying time after slab moisture reaches building materials.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance Resources',
+      description: 'Documentation support when a slab leak affects flooring, walls, or other covered materials.',
+      links: [
+        {
+          label: 'Insurance Claim Help',
+          href: '/insurance/',
+          description: 'Photos, moisture readings, and scope notes can support carrier review.',
+        },
+        {
+          label: 'Water Damage Insurance Guide',
+          href: '/blog/does-homeowners-insurance-cover-water-damage/',
+          description: 'Review common coverage factors for sudden and hidden water losses.',
+        },
+      ],
+    },
+  ],
+
+  'bressi-ranch__water-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Bressi Ranch services for appliance leaks, supply-line failures, slab moisture, and affected rooms near Carlsbad.',
+      links: [
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/bressi-ranch/water-damage-restoration/',
+          description: 'Extraction, drying, and repairs after a leak damages materials.',
+        },
+        {
+          label: 'Slab Leak Repair',
+          href: '/service-area/bressi-ranch/slab-leak-repair/',
+          description: 'Detection and drying support for under-slab leak symptoms.',
+        },
+        {
+          label: 'Leak Detection',
+          href: '/service-area/bressi-ranch/leak-detection/',
+          description: 'Moisture checks and source-location support before repairs begin.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Nearby Carlsbad and North County leak resources for fast decisions after water appears.',
+      links: [
+        {
+          label: 'Water Leak Repair Cost Guide',
+          href: '/blog/water-leak-repair-cost-carlsbad-2026-pricing-guide/',
+          description: 'Cost factors for locating, repairing, drying, and documenting leak damage.',
+        },
+        {
+          label: 'First 60 Minutes in Carlsbad',
+          href: '/blog/emergency-water-damage-restoration-carlsbad-first-60-minutes/',
+          description: 'Immediate steps after discovering water damage near Carlsbad.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'Guides for hidden leaks, slab symptoms, and moisture mapping.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Nearby leak and water pages for homeowners comparing service coverage around Carlsbad.',
+      links: [
+        {
+          label: 'Carlsbad Water Leak Repair',
+          href: '/service-area/carlsbad/water-leak-repair/',
+          description: 'Leak detection and repair near Tamarack Restoration headquarters.',
+        },
+        {
+          label: 'Carlsbad Water Damage',
+          href: '/service-area/carlsbad/water-damage-restoration/',
+          description: 'Water extraction, drying, and repair coordination in nearby Carlsbad.',
+        },
+      ],
+    },
+  ],
+
+  'bressi-ranch__slab-leak-repair': [
+    {
+      title: 'Related Water Services',
+      description: 'Bressi Ranch services commonly needed when slab leak symptoms appear near flooring, baseboards, or adjacent rooms.',
+      links: [
+        {
+          label: 'Water Leak Repair',
+          href: '/service-area/bressi-ranch/water-leak-repair/',
+          description: 'Repair coordination after hidden plumbing or slab leaks are located.',
+        },
+        {
+          label: 'Water Damage Restoration',
+          href: '/service-area/bressi-ranch/water-damage-restoration/',
+          description: 'Drying and restoration when slab moisture spreads into materials.',
+        },
+        {
+          label: 'Leak Detection',
+          href: '/service-area/bressi-ranch/leak-detection/',
+          description: 'Moisture mapping and leak source checks before repair access is planned.',
+        },
+      ],
+    },
+    {
+      title: 'Helpful Guides',
+      description: 'Slab leak and hidden moisture guides for Bressi Ranch homes near Carlsbad.',
+      links: [
+        {
+          label: 'Carlsbad Slab Leak Guide',
+          href: '/blog/slab-leak-repair-carlsbad-detection-repair-restoration/',
+          description: 'Detection, repair options, drying, and restoration steps near Bressi Ranch.',
+        },
+        {
+          label: 'Leak Detection Articles',
+          href: '/blog/category/leak-detection/',
+          description: 'More guides for slab leak symptoms and hidden moisture diagnosis.',
+        },
+        {
+          label: 'Mold After Water Damage',
+          href: '/blog/mold-after-water-damage-timeline-risk-safe-remediation/',
+          description: 'Why slab moisture needs prompt drying to reduce mold risk.',
+        },
+      ],
+    },
+    {
+      title: 'Nearby Service Areas',
+      description: 'Nearby slab leak and water pages for homeowners comparing Carlsbad-area service options.',
+      links: [
+        {
+          label: 'Carlsbad Slab Leak Repair',
+          href: '/service-area/carlsbad/slab-leak-repair/',
+          description: 'Slab leak detection and drying support near Tamarack headquarters.',
+        },
+        {
+          label: 'Carlsbad Water Leak Repair',
+          href: '/service-area/carlsbad/water-leak-repair/',
+          description: 'Hidden leak support for nearby Carlsbad properties.',
+        },
+      ],
+    },
+  ],
+
 };
 
 export const enhancedCityServiceSupportLinkKeys = Object.keys(supportLinksByCityService);
