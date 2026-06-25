@@ -189,6 +189,49 @@ export const cityServiceSeoOverrides: Record<string, CityServiceSeoOverride> = {
     introEyebrow: 'Encinitas Fire Recovery',
     introHeading: 'Fire Damage Cleanup and Smoke Restoration in Encinitas',
   },
+
+  'rancho-santa-fe__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in Rancho Santa Fe | Leak & Drying Help',
+    seoDescription:
+      'Suspect a slab leak in Rancho Santa Fe? Tamarack helps locate under-slab leaks, protect stone and tile floors, document moisture, and coordinate repairs.',
+    introEyebrow: 'Rancho Santa Fe Slab Leak Help',
+    introHeading: 'Slab Leak Detection and Drying for Rancho Santa Fe Homes',
+  },
+  'rancho-santa-fe__water-leak-repair': {
+    seoTitle: 'Water Leak Repair in Rancho Santa Fe | Hidden Leak Help',
+    seoDescription:
+      'Hidden leak in a Rancho Santa Fe estate? Tamarack provides moisture mapping, drying support, repair coordination, and documentation for walls and flooring.',
+    introEyebrow: 'Estate Leak Support',
+    introHeading: 'Water Leak Repair Support for Rancho Santa Fe Properties',
+  },
+  'san-marcos__sewage-cleanup': {
+    seoTitle: 'Sewage Cleanup in San Marcos | Category 3 Cleanup',
+    seoDescription:
+      'Sewage backup in San Marcos? Tamarack provides emergency Category 3 extraction, sanitizing, material removal, drying, odor control, and documentation.',
+    introEyebrow: 'San Marcos Sewage Backup Cleanup',
+    introHeading: 'Emergency Sewage Cleanup and Sanitizing in San Marcos',
+  },
+  'solana-beach__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in Solana Beach | Coastal Leak Help',
+    seoDescription:
+      'Slab leak symptoms in Solana Beach? Tamarack helps locate under-slab leaks, assess coastal moisture spread, dry affected materials, and document damage.',
+    introEyebrow: 'Solana Beach Slab Leak Help',
+    introHeading: 'Coastal Slab Leak Detection and Drying in Solana Beach',
+  },
+  'bressi-ranch__water-leak-repair': {
+    seoTitle: 'Water Leak Repair in Bressi Ranch | Fast Carlsbad Dispatch',
+    seoDescription:
+      'Water leak in Bressi Ranch? Tamarack responds from nearby Carlsbad for appliance leaks, supply-line failures, moisture checks, drying, and repair coordination.',
+    introEyebrow: 'Bressi Ranch Leak Response',
+    introHeading: 'Fast Water Leak Repair Support Near Carlsbad',
+  },
+  'bressi-ranch__slab-leak-repair': {
+    seoTitle: 'Slab Leak Repair in Bressi Ranch | Detection & Drying',
+    seoDescription:
+      'Suspect a slab leak in Bressi Ranch? Tamarack provides nearby Carlsbad dispatch, moisture mapping, drying support, documentation, and repair coordination.',
+    introEyebrow: 'Bressi Ranch Slab Leak Help',
+    introHeading: 'Slab Leak Detection and Drying for Bressi Ranch Homes',
+  },
 };
 
 export const cityServiceSeoOverrideKeys = Object.keys(cityServiceSeoOverrides);
