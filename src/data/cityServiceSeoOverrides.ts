@@ -161,6 +161,34 @@ export const cityServiceSeoOverrides: Record<string, CityServiceSeoOverride> = {
     introEyebrow: 'Encinitas Slab Leak Help',
     introHeading: 'Slab Leak Support for Encinitas Coastal Homes',
   },
+  'vista__fire-damage-restoration': {
+    seoTitle: 'Fire Damage Restoration in Vista | Smoke & Repair Help',
+    seoDescription:
+      'Fire or smoke damage in Vista? Tamarack helps with board-up, soot cleanup, odor control, water removal, documentation, and repair coordination.',
+    introEyebrow: 'Vista Fire Recovery',
+    introHeading: 'Fire Damage Cleanup and Repair Support in Vista',
+  },
+  'san-marcos__mold-removal': {
+    seoTitle: 'Mold Removal in San Marcos | Inspection & Remediation',
+    seoDescription:
+      'Need mold removal in San Marcos? Tamarack handles containment, HEPA filtration, moisture checks, remediation, and repair coordination.',
+    introEyebrow: 'San Marcos Mold Help',
+    introHeading: 'Mold Remediation for San Marcos Properties',
+  },
+  'encinitas__mold-removal': {
+    seoTitle: 'Mold Removal in Encinitas | Coastal Moisture Remediation',
+    seoDescription:
+      'Mold concern in Encinitas? Tamarack helps identify moisture sources, contain affected areas, remove damaged materials, and coordinate repairs.',
+    introEyebrow: 'Encinitas Mold Support',
+    introHeading: 'Mold Remediation for Encinitas Coastal Homes',
+  },
+  'encinitas__fire-damage-restoration': {
+    seoTitle: 'Fire Damage Restoration in Encinitas | Smoke Cleanup',
+    seoDescription:
+      'Fire or smoke damage in Encinitas? Tamarack provides soot cleanup, odor removal, water extraction, documentation, and repair coordination.',
+    introEyebrow: 'Encinitas Fire Recovery',
+    introHeading: 'Fire Damage Cleanup and Smoke Restoration in Encinitas',
+  },
 };
 
 export const cityServiceSeoOverrideKeys = Object.keys(cityServiceSeoOverrides);
