@@ -14,7 +14,14 @@ import CTABanner from '@/components/sections/CTABanner.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
 import { services, leakServices, business, globalFaqs } from '@/data/site';
-import { generateTitle, getCanonicalUrl, getFAQSchema } from '@/utils/seo';
+import {
+  generateTitle,
+  getCanonicalUrl,
+  getFAQSchema,
+  getBreadcrumbSchema,
+  getItemListSchema,
+  getServiceSchemaId,
+} from '@/utils/seo';
 import type { BreadcrumbItem } from '@/types';
 
 const title = generateTitle('Emergency Restoration Services | Water, Fire, Mold');
@@ -29,13 +36,24 @@ const breadcrumbs: BreadcrumbItem[] = [
 // Filter FAQs related to services
 const serviceFaqs = globalFaqs.filter(f => f.category === 'process' || f.category === 'emergency').slice(0, 5);
 const faqSchema = getFAQSchema(serviceFaqs);
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+const serviceListSchema = getItemListSchema(
+  [...services, ...leakServices].map((service) => ({
+    name: service.name,
+    url: `/services/${service.slug}/`,
+    id: getServiceSchemaId(service.slug),
+    type: 'Service' as const,
+  })),
+  { name: 'Restoration Services' }
+);
 ---
 
 <BaseLayout 
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[faqSchema]}
+  jsonLd={[faqSchema, breadcrumbSchema, serviceListSchema]}
+  webPageType="CollectionPage"
 >
   <!-- Hero Section -->
   <section class="relative bg-brand-black overflow-hidden">

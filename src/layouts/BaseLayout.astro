@@ -10,13 +10,18 @@ import SEOHead from '@/components/seo/SEOHead.astro';
 import Header from '@/components/global/Header.astro';
 import Footer from '@/components/global/Footer.astro';
 import FloatingCTA from '@/components/global/FloatingCTA.astro';
-import type { SEOProps } from '@/types';
-import { getLocalBusinessSchema, getLocalBusinessStub } from '@/utils/seo';
+import type { SEOProps, WebPageType } from '@/types';
+import { buildPageGraph } from '@/utils/seo';
 
 interface Props extends SEOProps {
   class?: string;
   preloadImage?: string;
-  fullLocalBusiness?: boolean;
+  /** schema.org WebPage subtype for this page (ContactPage, CollectionPage, ...). */
+  webPageType?: WebPageType;
+  /** Entity the page is about, when it isn't the business itself (e.g. a City). */
+  schemaAbout?: object;
+  /** Attach aggregateRating — only on pages that display the underlying reviews. */
+  includeAggregateRating?: boolean;
 }
 
 const {
@@ -31,14 +36,24 @@ const {
   jsonLd,
   class: className,
   preloadImage = '/images/hero/truck-hero.webp',
-  fullLocalBusiness = false,
+  webPageType,
+  schemaAbout,
+  includeAggregateRating = false,
 } = Astro.props;
 
-// Full LocalBusiness on homepage only; stub reference on all other pages
-const baseSchema = fullLocalBusiness ? getLocalBusinessSchema() : getLocalBusinessStub();
-const allSchemas = jsonLd 
-  ? [baseSchema, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])]
-  : [baseSchema];
+// Every page ships one @graph: LocalBusiness + WebSite + WebPage + page-specific nodes.
+const siteUrl = 'https://www.tamarackrestoration.com';
+const pageUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
+const pageGraph = buildPageGraph({
+  url: pageUrl,
+  name: title,
+  description,
+  nodes: jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [],
+  pageType: webPageType,
+  primaryImage: ogImage,
+  about: schemaAbout,
+  includeAggregateRating,
+});
 
 const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G-WH27G3H1XN';
 ---
@@ -101,7 +116,7 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
       ogType={ogType}
       ogImage={ogImage}
       twitterCard={twitterCard}
-      jsonLd={allSchemas}
+      jsonLd={pageGraph}
     />
     
     <!-- Generator -->

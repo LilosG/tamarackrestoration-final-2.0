@@ -18,7 +18,14 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { allServices, cities, business } from '@/data/site';
 import { cityContext } from '@/data/content';
-import { getCanonicalUrl, getBreadcrumbSchema, getFAQSchema } from '@/utils/seo';
+import {
+  getCanonicalUrl,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  getCitySchema,
+  getCitySchemaId,
+  getItemListSchema,
+} from '@/utils/seo';
 
 interface Props {
   citySlug: string;
@@ -95,13 +102,25 @@ const cityFaqs = [
 
 
 const faqSchema = getFAQSchema(cityFaqs);
+
+// City entity (geo, county containment, ZIPs, neighborhoods) is defined here and
+// referenced by @id from every money page and the LocalBusiness areaServed.
+const citySchema = getCitySchema(city);
+const cityServiceListSchema = getItemListSchema(
+  availableServices.map((svc) => ({
+    name: `${svc.name} in ${city.name}`,
+    url: `/service-area/${city.slug}/${svc.slug}/`,
+  })),
+  { name: `Restoration services in ${city.name}, CA` }
+);
 ---
 
 <BaseLayout
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[breadcrumbSchema, faqSchema]}
+  jsonLd={[breadcrumbSchema, faqSchema, citySchema, cityServiceListSchema]}
+  schemaAbout={{ '@id': getCitySchemaId(city.slug) }}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center" style="background-image: url(/images/hero/truck-hero.webp); background-size: cover; background-position: center;">

@@ -11,7 +11,7 @@ import PhoneCTA from '@/components/PhoneCTA.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { cities, business } from '@/data/site';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getItemListSchema, getCitySchemaId } from '@/utils/seo';
 
 const title = 'North San Diego County Restoration Service Areas | Tamarack Restoration';
 const description = `Emergency restoration services throughout North San Diego County. Serving Carlsbad, Oceanside, Vista, San Marcos, Encinitas & more. 60-minute response. Call ${business.phoneFormatted}.`;
@@ -33,13 +33,24 @@ const sortedCities = [...cities].sort((a, b) => {
 const tier1Cities = sortedCities.filter(c => c.tier === 1);
 const tier2Cities = sortedCities.filter(c => c.tier === 2);
 const tier3Cities = sortedCities.filter(c => c.tier === 3);
+
+const cityListSchema = getItemListSchema(
+  sortedCities.map((city) => ({
+    name: `${city.name}, CA`,
+    url: `/service-area/${city.slug}/`,
+    id: getCitySchemaId(city.slug),
+    type: 'City' as const,
+  })),
+  { name: 'North San Diego County service areas' }
+);
 ---
 
 <BaseLayout 
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[breadcrumbSchema]}
+  jsonLd={[breadcrumbSchema, cityListSchema]}
+  webPageType="CollectionPage"
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden">

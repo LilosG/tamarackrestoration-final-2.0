@@ -17,6 +17,10 @@ interface Props {
   subtitle?: string;
   faqs?: FAQ[];
   limit?: number;
+  /**
+   * Off by default: FAQPage belongs in the page @graph, which layouts build from the
+   * same FAQ list via the `jsonLd` prop. Enabling this emits a second copy.
+   */
   showSchema?: boolean;
   showViewAll?: boolean;
 }
@@ -27,7 +31,7 @@ const {
   subtitle = 'Get answers to common questions about our restoration services',
   faqs = globalFaqs,
   limit,
-  showSchema = true,
+  showSchema = false,
   showViewAll = true
 } = Astro.props;
 

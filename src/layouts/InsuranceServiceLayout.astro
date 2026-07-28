@@ -84,7 +84,7 @@ const faqs: FAQType[] = [
 
 const serviceSchema = getServiceSchema(service, {
   pagePath: `/insurance/${carrier.slug}/${service.slug}/`,
-  includeOfferCatalog: false,
+  includeOffer: false,
 });
 const faqSchema = getFAQSchema(faqs);
 const jsonLd = combineSchemas(breadcrumbSchema, serviceSchema, faqSchema);

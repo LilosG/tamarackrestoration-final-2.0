@@ -12,7 +12,7 @@ import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import { getCollection } from 'astro:content';
 import { business } from '@/data/site';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo';
 import BlogCard from '@/components/blog/BlogCard.astro';
 import { getPublishedCategoryHubs, getCategoryNameMap } from '@/lib/blogTaxonomy';
 
@@ -42,13 +42,22 @@ const breadcrumbs = [
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 
 const categoryNames = getCategoryNameMap(sortedPosts);
+
+const postListSchema = getItemListSchema(
+  sortedPosts.slice(0, 20).map((post) => ({
+    name: post.data.title,
+    url: `/blog/${post.slug}/`,
+  })),
+  { name: 'Restoration tips and guides' }
+);
 ---
 
 <BaseLayout 
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[breadcrumbSchema]}
+  jsonLd={[breadcrumbSchema, postListSchema]}
+  webPageType="CollectionPage"
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden">
