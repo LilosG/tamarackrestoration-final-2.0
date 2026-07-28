@@ -26,21 +26,29 @@ import ServiceAreas from '@/components/sections/ServiceAreas.astro';
 import InsurancePartners from '@/components/sections/InsurancePartners.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
-import { business } from '@/data/site';
-import { getHomeTitle, getWebSiteSchema, getFAQSchema } from '@/utils/seo';
+import { business, allServices } from '@/data/site';
+import { getHomeTitle, getFAQSchema, getItemListSchema, getServiceSchemaId } from '@/utils/seo';
 import { allFaqs } from '@/data/faqs';
 
 const seoTitle = getHomeTitle();
 const seoDescription = `24/7 emergency restoration in Carlsbad & North San Diego County. Water damage, mold removal, fire restoration. ${business.yearsInBusiness}+ years experience, ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted} for 60-minute response.`;
-const webSiteSchema = getWebSiteSchema();
 const homepageFaqSchema = getFAQSchema(allFaqs.slice(0, 5));
+const servicesListSchema = getItemListSchema(
+  allServices.map((service) => ({
+    name: service.name,
+    url: `/services/${service.slug}/`,
+    id: getServiceSchemaId(service.slug),
+    type: 'Service' as const,
+  })),
+  { name: 'Restoration Services' }
+);
 ---
 
 <BaseLayout
   title={seoTitle}
   description={seoDescription}
-  jsonLd={[webSiteSchema, homepageFaqSchema]}
-  fullLocalBusiness={true}
+  jsonLd={[homepageFaqSchema, servicesListSchema]}
+  includeAggregateRating={true}
 >
   <!-- Hero Section with Lead Form (BLACK) -->
   <Hero 

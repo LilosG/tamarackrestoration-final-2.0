@@ -6,7 +6,7 @@ import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import { getPublishedCategoryHubs } from '@/lib/blogTaxonomy';
-import { getCanonicalUrl, getBreadcrumbSchema, getWebPageSchema, combineSchemas } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getItemListSchema, combineSchemas } from '@/utils/seo';
 
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 const categories = getPublishedCategoryHubs(posts).map((hub) => ({
@@ -24,11 +24,20 @@ const breadcrumbs = [
   { label: 'Categories', href: '/blog/category/', current: true },
 ];
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
-const webPageSchema = getWebPageSchema({ url: canonical, name: title, description, breadcrumb: breadcrumbSchema });
-const jsonLd = combineSchemas(breadcrumbSchema, webPageSchema);
+const categoryListSchema = getItemListSchema(
+  categories.map((category) => ({ name: category.label, url: `/blog/category/${category.slug}/` })),
+  { name: 'Blog categories' }
+);
+const jsonLd = combineSchemas(breadcrumbSchema, categoryListSchema);
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={jsonLd}
+  webPageType="CollectionPage"
+>
   <section class="relative overflow-hidden bg-brand-black">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
     <div class="container relative py-16 lg:py-20">

@@ -12,7 +12,7 @@ import Button from '@/components/ui/Button.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import { business } from '@/data/site';
 import { projectCategories, projects } from '@/data/projects';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo';
 
 const title = 'Our Restoration Projects | Tamarack Restoration';
 const description = 'View completed water damage, mold remediation, fire damage, and flood restoration projects in Carlsbad and North San Diego County. See the quality of our work.';
@@ -26,9 +26,23 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 
 // Get a sample of recent projects for the featured section
 const featuredProjects = projects.slice(0, 4);
+
+const categoryListSchema = getItemListSchema(
+  projectCategories.map((category) => ({
+    name: category.name,
+    url: `/projects/${category.slug}/`,
+  })),
+  { name: 'Completed restoration projects by service' }
+);
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} jsonLd={[breadcrumbSchema]}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[breadcrumbSchema, categoryListSchema]}
+  webPageType="CollectionPage"
+>
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>

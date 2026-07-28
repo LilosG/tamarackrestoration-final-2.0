@@ -84,7 +84,7 @@ const breadcrumbs = getServiceBreadcrumbs(service);
 const serviceSchema = getServiceSchema(service, {
   cities: citiesServed,
   pagePath: `/services/${service.slug}/`,
-  includeOfferCatalog: true,
+  includeOffer: true,
   offerDescription: 'We provide free on-site assessments and detailed estimates based on damage scope and restoration needs.',
 });
 const faqSchema = getFAQSchema(faqs);

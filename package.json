@@ -15,6 +15,7 @@
     "extract:legacy-urls": "node scripts/extract-legacy-urls.mjs",
     "check:legacy-redirects": "node scripts/check-legacy-redirects.mjs",
     "blog:verify": "node scripts/verify-blog-images.mjs",
+    "schema:validate": "node scripts/validate-schema.mjs",
     "reviews:fetch": "node scripts/fetch-google-reviews.mjs"
   },
   "dependencies": {

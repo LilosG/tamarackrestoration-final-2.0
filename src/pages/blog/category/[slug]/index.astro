@@ -13,7 +13,7 @@ import {
   getCategoryHub,
   getCategoryNameMap,
 } from '@/lib/blogTaxonomy';
-import { getCanonicalUrl, getBreadcrumbSchema, getWebPageSchema, combineSchemas } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getItemListSchema, combineSchemas } from '@/utils/seo';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -67,16 +67,20 @@ const breadcrumbs = [
   { label: category.label, href: `/blog/category/${slug}/`, current: true },
 ];
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
-const webPageSchema = getWebPageSchema({
-  url: canonical,
-  name: category.title,
-  description: category.metaDescription,
-  breadcrumb: breadcrumbSchema,
-});
-const jsonLd = combineSchemas(breadcrumbSchema, webPageSchema);
+const postListSchema = getItemListSchema(
+  posts.map((post) => ({ name: post.data.title, url: `/blog/${post.slug}/` })),
+  { name: `${category.label} articles` }
+);
+const jsonLd = combineSchemas(breadcrumbSchema, postListSchema);
 ---
 
-<BaseLayout title={category.title} description={category.metaDescription} canonical={canonical} jsonLd={jsonLd}>
+<BaseLayout
+  title={category.title}
+  description={category.metaDescription}
+  canonical={canonical}
+  jsonLd={jsonLd}
+  webPageType="CollectionPage"
+>
   <section class="relative overflow-hidden bg-brand-black">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/95 to-brand-orange/20"></div>
     <div class="container relative py-16 lg:py-20">

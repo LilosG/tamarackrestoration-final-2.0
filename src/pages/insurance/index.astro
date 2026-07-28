@@ -12,7 +12,7 @@ import PhoneCTA from '@/components/PhoneCTA.astro';
 import TrustBar from '@/components/sections/TrustBar.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import { insuranceCarriers, business } from '@/data/site';
-import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { getCanonicalUrl, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo';
 
 const title = 'Insurance Claims for Water, Fire & Mold Damage | Tamarack Restoration';
 const description = `We help coordinate documentation and adjuster communication for State Farm, Allstate, Farmers, USAA, Liberty Mutual, and other major carriers after water, fire, mold, and flood damage. Call ${business.phoneFormatted}.`;
@@ -24,6 +24,14 @@ const breadcrumbs = [
 ];
 
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
+
+const carrierListSchema = getItemListSchema(
+  insuranceCarriers.map((carrier) => ({
+    name: carrier.name,
+    url: `/insurance/${carrier.slug}/`,
+  })),
+  { name: 'Insurance carriers we work with' }
+);
 
 const benefits = [
   {
@@ -53,7 +61,8 @@ const benefits = [
   title={title}
   description={description}
   canonical={canonical}
-  jsonLd={[breadcrumbSchema]}
+  jsonLd={[breadcrumbSchema, carrierListSchema]}
+  webPageType="CollectionPage"
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden">

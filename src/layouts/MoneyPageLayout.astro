@@ -52,7 +52,7 @@ const serviceSchema = {
   ...getServiceSchema(service, {
     cities: [city],
     pagePath: `/service-area/${city.slug}/${service.slug}/`,
-    includeOfferCatalog: true,
+    includeOffer: true,
     offerDescription: `Free ${service.name.toLowerCase()} inspections and transparent estimates for homes and businesses in ${city.name}.`,
   }),
   name: `${service.name} in ${city.name}`,

@@ -318,8 +318,84 @@ export interface AggregateRatingNode {
 
 export interface CityNode {
   '@type': 'City';
+  '@id'?: string;
   name: string;
   sameAs?: string;
+}
+
+export interface PlaceNode {
+  '@type': 'Place';
+  name: string;
+  address?: {
+    '@type': 'PostalAddress';
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+}
+
+/** Full City entity emitted on a service-area page. */
+export interface CitySchema extends CityNode {
+  url?: string;
+  geo?: {
+    '@type': 'GeoCoordinates';
+    latitude: number;
+    longitude: number;
+  };
+  containedInPlace?: {
+    '@type': 'AdministrativeArea';
+    name: string;
+    sameAs?: string;
+    containedInPlace?: {
+      '@type': 'State';
+      name: string;
+      sameAs?: string;
+    };
+  };
+  containsPlace?: PlaceNode[];
+}
+
+export interface GeoCircleNode {
+  '@type': 'GeoCircle';
+  geoMidpoint: {
+    '@type': 'GeoCoordinates';
+    latitude: number;
+    longitude: number;
+  };
+  geoRadius: string;
+}
+
+export interface KnowsAboutNode {
+  '@type': 'Thing';
+  name: string;
+  sameAs?: string;
+}
+
+export interface CredentialNode {
+  '@type': 'EducationalOccupationalCredential';
+  name: string;
+  credentialCategory: string;
+  recognizedBy: {
+    '@type': 'Organization';
+    name: string;
+    alternateName?: string;
+    url?: string;
+  };
+}
+
+export interface OpeningHoursNode {
+  '@type': 'OpeningHoursSpecification';
+  dayOfWeek: string[];
+  opens: string;
+  closes: string;
+}
+
+export type WebPageType = 'WebPage' | 'CollectionPage' | 'ContactPage' | 'AboutPage' | 'ItemPage';
+
+export interface PageGraph {
+  '@context': 'https://schema.org';
+  '@graph': Record<string, unknown>[];
 }
 
 export interface LocalBusinessSchema {
@@ -348,15 +424,26 @@ export interface LocalBusinessSchema {
   url: string;
   hasMap?: string;
   priceRange: string;
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification';
-    dayOfWeek: string[];
-    opens: string;
-    closes: string;
-  };
+  slogan?: string;
+  openingHoursSpecification: OpeningHoursNode;
   aggregateRating?: AggregateRatingNode;
   review?: ReviewNode[];
-  areaServed: CityNode[];
+  areaServed: Array<CityNode | GeoCircleNode>;
+  knowsAbout?: KnowsAboutNode[];
+  hasCredential?: CredentialNode[];
+  hasOfferCatalog?: {
+    '@type': 'OfferCatalog';
+    name: string;
+    itemListElement: Array<{
+      '@type': 'Offer';
+      itemOffered: { '@type': 'Service'; '@id': string; name: string; url: string };
+    }>;
+  };
+  potentialAction?: {
+    '@type': 'CommunicateAction';
+    name: string;
+    target: string;
+  };
   contactPoint?: Array<{
     '@type': 'ContactPoint';
     contactType: string;
@@ -378,6 +465,8 @@ export interface ServiceSchema {
   name: string;
   description: string;
   url?: string;
+  image?: string;
+  category?: string;
   mainEntityOfPage?: {
     '@type': 'WebPage';
     '@id': string;
@@ -385,20 +474,34 @@ export interface ServiceSchema {
   provider: {
     '@id': string;
   };
-  hasOfferCatalog?: {
-    '@type': 'OfferCatalog';
+  hoursAvailable?: OpeningHoursNode;
+  offers?: {
+    '@type': 'Offer';
     name: string;
-    itemListElement: Array<{
-      '@type': 'Offer';
-      name: string;
-      description: string;
-      priceCurrency: string;
-      availability: string;
-      url: string;
-    }>;
+    description: string;
+    price: string;
+    priceCurrency: string;
+    url: string;
+    areaServed: CityNode[];
+    availableAtOrFrom: { '@id': string };
   };
   areaServed: CityNode[];
   serviceType: string;
+}
+
+export interface ItemListSchema {
+  '@context': 'https://schema.org';
+  '@type': 'ItemList';
+  '@id'?: string;
+  name?: string;
+  numberOfItems: number;
+  itemListElement: Array<{
+    '@type': 'ListItem';
+    position: number;
+    name: string;
+    url: string;
+    item?: { '@type': string; '@id': string; name: string; url: string };
+  }>;
 }
 
 export interface WebSiteSchema {
@@ -412,13 +515,16 @@ export interface WebSiteSchema {
 
 export interface WebPageSchema {
   '@context': 'https://schema.org';
-  '@type': 'WebPage';
+  '@type': WebPageType;
   '@id': string;
   url: string;
   name: string;
   description?: string;
+  inLanguage?: string;
   isPartOf: { '@id': string };
-  about: { '@id': string };
+  about: object;
+  primaryImageOfPage?: { '@type': 'ImageObject'; url: string };
+  mainEntity?: object;
   breadcrumb?: object;
 }
 
@@ -438,24 +544,19 @@ export interface FAQPageSchema {
 export interface ArticleSchema {
   '@context': 'https://schema.org';
   '@type': 'Article';
+  '@id': string;
   headline: string;
   description: string;
   image?: string;
   datePublished: string;
   dateModified?: string;
-  author: {
-    '@type': 'Organization';
-    name: string;
-  };
-  publisher: {
-    '@type': 'Organization';
-    '@id'?: string;
-    name: string;
-    logo: {
-      '@type': 'ImageObject';
-      url: string;
-    };
-  };
+  inLanguage?: string;
+  isPartOf?: { '@id': string };
+  mainEntityOfPage?: { '@id': string };
+  articleSection?: string;
+  keywords?: string[];
+  author: { '@id': string } | { '@type': 'Person'; name: string };
+  publisher: { '@id': string };
 }
 
 export interface BreadcrumbListSchema {

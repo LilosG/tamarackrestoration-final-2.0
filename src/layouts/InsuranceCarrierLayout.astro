@@ -20,7 +20,8 @@ import { insuranceCarrierContent } from '@/data/content';
 import {
   getCanonicalUrl,
   getBreadcrumbSchema,
-  getServiceSchema,
+  getItemListSchema,
+  getServiceSchemaId,
   getFAQSchema,
   combineSchemas,
 } from '@/utils/seo';
@@ -49,9 +50,16 @@ const breadcrumbs = [
 
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 
-// Service schemas — one per covered service on this carrier page
-const serviceSchemas = coveredServices.map((svc) =>
-  getServiceSchema(svc, { pagePath: `/services/${svc.slug}/`, includeOfferCatalog: false })
+// Reference the canonical Service entities by @id rather than redefining them here,
+// so the pillar pages stay the single source of truth for each service.
+const coveredServicesList = getItemListSchema(
+  coveredServices.map((svc) => ({
+    name: svc.name,
+    url: `/services/${svc.slug}/`,
+    id: getServiceSchemaId(svc.slug),
+    type: 'Service' as const,
+  })),
+  { name: `Restoration services for ${carrier.name} claims` }
 );
 
 // Use content data for claim steps or fallback
@@ -88,7 +96,7 @@ const faqs: FAQType[] = [
 ];
 
 const faqSchema = getFAQSchema(faqs);
-const jsonLd = combineSchemas(breadcrumbSchema, faqSchema, ...serviceSchemas);
+const jsonLd = combineSchemas(breadcrumbSchema, faqSchema, coveredServicesList);
 
 // Precompute service area cross-links for insurance pages
 const serviceAreaCities = [
