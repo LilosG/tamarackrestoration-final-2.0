@@ -22,7 +22,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'water-damage',
     label: 'Water Damage',
     icon: 'droplet',
-    title: 'Water Damage Articles | Tamarack Restoration Blog',
+    title: 'Water Damage Restoration Guides | Tamarack Restoration',
     metaDescription:
       'Read practical water damage restoration guides for Carlsbad and North San Diego County homeowners, including emergency steps, drying timelines, costs, and insurance documentation.',
     h1: 'Water Damage Restoration Articles',
@@ -52,7 +52,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'fire-damage',
     label: 'Fire Damage',
     icon: 'flame',
-    title: 'Fire Damage Articles | Tamarack Restoration Blog',
+    title: 'Fire Damage Restoration Guides | Tamarack Restoration',
     metaDescription:
       'Learn about fire damage restoration, smoke cleanup, cost factors, and recovery steps for North San Diego County homes and businesses.',
     h1: 'Fire Damage Restoration Articles',
@@ -77,7 +77,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'mold',
     label: 'Mold',
     icon: 'alert-triangle',
-    title: 'Mold Removal Articles | Tamarack Restoration Blog',
+    title: 'Mold Removal & Remediation Guides | Tamarack Restoration',
     metaDescription:
       'Read mold removal and remediation guides for Carlsbad, Oceanside, Encinitas, and North San Diego County properties.',
     h1: 'Mold Removal & Remediation Articles',
@@ -107,7 +107,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'flood',
     label: 'Flood',
     icon: 'cloud-rain',
-    title: 'Flood Cleanup Articles | Tamarack Restoration Blog',
+    title: 'Flood Cleanup & Storm Damage Guides | Tamarack Restoration',
     metaDescription:
       'Find flood cleanup and storm damage restoration guides for Carlsbad and North San Diego County property owners.',
     h1: 'Flood Cleanup & Storm Damage Articles',
@@ -132,7 +132,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'insurance',
     label: 'Insurance',
     icon: 'shield',
-    title: 'Insurance Claim Articles | Tamarack Restoration Blog',
+    title: 'Restoration Insurance Claim Guides | Tamarack Restoration',
     metaDescription:
       'Learn how restoration insurance claims are documented for water, fire, mold, and flood damage in North San Diego County.',
     h1: 'Restoration Insurance Claim Articles',
@@ -157,7 +157,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'prevention',
     label: 'Prevention',
     icon: 'check-circle',
-    title: 'Damage Prevention Articles | Tamarack Restoration Blog',
+    title: 'Property Damage Prevention Guides | Tamarack Restoration',
     metaDescription:
       'Read practical prevention guides for water damage, mold risk, leaks, and emergency restoration issues in North San Diego County homes.',
     h1: 'Property Damage Prevention Articles',
@@ -182,7 +182,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'tips',
     label: 'Tips & Guides',
     icon: 'lightbulb',
-    title: 'Restoration Tips & Local Guides | Tamarack Restoration Blog',
+    title: 'Restoration Tips & Local Guides | Tamarack Restoration',
     metaDescription:
       'Browse local restoration tips for choosing a restoration company, understanding emergency response, and protecting North San Diego County homes.',
     h1: 'Restoration Tips & Local Guides',
@@ -207,7 +207,7 @@ export const blogCategoryHubs: Record<string, BlogCategoryHub> = {
     slug: 'leak-detection',
     label: 'Leak Detection',
     icon: 'search',
-    title: 'Leak Detection Articles | Tamarack Restoration Blog',
+    title: 'Leak Detection & Slab Leak Guides | Tamarack Restoration',
     metaDescription:
       'Read leak detection and slab leak repair guides for Carlsbad, Encinitas, and North San Diego County homes.',
     h1: 'Leak Detection & Slab Leak Articles',

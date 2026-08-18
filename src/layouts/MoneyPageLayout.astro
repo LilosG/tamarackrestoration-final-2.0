@@ -65,11 +65,13 @@ const jsonLd = faqSchema ? combineSchemas(serviceSchema, breadcrumbSchema, faqSc
 const relatedCities = cities.filter(c => c.slug !== citySlug && (c.tier === 1 || c.tier === 2)).slice(0, 4);
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   canonical={canonical}
   jsonLd={jsonLd}
+  geoPlacename={city.name}
+  geoCoords={city.coordinates}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center">

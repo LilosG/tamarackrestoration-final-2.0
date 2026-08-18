@@ -22,11 +22,13 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs);
 const lastUpdated = 'January 22, 2025';
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   canonical={canonical}
   jsonLd={[breadcrumbSchema]}
+  noindex={true}
+  nofollow={true}
 >
   <section class="section bg-white">
     <div class="container">

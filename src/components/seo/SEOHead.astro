@@ -20,6 +20,8 @@ const {
   ogImage = '/images/logo/og-default.webp',
   twitterCard = 'summary_large_image',
   jsonLd,
+  geoPlacename = 'Carlsbad',
+  geoCoords = business.coordinates,
 } = Astro.props;
 
 const siteUrl = 'https://www.tamarackrestoration.com';
@@ -51,9 +53,9 @@ const jsonLdArray = jsonLd
 
 <!-- Geo Tags for Local SEO -->
 <meta name="geo.region" content="US-CA" />
-<meta name="geo.placename" content="Carlsbad" />
-<meta name="geo.position" content={`${business.coordinates.latitude};${business.coordinates.longitude}`} />
-<meta name="ICBM" content={`${business.coordinates.latitude}, ${business.coordinates.longitude}`} />
+<meta name="geo.placename" content={geoPlacename} />
+<meta name="geo.position" content={`${geoCoords.latitude};${geoCoords.longitude}`} />
+<meta name="ICBM" content={`${geoCoords.latitude}, ${geoCoords.longitude}`} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />

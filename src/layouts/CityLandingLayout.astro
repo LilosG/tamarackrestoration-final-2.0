@@ -121,6 +121,8 @@ const cityServiceListSchema = getItemListSchema(
   canonical={canonical}
   jsonLd={[breadcrumbSchema, faqSchema, citySchema, cityServiceListSchema]}
   schemaAbout={{ '@id': getCitySchemaId(city.slug) }}
+  geoPlacename={city.name}
+  geoCoords={city.coordinates}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden min-h-[450px] lg:min-h-[500px] flex items-center" style="background-image: url(/images/hero/truck-hero.webp); background-size: cover; background-position: center;">

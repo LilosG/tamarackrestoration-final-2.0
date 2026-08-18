@@ -97,7 +97,7 @@ export function getHomeTitle(): string {
  * Generate service page title
  */
 export function getServiceTitle(serviceName: string): string {
-  return `${serviceName} | 24/7 Emergency Response | Tamarack Restoration`;
+  return `${serviceName} in Carlsbad, CA | 24/7 Emergency Response | Tamarack Restoration`;
 }
 
 /**
@@ -111,14 +111,14 @@ export function getCityTitle(cityName: string): string {
  * Generate money page title (city + service)
  */
 export function getMoneyPageTitle(serviceName: string, cityName: string): string {
-  return `${serviceName} in ${cityName}, CA | 60-Min Response | (760) 500-2211`;
+  return `${serviceName} in ${cityName}, CA | Tamarack Restoration`;
 }
 
 /**
  * Generate blog post title
  */
 export function getBlogTitle(title: string): string {
-  return `${title} | Tamarack Restoration Blog`;
+  return `${title} | Tamarack Restoration`;
 }
 
 /**

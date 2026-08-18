@@ -253,6 +253,10 @@ export interface SEOProps {
   ogImage?: string;
   twitterCard?: 'summary' | 'summary_large_image';
   jsonLd?: object | object[];
+  /** Override for geo.placename meta tag (defaults to "Carlsbad") */
+  geoPlacename?: string;
+  /** Override for geo.position/ICBM meta tags (defaults to Carlsbad coords) */
+  geoCoords?: { latitude: number; longitude: number };
 }
 
 export interface BreadcrumbItem {

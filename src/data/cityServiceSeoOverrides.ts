@@ -232,6 +232,119 @@ export const cityServiceSeoOverrides: Record<string, CityServiceSeoOverride> = {
     introEyebrow: 'Bressi Ranch Slab Leak Help',
     introHeading: 'Slab Leak Detection and Drying for Bressi Ranch Homes',
   },
+
+  // ── Oceanside missing services ──
+  'oceanside__mold-removal': {
+    introHeading: 'Mold Removal for Oceanside Coastal Homes',
+  },
+  'oceanside__fire-damage-restoration': {
+    introHeading: 'Fire Damage Cleanup and Repair Support in Oceanside',
+  },
+  'oceanside__flood-cleanup': {
+    introHeading: 'Storm and Flood Cleanup for Oceanside Properties',
+  },
+  'oceanside__sewage-cleanup': {
+    introHeading: 'Emergency Sewage Cleanup and Sanitizing in Oceanside',
+  },
+  'oceanside__leak-detection': {
+    introHeading: 'Pinpoint Hidden Leaks in Oceanside',
+  },
+
+  // ── Vista missing services ──
+  'vista__mold-removal': {
+    introHeading: 'Mold Removal for Vista Homes',
+  },
+  'vista__flood-cleanup': {
+    introHeading: 'Storm and Flood Cleanup for Vista Properties',
+  },
+  'vista__sewage-cleanup': {
+    introHeading: 'Emergency Sewage Cleanup in Vista',
+  },
+  'vista__leak-detection': {
+    introHeading: 'Leak Detection and Moisture Assessment in Vista',
+  },
+
+  // ── San Marcos missing services ──
+  'san-marcos__fire-damage-restoration': {
+    introHeading: 'Fire Damage Cleanup and Repair Support in San Marcos',
+  },
+  'san-marcos__flood-cleanup': {
+    introHeading: 'Flood and Storm Cleanup for San Marcos Properties',
+  },
+  'san-marcos__leak-detection': {
+    introHeading: 'Leak Detection and Moisture Mapping in San Marcos',
+  },
+
+  // ── Encinitas missing services ──
+  'encinitas__sewage-cleanup': {
+    introHeading: 'Sewage Cleanup for Encinitas Coastal Properties',
+  },
+  'encinitas__flood-cleanup': {
+    introHeading: 'Flood and Storm Cleanup for Encinitas Homes',
+  },
+  'encinitas__leak-detection': {
+    introHeading: 'Coastal Leak Detection and Moisture Checks in Encinitas',
+  },
+
+  // ── Rancho Santa Fe ──
+  'rancho-santa-fe__water-damage-restoration': {
+    introHeading: 'Water Damage Restoration for Rancho Santa Fe Estates',
+  },
+  'rancho-santa-fe__mold-removal': {
+    introHeading: 'Mold Removal for Rancho Santa Fe Properties',
+  },
+  'rancho-santa-fe__fire-damage-restoration': {
+    introHeading: 'Fire Damage Cleanup and Restoration in Rancho Santa Fe',
+  },
+  'rancho-santa-fe__flood-cleanup': {
+    introHeading: 'Flood and Storm Cleanup for Rancho Santa Fe Estates',
+  },
+  'rancho-santa-fe__sewage-cleanup': {
+    introHeading: 'Sewage Cleanup for Rancho Santa Fe Properties',
+  },
+  'rancho-santa-fe__leak-detection': {
+    introHeading: 'Precision Leak Detection for Rancho Santa Fe Estates',
+  },
+
+  // ── Solana Beach ──
+  'solana-beach__water-damage-restoration': {
+    introHeading: 'Water Damage Restoration for Solana Beach Coastal Homes',
+  },
+  'solana-beach__water-leak-repair': {
+    introHeading: 'Water Leak Detection and Repair in Solana Beach',
+  },
+  'solana-beach__mold-removal': {
+    introHeading: 'Mold Removal for Solana Beach Coastal Properties',
+  },
+  'solana-beach__fire-damage-restoration': {
+    introHeading: 'Fire Damage Cleanup and Repair in Solana Beach',
+  },
+  'solana-beach__flood-cleanup': {
+    introHeading: 'Flood and Storm Cleanup for Solana Beach Homes',
+  },
+  'solana-beach__sewage-cleanup': {
+    introHeading: 'Sewage Cleanup for Solana Beach Properties',
+  },
+  'solana-beach__leak-detection': {
+    introHeading: 'Leak Detection and Moisture Assessment in Solana Beach',
+  },
+
+  // ── Bressi Ranch missing services ──
+  'bressi-ranch__mold-removal': {
+    introHeading: 'Mold Removal for Bressi Ranch Homes',
+  },
+  'bressi-ranch__fire-damage-restoration': {
+    introHeading: 'Fire Damage Cleanup and Repair Support in Bressi Ranch',
+  },
+  'bressi-ranch__flood-cleanup': {
+    introHeading: 'Flood and Storm Cleanup for Bressi Ranch Properties',
+  },
+  'bressi-ranch__sewage-cleanup': {
+    introHeading: 'Sewage Cleanup for Bressi Ranch Homes',
+  },
+  'bressi-ranch__leak-detection': {
+    introHeading: 'Leak Detection and Moisture Checks Near Carlsbad',
+  },
 };
 
 export const cityServiceSeoOverrideKeys = Object.keys(cityServiceSeoOverrides);
