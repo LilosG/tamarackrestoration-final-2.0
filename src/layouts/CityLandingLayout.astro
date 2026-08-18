@@ -142,8 +142,8 @@ const cityServiceListSchema = getItemListSchema(
           </div>
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
-            Emergency Restoration Services in{' '}
-            <span class="text-brand-orange">{city.name}</span>
+            Water Damage Restoration in{' '}
+            <span class="text-brand-orange">{city.name}, CA</span>
           </h1>
           
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
@@ -314,7 +314,7 @@ const cityServiceListSchema = getItemListSchema(
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          Why {city.name} Trusts Tamarack Restoration
+          {city.name} Water Damage &amp; Restoration — What Sets Us Apart
         </h2>
         <p class="text-lg text-brand-gray">
           The local choice for professional restoration services.
@@ -486,7 +486,7 @@ const cityServiceListSchema = getItemListSchema(
     </section>
   )}
 
-  <Testimonials limit={3} class="bg-brand-cream-200" />
+  <Testimonials limit={3} title={`What ${city.name} Neighbors Say`} subtitle="Real reviews from local homeowners we've helped." class="bg-brand-cream-200" />
   
   <!-- Mid-Page CTA -->
   <section class="bg-brand-black py-12">
