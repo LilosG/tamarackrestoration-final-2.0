@@ -15,7 +15,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
-import { insuranceCarriers, services, business } from '@/data/site';
+import { insuranceCarriers, services, business, primaryCity, primaryCityState } from '@/data/site';
 import { insuranceCarrierContent } from '@/data/content';
 import {
   getCanonicalUrl,
@@ -156,7 +156,7 @@ for (const svc of coveredServices.slice(0, 2)) {
             class="mb-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
             {carrier.name} Claims for Water &amp; Fire Damage in{' '}
-            <span class="text-brand-orange">Carlsbad, CA</span>
+            <span class="text-brand-orange">{primaryCityState}</span>
           </h1>
 
           <p class="mb-8 max-w-xl text-lg leading-relaxed text-brand-cream-300 lg:text-xl">
@@ -226,7 +226,7 @@ for (const svc of coveredServices.slice(0, 2)) {
           </div>
 
           <h2 class="mb-6 font-heading text-3xl font-bold text-brand-black md:text-4xl">
-            How We Help {carrier.name} Policyholders in Carlsbad
+            How We Help {carrier.name} Policyholders in {primaryCity}
           </h2>
 
           <div class="space-y-4 text-brand-gray">
@@ -386,7 +386,7 @@ for (const svc of coveredServices.slice(0, 2)) {
     <div class="container">
       <div class="mx-auto mb-10 max-w-3xl text-center">
         <h2 class="mb-4 font-heading text-3xl font-bold text-brand-black">
-          {carrier.name} Claims in Carlsbad &amp; North San Diego County
+          {carrier.name} Claims in {primaryCity} &amp; North San Diego County
         </h2>
         <p class="text-lg text-brand-gray">
           We serve all of North San Diego County. Select your city for local response times and
@@ -425,7 +425,7 @@ for (const svc of coveredServices.slice(0, 2)) {
     <div class="container">
       <div class="mx-auto mb-12 max-w-3xl text-center">
         <h2 class="mb-4 font-heading text-3xl font-bold text-brand-black md:text-4xl">
-          Why Carlsbad {carrier.name} Customers Choose Tamarack
+          Why {primaryCity} {carrier.name} Customers Choose Tamarack
         </h2>
       </div>
 

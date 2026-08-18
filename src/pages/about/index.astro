@@ -12,6 +12,7 @@ import Button from '@/components/ui/Button.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import { companyValues, certifications, companyStory } from '@/data/about';
+import { primaryCity } from '@/data/site';
 import { getFAQSchema } from '@/utils/seo';
 import { allFaqs } from '@/data/faqs';
 const aboutFaqSchema = getFAQSchema(allFaqs.slice(0, 4));
@@ -57,7 +58,7 @@ const aboutFaqSchema = getFAQSchema(allFaqs.slice(0, 4));
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          Why Carlsbad Families Choose Tamarack Restoration
+          Why {primaryCity} Families Choose Tamarack Restoration
         </h2>
         <p class="text-lg text-brand-gray">
           We're not the biggest restoration company—and that's by design. We believe in quality over quantity, relationships over transactions.

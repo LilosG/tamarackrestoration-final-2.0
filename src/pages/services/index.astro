@@ -13,7 +13,7 @@ import TrustBar from '@/components/sections/TrustBar.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
-import { services, leakServices, business, globalFaqs } from '@/data/site';
+import { services, leakServices, business, globalFaqs, primaryCity, primaryCityState } from '@/data/site';
 import {
   generateTitle,
   getCanonicalUrl,
@@ -25,7 +25,7 @@ import {
 import type { BreadcrumbItem } from '@/types';
 
 const title = generateTitle('Emergency Restoration Services | Water, Fire, Mold');
-const description = `Professional restoration services in Carlsbad, CA and North San Diego County. Water damage, fire damage, mold removal, flood cleanup, sewage cleanup. IICRC certified, 24/7 emergency response. Call ${business.phoneFormatted}.`;
+const description = `Professional restoration services in ${primaryCityState}. Water damage, fire damage, mold removal, flood cleanup, sewage cleanup. IICRC certified, 24/7 emergency response. Call ${business.phoneFormatted}.`;
 const canonical = getCanonicalUrl('/services/');
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -73,7 +73,7 @@ const serviceListSchema = getItemListSchema(
         </div>
         
         <h1 class="font-display text-display-xl text-white mb-6">
-          Emergency Restoration Services in Carlsbad, CA
+          Emergency Restoration Services in {primaryCityState}
         </h1>
         
         <p class="text-xl text-brand-cream-300 mb-8 leading-relaxed">
@@ -106,7 +106,7 @@ const serviceListSchema = getItemListSchema(
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="font-display text-display-lg text-brand-black mb-4">
-          Restoration Services in Carlsbad &amp; North San Diego County
+          Restoration Services in {primaryCity} &amp; North San Diego County
         </h2>
         <p class="text-body-lg text-brand-gray">
           From water damage emergencies to mold remediation, we provide complete restoration solutions to protect your property and restore your peace of mind.
@@ -217,7 +217,7 @@ const serviceListSchema = getItemListSchema(
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="font-display text-display-lg text-brand-black mb-6">
-            Why Carlsbad Homeowners Choose Tamarack Restoration
+            Why {primaryCity} Homeowners Choose Tamarack Restoration
           </h2>
           <p class="text-body-lg text-brand-gray mb-8">
             When disaster strikes, you need a restoration company that responds quickly, works professionally, and treats you like family. That's what you get with Tamarack Restoration.

@@ -26,7 +26,7 @@ import ServiceAreas from '@/components/sections/ServiceAreas.astro';
 import InsurancePartners from '@/components/sections/InsurancePartners.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import CTABanner from '@/components/sections/CTABanner.astro';
-import { business, allServices } from '@/data/site';
+import { business, allServices, primaryCity, primaryCityState, primaryService } from '@/data/site';
 import { getHomeTitle, getFAQSchema, getItemListSchema, getServiceSchemaId } from '@/utils/seo';
 import { allFaqs } from '@/data/faqs';
 
@@ -53,8 +53,8 @@ const servicesListSchema = getItemListSchema(
   <!-- Hero Section with Lead Form (BLACK) -->
   <Hero 
     backgroundImage="/images/hero/truck-hero.webp"
-    title="Water Damage Restoration in"
-    titleAccent="Carlsbad, CA"
+    title={`${primaryService} in`}
+    titleAccent={primaryCityState}
     subtitle="Fast, professional restoration services when disaster strikes. We respond within 60 minutes, 24/7, to protect your home and family."
   />
   
@@ -63,7 +63,7 @@ const servicesListSchema = getItemListSchema(
   
   <!-- Services Grid (WHITE) -->
   <ServicesGrid 
-    title="Emergency Restoration Services in Carlsbad, CA"
+    title={`Emergency Restoration Services in ${primaryCityState}`}
     subtitle="Professional restoration for water damage, fire damage, mold, and more. Available 24/7 throughout North San Diego County."
     limit={6}
     class="bg-white"
@@ -71,7 +71,7 @@ const servicesListSchema = getItemListSchema(
   
   <!-- Process Steps - How We Work (CREAM) -->
   <ProcessSteps 
-    title="Our Proven Carlsbad Restoration Process"
+    title={`Our Proven ${primaryCity} Restoration Process`}
     subtitle="A systematic approach to restore your property quickly and completely"
     variant="numbered"
     class="bg-brand-cream-200"

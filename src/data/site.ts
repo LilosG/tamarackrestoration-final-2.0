@@ -34,6 +34,12 @@ export const business: BusinessInfo = {
   },
 };
 
+// Derived geo constants — reference these in all heading strings so a city change
+// in the address block above propagates everywhere automatically.
+export const primaryCity = business.address.city;
+export const primaryCityState = `${business.address.city}, ${business.address.state}`;
+export const primaryService = 'Water Damage Restoration';
+
 // ===================
 // TRUST METRICS
 // ===================

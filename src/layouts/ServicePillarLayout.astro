@@ -17,7 +17,7 @@ import FAQ from '@/components/sections/FAQ.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import PriorityInternalLinks from '@/components/sections/PriorityInternalLinks.astro';
-import { allServices, cities, business } from '@/data/site';
+import { allServices, cities, business, primaryCity, primaryCityState } from '@/data/site';
 import { serviceContent } from '@/data/content';
 import { getServicePillarContent } from '@/data/servicePillarContent';
 import {
@@ -131,7 +131,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
             {service.name} in{' '}
-            <span class="text-brand-orange">Carlsbad, CA</span>
+            <span class="text-brand-orange">{primaryCityState}</span>
             {' '}— {service.emergencyService ? '24/7 Emergency Response' : 'Expert Local Service'}
           </h1>
           
@@ -342,7 +342,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
       <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-12">
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-            Why Carlsbad Homeowners Choose Tamarack for {service.name}
+            Why {primaryCity} Homeowners Choose Tamarack for {service.name}
           </h2>
         </div>
         
@@ -526,7 +526,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          {service.name} in Carlsbad, CA
+          {service.name} in {primaryCityState}
         </h2>
         <p class="text-lg text-brand-gray">
           We provide {service.name.toLowerCase()} services to homes and businesses across the region.
@@ -601,7 +601,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
         <div>
           <p class="text-brand-orange text-sm font-semibold uppercase tracking-widest mb-1">Available 24/7</p>
           <h2 class="font-heading text-2xl md:text-3xl font-bold text-white">
-            Need {service.name} in Carlsbad? We Respond in 60 Minutes.
+            Need {service.name} in {primaryCity}? We Respond in 60 Minutes.
           </h2>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">

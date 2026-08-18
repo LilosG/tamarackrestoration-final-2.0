@@ -14,7 +14,7 @@ import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import LeadForm from '@/components/forms/LeadForm.astro';
 import PhoneCTA from '@/components/PhoneCTA.astro';
-import { business } from '@/data/site';
+import { business, primaryCityState, primaryService } from '@/data/site';
 
 interface Props {
   title?: string;
@@ -28,8 +28,8 @@ interface Props {
 }
 
 const {
-  title = 'Water Damage Restoration in',
-  titleAccent = 'Carlsbad, CA',
+  title = `${primaryService} in`,
+  titleAccent = primaryCityState,
   subtitle = 'Fast, professional restoration services when disaster strikes. We respond within 60 minutes, 24/7, to protect your home and family.',
   showForm = true,
   backgroundImage = '/images/hero/truck-hero.webp',
