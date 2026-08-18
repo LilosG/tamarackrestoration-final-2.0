@@ -62,6 +62,35 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
   // WATER DAMAGE RESTORATION
   // -------------------------------------------------------
   'water-damage-restoration': {
+    seoDescription:
+      'Professional water damage restoration in Carlsbad, CA. 60-minute emergency response, 24/7. IICRC-certified technicians handle water extraction, structural drying, and full restoration.',
+    faqs: [
+      {
+        question: 'How fast can Tamarack Restoration respond to a water damage emergency in Carlsbad?',
+        answer:
+          'We guarantee a 60-minute response to all Carlsbad properties, 24 hours a day, 7 days a week, including holidays. Our equipment trucks stage from our El Camino Real facility in Carlsbad, which gives us an average 38-minute arrival time to most Carlsbad addresses. Water damage spreads rapidly — every hour of delay increases the likelihood that materials that could have been saved will need to be replaced.',
+      },
+      {
+        question: 'How long does the water damage restoration process take?',
+        answer:
+          'Most residential water damage restoration takes 3 to 7 days from start to finish. The structural drying phase alone typically requires 3 to 5 days of continuous equipment operation to bring moisture readings within the IICRC S500 dry standard. Reconstruction work (replacing drywall, flooring, or cabinetry) adds additional time depending on scope. We take daily moisture readings and provide written progress reports throughout.',
+      },
+      {
+        question: 'Does homeowner\'s insurance cover water damage restoration?',
+        answer:
+          'Most standard homeowner\'s insurance policies in California cover sudden and accidental water damage — a burst pipe, appliance overflow, or roof leak from a storm. They generally do not cover gradual damage from a slow leak you knew about, or flooding from groundwater. We work directly with all major insurance carriers, document the damage thoroughly, and file the claim on your behalf as part of our standard service.',
+      },
+      {
+        question: 'What is the difference between water extraction and full water damage restoration?',
+        answer:
+          'Water extraction removes standing water from visible surfaces — it is the first step but not the full solution. Full restoration includes structural drying using commercial LGR dehumidifiers and air movers to remove moisture trapped inside walls, floors, and ceilings; antimicrobial treatment to prevent mold; controlled demolition of unsalvageable materials; and reconstruction to return the property to pre-loss condition. Stopping at extraction without completing structural drying is one of the most common causes of secondary mold growth.',
+      },
+      {
+        question: 'How do I know if water damage has caused mold growth in my walls?',
+        answer:
+          'Mold can begin colonizing damp building materials within 24 to 48 hours under favorable conditions. Warning signs include a persistent musty or earthy odor, visible dark spotting at wall seams or ceiling joints, or unexplained allergy symptoms that improve when you leave the house. After any water intrusion event, we perform a post-drying moisture inspection. If moisture levels remain elevated after drying, we recommend a mold assessment before closing walls.',
+      },
+    ],
     whenToCall: [
       {
         title: 'Your Water Heater Is Leaking',
@@ -175,6 +204,35 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
   // MOLD REMOVAL
   // -------------------------------------------------------
   'mold-removal': {
+    seoDescription:
+      'IICRC-certified mold remediation in Carlsbad, CA. Physical removal of contaminated materials per IICRC S520 standard. Third-party clearance testing included. 24/7 emergency response.',
+    faqs: [
+      {
+        question: 'What does professional mold remediation involve, and how is it different from surface cleaning?',
+        answer:
+          'Professional mold remediation follows the IICRC S520 standard, which requires physical removal of contaminated porous materials — not just surface treatment with bleach or biocides. Mold grows into the cellular structure of drywall, wood framing, and insulation; surface cleaning kills visible growth but leaves behind hyphae and mycotoxins inside the material. Our process includes containment with negative air pressure, HEPA vacuuming, removal of affected materials, antimicrobial treatment of structural surfaces, air scrubbing, and third-party clearance testing to confirm the space is clean.',
+      },
+      {
+        question: 'Is it safe to stay in my home during mold remediation?',
+        answer:
+          'For small, contained mold problems in a single room or crawl space, temporary relocation is often not required — we establish negative air pressure containment barriers that prevent spores from migrating to other areas of the home. For larger remediation projects affecting multiple rooms or the HVAC system, we typically recommend that sensitive household members (children, elderly, or those with respiratory conditions) stay elsewhere during active remediation. We discuss the specific scope with you before work begins.',
+      },
+      {
+        question: 'What causes mold to return after remediation, and how do you prevent it?',
+        answer:
+          'Mold returns when the moisture source that enabled the original growth is not corrected. Our remediation process always includes identifying and addressing the underlying moisture problem — whether that is a plumbing leak, inadequate ventilation, condensation from HVAC equipment, or a foundation water intrusion issue. We will not close remediated walls until moisture readings confirm that structural materials are within the IICRC dry standard. Carlsbad\'s coastal climate keeps indoor relative humidity above the 60% threshold that enables mold growth for much of the year, so we also discuss ventilation improvements as a preventive measure.',
+      },
+      {
+        question: 'How long does mold remediation take?',
+        answer:
+          'A contained single-room mold problem — a bathroom, laundry room, or closet — typically takes 1 to 3 days for remediation plus 1 to 2 days for clearance testing results. Larger projects involving crawl spaces, attics, or multiple rooms take 3 to 7 days of active remediation. Third-party clearance testing adds 24 to 48 hours for lab results. Reconstruction to replace removed drywall or flooring occurs after clearance and adds additional time depending on scope.',
+      },
+      {
+        question: 'Does homeowner\'s insurance cover mold remediation in California?',
+        answer:
+          'In California, homeowner\'s insurance covers mold remediation when the mold resulted from a covered peril — such as a burst pipe, appliance overflow, or storm-driven roof leak. It generally does not cover mold from chronic moisture problems, flooding, or gradual leaks that were known and ignored. We document the damage and its source thoroughly to support your insurance claim, and we work directly with adjusters from all major carriers to ensure proper coverage is applied.',
+      },
+    ],
     whenToCall: [
       {
         title: 'You Can See Visible Mold Growth on Walls or Ceilings',
@@ -288,6 +346,35 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
   // FIRE DAMAGE RESTORATION
   // -------------------------------------------------------
   'fire-damage-restoration': {
+    seoDescription:
+      'Fire damage restoration in Carlsbad, CA. Board-up, smoke and soot removal, odor elimination, and full reconstruction. Insurance coordination included. 24/7 emergency response.',
+    faqs: [
+      {
+        question: 'How quickly should fire damage restoration begin after a fire is extinguished?',
+        answer:
+          'Fire damage restoration should begin within 24 to 72 hours of a fire. Synthetic materials — plastics, nylon carpet, polyester upholstery — produce a sticky, oily soot that bonds permanently to surfaces if not cleaned with the correct solvent within this window. Smoke and soot particles are also acidic and will continue to corrode metals, etch glass, and discolor surfaces the longer they remain. We provide emergency board-up and tarping on the same call to secure the structure, then begin soot removal and odor treatment as quickly as possible.',
+      },
+      {
+        question: 'Can smoke and soot damage be cleaned, or does everything need to be replaced?',
+        answer:
+          'Whether materials can be cleaned or must be replaced depends on the material type, the type of fire, and how quickly remediation begins. Hard, non-porous surfaces — tile, glass, metal hardware — can almost always be cleaned. Porous materials like drywall, insulation, and carpet absorb smoke odors deeply and typically need to be removed. Wood framing can usually be cleaned with dry-ice blasting or HEPA vacuuming unless it is structurally compromised. We perform a detailed scope assessment before any work begins to identify what can be saved versus what must be replaced.',
+      },
+      {
+        question: 'Does homeowner\'s insurance cover fire damage restoration?',
+        answer:
+          'Yes — fire damage is one of the most universally covered perils in standard homeowner\'s insurance policies. Coverage typically includes structure repair, smoke and soot cleanup, odor remediation, content cleaning or replacement, and additional living expenses if you cannot occupy the home during restoration. We handle all documentation and communicate directly with your insurance adjuster throughout the project. We have experience working with all major carriers operating in California.',
+      },
+      {
+        question: 'How long does fire damage restoration take?',
+        answer:
+          'A contained kitchen or single-room fire typically takes 2 to 4 weeks from initial cleanup through reconstruction. A larger fire affecting multiple rooms or structural components can take 6 to 12 weeks or longer, depending on the reconstruction scope. Emergency stabilization (board-up, tarping, initial soot removal) occurs within the first 24 to 48 hours. We provide a detailed timeline estimate after our initial scope assessment and update it as the project progresses.',
+      },
+      {
+        question: 'What is the difference between smoke damage and soot damage, and do they require different treatments?',
+        answer:
+          'Smoke is the gaseous byproduct of combustion — it penetrates porous materials and causes deep odor that requires thermal fogging, ozone treatment, or hydroxyl generators to neutralize at the molecular level. Soot is the solid particulate matter deposited on surfaces — it requires physical cleaning with dry sponges, HEPA vacuuming, or chemical solvents depending on whether the soot is wet/oily (from synthetic materials) or dry/powdery (from natural materials like wood). Most fire damage scenes involve both, requiring a combined treatment protocol. Using the wrong cleaning method — such as wiping wet soot with a damp cloth — smears it and makes the staining permanent.',
+      },
+    ],
     whenToCall: [
       {
         title: 'Your Home Has Sustained Fire Damage of Any Size',
@@ -402,6 +489,35 @@ export const servicePillarContent: Record<string, ServicePillarContent> = {
   // FLOOD CLEANUP
   // =====================================================================
   'flood-cleanup': {
+    seoDescription:
+      'Flood cleanup and water damage restoration in Carlsbad, CA. Category 1, 2, and 3 floodwater extraction and drying. IICRC-certified technicians. 60-minute emergency response, 24/7.',
+    faqs: [
+      {
+        question: 'How do flood water contamination categories affect the cleanup process and cost?',
+        answer:
+          'The single most important factor in determining the scope, cost, and health risk of a flood cleanup is the contamination category of the water. Category 1 (clean water from a broken supply pipe) allows for possible material salvage and standard drying procedures. Category 2 (gray water from appliance overflows or toilet backups) requires antimicrobial treatment and typically mandates removal of saturated carpet and drywall below the waterline. Category 3 (black water from sewage backups, stormwater, or rising groundwater) requires full biohazard protocols, removal of all porous materials that contacted the water, and two-stage antimicrobial treatment. Misidentifying the water category and applying the wrong protocol can leave health hazards behind in your structure.',
+      },
+      {
+        question: 'How quickly must flood cleanup begin to prevent mold growth?',
+        answer:
+          'Mold can begin colonizing saturated building materials within 24 to 48 hours under favorable conditions. In Carlsbad\'s coastal climate — with ambient relative humidity frequently above 60% — that window can be shorter. We recommend beginning professional flood cleanup within 24 hours of the water intrusion event. Our 60-minute emergency response is designed specifically for this time-critical window. The sooner drying equipment is deployed, the greater the likelihood that structural materials can be saved rather than removed.',
+      },
+      {
+        question: 'What is the difference between flood cleanup and water damage restoration?',
+        answer:
+          'Flood cleanup refers specifically to removal of floodwater, contaminants, and unsalvageable materials — extraction, sanitation, and controlled demolition. Water damage restoration is the complete process that includes flood cleanup plus structural drying, moisture verification, and full reconstruction to return the property to pre-loss condition. We provide end-to-end restoration rather than handoff between separate contractors, which reduces the total timeline and ensures no gaps between the cleanup and rebuild phases.',
+      },
+      {
+        question: 'Does homeowner\'s insurance cover flood cleanup?',
+        answer:
+          'Standard homeowner\'s insurance covers sudden and accidental water damage from internal sources — a burst pipe, a failed appliance, or a roof breach from a storm. It does not cover flooding from external groundwater, storm surge, or rising rivers — that requires a separate NFIP (National Flood Insurance Program) flood policy. We work with both standard carriers and NFIP adjusters to document damage and maximize legitimate coverage. If you are uncertain about your coverage, we can review the damage with your adjuster before work begins.',
+      },
+      {
+        question: 'How long does professional flood cleanup and structural drying take?',
+        answer:
+          'Flood extraction and initial cleanup typically take 4 to 8 hours depending on the volume of water and the size of the affected area. Structural drying takes 3 to 5 days of continuous dehumidifier and air mover operation, with daily moisture readings to track progress. For Category 3 (black water) events, material removal and antimicrobial treatment add 1 to 2 additional days before drying equipment can be deployed. We provide written moisture logs throughout the drying phase as documentation for your insurance claim.',
+      },
+    ],
     whenToCall: [
       {
         title: 'Storm Water is Entering Your Home',
@@ -518,6 +634,35 @@ The contamination risk of flood water also escalates over time. Category 1 water
   // SEWAGE CLEANUP
   // =====================================================================
   'sewage-cleanup': {
+    seoDescription:
+      'Sewage cleanup and biohazard remediation in Carlsbad, CA. Category 3 black water extraction, two-stage antimicrobial treatment, full restoration. IICRC-certified. 60-minute response.',
+    faqs: [
+      {
+        question: 'Is sewage backup dangerous, and can I clean it up myself?',
+        answer:
+          'Sewage is classified as Category 3 black water under the IICRC S500 standard — the most severe contamination category in the water damage restoration industry. It contains pathogenic bacteria (including E. coli and Salmonella), viruses, fungi, and parasites that pose serious health risks through skin contact, inhalation, or ingestion. We strongly advise against DIY sewage cleanup: without appropriate PPE, HEPA air filtration, and enzyme biotreatment, you risk spreading contamination and leaving biohazards behind in your structure. Professional remediation is required by most insurance policies for Category 3 events.',
+      },
+      {
+        question: 'What does professional sewage cleanup involve?',
+        answer:
+          'Professional sewage cleanup follows a strict biohazard protocol: Category 3 water extraction using equipment dedicated to contaminated work, removal of all porous materials that contacted the sewage (drywall, flooring, insulation), two-stage antimicrobial treatment of all structural surfaces, enzyme biotreatment to break down organic contamination, HEPA air scrubbing throughout the remediation area, and independent verification of clearance. We also coordinate with plumbers to resolve the sewer line or drain issue that caused the backup before we close the remediated area.',
+      },
+      {
+        question: 'Does homeowner\'s insurance cover sewage backup cleanup?',
+        answer:
+          'Standard homeowner\'s insurance policies do not automatically cover sewage backup — it is typically excluded unless you have added a sewer backup endorsement or rider to your policy. Some policies cover sewage backup only if it was caused by a covered peril (such as a storm overloading the municipal sewer). We review the specific cause and damage documentation with your adjuster to determine what coverage applies and help maximize your legitimate claim.',
+      },
+      {
+        question: 'How long does sewage cleanup take?',
+        answer:
+          'A contained bathroom or laundry room sewage backup typically takes 1 to 2 days for extraction, material removal, and antimicrobial treatment, followed by 3 to 4 days of structural drying. Larger events affecting multiple rooms or a crawl space can take 3 to 5 days of active remediation plus drying time. Reconstruction to replace removed drywall and flooring adds additional time after the structure is confirmed dry and clear. We provide a full timeline estimate after the initial scope assessment.',
+      },
+      {
+        question: 'What causes sewage backup in Carlsbad homes, and can it be prevented?',
+        answer:
+          'The most common causes of sewage backup in Carlsbad are tree root intrusion into sewer lines (particularly in older neighborhoods with mature landscaping), grease and debris buildup in drain lines, deteriorating clay or cast-iron pipes in older homes, and municipal sewer surges during heavy rain events. After completing remediation, we can coordinate a sewer camera inspection to identify structural issues in your drain lines and recommend preventive measures such as root barrier treatment or pipe lining.',
+      },
+    ],
     whenToCall: [
       {
         title: 'Sewage is Backing Up Through Your Drains',
@@ -631,6 +776,35 @@ San Diego County has specific regulatory requirements for sewage spill reporting
   // WATER LEAK REPAIR
   // =====================================================================
   'water-leak-repair': {
+    seoDescription:
+      'Water leak detection and repair in Carlsbad, CA. Non-invasive thermal imaging and acoustic diagnostics. Slab leak detection, pipe repair, and water damage restoration. 24/7 response.',
+    faqs: [
+      {
+        question: 'How do I know if I have a hidden water leak in my Carlsbad home?',
+        answer:
+          'The most reliable signs of a hidden leak are an unexplained spike in your water bill, the sound of running water when all fixtures are off, warm or damp spots on floors (especially on slab foundations), low water pressure, or a water meter that continues to move after you shut off the main supply valve. Musty odors or visible mold growth without an obvious moisture source also indicate a hidden leak. Our non-invasive detection process uses thermal imaging cameras and acoustic sensors to locate the leak without opening walls or floors unnecessarily.',
+      },
+      {
+        question: 'How quickly can a hidden water leak cause structural damage?',
+        answer:
+          'A pinhole leak running undetected for weeks or months can cause damage that far exceeds the cost of the leak itself. A slow drip into a wall cavity saturates insulation, wicks into wood framing, and creates conditions for mold growth — all invisible from the surface. A slab leak that runs undetected can prevent a $2,000 plumbing repair from becoming a $20,000 foundation remediation project if caught early. This is why we recommend investigating any unexplained water bill increase or moisture sign as soon as it appears.',
+      },
+      {
+        question: 'What is the difference between water leak detection and water leak repair?',
+        answer:
+          'Leak detection is the process of locating a hidden leak using non-invasive technology — thermal imaging, acoustic sensors, pressure testing, and moisture meters. Leak repair is the plumbing work that fixes the source. We provide both services: our team locates the leak precisely to minimize the demolition footprint, coordinates with a licensed plumber for the pipe repair, and then handles all water damage restoration to the affected structure. This single-contractor approach eliminates the coordination gap that often occurs when detection and restoration are handled by different companies.',
+      },
+      {
+        question: 'Does insurance cover hidden water leak damage?',
+        answer:
+          'Homeowner\'s insurance in California typically covers sudden and accidental water damage from a hidden leak — including the water damage restoration cost — but generally does not cover the plumbing repair itself (considered a maintenance item). Coverage also typically excludes damage from a leak you were aware of and did not address. We provide detailed photographic documentation and moisture readings that support your insurance claim and help establish that the damage was sudden rather than gradual.',
+      },
+      {
+        question: 'How much does water leak detection and repair typically cost in Carlsbad?',
+        answer:
+          'Non-invasive leak detection using thermal imaging and acoustic diagnostics typically costs $300 to $600 for a residential property. The cost of subsequent plumbing repair varies widely depending on the pipe type, location, and access difficulty — a simple accessible pipe repair may run $500 to $1,500, while a full slab leak repair can range from $2,000 to $8,000 or more. Water damage restoration costs are separate and depend on how long the leak ran and what materials were affected. We provide a full written estimate before any restoration work begins.',
+      },
+    ],
     whenToCall: [
       {
         title: 'Your Water Bill Spiked Unexpectedly',
@@ -744,7 +918,7 @@ The decision between repairing a single leak and repiping all or part of the sys
   // SLAB LEAK REPAIR
   // -------------------------------------------------------
   'slab-leak-repair': {
-    seoDescription: 'Slab leak repair support in North San Diego County. Under-slab leak detection, moisture documentation, drying, flooring and wall restoration coordination. Call (760) 500-2211.',
+    seoDescription: 'Slab leak repair support in Carlsbad, CA and North San Diego County. Under-slab leak detection, moisture documentation, drying, flooring and wall restoration coordination. Call (760) 500-2211.',
     faqs: [
       {
         question: 'How do you find a slab leak without unnecessary demolition?',
@@ -844,7 +1018,7 @@ Insurance questions depend on the policy, cause of loss, exclusions, and carrier
   // LEAK DETECTION
   // -------------------------------------------------------
   'leak-detection': {
-    seoDescription: 'Leak detection and moisture assessment in North San Diego County. Thermal imaging, moisture meters, acoustic methods where applicable, and restoration guidance. Call (760) 500-2211.',
+    seoDescription: 'Leak detection and moisture assessment in Carlsbad, CA and North San Diego County. Thermal imaging, moisture meters, acoustic methods where applicable, and restoration guidance. Call (760) 500-2211.',
     faqs: [
       {
         question: 'What tools do you use for leak detection?',

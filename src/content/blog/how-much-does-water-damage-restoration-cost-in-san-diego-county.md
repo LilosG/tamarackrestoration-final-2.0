@@ -14,11 +14,12 @@ draft: false
 ---
 
 ## Water Damage Restoration Cost in San Diego County (What to Expect)
-[Water damage restoration](/services/water-damage-restoration/) costs in San Diego County can vary widely depending on how severe the loss is, how many areas are affected, and how quickly cleanup begins. A small supply-line leak in one room is very different from a major slab leak or second-floor overflow that spreads into drywall, flooring, and cabinetry.
 
-In coastal and inland North County communities like Carlsbad, Oceanside, Encinitas, Vista, and San Marcos, response timing often makes the biggest financial difference. The sooner extraction and drying start, the more likely you can avoid secondary damage like swelling materials, odor, and mold growth.
+[Water damage restoration](/services/water-damage-restoration/) in San Diego County typically costs **$2,000–$8,000** for a single-room, single-category event and **$8,000–$25,000+** when multiple rooms, contaminated water, or significant structural drying are involved. A small supply-line leak in one accessible room is very different from a slab leak or second-floor overflow that saturates drywall, flooring, and cabinetry across multiple levels.
 
-For most homeowners, the most practical approach is to understand the major cost categories upfront, then get a professional on-site assessment. Below is a clear breakdown of common restoration services and what typically drives the final total.
+In Carlsbad, Oceanside, Encinitas, Vista, and San Marcos, response timing is the single biggest financial variable. The sooner extraction and drying begin, the more salvageable the materials — and the lower the total cost.
+
+Below is a breakdown of the major cost categories and what typically drives your final estimate.
 
 ## Structural Drying Equipment (Dehumidifiers + Air Movers)
 Using industrial dehumidifiers and air movers to dry out walls, floors, and other structural elements.

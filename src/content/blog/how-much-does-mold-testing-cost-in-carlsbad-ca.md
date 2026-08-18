@@ -25,9 +25,9 @@ featured: false
 draft: false
 ---
 
-Mold testing cost in Carlsbad depends less on a flat number and more on what problem you are actually trying to solve. Some homeowners in Carlsbad need a basic inspection with a limited scope. Others need multiple samples, a written report, or clearance testing after remediation. Those are not the same job, and they should not be priced like they are.
+Mold testing in Carlsbad typically costs **$150–$400** for a basic visual inspection with limited air or surface samples, and **$400–$900** for a comprehensive inspection with multiple sample locations and a written lab report. Post-remediation clearance testing runs **$200–$500** and is often required by insurance carriers or buyers in real estate transactions. Importantly, visible mold plus a known moisture source often means testing is unnecessary — remediation can proceed immediately, and testing adds cost without changing the scope of work.
 
-The more useful question is not just "How much does mold testing cost in Carlsbad?" It is "When is mold testing worth paying for, and what should be included if I do it?"
+The more useful question is not just "How much does mold testing cost?" but "When is mold testing worth paying for, and what should be included if I do it?"
 
 ## Why Carlsbad Homeowners Ask About Mold Testing
 

@@ -511,6 +511,7 @@ export interface WebSiteSchema {
   name: string;
   url: string;
   publisher: { '@id': string };
+  potentialAction?: object;
 }
 
 export interface WebPageSchema {
@@ -523,6 +524,7 @@ export interface WebPageSchema {
   inLanguage?: string;
   isPartOf: { '@id': string };
   about: object;
+  speakable?: object;
   primaryImageOfPage?: { '@type': 'ImageObject'; url: string };
   mainEntity?: object;
   breadcrumb?: object;

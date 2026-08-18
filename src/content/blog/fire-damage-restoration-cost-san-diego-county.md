@@ -26,11 +26,9 @@ faqs:
 
 ## Understanding Fire Damage Restoration Costs in San Diego County
 
-A house fire — even a small one — creates several categories of damage that all need to be addressed: the actual burn damage, smoke and soot contamination that spreads far beyond the fire's origin, water damage from firefighting, and sometimes structural compromise. Each of these categories carries its own restoration cost.
+Fire damage restoration in San Diego County costs **$3,000 to $50,000+** depending on the size of the fire, how far smoke and soot traveled, and how much water damage occurred during firefighting. A contained kitchen fire typically runs $3,000–$10,000; a multi-room fire requiring structural work can reach $30,000–$50,000 or more. Critically, smoke and soot remediation must begin within 72 hours — synthetic materials produce an oily soot that bonds permanently to surfaces if not cleaned with the correct solvent in that window.
 
-In North San Diego County communities like Carlsbad, Oceanside, Encinitas, San Marcos, Vista, and Rancho Santa Fe, the cost of fire damage restoration varies considerably based on how large the fire was, how far the smoke traveled, and how quickly professional restoration began.
-
-The overview below is designed to help homeowners understand what they're paying for — and why — before getting an estimate.
+In Carlsbad, Oceanside, Encinitas, San Marcos, Vista, and Rancho Santa Fe, the cost breakdown below will help you understand what you're paying for — and why — before getting an estimate.
 
 ## Cost by Fire Size and Scope
 

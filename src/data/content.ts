@@ -43,7 +43,7 @@ export interface ServiceContent {
 export const serviceContent: Record<string, ServiceContent> = {
   'water-damage-restoration': {
     slug: 'water-damage-restoration',
-    heroSubtitle: 'Fast water extraction and complete restoration when every minute counts.',
+    heroSubtitle: '60-minute emergency response, 24/7. Professional water extraction, structural drying, and full restoration by IICRC-certified technicians — Carlsbad and North San Diego County.',
     problemStatement: `Water damage spreads rapidly through your property, seeping into walls, floors, and foundations within minutes. Every hour of delay allows moisture to penetrate deeper, creating ideal conditions for mold growth and structural deterioration. What starts as a simple leak can become a major restoration project if not addressed immediately.`,
     solutionOverview: `Our water damage restoration process combines industrial-grade extraction equipment with advanced drying technology to remove water quickly and completely. We use moisture meters and thermal imaging to find hidden water, ensuring nothing is missed. Our IICRC-certified technicians follow a systematic approach that protects your property and gets you back to normal faster.`,
     processSteps: [
@@ -117,7 +117,7 @@ export const serviceContent: Record<string, ServiceContent> = {
   
   'mold-removal': {
     slug: 'mold-removal',
-    heroSubtitle: 'Safe, thorough mold remediation that protects your health and property.',
+    heroSubtitle: 'IICRC-certified mold remediation in Carlsbad, CA. Physical removal of contaminated materials per IICRC S520 standard — not just surface treatment. Third-party clearance testing included.',
     problemStatement: `Mold isn't just unsightly—it's a health hazard that can cause respiratory problems, allergic reactions, and other serious health issues. Once mold takes hold, it spreads quickly through spores that travel through your HVAC system, contaminating areas far from the original source. DIY removal often makes things worse by disturbing spores without proper containment.`,
     solutionOverview: `Professional mold remediation requires specialized training, equipment, and protocols. We contain affected areas to prevent spore spread, use HEPA filtration to clean the air, and remove mold at its source. Most importantly, we identify and fix the moisture problem that caused the mold, ensuring it doesn't return.`,
     processSteps: [
@@ -194,7 +194,7 @@ export const serviceContent: Record<string, ServiceContent> = {
   
   'fire-damage-restoration': {
     slug: 'fire-damage-restoration',
-    heroSubtitle: 'Complete fire, smoke, and soot restoration to rebuild your property and your life.',
+    heroSubtitle: 'Emergency board-up through full reconstruction — Carlsbad, CA. Smoke, soot, and odor remediation must begin within 72 hours to prevent permanent surface damage. 24/7 response.',
     problemStatement: `Fire damage extends far beyond the flames. Smoke and soot penetrate every surface, while the water used to extinguish the fire creates additional damage. Without immediate action, soot becomes permanently bonded to surfaces, smoke odor permeates materials, and corrosive residues destroy electronics and metal fixtures.`,
     solutionOverview: `Fire restoration requires a comprehensive approach addressing structural damage, smoke residue, water damage, and odor elimination. Our technicians are trained in all aspects of fire restoration, using specialized equipment and techniques to salvage what can be saved and restore your property completely.`,
     processSteps: [
@@ -271,7 +271,7 @@ export const serviceContent: Record<string, ServiceContent> = {
   
   'flood-cleanup': {
     slug: 'flood-cleanup',
-    heroSubtitle: 'Rapid flood response to minimize damage and restore your property.',
+    heroSubtitle: '60-minute flood response in Carlsbad, CA. Category 1, 2, and 3 floodwater extraction and drying. Mold risk begins within 24 hours — IICRC-certified technicians available 24/7.',
     problemStatement: `Flood water is especially destructive because it often contains contaminants, sewage, chemicals, and debris. Category 3 "black water" from floods poses serious health risks and requires specialized handling. The longer flood water sits, the more damage it causes—and the greater the health hazard becomes.`,
     solutionOverview: `Flood cleanup requires rapid response, proper safety protocols, and thorough sanitation. We extract flood water quickly, remove contaminated materials safely, and sanitize your property completely. Our goal is to minimize damage, eliminate health hazards, and restore your property to a safe, livable condition.`,
     processSteps: [
@@ -347,7 +347,7 @@ export const serviceContent: Record<string, ServiceContent> = {
   
   'sewage-cleanup': {
     slug: 'sewage-cleanup',
-    heroSubtitle: 'Safe sewage removal and complete sanitation to protect your health.',
+    heroSubtitle: 'Category 3 biohazard sewage cleanup in Carlsbad, CA. IICRC S500-compliant extraction, two-stage antimicrobial treatment, and full restoration. Do not attempt DIY — 24/7 emergency response.',
     problemStatement: `Sewage backup is a serious biohazard containing bacteria, viruses, and parasites that pose immediate health risks. Raw sewage can cause infections, gastrointestinal illness, and respiratory problems. This is not a DIY situation—proper protective equipment, containment, and disposal procedures are essential.`,
     solutionOverview: `Sewage cleanup requires specialized training and equipment to protect both occupants and workers. We follow strict protocols for containment, removal, sanitation, and disposal. Every surface that contacted sewage is thoroughly cleaned and disinfected, and we verify safe conditions before you return.`,
     processSteps: [
@@ -424,7 +424,7 @@ export const serviceContent: Record<string, ServiceContent> = {
   
   'water-leak-repair': {
     slug: 'water-leak-repair',
-    heroSubtitle: 'Expert leak detection and repair before major damage occurs.',
+    heroSubtitle: 'Non-invasive water leak detection in Carlsbad, CA. Thermal imaging and acoustic diagnostics locate hidden leaks without demolition. A slow leak can cause $20,000 in damage if left undetected.',
     problemStatement: `Hidden water leaks cause more damage than sudden floods because they go unnoticed for weeks or months. A small leak can waste thousands of gallons of water, rot structural members, and create perfect conditions for mold—all while you're unaware. By the time you notice, significant damage has already occurred.`,
     solutionOverview: `We use advanced leak detection technology to find leaks without unnecessary demolition. Thermal imaging, acoustic listening devices, and moisture meters help us pinpoint leak locations precisely. Once found, we repair the leak and address any water damage that's already occurred.`,
     processSteps: [
@@ -496,7 +496,7 @@ export const serviceContent: Record<string, ServiceContent> = {
 
   'slab-leak-repair': {
     slug: 'slab-leak-repair',
-    heroSubtitle: 'Advanced slab leak detection and minimally invasive repair to protect your foundation.',
+    heroSubtitle: 'Slab leak detection and repair coordination in Carlsbad, CA. Early detection can prevent a $2,000 plumbing repair from becoming a $20,000 foundation issue. 24/7 emergency response.',
     problemStatement: `A slab leak is one of the most damaging plumbing failures a homeowner can face. Water escaping beneath your concrete foundation saturates the soil, destabilizes the slab, and migrates upward through flooring — warping hardwood, buckling tile, and creating ideal mold conditions inside walls you cannot see. Because the leak is hidden under concrete, most homeowners discover it only after significant damage has already occurred. In North San Diego County, the combination of aging copper supply lines, expansive clay soils, and coastal ground shifting makes slab leaks more common than in inland regions.`,
     solutionOverview: `We locate slab leaks precisely using electronic leak detection, thermal imaging cameras, and acoustic listening equipment — without tearing up your floor to find them. Once pinpointed, we determine the least invasive repair method: direct access repair, pipe rerouting, or epoxy pipe lining depending on pipe condition and leak location. Every repair is followed by a full moisture assessment of affected flooring and walls to ensure no hidden water damage is left behind.`,
     processSteps: [
@@ -574,7 +574,7 @@ export const serviceContent: Record<string, ServiceContent> = {
 
   'leak-detection': {
     slug: 'leak-detection',
-    heroSubtitle: 'Precision leak detection using thermal imaging and acoustic technology — no unnecessary demolition.',
+    heroSubtitle: 'Leak detection is a decision-making process, not a single tool. Carlsbad, CA — thermal imaging, acoustic sensors, and moisture meters to locate hidden leaks without unnecessary demolition.',
     problemStatement: `Hidden leaks are the most destructive plumbing problem homeowners face precisely because they are invisible. A pinhole in a supply line inside a wall, a slow drip at a slab penetration, or a hairline crack in a roof flashing can silently discharge hundreds of gallons per month — rotting framing, saturating insulation, and growing mold colonies behind surfaces that look perfectly normal. By the time visible symptoms appear, the damage is often significant. In North San Diego County, coastal humidity, aging copper infrastructure, and clay soil movement create leak conditions that manifest in ways that are difficult to diagnose without specialized equipment.`,
     solutionOverview: `Professional leak detection eliminates the guesswork — and the unnecessary demolition — that comes from searching for a hidden leak without proper tools. We use a layered detection approach: thermal imaging cameras identify temperature anomalies caused by evaporating water, acoustic amplification equipment listens for the pressure signature of water escaping pipe walls, and calibrated moisture meters map the extent of water migration. The result is a precise leak location and a clear repair plan before we open a single wall.`,
     processSteps: [

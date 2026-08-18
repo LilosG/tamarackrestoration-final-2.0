@@ -502,6 +502,14 @@ export function getWebSiteSchema(): WebSiteSchema {
     publisher: {
       '@id': BUSINESS_SCHEMA_ID,
     },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/?s={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
@@ -518,7 +526,9 @@ export function getWebPageSchema(options: {
   primaryImage?: string;
   about?: object;
   mainEntity?: object;
+  speakableCssSelectors?: string[];
 }): WebPageSchema {
+  const speakableSelectors = options.speakableCssSelectors ?? ['h1', '.hero-subtitle', '.page-intro'];
   return {
     '@context': 'https://schema.org',
     '@type': options.pageType || 'WebPage',
@@ -529,6 +539,10 @@ export function getWebPageSchema(options: {
     inLanguage: 'en-US',
     isPartOf: { '@id': WEBSITE_SCHEMA_ID },
     about: options.about || { '@id': BUSINESS_SCHEMA_ID },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: speakableSelectors,
+    },
     ...(options.primaryImage
       ? { primaryImageOfPage: { '@type': 'ImageObject' as const, url: toAbsoluteUrl(options.primaryImage) } }
       : {}),

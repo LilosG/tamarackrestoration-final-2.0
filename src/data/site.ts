@@ -12,7 +12,7 @@ import type { BusinessInfo, Service, City, InsuranceCarrier, NavItem, FAQ } from
 
 export const business: BusinessInfo = {
   name: 'Tamarack Restoration',
-  phone: '7605002211',
+  phone: '+17605002211',
   phoneFormatted: '(760) 500-2211',
   email: 'info@tamarackrestoration.com',
   address: {

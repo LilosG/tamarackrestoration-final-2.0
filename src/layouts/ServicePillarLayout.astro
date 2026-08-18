@@ -50,11 +50,11 @@ const relatedServices = allServices.filter(s =>
 const generatedFaqs: FAQType[] = [
   {
     question: `How quickly can you respond to ${service.name.toLowerCase()} emergencies?`,
-    answer: `We offer 24/7 emergency service with guaranteed 60-minute response times throughout North San Diego County. Our team is always ready to help when disaster strikes.`,
+    answer: `We offer 24/7 emergency service with guaranteed 60-minute response times throughout Carlsbad and North San Diego County. Our trucks stage from our El Camino Real facility in Carlsbad, giving us average arrival times under 40 minutes to most local addresses.`,
   },
   {
     question: `What areas do you serve for ${service.name.toLowerCase()}?`,
-    answer: `We provide ${service.name.toLowerCase()} services throughout North San Diego County, including Carlsbad, Oceanside, Vista, San Marcos, Encinitas, and surrounding communities.`,
+    answer: `We provide ${service.name.toLowerCase()} services throughout Carlsbad, Oceanside, Vista, San Marcos, Encinitas, and all of North San Diego County. Our headquarters is in Carlsbad, which gives us the fastest response times to Carlsbad-area properties.`,
   },
   {
     question: `Do you help with insurance documentation for ${service.name.toLowerCase()}?`,
@@ -77,7 +77,7 @@ const generatedFaqs: FAQType[] = [
 const faqs: FAQType[] = pillarContent?.faqs?.length ? pillarContent.faqs : generatedFaqs;
 
 // SEO
-const metaDescription = pillarContent?.seoDescription || `Professional ${service.name.toLowerCase()} in North San Diego County. 24/7 emergency response, 60-minute arrival. IICRC certified. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
+const metaDescription = pillarContent?.seoDescription || `Professional ${service.name.toLowerCase()} in Carlsbad, CA and North San Diego County. 24/7 emergency response, 60-minute arrival. IICRC certified. ${business.reviewCount} five-star reviews. Call ${business.phoneFormatted}.`;
 const title = getServiceTitle(service.name);
 const canonical = getCanonicalUrl(`/services/${service.slug}/`);
 const breadcrumbs = getServiceBreadcrumbs(service);
@@ -130,7 +130,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
             Professional {service.name} in{' '}
-            <span class="text-brand-orange">North San Diego County</span>
+            <span class="text-brand-orange">Carlsbad, CA</span>
           </h1>
           
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
@@ -524,7 +524,7 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
     <div class="container">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          {service.name} Throughout North San Diego County
+          {service.name} in Carlsbad &amp; North San Diego County
         </h2>
         <p class="text-lg text-brand-gray">
           We provide {service.name.toLowerCase()} services to homes and businesses across the region.
