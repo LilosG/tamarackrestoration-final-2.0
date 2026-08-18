@@ -84,13 +84,14 @@ const articleSchema = getArticleSchema({
 const faqSchema = faqs.length > 0 ? getFAQSchema(faqs) : null;
 ---
 
-<BaseLayout 
+<BaseLayout
   title={`${title} | Tamarack Restoration Blog`}
   description={description}
   canonical={canonical}
   ogType="article"
   ogImage={image}
   jsonLd={[breadcrumbSchema, articleSchema, faqSchema]}
+  preloadImage={image}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden">

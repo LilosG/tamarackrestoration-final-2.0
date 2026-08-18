@@ -492,7 +492,7 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     id: 'state-farm',
     name: 'State Farm',
     slug: 'state-farm',
-    logo: '/images/insurance/state-farm.png',
+    logo: '/images/insurance/state-farm.webp',
     logoWidth: 3079,
     logoHeight: 1453,
     description:
@@ -515,7 +515,7 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     id: 'allstate',
     name: 'Allstate',
     slug: 'allstate',
-    logo: '/images/insurance/allstate.jpg',
+    logo: '/images/insurance/allstate.webp',
     logoWidth: 600,
     logoHeight: 353,
     description:
@@ -532,7 +532,7 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     id: 'farmers',
     name: 'Farmers Insurance',
     slug: 'farmers',
-    logo: '/images/insurance/farmers.png',
+    logo: '/images/insurance/farmers.webp',
     logoWidth: 2400,
     logoHeight: 1277,
     description:
@@ -549,7 +549,7 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     id: 'usaa',
     name: 'USAA',
     slug: 'usaa',
-    logo: '/images/insurance/usaa.png',
+    logo: '/images/insurance/usaa.webp',
     logoWidth: 1200,
     logoHeight: 675,
     description:
@@ -566,7 +566,7 @@ export const insuranceCarriers: InsuranceCarrier[] = [
     id: 'liberty-mutual',
     name: 'Liberty Mutual',
     slug: 'liberty-mutual',
-    logo: '/images/insurance/liberty-mutual.png',
+    logo: '/images/insurance/liberty-mutual.webp',
     logoWidth: 2000,
     logoHeight: 938,
     description:

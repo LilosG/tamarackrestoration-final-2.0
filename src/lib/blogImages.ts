@@ -26,9 +26,9 @@ const CATEGORY_FALLBACK_IMAGES: Record<BlogEntry['data']['category'], string[]> 
   ],
   insurance: [
     '/images/insurance/insurance-banner.webp',
-    '/images/insurance/state-farm.png',
-    '/images/insurance/farmers.png',
-    '/images/insurance/allstate.jpg',
+    '/images/insurance/state-farm.webp',
+    '/images/insurance/farmers.webp',
+    '/images/insurance/allstate.webp',
   ],
   prevention: [
     '/images/services/general/containment-barrier.webp',

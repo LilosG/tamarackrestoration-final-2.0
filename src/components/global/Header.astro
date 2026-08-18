@@ -5,6 +5,8 @@
  * Main site header with navigation, contact info, and mobile menu
  */
 
+import { Image } from 'astro:assets';
+import logo from '@/assets/images/logo/tamarack-logo.webp';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import PhoneCTA from '@/components/PhoneCTA.astro';
@@ -61,12 +63,11 @@ function isActive(href: string): boolean {
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo -->
         <a href="/" class="flex-shrink-0" aria-label="Tamarack Restoration - Home">
-          <img
-            src="/images/logo/tamarack-logo.webp"
+          <Image
+            src={logo}
             alt="Tamarack Restoration"
             class="h-14 lg:h-16 w-auto"
-            width="960"
-            height="960"
+            loading="eager"
           />
         </a>
         

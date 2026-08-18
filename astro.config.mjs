@@ -8,7 +8,11 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('/privacy-policy/') &&
+        !page.includes('/terms-of-service/'),
+    }),
     mdx(),
   ],
   build: {

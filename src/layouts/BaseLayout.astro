@@ -38,7 +38,7 @@ const {
   twitterCard = 'summary_large_image',
   jsonLd,
   class: className,
-  preloadImage = '/images/hero/truck-hero.webp',
+  preloadImage,
   webPageType,
   schemaAbout,
   includeAggregateRating = false,
@@ -69,8 +69,8 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- LCP image preload -->
-    <link rel="preload" as="image" href={preloadImage} type="image/webp" />
+    <!-- LCP image preload — only emitted when layout explicitly passes preloadImage -->
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} type="image/webp" />}
     <!-- Logo preload (above fold on every page) -->
     <link rel="preload" as="image" href="/images/logo/tamarack-logo.webp" type="image/webp" />
 
@@ -78,11 +78,18 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Fonts -->
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" 
-      rel="stylesheet"
+    <!-- Fonts — non-blocking preload pattern -->
+    <link
+      rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -91,13 +98,13 @@ const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || 'G
     <link rel="manifest" href="/site.webmanifest" />
     
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH27G3H1XN"></script>
-    <script is:inline>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`}></script>
+    <script is:inline define:vars={{ ga4MeasurementId }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
       gtag('js', new Date());
-      gtag('config', 'G-WH27G3H1XN');
+      gtag('config', ga4MeasurementId);
     </script>
     <script is:inline>
       document.addEventListener('click', function(e) {

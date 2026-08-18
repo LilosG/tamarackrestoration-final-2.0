@@ -94,11 +94,12 @@ const jsonLd = combineSchemas(serviceSchema, faqSchema, breadcrumbSchema);
 const bgImage = service.image || '/images/hero/truck-hero.webp';
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={metaDescription}
   canonical={canonical}
   jsonLd={jsonLd}
+  preloadImage={bgImage}
 >
   <!-- Hero Section -->
   <section class="relative bg-brand-black overflow-hidden min-h-[500px] lg:min-h-[550px] flex items-center">

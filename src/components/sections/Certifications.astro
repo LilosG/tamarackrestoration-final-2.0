@@ -5,6 +5,8 @@
  * Display IICRC and other certifications with team photo
  */
 
+import { Image } from 'astro:assets';
+import teamFloorInstall from '@/assets/images/team/team-floor-install.webp';
 import Icon from '@/components/ui/Icon.astro';
 import { business } from '@/data/site';
 
@@ -124,13 +126,11 @@ const certifications = [
         <!-- Team Photo -->
         {showTeamPhoto && (
           <div class="relative">
-            <img
-              src="/images/team/team-floor-install.webp"
+            <Image
+              src={teamFloorInstall}
               alt="Tamarack Restoration certified technicians at work"
               class="rounded-2xl shadow-soft-xl w-full object-cover aspect-[4/3]"
               loading="lazy"
-              width="1300"
-              height="1734"
             />
             
             <!-- Stats overlay -->

@@ -5,6 +5,8 @@
  * Global site footer with optional CTA section
  */
 
+import { Image } from 'astro:assets';
+import logo from '@/assets/images/logo/tamarack-logo.webp';
 import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import PhoneCTA from '@/components/PhoneCTA.astro';
@@ -68,13 +70,11 @@ const currentYear = new Date().getFullYear();
         <!-- Company Info -->
         <div class="lg:col-span-1">
           <a href="/" class="mb-6 inline-block">
-            <img
-              src="/images/logo/tamarack-logo.webp"
+            <Image
+              src={logo}
               alt="Tamarack Restoration"
               class="h-14 w-auto"
               loading="lazy"
-              width="960"
-              height="960"
             />
           </a>
           <p class="mb-6 text-sm leading-relaxed text-brand-cream-400">
