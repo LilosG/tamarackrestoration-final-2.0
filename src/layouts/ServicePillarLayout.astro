@@ -129,8 +129,9 @@ const bgImage = service.image || '/images/hero/truck-hero.webp';
           </div>
           
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
-            Professional {service.name} in{' '}
+            {service.name} in{' '}
             <span class="text-brand-orange">Carlsbad, CA</span>
+            {' '}— {service.emergencyService ? '24/7 Emergency Response' : 'Expert Local Service'}
           </h1>
           
           <p class="text-brand-cream-300 text-lg lg:text-xl mb-8 max-w-xl leading-relaxed">
