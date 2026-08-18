@@ -3,54 +3,31 @@ import fs from 'node:fs/promises';
 const OUTPUT_FILE = 'src/data/google-reviews.json';
 const FALLBACK_FILE = 'src/data/google-reviews-fallback.json';
 
-const env = {
-  accountId: process.env.GOOGLE_BUSINESS_PROFILE_ACCOUNT_ID,
-  locationId: process.env.GOOGLE_BUSINESS_PROFILE_LOCATION_ID,
-  clientId: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-  profileUrl: process.env.GOOGLE_REVIEWS_PROFILE_URL || 'https://g.page/r/CQm9QH8xWk8SEAE/review',
-};
+const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+const placeId = process.env.GOOGLE_PLACE_ID;
+const profileUrl = process.env.GOOGLE_REVIEWS_PROFILE_URL || 'https://g.page/r/CQm9QH8xWk8SEAE/review';
 
-function mapStar(starRating) {
-  const map = { ONE:1, TWO:2, THREE:3, FOUR:4, FIVE:5, STAR_RATING_UNSPECIFIED:0 };
-  return map[starRating] ?? 0;
-}
+async function fetchPlaceDetails() {
+  const url = new URL('https://maps.googleapis.com/maps/api/place/details/json');
+  url.searchParams.set('place_id', placeId);
+  url.searchParams.set('fields', 'name,rating,user_ratings_total,reviews');
+  url.searchParams.set('key', apiKey);
 
-async function getAccessToken() {
-  const body = new URLSearchParams({
-    client_id: env.clientId,
-    client_secret: env.clientSecret,
-    refresh_token: env.refreshToken,
-    grant_type: 'refresh_token',
-  });
-  const res = await fetch('https://oauth2.googleapis.com/token', { method:'POST', headers:{'content-type':'application/x-www-form-urlencoded'}, body });
-  if (!res.ok) throw new Error(`Token refresh failed: ${res.status}`);
+  const res = await fetch(url.toString());
+  if (!res.ok) throw new Error(`Places API request failed: ${res.status}`);
   const json = await res.json();
-  return json.access_token;
+  if (json.status !== 'OK') throw new Error(`Places API error: ${json.status} — ${json.error_message || ''}`);
+  return json.result;
 }
 
-async function fetchReviews(accessToken) {
-  const parent = `accounts/${env.accountId}/locations/${env.locationId}`;
-  const url = new URL(`https://mybusiness.googleapis.com/v4/${parent}/reviews`);
-  url.searchParams.set('pageSize', '50');
-  url.searchParams.set('orderBy', 'updateTime desc');
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
-  if (!res.ok) throw new Error(`Reviews fetch failed: ${res.status}`);
-  return res.json();
-}
-
-function normalize(data) {
-  const reviews = (data.reviews || [])
+function normalize(place) {
+  const reviews = (place.reviews || [])
     .map((r) => ({
-      reviewId: r.reviewId,
-      authorName: r.reviewer?.displayName || 'Google User',
-      rating: mapStar(r.starRating),
-      comment: (r.comment || '').trim(),
-      publishedAt: r.createTime || null,
-      updatedAt: r.updateTime || null,
-      reviewerPhotoUrl: r.reviewer?.profilePhotoUrl || null,
-      reviewReply: r.reviewReply?.comment || null,
+      reviewId: null,
+      authorName: r.author_name || 'Google User',
+      rating: r.rating,
+      comment: (r.text || '').trim(),
+      publishedAt: r.time ? new Date(r.time * 1000).toISOString() : null,
       source: 'Google',
     }))
     .filter((r) => r.comment && r.rating > 0);
@@ -58,24 +35,24 @@ function normalize(data) {
   return {
     source: 'api',
     lastUpdated: new Date().toISOString(),
-    googleBusinessProfileUrl: env.profileUrl,
-    rating: typeof data.averageRating === 'number' ? data.averageRating : null,
-    totalReviewCount: Number.isFinite(data.totalReviewCount) ? data.totalReviewCount : null,
+    googleBusinessProfileUrl: profileUrl,
+    rating: typeof place.rating === 'number' ? place.rating : null,
+    totalReviewCount: typeof place.user_ratings_total === 'number' ? place.user_ratings_total : null,
     reviews,
   };
 }
 
 async function main() {
+  if (!apiKey || !placeId) {
+    console.log('Skipped Google review refresh: missing GOOGLE_PLACES_API_KEY or GOOGLE_PLACE_ID.');
+    try { await fs.access(OUTPUT_FILE); } catch { await fs.copyFile(FALLBACK_FILE, OUTPUT_FILE); }
+    return;
+  }
   try {
-    if (!env.accountId || !env.locationId || !env.clientId || !env.clientSecret || !env.refreshToken) {
-      console.log('Skipped Google review refresh: missing required env vars.');
-      return;
-    }
-    const token = await getAccessToken();
-    const response = await fetchReviews(token);
-    const normalized = normalize(response);
+    const place = await fetchPlaceDetails();
+    const normalized = normalize(place);
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(normalized, null, 2) + '\n');
-    console.log(`Updated ${OUTPUT_FILE} with ${normalized.reviews.length} reviews.`);
+    console.log(`Updated ${OUTPUT_FILE}: ${normalized.reviews.length} reviews, ${normalized.totalReviewCount} total, ${normalized.rating} stars.`);
   } catch (err) {
     console.log(`Google review refresh failed; preserving existing cache. ${err.message}`);
     try { await fs.access(OUTPUT_FILE); } catch { await fs.copyFile(FALLBACK_FILE, OUTPUT_FILE); }

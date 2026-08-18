@@ -26,7 +26,7 @@ export const business: BusinessInfo = {
   hours: '24/7 Emergency Service',
   responseTime: '60-minute response',
   yearsInBusiness: 10,
-  reviewCount: 133,
+  reviewCount: 121,
   rating: 5.0,
   coordinates: {
     latitude: 33.1581,
