@@ -82,7 +82,7 @@ const faqs: FAQ[] = uniqueContent
             </div>
           )}
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-6">
-            {seoOverride?.introHeading || uniqueContent.uniqueH1}
+            {seoOverride?.introHeading || `${serviceData.name} in ${cityData.name}: What to Expect`}
           </h2>
 
           <div class="prose prose-lg max-w-none">
@@ -126,7 +126,7 @@ const faqs: FAQ[] = uniqueContent
                 any size {serviceData.name.toLowerCase()} project, from minor incidents to major disasters.
               </p>
               <p class="text-lg text-brand-gray leading-relaxed">
-                As a locally owned company based in Carlsbad, we understand the unique challenges
+                As a locally owned company serving {cityData.name} and North San Diego County, we understand the unique challenges
                 {cityData.name} properties face. Our 60-minute response guarantee means you'll never
                 wait long for professional help when you need it most.
               </p>
