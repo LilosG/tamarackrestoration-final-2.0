@@ -11,6 +11,7 @@ import Icon from '@/components/ui/Icon.astro';
 import Button from '@/components/ui/Button.astro';
 import PhoneCTA from '@/components/PhoneCTA.astro';
 import { business } from '@/data/site';
+import { GOOGLE_BUSINESS_PROFILE_URL } from '@/data/schema';
 
 interface Props {
   class?: string;
@@ -232,6 +233,28 @@ const currentYear = new Date().getFullYear();
                 <Icon name="clock" size="sm" class="mt-0.5 flex-shrink-0" />
                 <span class="text-sm">{business.hours}</span>
               </div>
+            </li>
+            <li>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${business.coordinates.latitude},${business.coordinates.longitude}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+              >
+                <Icon name="map-pin" size="sm" class="flex-shrink-0" />
+                Get Directions
+              </a>
+            </li>
+            <li>
+              <a
+                href={`${GOOGLE_BUSINESS_PROFILE_URL}/review`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-sm text-brand-cream-400 transition-colors hover:text-brand-orange"
+              >
+                <Icon name="star" size="sm" class="flex-shrink-0" />
+                Leave a Google Review
+              </a>
             </li>
           </ul>
         </div>

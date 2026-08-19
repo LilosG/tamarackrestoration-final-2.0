@@ -12,6 +12,7 @@ import PhoneCTA from '@/components/PhoneCTA.astro';
 import ContactForm from '@/components/forms/ContactForm.astro';
 import { business } from '@/data/site';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/utils/seo';
+import { GOOGLE_BUSINESS_PROFILE_URL } from '@/data/schema';
 
 const title = 'Contact Tamarack Restoration | 24/7 Emergency Service';
 const description = `Contact Tamarack Restoration for emergency water, fire, and mold restoration in North San Diego County. Available 24/7 with 60-minute response. Call ${business.phoneFormatted} or submit a request online.`;
@@ -58,12 +59,13 @@ const contactMethods = [
 ];
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   canonical={canonical}
   jsonLd={[breadcrumbSchema]}
   webPageType="ContactPage"
+  includeAggregateRating={true}
 >
   <!-- Hero -->
   <section class="relative bg-brand-black overflow-hidden">
@@ -218,15 +220,39 @@ const contactMethods = [
               {business.address.suite}<br />
               {business.address.city}, {business.address.state} {business.address.zip}
             </address>
-            <a 
-              href={`https://maps.google.com/?q=${encodeURIComponent(business.address.full)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
-            >
-              Get Directions
-              <Icon name="external-link" size="sm" />
-            </a>
+            <div class="flex flex-col gap-3 mb-4">
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(business.address.full)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:text-brand-orange-600 transition-colors"
+              >
+                Get Directions
+                <Icon name="external-link" size="sm" />
+              </a>
+              <a
+                href={`${GOOGLE_BUSINESS_PROFILE_URL}/review`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-brand-gray hover:text-brand-orange transition-colors text-sm font-medium"
+              >
+                <Icon name="star" size="sm" class="text-brand-orange" />
+                Leave Us a Google Review
+              </a>
+            </div>
+            <!-- Google Maps embed -->
+            <div class="rounded-xl overflow-hidden aspect-video shadow-soft">
+              <iframe
+                title={`${business.name} location map`}
+                src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.GOOGLE_PLACES_API_KEY}&q=${encodeURIComponent(business.address.full)}`}
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
